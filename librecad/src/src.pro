@@ -1424,6 +1424,7 @@ FORMS = ui/action_options/circle/lc_circlebyarcoptions.ui \
        ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui \
        ui/dock_widgets/views_list/lc_namedviewslistwidget.ui \
        ui/editor/librepad.ui \
+       ui/dock_widgets/views_list/lc_namedviewslistwidget.ui \
        ui/not_used/customtoolbarcreator.ui \
        ui/not_used/customwidgetcreator.ui \
        ui/not_used/qg_dimlinearoptions.ui \

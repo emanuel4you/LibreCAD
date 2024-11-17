@@ -194,6 +194,7 @@ include_directories(librecad/src/ui/dock_widgets/library_widget)
 include_directories(librecad/src/ui/dock_widgets/layer_widget)
 include_directories(librecad/src/ui/editor)
 include_directories(librecad/src/ui/dock_widgets/views_list)
+include_directories(librecad/src/ui/editor)
 #Temporary disabled for build
 #include_directories(plugins/align)
 #include_directories(plugins/asciifile)
