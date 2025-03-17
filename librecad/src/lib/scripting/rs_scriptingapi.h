@@ -30,6 +30,7 @@
 #ifdef DEVELOPER
 
 #include "rs_vector.h"
+#include "qc_applicationwindow.h"
 
 #include <QString>
 #include <QLineEdit>
@@ -104,6 +105,8 @@ public:
 
     RS_Vector getCorner(CommandEdit *cmdline, const char *msg, const RS_Vector &basePoint) const;
     RS_Vector getPoint(CommandEdit *cmdline, const char *msg, const RS_Vector basePoint) const;
+
+    RS_EntityContainer* getContainer() const;
 
 private:
     RS_ScriptingApi() {}

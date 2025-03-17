@@ -42,6 +42,7 @@ public:
     ~RS_PythonCore() {}
 
     void command(const char *cmd);
+    PyObject *assoc(PyObject *args) const;
     PyObject *entlast() const;
     PyObject *entdel(const std::string &ename) const;
     PyObject *entget(const std::string &ename) const;

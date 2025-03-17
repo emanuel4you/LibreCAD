@@ -33,7 +33,6 @@
 #include "rs_solid.h"
 #include "rs_layer.h"
 #include "rs_fontlist.h"
-#include "rs_entitycontainer.h"
 #include "rs_actionselectsingle.h"
 #include "qc_applicationwindow.h"
 #include "qg_actionhandler.h"
@@ -1162,9 +1161,7 @@ BUILTIN("entget")
     CHECK_ARGS_IS(1);
     ARG(lclEname, en);
 
-    auto& appWin = QC_ApplicationWindow::getAppWindow();
-    RS_GraphicView* graphicView = appWin->getGraphicView();
-    RS_EntityContainer* entityContainer = graphicView->getContainer();
+    RS_EntityContainer* entityContainer = RS_SCRIPTINGAPI->getContainer();
 
     if(entityContainer->count())
     {
@@ -2760,9 +2757,7 @@ BUILTIN("entmod")
         return lcl::nilValue();
     }
 
-    auto& appWin = QC_ApplicationWindow::getAppWindow();
-    RS_GraphicView* graphicView = appWin->getGraphicView();
-    RS_EntityContainer* entityContainer = graphicView->getContainer();
+    RS_EntityContainer* entityContainer = RS_SCRIPTINGAPI->getContainer();
 
     if(entityContainer->count())
     {
@@ -3502,7 +3497,7 @@ BUILTIN("getcorner")
         }
     }
 
-    if (args >= 1)
+    if (args > 1)
     {
         ARG(lclString, msg);
         prompt = QObject::tr(msg->value().c_str());
@@ -5983,7 +5978,7 @@ BUILTIN("vl-file-size")
     try {
         [[maybe_unused]] auto size = std::filesystem::file_size(path->value().c_str());
         char str[50];
-        sprintf(str, "%lld", size);
+        sprintf(str, "%lud", size);
         return lcl::string(str);
     }
     catch (std::filesystem::filesystem_error&) {}

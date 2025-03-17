@@ -2428,4 +2428,11 @@ bool RS_ScriptingApi::startImage(const char *key)
     return false;
 }
 
+RS_EntityContainer* RS_ScriptingApi::getContainer() const
+{
+    auto& appWin = QC_ApplicationWindow::getAppWindow();
+    RS_GraphicView* graphicView = appWin->getGraphicView();
+    return graphicView->getContainer();
+}
+
 #endif // DEVELOPER

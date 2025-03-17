@@ -34,6 +34,7 @@
 #include "rs_coordinateevent.h"
 #include "rs_preview.h"
 #include "rs_debug.h"
+#include "rs_line.h"
 
 struct QC_ActionGetCorner::Points {
     RS_MoveData data;
@@ -69,15 +70,31 @@ void QC_ActionGetCorner::mouseMoveEvent(QMouseEvent* e) {
     if(setTargetPoint){
         if (pPoints->referencePoint.valid) {
             pPoints->targetPoint = mouse;
-#if 0
-            auto* ob=new RS_OverlayBox(preview.get(), RS_OverlayBoxData(pPoints->referencePoint, mouse));
-            preview->addEntity(ob);
 
-            //line->setPen(RS_Pen(RS_Color(0,0,0), RS2::Width00, RS2::DotLine ));
+            RS_Line *h1 =new RS_Line{preview.get(),
+                                       pPoints->referencePoint, RS_Vector(pPoints->referencePoint.x, mouse.y)};
+
+            RS_Line *h2 =new RS_Line{preview.get(),
+                                       RS_Vector(mouse.x, pPoints->referencePoint.y, 0), mouse};
+
+            RS_Line *v1 =new RS_Line{preview.get(),
+                                       pPoints->referencePoint, RS_Vector(mouse.x, pPoints->referencePoint.y, 0)};
+
+            RS_Line *v2 =new RS_Line{preview.get(),
+                                       RS_Vector(pPoints->referencePoint.x, mouse.y), mouse};
+
+            h1->setPen(RS_Pen(RS_Color(0,0,0), RS2::Width00, RS2::DotLine ));
+            h2->setPen(RS_Pen(RS_Color(0,0,0), RS2::Width00, RS2::DotLine ));
+            v1->setPen(RS_Pen(RS_Color(0,0,0), RS2::Width00, RS2::DotLine ));
+            v2->setPen(RS_Pen(RS_Color(0,0,0), RS2::Width00, RS2::DotLine ));
+
+            preview->addEntity(h1);
+            preview->addEntity(h2);
+            preview->addEntity(v1);
+            preview->addEntity(v2);
 
             RS_DEBUG->print("QC_ActionGetCorner::mouseMoveEvent: draw preview");
-            preview->addSelectionFrom(*container,graphicView);
-#endif
+            preview->addSelectionFrom(*container,graphicView->getViewPort());
         }
     } else {
         pPoints->targetPoint = mouse;

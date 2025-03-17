@@ -42,9 +42,7 @@ RS_Document* RS_PythonCore::getDocument() const
 
 RS_EntityContainer* RS_PythonCore::getContainer() const
 {
-    auto& appWin = QC_ApplicationWindow::getAppWindow();
-    RS_GraphicView* graphicView = appWin->getGraphicView();
-    return graphicView->getContainer();
+    return RS_SCRIPTINGAPI->getContainer();
 }
 
 RS_Graphic* RS_PythonCore::getGraphic() const
@@ -75,6 +73,46 @@ void RS_PythonCore::command(const char *cmd)
     }
 }
 
+PyObject *RS_PythonCore::assoc(PyObject *args) const
+{
+    qDebug() << "[RS_PythonCore::assoc] - start";
+
+    int needle;
+    PyObject *pList;
+
+    if (!PyArg_ParseTuple(args, "iO!", &needle, &PyList_Type, &pList)) {
+        PyErr_SetString(PyExc_TypeError, "parameter must be a entity list.");
+        Py_RETURN_NONE;
+    }
+
+    int gc;
+    PyObject *pTuple;
+    PyObject *pGc;
+    Py_ssize_t n = PyList_Size(pList);
+
+    for (int i=0; i<n; i++) {
+        pTuple = PyList_GetItem(pList, i);
+        if(!PyTuple_Check(pTuple)) {
+            PyErr_SetString(PyExc_TypeError, "list items must be a tuple.");
+            Py_RETURN_NONE;
+        }
+        pGc = PyTuple_GetItem(pTuple, 0);
+        if(!PyLong_Check(pGc)) {
+            PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
+            Py_RETURN_NONE;
+        }
+        gc = PyLong_AsLong(pGc);
+        qDebug() << "[RS_PythonCore::assoc] i:" << i << "GC:" << gc;
+
+        if(gc == needle)
+        {
+            return pTuple;
+        }
+    }
+
+    Py_RETURN_NONE;
+}
+
 PyObject *RS_PythonCore::entlast() const
 {
     unsigned int id = RS_SCRIPTINGAPI->entlast();
@@ -88,9 +126,55 @@ PyObject *RS_PythonCore::entdel(const std::string &ename) const
 
 PyObject *RS_PythonCore::entmake(PyObject *args) const
 {
-    Q_UNUSED(args);
-
     qDebug() << "[RS_PythonCore::entmake] - start";
+
+    PyObject *pList;
+
+    if (!PyArg_ParseTuple(args, "O!", &PyList_Type, &pList)) {
+        PyErr_SetString(PyExc_TypeError, "parameter must be a entity list.");
+        Py_RETURN_NONE;
+    }
+
+    int gc;
+    QString etype;
+    PyObject *pTuple;
+    PyObject *pGc;
+    PyObject *pType;
+    Py_ssize_t n = PyList_Size(pList);
+
+    for (int i=0; i<n; i++) {
+        pTuple = PyList_GetItem(pList, i);
+        if(!PyTuple_Check(pTuple)) {
+            PyErr_SetString(PyExc_TypeError, "list items must be a tuple.");
+            Py_RETURN_NONE;
+        }
+        pGc = PyTuple_GetItem(pTuple, 0);
+        if(!PyLong_Check(pGc)) {
+            PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
+            Py_RETURN_NONE;
+        }
+        gc = PyLong_AsLong(pGc);
+        qDebug() << "[RS_PythonCore::entmake] i:" << i << "GC:" << gc;
+
+        if(gc == 0)
+        {
+            pType = PyTuple_GetItem(pTuple, 1);
+            if(!PyUnicode_Check(pType)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
+                Py_RETURN_NONE;
+            }
+            etype = QString::fromUtf8(PyUnicode_AsUTF8(pType));
+            qDebug() << "[RS_PythonCore::entmake] ename:" << etype;
+            break;
+        }
+    }
+
+    if (etype == "")
+        Py_RETURN_NONE;
+#if 0
+    RS_EntityContainer* entityContainer = RS_SCRIPTINGAPI->getContainer();
+#endif
+    qDebug() << "[RS_PythonCore::entmake] - end";
 
     Py_RETURN_NONE;
 }
@@ -127,7 +211,7 @@ PyObject *RS_PythonCore::entmod(PyObject *args) const
         gc = PyLong_AsLong(pGc);
         qDebug() << "[RS_PythonCore::entmod] i:" << i << "GC:" << gc;
 
-        if(gc == 0)
+        if(gc == -1)
         {
             pEname = PyTuple_GetItem(pTuple, 1);
             if(!PyUnicode_Check(pEname)) {
@@ -143,9 +227,7 @@ PyObject *RS_PythonCore::entmod(PyObject *args) const
     if (ename == "")
         Py_RETURN_NONE;
 
-    auto& appWin = QC_ApplicationWindow::getAppWindow();
-    RS_GraphicView* graphicView = appWin->getGraphicView();
-    RS_EntityContainer* entityContainer = graphicView->getContainer();
+    RS_EntityContainer* entityContainer = RS_SCRIPTINGAPI->getContainer();
 
     if(entityContainer->count())
     {
@@ -202,10 +284,7 @@ PyObject *RS_PythonCore::entsel(const char* prompt) const
 PyObject *RS_PythonCore::entget(const std::string &ename) const
 {
     unsigned int id = RS_SCRIPTINGAPI->getEntityId(ename);
-
-    auto& appWin = QC_ApplicationWindow::getAppWindow();
-    RS_GraphicView* graphicView = appWin->getGraphicView();
-    RS_EntityContainer* entityContainer = graphicView->getContainer();
+    RS_EntityContainer* entityContainer = RS_SCRIPTINGAPI->getContainer();
 
     if(entityContainer->count())
     {
