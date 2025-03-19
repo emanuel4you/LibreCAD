@@ -739,7 +739,7 @@ void LC_WidgetFactory::createMenus(QMenuBar* menu_bar){
         ""
     });
 #if DEVELOPER
-    dev_menu = menu(tr("&Developer"),"developer", menu_bar);
+    dev_menu = menu(tr("Deve&loper"),"developer", menu_bar);
     dev_menu->addSeparator();
     dev_menu->addAction(ag_manager->getActionByName("LoadLisp"));
     dev_menu->addAction(ag_manager->getActionByName("LibreLisp"));

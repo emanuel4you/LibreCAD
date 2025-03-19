@@ -30,6 +30,7 @@
 #ifdef DEVELOPER
 
 #include "rs_vector.h"
+#include "rs_graphic.h"
 #include "qc_applicationwindow.h"
 
 #include <QString>
@@ -107,6 +108,7 @@ public:
     RS_Vector getPoint(CommandEdit *cmdline, const char *msg, const RS_Vector basePoint) const;
 
     RS_EntityContainer* getContainer() const;
+    RS_Graphic *getGraphic() const;
 
 private:
     RS_ScriptingApi() {}

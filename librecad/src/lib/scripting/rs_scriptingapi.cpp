@@ -2435,4 +2435,20 @@ RS_EntityContainer* RS_ScriptingApi::getContainer() const
     return graphicView->getContainer();
 }
 
+RS_Graphic* RS_ScriptingApi::getGraphic() const
+{
+    auto& appWin=QC_ApplicationWindow::getAppWindow();
+    RS_Document* d = appWin->getDocument();
+
+    if (d && d->rtti()==RS2::EntityGraphic)
+    {
+        RS_Graphic* graphic = (RS_Graphic*)d;
+        if (graphic==NULL) {
+            return NULL;
+        }
+        return graphic;
+    }
+    return NULL;
+}
+
 #endif // DEVELOPER

@@ -1209,7 +1209,7 @@ BUILTIN("entget")
                     int width = static_cast<int>(lineWidth);
                     if (width < 0)
                     {
-                        lWidth->at(2) = lcl::integer(width);
+                        lWidth->at(2) = lcl::ldouble(1.0);
                     }
                     else
                     {
@@ -2665,15 +2665,9 @@ BUILTIN("entmake")
         return lcl::nilValue();
     }
 
-    auto& appWin=QC_ApplicationWindow::getAppWindow();
-    RS_Document* d = appWin->getDocument();
+    RS_Graphic* graphic = RS_SCRIPTINGAPI->getGraphic();
 
-    if (d) {
-        RS_Graphic* graphic = (RS_Graphic*)d;
-        if (!graphic) {
-            return lcl::nilValue();
-        }
-
+    if (graphic) {
         if (ename == "LINE" && !gc_ten.empty() && !gc_eleven.empty())
         {
             RS_Line *line;
@@ -2720,12 +2714,12 @@ BUILTIN("entmake")
             graphic->addEntity(ellipse);
 
         }
-
+#if 0
         RS_GraphicView* v = appWin->getGraphicView();
         if (v) {
             v->redraw();
         }
-
+#endif
     }
     return lcl::nilValue();
 }

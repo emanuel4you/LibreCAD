@@ -32,7 +32,7 @@
 #include "Python.h"
 
 #include "rs_document.h"
-#include "rs_graphic.h"
+
 #include "rs_entitycontainer.h"
 
 class RS_PythonCore
@@ -42,13 +42,13 @@ public:
     ~RS_PythonCore() {}
 
     void command(const char *cmd);
-    PyObject *assoc(PyObject *args) const;
+    PyObject *assoc(int needle, PyObject *args) const;
     PyObject *entlast() const;
-    PyObject *entdel(const std::string &ename) const;
-    PyObject *entget(const std::string &ename) const;
+    PyObject *entdel(const char *ename) const;
+    PyObject *entget(const char *ename) const;
     PyObject *entmake(PyObject *args) const;
     PyObject *entmod(PyObject *args) const;
-    PyObject *entnext(const std::string &ename) const;
+    PyObject *entnext(const char *ename) const;
     PyObject *entsel(const char* prompt = "") const;
 
     RS_Document *getDocument() const;
