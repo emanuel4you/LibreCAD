@@ -432,7 +432,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                     {
                         RS_Circle* c = (RS_Circle*)e;
                         return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(id)(iddd)]",
-                            0, "ARC",
+                            0, "CIRCLE",
                             -1, ename,
                             330, c->getParent()->getId(),
                             5, RS_SCRIPTINGAPI->getEntityHndl(c->getId()).c_str(),
@@ -443,7 +443,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             67, 0,
                             100, "Model",
                             8, qUtf8Printable(c->getLayer()->getName()),
-                            100, "AcDbArc",
+                            100, "AcDbCircle",
                             10, c->getCenter().x, c->getCenter().y, c->getCenter().z,
                             40, c->getRadius(),
                             210, 0.0, 0.0, 1.0

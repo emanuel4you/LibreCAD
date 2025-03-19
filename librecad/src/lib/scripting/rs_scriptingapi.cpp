@@ -213,7 +213,7 @@ const std::string RS_ScriptingApi::getEntityHndl(unsigned int id)
 {
     std::stringstream ss;
     ss << std::uppercase << std::hex << id;
-    static std::string hndl = ss.str();
+    std::string hndl = ss.str();
     return hndl;
 }
 
