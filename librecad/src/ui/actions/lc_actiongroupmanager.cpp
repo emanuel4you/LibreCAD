@@ -44,6 +44,9 @@ LC_ActionGroupManager::LC_ActionGroupManager(QC_ApplicationWindow *parent)
     , edit(new LC_ActionGroup(this,tr("Edit"), tr("Editing operations"), ":/icons/rename_active_block.lci"))
     , ellipse(new LC_ActionGroup(this,tr("Ellipse"),tr("Ellipse drawing commands") ,":/icons/ellipses.lci"))
     , file(new LC_ActionGroup(this,tr("File"),tr("File Operations"), ":/icons/save.lci"))
+#ifdef DEVELOPER
+    , developer(new LC_ActionGroup(this,tr("Developer"),tr("Developer Tools"), nullptr))
+#endif
     , dimension(new LC_ActionGroup(this,tr("Dimension"),tr("Dimensions creation commands"), ":/icons/dim_horizontal.lci"))
     , info(new LC_ActionGroup(this,tr("Info"),tr("Informational commands"), ":/icons/measure.lci"))
     , layer(new LC_ActionGroup(this,tr("Layer"),tr("Layers operations"), ":/icons/deselect_layer.lci"))

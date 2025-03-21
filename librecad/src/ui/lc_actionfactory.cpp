@@ -86,6 +86,9 @@ void LC_ActionFactory::fillActionContainer(LC_ActionGroupManager* agm, bool useT
     createOptionsActionsUncheckable(a_map, agm->options);
     createSelectActionsUncheckable(a_map, agm->select);
     createFileActionsUncheckable(a_map, agm->file);
+#ifdef DEVELOPER
+    createLoadScriptActionsUncheckable(a_map, agm->developer);
+#endif
     createViewActionsUncheckable(a_map, agm->view);
     createNamedViewActionsUncheckable(a_map, agm->namedViews);
     createWorkspacesActionsUncheckable(a_map, agm->workspaces);
@@ -516,6 +519,17 @@ void LC_ActionFactory::createFileActionsUncheckable(QMap<QString, QAction *> &ma
     createAction_AH("FileExportMakerCam",RS2::ActionFileExportMakerCam,  tr("Export as CA&M/plain SVG..."), nullptr, nullptr, group, map);
 }
 
+#ifdef DEVELOPER
+void LC_ActionFactory::createLoadScriptActionsUncheckable(QMap<QString, QAction *> &map, QActionGroup *group) {
+    createMainWindowActions(map, group, {
+        {"LoadLisp",        SLOT(slotLoadLisp()),          tr("Load &Lisp"),          ":/icons/open_script.lci",  "load-lisp"},
+        {"LibreLisp",       SLOT(slotLibreLisp()),         tr("LibreL&isp IDE"),      ":/images/librecad.png",      "libre-lisp"},
+        {"LoadPython",      SLOT(slotLoadPython()),        tr("Load &Python"),        ":/icons/open_script.lci",  "load-python"},
+        {"LibrePython",     SLOT(slotLibrePython()),       tr("LibreP&ython IDE"),    ":/images/librecad.png",      "libre-python"},
+    });
+}
+#endif // DEVELOPER
+
 void LC_ActionFactory::createWidgetActions(QMap<QString, QAction *> &map, QActionGroup *group) {
     createMainWindowActions(map, group, {
         {"LeftDockAreaToggle",        SLOT(toggleLeftDockArea(bool)),        tr("Left"),     ":/icons/dockwidgets_left.lci"},
@@ -536,6 +550,10 @@ void LC_ActionFactory::createWidgetActionsUncheckable(QMap<QString, QAction *> &
 
 void LC_ActionFactory::createViewActionsUncheckable(QMap<QString, QAction *> &map, QActionGroup *group) {
     createAction_MW("FocusCommand",SLOT(slotFocusCommandLine()), tr("Focus on &Command Line"), ":/icons/editclear.lci", nullptr, group, map);
+#ifdef DEVELOPER
+    createAction_MW("FocusLispCommand",SLOT(slotFocusLspCommandLine()), tr("Focus on &Lisp Command Line"), ":/icons/editclear.lci", nullptr, group, map);
+    createAction_MW("FocusPyCommand",SLOT(slotFocusPyCommandLine()), tr("Focus on &Python Command Line"), ":/icons/editclear.lci", nullptr, group, map);
+#endif // DEVELOPER
     createAction_MW("FocusOptions",SLOT(slotFocusOptionsWidget()), tr("Focus on &Options Widget"), ":/icons/drawing_settings.lci", nullptr, group, map);
 
     createActionHandlerActions(map, group, {
@@ -670,6 +688,10 @@ void LC_ActionFactory::setDefaultShortcuts(QMap<QString, QAction*>& map, LC_Acti
         {"FilePrint", QKeySequence::Print},
         {"FileQuit", QKeySequence::Quit},
         {"FocusCommand", QKeySequence(Qt::CTRL | Qt::Key_M)}, // commandLineShortcuts}, // fixme - restore shortcuts for focus command line!!!
+#ifdef DEVELOPER
+        {"FocusLspCommand", QKeySequence(Qt::CTRL | Qt::Key_I)},
+        {"FocusPyCommand", QKeySequence(Qt::CTRL | Qt::Key_P)},
+#endif
 #if defined(Q_OS_LINUX)
         {"Fullscreen", QKeySequence("F11")},
 #else

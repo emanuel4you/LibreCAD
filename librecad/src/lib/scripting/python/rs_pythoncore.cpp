@@ -1,0 +1,877 @@
+/****************************************************************************
+**
+** This file is part of the LibreCAD project, a 2D CAD program
+**
+** Copyright (C) 2010 R. van Twisk (librecad@rvt.dds.nl)
+** Copyright (C) 2001-2003 RibbonSoft. All rights reserved.
+**
+**
+** This file may be distributed and/or modified under the terms of the
+** GNU General Public License version 2 as published by the Free Software
+** Foundation and appearing in the file gpl-2.0.txt included in the
+** packaging of this file.
+**
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software
+** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+**
+** This copyright notice MUST APPEAR in all copies of the script!
+**
+**********************************************************************/
+
+#include "rs_python.h"
+#include "rs_pythoncore.h"
+#include "rs_scriptingapi.h"
+#include "rs_insert.h"
+#include "rs_hatch.h"
+#include "rs_solid.h"
+
+#include "rs_filterdxfrw.h"
+
+#include "qc_applicationwindow.h"
+
+RS_Document* RS_PythonCore::getDocument() const
+{
+    return QC_ApplicationWindow::getAppWindow()->getDocument();
+}
+
+RS_EntityContainer* RS_PythonCore::getContainer() const
+{
+    return RS_SCRIPTINGAPI->getContainer();
+}
+
+RS_Graphic* RS_PythonCore::getGraphic() const
+{
+    return RS_SCRIPTINGAPI->getGraphic();
+}
+
+void RS_PythonCore::command(const char *cmd)
+{
+    QString scmd = cmd;
+    scmd = scmd.simplified();
+    QStringList coms = scmd.split(" ");
+
+    for(auto & s : coms)
+    {
+        RS_SCRIPTINGAPI->command(s);
+    }
+}
+
+PyObject *RS_PythonCore::assoc(int needle, PyObject *args) const
+{
+    qDebug() << "[RS_PythonCore::assoc] - start";
+
+    PyObject *pList;
+
+    if (!PyArg_Parse(args, "O!", &PyList_Type, &pList)) {
+        PyErr_SetString(PyExc_TypeError, "parameter must be a entity list.");
+        Py_RETURN_NONE;
+    }
+
+    int gc;
+    PyObject *pTuple;
+    PyObject *pGc;
+    Py_ssize_t n = PyList_Size(pList);
+
+    for (int i=0; i<n; i++) {
+        pTuple = PyList_GetItem(pList, i);
+        if(!PyTuple_Check(pTuple)) {
+            PyErr_SetString(PyExc_TypeError, "list items must be a tuple.");
+            Py_RETURN_NONE;
+        }
+        pGc = PyTuple_GetItem(pTuple, 0);
+        if(!PyLong_Check(pGc)) {
+            PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
+            Py_RETURN_NONE;
+        }
+        gc = PyLong_AsLong(pGc);
+        qDebug() << "[RS_PythonCore::assoc] i:" << i << "GC:" << gc;
+
+        if(gc == needle)
+        {
+            return pTuple;
+        }
+    }
+
+    Py_RETURN_NONE;
+}
+
+PyObject *RS_PythonCore::entlast() const
+{
+    unsigned int id = RS_SCRIPTINGAPI->entlast();
+    return id > 0 ? Py_BuildValue("s", RS_SCRIPTINGAPI->getEntityName(id).c_str()) : Py_None;
+}
+
+PyObject *RS_PythonCore::entdel(const char *ename) const
+{
+    return RS_SCRIPTINGAPI->entdel(RS_SCRIPTINGAPI->getEntityId(ename)) ? Py_BuildValue("s", ename) : Py_None;
+}
+
+PyObject *RS_PythonCore::entmake(PyObject *args) const
+{
+    qDebug() << "[RS_PythonCore::entmake] - start";
+
+    PyObject *pList;
+
+    if (!PyArg_Parse(args, "O!", &PyList_Type, &pList)) {
+        PyErr_SetString(PyExc_TypeError, "parameter must be a entity list.");
+        Py_RETURN_NONE;
+    }
+
+    int gc;
+    QString etype;
+    PyObject *pTuple;
+    PyObject *pGc;
+    PyObject *pType;
+    Py_ssize_t n = PyList_Size(pList);
+
+    for (int i=0; i<n; i++) {
+        pTuple = PyList_GetItem(pList, i);
+        if(!PyTuple_Check(pTuple)) {
+            PyErr_SetString(PyExc_TypeError, "list items must be a tuple.");
+            Py_RETURN_NONE;
+        }
+        pGc = PyTuple_GetItem(pTuple, 0);
+        if(!PyLong_Check(pGc)) {
+            PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
+            Py_RETURN_NONE;
+        }
+        gc = PyLong_AsLong(pGc);
+        qDebug() << "[RS_PythonCore::entmake] i:" << i << "GC:" << gc;
+
+        if(gc == 0)
+        {
+            pType = PyTuple_GetItem(pTuple, 1);
+            if(!PyUnicode_Check(pType)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
+                Py_RETURN_NONE;
+            }
+            etype = QString::fromUtf8(PyUnicode_AsUTF8(pType));
+            qDebug() << "[RS_PythonCore::entmake] ename:" << etype;
+            break;
+        }
+    }
+
+    if (etype == "")
+        Py_RETURN_NONE;
+#if 0
+    RS_EntityContainer* entityContainer = RS_SCRIPTINGAPI->getContainer();
+#endif
+    qDebug() << "[RS_PythonCore::entmake] - end";
+
+    Py_RETURN_NONE;
+}
+
+PyObject *RS_PythonCore::entmod(PyObject *args) const
+{
+    qDebug() << "[RS_PythonCore::entmod] - start";
+
+    PyObject *pList;
+
+    if (!PyArg_Parse(args, "O!", &PyList_Type, &pList)) {
+        PyErr_SetString(PyExc_TypeError, "parameter must be a entity list.");
+        Py_RETURN_NONE;
+    }
+
+    int gc;
+    QString ename;
+    PyObject *pTuple;
+    PyObject *pGc;
+    PyObject *pEname;
+    Py_ssize_t n = PyList_Size(pList);
+
+    for (int i=0; i<n; i++) {
+        pTuple = PyList_GetItem(pList, i);
+        if(!PyTuple_Check(pTuple)) {
+            PyErr_SetString(PyExc_TypeError, "list items must be a tuple.");
+            Py_RETURN_NONE;
+        }
+        pGc = PyTuple_GetItem(pTuple, 0);
+        if(!PyLong_Check(pGc)) {
+            PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
+            Py_RETURN_NONE;
+        }
+        gc = PyLong_AsLong(pGc);
+        qDebug() << "[RS_PythonCore::entmod] i:" << i << "GC:" << gc;
+
+        if(gc == -1)
+        {
+            pEname = PyTuple_GetItem(pTuple, 1);
+            if(!PyUnicode_Check(pEname)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
+                Py_RETURN_NONE;
+            }
+            ename = QString::fromUtf8(PyUnicode_AsUTF8(pEname));
+            qDebug() << "[RS_PythonCore::entmod] ename:" << ename;
+            break;
+        }
+    }
+
+    if (ename == "")
+        Py_RETURN_NONE;
+
+    RS_EntityContainer* entityContainer = RS_SCRIPTINGAPI->getContainer();
+
+    if(entityContainer->count())
+    {
+        for (auto entity: *entityContainer)
+        {
+            if (entity->getId() == RS_SCRIPTINGAPI->getEntityId(qUtf8Printable(ename)))
+            {
+                qDebug() << "[RS_PythonCore::entmod] ename found!";
+            }
+        }
+    }
+
+    qDebug() << "[RS_PythonCore::entmod] - end";
+
+    Py_RETURN_NONE;
+}
+
+PyObject *RS_PythonCore::entnext(const char *ename) const
+{
+    unsigned int id = 0;
+
+    if (std::strcmp(ename, "") == 0)
+    {
+        id = RS_SCRIPTINGAPI->entnext();
+    }
+    else
+    {
+        id = RS_SCRIPTINGAPI->entnext(RS_SCRIPTINGAPI->getEntityId(ename));
+    }
+
+    return id > 0 ? Py_BuildValue("s", RS_SCRIPTINGAPI->getEntityName(id).c_str()) : Py_None;
+}
+
+PyObject *RS_PythonCore::entsel(const char* prompt) const
+{
+    QString prom = "Select object:";
+    unsigned long id;
+    RS_Vector result;
+
+    if (std::strcmp(prompt, "") == 0)
+    {
+        prom = prompt;
+    }
+
+    return RS_SCRIPTINGAPI->entsel(Py_CommandEdit,
+                                   QObject::tr(qUtf8Printable(prom)),
+                                   id,
+                                   result) ? Py_BuildValue("(s(ddd))", RS_SCRIPTINGAPI->getEntityName(id).c_str(),
+                                                                       result.x,
+                                                                       result.y,
+                                                                       result.z) : Py_None;
+}
+
+PyObject *RS_PythonCore::entget(const char *ename) const
+{
+    unsigned int id = RS_SCRIPTINGAPI->getEntityId(ename);
+    RS_EntityContainer* entityContainer = RS_SCRIPTINGAPI->getContainer();
+
+    if(entityContainer->count())
+    {
+        for (auto e: *entityContainer) {
+            if (e->getId() == id)
+            {
+                int exact_rgb;
+                RS_Pen pen = e->getPen(false);
+                RS_Color color = pen.getColor();
+                enum RS2::LineWidth lineWidth = pen.getWidth();
+                int width = static_cast<int>(lineWidth);
+
+                switch (e->rtti())
+                {
+                    case RS2::EntityPoint:
+                    {
+                        RS_Point* p = (RS_Point*)e;
+
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)]",
+                            0, "POINT",
+                            -1, ename,
+                            330, p->getParent()->getId(),
+                            5, RS_SCRIPTINGAPI->getEntityHndl(p->getId()).c_str(),
+                            6, qUtf8Printable(RS_FilterDXFRW::lineTypeToName(pen.getLineType())),
+                            62, RS_FilterDXFRW::colorToNumber(color, &exact_rgb),
+                            48, width < 0 ? 1.0 : double(width) / 100.0,
+                            100, "AcDbEntity",
+                            67, 0,
+                            100, "Model",
+                            8, qUtf8Printable(p->getLayer()->getName()),
+                            100, "AcDbPoint",
+                            10, p->getPos().x, p->getPos().y, p->getPos().z,
+                            210, 0.0, 0.0, 1.0
+                        );
+                    }
+                    break;
+                    case RS2::EntityLine:
+                    {
+                        RS_Line* l = (RS_Line*)e;
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(iddd)]",
+                            0, "LINE",
+                            -1, ename,
+                            330, l->getParent()->getId(),
+                            5, RS_SCRIPTINGAPI->getEntityHndl(l->getId()).c_str(),
+                            6, qUtf8Printable(RS_FilterDXFRW::lineTypeToName(pen.getLineType())),
+                            62, RS_FilterDXFRW::colorToNumber(color, &exact_rgb),
+                            48, width < 0 ? 1.0 : double(width) / 100.0,
+                            100, "AcDbEntity",
+                            67, 0,
+                            100, "Model",
+                            8, qUtf8Printable(l->getLayer()->getName()),
+                            100, "AcDbLine",
+                            10, l->getStartpoint().x, l->getStartpoint().y, l->getStartpoint().z,
+                            11, l->getEndpoint().x, l->getEndpoint().y, l->getEndpoint().z,
+                            210, 0.0, 0.0, 1.0
+                        );
+                    }
+                    break;
+                    case RS2::EntityPolyline:
+                    {
+                        RS_Polyline* pl = (RS_Polyline*)e;
+                        bool is3d = false;
+                        RS_VectorSolutions pnts = pl->getRefPoints();
+
+                        for (auto &v : pl->getRefPoints())
+                        {
+                            if(v.z != 0.0)
+                            {
+                                is3d = true;
+                                break;
+                            }
+                        }
+
+                        int fl = 0;
+                        fl |= 8;
+                        if (pl->isClosed())
+                        {
+                            fl |= 1;
+                        }
+
+                        if (is3d)
+                        {
+                            return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(ii)(iddd)]",
+                                0, "POLYLINE",
+                                -1, ename,
+                                330, pl->getParent()->getId(),
+                                5, RS_SCRIPTINGAPI->getEntityHndl(pl->getId()).c_str(),
+                                6, qUtf8Printable(RS_FilterDXFRW::lineTypeToName(pen.getLineType())),
+                                62, RS_FilterDXFRW::colorToNumber(color, &exact_rgb),
+                                48, width < 0 ? 1.0 : double(width) / 100.0,
+                                100, "AcDbEntity",
+                                67, 0,
+                                100, "Model",
+                                8, qUtf8Printable(pl->getLayer()->getName()),
+                                100, "AcDb3dPolyline",
+                                70, fl,
+                                210, 0.0, 0.0, 1.0
+                            );
+                        }
+                        else
+                        {
+                            PyObject* list = PyList_New(pnts.size()*4 + 14);
+                            PyList_SET_ITEM(list, 0, Py_BuildValue("(is)", 0, "LWPOLYLINE"));
+                            PyList_SET_ITEM(list, 1, Py_BuildValue("(is)", -1, ename));
+                            PyList_SET_ITEM(list, 2, Py_BuildValue("(ii)", 330, pl->getParent()->getId()));
+                            PyList_SET_ITEM(list, 3, Py_BuildValue("(is)", 5, RS_SCRIPTINGAPI->getEntityHndl(pl->getId()).c_str()));
+                            PyList_SET_ITEM(list, 4, Py_BuildValue("(is)", 6, qUtf8Printable(RS_FilterDXFRW::lineTypeToName(pen.getLineType()))));
+                            PyList_SET_ITEM(list, 5, Py_BuildValue("(ii)", 62, RS_FilterDXFRW::colorToNumber(color, &exact_rgb)));
+                            PyList_SET_ITEM(list, 6, width < 0 ? Py_BuildValue("(id)", 48, 1.0) : Py_BuildValue("(id)", 48, double(width) / 100.0));
+                            PyList_SET_ITEM(list, 7, Py_BuildValue("(is)", 100, "AcDbEntity"));
+                            PyList_SET_ITEM(list, 8, Py_BuildValue("(ii)", 67, 0));
+                            PyList_SET_ITEM(list, 9, Py_BuildValue("(is)", 100, "Model"));
+                            PyList_SET_ITEM(list, 10, Py_BuildValue("(is)", 8, qUtf8Printable(pl->getLayer()->getName())));
+                            PyList_SET_ITEM(list, 11, Py_BuildValue("(is)", 100, "AcDbPolyline"));
+                            int n = 12;
+
+                            for (auto &v : pl->getRefPoints())
+                            {
+                                PyList_SET_ITEM(list, n++, Py_BuildValue("(idd)", 10, v.x, v.y));
+                                PyList_SET_ITEM(list, n++, Py_BuildValue("(id)", 40, 0.0));
+                                PyList_SET_ITEM(list, n++, Py_BuildValue("(id)", 41, 0.0));
+                                PyList_SET_ITEM(list, n++, Py_BuildValue("(id)", 42, 0.0));
+                            }
+
+                            PyList_SET_ITEM(list, n++, Py_BuildValue("(ii)", 70, fl));
+                            PyList_SET_ITEM(list, n++, Py_BuildValue("(iddd)", 210, 0.0, 0.0, 1.0));
+
+                            return list;
+                        }
+                    }
+                    break;
+                    case RS2::EntityArc:
+                    {
+                        RS_Arc* a = (RS_Arc*)e;
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(id)(id)(id)(iddd)]",
+                            0, "ARC",
+                            -1, ename,
+                            330, a->getParent()->getId(),
+                            5, RS_SCRIPTINGAPI->getEntityHndl(a->getId()).c_str(),
+                            6, qUtf8Printable(RS_FilterDXFRW::lineTypeToName(pen.getLineType())),
+                            62, RS_FilterDXFRW::colorToNumber(color, &exact_rgb),
+                            48, width < 0 ? 1.0 : double(width) / 100.0,
+                            100, "AcDbEntity",
+                            67, 0,
+                            100, "Model",
+                            8, qUtf8Printable(a->getLayer()->getName()),
+                            100, "AcDbArc",
+                            10, a->getCenter().x, a->getCenter().y, a->getCenter().z,
+                            40, a->getRadius(),
+                            50, a->getAngle1(),
+                            51, a->getAngle2(),
+                            210, 0.0, 0.0, 1.0
+                        );
+                    }
+                    break;
+                    case RS2::EntityCircle:
+                    {
+                        RS_Circle* c = (RS_Circle*)e;
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(id)(iddd)]",
+                            0, "CIRCLE",
+                            -1, ename,
+                            330, c->getParent()->getId(),
+                            5, RS_SCRIPTINGAPI->getEntityHndl(c->getId()).c_str(),
+                            6, qUtf8Printable(RS_FilterDXFRW::lineTypeToName(pen.getLineType())),
+                            62, RS_FilterDXFRW::colorToNumber(color, &exact_rgb),
+                            48, width < 0 ? 1.0 : double(width) / 100.0,
+                            100, "AcDbEntity",
+                            67, 0,
+                            100, "Model",
+                            8, qUtf8Printable(c->getLayer()->getName()),
+                            100, "AcDbCircle",
+                            10, c->getCenter().x, c->getCenter().y, c->getCenter().z,
+                            40, c->getRadius(),
+                            210, 0.0, 0.0, 1.0
+                        );
+                    }
+                    break;
+                    case RS2::EntityEllipse:
+                    {
+                        RS_Ellipse* ellipse=static_cast<RS_Ellipse*>(e);
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(id)(iddd)]",
+                            0, "ELLIPSE",
+                            -1, ename,
+                            330, ellipse->getParent()->getId(),
+                            5, RS_SCRIPTINGAPI->getEntityHndl(ellipse->getId()).c_str(),
+                            6, qUtf8Printable(RS_FilterDXFRW::lineTypeToName(pen.getLineType())),
+                            62, RS_FilterDXFRW::colorToNumber(color, &exact_rgb),
+                            48, width < 0 ? 1.0 : double(width) / 100.0,
+                            100, "AcDbEntity",
+                            67, 0,
+                            100, "Model",
+                            8, qUtf8Printable(ellipse->getLayer()->getName()),
+                            100, "AcDbEllipse",
+                            10, ellipse->getCenter().x, ellipse->getCenter().y, ellipse->getCenter().z,
+                            11, ellipse->getMajorP().x, ellipse->getMajorP().y, ellipse->getMajorP().z,
+                            40, ellipse->getRatio(),
+                            210, 0.0, 0.0, 1.0
+                        );
+                    }
+                    break;
+                    case RS2::EntityDimAligned:
+                    {
+                        RS_DimAligned* dal = (RS_DimAligned*)e;
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(iddd)(iddd)(id)(iddd)]",
+                            0, "DIMENSION",
+                            -1, ename,
+                            330, dal->getParent()->getId(),
+                            5, RS_SCRIPTINGAPI->getEntityHndl(dal->getId()).c_str(),
+                            6, qUtf8Printable(RS_FilterDXFRW::lineTypeToName(pen.getLineType())),
+                            62, RS_FilterDXFRW::colorToNumber(color, &exact_rgb),
+                            48, width < 0 ? 1.0 : double(width) / 100.0,
+                            100, "AcDbEntity",
+                            67, 0,
+                            100, "Model",
+                            8, qUtf8Printable(dal->getLayer()->getName()),
+                            100, "AcDbAlignedDimension",
+                            10, dal->getDefinitionPoint().x, dal->getDefinitionPoint().y,dal->getDefinitionPoint().z,
+                            11, dal->getMiddleOfText().x, dal->getMiddleOfText().y,dal->getMiddleOfText().z,
+                            13, dal->getExtensionPoint1().x, dal->getExtensionPoint1().y, dal->getExtensionPoint1().z,
+                            14, dal->getExtensionPoint2().x, dal->getExtensionPoint2().y, dal->getExtensionPoint2().z,
+                            41, dal->getLineSpacingFactor(),
+                            210, 0.0, 0.0, 1.0
+                        );
+                    }
+                    break;
+                    case RS2::EntityDimAngular:
+                    {
+                        RS_DimAngular* da = (RS_DimAngular*)e;
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(iddd)(iddd)(iddd)(iddd)(id)(iddd)]",
+                            0, "DIMENSION",
+                            -1, ename,
+                            330, da->getParent()->getId(),
+                            5, RS_SCRIPTINGAPI->getEntityHndl(da->getId()).c_str(),
+                            6, qUtf8Printable(RS_FilterDXFRW::lineTypeToName(pen.getLineType())),
+                            62, RS_FilterDXFRW::colorToNumber(color, &exact_rgb),
+                            48, width < 0 ? 1.0 : double(width) / 100.0,
+                            100, "AcDbEntity",
+                            67, 0,
+                            100, "Model",
+                            8, qUtf8Printable(da->getLayer()->getName()),
+                            100, "AcDb3PointAngularDimension",
+                            10, da->getDefinitionPoint().x, da->getDefinitionPoint().y,da->getDefinitionPoint().z,
+                            11, da->getMiddleOfText().x, da->getMiddleOfText().y,da->getMiddleOfText().z,
+                            13, da->getDefinitionPoint1().x, da->getDefinitionPoint1().y, da->getDefinitionPoint1().z,
+                            14, da->getDefinitionPoint2().x, da->getDefinitionPoint2().y, da->getDefinitionPoint2().z,
+                            13, da->getDefinitionPoint3().x, da->getDefinitionPoint3().y, da->getDefinitionPoint3().z,
+                            14, da->getDefinitionPoint4().x, da->getDefinitionPoint4().y, da->getDefinitionPoint4().z,
+                            41, da->getLineSpacingFactor(),
+                            210, 0.0, 0.0, 1.0
+                        );
+                    }
+                    break;
+                    case RS2::EntityDimLinear:
+                    {
+                        RS_DimLinear* d = (RS_DimLinear*)e;
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(iddd)(iddd)(id)(id)(is)(iddd)]",
+                            0, "DIMENSION",
+                            -1, ename,
+                            330, d->getParent()->getId(),
+                            5, RS_SCRIPTINGAPI->getEntityHndl(d->getId()).c_str(),
+                            6, qUtf8Printable(RS_FilterDXFRW::lineTypeToName(pen.getLineType())),
+                            62, RS_FilterDXFRW::colorToNumber(color, &exact_rgb),
+                            48, width < 0 ? 1.0 : double(width) / 100.0,
+                            100, "AcDbEntity",
+                            67, 0,
+                            100, "Model",
+                            8, qUtf8Printable(d->getLayer()->getName()),
+                            100, "AcDbAlignedDimension",
+                            10, d->getDefinitionPoint().x, d->getDefinitionPoint().y,d->getDefinitionPoint().z,
+                            11, d->getMiddleOfText().x, d->getMiddleOfText().y, d->getMiddleOfText().z,
+                            13, d->getExtensionPoint1().x, d->getExtensionPoint1().y, d->getExtensionPoint1().z,
+                            14, d->getExtensionPoint2().x, d->getExtensionPoint2().y, d->getExtensionPoint2().z,
+                            50, d->getRadius(),
+                            41, d->getLineSpacingFactor(),
+                            100, "AcDbRotatedDimension",
+                            210, 0.0, 0.0, 1.0
+                        );
+                    }
+                    break;
+                    case RS2::EntityDimRadial:
+                    {
+                        RS_DimRadial* dr = (RS_DimRadial*)e;
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(id)(id)(iddd)]",
+                            0, "DIMENSION",
+                            -1, ename,
+                            330, dr->getParent()->getId(),
+                            5, RS_SCRIPTINGAPI->getEntityHndl(dr->getId()).c_str(),
+                            6, qUtf8Printable(RS_FilterDXFRW::lineTypeToName(pen.getLineType())),
+                            62, RS_FilterDXFRW::colorToNumber(color, &exact_rgb),
+                            48, width < 0 ? 1.0 : double(width) / 100.0,
+                            100, "AcDbEntity",
+                            67, 0,
+                            100, "Model",
+                            8, qUtf8Printable(dr->getLayer()->getName()),
+                            100, "AcDbRadialDimension",
+                            10, dr->getDefinitionPoint().x, dr->getDefinitionPoint().y, dr->getDefinitionPoint().z,
+                            11, dr->getMiddleOfText().x, dr->getMiddleOfText().y, dr->getMiddleOfText().z,
+                            40, dr->getRadius(),
+                            41, dr->getLineSpacingFactor(),
+                            210, 0.0, 0.0, 1.0
+                        );
+                    }
+                    break;
+                    case RS2::EntityDimDiametric:
+                    {
+                        RS_DimDiametric* dd = (RS_DimDiametric*)e;
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(id)(id)(iddd)]",
+                            0, "DIMENSION",
+                            -1, ename,
+                            330, dd->getParent()->getId(),
+                            5, RS_SCRIPTINGAPI->getEntityHndl(dd->getId()).c_str(),
+                            6, qUtf8Printable(RS_FilterDXFRW::lineTypeToName(pen.getLineType())),
+                            62, RS_FilterDXFRW::colorToNumber(color, &exact_rgb),
+                            48, width < 0 ? 1.0 : double(width) / 100.0,
+                            100, "AcDbEntity",
+                            67, 0,
+                            100, "Model",
+                            8, qUtf8Printable(dd->getLayer()->getName()),
+                            100, "AcDbRadialDimension",
+                            10, dd->getDefinitionPoint().x, dd->getDefinitionPoint().y, dd->getDefinitionPoint().z,
+                            11, dd->getMiddleOfText().x, dd->getMiddleOfText().y, dd->getMiddleOfText().z,
+                            40, dd->getRadius(),
+                            41, dd->getLineSpacingFactor(),
+                            210, 0.0, 0.0, 1.0
+                        );
+
+                    }
+                    break;
+                    case RS2::EntityInsert:
+                    {
+                        RS_Insert* i = (RS_Insert*)e;
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(id)(id)(id)(ii)(ii)(id)(id)(iddd)]",
+                            0, "INSERT",
+                            -1, ename,
+                            330, i->getParent()->getId(),
+                            5, RS_SCRIPTINGAPI->getEntityHndl(i->getId()).c_str(),
+                            6, qUtf8Printable(RS_FilterDXFRW::lineTypeToName(pen.getLineType())),
+                            62, RS_FilterDXFRW::colorToNumber(color, &exact_rgb),
+                            48, width < 0 ? 1.0 : double(width) / 100.0,
+                            100, "AcDbEntity",
+                            67, 0,
+                            100, "Model",
+                            8, qUtf8Printable(i->getLayer()->getName()),
+                            100, "AcDbBlockReference",
+                            10, i->getInsertionPoint().x, i->getInsertionPoint().y, i->getInsertionPoint().z,
+                            41, i->getScale().x,
+                            42, i->getScale().y,
+                            50, i->getRadius(),
+                            70, i->getCols(),
+                            71, i->getRows(),
+                            44, i->getSpacing().y,
+                            45, i->getSpacing().x,
+                            210, 0.0, 0.0, 1.0
+                        );
+                    }
+                    break;
+                    case RS2::EntityMText:
+                    {
+                        RS_MText* t = (RS_MText*)e;
+                        RS_MTextData::MTextDrawingDirection dir = t->getDrawingDirection();
+                        unsigned int dxfDir = 5;
+
+                        switch(dir)
+                        {
+                            case RS_MTextData::MTextDrawingDirection::LeftToRight:
+                                dxfDir = 1;
+                                break;
+                            case RS_MTextData::MTextDrawingDirection::RightToLeft:
+                                dxfDir = 2;
+                                break;
+                            case RS_MTextData::MTextDrawingDirection::TopToBottom:
+                                dxfDir = 3;
+                                break;
+                            default:
+                                dxfDir = 5;
+                        }
+
+                        RS_MTextData::MTextLineSpacingStyle style = t->getLineSpacingStyle();
+                        unsigned int styleDxf = 2;
+
+                        if (style == RS_MTextData::MTextLineSpacingStyle::AtLeast)
+                        {
+                            styleDxf = 1;
+                        }
+
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(id)(id)(ii)(id)(is)(id)(id)(ii)(id)(iddd)]",
+                            0, "MTEXT",
+                            -1, ename,
+                            330, t->getParent()->getId(),
+                            5, RS_SCRIPTINGAPI->getEntityHndl(t->getId()).c_str(),
+                            6, qUtf8Printable(RS_FilterDXFRW::lineTypeToName(pen.getLineType())),
+                            62, RS_FilterDXFRW::colorToNumber(color, &exact_rgb),
+                            48, width < 0 ? 1.0 : double(width) / 100.0,
+                            100, "AcDbEntity",
+                            67, 0,
+                            100, "Model",
+                            8, qUtf8Printable(t->getLayer()->getName()),
+                            100, "AcDbMText",
+                            10, t->getInsertionPoint().x, t->getInsertionPoint().y, t->getInsertionPoint().z,
+                            40, t->getUsedTextHeight(),
+                            41, t->getWidth(),
+                            71, t->getAlignment(),
+                            72, dxfDir,
+                            1, qUtf8Printable(t->getText()),
+                            43, t->getHeight(),
+                            50, t->getAngle(),
+                            73, styleDxf,
+                            44, t->getLineSpacingFactor(),
+                            210, 0.0, 0.0, 1.0
+                        );
+                    }
+                    break;
+                    case RS2::EntityText:
+                    {
+                        RS_Text* t = (RS_Text*)e;
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(id)(is)(id)(is)(iddd)]",
+                            0, "TEXT",
+                            -1, ename,
+                            330, t->getParent()->getId(),
+                            5, RS_SCRIPTINGAPI->getEntityHndl(t->getId()).c_str(),
+                            6, qUtf8Printable(RS_FilterDXFRW::lineTypeToName(pen.getLineType())),
+                            62, RS_FilterDXFRW::colorToNumber(color, &exact_rgb),
+                            48, width < 0 ? 1.0 : double(width) / 100.0,
+                            100, "AcDbEntity",
+                            67, 0,
+                            100, "Model",
+                            8, qUtf8Printable(t->getLayer()->getName()),
+                            100, "AcDbText",
+                            10, t->getInsertionPoint().x, t->getInsertionPoint().y, t->getInsertionPoint().z,
+                            40, t->getUsedTextHeight(),
+                            1, qUtf8Printable(t->getText()),
+                            50, t->getAngle(),
+                            7, qUtf8Printable(t->getStyle()),
+                            210, 0.0, 0.0, 1.0
+                        );
+                    }
+                    break;
+                    case RS2::EntityHatch:
+                    {
+                        RS_Hatch* h = (RS_Hatch*)e;
+                        return h->isSolid() ?
+                        Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(is)(ii)]",
+                            0, "HATCH",
+                            -1, ename,
+                            330, h->getParent()->getId(),
+                            5, RS_SCRIPTINGAPI->getEntityHndl(h->getId()).c_str(),
+                            6, qUtf8Printable(RS_FilterDXFRW::lineTypeToName(pen.getLineType())),
+                            62, RS_FilterDXFRW::colorToNumber(color, &exact_rgb),
+                            48, width < 0 ? 1.0 : double(width) / 100.0,
+                            100, "AcDbEntity",
+                            67, 0,
+                            100, "Model",
+                            8, qUtf8Printable(h->getLayer()->getName()),
+                            100, "AcDbHatch",
+                            10, 0.0, 0.0, 0.0,
+                            210, 0.0, 0.0, 1.0,
+                            2, qUtf8Printable(h->getPattern()),
+                            70, 1
+                        )
+
+                        :Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(is)(id)(id)(ii)]",
+                            0, "HATCH",
+                            -1, ename,
+                            330, h->getParent()->getId(),
+                            5, RS_SCRIPTINGAPI->getEntityHndl(h->getId()).c_str(),
+                            6, qUtf8Printable(RS_FilterDXFRW::lineTypeToName(pen.getLineType())),
+                            62, RS_FilterDXFRW::colorToNumber(color, &exact_rgb),
+                            48, width < 0 ? 1.0 : double(width) / 100.0,
+                            100, "AcDbEntity",
+                            67, 0,
+                            100, "Model",
+                            8, qUtf8Printable(h->getLayer()->getName()),
+                            100, "AcDbHatch",
+                            10, 0.0, 0.0, 0.0,
+                            210, 0.0, 0.0, 1.0,
+                            2, qUtf8Printable(h->getPattern()),
+                            52, h->getAngle(),
+                            41, h->getScale(),
+                            70, 0
+                        );
+
+                    }
+                    break;
+                    case RS2::EntitySolid:
+                    {
+                        RS_Solid* sol = (RS_Solid*)e;
+                        return sol->isTriangle() ?
+                        Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(iddd)(iddd)]",
+                            0, "SOLID",
+                            -1, ename,
+                            330, sol->getParent()->getId(),
+                            5, RS_SCRIPTINGAPI->getEntityHndl(sol->getId()).c_str(),
+                            6, qUtf8Printable(RS_FilterDXFRW::lineTypeToName(pen.getLineType())),
+                            62, RS_FilterDXFRW::colorToNumber(color, &exact_rgb),
+                            48, width < 0 ? 1.0 : double(width) / 100.0,
+                            100, "AcDbEntity",
+                            67, 0,
+                            100, "Model",
+                            8, qUtf8Printable(sol->getLayer()->getName()),
+                            100, "AcDbTrace",
+                            10, sol->getCorner(0).x, sol->getCorner(0).y, sol->getCorner(0).z,
+                            11, sol->getCorner(1).x, sol->getCorner(1).y, sol->getCorner(1).z,
+                            12, sol->getCorner(2).x, sol->getCorner(2).y, sol->getCorner(2).z,
+                            210, 0.0, 0.0, 1.0
+                        )
+
+                        : Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(iddd)(iddd)(iddd)]",
+                            0, "SOLID",
+                            -1, ename,
+                            330, sol->getParent()->getId(),
+                            5, RS_SCRIPTINGAPI->getEntityHndl(sol->getId()).c_str(),
+                            6, qUtf8Printable(RS_FilterDXFRW::lineTypeToName(pen.getLineType())),
+                            62, RS_FilterDXFRW::colorToNumber(color, &exact_rgb),
+                            48, width < 0 ? 1.0 : double(width) / 100.0,
+                            100, "AcDbEntity",
+                            67, 0,
+                            100, "Model",
+                            8, qUtf8Printable(sol->getLayer()->getName()),
+                            100, "AcDbTrace",
+                            10, sol->getCorner(0).x, sol->getCorner(0).y, sol->getCorner(0).z,
+                            11, sol->getCorner(1).x, sol->getCorner(1).y, sol->getCorner(1).z,
+                            12, sol->getCorner(2).x, sol->getCorner(2).y, sol->getCorner(2).z,
+                            13, sol->getCorner(3).x, sol->getCorner(3).y, sol->getCorner(3).z,
+                            210, 0.0, 0.0, 1.0
+                        );
+                    }
+                    break;
+                    case RS2::EntitySpline:
+                    {
+                        RS_Spline* spl = (RS_Spline*)e;
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(ii)(ii)(ii)(ii)(ii)(iddd)]",
+                            0, "SPLINE",
+                            -1, ename,
+                            330, spl->getParent()->getId(),
+                            5, RS_SCRIPTINGAPI->getEntityHndl(spl->getId()).c_str(),
+                            6, qUtf8Printable(RS_FilterDXFRW::lineTypeToName(pen.getLineType())),
+                            62, RS_FilterDXFRW::colorToNumber(color, &exact_rgb),
+                            48, width < 0 ? 1.0 : double(width) / 100.0,
+                            100, "AcDbEntity",
+                            67, 0,
+                            100, "Model",
+                            8, qUtf8Printable(spl->getLayer()->getName()),
+                            100, "AcDbSpline",
+                            spl->isClosed() ? Py_BuildValue("(ii)", 70, 1) : Py_BuildValue("(ii)", 70, 8),
+                            71, spl->getDegree(),
+                            72, spl->getNumberOfKnots(),
+                            73, static_cast<int>(spl->getNumberOfControlPoints()),
+                            74, 0,
+                            210, 0.0, 0.0, 1.0
+                        );
+                    }
+                    break;
+                    case RS2::EntityImage:
+                    {
+                        RS_Image* img = (RS_Image*)e;
+                        RS_VectorSolutions pnts = img->getCorners();
+
+                        PyObject* list = PyList_New(pnts.size() + 23);
+                        PyList_SET_ITEM(list, 0, Py_BuildValue("(is)", 0, "IMAGE"));
+                        PyList_SET_ITEM(list, 1, Py_BuildValue("(is)", -1, ename));
+                        PyList_SET_ITEM(list, 2, Py_BuildValue("(ii)", 330, img->getParent()->getId()));
+                        PyList_SET_ITEM(list, 3, Py_BuildValue("(is)", 5, RS_SCRIPTINGAPI->getEntityHndl(img->getId()).c_str()));
+                        PyList_SET_ITEM(list, 4, Py_BuildValue("(is)", 6, qUtf8Printable(RS_FilterDXFRW::lineTypeToName(pen.getLineType()))));
+                        PyList_SET_ITEM(list, 5, Py_BuildValue("(ii)", 62, RS_FilterDXFRW::colorToNumber(color, &exact_rgb)));
+                        PyList_SET_ITEM(list, 6, width < 0 ? Py_BuildValue("(id)", 48, 1.0) : Py_BuildValue("(id)", 48, double(width) / 100.0));
+                        PyList_SET_ITEM(list, 7, Py_BuildValue("(is)", 100, "AcDbEntity"));
+                        PyList_SET_ITEM(list, 8, Py_BuildValue("(ii)", 67, 0));
+                        PyList_SET_ITEM(list, 9, Py_BuildValue("(is)", 100, "Model"));
+                        PyList_SET_ITEM(list, 10, Py_BuildValue("(is)", 8, qUtf8Printable(img->getLayer()->getName())));
+                        PyList_SET_ITEM(list, 11, Py_BuildValue("(iddd)", 10, img->getInsertionPoint().x, img->getInsertionPoint().y, img->getInsertionPoint().z));
+                        PyList_SET_ITEM(list, 12, Py_BuildValue("(iddd)", 11, img->getUVector().x, img->getUVector().y, img->getUVector().z));
+                        PyList_SET_ITEM(list, 13, Py_BuildValue("(iddd)", 12, img->getVVector().x, img->getVVector().y, img->getVVector().z));
+                        PyList_SET_ITEM(list, 14, Py_BuildValue("(iii)", 13, img->getWidth(), img->getHeight()));
+                        PyList_SET_ITEM(list, 15, Py_BuildValue("(is)", 340, qUtf8Printable(img->getFile())));
+                        PyList_SET_ITEM(list, 16, Py_BuildValue("(ii)", 70, 1));
+                        PyList_SET_ITEM(list, 17, Py_BuildValue("(ii)", 280, 0));
+                        PyList_SET_ITEM(list, 18, Py_BuildValue("(ii)", 281, img->getBrightness()));
+                        PyList_SET_ITEM(list, 19, Py_BuildValue("(ii)", 282, img->getContrast()));
+                        PyList_SET_ITEM(list, 20, Py_BuildValue("(ii)", 283, img->getFade()));
+                        PyList_SET_ITEM(list, 21, Py_BuildValue("(ii)", 71, 1));
+                        int n = 22;
+
+                        for (auto &v : img->getCorners())
+                        {
+                            PyList_SET_ITEM(list, n++, Py_BuildValue("(iddd)", 14, v.x, v.y, v.z));
+                        }
+
+                        PyList_SET_ITEM(list, n++, Py_BuildValue("(iddd)", 210, 0.0, 0.0, 1.0));
+
+                        return list;
+                    }
+                    break;
+                default:
+                    break;
+                }
+
+            }
+        }
+    }
+
+    Py_RETURN_NONE;
+}
