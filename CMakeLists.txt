@@ -41,6 +41,8 @@ find_package(Qt6 REQUIRED COMPONENTS LinguistTools)
 
 find_package(Boost REQUIRED COMPONENTS)
 
+find_package (Python COMPONENTS Interpreter Development)
+
 #set(CMAKE_AUTOMOC ON)
 #set(CMAKE_AUTOUIC OFF)
 #set(CMAKE_AUTORCC ON)
@@ -51,6 +53,8 @@ find_package(Boost REQUIRED COMPONENTS)
 include_directories(${MIN_GW_PATH_PREFIX}\\include\\QtSvg)
 
 include_directories(${Boost_INCLUDE_DIRS})
+
+include_directories(${Python_INCLUDE_DIR})
 
 #include_directories(desktop/res_old/actions)
 #include_directories(desktop/res_old/extui)
