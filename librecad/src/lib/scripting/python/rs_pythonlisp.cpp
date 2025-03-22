@@ -1,7 +1,8 @@
 #include "rs_pythonlisp.h"
 #include "lisp.h"
+#include <string>
 
-//#ifdef DEVELOPER
+#ifdef DEVELOPER
 
 int RS_PythonLisp::RunSimpleString(const char *cmd)
 {
@@ -25,4 +26,4 @@ const char *RS_PythonLisp::EvalSimpleFile(const char *filename)
     return result.c_str();
 }
 
-//#endif // DEVELOPER
+#endif // DEVELOPER

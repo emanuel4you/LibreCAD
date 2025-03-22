@@ -33,6 +33,8 @@ add_compile_definitions(MUPARSER_STATIC)
 add_compile_definitions(LC_VERSION=2.2.2.3-alpha)
 add_compile_definitions(LC_PRERELEASE=true)
 
+add_compile_definitions(DEVELOPER)
+add_compile_definitions(RS_OPT_PYTHON)
 
 find_package(Qt6 COMPONENTS Gui Core Widgets PrintSupport Svg Core5Compat Network REQUIRED)
 find_package(Qt6 REQUIRED COMPONENTS LinguistTools)
@@ -41,7 +43,9 @@ find_package(Qt6 REQUIRED COMPONENTS LinguistTools)
 
 find_package(Boost REQUIRED COMPONENTS)
 
-find_package (Python COMPONENTS Interpreter Development)
+find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
+find_package(SWIG 4.0 COMPONENTS python REQUIRED)
+include (UseSWIG)
 
 #set(CMAKE_AUTOMOC ON)
 #set(CMAKE_AUTOUIC OFF)
@@ -54,7 +58,7 @@ include_directories(${MIN_GW_PATH_PREFIX}\\include\\QtSvg)
 
 include_directories(${Boost_INCLUDE_DIRS})
 
-include_directories(${Python_INCLUDE_DIR})
+include_directories(${Python3_INCLUDE_DIRS})
 
 #include_directories(desktop/res_old/actions)
 #include_directories(desktop/res_old/extui)
@@ -804,6 +808,8 @@ set(SOURCES
         librecad/src/lib/scripting/python/rs_pythongui.h
         librecad/src/lib/scripting/python/rs_pythonlisp.cpp
         librecad/src/lib/scripting/python/rs_pythonlisp.h
+        librecad/src/lib/scripting/rs_dialogs.cpp
+        librecad/src/lib/scripting/rs_dialogs.h
         librecad/src/lib/scripting/rs_lisp.cpp
         librecad/src/lib/scripting/rs_lisp.h
         librecad/src/lib/scripting/rs_python.cpp
@@ -1695,10 +1701,10 @@ if(WIN32)
     target_compile_definitions(librecad PRIVATE _USE_MATH_DEFINES)
 endif(WIN32)
 
+target_link_libraries(librecad PRIVATE Qt6::Core Qt6::Widgets Qt6::Gui Qt6::PrintSupport Qt6::Svg Qt::Network Python3::Python)
 
-
-#add_executable(LibreCAD ${SOURCES})
-target_link_libraries(librecad PRIVATE Qt6::Core Qt6::Widgets Qt6::Gui Qt6::PrintSupport Qt6::Svg Qt::Network)
+#set_property(SOURCE python.i PROPERTY CPLUSPLUS ON)
+#swig_add_library(librepython TYPE MODULE LANGUAGE python SOURCES python.i)
 
 #set_target_properties(librecad PROPERTIES
 #	WIN32_EXECUTABLE ON

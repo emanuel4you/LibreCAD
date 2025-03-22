@@ -343,7 +343,8 @@ void reset_stderr()
 /**
  * extern 'C' Python module librecad
  */
-PyMODINIT_FUNC PyInit__librecad(void);
+//PyMODINIT_FUNC PyInit__librecad(void);
+
 
 /**
  * static instance to class RS_Python
@@ -366,7 +367,7 @@ RS_Python::RS_Python()
 {
     qputenv("PYTHONPATH", QByteArray("."));
 
-    PyImport_AppendInittab("_librecad", PyInit__librecad);
+    //PyImport_AppendInittab("_librecad", PyInit__librecad);
     PyImport_AppendInittab("emb", emb::PyInit_emb);
 
     Py_Initialize();
@@ -374,7 +375,7 @@ RS_Python::RS_Python()
     addSysPath(".");
 
     PyImport_ImportModule("emb");
-    PyImport_ImportModule("_librecad");
+    //PyImport_ImportModule("_librecad");
     m_pGlobalMain = PyImport_AddModule("__main__");
     PyModule_AddStringConstant(globalMain(), "__file__", "");
     m_pGlobalDict = PyModule_GetDict(globalMain());
