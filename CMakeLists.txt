@@ -27,6 +27,11 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
+set(SWIG_FILES_PATH librecad/src)
+set(FILE ${SWIG_FILES_PATH}/python.i)
+set(CMAKE_SWIG_FLAGS ${CMAKE_SWIG_FLAGS} -v -c++ -DDEVELOPER -builtin)
+set(CMAKE_SWIG_FLAGS ${CMAKE_SWIG_FLAGS} -w302,401,402,412,314,509,512,504,325,503,520,350,351,383,389,394,395,404)
+
 add_compile_definitions(DWGSUPPORT)
 add_compile_definitions(MUPARSER_STATIC)
 
@@ -44,8 +49,10 @@ find_package(Qt6 REQUIRED COMPONENTS LinguistTools)
 find_package(Boost REQUIRED COMPONENTS)
 
 find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
-find_package(SWIG 4.0 COMPONENTS python REQUIRED)
+find_package(SWIG 4 COMPONENTS python REQUIRED)
 include (UseSWIG)
+
+
 
 #set(CMAKE_AUTOMOC ON)
 #set(CMAKE_AUTOUIC OFF)
@@ -1701,10 +1708,14 @@ if(WIN32)
     target_compile_definitions(librecad PRIVATE _USE_MATH_DEFINES)
 endif(WIN32)
 
+set_source_files_properties(${FILE} PROPERTIES CPLUSPLUS ON)
+set_source_files_properties(${FILE} PROPERTIES SWIG_FLAGS -builtin)
+swig_add_library(_librecad TYPE USE_BUILD_SHARED_LIBS LANGUAGE python SOURCES ${FILE})
+swig_link_libraries(_librecad Qt6::Core Qt6::Widgets Qt6::Gui Qt6::PrintSupport Qt6::Svg Qt::Network Python3::Python)
+
+#target_link_libraries(librecad PRIVATE Qt6::Core Qt6::Widgets Qt6::Gui Qt6::PrintSupport Qt6::Svg Qt::Network Python3::Python _librecad)
 target_link_libraries(librecad PRIVATE Qt6::Core Qt6::Widgets Qt6::Gui Qt6::PrintSupport Qt6::Svg Qt::Network Python3::Python)
 
-#set_property(SOURCE python.i PROPERTY CPLUSPLUS ON)
-#swig_add_library(librepython TYPE MODULE LANGUAGE python SOURCES python.i)
 
 #set_target_properties(librecad PROPERTIES
 #	WIN32_EXECUTABLE ON
