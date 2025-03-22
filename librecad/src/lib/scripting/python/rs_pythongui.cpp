@@ -186,7 +186,7 @@ PyObject* RS_PythonGui::getFiled(const char *title, const char *def, const char 
                                      def,
                                      ext,
                                      flags,
-                                     filename) ? Py_BuildValue("s", filename) : Py_None;
+                                     filename) ? Py_BuildValue("s", filename.c_str()) : Py_None;
 }
 
 PyObject* RS_PythonGui::getOrient(const char *prompt, const RS_Vector &basePoint) const
