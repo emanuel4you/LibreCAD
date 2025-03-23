@@ -54,7 +54,7 @@ public:
     Plugin_Entity *getSelected(Doc_plugin_interface* d);
 
     int getEntityId();
-    RS_Vector getPoint() {return targetPoint;}
+    RS_Vector getPoint() {return toUCS(targetPoint);}
     bool wasCanceled(){return canceled;}
 
 protected:

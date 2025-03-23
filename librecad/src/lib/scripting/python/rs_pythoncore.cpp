@@ -62,6 +62,39 @@ void RS_PythonCore::command(const char *cmd)
     }
 }
 
+double RS_PythonCore::angle(PyObject *pnt1, PyObject *pnt2) const
+{
+    qDebug() << "[RS_PythonCore::angle] - start";
+
+    double x1, x2, y1, y2;
+
+    PyObject *pPnt1;
+    PyObject *pPnt2;
+
+    if (!PyArg_Parse(pnt1, "O!", &PyTuple_Type, &pPnt1)) {
+        PyErr_SetString(PyExc_TypeError, "point must be a tuple.");
+        return 0.0;
+    }
+
+    if (!PyArg_Parse(pnt2, "O!", &PyTuple_Type, &pPnt2)) {
+        PyErr_SetString(PyExc_TypeError, "point must be a tuple.");
+        return 0.0;
+    }
+
+    if (PyTuple_Size(pPnt1) < 2 || PyTuple_Size(pPnt2) < 2)
+    {
+        PyErr_SetString(PyExc_TypeError, "point must have x and y.");
+        return 0.0;
+    }
+
+    x1 = PyFloat_AsDouble(PyTuple_GetItem(pPnt1, 0));
+    y1 = PyFloat_AsDouble(PyTuple_GetItem(pPnt1, 1));
+    x2 = PyFloat_AsDouble(PyTuple_GetItem(pPnt2, 0));
+    y2 = PyFloat_AsDouble(PyTuple_GetItem(pPnt2, 1));
+
+    return std::atan2(y2 - y1, x2 - x1);
+}
+
 PyObject *RS_PythonCore::assoc(int needle, PyObject *args) const
 {
     qDebug() << "[RS_PythonCore::assoc] - start";
@@ -874,4 +907,37 @@ PyObject *RS_PythonCore::entget(const char *ename) const
     }
 
     Py_RETURN_NONE;
+}
+
+PyObject *RS_PythonCore::polar(PyObject *pnt, double ang, double dist) const
+{
+    PyObject *pPnt;
+    double x, y, z;
+
+    if (!PyArg_Parse(pnt, "O!", &PyTuple_Type, &pPnt)) {
+        PyErr_SetString(PyExc_TypeError, "point must be a tuple.");
+        Py_RETURN_NONE;
+    }
+
+    Py_ssize_t n = PyTuple_Size(pPnt);
+
+    if (n < 2)
+    {
+        PyErr_SetString(PyExc_TypeError, "point must have x and y.");
+        Py_RETURN_NONE;
+    }
+
+    x = PyFloat_AsDouble(PyTuple_GetItem(pPnt, 0));
+    y = PyFloat_AsDouble(PyTuple_GetItem(pPnt, 1));
+
+    if (n > 2)
+    {
+        z = PyFloat_AsDouble(PyTuple_GetItem(pPnt, 2));
+        return Py_BuildValue("(ddd)", x + std::round(dist * std::sin(ang)),
+                                      y + std::round(dist * std::cos(ang)),
+                                      z);
+    }
+
+    return Py_BuildValue("(dd)", x + std::round(dist * std::sin(ang)),
+                                 y + std::round(dist * std::cos(ang)));
 }

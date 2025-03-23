@@ -90,8 +90,7 @@ void QC_ActionGetDist::mouseReleaseEvent(QMouseEvent* e) {
         RS_CoordinateEvent ce(snapPoint(e));
         coordinateEvent(&ce);
         if (pPoints) {
-            distance = std::sqrt(std::pow(pPoints->referencePoint.x - pPoints->targetPoint.x, 2)
-                 + std::pow(pPoints->referencePoint.y - pPoints->targetPoint.y, 2));
+            distance = pPoints->targetPoint.distanceTo(pPoints->referencePoint);
         }
     } else if (e->button()==Qt::RightButton) {
         canceled = true;

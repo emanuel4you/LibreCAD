@@ -52,7 +52,7 @@ public:
     void setMessage(QString msg);
     bool isCompleted(){return completed;}
     bool wasCanceled(){return canceled;}
-    double getRad() { return rad; }
+    double getRad() { return toUCSAngle(rad); }
 protected:
     bool canceled;
     bool completed;

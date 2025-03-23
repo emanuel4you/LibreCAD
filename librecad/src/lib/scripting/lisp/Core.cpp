@@ -629,6 +629,65 @@ BUILTIN("alert")
     return lcl::nilValue();
 }
 
+BUILTIN("angle")
+{
+    CHECK_ARGS_IS(2);
+    ARG(lclSequence, pnt1);
+    ARG(lclSequence, pnt2);
+    double x1, x2, y1, y2;
+
+    CHECK_IS_NUMBER(pnt1->item(0))
+    CHECK_IS_NUMBER(pnt1->item(1))
+    CHECK_IS_NUMBER(pnt2->item(1))
+    CHECK_IS_NUMBER(pnt2->item(1))
+
+    if (pnt1->item(0)->type() == LCLTYPE::INT)
+    {
+        const lclInteger* intX = VALUE_CAST(lclInteger, pnt1->item(0));
+        x1 = double(intX->value());
+    }
+    else
+    {
+        const lclDouble* floatX = VALUE_CAST(lclDouble, pnt1->item(0));
+        x1 = floatX->value();
+    }
+
+    if (pnt1->item(1)->type() == LCLTYPE::INT)
+    {
+        const lclInteger* intY = VALUE_CAST(lclInteger, pnt1->item(1));
+        y1 = double(intY->value());
+    }
+    else
+    {
+        const lclDouble* floatY = VALUE_CAST(lclDouble, pnt1->item(1));
+        y1 = floatY->value();
+    }
+
+    if (pnt2->item(0)->type() == LCLTYPE::INT)
+    {
+        const lclInteger* intX = VALUE_CAST(lclInteger, pnt2->item(0));
+        x2 = double(intX->value());
+    }
+    else
+    {
+        const lclDouble* floatX = VALUE_CAST(lclDouble, pnt2->item(0));
+        x2 = floatX->value();
+    }
+
+    if (pnt2->item(1)->type() == LCLTYPE::INT)
+    {
+        const lclInteger* intY = VALUE_CAST(lclInteger, pnt2->item(1));
+        y2 = double(intY->value());
+    }
+    else
+    {
+        const lclDouble* floatY = VALUE_CAST(lclDouble, pnt2->item(1));
+        y2 = floatY->value();
+    }
+
+    return lcl::ldouble(std::atan2(y2 - y1, x2 - x1));
+}
+
 BUILTIN("apply")
 {
     CHECK_ARGS_AT_LEAST(2);
@@ -4516,6 +4575,7 @@ BUILTIN("polar")
         ADD_INT_VAL(*intAngle)
         angle = double(intAngle->value());
     }
+    argsBegin++;
     if (FLOAT_PTR) {
         ADD_FLOAT_VAL(*floatDist)
         dist = floatDist->value();
@@ -4552,8 +4612,8 @@ BUILTIN("polar")
         }
 
         lclValueVec* items = new lclValueVec(2);
-        items->at(0) = lcl::ldouble(x + dist * sin(angle));
-        items->at(1) = lcl::ldouble(y + dist * cos(angle));
+        items->at(0) = lcl::ldouble(x + dist * std::sin(angle));
+        items->at(1) = lcl::ldouble(y + dist * std::cos(angle));
         return lcl::list(items);
     }
 
@@ -4592,8 +4652,8 @@ BUILTIN("polar")
             z = floatY->value();
         }
         lclValueVec* items = new lclValueVec(3);
-        items->at(0) = lcl::ldouble(x + dist * sin(angle));
-        items->at(1) = lcl::ldouble(y + dist * cos(angle));
+        items->at(0) = lcl::ldouble(x + dist * std::sin(angle));
+        items->at(1) = lcl::ldouble(y + dist * std::cos(angle));
         items->at(2) = lcl::ldouble(z);
         return lcl::list(items);
     }

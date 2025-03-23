@@ -42,6 +42,7 @@ public:
     ~RS_PythonCore() {}
 
     void command(const char *cmd);
+    double angle(PyObject *pnt1, PyObject *pnt2) const;
     PyObject *assoc(int needle, PyObject *args) const;
     PyObject *entlast() const;
     PyObject *entdel(const char *ename) const;
@@ -50,6 +51,7 @@ public:
     PyObject *entmod(PyObject *args) const;
     PyObject *entnext(const char *ename) const;
     PyObject *entsel(const char* prompt = "") const;
+    PyObject *polar(PyObject *pnt, double ang, double dist) const;
 
     RS_Document *getDocument() const;
     RS_Graphic *getGraphic() const;

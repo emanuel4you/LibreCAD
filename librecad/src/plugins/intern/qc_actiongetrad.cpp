@@ -34,6 +34,7 @@
 #include "rs_coordinateevent.h"
 #include "rs_preview.h"
 #include "rs_debug.h"
+#include "rs_math.h"
 
 struct QC_ActionGetRad::Points {
     RS_MoveData data;
@@ -91,8 +92,7 @@ void QC_ActionGetRad::mouseReleaseEvent(QMouseEvent* e) {
         RS_CoordinateEvent ce(snapPoint(e));
         coordinateEvent(&ce);
         if (pPoints) {
-            rad = std::atan2(pPoints->referencePoint.y - pPoints->targetPoint.y,
-                                     pPoints->referencePoint.x - pPoints->targetPoint.x);
+            rad = pPoints->targetPoint.angleTo(pPoints->referencePoint) - M_PI;
         }
     } else if (e->button()==Qt::RightButton) {
         canceled = true;

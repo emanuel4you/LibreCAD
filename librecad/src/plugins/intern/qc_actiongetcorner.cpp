@@ -97,7 +97,7 @@ void QC_ActionGetCorner::mouseMoveEvent(QMouseEvent* e) {
             preview->addSelectionFrom(*container,graphicView->getViewPort());
         }
     } else {
-        pPoints->targetPoint = mouse;
+        pPoints->targetPoint = toUCS(mouse);
     }
 
     RS_DEBUG->print("QC_ActionGetCorner::mouseMoveEvent end");
