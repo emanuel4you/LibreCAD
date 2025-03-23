@@ -130,7 +130,7 @@ int Lisp_Initialize(int argc, char* argv[])
         safeRep(STRF("(load-file %s)", filename.c_str()), replEnv);
         return 0;
     }
-    rep("(println (str \"LibreLisp [\" *host-language* \"]\"))", replEnv);
+    //rep("(println (str \"LibreLisp [\" *host-language* \"]\"))", replEnv);
     return 0;
 }
 

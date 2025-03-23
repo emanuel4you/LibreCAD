@@ -34,7 +34,6 @@
 #include "rs_coordinateevent.h"
 #include "rs_preview.h"
 #include "rs_debug.h"
-#include "rs_math.h"
 
 struct QC_ActionGetRad::Points {
     RS_MoveData data;

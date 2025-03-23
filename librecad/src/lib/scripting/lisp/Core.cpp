@@ -4558,13 +4558,11 @@ BUILTIN("pix_image")
 BUILTIN("polar")
 {
     CHECK_ARGS_IS(3);
-    double angle = 0;
-    double dist = 0;
-    double x = 0;
-    double y = 0;
-    [[maybe_unused]] double z = 0;
-
+    double angle, dist, x, y, z;
     ARG(lclSequence, seq);
+
+    CHECK_IS_NUMBER(seq->item(0))
+    CHECK_IS_NUMBER(seq->item(1))
 
     if (FLOAT_PTR) {
         ADD_FLOAT_VAL(*floatAngle)
@@ -4588,24 +4586,23 @@ BUILTIN("polar")
 
     if(seq->count() == 2)
     {
-        CHECK_IS_NUMBER(seq->item(0))
         if (seq->item(0)->type() == LCLTYPE::INT)
         {
             const lclInteger* intX = VALUE_CAST(lclInteger, seq->item(0));
             x = double(intX->value());
         }
-        if (seq->item(0)->type() == LCLTYPE::REAL)
+        else
         {
             const lclDouble* floatX = VALUE_CAST(lclDouble, seq->item(0));
             x = floatX->value();
         }
-        CHECK_IS_NUMBER(seq->item(1))
+
         if (seq->item(1)->type() == LCLTYPE::INT)
         {
             const lclInteger* intY = VALUE_CAST(lclInteger, seq->item(1));
             y = double(intY->value());
         }
-        if (seq->item(1)->type() == LCLTYPE::REAL)
+        else
         {
             const lclDouble* floatY = VALUE_CAST(lclDouble, seq->item(1));
             y = floatY->value();
@@ -4619,34 +4616,36 @@ BUILTIN("polar")
 
     if(seq->count() == 3)
     {
+        CHECK_IS_NUMBER(seq->item(2))
+
         if (seq->item(0)->type() == LCLTYPE::INT)
         {
             const lclInteger* intX = VALUE_CAST(lclInteger, seq->item(0));
             x = double(intX->value());
         }
-        if (seq->item(0)->type() == LCLTYPE::REAL)
+        else
         {
             const lclDouble* floatX = VALUE_CAST(lclDouble, seq->item(0));
             x = floatX->value();
         }
-        CHECK_IS_NUMBER(seq->item(1))
+
         if (seq->item(1)->type() == LCLTYPE::INT)
         {
             const lclInteger* intY = VALUE_CAST(lclInteger, seq->item(1));
             y = double(intY->value());
         }
-        if (seq->item(1)->type() == LCLTYPE::REAL)
+        else
         {
             const lclDouble* floatY = VALUE_CAST(lclDouble, seq->item(1));
             y = floatY->value();
         }
-        CHECK_IS_NUMBER(seq->item(2))
+
         if (seq->item(2)->type() == LCLTYPE::INT)
         {
             const lclInteger* intY = VALUE_CAST(lclInteger, seq->item(2));
             z = double(intY->value());
         }
-        if (seq->item(2)->type() == LCLTYPE::REAL)
+        else
         {
             const lclDouble* floatY = VALUE_CAST(lclDouble, seq->item(2));
             z = floatY->value();
