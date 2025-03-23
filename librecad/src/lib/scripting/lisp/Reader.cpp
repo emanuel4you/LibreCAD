@@ -88,7 +88,7 @@ bool Tokeniser::matchRegex(const Regex& regex)
     }
 
 #ifdef _MSC_VER
-    ASSERT(match.size() == 1, "Should only have one submatch, not %lu\n",
+    ASSERT(match.size() == 1, "Should only have one submatch, not %llu\n",
                               match.size());
 #else
     ASSERT(match.size() == 1, "Should only have one submatch, not %lu\n",
