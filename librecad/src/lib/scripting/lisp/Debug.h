@@ -33,7 +33,7 @@
     #define TRACE_ENV NOTRACE
 #endif
 
-#define _ASSERT(file, line, condition, ...) \
+#define __ASSERT(file, line, condition, ...) \
     if (!(condition)) { \
         printf("Assertion failed at %s(%d): ", file, line); \
         printf(__VA_ARGS__); \
@@ -42,7 +42,7 @@
 
 
 #define ASSERT(condition, ...) \
-    _ASSERT(__FILE__, __LINE__, condition, __VA_ARGS__)
+    __ASSERT(__FILE__, __LINE__, condition, __VA_ARGS__)
 
 #endif // DEVELOPER
 
