@@ -1710,18 +1710,19 @@ endif(WIN32)
 
 set_source_files_properties(${FILE} PROPERTIES CPLUSPLUS ON)
 set_source_files_properties(${FILE} PROPERTIES SWIG_FLAGS -builtin)
-swig_add_library(_librecad TYPE USE_BUILD_SHARED_LIBS LANGUAGE python SOURCES ${FILE})
-swig_link_libraries(_librecad Qt6::Core Qt6::Widgets Qt6::Gui Qt6::PrintSupport Qt6::Svg Qt::Network Python3::Python)
 
-#target_link_libraries(librecad PRIVATE Qt6::Core Qt6::Widgets Qt6::Gui Qt6::PrintSupport Qt6::Svg Qt::Network Python3::Python _librecad)
-target_link_libraries(librecad PRIVATE Qt6::Core Qt6::Widgets Qt6::Gui Qt6::PrintSupport Qt6::Svg Qt::Network Python3::Python)
+swig_add_library(librepython TYPE USE_BUILD_SHARED_LIBS LANGUAGE python SOURCES ${FILE})
+swig_link_libraries(librepython Qt6::Core Qt6::Widgets Qt6::Gui Python3::Module)
 
+target_link_libraries(librecad PRIVATE Qt6::Core Qt6::Widgets Qt6::Gui Qt6::PrintSupport Qt6::Svg Qt::Network Python3::Python librepython)
+#target_link_libraries(librecad PRIVATE Qt6::Core Qt6::Widgets Qt6::Gui Qt6::PrintSupport Qt6::Svg Qt::Network Python3::Python)
 
 #set_target_properties(librecad PROPERTIES
 #	WIN32_EXECUTABLE ON
 #	MACOSX_BUNDLE ON
 #   AUTOUIC_OPTIONS "--connections string")
 set_property(TARGET librecad PROPERTY AUTOUIC_OPTIONS --connections string)
+set_property(TARGET librepython PROPERTY OUTPUT_NAME librecad)
 
 set(CMAKE_AUTOUIC_OPTIONS --connections string)
 
@@ -1793,6 +1794,7 @@ set(TS_FILES
 
 qt_add_translations(librecad TS_FILE_DIR ${TS_DIR} TS_FILES ${TS_FILES})
 install(TARGETS librecad RUNTIME DESTINATION bin)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/librecad.py DESTINATION bin)
 
 set(PLUGIN_SOURCES
 	../libraries/lciconendine/src/lc_svgiconengineplugin.cpp
