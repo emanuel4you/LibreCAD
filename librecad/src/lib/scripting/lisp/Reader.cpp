@@ -87,8 +87,14 @@ bool Tokeniser::matchRegex(const Regex& regex)
         return false;
     }
 
+#ifdef _MSC_VER
     ASSERT(match.size() == 1, "Should only have one submatch, not %lu\n",
                               match.size());
+#else
+    ASSERT(match.size() == 1, "Should only have one submatch, not %lu\n",
+                              match.size());
+#endif
+
     ASSERT(match.position(0) == 0, "Need to match first character\n");
     ASSERT(match.length(0) > 0, "Need to match a non-empty string\n");
 
