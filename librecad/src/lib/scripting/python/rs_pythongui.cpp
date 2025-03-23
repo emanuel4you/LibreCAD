@@ -28,14 +28,19 @@
 #include "rs_python.h"
 #include "rs_scriptingapi.h"
 
+void RS_PythonGui::initGet(const char *str, int bit)
+{
+    RS_SCRIPTINGAPI->initGet(bit, str);
+}
+
+void RS_PythonGui::prompt(const char *prompt)
+{
+    RS_SCRIPTINGAPI->prompt(Py_CommandEdit, prompt);
+}
+
 void RS_PythonGui::MessageBox(const char *message)
 {
     RS_SCRIPTINGAPI->msgInfo(message);
-}
-
-const std::string RS_PythonGui::OpenFileDialog(const char *title, const char *filename, const char *ext)
-{
-    return RS_SCRIPTINGAPI->getFileNameDlg(title, filename, ext);
 }
 
 int RS_PythonGui::GetIntDialog(const char *prompt)
@@ -48,12 +53,22 @@ double RS_PythonGui::GetDoubleDialog(const char *prompt)
     return RS_SCRIPTINGAPI->getDoubleDlg(prompt);
 }
 
-const std::string RS_PythonGui::GetStringDialog(const char *prompt)
+char RS_PythonGui::readChar()
 {
-    return RS_SCRIPTINGAPI->getStrDlg(prompt);
+    return RS_SCRIPTINGAPI->readChar();
 }
 
-PyObject* RS_PythonGui::acadColorDlg(int color, bool by)
+const char *RS_PythonGui::OpenFileDialog(const char *title, const char *filename, const char *ext)
+{
+    return RS_SCRIPTINGAPI->getFileNameDlg(title, filename, ext).c_str();
+}
+
+const char *RS_PythonGui::GetStringDialog(const char *prompt)
+{
+    return RS_SCRIPTINGAPI->getStrDlg(prompt).c_str();
+}
+
+PyObject* RS_PythonGui::acadColorDlg(int color, bool by) const
 {
     int result;
     return RS_SCRIPTINGAPI->colorDialog(color,
@@ -61,7 +76,7 @@ PyObject* RS_PythonGui::acadColorDlg(int color, bool by)
                                         result) ? Py_BuildValue("i", result) : Py_None;
 }
 
-PyObject* RS_PythonGui::acadTrueColorDlg(PyObject *color, bool allowbylayer, PyObject *byColor)
+PyObject* RS_PythonGui::acadTrueColorDlg(PyObject *color, bool allowbylayer, PyObject *byColor) const
 {
     if (color == Py_None)
     {
@@ -179,7 +194,7 @@ PyObject* RS_PythonGui::getReal(const char *prompt) const
                                     result) ? Py_BuildValue("d", result) : Py_None;
 }
 
-PyObject* RS_PythonGui::getFiled(const char *title, const char *def, const char *ext, int flags)
+PyObject* RS_PythonGui::getFiled(const char *title, const char *def, const char *ext, int flags) const
 {
     std::string filename;
     return RS_SCRIPTINGAPI->getFiled(title,
@@ -198,25 +213,10 @@ PyObject* RS_PythonGui::getOrient(const char *prompt, const RS_Vector &basePoint
                                     radius) ? Py_BuildValue("d", radius) : Py_None;
 }
 
-char RS_PythonGui::readChar()
-{
-    return RS_SCRIPTINGAPI->readChar();
-}
-
-PyObject* RS_PythonGui::getKword(const char *prompt)
+PyObject* RS_PythonGui::getKword(const char *prompt) const
 {
     std::string result;
     return RS_SCRIPTINGAPI->getKeyword(Py_CommandEdit,
                                       prompt,
                                       result) ? Py_BuildValue("s", result.c_str()) : Py_None;
-}
-
-void RS_PythonGui::initGet(const char *str, int bit)
-{
-    RS_SCRIPTINGAPI->initGet(bit, str);
-}
-
-void RS_PythonGui::prompt(const char *prompt)
-{
-    RS_SCRIPTINGAPI->prompt(Py_CommandEdit, prompt);
 }
