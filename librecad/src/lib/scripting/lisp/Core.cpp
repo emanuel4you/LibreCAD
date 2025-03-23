@@ -5974,7 +5974,12 @@ BUILTIN("vl-file-size")
     try {
         [[maybe_unused]] auto size = std::filesystem::file_size(path->value().c_str());
         char str[50];
-        sprintf(str, "%lud", size);
+
+#ifdef _MSC_VER
+        sprintf(str, "%llu", size);
+#else
+        sprintf(str, "%lu", size);
+#endif
         return lcl::string(str);
     }
     catch (std::filesystem::filesystem_error&) {}
