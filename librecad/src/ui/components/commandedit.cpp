@@ -43,12 +43,6 @@
 #include "rs_math.h"
 #include "rs_settings.h"
 
-#include <iostream>
-#include <fstream>
-#include <cstdio>
-#include <stdio.h>
-#include <unistd.h>
-
 //namespace {
 // Limits for command file reading
 // limit for the number of lines read together
