@@ -177,7 +177,9 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
         gc = PyLong_AsLong(pGc);
         qDebug() << "[RS_PythonCore::entmake] i:" << i << "GC:" << gc;
 
-        if(gc == 0)
+        switch (gc)
+        {
+        case 0:
         {
             pType = PyTuple_GetItem(pTuple, 1);
             if(!PyUnicode_Check(pType)) {
@@ -186,6 +188,9 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
             }
             etype = QString::fromUtf8(PyUnicode_AsUTF8(pType));
             qDebug() << "[RS_PythonCore::entmake] ename:" << etype;
+        }
+            break;
+        default:
             break;
         }
     }

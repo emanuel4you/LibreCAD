@@ -1581,6 +1581,91 @@ bool RS_ScriptingApi::actionTile(const char *id, const char *action)
     return false;
 }
 
+bool RS_ScriptingApi::addLayer(const char *name, const RS_Pen &pen, int state)
+{
+    RS_Graphic* graphic = getGraphic();
+    RS_LayerList* layerList = graphic->getLayerList();
+    QString layer_name = name;
+    QString newLayerName;
+
+    if (nullptr != layerList) {
+        newLayerName = layer_name;
+
+        QString sBaseLayerName( layer_name);
+        QString sNumLayerName;
+        int nlen {1};
+        int i {0};
+        QRegularExpression re("^(.*\\D+|)(\\d*)$");
+        QRegularExpressionMatch match( re.match(layer_name));
+        if (match.hasMatch()) {
+            sBaseLayerName = match.captured(1);
+            if( 1 < match.lastCapturedIndex()) {
+                sNumLayerName = match.captured(2);
+                nlen = sNumLayerName.length();
+                i = sNumLayerName.toInt();
+            }
+        }
+
+        while (layerList->find(newLayerName)) {
+            newLayerName = QString("%1%2").arg(sBaseLayerName).arg( ++i, nlen, 10, QChar('0'));
+        }
+
+        RS_Layer *l = new RS_Layer(newLayerName);
+        l->setPen(pen);
+        graphic->addLayer(l);
+        return true;
+    }
+
+    return false;
+}
+
+void RS_ScriptingApi::addLine(double x1, double y1, double z1, double x2, double y2, double z2, const RS_Pen &pen)
+{
+    RS_Graphic* graphic = getGraphic();
+    RS_Line *line  = new RS_Line(graphic, RS_Vector(x1, y1, z1),RS_Vector(x2, y2, z2));
+
+    line->setPen(pen);
+    graphic->addEntity(line);
+}
+
+void RS_ScriptingApi::addCircle(double x, double y, double z, double rad, const RS_Pen &pen)
+{
+    RS_Graphic* graphic = getGraphic();
+    RS_Circle *circle = new RS_Circle(graphic, RS_CircleData(RS_Vector(x, y, z), rad));
+
+    circle->setPen(pen);
+    graphic->addEntity(circle);
+}
+
+void RS_ScriptingApi::addArc(double x, double y, double z, double rad, double ang1, double ang2, const RS_Pen &pen)
+{
+    RS_Graphic* graphic = getGraphic();
+    RS_Arc *arc = new RS_Arc(graphic, RS_ArcData(RS_Vector(x, y, z), rad, ang1, ang2, false));
+    arc->setPen(pen);
+    graphic->addEntity(arc);
+}
+
+void RS_ScriptingApi::addEllipse(double x1, double y1, double z1, double x2, double y2, double z2, double rad, const RS_Pen &pen)
+{
+    RS_Graphic* graphic = getGraphic();
+    RS_EllipseData data;
+    data.center = RS_Vector(x1, y1, z1);
+    data.majorP = RS_Vector(x2, y2, z2);
+    data.ratio = rad;
+    RS_Ellipse *ellipse = new RS_Ellipse(graphic, data);
+    ellipse->setPen(pen);
+    graphic->addEntity(ellipse);
+}
+
+void RS_ScriptingApi::addPoint(double x, double y, double z, const RS_Pen &pen)
+{
+    RS_Graphic* graphic = getGraphic();
+    RS_Point *point = new RS_Point(graphic, RS_PointData(RS_Vector(x, y, z)));
+    point->setPen(pen);
+    graphic->addEntity(point);
+}
+
+
 bool RS_ScriptingApi::getTile(const char *key, std::string &result)
 {
     const lclInteger *dialogId = VALUE_CAST(lclInteger, dclEnv->get("load_dialog_id"));

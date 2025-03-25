@@ -56,6 +56,13 @@ public:
     void initGet(int bit, const char *str);
     void prompt(CommandEdit *cmdline, const char *prompt);
 
+    void addArc(double x, double y, double z, double rad, double ang1, double ang2, const RS_Pen &pen);
+    void addCircle(double x, double y, double z, double rad, const RS_Pen &pen);
+    void addEllipse(double x1, double y1, double z1, double x2, double y2, double z2, double rad, const RS_Pen &pen);
+    void addLine(double x1, double y1, double z1, double x2, double y2, double z2, const RS_Pen &pen);
+    void addPoint(double x, double y, double z, const RS_Pen &pen);
+
+
     const std::string copyright();
     const std::string credits();
     const std::string getEntityName(unsigned int id);
@@ -76,14 +83,15 @@ public:
     const std::string getFileNameDlg(const char *title, const char *filename, const char *ext);
     char readChar();
 
-    bool entdel(unsigned int id);
-    bool entsel(CommandEdit *cmdline, const QString &prompt, unsigned long &id, RS_Vector &point);
     bool actionTile(const char *id, const char *action);
+    bool addLayer(const char *name, const RS_Pen &pen, int state);
     bool addList(const char *val, std::string &result);
     bool colorDialog(int color, bool by, int &res);
     bool dimxTile(const char *key, int &x);
     bool dimyTile(const char *key, int &y);
     bool doneDialog(int res, int &x, int &y);
+    bool entdel(unsigned int id);
+    bool entsel(CommandEdit *cmdline, const QString &prompt, unsigned long &id, RS_Vector &point);
     bool fillImage(int x, int y, int width, int height, int color);
     bool getAttr(const char *key, const char *attr, std::string &result);
     bool modeTile(const char *key, int mode);
