@@ -127,6 +127,7 @@ public:
     void drawPointEntityWCS(const RS_Vector &p);
     void drawRefPointEntityWCS(const RS_Vector &wcsPos, int pdMode, double pdSize);
     void drawSolidWCS(const RS_Vector &wcsP1, const RS_Vector &wcsP2, const RS_Vector &wcsP3, const RS_Vector &wcsP4);
+    void drawSolidWCS(const RS_VectorSolutions& wcsVertices);
 
     void drawArcWCS(const RS_Vector &wcsCenter, double wcsRadius, double wcsStartAngleDegrees, double angularLength);
     void drawSplineWCS(const RS_Spline &spline);
@@ -138,14 +139,14 @@ public:
     // drawing in screen coordinates
     void drawCircleUI(const RS_Vector& uiCenter, double uiRadius);
     // just draws circle without trying to use any interpolations, used by overlays etc...
-    void drawCircleUIDirect(double uiCenterX, double uiCenterY, double uiRadius);
+    void drawCircleUIDirect(const RS_Vector& uiPos, double uiRadius);
     void drawCircleUI(double uiCenterX, double uiCenterY, double uiRadius);
     void drawLineUISimple(const double &x1, const double &y1, const double &x2, const double &y2);
     void drawLineUISimple(const RS_Vector &p1, const RS_Vector &p2);
     void drawText(const QRect &uiRect, int flags, const QString &text, QRect *uiBoundingBox);
     void drawText(const QRect &rect, const QString &text, QRect *boundingBox);
     void drawRectUI(const double uiX1, const double uiY1, const double uiX2, const double uiY2);
-    void drawPointEntityUI(double uiX, double uiY, int pdmode, int pdsize);
+    void drawPointEntityUI(const RS_Vector& uiPos, int pdmode, int pdsize);
 
     // methods invoked from entity containers and printing
     void drawEntity(RS_Entity* entity);
@@ -176,6 +177,7 @@ public:
     void fillRect ( const QRectF & rectangle, const RS_Color & color );
     void fillRect ( const QRectF & rectangle, const QBrush & brush );
 
+    void fillPolygonUI(const QPolygonF& polygon);
     void fillTriangleUI(const RS_Vector& uiP1,const RS_Vector& uiP2,const RS_Vector& uiP3);
     void fillTriangleUI(double uiX1, double uiY1, double uiX2, double uiY2, double uiX3, double uiY3);
 
