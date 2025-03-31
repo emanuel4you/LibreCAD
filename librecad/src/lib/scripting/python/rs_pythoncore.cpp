@@ -453,10 +453,78 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
 
     if (etype == "")
         Py_RETURN_NONE;
+
+    RS_Graphic* graphic = RS_SCRIPTINGAPI->getGraphic();
+
+    if (graphic) {
+        if (etype == "LAYER" && layer != "")
+        {
+            return RS_SCRIPTINGAPI->addLayer(layer.c_str(), pen, layerstate) ? args : Py_None;
+        }
+
+        else if (etype == "LINE" && !gc_ten.empty() && !gc_eleven.empty())
+        {
+            RS_SCRIPTINGAPI->addLine(gc_ten.at(0).at(0),
+                                     gc_ten.at(0).at(1),
+                                     gc_ten.at(0).at(2),
+                                     gc_eleven.at(0).at(0),
+                                     gc_eleven.at(0).at(1),
+                                     gc_eleven.at(0).at(2),
+                                     pen);
+        }
+
+        else if (etype == "CIRCLE" && !gc_ten.empty() && rad1 != 0.0)
+        {
+            RS_SCRIPTINGAPI->addCircle(gc_ten.at(0).at(0),
+                                       gc_ten.at(0).at(1),
+                                       gc_ten.at(0).at(2),
+                                       rad1,
+                                       pen);
+        }
+
+        else if (etype == "ARC" && !gc_ten.empty())
+        {
+            RS_SCRIPTINGAPI->addArc(gc_ten.at(0).at(0),
+                                    gc_ten.at(0).at(1),
+                                    gc_ten.at(0).at(2),
+                                    rad1,
+                                    ang1,
+                                    ang2,
+                                    pen);
+        }
+
+        else if (etype == "ELLIPSE" && !gc_ten.empty() && !gc_eleven.empty())
+        {
+            RS_SCRIPTINGAPI->addEllipse(gc_ten.at(0).at(0),
+                                        gc_ten.at(0).at(1),
+                                        gc_ten.at(0).at(2),
+                                        gc_eleven.at(0).at(0),
+                                        gc_eleven.at(0).at(1),
+                                        gc_eleven.at(0).at(2),
+                                        rad1,
+                                        pen);
+        }
+
+        else if (etype == "POINT" && !gc_ten.empty())
+        {
+            RS_SCRIPTINGAPI->addPoint(gc_ten.at(0).at(0),
+                                      gc_ten.at(0).at(1),
+                                      gc_ten.at(0).at(2),
+                                      pen);
+        }
+
+        else
+        {
+            Py_RETURN_NONE;
+        }
 #if 0
-    RS_EntityContainer* entityContainer = RS_SCRIPTINGAPI->getContainer();
+        RS_GraphicView* v = appWin->getGraphicView();
+        if (v) {
+            v->redraw();
+        }
 #endif
-    qDebug() << "[RS_PythonCore::entmake] - end";
+        return entget(RS_SCRIPTINGAPI->getEntityName(RS_SCRIPTINGAPI->entlast()).c_str());
+    }
 
     Py_RETURN_NONE;
 }
