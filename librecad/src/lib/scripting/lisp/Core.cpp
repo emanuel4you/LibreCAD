@@ -2528,6 +2528,7 @@ BUILTIN("entmake")
     std::vector<std::vector<double>> gc_eleven;
 
     String etype = "";
+    String block = "";
     String text = "";
     String style = "";
     String layer = "";
@@ -2571,7 +2572,7 @@ BUILTIN("entmake")
                 }
 
                 const lclString *l = VALUE_CAST(lclString, list->item(2));
-                layer = l->value();
+                block = l->value();
             }
                 break;
             case 6:

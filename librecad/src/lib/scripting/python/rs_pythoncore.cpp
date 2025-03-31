@@ -156,11 +156,34 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
         Py_RETURN_NONE;
     }
 
+    int layerstate = 0;
+    double rad1 = 0.0;
+    double rad2 = 0.0;
+    double rad3 = 0.0;
+    double ang1 = 0.0;
+    double ang2 = 0.0;
+    double scale1 = 1.0;
+    double scale2 = 1.0;
+
+    Q_UNUSED(rad2)
+    Q_UNUSED(rad3)
+    Q_UNUSED(scale1)
+    Q_UNUSED(scale2)
+
+    std::vector<std::vector<double>> gc_ten;
+    std::vector<std::vector<double>> gc_eleven;
+
+    std::string etype = "";
+    std::string block = "";
+    std::string text = "";
+    std::string style = "";
+    std::string layer = "";
+    RS_Pen pen;
+
     int gc;
-    QString etype;
     PyObject *pTuple;
     PyObject *pGc;
-    PyObject *pType;
+    PyObject *pValue;
     Py_ssize_t n = PyList_Size(pList);
 
     for (int i=0; i<n; i++) {
@@ -181,15 +204,248 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
         {
         case 0:
         {
-            pType = PyTuple_GetItem(pTuple, 1);
-            if(!PyUnicode_Check(pType)) {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyUnicode_Check(pValue)) {
                 PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
                 Py_RETURN_NONE;
             }
-            etype = QString::fromUtf8(PyUnicode_AsUTF8(pType));
+            etype = PyUnicode_AsUTF8(pValue);
             qDebug() << "[RS_PythonCore::entmake] ename:" << etype;
         }
             break;
+        case 1:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyUnicode_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
+                Py_RETURN_NONE;
+            }
+            text = PyUnicode_AsUTF8(pValue);
+        }
+        break;
+        case 2:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyUnicode_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
+                Py_RETURN_NONE;
+            }
+            block = PyUnicode_AsUTF8(pValue);
+        }
+        break;
+        case 6:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyUnicode_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
+                Py_RETURN_NONE;
+            }
+
+            pen.setLineType(RS_FilterDXFRW::nameToLineType(PyUnicode_AsUTF8(pValue)));
+        }
+        break;
+        case 7:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyUnicode_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
+                Py_RETURN_NONE;
+            }
+            style = PyUnicode_AsUTF8(pValue);
+        }
+        break;
+        case 8:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyUnicode_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
+                Py_RETURN_NONE;
+            }
+            layer = PyUnicode_AsUTF8(pValue);
+        }
+        break;
+        case 10:
+        {
+            double xVal;
+            double yVal;
+            double zVal = 0.0;
+
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                Py_RETURN_NONE;
+            }
+
+            xVal = PyFloat_AsDouble(pValue);
+
+            pValue = PyTuple_GetItem(pTuple, 2);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                Py_RETURN_NONE;
+            }
+
+            yVal = PyFloat_AsDouble(pValue);
+
+            if (PyTuple_Size(pTuple) > 3)
+            {
+                pValue = PyTuple_GetItem(pTuple, 3);
+                if(!PyFloat_Check(pValue)) {
+                    PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                    Py_RETURN_NONE;
+                }
+                zVal = PyFloat_AsDouble(pValue);
+            }
+            gc_ten.push_back({ xVal, yVal, zVal });
+        }
+        break;
+        case 11:
+        {
+            double xVal;
+            double yVal;
+            double zVal = 0.0;
+
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                Py_RETURN_NONE;
+            }
+
+            xVal = PyFloat_AsDouble(pValue);
+
+            pValue = PyTuple_GetItem(pTuple, 2);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                Py_RETURN_NONE;
+            }
+
+            yVal = PyFloat_AsDouble(pValue);
+
+            if (PyTuple_Size(pTuple) > 3)
+            {
+                pValue = PyTuple_GetItem(pTuple, 3);
+                if(!PyFloat_Check(pValue)) {
+                    PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                    Py_RETURN_NONE;
+                }
+                zVal = PyFloat_AsDouble(pValue);
+            }
+            gc_eleven.push_back({ xVal, yVal, zVal });
+        }
+        break;
+        case 40:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                Py_RETURN_NONE;
+            }
+            rad1 = PyFloat_AsDouble(pValue);
+            //rad1 = PyFloat_AsDouble(PyTuple_GetItem(pTuple, 1));
+        }
+        break;
+        case 41:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                Py_RETURN_NONE;
+            }
+            rad2 = PyFloat_AsDouble(pValue);
+        }
+        break;
+        case 42:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                Py_RETURN_NONE;
+            }
+            rad3 = PyFloat_AsDouble(pValue);
+        }
+        break;
+        case 44:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                Py_RETURN_NONE;
+            }
+            scale1 = PyFloat_AsDouble(pValue);
+        }
+        break;
+        case 45:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                Py_RETURN_NONE;
+            }
+            scale2 = PyFloat_AsDouble(pValue);
+        }
+        break;
+        case 48:
+        {
+            int width = 0;
+            pValue = PyTuple_GetItem(pTuple, 1);
+
+            if(PyFloat_Check(pValue))
+            {
+                width = static_cast<int>(PyFloat_AsDouble(pValue));
+            }
+
+            else if(PyLong_Check(pValue))
+            {
+                width = PyFloat_AsDouble(pValue);
+            }
+
+            if (width >= 0)
+            {
+                width *= 100;
+            }
+
+            pen.setWidth(RS2::intToLineWidth(width));
+        }
+        break;
+        case 50:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                Py_RETURN_NONE;
+            }
+            ang1 = PyFloat_AsDouble(pValue);
+        }
+        break;
+        case 51:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                Py_RETURN_NONE;
+            }
+            ang2 = PyFloat_AsDouble(pValue);
+        }
+        break;
+        case 62:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyLong_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
+                Py_RETURN_NONE;
+            }
+            pen.setColor(RS_FilterDXFRW::numberToColor(PyLong_AsLong(pValue)));
+        }
+        break;
+        case 70:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyLong_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
+                Py_RETURN_NONE;
+            }
+            layerstate = PyLong_AsLong(pValue);
+        }
+        break;
         default:
             break;
         }
