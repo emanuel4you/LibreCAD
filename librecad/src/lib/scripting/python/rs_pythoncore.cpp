@@ -210,7 +210,7 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
                 Py_RETURN_NONE;
             }
             etype = PyUnicode_AsUTF8(pValue);
-            qDebug() << "[RS_PythonCore::entmake] ename:" << etype;
+            qDebug() << "[RS_PythonCore::entmake] ename:" << etype.c_str();
         }
             break;
         case 1:
