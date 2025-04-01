@@ -156,29 +156,7 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
         Py_RETURN_NONE;
     }
 
-    int layerstate = 0;
-    double rad1 = 0.0;
-    double rad2 = 0.0;
-    double rad3 = 0.0;
-    double ang1 = 0.0;
-    double ang2 = 0.0;
-    double scale1 = 1.0;
-    double scale2 = 1.0;
-
-    Q_UNUSED(rad2)
-    Q_UNUSED(rad3)
-    Q_UNUSED(scale1)
-    Q_UNUSED(scale2)
-
-    std::vector<std::vector<double>> gc_ten;
-    std::vector<std::vector<double>> gc_eleven;
-
-    std::string etype = "";
-    std::string block = "";
-    std::string text = "";
-    std::string style = "";
-    std::string layer = "";
-    RS_Pen pen;
+    RS_ScriptingApiData apiData;
 
     int gc;
     PyObject *pTuple;
@@ -209,8 +187,7 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
                 PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
                 Py_RETURN_NONE;
             }
-            etype = PyUnicode_AsUTF8(pValue);
-            qDebug() << "[RS_PythonCore::entmake] ename:" << etype.c_str();
+            apiData.etype = PyUnicode_AsUTF8(pValue);
         }
             break;
         case 1:
@@ -220,7 +197,7 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
                 PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
                 Py_RETURN_NONE;
             }
-            text = PyUnicode_AsUTF8(pValue);
+            apiData.text = PyUnicode_AsUTF8(pValue);
         }
         break;
         case 2:
@@ -230,7 +207,7 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
                 PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
                 Py_RETURN_NONE;
             }
-            block = PyUnicode_AsUTF8(pValue);
+            apiData.block = PyUnicode_AsUTF8(pValue);
         }
         break;
         case 6:
@@ -241,7 +218,7 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
                 Py_RETURN_NONE;
             }
 
-            pen.setLineType(RS_FilterDXFRW::nameToLineType(PyUnicode_AsUTF8(pValue)));
+            apiData.pen.setLineType(RS_FilterDXFRW::nameToLineType(PyUnicode_AsUTF8(pValue)));
         }
         break;
         case 7:
@@ -251,7 +228,7 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
                 PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
                 Py_RETURN_NONE;
             }
-            style = PyUnicode_AsUTF8(pValue);
+            apiData.style = PyUnicode_AsUTF8(pValue);
         }
         break;
         case 8:
@@ -261,7 +238,7 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
                 PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
                 Py_RETURN_NONE;
             }
-            layer = PyUnicode_AsUTF8(pValue);
+            apiData.layer = PyUnicode_AsUTF8(pValue);
         }
         break;
         case 10:
@@ -295,7 +272,7 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
                 }
                 zVal = PyFloat_AsDouble(pValue);
             }
-            gc_ten.push_back({ xVal, yVal, zVal });
+            apiData.gc_10.push_back({ xVal, yVal, zVal });
         }
         break;
         case 11:
@@ -329,7 +306,7 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
                 }
                 zVal = PyFloat_AsDouble(pValue);
             }
-            gc_eleven.push_back({ xVal, yVal, zVal });
+            apiData.gc_11.push_back({ xVal, yVal, zVal });
         }
         break;
         case 40:
@@ -339,8 +316,7 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
                 PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
                 Py_RETURN_NONE;
             }
-            rad1 = PyFloat_AsDouble(pValue);
-            //rad1 = PyFloat_AsDouble(PyTuple_GetItem(pTuple, 1));
+            apiData.gc_40.push_back({ PyFloat_AsDouble(pValue) });
         }
         break;
         case 41:
@@ -350,7 +326,7 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
                 PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
                 Py_RETURN_NONE;
             }
-            rad2 = PyFloat_AsDouble(pValue);
+            apiData.gc_41.push_back({ PyFloat_AsDouble(pValue) });
         }
         break;
         case 42:
@@ -360,7 +336,7 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
                 PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
                 Py_RETURN_NONE;
             }
-            rad3 = PyFloat_AsDouble(pValue);
+            apiData.gc_42.push_back({ PyFloat_AsDouble(pValue) });
         }
         break;
         case 44:
@@ -370,7 +346,7 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
                 PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
                 Py_RETURN_NONE;
             }
-            scale1 = PyFloat_AsDouble(pValue);
+            apiData.gc_44 = PyFloat_AsDouble(pValue);
         }
         break;
         case 45:
@@ -380,7 +356,7 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
                 PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
                 Py_RETURN_NONE;
             }
-            scale2 = PyFloat_AsDouble(pValue);
+            apiData.gc_45 = PyFloat_AsDouble(pValue);
         }
         break;
         case 48:
@@ -403,7 +379,7 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
                 width *= 100;
             }
 
-            pen.setWidth(RS2::intToLineWidth(width));
+            apiData.pen.setWidth(RS2::intToLineWidth(width));
         }
         break;
         case 50:
@@ -413,7 +389,7 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
                 PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
                 Py_RETURN_NONE;
             }
-            ang1 = PyFloat_AsDouble(pValue);
+            apiData.gc_50.push_back({ PyFloat_AsDouble(pValue) });
         }
         break;
         case 51:
@@ -423,7 +399,7 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
                 PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
                 Py_RETURN_NONE;
             }
-            ang2 = PyFloat_AsDouble(pValue);
+            apiData.gc_51.push_back({ PyFloat_AsDouble(pValue) });
         }
         break;
         case 62:
@@ -433,7 +409,7 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
                 PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
                 Py_RETURN_NONE;
             }
-            pen.setColor(RS_FilterDXFRW::numberToColor(PyLong_AsLong(pValue)));
+            apiData.pen.setColor(RS_FilterDXFRW::numberToColor(PyLong_AsLong(pValue)));
         }
         break;
         case 70:
@@ -443,7 +419,37 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
                 PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
                 Py_RETURN_NONE;
             }
-            layerstate = PyLong_AsLong(pValue);
+            apiData.gc_70 = PyLong_AsLong(pValue);
+        }
+        break;
+        case 71:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyLong_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
+                Py_RETURN_NONE;
+            }
+            apiData.gc_71 = PyLong_AsLong(pValue);
+        }
+        break;
+        case 72:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyLong_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
+                Py_RETURN_NONE;
+            }
+            apiData.gc_72 = PyLong_AsLong(pValue);
+        }
+        break;
+        case 73:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyLong_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
+                Py_RETURN_NONE;
+            }
+            apiData.gc_73 = PyLong_AsLong(pValue);
         }
         break;
         default:
@@ -451,78 +457,13 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
         }
     }
 
-    if (etype == "")
+    if (apiData.etype == "")
+    {
         Py_RETURN_NONE;
+    }
 
-    RS_Graphic* graphic = RS_SCRIPTINGAPI->getGraphic();
-
-    if (graphic) {
-        if (etype == "LAYER" && layer != "")
-        {
-            return RS_SCRIPTINGAPI->addLayer(layer.c_str(), pen, layerstate) ? args : Py_None;
-        }
-
-        else if (etype == "LINE" && !gc_ten.empty() && !gc_eleven.empty())
-        {
-            RS_SCRIPTINGAPI->addLine(gc_ten.at(0).at(0),
-                                     gc_ten.at(0).at(1),
-                                     gc_ten.at(0).at(2),
-                                     gc_eleven.at(0).at(0),
-                                     gc_eleven.at(0).at(1),
-                                     gc_eleven.at(0).at(2),
-                                     pen);
-        }
-
-        else if (etype == "CIRCLE" && !gc_ten.empty() && rad1 != 0.0)
-        {
-            RS_SCRIPTINGAPI->addCircle(gc_ten.at(0).at(0),
-                                       gc_ten.at(0).at(1),
-                                       gc_ten.at(0).at(2),
-                                       rad1,
-                                       pen);
-        }
-
-        else if (etype == "ARC" && !gc_ten.empty())
-        {
-            RS_SCRIPTINGAPI->addArc(gc_ten.at(0).at(0),
-                                    gc_ten.at(0).at(1),
-                                    gc_ten.at(0).at(2),
-                                    rad1,
-                                    ang1,
-                                    ang2,
-                                    pen);
-        }
-
-        else if (etype == "ELLIPSE" && !gc_ten.empty() && !gc_eleven.empty())
-        {
-            RS_SCRIPTINGAPI->addEllipse(gc_ten.at(0).at(0),
-                                        gc_ten.at(0).at(1),
-                                        gc_ten.at(0).at(2),
-                                        gc_eleven.at(0).at(0),
-                                        gc_eleven.at(0).at(1),
-                                        gc_eleven.at(0).at(2),
-                                        rad1,
-                                        pen);
-        }
-
-        else if (etype == "POINT" && !gc_ten.empty())
-        {
-            RS_SCRIPTINGAPI->addPoint(gc_ten.at(0).at(0),
-                                      gc_ten.at(0).at(1),
-                                      gc_ten.at(0).at(2),
-                                      pen);
-        }
-
-        else
-        {
-            Py_RETURN_NONE;
-        }
-#if 0
-        RS_GraphicView* v = appWin->getGraphicView();
-        if (v) {
-            v->redraw();
-        }
-#endif
+    if (RS_SCRIPTINGAPI->entmake(apiData))
+    {
         return entget(RS_SCRIPTINGAPI->getEntityName(RS_SCRIPTINGAPI->entlast()).c_str());
     }
 

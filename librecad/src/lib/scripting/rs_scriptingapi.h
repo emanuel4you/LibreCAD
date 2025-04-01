@@ -37,8 +37,46 @@
 #include <QLineEdit>
 
 #include "commandedit.h"
+#include "document_interface.h"
 
 #define RS_SCRIPTINGAPI RS_ScriptingApi::instance()
+
+class RS_ScriptingApiData
+{
+public:
+    RS_ScriptingApiData()
+    {
+        gc_70 = gc_71 = gc_72 = gc_73 = 0;
+        gc_44 = gc_45 = 0.0;
+        etype = block = text = style = layer = "";
+    }
+
+    ~RS_ScriptingApiData() {}
+public:
+    int gc_70;
+    int gc_71;
+    int gc_72;
+    int gc_73;
+    double gc_44;
+    double gc_45;
+
+    QString etype;
+    QString block;
+    QString text;
+    QString style;
+    QString layer;
+
+    std::vector<std::vector<double>> gc_10;
+    std::vector<std::vector<double>> gc_11;
+
+    std::vector<double> gc_40;
+    std::vector<double> gc_41;
+    std::vector<double> gc_42;
+    std::vector<double> gc_50;
+    std::vector<double> gc_51;
+
+    RS_Pen pen;
+};
 
 class RS_ScriptingApi
 {
@@ -61,7 +99,9 @@ public:
     void addEllipse(double x1, double y1, double z1, double x2, double y2, double z2, double rad, const RS_Pen &pen);
     void addLine(double x1, double y1, double z1, double x2, double y2, double z2, const RS_Pen &pen);
     void addPoint(double x, double y, double z, const RS_Pen &pen);
-
+    void addLwPolyline(std::vector<Plug_VertexData> const& points, bool closed, const RS_Pen &pen);
+    //void addSpline(std::vector<std::vector<double>> vertex, const RS_Pen &pen);
+    void addText(const RS_Vector &v1, double height, double width, double angle, int valign, int halign, int generation, const QString &txt, const QString &style, const RS_Pen &pen);
 
     const std::string copyright();
     const std::string credits();
@@ -92,6 +132,7 @@ public:
     bool doneDialog(int res, int &x, int &y);
     bool entdel(unsigned int id);
     bool entsel(CommandEdit *cmdline, const QString &prompt, unsigned long &id, RS_Vector &point);
+    bool entmake(const RS_ScriptingApiData &apiData);
     bool fillImage(int x, int y, int width, int height, int color);
     bool getAttr(const char *key, const char *attr, std::string &result);
     bool modeTile(const char *key, int mode);
@@ -116,7 +157,9 @@ public:
     RS_Vector getPoint(CommandEdit *cmdline, const char *msg, const RS_Vector basePoint) const;
 
     RS_EntityContainer* getContainer() const;
+    RS_Document* getDocument() const;
     RS_Graphic *getGraphic() const;
+    RS_GraphicView* getGraphicView() const;
 
 private:
     RS_ScriptingApi() {}

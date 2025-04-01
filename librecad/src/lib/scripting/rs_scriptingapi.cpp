@@ -298,9 +298,8 @@ RS_Vector RS_ScriptingApi::getCorner(CommandEdit *cmdline, const char *msg, cons
         prompt = msg;
     }
 
-    auto& appWin = QC_ApplicationWindow::getAppWindow();
-    RS_Document* doc = appWin->getDocument();
-    RS_GraphicView* graphicView = appWin->getGraphicView();
+    RS_Document* doc = getDocument();
+    RS_GraphicView* graphicView = getGraphicView();
 
     if (graphicView == nullptr || graphicView->getGraphic() == nullptr)
     {
@@ -376,9 +375,8 @@ RS_Vector RS_ScriptingApi::getPoint(CommandEdit *cmdline, const char *msg, const
         prompt = msg;
     }
 
-    auto& appWin = QC_ApplicationWindow::getAppWindow();
-    RS_Document* doc = appWin->getDocument();
-    RS_GraphicView* graphicView = appWin->getGraphicView();
+    RS_Document* doc = getDocument();
+    RS_GraphicView* graphicView = getGraphicView();
 
     if (graphicView == nullptr || graphicView->getGraphic() == nullptr)
     {
@@ -459,9 +457,8 @@ bool RS_ScriptingApi::getDist(CommandEdit *cmdline, const char *msg, const RS_Ve
     RS_Vector start = basePoint;
     bool finished = false;
 
-    auto& appWin = QC_ApplicationWindow::getAppWindow();
-    RS_Document* doc = appWin->getDocument();
-    RS_GraphicView* graphicView = appWin->getGraphicView();
+    RS_Document* doc = getDocument();
+    RS_GraphicView* graphicView = getGraphicView();
 
     if (graphicView == nullptr || graphicView->getGraphic() == nullptr)
     {
@@ -615,9 +612,8 @@ bool RS_ScriptingApi::getOrient(CommandEdit *cmdline, const char *msg, const RS_
     RS_Vector start = basePoint;
     bool finished = false;
 
-    auto& appWin = QC_ApplicationWindow::getAppWindow();
-    RS_Document* doc = appWin->getDocument();
-    RS_GraphicView* graphicView = appWin->getGraphicView();
+    RS_Document* doc = getDocument();
+    RS_GraphicView* graphicView = getGraphicView();
 
     if (graphicView == nullptr || graphicView->getGraphic() == nullptr)
     {
@@ -971,10 +967,9 @@ bool RS_ScriptingApi::trueColorDialog(int &tres, int &res, int tcolor, int color
 
 bool RS_ScriptingApi::entdel(unsigned int id)
 {
-    auto& appWin = QC_ApplicationWindow::getAppWindow();
-    RS_Document* doc = appWin->getDocument();
-    RS_GraphicView* graphicView = appWin->getGraphicView();
-    RS_EntityContainer* entityContainer = graphicView->getContainer();
+    RS_Document* doc = getDocument();
+    RS_GraphicView* graphicView = getGraphicView();
+    RS_EntityContainer* entityContainer = getContainer();
     LC_UndoSection undo(doc, graphicView->getViewPort());
 
     if(entityContainer->count())
@@ -996,15 +991,12 @@ bool RS_ScriptingApi::entdel(unsigned int id)
 
 unsigned int RS_ScriptingApi::entlast()
 {
-    auto& appWin = QC_ApplicationWindow::getAppWindow();
-    RS_GraphicView* graphicView = appWin->getGraphicView();
-    RS_EntityContainer* entityContainer = graphicView->getContainer();
+    RS_EntityContainer* entityContainer = getContainer();
     unsigned int id = 0;
 
     if(entityContainer->count())
     {
         for (auto e: *entityContainer)
-
         {
             switch(e->rtti())
             {
@@ -1146,9 +1138,8 @@ unsigned int RS_ScriptingApi::entlast()
 
 unsigned int RS_ScriptingApi::entnext(unsigned int current)
 {
-    auto& appWin = QC_ApplicationWindow::getAppWindow();
-    RS_GraphicView* graphicView = appWin->getGraphicView();
-    RS_EntityContainer* entityContainer = graphicView->getContainer();
+    RS_GraphicView* graphicView = getGraphicView();
+    RS_EntityContainer* entityContainer = getContainer();
     unsigned int maxId = 0;
     unsigned int id = 0;
 
@@ -1202,9 +1193,8 @@ bool RS_ScriptingApi::entsel(CommandEdit *cmdline, const QString &prompt, unsign
         prom = prompt;
     }
 
-    auto& appWin = QC_ApplicationWindow::getAppWindow();
-    RS_Document* doc = appWin->getDocument();
-    RS_GraphicView* graphicView = appWin->getGraphicView();
+    RS_Document* doc = getDocument();
+    RS_GraphicView* graphicView = getGraphicView();
 
     if (graphicView == nullptr || graphicView->getGraphic() == nullptr)
     {
@@ -1612,6 +1602,22 @@ bool RS_ScriptingApi::addLayer(const char *name, const RS_Pen &pen, int state)
 
         RS_Layer *l = new RS_Layer(newLayerName);
         l->setPen(pen);
+
+        if(state & 1)
+        {
+            l->freeze(true);
+        }
+
+        if(state & 2)
+        {
+            l->freeze(true);
+        }
+
+        if(state & 4)
+        {
+            l->lock(true);
+        }
+
         graphic->addLayer(l);
         return true;
     }
@@ -1626,6 +1632,9 @@ void RS_ScriptingApi::addLine(double x1, double y1, double z1, double x2, double
 
     line->setPen(pen);
     graphic->addEntity(line);
+
+    LC_UndoSection undo(getDocument(), getGraphicView()->getViewPort());
+    undo.addUndoable(line);
 }
 
 void RS_ScriptingApi::addCircle(double x, double y, double z, double rad, const RS_Pen &pen)
@@ -1635,6 +1644,9 @@ void RS_ScriptingApi::addCircle(double x, double y, double z, double rad, const 
 
     circle->setPen(pen);
     graphic->addEntity(circle);
+
+    LC_UndoSection undo(getDocument(), getGraphicView()->getViewPort());
+    undo.addUndoable(circle);
 }
 
 void RS_ScriptingApi::addArc(double x, double y, double z, double rad, double ang1, double ang2, const RS_Pen &pen)
@@ -1643,6 +1655,9 @@ void RS_ScriptingApi::addArc(double x, double y, double z, double rad, double an
     RS_Arc *arc = new RS_Arc(graphic, RS_ArcData(RS_Vector(x, y, z), rad, ang1, ang2, false));
     arc->setPen(pen);
     graphic->addEntity(arc);
+
+    LC_UndoSection undo(getDocument(), getGraphicView()->getViewPort());
+    undo.addUndoable(arc);
 }
 
 void RS_ScriptingApi::addEllipse(double x1, double y1, double z1, double x2, double y2, double z2, double rad, const RS_Pen &pen)
@@ -1655,6 +1670,9 @@ void RS_ScriptingApi::addEllipse(double x1, double y1, double z1, double x2, dou
     RS_Ellipse *ellipse = new RS_Ellipse(graphic, data);
     ellipse->setPen(pen);
     graphic->addEntity(ellipse);
+
+    LC_UndoSection undo(getDocument(), getGraphicView()->getViewPort());
+    undo.addUndoable(ellipse);
 }
 
 void RS_ScriptingApi::addPoint(double x, double y, double z, const RS_Pen &pen)
@@ -1663,8 +1681,219 @@ void RS_ScriptingApi::addPoint(double x, double y, double z, const RS_Pen &pen)
     RS_Point *point = new RS_Point(graphic, RS_PointData(RS_Vector(x, y, z)));
     point->setPen(pen);
     graphic->addEntity(point);
+
+    LC_UndoSection undo(getDocument(), getGraphicView()->getViewPort());
+    undo.addUndoable(point);
 }
 
+void RS_ScriptingApi::addLwPolyline(std::vector<Plug_VertexData> const& points, bool closed, const RS_Pen &pen)
+{
+    RS_Graphic* graphic = getGraphic();
+    RS_PolylineData data;
+
+    if(closed)
+    {
+        data.setFlag(RS2::FlagClosed);
+    }
+
+    RS_Polyline *polyline = new RS_Polyline(graphic, data);
+
+    for(auto const& pt: points){
+        polyline->addVertex(RS_Vector(pt.point.x(), pt.point.y()), pt.bulge);
+    }
+
+    polyline->setPen(pen);
+    graphic->addEntity(polyline);
+
+    LC_UndoSection undo(getDocument(), getGraphicView()->getViewPort());
+    undo.addUndoable(polyline);
+}
+
+void RS_ScriptingApi::addText(const RS_Vector &v1, double height, double width, double angle, int valign, int halign, int generation, const QString &txt, const QString &style, const RS_Pen &pen)
+{
+    RS_Graphic* graphic = getGraphic();
+
+    RS_TextData::VAlign val = static_cast <RS_TextData::VAlign>(valign);
+    RS_TextData::HAlign hal = static_cast <RS_TextData::HAlign>(halign);
+
+    RS_TextData::TextGeneration tGen;
+    switch (generation) {
+    case 2:
+        tGen = RS_TextData::Backward;
+        break;
+    case 4:
+        tGen = RS_TextData::UpsideDown;
+        break;
+    default:
+        tGen = RS_TextData::None;
+        break;
+    }
+
+    RS_TextData data(v1, v1, height, width, val, hal, tGen, txt, style, angle, RS2::Update);
+
+    RS_Text* text = new RS_Text(graphic, data);
+    text->setPen(pen);
+    graphic->addEntity(text);
+
+    LC_UndoSection undo(getDocument(), getGraphicView()->getViewPort());
+    undo.addUndoable(text);
+}
+
+bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
+{
+    RS_Graphic* graphic = getGraphic();
+
+    if (graphic) {
+        if (apiData.etype == "LAYER" && apiData.layer != "")
+        {
+            return addLayer(qUtf8Printable(apiData.layer), apiData.pen, apiData.gc_70) ? true : false;
+        }
+
+        else if (apiData.etype == "LINE" && !apiData.gc_10.empty() && !apiData.gc_11.empty())
+        {
+            addLine(apiData.gc_10.at(0).at(0),
+                    apiData.gc_10.at(0).at(1),
+                    apiData.gc_10.at(0).at(2),
+                    apiData.gc_11.at(0).at(0),
+                    apiData.gc_11.at(0).at(1),
+                    apiData.gc_11.at(0).at(2),
+                    apiData.pen);
+        }
+
+        else if (apiData.etype == "CIRCLE" && !apiData.gc_10.empty() && apiData.gc_40.size() == 1)
+        {
+            addCircle(apiData.gc_10.at(0).at(0),
+                      apiData.gc_10.at(0).at(1),
+                      apiData.gc_10.at(0).at(2),
+                      apiData.gc_40.at(0),
+                      apiData.pen);
+        }
+
+        else if (apiData.etype == "ARC" && !apiData.gc_10.empty() && apiData.gc_40.size() == 1 && apiData.gc_41.size() == 1 && apiData.gc_42.size() == 1)
+        {
+            addArc(apiData.gc_10.at(0).at(0),
+                   apiData.gc_10.at(0).at(1),
+                   apiData.gc_10.at(0).at(2),
+                   apiData.gc_40.at(0),
+                   apiData.gc_50.at(0),
+                   apiData.gc_51.at(0),
+                   apiData.pen);
+        }
+
+        else if (apiData.etype == "ELLIPSE" && !apiData.gc_10.empty() && !apiData.gc_11.empty() && apiData.gc_40.size() == 1)
+        {
+            addEllipse(apiData.gc_10.at(0).at(0),
+                       apiData.gc_10.at(0).at(1),
+                       apiData.gc_10.at(0).at(2),
+                       apiData.gc_11.at(0).at(0),
+                       apiData.gc_11.at(0).at(1),
+                       apiData.gc_11.at(0).at(2),
+                       apiData.gc_40.at(0),
+                       apiData.pen);
+        }
+
+        else if (apiData.etype == "POINT" && !apiData.gc_10.empty())
+        {
+            addPoint(apiData.gc_10.at(0).at(0),
+                     apiData.gc_10.at(0).at(1),
+                     apiData.gc_10.at(0).at(2),
+                     apiData.pen);
+        }
+
+        else if (apiData.etype == "LWPOLYLINE" && !apiData.gc_10.empty())
+        {
+            std::vector<Plug_VertexData> vertex;
+
+            if (apiData.gc_42.size() == apiData.gc_10.size())
+            {
+                for (unsigned int i = 0; i < apiData.gc_10.size(); i++)
+                {
+                    vertex.push_back(Plug_VertexData(QPointF(apiData.gc_10.at(i).at(0),
+                                            apiData.gc_10.at(i).at(1)),
+                                            apiData.gc_42.at(i)));
+                }
+            }
+            else
+            {
+                for(auto const& pt: apiData.gc_10){
+                    vertex.push_back(Plug_VertexData(QPointF(pt.at(0),
+                                            pt.at(1)),
+                                            0.0));
+                }
+            }
+
+            addLwPolyline(vertex, apiData.gc_70, apiData.pen);
+        }
+
+        else if (apiData.etype == "MTEXT" && !apiData.gc_10.empty())
+        {
+            double height = 0.0;
+            double width = 1.0;
+            double angle = 0.0;
+            const RS_Vector v(apiData.gc_10.at(0).at(0),
+                               apiData.gc_10.at(0).at(1),
+                               apiData.gc_10.at(0).at(2));
+
+            if(!apiData.gc_40.empty())
+            {
+                height = apiData.gc_40.at(0);
+            }
+
+            if(!apiData.gc_41.empty())
+            {
+                width = apiData.gc_41.at(0);
+            }
+
+            if(!apiData.gc_50.empty())
+            {
+                angle = apiData.gc_50.at(0);
+            }
+
+            addText(v, height, width, angle, apiData.gc_73, apiData.gc_72, apiData.gc_71, apiData.text, apiData.style, apiData.pen);
+        }
+
+        else if (apiData.etype == "TEXT" && !apiData.gc_10.empty())
+        {
+            double height = 0.0;
+            double width = 1.0;
+            double angle = 0.0;
+            const RS_Vector v(apiData.gc_10.at(0).at(0),
+                               apiData.gc_10.at(0).at(1),
+                               apiData.gc_10.at(0).at(2));
+
+            if(!apiData.gc_40.empty())
+            {
+                height = apiData.gc_40.at(0);
+            }
+
+            if(!apiData.gc_41.empty())
+            {
+                width = apiData.gc_41.at(0);
+            }
+
+            if(!apiData.gc_50.empty())
+            {
+                angle = apiData.gc_50.at(0);
+            }
+
+            addText(v, height, width, angle, apiData.gc_73, apiData.gc_72, apiData.gc_71, apiData.text, apiData.style, apiData.pen);
+        }
+
+        else
+        {
+            return false;
+        }
+#if 0
+        RS_GraphicView* v = appWin->getGraphicView();
+        if (v) {
+            v->redraw();
+        }
+#endif
+
+        return true;
+    }
+    return false;
+}
 
 bool RS_ScriptingApi::getTile(const char *key, std::string &result)
 {
@@ -2520,6 +2749,12 @@ RS_EntityContainer* RS_ScriptingApi::getContainer() const
     return graphicView->getContainer();
 }
 
+RS_Document* RS_ScriptingApi::getDocument() const
+{
+    auto& appWin = QC_ApplicationWindow::getAppWindow();
+    return appWin->getDocument();
+}
+
 RS_Graphic* RS_ScriptingApi::getGraphic() const
 {
     auto& appWin=QC_ApplicationWindow::getAppWindow();
@@ -2535,5 +2770,12 @@ RS_Graphic* RS_ScriptingApi::getGraphic() const
     }
     return NULL;
 }
+
+RS_GraphicView* RS_ScriptingApi::getGraphicView() const
+{
+    auto& appWin=QC_ApplicationWindow::getAppWindow();
+    return appWin->getGraphicView();
+}
+
 
 #endif // DEVELOPER

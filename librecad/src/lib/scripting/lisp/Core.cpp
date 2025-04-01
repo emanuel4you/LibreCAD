@@ -1242,29 +1242,7 @@ BUILTIN("entmake")
     lclValueVec* items = new lclValueVec(length);
     std::copy(seq->begin(), seq->end(), items->begin());
 
-    int layerstate = 0;
-    double rad1 = 0.0;
-    double rad2 = 0.0;
-    double rad3 = 0.0;
-    double ang1 = 0.0;
-    double ang2 = 0.0;
-    double scale1 = 1.0;
-    double scale2 = 1.0;
-
-    Q_UNUSED(rad2)
-    Q_UNUSED(rad3)
-    Q_UNUSED(scale1)
-    Q_UNUSED(scale2)
-
-    std::vector<std::vector<double>> gc_ten;
-    std::vector<std::vector<double>> gc_eleven;
-
-    String etype = "";
-    String block = "";
-    String text = "";
-    String style = "";
-    String layer = "";
-    RS_Pen pen;
+    RS_ScriptingApiData apiData;
 
     for (int i = 0; i < length; i++) {
         if (items->at(i)->type() == LCLTYPE::LIST ||
@@ -1282,7 +1260,7 @@ BUILTIN("entmake")
                     return lcl::nilValue();
                 }
                 const lclString *n = VALUE_CAST(lclString, list->item(2));
-                etype = n->value();
+                apiData.etype = n->value().c_str();
             }
                 break;
             case 1:
@@ -1293,7 +1271,7 @@ BUILTIN("entmake")
                 }
 
                 const lclString *t = VALUE_CAST(lclString, list->item(2));
-                text = t->value();
+                apiData.text = t->value().c_str();
             }
                 break;
             case 2:
@@ -1304,7 +1282,7 @@ BUILTIN("entmake")
                 }
 
                 const lclString *l = VALUE_CAST(lclString, list->item(2));
-                block = l->value();
+                apiData.block = l->value().c_str();
             }
                 break;
             case 6:
@@ -1315,7 +1293,7 @@ BUILTIN("entmake")
                 }
 
                 const lclString *ltype = VALUE_CAST(lclString, list->item(2));
-                pen.setLineType(RS_FilterDXFRW::nameToLineType(ltype->value().c_str()));
+                apiData.pen.setLineType(RS_FilterDXFRW::nameToLineType(ltype->value().c_str()));
             }
                 break;
             case 7:
@@ -1326,7 +1304,7 @@ BUILTIN("entmake")
                 }
 
                 const lclString *s = VALUE_CAST(lclString, list->item(2));
-                style = s->value();
+                apiData.style = s->value().c_str();
             }
                 break;
             case 8:
@@ -1337,7 +1315,7 @@ BUILTIN("entmake")
                 }
 
                 const lclString *l = VALUE_CAST(lclString, list->item(2));
-                layer = l->value();
+                apiData.layer = l->value().c_str();
             }
                 break;
             case 10:
@@ -1386,7 +1364,7 @@ BUILTIN("entmake")
                     }
                 }
 
-                gc_ten.push_back({ xVal, yVal, zVal });
+                apiData.gc_10.push_back({ xVal, yVal, zVal });
             }
                 break;
             case 11:
@@ -1435,7 +1413,7 @@ BUILTIN("entmake")
                     }
                 }
 
-                gc_eleven.push_back({ xVal, yVal, zVal });
+                apiData.gc_11.push_back({ xVal, yVal, zVal });
             }
                 break;
             case 40:
@@ -1445,8 +1423,16 @@ BUILTIN("entmake")
                     return lcl::nilValue();
                 }
 
-                const lclDouble *r1 = VALUE_CAST(lclDouble, list->item(2));
-                rad1 = r1->value();
+                if (list->item(2)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *r1 = VALUE_CAST(lclInteger, list->item(2));
+                    apiData.gc_40.push_back({ double(r1->value()) });
+                }
+                else
+                {
+                    const lclDouble *r1 = VALUE_CAST(lclDouble, list->item(2));
+                    apiData.gc_40.push_back({ r1->value() });
+                }
             }
                 break;
             case 41:
@@ -1456,8 +1442,16 @@ BUILTIN("entmake")
                     return lcl::nilValue();
                 }
 
-                const lclDouble *r2 = VALUE_CAST(lclDouble, list->item(2));
-                rad2 = r2->value();
+                if (list->item(2)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *r2 = VALUE_CAST(lclInteger, list->item(2));
+                    apiData.gc_41.push_back({ double(r2->value()) });
+                }
+                else
+                {
+                    const lclDouble *r2 = VALUE_CAST(lclDouble, list->item(2));
+                    apiData.gc_41.push_back({ r2->value() });
+                }
             }
                 break;
             case 42:
@@ -1467,8 +1461,16 @@ BUILTIN("entmake")
                     return lcl::nilValue();
                 }
 
-                const lclDouble *r3 = VALUE_CAST(lclDouble, list->item(2));
-                rad3 = r3->value();
+                if (list->item(2)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *r3 = VALUE_CAST(lclInteger, list->item(2));
+                    apiData.gc_42.push_back({ double(r3->value()) });
+                }
+                else
+                {
+                    const lclDouble *r3 = VALUE_CAST(lclDouble, list->item(2));
+                    apiData.gc_42.push_back({ r3->value() });
+                }
             }
                 break;
             case 44:
@@ -1479,7 +1481,7 @@ BUILTIN("entmake")
                 }
 
                 const lclDouble *sc1 = VALUE_CAST(lclDouble, list->item(2));
-                scale1 = sc1->value();
+                apiData.gc_44 = sc1->value();
             }
                 break;
             case 45:
@@ -1490,7 +1492,7 @@ BUILTIN("entmake")
                 }
 
                 const lclDouble *sc2 = VALUE_CAST(lclDouble, list->item(2));
-                scale2 = sc2->value();
+                apiData.gc_45 = sc2->value();
             }
                 break;
             case 48:
@@ -1526,7 +1528,7 @@ BUILTIN("entmake")
                     }
                 }
 
-                pen.setWidth(RS2::intToLineWidth(width));
+                apiData.pen.setWidth(RS2::intToLineWidth(width));
             }
                 break;
             case 50:
@@ -1536,8 +1538,16 @@ BUILTIN("entmake")
                     return lcl::nilValue();
                 }
 
-                const lclDouble *a1 = VALUE_CAST(lclDouble, list->item(2));
-                ang1 = a1->value();
+                if (list->item(2)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *a1 = VALUE_CAST(lclInteger, list->item(2));
+                    apiData.gc_50.push_back({ double(a1->value()) });
+                }
+                else
+                {
+                    const lclDouble *a1 = VALUE_CAST(lclDouble, list->item(2));
+                    apiData.gc_50.push_back({ a1->value() });
+                }
             }
                 break;
             case 51:
@@ -1547,8 +1557,16 @@ BUILTIN("entmake")
                     return lcl::nilValue();
                 }
 
-                const lclDouble *a2 = VALUE_CAST(lclDouble, list->item(2));
-                ang2 = a2->value();
+                if (list->item(2)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *a2 = VALUE_CAST(lclInteger, list->item(2));
+                    apiData.gc_51.push_back({ double(a2->value()) });
+                }
+                else
+                {
+                    const lclDouble *a2 = VALUE_CAST(lclDouble, list->item(2));
+                    apiData.gc_51.push_back({ a2->value() });
+                }
             }
                 break;
             case 62:
@@ -1559,7 +1577,7 @@ BUILTIN("entmake")
                 }
 
                 const lclInteger *color = VALUE_CAST(lclInteger, list->item(2));
-                pen.setColor(RS_FilterDXFRW::numberToColor(color->value()));
+                apiData.pen.setColor(RS_FilterDXFRW::numberToColor(color->value()));
             }
                 break;
             case 70:
@@ -1569,8 +1587,41 @@ BUILTIN("entmake")
                     return lcl::nilValue();
                 }
 
-                const lclInteger *flag = VALUE_CAST(lclInteger, list->item(2));
-                layerstate = flag->value();
+                const lclInteger *f0 = VALUE_CAST(lclInteger, list->item(2));
+                apiData.gc_70 = f0->value();
+            }
+                break;
+            case 71:
+            {
+                if (!list->isDotted())
+                {
+                    return lcl::nilValue();
+                }
+
+                const lclInteger *f1 = VALUE_CAST(lclInteger, list->item(2));
+                apiData.gc_71 = f1->value();
+            }
+                break;
+            case 72:
+            {
+                if (!list->isDotted())
+                {
+                    return lcl::nilValue();
+                }
+
+                const lclInteger *f2 = VALUE_CAST(lclInteger, list->item(2));
+                apiData.gc_72 = f2->value();
+            }
+                break;
+            case 73:
+            {
+                if (!list->isDotted())
+                {
+                    return lcl::nilValue();
+                }
+
+                const lclInteger *f3 = VALUE_CAST(lclInteger, list->item(2));
+                apiData.gc_73 = f3->value();
             }
                 break;
             default:
@@ -1579,84 +1630,17 @@ BUILTIN("entmake")
         }
     }
 
-    if (etype == "")
+    if (apiData.etype == "")
     {
         return lcl::nilValue();
     }
 
-    RS_Graphic* graphic = RS_SCRIPTINGAPI->getGraphic();
-
-    if (graphic) {
-        if (etype == "LAYER" && layer != "")
-        {
-            return RS_SCRIPTINGAPI->addLayer(layer.c_str(), pen, layerstate) ? lcl::list(items) : lcl::nilValue();
-        }
-
-        else if (etype == "LINE" && !gc_ten.empty() && !gc_eleven.empty())
-        {
-            RS_SCRIPTINGAPI->addLine(gc_ten.at(0).at(0),
-                                     gc_ten.at(0).at(1),
-                                     gc_ten.at(0).at(2),
-                                     gc_eleven.at(0).at(0),
-                                     gc_eleven.at(0).at(1),
-                                     gc_eleven.at(0).at(2),
-                                     pen);
-        }
-
-        else if (etype == "CIRCLE" && !gc_ten.empty() && rad1 != 0.0)
-        {
-            RS_SCRIPTINGAPI->addCircle(gc_ten.at(0).at(0),
-                                       gc_ten.at(0).at(1),
-                                       gc_ten.at(0).at(2),
-                                       rad1,
-                                       pen);
-        }
-
-        else if (etype == "ARC" && !gc_ten.empty())
-        {
-            RS_SCRIPTINGAPI->addArc(gc_ten.at(0).at(0),
-                                    gc_ten.at(0).at(1),
-                                    gc_ten.at(0).at(2),
-                                    rad1,
-                                    ang1,
-                                    ang2,
-                                    pen);
-        }
-
-        else if (etype == "ELLIPSE" && !gc_ten.empty() && !gc_eleven.empty())
-        {
-            RS_SCRIPTINGAPI->addEllipse(gc_ten.at(0).at(0),
-                                        gc_ten.at(0).at(1),
-                                        gc_ten.at(0).at(2),
-                                        gc_eleven.at(0).at(0),
-                                        gc_eleven.at(0).at(1),
-                                        gc_eleven.at(0).at(2),
-                                        rad1,
-                                        pen);
-        }
-
-        else if (etype == "POINT" && !gc_ten.empty())
-        {
-            RS_SCRIPTINGAPI->addPoint(gc_ten.at(0).at(0),
-                                      gc_ten.at(0).at(1),
-                                      gc_ten.at(0).at(2),
-                                      pen);
-        }
-
-        else
-        {
-            return lcl::nilValue();
-        }
-#if 0
-        RS_GraphicView* v = appWin->getGraphicView();
-        if (v) {
-            v->redraw();
-        }
-#endif
-
+    if (RS_SCRIPTINGAPI->entmake(apiData))
+    {
         lclEname *en = new lclEname(RS_SCRIPTINGAPI->entlast());
         return entget(en);
     }
+
     return lcl::nilValue();
 }
 
@@ -1696,8 +1680,8 @@ BUILTIN("entmod")
             if (entity->getId() == entityId)
             {
                 RS_Pen pen = entity->getPen(false);
-                std::vector<std::vector<double>> gc_ten;
-                std::vector<std::vector<double>> gc_eleven;
+                std::vector<std::vector<double>> gc_10;
+                std::vector<std::vector<double>> gc_11;
                 QString text = "";
                 QString textStyle = "";
                 double rad1 = 0.0;
@@ -1837,7 +1821,7 @@ BUILTIN("entmod")
                             }
                         }
 
-                        gc_ten.push_back({ xVal, yVal, zVal });
+                        gc_10.push_back({ xVal, yVal, zVal });
                     }
                         break;
                     case 11:
@@ -1886,7 +1870,7 @@ BUILTIN("entmod")
                             }
                         }
 
-                        gc_eleven.push_back({ xVal, yVal, zVal });
+                        gc_11.push_back({ xVal, yVal, zVal });
                     }
                         break;
                     case 40:
@@ -1987,28 +1971,28 @@ BUILTIN("entmod")
                 {
                     case RS2::EntityPoint:
                         {
-                            if (!gc_ten.empty())
+                            if (!gc_10.empty())
                             {
                                 RS_Point* p = (RS_Point*)entity;
-                                const std::vector<double> pos = gc_ten.front();
+                                const std::vector<double> pos = gc_10.front();
                                 p->setPos(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
                             }
                         }
                         break;
                     case RS2::EntityLine:
                     {
-                        if (!gc_ten.empty() || !gc_eleven.empty())
+                        if (!gc_10.empty() || !gc_11.empty())
                         {
                             RS_Line* l = (RS_Line*)entity;
-                            if (!gc_ten.empty())
+                            if (!gc_10.empty())
                             {
-                                const std::vector<double> pos = gc_ten.front();
+                                const std::vector<double> pos = gc_10.front();
                                 l->setStartpoint(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
                             }
 
-                            if (!gc_eleven.empty())
+                            if (!gc_11.empty())
                             {
-                                const std::vector<double> pos = gc_eleven.front();
+                                const std::vector<double> pos = gc_11.front();
                                 l->setEndpoint(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
                             }
                         }
@@ -2016,12 +2000,12 @@ BUILTIN("entmod")
                         break;
                     case RS2::EntityArc:
                     {
-                        if (!gc_ten.empty())
+                        if (!gc_10.empty())
                         {
                             RS_Arc* a = (RS_Arc*)entity;
-                            if (!gc_ten.empty())
+                            if (!gc_10.empty())
                             {
-                                const std::vector<double> pos = gc_ten.front();
+                                const std::vector<double> pos = gc_10.front();
                                 a->setCenter(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
                             }
                             if (rad1Mod)
@@ -2037,12 +2021,12 @@ BUILTIN("entmod")
                         break;
                     case RS2::EntityCircle:
                     {
-                        if (!gc_ten.empty() || rad1Mod)
+                        if (!gc_10.empty() || rad1Mod)
                         {
                             RS_Circle* c = (RS_Circle*)entity;
-                            if (!gc_ten.empty())
+                            if (!gc_10.empty())
                             {
-                                const std::vector<double> pos = gc_ten.front();
+                                const std::vector<double> pos = gc_10.front();
                                 c->setCenter(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
                             }
 
@@ -2055,19 +2039,19 @@ BUILTIN("entmod")
                         break;
                     case RS2::EntityEllipse:
                     {
-                        if (!gc_ten.empty() || !gc_eleven.empty())
+                        if (!gc_10.empty() || !gc_11.empty())
                         {
                             RS_Ellipse* ellipse=static_cast<RS_Ellipse*>(entity);
 
-                            if (!gc_ten.empty())
+                            if (!gc_10.empty())
                             {
-                                const std::vector<double> pos = gc_ten.front();
+                                const std::vector<double> pos = gc_10.front();
                                 ellipse->setCenter(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
                             }
 
-                            if (!gc_eleven.empty())
+                            if (!gc_11.empty())
                             {
-                                const std::vector<double> pos = gc_eleven.front();
+                                const std::vector<double> pos = gc_11.front();
                                 ellipse->setMajorP(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
                             }
 
@@ -2080,23 +2064,23 @@ BUILTIN("entmod")
                         break;
                     case RS2::EntityInsert:
                     {
-                        if (!gc_ten.empty())
+                        if (!gc_10.empty())
                         {
                             RS_Insert* i = (RS_Insert*)entity;
-                            const std::vector<double> pos = gc_ten.front();
+                            const std::vector<double> pos = gc_10.front();
                             i->setInsertionPoint(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
                         }
                     }
                         break;
                     case RS2::EntityMText:
                     {
-                        if (!gc_ten.empty() || text.size() || textStyle.size())
+                        if (!gc_10.empty() || text.size() || textStyle.size())
                         {
                             RS_MText* mt = (RS_MText*)entity;
 
-                            if (!gc_ten.empty())
+                            if (!gc_10.empty())
                             {
-                                const std::vector<double> pos = gc_ten.front();
+                                const std::vector<double> pos = gc_10.front();
                                 mt->moveRef(RS_Vector(0,0,0), RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
                             }
 
@@ -2115,13 +2099,13 @@ BUILTIN("entmod")
                         break;
                     case RS2::EntityText:
                     {
-                        if (!gc_ten.empty() || text.size() || textStyle.size())
+                        if (!gc_10.empty() || text.size() || textStyle.size())
                         {
                             RS_Text* t = (RS_Text*)entity;
 
-                            if (!gc_ten.empty())
+                            if (!gc_10.empty())
                             {
-                                const std::vector<double> pos = gc_ten.front();
+                                const std::vector<double> pos = gc_10.front();
                                 t->moveRef(RS_Vector(0,0,0), RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
                             }
 
