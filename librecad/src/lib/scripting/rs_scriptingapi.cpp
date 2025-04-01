@@ -1883,12 +1883,11 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
         {
             return false;
         }
-#if 0
-        RS_GraphicView* v = appWin->getGraphicView();
+
+        RS_GraphicView* v = getGraphicView();
         if (v) {
             v->redraw();
         }
-#endif
 
         return true;
     }
