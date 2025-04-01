@@ -101,7 +101,7 @@ namespace lcl {
         return lclValuePtr(new lclHash(argsBegin, argsEnd, isEvaluated));
     }
 
-    lclValuePtr integer(int64_t value) {
+    lclValuePtr integer(int value) {
         return lclValuePtr(new lclInteger(value));
     };
 

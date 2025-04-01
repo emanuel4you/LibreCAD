@@ -128,7 +128,7 @@ private:
 
 class lclInteger : public lclValue {
 public:
-    lclInteger(int64_t value) : m_value(value) { }
+    lclInteger(int value) : m_value(value) { }
     lclInteger(const lclInteger& that, lclValuePtr meta)
         : lclValue(meta), m_value(that.m_value) { }
 
@@ -138,14 +138,14 @@ public:
 
     virtual LCLTYPE type() const override { return LCLTYPE::INT; }
 
-    int64_t value() const { return m_value; }
+    int value() const { return m_value; }
 
     virtual bool doIsEqualTo(const lclValue* rhs) const override;
 
     WITH_META(lclInteger)
 
 private:
-    const int64_t m_value;
+    const int m_value;
 };
 
 class lclDouble : public lclValue {
@@ -761,13 +761,13 @@ typedef struct guitile {
     bool            multiple_select = false;
     bool            tab_truncate = false;
     bool            has_parent = false;
-    int64_t         big_increment = 0;
-    int64_t         color = 0;
-    int64_t         dialog_Id = -1;
-    int64_t         edit_limit = 132;
-    int64_t         max_value = 10000;
-    int64_t         min_value = 0;
-    int64_t         small_increment = 0;
+    int         big_increment = 0;
+    int         color = 0;
+    int         dialog_Id = -1;
+    int         edit_limit = 132;
+    int         max_value = 10000;
+    int         min_value = 0;
+    int         small_increment = 0;
     double          aspect_ratio = 0.0;
     double          edit_width = 0.0;
     double          height = 0.0;
@@ -1475,7 +1475,7 @@ namespace lcl {
     lclValuePtr hash(lclValueIter argsBegin, lclValueIter argsEnd,
                      bool isEvaluated);
     lclValuePtr hash(const lclHash::Map& map);
-    lclValuePtr integer(int64_t value);
+    lclValuePtr integer(int value);
     lclValuePtr integer(const String& token);
     lclValuePtr keyword(const String& token);
     lclValuePtr lambda(const StringVec&, lclValuePtr, lclEnvPtr);

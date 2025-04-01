@@ -30,6 +30,7 @@
 #ifdef DEVELOPER
 
 #include "rs_vector.h"
+#include "rs_solid.h"
 #include "rs_graphic.h"
 #include "qc_applicationwindow.h"
 
@@ -46,34 +47,34 @@ class RS_ScriptingApiData
 public:
     RS_ScriptingApiData()
     {
-        gc_70 = gc_71 = gc_72 = gc_73 = 0;
-        gc_44 = gc_45 = 0.0;
-        etype = block = text = style = layer = "";
+        etype = block = layer = "";
     }
-
     ~RS_ScriptingApiData() {}
-public:
-    int gc_70;
-    int gc_71;
-    int gc_72;
-    int gc_73;
-    double gc_44;
-    double gc_45;
 
     QString etype;
     QString block;
-    QString text;
-    QString style;
     QString layer;
 
     std::vector<std::vector<double>> gc_10;
     std::vector<std::vector<double>> gc_11;
+    std::vector<std::vector<double>> gc_12;
+    std::vector<std::vector<double>> gc_13;
+
+    std::vector<unsigned long> id;
+    std::vector<int> gc_70;
+    std::vector<int> gc_71;
+    std::vector<int> gc_72;
+    std::vector<int> gc_73;
 
     std::vector<double> gc_40;
     std::vector<double> gc_41;
     std::vector<double> gc_42;
+    std::vector<double> gc_44;
+    std::vector<double> gc_45;
     std::vector<double> gc_50;
     std::vector<double> gc_51;
+    std::vector<QString> text;
+    std::vector<QString> style;
 
     RS_Pen pen;
 };
@@ -100,8 +101,10 @@ public:
     void addLine(double x1, double y1, double z1, double x2, double y2, double z2, const RS_Pen &pen);
     void addPoint(double x, double y, double z, const RS_Pen &pen);
     void addLwPolyline(std::vector<Plug_VertexData> const& points, bool closed, const RS_Pen &pen);
+    void addSolid(const RS_SolidData &data, const RS_Pen &pen);
     //void addSpline(std::vector<std::vector<double>> vertex, const RS_Pen &pen);
-    void addText(const RS_Vector &v1, double height, double width, double angle, int valign, int halign, int generation, const QString &txt, const QString &style, const RS_Pen &pen);
+    void addMText(const RS_Vector &pnt, double height, double width, double angle, int spacing, int direction, int attach, const QString &txt, const QString &style, const RS_Pen &pen);
+    void addText(const RS_Vector &pnt, double height, double width, double angle, int valign, int halign, int generation, const QString &txt, const QString &style, const RS_Pen &pen);
 
     const std::string copyright();
     const std::string credits();
@@ -133,6 +136,7 @@ public:
     bool entdel(unsigned int id);
     bool entsel(CommandEdit *cmdline, const QString &prompt, unsigned long &id, RS_Vector &point);
     bool entmake(const RS_ScriptingApiData &apiData);
+    bool entmod(RS_Entity *entity, const RS_ScriptingApiData &apiData);
     bool fillImage(int x, int y, int width, int height, int color);
     bool getAttr(const char *key, const char *attr, std::string &result);
     bool modeTile(const char *key, int mode);

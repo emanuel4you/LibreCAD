@@ -35,6 +35,8 @@
 
 #include "qc_applicationwindow.h"
 
+bool getApiData(PyObject *pList, RS_ScriptingApiData &apiData);
+
 RS_Document* RS_PythonCore::getDocument() const
 {
     return QC_ApplicationWindow::getAppWindow()->getDocument();
@@ -158,306 +160,7 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
 
     RS_ScriptingApiData apiData;
 
-    int gc;
-    PyObject *pTuple;
-    PyObject *pGc;
-    PyObject *pValue;
-    Py_ssize_t n = PyList_Size(pList);
-
-    for (int i=0; i<n; i++) {
-        pTuple = PyList_GetItem(pList, i);
-        if(!PyTuple_Check(pTuple)) {
-            PyErr_SetString(PyExc_TypeError, "list items must be a tuple.");
-            Py_RETURN_NONE;
-        }
-        pGc = PyTuple_GetItem(pTuple, 0);
-        if(!PyLong_Check(pGc)) {
-            PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
-            Py_RETURN_NONE;
-        }
-        gc = PyLong_AsLong(pGc);
-        qDebug() << "[RS_PythonCore::entmake] i:" << i << "GC:" << gc;
-
-        switch (gc)
-        {
-        case 0:
-        {
-            pValue = PyTuple_GetItem(pTuple, 1);
-            if(!PyUnicode_Check(pValue)) {
-                PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
-                Py_RETURN_NONE;
-            }
-            apiData.etype = PyUnicode_AsUTF8(pValue);
-        }
-            break;
-        case 1:
-        {
-            pValue = PyTuple_GetItem(pTuple, 1);
-            if(!PyUnicode_Check(pValue)) {
-                PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
-                Py_RETURN_NONE;
-            }
-            apiData.text = PyUnicode_AsUTF8(pValue);
-        }
-        break;
-        case 2:
-        {
-            pValue = PyTuple_GetItem(pTuple, 1);
-            if(!PyUnicode_Check(pValue)) {
-                PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
-                Py_RETURN_NONE;
-            }
-            apiData.block = PyUnicode_AsUTF8(pValue);
-        }
-        break;
-        case 6:
-        {
-            pValue = PyTuple_GetItem(pTuple, 1);
-            if(!PyUnicode_Check(pValue)) {
-                PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
-                Py_RETURN_NONE;
-            }
-
-            apiData.pen.setLineType(RS_FilterDXFRW::nameToLineType(PyUnicode_AsUTF8(pValue)));
-        }
-        break;
-        case 7:
-        {
-            pValue = PyTuple_GetItem(pTuple, 1);
-            if(!PyUnicode_Check(pValue)) {
-                PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
-                Py_RETURN_NONE;
-            }
-            apiData.style = PyUnicode_AsUTF8(pValue);
-        }
-        break;
-        case 8:
-        {
-            pValue = PyTuple_GetItem(pTuple, 1);
-            if(!PyUnicode_Check(pValue)) {
-                PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
-                Py_RETURN_NONE;
-            }
-            apiData.layer = PyUnicode_AsUTF8(pValue);
-        }
-        break;
-        case 10:
-        {
-            double xVal;
-            double yVal;
-            double zVal = 0.0;
-
-            pValue = PyTuple_GetItem(pTuple, 1);
-            if(!PyFloat_Check(pValue)) {
-                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
-                Py_RETURN_NONE;
-            }
-
-            xVal = PyFloat_AsDouble(pValue);
-
-            pValue = PyTuple_GetItem(pTuple, 2);
-            if(!PyFloat_Check(pValue)) {
-                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
-                Py_RETURN_NONE;
-            }
-
-            yVal = PyFloat_AsDouble(pValue);
-
-            if (PyTuple_Size(pTuple) > 3)
-            {
-                pValue = PyTuple_GetItem(pTuple, 3);
-                if(!PyFloat_Check(pValue)) {
-                    PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
-                    Py_RETURN_NONE;
-                }
-                zVal = PyFloat_AsDouble(pValue);
-            }
-            apiData.gc_10.push_back({ xVal, yVal, zVal });
-        }
-        break;
-        case 11:
-        {
-            double xVal;
-            double yVal;
-            double zVal = 0.0;
-
-            pValue = PyTuple_GetItem(pTuple, 1);
-            if(!PyFloat_Check(pValue)) {
-                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
-                Py_RETURN_NONE;
-            }
-
-            xVal = PyFloat_AsDouble(pValue);
-
-            pValue = PyTuple_GetItem(pTuple, 2);
-            if(!PyFloat_Check(pValue)) {
-                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
-                Py_RETURN_NONE;
-            }
-
-            yVal = PyFloat_AsDouble(pValue);
-
-            if (PyTuple_Size(pTuple) > 3)
-            {
-                pValue = PyTuple_GetItem(pTuple, 3);
-                if(!PyFloat_Check(pValue)) {
-                    PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
-                    Py_RETURN_NONE;
-                }
-                zVal = PyFloat_AsDouble(pValue);
-            }
-            apiData.gc_11.push_back({ xVal, yVal, zVal });
-        }
-        break;
-        case 40:
-        {
-            pValue = PyTuple_GetItem(pTuple, 1);
-            if(!PyFloat_Check(pValue)) {
-                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
-                Py_RETURN_NONE;
-            }
-            apiData.gc_40.push_back({ PyFloat_AsDouble(pValue) });
-        }
-        break;
-        case 41:
-        {
-            pValue = PyTuple_GetItem(pTuple, 1);
-            if(!PyFloat_Check(pValue)) {
-                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
-                Py_RETURN_NONE;
-            }
-            apiData.gc_41.push_back({ PyFloat_AsDouble(pValue) });
-        }
-        break;
-        case 42:
-        {
-            pValue = PyTuple_GetItem(pTuple, 1);
-            if(!PyFloat_Check(pValue)) {
-                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
-                Py_RETURN_NONE;
-            }
-            apiData.gc_42.push_back({ PyFloat_AsDouble(pValue) });
-        }
-        break;
-        case 44:
-        {
-            pValue = PyTuple_GetItem(pTuple, 1);
-            if(!PyFloat_Check(pValue)) {
-                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
-                Py_RETURN_NONE;
-            }
-            apiData.gc_44 = PyFloat_AsDouble(pValue);
-        }
-        break;
-        case 45:
-        {
-            pValue = PyTuple_GetItem(pTuple, 1);
-            if(!PyFloat_Check(pValue)) {
-                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
-                Py_RETURN_NONE;
-            }
-            apiData.gc_45 = PyFloat_AsDouble(pValue);
-        }
-        break;
-        case 48:
-        {
-            int width = 0;
-            pValue = PyTuple_GetItem(pTuple, 1);
-
-            if(PyFloat_Check(pValue))
-            {
-                width = static_cast<int>(PyFloat_AsDouble(pValue));
-            }
-
-            else if(PyLong_Check(pValue))
-            {
-                width = PyFloat_AsDouble(pValue);
-            }
-
-            if (width >= 0)
-            {
-                width *= 100;
-            }
-
-            apiData.pen.setWidth(RS2::intToLineWidth(width));
-        }
-        break;
-        case 50:
-        {
-            pValue = PyTuple_GetItem(pTuple, 1);
-            if(!PyFloat_Check(pValue)) {
-                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
-                Py_RETURN_NONE;
-            }
-            apiData.gc_50.push_back({ PyFloat_AsDouble(pValue) });
-        }
-        break;
-        case 51:
-        {
-            pValue = PyTuple_GetItem(pTuple, 1);
-            if(!PyFloat_Check(pValue)) {
-                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
-                Py_RETURN_NONE;
-            }
-            apiData.gc_51.push_back({ PyFloat_AsDouble(pValue) });
-        }
-        break;
-        case 62:
-        {
-            pValue = PyTuple_GetItem(pTuple, 1);
-            if(!PyLong_Check(pValue)) {
-                PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
-                Py_RETURN_NONE;
-            }
-            apiData.pen.setColor(RS_FilterDXFRW::numberToColor(PyLong_AsLong(pValue)));
-        }
-        break;
-        case 70:
-        {
-            pValue = PyTuple_GetItem(pTuple, 1);
-            if(!PyLong_Check(pValue)) {
-                PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
-                Py_RETURN_NONE;
-            }
-            apiData.gc_70 = PyLong_AsLong(pValue);
-        }
-        break;
-        case 71:
-        {
-            pValue = PyTuple_GetItem(pTuple, 1);
-            if(!PyLong_Check(pValue)) {
-                PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
-                Py_RETURN_NONE;
-            }
-            apiData.gc_71 = PyLong_AsLong(pValue);
-        }
-        break;
-        case 72:
-        {
-            pValue = PyTuple_GetItem(pTuple, 1);
-            if(!PyLong_Check(pValue)) {
-                PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
-                Py_RETURN_NONE;
-            }
-            apiData.gc_72 = PyLong_AsLong(pValue);
-        }
-        break;
-        case 73:
-        {
-            pValue = PyTuple_GetItem(pTuple, 1);
-            if(!PyLong_Check(pValue)) {
-                PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
-                Py_RETURN_NONE;
-            }
-            apiData.gc_73 = PyLong_AsLong(pValue);
-        }
-        break;
-        default:
-            break;
-        }
-    }
-
-    if (apiData.etype == "")
+    if (!getApiData(pList, apiData) || apiData.etype == "")
     {
         Py_RETURN_NONE;
     }
@@ -481,11 +184,12 @@ PyObject *RS_PythonCore::entmod(PyObject *args) const
         Py_RETURN_NONE;
     }
 
+    unsigned int entityId = 0;
+
     int gc;
-    QString ename;
     PyObject *pTuple;
     PyObject *pGc;
-    PyObject *pEname;
+    PyObject *pValue;
     Py_ssize_t n = PyList_Size(pList);
 
     for (int i=0; i<n; i++) {
@@ -500,23 +204,24 @@ PyObject *RS_PythonCore::entmod(PyObject *args) const
             Py_RETURN_NONE;
         }
         gc = PyLong_AsLong(pGc);
-        qDebug() << "[RS_PythonCore::entmod] i:" << i << "GC:" << gc;
+        qDebug() << "[RS_PythonCore::entmake] i:" << i << "GC:" << gc;
 
-        if(gc == -1)
+        if (gc == -1)
         {
-            pEname = PyTuple_GetItem(pTuple, 1);
-            if(!PyUnicode_Check(pEname)) {
-                PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyLong_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
                 Py_RETURN_NONE;
             }
-            ename = QString::fromUtf8(PyUnicode_AsUTF8(pEname));
-            qDebug() << "[RS_PythonCore::entmod] ename:" << ename;
+            entityId = RS_SCRIPTINGAPI->getEntityId(PyUnicode_AsUTF8(pValue));
             break;
         }
     }
 
-    if (ename == "")
+    if (entityId == 0)
+    {
         Py_RETURN_NONE;
+    }
 
     RS_EntityContainer* entityContainer = RS_SCRIPTINGAPI->getContainer();
 
@@ -524,9 +229,20 @@ PyObject *RS_PythonCore::entmod(PyObject *args) const
     {
         for (auto entity: *entityContainer)
         {
-            if (entity->getId() == RS_SCRIPTINGAPI->getEntityId(qUtf8Printable(ename)))
+            if (entity->getId() == entityId)
             {
-                qDebug() << "[RS_PythonCore::entmod] ename found!";
+                RS_ScriptingApiData apiData;
+                apiData.pen = entity->getPen(false);
+                if (!getApiData(pList, apiData) || apiData.id.empty())
+                {
+                    Py_RETURN_NONE;
+                }
+                entity->setPen(apiData.pen);
+
+                if (RS_SCRIPTINGAPI->entmod(entity, apiData))
+                {
+                    return entget(RS_SCRIPTINGAPI->getEntityName(apiData.id.front()).c_str());
+                }
             }
         }
     }
@@ -1210,4 +926,385 @@ PyObject *RS_PythonCore::polar(PyObject *pnt, double ang, double dist) const
 
     return Py_BuildValue("(dd)", x + std::round(dist * std::sin(ang)),
                                  y + std::round(dist * std::cos(ang)));
+}
+
+bool getApiData(PyObject *pList, RS_ScriptingApiData &apiData)
+{
+    int gc;
+    PyObject *pTuple;
+    PyObject *pGc;
+    PyObject *pValue;
+    Py_ssize_t n = PyList_Size(pList);
+
+    for (int i=0; i<n; i++) {
+        pTuple = PyList_GetItem(pList, i);
+        if(!PyTuple_Check(pTuple)) {
+            PyErr_SetString(PyExc_TypeError, "list items must be a tuple.");
+            return false;
+        }
+        pGc = PyTuple_GetItem(pTuple, 0);
+        if(!PyLong_Check(pGc)) {
+            PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
+            return false;
+        }
+        gc = PyLong_AsLong(pGc);
+        qDebug() << "[RS_PythonCore::entmake] i:" << i << "GC:" << gc;
+
+        switch (gc)
+        {
+        case -1:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyLong_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
+                return false;
+            }
+            apiData.id.push_back({ RS_SCRIPTINGAPI->getEntityId(PyUnicode_AsUTF8(pValue)) });
+        }
+        break;
+        case 0:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyUnicode_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
+                return false;
+            }
+            apiData.etype = PyUnicode_AsUTF8(pValue);
+        }
+            break;
+        case 1:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyUnicode_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
+                return false;
+            }
+            apiData.text.push_back({ PyUnicode_AsUTF8(pValue) });
+        }
+        break;
+        case 2:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyUnicode_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
+                return false;
+            }
+            apiData.block = PyUnicode_AsUTF8(pValue);
+        }
+        break;
+        case 6:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyUnicode_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
+                return false;
+            }
+
+            apiData.pen.setLineType(RS_FilterDXFRW::nameToLineType(PyUnicode_AsUTF8(pValue)));
+        }
+        break;
+        case 7:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyUnicode_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
+                return false;
+            }
+            apiData.style.push_back({ PyUnicode_AsUTF8(pValue) });
+        }
+        break;
+        case 8:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyUnicode_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
+                return false;
+            }
+            apiData.layer = PyUnicode_AsUTF8(pValue);
+        }
+        break;
+        case 10:
+        {
+            double xVal;
+            double yVal;
+            double zVal = 0.0;
+
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+
+            xVal = PyFloat_AsDouble(pValue);
+
+            pValue = PyTuple_GetItem(pTuple, 2);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+
+            yVal = PyFloat_AsDouble(pValue);
+
+            if (PyTuple_Size(pTuple) > 3)
+            {
+                pValue = PyTuple_GetItem(pTuple, 3);
+                if(!PyFloat_Check(pValue)) {
+                    PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                    return false;
+                }
+                zVal = PyFloat_AsDouble(pValue);
+            }
+            apiData.gc_10.push_back({ xVal, yVal, zVal });
+        }
+        break;
+        case 11:
+        {
+            double xVal;
+            double yVal;
+            double zVal = 0.0;
+
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+
+            xVal = PyFloat_AsDouble(pValue);
+
+            pValue = PyTuple_GetItem(pTuple, 2);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+
+            yVal = PyFloat_AsDouble(pValue);
+
+            if (PyTuple_Size(pTuple) > 3)
+            {
+                pValue = PyTuple_GetItem(pTuple, 3);
+                if(!PyFloat_Check(pValue)) {
+                    PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                    return false;
+                }
+                zVal = PyFloat_AsDouble(pValue);
+            }
+            apiData.gc_11.push_back({ xVal, yVal, zVal });
+        }
+        break;
+        case 12:
+        {
+            double xVal;
+            double yVal;
+            double zVal = 0.0;
+
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+
+            xVal = PyFloat_AsDouble(pValue);
+
+            pValue = PyTuple_GetItem(pTuple, 2);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+
+            yVal = PyFloat_AsDouble(pValue);
+
+            if (PyTuple_Size(pTuple) > 3)
+            {
+                pValue = PyTuple_GetItem(pTuple, 3);
+                if(!PyFloat_Check(pValue)) {
+                    PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                    return false;
+                }
+                zVal = PyFloat_AsDouble(pValue);
+            }
+            apiData.gc_12.push_back({ xVal, yVal, zVal });
+        }
+        break;
+        case 13:
+        {
+            double xVal;
+            double yVal;
+            double zVal = 0.0;
+
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+
+            xVal = PyFloat_AsDouble(pValue);
+
+            pValue = PyTuple_GetItem(pTuple, 2);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+
+            yVal = PyFloat_AsDouble(pValue);
+
+            if (PyTuple_Size(pTuple) > 3)
+            {
+                pValue = PyTuple_GetItem(pTuple, 3);
+                if(!PyFloat_Check(pValue)) {
+                    PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                    return false;
+                }
+                zVal = PyFloat_AsDouble(pValue);
+            }
+            apiData.gc_13.push_back({ xVal, yVal, zVal });
+        }
+        break;
+        case 40:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+            apiData.gc_40.push_back({ PyFloat_AsDouble(pValue) });
+        }
+        break;
+        case 41:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+            apiData.gc_41.push_back({ PyFloat_AsDouble(pValue) });
+        }
+        break;
+        case 42:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+            apiData.gc_42.push_back({ PyFloat_AsDouble(pValue) });
+        }
+        break;
+        case 44:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+            apiData.gc_44.push_back({ PyFloat_AsDouble(pValue) });
+        }
+        break;
+        case 45:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+            apiData.gc_45.push_back({ PyFloat_AsDouble(pValue) });
+        }
+        break;
+        case 48:
+        {
+            int width = 0;
+            pValue = PyTuple_GetItem(pTuple, 1);
+
+            if(PyFloat_Check(pValue))
+            {
+                width = static_cast<int>(PyFloat_AsDouble(pValue));
+            }
+
+            else if(PyLong_Check(pValue))
+            {
+                width = PyFloat_AsDouble(pValue);
+            }
+
+            if (width >= 0)
+            {
+                width *= 100;
+            }
+
+            apiData.pen.setWidth(RS2::intToLineWidth(width));
+        }
+        break;
+        case 50:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+            apiData.gc_50.push_back({ PyFloat_AsDouble(pValue) });
+        }
+        break;
+        case 51:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+            apiData.gc_51.push_back({ PyFloat_AsDouble(pValue) });
+        }
+        break;
+        case 62:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyLong_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
+                return false;
+            }
+            apiData.pen.setColor(RS_FilterDXFRW::numberToColor(PyLong_AsLong(pValue)));
+        }
+        break;
+        case 70:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyLong_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
+                return false;
+            }
+            apiData.gc_70.push_back({ static_cast<int>(PyLong_AsLong(pValue)) });
+        }
+        break;
+        case 71:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyLong_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
+                return false;
+            }
+            apiData.gc_71.push_back({ static_cast<int>(PyLong_AsLong(pValue)) });
+        }
+        break;
+        case 72:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyLong_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
+                return false;
+            }
+            apiData.gc_72.push_back({ static_cast<int>(PyLong_AsLong(pValue)) });
+        }
+        break;
+        case 73:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyLong_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
+                return false;
+            }
+            apiData.gc_73.push_back({ static_cast<int>(PyLong_AsLong(pValue)) });
+        }
+        break;
+        default:
+            break;
+        }
+    }
+    return true;
 }

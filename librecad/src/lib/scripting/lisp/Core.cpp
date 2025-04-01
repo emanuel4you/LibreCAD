@@ -69,7 +69,7 @@ static const Regex floatRegex("[+-]?[0-9]+(?:\\.[0-9]+)?(?:[eE][+-]?[0-9]+)?");
 static const Regex floatPointRegex("[.]{1}\\d+$");
 
 static lclValuePtr entget(lclEname *en);
-
+bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData);
 
 #define CHECK_ARGS_IS(expected) \
     checkArgsIs(name.c_str(), expected, \
@@ -222,7 +222,7 @@ static StaticList<lclBuiltIn*> handlers;
     return lcl::ldouble(floatValue);
 
 #define BUILTIN_INT_VAL(opr, checkDivByZero) \
-    [[maybe_unused]] int64_t intValue = 0; \
+    [[maybe_unused]] int intValue = 0; \
     SET_INT_VAL(+, false); \
     argsBegin++; \
     do { \
@@ -269,9 +269,9 @@ static StaticList<lclBuiltIn*> handlers;
         return lcl::boolean(intLhs->value() opr intRhs->value()); }
 
 // helper foo to cast integer (64 bit) type to char (8 bit) type
-unsigned char itoa64(const int64_t &sign)
+unsigned char itoa64(const int &sign)
 {
-    int64_t bit64[8];
+    int bit64[8];
     unsigned char result = 0;
 
     if(sign < 0)
@@ -946,7 +946,7 @@ BUILTIN("chr")
     if (FLOAT_PTR)
     {
         ADD_FLOAT_VAL(*lhs)
-        auto sign64 = static_cast<std::int64_t>(lhs->value());
+        auto sign64 = static_cast<int>(lhs->value());
         sign = itoa64(sign64);
     }
     else
@@ -1244,393 +1244,7 @@ BUILTIN("entmake")
 
     RS_ScriptingApiData apiData;
 
-    for (int i = 0; i < length; i++) {
-        if (items->at(i)->type() == LCLTYPE::LIST ||
-                items->at(i)->type() == LCLTYPE::VEC)
-        {
-            const lclSequence* list = VALUE_CAST(lclSequence, items->at(i));
-            const lclInteger* gc = VALUE_CAST(lclInteger, list->item(0));
-
-            switch (gc->value())
-            {
-            case 0:
-            {
-                if (!list->isDotted())
-                {
-                    return lcl::nilValue();
-                }
-                const lclString *n = VALUE_CAST(lclString, list->item(2));
-                apiData.etype = n->value().c_str();
-            }
-                break;
-            case 1:
-            {
-                if (!list->isDotted())
-                {
-                    return lcl::nilValue();
-                }
-
-                const lclString *t = VALUE_CAST(lclString, list->item(2));
-                apiData.text = t->value().c_str();
-            }
-                break;
-            case 2:
-            {
-                if (!list->isDotted())
-                {
-                    return lcl::nilValue();
-                }
-
-                const lclString *l = VALUE_CAST(lclString, list->item(2));
-                apiData.block = l->value().c_str();
-            }
-                break;
-            case 6:
-            {
-                if (!list->isDotted())
-                {
-                    return lcl::nilValue();
-                }
-
-                const lclString *ltype = VALUE_CAST(lclString, list->item(2));
-                apiData.pen.setLineType(RS_FilterDXFRW::nameToLineType(ltype->value().c_str()));
-            }
-                break;
-            case 7:
-            {
-                if (!list->isDotted())
-                {
-                    return lcl::nilValue();
-                }
-
-                const lclString *s = VALUE_CAST(lclString, list->item(2));
-                apiData.style = s->value().c_str();
-            }
-                break;
-            case 8:
-            {
-                if (!list->isDotted())
-                {
-                    return lcl::nilValue();
-                }
-
-                const lclString *l = VALUE_CAST(lclString, list->item(2));
-                apiData.layer = l->value().c_str();
-            }
-                break;
-            case 10:
-            {
-                if (list->count() < 3)
-                {
-                    return lcl::nilValue();
-                }
-
-                double xVal;
-                double yVal;
-                double zVal = 0.0;
-
-                if (list->item(1)->type() == LCLTYPE::INT)
-                {
-                    const lclInteger *x = VALUE_CAST(lclInteger, list->item(1));
-                    xVal = double(x->value());
-                }
-                else
-                {
-                    const lclDouble *x = VALUE_CAST(lclDouble, list->item(1));
-                    xVal = x->value();
-                }
-                if (list->item(2)->type() == LCLTYPE::INT)
-                {
-                    const lclInteger *y = VALUE_CAST(lclInteger, list->item(2));
-                    yVal = double(y->value());
-                }
-                else
-                {
-                    const lclDouble *y = VALUE_CAST(lclDouble, list->item(2));
-                    yVal = y->value();
-                }
-
-                if (list->count() > 3)
-                {
-                    if (list->item(2)->type() == LCLTYPE::INT)
-                    {
-                        const lclInteger *z = VALUE_CAST(lclInteger, list->item(3));
-                        zVal = double(z->value());
-                    }
-                    else
-                    {
-                        const lclDouble *z = VALUE_CAST(lclDouble, list->item(3));
-                        zVal = z->value();
-                    }
-                }
-
-                apiData.gc_10.push_back({ xVal, yVal, zVal });
-            }
-                break;
-            case 11:
-            {
-                if (list->count() < 3)
-                {
-                    return lcl::nilValue();
-                }
-
-                double xVal;
-                double yVal;
-                double zVal = 0.0;
-
-                if (list->item(1)->type() == LCLTYPE::INT)
-                {
-                    const lclInteger *x = VALUE_CAST(lclInteger, list->item(1));
-                    xVal = double(x->value());
-                }
-                else
-                {
-                    const lclDouble *x = VALUE_CAST(lclDouble, list->item(1));
-                    xVal = x->value();
-                }
-                if (list->item(2)->type() == LCLTYPE::INT)
-                {
-                    const lclInteger *y = VALUE_CAST(lclInteger, list->item(2));
-                    yVal = double(y->value());
-                }
-                else
-                {
-                    const lclDouble *y = VALUE_CAST(lclDouble, list->item(2));
-                    yVal = y->value();
-                }
-
-                if (list->count() > 3)
-                {
-                    if (list->item(2)->type() == LCLTYPE::INT)
-                    {
-                        const lclInteger *z = VALUE_CAST(lclInteger, list->item(3));
-                        zVal = double(z->value());
-                    }
-                    else
-                    {
-                        const lclDouble *z = VALUE_CAST(lclDouble, list->item(3));
-                        zVal = z->value();
-                    }
-                }
-
-                apiData.gc_11.push_back({ xVal, yVal, zVal });
-            }
-                break;
-            case 40:
-            {
-                if (!list->isDotted())
-                {
-                    return lcl::nilValue();
-                }
-
-                if (list->item(2)->type() == LCLTYPE::INT)
-                {
-                    const lclInteger *r1 = VALUE_CAST(lclInteger, list->item(2));
-                    apiData.gc_40.push_back({ double(r1->value()) });
-                }
-                else
-                {
-                    const lclDouble *r1 = VALUE_CAST(lclDouble, list->item(2));
-                    apiData.gc_40.push_back({ r1->value() });
-                }
-            }
-                break;
-            case 41:
-            {
-                if (!list->isDotted())
-                {
-                    return lcl::nilValue();
-                }
-
-                if (list->item(2)->type() == LCLTYPE::INT)
-                {
-                    const lclInteger *r2 = VALUE_CAST(lclInteger, list->item(2));
-                    apiData.gc_41.push_back({ double(r2->value()) });
-                }
-                else
-                {
-                    const lclDouble *r2 = VALUE_CAST(lclDouble, list->item(2));
-                    apiData.gc_41.push_back({ r2->value() });
-                }
-            }
-                break;
-            case 42:
-            {
-                if (!list->isDotted())
-                {
-                    return lcl::nilValue();
-                }
-
-                if (list->item(2)->type() == LCLTYPE::INT)
-                {
-                    const lclInteger *r3 = VALUE_CAST(lclInteger, list->item(2));
-                    apiData.gc_42.push_back({ double(r3->value()) });
-                }
-                else
-                {
-                    const lclDouble *r3 = VALUE_CAST(lclDouble, list->item(2));
-                    apiData.gc_42.push_back({ r3->value() });
-                }
-            }
-                break;
-            case 44:
-            {
-                if (!list->isDotted())
-                {
-                    return lcl::nilValue();
-                }
-
-                const lclDouble *sc1 = VALUE_CAST(lclDouble, list->item(2));
-                apiData.gc_44 = sc1->value();
-            }
-                break;
-            case 45:
-            {
-                if (!list->isDotted())
-                {
-                    return lcl::nilValue();
-                }
-
-                const lclDouble *sc2 = VALUE_CAST(lclDouble, list->item(2));
-                apiData.gc_45 = sc2->value();
-            }
-                break;
-            case 48:
-            {
-                if (!list->isDotted())
-                {
-                    return lcl::nilValue();
-                }
-
-                int width = 0;
-                if (list->item(2)->type() == LCLTYPE::INT)
-                {
-                    const lclInteger *lwidth = VALUE_CAST(lclInteger, list->item(2));
-                    if (lwidth->value() >= 0)
-                    {
-                        width = lwidth->value() * 100;
-                    }
-                    else
-                    {
-                        width = lwidth->value();
-                    }
-                }
-                else
-                {
-                    const lclDouble *lwidth = VALUE_CAST(lclDouble, list->item(2));
-                    if (lwidth->value() >= 0)
-                    {
-                        width = static_cast<int>(lwidth->value()) * 100;
-                    }
-                    else
-                    {
-                        width = static_cast<int>(lwidth->value());
-                    }
-                }
-
-                apiData.pen.setWidth(RS2::intToLineWidth(width));
-            }
-                break;
-            case 50:
-            {
-                if (!list->isDotted())
-                {
-                    return lcl::nilValue();
-                }
-
-                if (list->item(2)->type() == LCLTYPE::INT)
-                {
-                    const lclInteger *a1 = VALUE_CAST(lclInteger, list->item(2));
-                    apiData.gc_50.push_back({ double(a1->value()) });
-                }
-                else
-                {
-                    const lclDouble *a1 = VALUE_CAST(lclDouble, list->item(2));
-                    apiData.gc_50.push_back({ a1->value() });
-                }
-            }
-                break;
-            case 51:
-            {
-                if (!list->isDotted())
-                {
-                    return lcl::nilValue();
-                }
-
-                if (list->item(2)->type() == LCLTYPE::INT)
-                {
-                    const lclInteger *a2 = VALUE_CAST(lclInteger, list->item(2));
-                    apiData.gc_51.push_back({ double(a2->value()) });
-                }
-                else
-                {
-                    const lclDouble *a2 = VALUE_CAST(lclDouble, list->item(2));
-                    apiData.gc_51.push_back({ a2->value() });
-                }
-            }
-                break;
-            case 62:
-            {
-                if (!list->isDotted())
-                {
-                    return lcl::nilValue();
-                }
-
-                const lclInteger *color = VALUE_CAST(lclInteger, list->item(2));
-                apiData.pen.setColor(RS_FilterDXFRW::numberToColor(color->value()));
-            }
-                break;
-            case 70:
-            {
-                if (!list->isDotted())
-                {
-                    return lcl::nilValue();
-                }
-
-                const lclInteger *f0 = VALUE_CAST(lclInteger, list->item(2));
-                apiData.gc_70 = f0->value();
-            }
-                break;
-            case 71:
-            {
-                if (!list->isDotted())
-                {
-                    return lcl::nilValue();
-                }
-
-                const lclInteger *f1 = VALUE_CAST(lclInteger, list->item(2));
-                apiData.gc_71 = f1->value();
-            }
-                break;
-            case 72:
-            {
-                if (!list->isDotted())
-                {
-                    return lcl::nilValue();
-                }
-
-                const lclInteger *f2 = VALUE_CAST(lclInteger, list->item(2));
-                apiData.gc_72 = f2->value();
-            }
-                break;
-            case 73:
-            {
-                if (!list->isDotted())
-                {
-                    return lcl::nilValue();
-                }
-
-                const lclInteger *f3 = VALUE_CAST(lclInteger, list->item(2));
-                apiData.gc_73 = f3->value();
-            }
-                break;
-            default:
-                break;
-            }
-        }
-    }
-
-    if (apiData.etype == "")
+    if (!getApiData(items, apiData) || apiData.etype == "")
     {
         return lcl::nilValue();
     }
@@ -1649,9 +1263,8 @@ BUILTIN("entmod")
     CHECK_ARGS_IS(1);
     ARG(lclSequence, seq);
 
-    const int length = seq->count();
     unsigned int entityId = 0;
-    bool found = false;
+    const int length = seq->count();
 
     for (int i = 0; i < length; i++)
     {
@@ -1661,16 +1274,19 @@ BUILTIN("entmod")
         {
             const lclEname *ename = VALUE_CAST(lclEname, list->item(2));
             entityId = ename->value();
-            found = true;
             break;
         }
     }
 
-    if (!found)
+    if (entityId == 0)
     {
         return lcl::nilValue();
     }
 
+    lclValueVec* items = new lclValueVec(length);
+    std::copy(seq->begin(), seq->end(), items->begin());
+
+    RS_ScriptingApiData apiData;
     RS_EntityContainer* entityContainer = RS_SCRIPTINGAPI->getContainer();
 
     if(entityContainer->count())
@@ -1679,459 +1295,21 @@ BUILTIN("entmod")
         {
             if (entity->getId() == entityId)
             {
-                RS_Pen pen = entity->getPen(false);
-                std::vector<std::vector<double>> gc_10;
-                std::vector<std::vector<double>> gc_11;
-                QString text = "";
-                QString textStyle = "";
-                double rad1 = 0.0;
-                double rad2 = 0.0;
-                double rad3 = 0.0;
-                double ang1 = 0.0;
-                double ang2 = 0.0;
-                double scale1 = 1.0;
-                double scale2 = 1.0;
+                apiData.pen = entity->getPen(false);
 
-                bool rad1Mod = false;
-                bool rad2Mod = false;
-                bool rad3Mod = false;
-                bool ang1Mod = false;
-                bool ang2Mod = false;
-                bool scale1Mod = false;
-                bool scale2Mod = false;
-
-                Q_UNUSED(ang1)
-                Q_UNUSED(ang2)
-                Q_UNUSED(rad3)
-                Q_UNUSED(scale1)
-                Q_UNUSED(scale2)
-
-                Q_UNUSED(ang1Mod)
-                Q_UNUSED(ang2Mod)
-                Q_UNUSED(rad3Mod)
-                Q_UNUSED(scale1Mod)
-                Q_UNUSED(scale2Mod)
-
-                bool textMod = false;
-                bool styleMod = false;
-
-                for (int i = 0; i < length; i++)
+                if (!getApiData(items, apiData) || apiData.id.empty())
                 {
-                    const lclList *list = VALUE_CAST(lclList, seq->item(i));
-                    const lclInteger* gc = VALUE_CAST(lclInteger, list->item(0));
-
-                    switch (gc->value())
-                    {
-                    case 1:
-                    {
-                        // text
-                        if (!list->isDotted())
-                        {
-                            return lcl::nilValue();
-                        }
-                        const lclString *txt = VALUE_CAST(lclString, list->item(2));
-                        textMod = true;
-                        text = txt->value().c_str();
-                    }
-                        break;
-                    case 6:
-                    {
-                        // lineType
-                        if (!list->isDotted())
-                        {
-                            return lcl::nilValue();
-                        }
-                        const lclString *ltype = VALUE_CAST(lclString, list->item(2));
-                        pen.setLineType(RS_FilterDXFRW::nameToLineType(ltype->value().c_str()));
-                    }
-                        break;
-                    case 7:
-                    {
-                        // TextStyle
-                        if (!list->isDotted())
-                        {
-                            return lcl::nilValue();
-                        }
-
-                        const lclString *tstyle = VALUE_CAST(lclString, list->item(2));
-
-                        textStyle = tstyle->value().c_str();
-                        if(RS_FONTLIST->requestFont(textStyle) != nullptr)
-                        {
-                            styleMod = true;
-                        }
-
-                    }
-                        break;
-                    case 8:
-                    {
-                        // layer
-                        if (!list->isDotted())
-                        {
-                            return lcl::nilValue();
-                        }
-
-                        const lclString *layer = VALUE_CAST(lclString, list->item(2));
-                        entity->setLayer(layer->value().c_str());
-                    }
-                        break;
-                    case 10:
-                    {
-                        if (list->count() < 3)
-                        {
-                            return lcl::nilValue();
-                        }
-
-                        double xVal;
-                        double yVal;
-                        double zVal = 0.0;
-
-                        if (list->item(1)->type() == LCLTYPE::INT)
-                        {
-                            const lclInteger *x = VALUE_CAST(lclInteger, list->item(1));
-                            xVal = double(x->value());
-                        }
-                        else
-                        {
-                            const lclDouble *x = VALUE_CAST(lclDouble, list->item(1));
-                            xVal = x->value();
-                        }
-                        if (list->item(2)->type() == LCLTYPE::INT)
-                        {
-                            const lclInteger *y = VALUE_CAST(lclInteger, list->item(2));
-                            yVal = double(y->value());
-                        }
-                        else
-                        {
-                            const lclDouble *y = VALUE_CAST(lclDouble, list->item(2));
-                            yVal = y->value();
-                        }
-
-                        if (list->count() > 3)
-                        {
-                            if (list->item(2)->type() == LCLTYPE::INT)
-                            {
-                                const lclInteger *z = VALUE_CAST(lclInteger, list->item(3));
-                                zVal = double(z->value());
-                            }
-                            else
-                            {
-                                const lclDouble *z = VALUE_CAST(lclDouble, list->item(3));
-                                zVal = z->value();
-                            }
-                        }
-
-                        gc_10.push_back({ xVal, yVal, zVal });
-                    }
-                        break;
-                    case 11:
-                    {
-                        if (list->count() < 3)
-                        {
-                            return lcl::nilValue();
-                        }
-
-                        double xVal;
-                        double yVal;
-                        double zVal = 0.0;
-
-                        if (list->item(1)->type() == LCLTYPE::INT)
-                        {
-                            const lclInteger *x = VALUE_CAST(lclInteger, list->item(1));
-                            xVal = double(x->value());
-                        }
-                        else
-                        {
-                            const lclDouble *x = VALUE_CAST(lclDouble, list->item(1));
-                            xVal = x->value();
-                        }
-                        if (list->item(2)->type() == LCLTYPE::INT)
-                        {
-                            const lclInteger *y = VALUE_CAST(lclInteger, list->item(2));
-                            yVal = double(y->value());
-                        }
-                        else
-                        {
-                            const lclDouble *y = VALUE_CAST(lclDouble, list->item(2));
-                            yVal = y->value();
-                        }
-
-                        if (list->count() > 3)
-                        {
-                            if (list->item(2)->type() == LCLTYPE::INT)
-                            {
-                                const lclInteger *z = VALUE_CAST(lclInteger, list->item(3));
-                                zVal = double(z->value());
-                            }
-                            else
-                            {
-                                const lclDouble *z = VALUE_CAST(lclDouble, list->item(3));
-                                zVal = z->value();
-                            }
-                        }
-
-                        gc_11.push_back({ xVal, yVal, zVal });
-                    }
-                        break;
-                    case 40:
-                    {
-                        const lclDouble *r1 = VALUE_CAST(lclDouble, list->item(2));
-                        rad1 = r1->value();
-                        rad1Mod = true;
-                    }
-                        break;
-                    case 41:
-                    {
-                        const lclDouble *r2 = VALUE_CAST(lclDouble, list->item(2));
-                        rad2 = r2->value();
-                        rad2Mod = true;
-                    }
-                        break;
-                    case 42:
-                    {
-                        const lclDouble *r3 = VALUE_CAST(lclDouble, list->item(2));
-                        rad3 = r3->value();
-                        rad3Mod = true;
-                    }
-                        break;
-                    case 44:
-                    {
-                        const lclDouble *sc1 = VALUE_CAST(lclDouble, list->item(2));
-                        scale1 = sc1->value();
-                        scale1Mod = true;
-                    }
-                        break;
-                    case 45:
-                    {
-                        const lclDouble *sc2 = VALUE_CAST(lclDouble, list->item(2));
-                        scale2 = sc2->value();
-                        scale2Mod = true;
-                    }
-                        break;
-                    case 48:
-                    {
-                        // lineWidth
-                        int width = 0;
-                        if (list->item(2)->type() == LCLTYPE::INT)
-                        {
-                            const lclInteger *lwidth = VALUE_CAST(lclInteger, list->item(2));
-                            if (lwidth->value() >= 0)
-                            {
-                                width = lwidth->value() * 100;
-                            }
-                            else
-                            {
-                                width = lwidth->value();
-                            }
-                        }
-                        else
-                        {
-                            const lclDouble *lwidth = VALUE_CAST(lclDouble, list->item(2));
-                            if (lwidth->value() >= 0)
-                            {
-                                width = static_cast<int>(lwidth->value()) * 100;
-                            }
-                            else
-                            {
-                                width = static_cast<int>(lwidth->value());
-                            }
-                        }
-
-                        pen.setWidth(RS2::intToLineWidth(width));
-                    }
-                        break;
-                    case 50:
-                    {
-                        const lclDouble *a1 = VALUE_CAST(lclDouble, list->item(2));
-                        ang1 = a1->value();
-                        ang1Mod = true;
-                    }
-                        break;
-                    case 51:
-                    {
-                        const lclDouble *a2 = VALUE_CAST(lclDouble, list->item(2));
-                        ang2 = a2->value();
-                        ang2Mod = true;
-                    }
-                        break;
-                    case 62:
-                    {
-                        // color
-                        const lclInteger *color = VALUE_CAST(lclInteger, list->item(2));
-                        pen.setColor(RS_FilterDXFRW::numberToColor(color->value()));
-                    }
-                        break;
-                    default:
-                        break;
-                    }
-                }
-                entity->setPen(pen);
-
-                switch (entity->rtti())
-                {
-                    case RS2::EntityPoint:
-                        {
-                            if (!gc_10.empty())
-                            {
-                                RS_Point* p = (RS_Point*)entity;
-                                const std::vector<double> pos = gc_10.front();
-                                p->setPos(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
-                            }
-                        }
-                        break;
-                    case RS2::EntityLine:
-                    {
-                        if (!gc_10.empty() || !gc_11.empty())
-                        {
-                            RS_Line* l = (RS_Line*)entity;
-                            if (!gc_10.empty())
-                            {
-                                const std::vector<double> pos = gc_10.front();
-                                l->setStartpoint(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
-                            }
-
-                            if (!gc_11.empty())
-                            {
-                                const std::vector<double> pos = gc_11.front();
-                                l->setEndpoint(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
-                            }
-                        }
-                    }
-                        break;
-                    case RS2::EntityArc:
-                    {
-                        if (!gc_10.empty())
-                        {
-                            RS_Arc* a = (RS_Arc*)entity;
-                            if (!gc_10.empty())
-                            {
-                                const std::vector<double> pos = gc_10.front();
-                                a->setCenter(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
-                            }
-                            if (rad1Mod)
-                            {
-                                a->setAngle1(rad1);
-                            }
-                            if (rad2Mod)
-                            {
-                                a->setAngle2(rad2);
-                            }
-                        }
-                    }
-                        break;
-                    case RS2::EntityCircle:
-                    {
-                        if (!gc_10.empty() || rad1Mod)
-                        {
-                            RS_Circle* c = (RS_Circle*)entity;
-                            if (!gc_10.empty())
-                            {
-                                const std::vector<double> pos = gc_10.front();
-                                c->setCenter(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
-                            }
-
-                            if (rad1Mod)
-                            {
-                                c->setRadius(rad1);
-                            }
-                        }
-                    }
-                        break;
-                    case RS2::EntityEllipse:
-                    {
-                        if (!gc_10.empty() || !gc_11.empty())
-                        {
-                            RS_Ellipse* ellipse=static_cast<RS_Ellipse*>(entity);
-
-                            if (!gc_10.empty())
-                            {
-                                const std::vector<double> pos = gc_10.front();
-                                ellipse->setCenter(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
-                            }
-
-                            if (!gc_11.empty())
-                            {
-                                const std::vector<double> pos = gc_11.front();
-                                ellipse->setMajorP(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
-                            }
-
-                            if (rad1Mod)
-                            {
-                                ellipse->setRatio(rad1);
-                            }
-                        }
-                    }
-                        break;
-                    case RS2::EntityInsert:
-                    {
-                        if (!gc_10.empty())
-                        {
-                            RS_Insert* i = (RS_Insert*)entity;
-                            const std::vector<double> pos = gc_10.front();
-                            i->setInsertionPoint(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
-                        }
-                    }
-                        break;
-                    case RS2::EntityMText:
-                    {
-                        if (!gc_10.empty() || text.size() || textStyle.size())
-                        {
-                            RS_MText* mt = (RS_MText*)entity;
-
-                            if (!gc_10.empty())
-                            {
-                                const std::vector<double> pos = gc_10.front();
-                                mt->moveRef(RS_Vector(0,0,0), RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
-                            }
-
-                            if (textMod)
-                            {
-                                mt->setText(text);
-                            }
-
-                            if (styleMod)
-                            {
-                                mt->setStyle(textStyle);
-                            }
-
-                        }
-                    }
-                        break;
-                    case RS2::EntityText:
-                    {
-                        if (!gc_10.empty() || text.size() || textStyle.size())
-                        {
-                            RS_Text* t = (RS_Text*)entity;
-
-                            if (!gc_10.empty())
-                            {
-                                const std::vector<double> pos = gc_10.front();
-                                t->moveRef(RS_Vector(0,0,0), RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
-                            }
-
-                            if (textMod)
-                            {
-                                t->setText(text);
-                            }
-
-                            if (styleMod)
-                            {
-                                t->setStyle(textStyle);
-                            }
-
-                        }
-                    }
-                        break;
-                    default: {}
+                    return lcl::nilValue();
                 }
 
-                break;
+                entity->setPen(apiData.pen);
+                if (RS_SCRIPTINGAPI->entmod(entity, apiData))
+                {
+                    lclEname *en = new lclEname(apiData.id.front());
+                    return entget(en);
+                }
             }
         }
-    }
-    else
-    {
-        return lcl::nilValue();
     }
 
     return lcl::nilValue();
@@ -2239,7 +1417,7 @@ BUILTIN("expt")
         else
         {
             ADD_INT_VAL(*rhs)
-            auto result = static_cast<std::int64_t>(pow(double(lhs->value()),
+            auto result = static_cast<int>(pow(double(lhs->value()),
                                     double(rhs->value())));
             return lcl::integer(result);
         }
@@ -3148,7 +2326,7 @@ BUILTIN("max")
     bool hasFloat = ARGS_HAS_FLOAT;
     bool unset = true;
     [[maybe_unused]] double floatValue = 0;
-    [[maybe_unused]] int64_t intValue = 0;
+    [[maybe_unused]] int intValue = 0;
 
     if (count == 1)
     {
@@ -3244,7 +2422,7 @@ BUILTIN("min")
     bool hasFloat = ARGS_HAS_FLOAT;
     bool unset = true;
     [[maybe_unused]] double floatValue = 0;
-    [[maybe_unused]] int64_t intValue = 0;
+    [[maybe_unused]] int intValue = 0;
 
     if (count == 1)
     {
@@ -4286,7 +3464,7 @@ BUILTIN("rem")
     } while (argsBegin != argsEnd);
     return lcl::ldouble(floatValue);
     } else {
-        [[maybe_unused]] int64_t intValue = 0;
+        [[maybe_unused]] int intValue = 0;
         ADD_INT_VAL(*intVal) // +
         intValue = intValue + intVal->value();
         LCL_CHECK(intVal->value() != 0, "Division by zero");
@@ -6560,6 +5738,506 @@ static int countValues(lclValueIter begin, lclValueIter end)
     }
 
     return result;
+}
+
+bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
+{
+    const int length = items->size();
+
+    for (int i = 0; i < length; i++) {
+        if (items->at(i)->type() == LCLTYPE::LIST ||
+                items->at(i)->type() == LCLTYPE::VEC)
+        {
+            const lclSequence* list = VALUE_CAST(lclSequence, items->at(i));
+            const lclInteger* gc = VALUE_CAST(lclInteger, list->item(0));
+
+            switch (gc->value())
+            {
+            case -1:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+                const lclEname *en = VALUE_CAST(lclEname, list->item(2));
+                apiData.id.push_back({ en->value() });
+            }
+                break;
+            case 0:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+                const lclString *n = VALUE_CAST(lclString, list->item(2));
+                apiData.etype = n->value().c_str();
+            }
+                break;
+            case 1:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                const lclString *t = VALUE_CAST(lclString, list->item(2));
+                apiData.text.push_back( { t->value().c_str() });
+            }
+                break;
+            case 2:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                const lclString *l = VALUE_CAST(lclString, list->item(2));
+                apiData.block = l->value().c_str();
+            }
+                break;
+            case 6:
+            {
+                if (!list->isDotted())
+                {
+                    return lcl::nilValue();
+                }
+
+                const lclString *ltype = VALUE_CAST(lclString, list->item(2));
+                apiData.pen.setLineType(RS_FilterDXFRW::nameToLineType(ltype->value().c_str()));
+            }
+                break;
+            case 7:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                const lclString *s = VALUE_CAST(lclString, list->item(2));
+                apiData.style.push_back( { s->value().c_str() });
+            }
+                break;
+            case 8:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                const lclString *l = VALUE_CAST(lclString, list->item(2));
+                apiData.layer = l->value().c_str();
+            }
+                break;
+            case 10:
+            {
+                if (list->count() < 3)
+                {
+                    return false;
+                }
+
+                double xVal;
+                double yVal;
+                double zVal = 0.0;
+
+                if (list->item(1)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *x = VALUE_CAST(lclInteger, list->item(1));
+                    xVal = double(x->value());
+                }
+                else
+                {
+                    const lclDouble *x = VALUE_CAST(lclDouble, list->item(1));
+                    xVal = x->value();
+                }
+                if (list->item(2)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *y = VALUE_CAST(lclInteger, list->item(2));
+                    yVal = double(y->value());
+                }
+                else
+                {
+                    const lclDouble *y = VALUE_CAST(lclDouble, list->item(2));
+                    yVal = y->value();
+                }
+
+                if (list->count() > 3)
+                {
+                    if (list->item(2)->type() == LCLTYPE::INT)
+                    {
+                        const lclInteger *z = VALUE_CAST(lclInteger, list->item(3));
+                        zVal = double(z->value());
+                    }
+                    else
+                    {
+                        const lclDouble *z = VALUE_CAST(lclDouble, list->item(3));
+                        zVal = z->value();
+                    }
+                }
+
+                apiData.gc_10.push_back({ xVal, yVal, zVal });
+            }
+                break;
+            case 11:
+            {
+                if (list->count() < 3)
+                {
+                    return false;
+                }
+
+                double xVal;
+                double yVal;
+                double zVal = 0.0;
+
+                if (list->item(1)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *x = VALUE_CAST(lclInteger, list->item(1));
+                    xVal = double(x->value());
+                }
+                else
+                {
+                    const lclDouble *x = VALUE_CAST(lclDouble, list->item(1));
+                    xVal = x->value();
+                }
+                if (list->item(2)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *y = VALUE_CAST(lclInteger, list->item(2));
+                    yVal = double(y->value());
+                }
+                else
+                {
+                    const lclDouble *y = VALUE_CAST(lclDouble, list->item(2));
+                    yVal = y->value();
+                }
+
+                if (list->count() > 3)
+                {
+                    if (list->item(2)->type() == LCLTYPE::INT)
+                    {
+                        const lclInteger *z = VALUE_CAST(lclInteger, list->item(3));
+                        zVal = double(z->value());
+                    }
+                    else
+                    {
+                        const lclDouble *z = VALUE_CAST(lclDouble, list->item(3));
+                        zVal = z->value();
+                    }
+                }
+
+                apiData.gc_11.push_back({ xVal, yVal, zVal });
+            }
+                break;
+            case 12:
+            {
+                if (list->count() < 3)
+                {
+                    return false;
+                }
+
+                double xVal;
+                double yVal;
+                double zVal = 0.0;
+
+                if (list->item(1)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *x = VALUE_CAST(lclInteger, list->item(1));
+                    xVal = double(x->value());
+                }
+                else
+                {
+                    const lclDouble *x = VALUE_CAST(lclDouble, list->item(1));
+                    xVal = x->value();
+                }
+                if (list->item(2)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *y = VALUE_CAST(lclInteger, list->item(2));
+                    yVal = double(y->value());
+                }
+                else
+                {
+                    const lclDouble *y = VALUE_CAST(lclDouble, list->item(2));
+                    yVal = y->value();
+                }
+
+                if (list->count() > 3)
+                {
+                    if (list->item(2)->type() == LCLTYPE::INT)
+                    {
+                        const lclInteger *z = VALUE_CAST(lclInteger, list->item(3));
+                        zVal = double(z->value());
+                    }
+                    else
+                    {
+                        const lclDouble *z = VALUE_CAST(lclDouble, list->item(3));
+                        zVal = z->value();
+                    }
+                }
+
+                apiData.gc_12.push_back({ xVal, yVal, zVal });
+            }
+                break;
+            case 13:
+            {
+                if (list->count() < 3)
+                {
+                    return false;
+                }
+
+                double xVal;
+                double yVal;
+                double zVal = 0.0;
+
+                if (list->item(1)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *x = VALUE_CAST(lclInteger, list->item(1));
+                    xVal = double(x->value());
+                }
+                else
+                {
+                    const lclDouble *x = VALUE_CAST(lclDouble, list->item(1));
+                    xVal = x->value();
+                }
+                if (list->item(2)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *y = VALUE_CAST(lclInteger, list->item(2));
+                    yVal = double(y->value());
+                }
+                else
+                {
+                    const lclDouble *y = VALUE_CAST(lclDouble, list->item(2));
+                    yVal = y->value();
+                }
+
+                if (list->count() > 3)
+                {
+                    if (list->item(2)->type() == LCLTYPE::INT)
+                    {
+                        const lclInteger *z = VALUE_CAST(lclInteger, list->item(3));
+                        zVal = double(z->value());
+                    }
+                    else
+                    {
+                        const lclDouble *z = VALUE_CAST(lclDouble, list->item(3));
+                        zVal = z->value();
+                    }
+                }
+
+                apiData.gc_13.push_back({ xVal, yVal, zVal });
+            }
+                break;
+            case 40:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                if (list->item(2)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *r1 = VALUE_CAST(lclInteger, list->item(2));
+                    apiData.gc_40.push_back({ double(r1->value()) });
+                }
+                else
+                {
+                    const lclDouble *r1 = VALUE_CAST(lclDouble, list->item(2));
+                    apiData.gc_40.push_back({ r1->value() });
+                }
+            }
+                break;
+            case 41:
+            {
+                if (!list->isDotted())
+                {
+                   return false;
+                }
+
+                if (list->item(2)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *r2 = VALUE_CAST(lclInteger, list->item(2));
+                    apiData.gc_41.push_back({ double(r2->value()) });
+                }
+                else
+                {
+                    const lclDouble *r2 = VALUE_CAST(lclDouble, list->item(2));
+                    apiData.gc_41.push_back({ r2->value() });
+                }
+            }
+                break;
+            case 42:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                if (list->item(2)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *r3 = VALUE_CAST(lclInteger, list->item(2));
+                    apiData.gc_42.push_back({ double(r3->value()) });
+                }
+                else
+                {
+                    const lclDouble *r3 = VALUE_CAST(lclDouble, list->item(2));
+                    apiData.gc_42.push_back({ r3->value() });
+                }
+            }
+                break;
+            case 44:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                const lclDouble *sc1 = VALUE_CAST(lclDouble, list->item(2));
+                apiData.gc_44.push_back({ sc1->value() });
+            }
+                break;
+            case 45:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                const lclDouble *sc2 = VALUE_CAST(lclDouble, list->item(2));
+                apiData.gc_45.push_back({ sc2->value() });
+            }
+                break;
+            case 48:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                int width = 0;
+                if (list->item(2)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *lwidth = VALUE_CAST(lclInteger, list->item(2));
+                    if (lwidth->value() >= 0)
+                    {
+                        width = lwidth->value() * 100;
+                    }
+                    else
+                    {
+                        width = lwidth->value();
+                    }
+                }
+                else
+                {
+                    const lclDouble *lwidth = VALUE_CAST(lclDouble, list->item(2));
+                    if (lwidth->value() >= 0)
+                    {
+                        width = static_cast<int>(lwidth->value()) * 100;
+                    }
+                    else
+                    {
+                        width = static_cast<int>(lwidth->value());
+                    }
+                }
+
+                apiData.pen.setWidth(RS2::intToLineWidth(width));
+            }
+                break;
+            case 50:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                if (list->item(2)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *a1 = VALUE_CAST(lclInteger, list->item(2));
+                    apiData.gc_50.push_back({ double(a1->value()) });
+                }
+                else
+                {
+                    const lclDouble *a1 = VALUE_CAST(lclDouble, list->item(2));
+                    apiData.gc_50.push_back({ a1->value() });
+                }
+            }
+                break;
+            case 51:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                if (list->item(2)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *a2 = VALUE_CAST(lclInteger, list->item(2));
+                    apiData.gc_51.push_back({ double(a2->value()) });
+                }
+                else
+                {
+                    const lclDouble *a2 = VALUE_CAST(lclDouble, list->item(2));
+                    apiData.gc_51.push_back({ a2->value() });
+                }
+            }
+                break;
+            case 62:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                const lclInteger *color = VALUE_CAST(lclInteger, list->item(2));
+                apiData.pen.setColor(RS_FilterDXFRW::numberToColor(color->value()));
+            }
+                break;
+            case 70:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                const lclInteger *f0 = VALUE_CAST(lclInteger, list->item(2));
+                apiData.gc_70.push_back({f0->value() });
+            }
+                break;
+            case 71:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                const lclInteger *f1 = VALUE_CAST(lclInteger, list->item(2));
+                apiData.gc_71.push_back({f1->value() });
+            }
+                break;
+            case 72:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                const lclInteger *f2 = VALUE_CAST(lclInteger, list->item(2));
+                apiData.gc_72.push_back({f2->value() });
+            }
+                break;
+            case 73:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                const lclInteger *f3 = VALUE_CAST(lclInteger, list->item(2));
+                apiData.gc_73.push_back({f3->value() });
+            }
+                break;
+            default:
+                break;
+            }
+        }
+    }
+    return true;
 }
 
 #endif // DEVELOPER
