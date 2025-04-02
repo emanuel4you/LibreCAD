@@ -4435,6 +4435,7 @@ static lclValuePtr entget(lclEname *en)
     if(entityContainer->count())
     {
         for (auto e: *entityContainer) {
+
             if (e->getId() == en->value())
             {
                 RS_Pen pen = e->getPen(false);
@@ -4557,8 +4558,6 @@ static lclValuePtr entget(lclEname *en)
                         entity->push_back(lcl::list(pnt));
 
                         entity->push_back(lcl::list(extrDir));
-
-                        return lcl::list(entity);
                     }
                     break;
 
@@ -4594,8 +4593,6 @@ static lclValuePtr entget(lclEname *en)
                         entity->push_back(lcl::list(endpnt));
 
                         entity->push_back(lcl::list(extrDir));
-
-                        return lcl::list(entity);
                     }
                         break;
 
@@ -4694,8 +4691,6 @@ static lclValuePtr entget(lclEname *en)
                             }
 
                             entity->push_back(lcl::list(extrDir));
-
-                            return lcl::list(entity);
                         }
                     }
                         break;
@@ -4748,8 +4743,6 @@ static lclValuePtr entget(lclEname *en)
                         entity->push_back(lcl::list(endAngle));
 
                         entity->push_back(lcl::list(extrDir));
-
-                        return lcl::list(entity);
                     }
                         break;
 
@@ -4784,8 +4777,6 @@ static lclValuePtr entget(lclEname *en)
                         entity->push_back(lcl::list(radius));
 
                         entity->push_back(lcl::list(extrDir));
-
-                        return lcl::list(entity);
                     }
                         break;
 
@@ -4834,13 +4825,12 @@ static lclValuePtr entget(lclEname *en)
                          * 42
                          * End parameter (this value is 2pi for a full ellipse)
                         */
-
-                        return lcl::list(entity);
                     }
                         break;
 
                     case RS2::EntityDimAligned:
                     {
+                        qDebug() << "[entget] RS2::EntityDimAligned";
                         RS_DimAligned* dal = (RS_DimAligned*)e;
 
                         lclValueVec *name = new lclValueVec(3);
@@ -5068,7 +5058,6 @@ static lclValuePtr entget(lclEname *en)
                         acdbL3->at(0) = lcl::integer(100);
                         acdbL3->at(1) = lcl::symbol(".");
                         acdbL3->at(2) = lcl::string("AcDbRotatedDimension");
-                        entity->push_back(lcl::list(acdbL3));
                     }
                     break;
 
@@ -5265,8 +5254,6 @@ static lclValuePtr entget(lclEname *en)
                         entity->push_back(lcl::list(rowSpacing));
 
                         entity->push_back(lcl::list(extrDir));
-
-                        return lcl::list(entity);
                     }
                     break;
 
@@ -5386,8 +5373,6 @@ static lclValuePtr entget(lclEname *en)
                         entity->push_back(lcl::list(textSpace));
 
                         entity->push_back(lcl::list(extrDir));
-
-                        return lcl::list(entity);
                     }
                     break;
 
@@ -5446,8 +5431,6 @@ static lclValuePtr entget(lclEname *en)
                         }
 
                         entity->push_back(lcl::list(extrDir));
-
-                        return lcl::list(entity);
                     }
                     break;
 
@@ -5503,8 +5486,6 @@ static lclValuePtr entget(lclEname *en)
                         solidFill->at(1) = lcl::symbol(".");
                         solidFill->at(2) = lcl::integer(static_cast<int>(h->isSolid()));
                         entity->push_back(lcl::list(solidFill));
-
-                        return lcl::list(entity);
                     }
                     break;
 
@@ -5557,8 +5538,6 @@ static lclValuePtr entget(lclEname *en)
                         }
 
                         entity->push_back(lcl::list(extrDir));
-
-                        return lcl::list(entity);
                     }
                         break;
 
@@ -5658,8 +5637,6 @@ static lclValuePtr entget(lclEname *en)
                             knot->at(2) = lcl::ldouble(k);
                             entity->push_back(lcl::list(knot));
                         }
-
-                        return lcl::list(entity);
                     }
                         break;
 
@@ -5762,8 +5739,6 @@ static lclValuePtr entget(lclEname *en)
                             entity->push_back(lcl::list(cor));
                         }
                         entity->push_back(lcl::list(extrDir));
-
-                        return lcl::list(entity);
                     }
                         break;
 
@@ -5780,7 +5755,7 @@ static lclValuePtr entget(lclEname *en)
                         return lcl::nilValue();
                         break;
                 }
-                return lcl::nilValue();
+                return lcl::list(entity);
             }
         }
     }
