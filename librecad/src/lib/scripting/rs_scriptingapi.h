@@ -59,6 +59,7 @@ public:
     std::vector<std::vector<double>> gc_11;
     std::vector<std::vector<double>> gc_12;
     std::vector<std::vector<double>> gc_13;
+    std::vector<std::vector<double>> gc_14;
 
     std::vector<unsigned long> id;
     std::vector<int> gc_70;
@@ -73,6 +74,7 @@ public:
     std::vector<double> gc_45;
     std::vector<double> gc_50;
     std::vector<double> gc_51;
+    std::vector<QString> gc_100;
     std::vector<QString> text;
     std::vector<QString> style;
 
@@ -97,19 +99,22 @@ public:
 
     void addArc(double x, double y, double z, double rad, double ang1, double ang2, const RS_Pen &pen);
     void addCircle(double x, double y, double z, double rad, const RS_Pen &pen);
+    void addDimRadial(const RS_DimensionData &data, const RS_DimRadialData &edata, const RS_Pen &pen);
     void addEllipse(double x1, double y1, double z1, double x2, double y2, double z2, double rad, const RS_Pen &pen);
     void addLine(double x1, double y1, double z1, double x2, double y2, double z2, const RS_Pen &pen);
     void addPoint(double x, double y, double z, const RS_Pen &pen);
-    void addLwPolyline(std::vector<Plug_VertexData> const& points, bool closed, const RS_Pen &pen);
+    void addLwPolyline(const std::vector<Plug_VertexData> &points, bool closed, const RS_Pen &pen);
     void addSolid(const RS_SolidData &data, const RS_Pen &pen);
-    //void addSpline(std::vector<std::vector<double>> vertex, const RS_Pen &pen);
+    void addSpline(const RS_SplineData data, const std::vector<RS_Vector> &points, const RS_Pen &pen);
     void addMText(const RS_Vector &pnt, double height, double width, double angle, int spacing, int direction, int attach, const QString &txt, const QString &style, const RS_Pen &pen);
     void addText(const RS_Vector &pnt, double height, double width, double angle, int valign, int halign, int generation, const QString &txt, const QString &style, const RS_Pen &pen);
 
-    const std::string copyright();
-    const std::string credits();
-    const std::string getEntityName(unsigned int id);
-    const std::string getEntityHndl(unsigned int id);
+    std::string copyright() const;
+    std::string credits() const;
+    std::string getEntityName(unsigned int id) const;
+    std::string getEntityHndl(unsigned int id) const;
+    std::string getStrDlg(const char *prompt) const;
+    std::string getFileNameDlg(const char *title, const char *filename, const char *ext) const;
 
     unsigned int entlast();
     unsigned int entnext(unsigned int current=0);
@@ -122,8 +127,8 @@ public:
     bool trueColorDialog(int &tres, int &res, int tcolor, int color, bool by, int tbycolor, int bycolor);
 
     double getDoubleDlg(const char *prompt);
-    const std::string getStrDlg(const char *prompt);
-    const std::string getFileNameDlg(const char *title, const char *filename, const char *ext);
+
+
     char readChar();
 
     bool actionTile(const char *id, const char *action);

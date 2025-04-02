@@ -167,7 +167,7 @@ double RS_ScriptingApi::getDoubleDlg(const char *prompt)
             0.0, -2147483647.0, 2147483647.0, 1, nullptr, Qt::WindowFlags(), 1);
 }
 
-const std::string RS_ScriptingApi::copyright()
+std::string RS_ScriptingApi::copyright() const
 {
     QFile f(":/readme.md");
     if (!f.open(QFile::ReadOnly | QFile::Text))
@@ -178,12 +178,12 @@ const std::string RS_ScriptingApi::copyright()
     return in.readAll().toStdString();
 }
 
-const std::string RS_ScriptingApi::credits()
+std::string RS_ScriptingApi::credits() const
 {
     return "Thanks to all the people supporting LibreCAD development. See https://dokuwiki.librecad.org for more information.\n";
 }
 
-const std::string RS_ScriptingApi::getStrDlg(const char *prompt)
+std::string RS_ScriptingApi::getStrDlg(const char *prompt) const
 {
     return QInputDialog::getText(nullptr,
             "LibreCAD",
@@ -192,7 +192,7 @@ const std::string RS_ScriptingApi::getStrDlg(const char *prompt)
             QLineEdit::Normal, "", nullptr, Qt::WindowFlags(), Qt::ImhNone).toStdString();
 }
 
-const std::string RS_ScriptingApi::getFileNameDlg(const char *title, const char *filename, const char *ext)
+std::string RS_ScriptingApi::getFileNameDlg(const char *title, const char *filename, const char *ext) const
 {
     return QFileDialog::getOpenFileName(nullptr,
                                         QObject::tr(title),
@@ -200,7 +200,7 @@ const std::string RS_ScriptingApi::getFileNameDlg(const char *title, const char 
                                         QObject::tr(ext)).toStdString();
 }
 
-const std::string RS_ScriptingApi::getEntityName(unsigned int id)
+std::string RS_ScriptingApi::getEntityName(unsigned int id) const
 {
     std::string ename = "<Entity name: ";
     std::stringstream ss;
@@ -210,7 +210,7 @@ const std::string RS_ScriptingApi::getEntityName(unsigned int id)
     return ename;
 }
 
-const std::string RS_ScriptingApi::getEntityHndl(unsigned int id)
+std::string RS_ScriptingApi::getEntityHndl(unsigned int id) const
 {
     std::stringstream ss;
     ss << std::uppercase << std::hex << id;
@@ -1686,7 +1686,7 @@ void RS_ScriptingApi::addPoint(double x, double y, double z, const RS_Pen &pen)
     undo.addUndoable(point);
 }
 
-void RS_ScriptingApi::addLwPolyline(std::vector<Plug_VertexData> const& points, bool closed, const RS_Pen &pen)
+void RS_ScriptingApi::addLwPolyline(const std::vector<Plug_VertexData> &points, bool closed, const RS_Pen &pen)
 {
     RS_Graphic* graphic = getGraphic();
     RS_PolylineData data;
@@ -1784,6 +1784,41 @@ void RS_ScriptingApi::addSolid(const RS_SolidData &data, const RS_Pen &pen)
     undo.addUndoable(solid);
 }
 
+void RS_ScriptingApi::addSpline(const RS_SplineData data, const std::vector<RS_Vector> &points, const RS_Pen &pen)
+{
+    RS_Graphic* graphic = getGraphic();
+    RS_Spline* spline = new RS_Spline(graphic, data);
+
+    int count = points.size();
+
+    for (int i = 0; i < count; i++) {
+        RS_Vector point = points.at(i);
+        spline->addControlPoint(point);
+    }
+    spline->update();
+    spline->setPen(pen);
+    graphic->addEntity(spline);
+
+    LC_UndoSection undo(getDocument(), getGraphicView()->getViewPort());
+    undo.addUndoable(spline);
+}
+
+void RS_ScriptingApi::addDimRadial(const RS_DimensionData &data, const RS_DimRadialData &edata, const RS_Pen &pen)
+{
+    qDebug() << "[RS_ScriptingApi::addDimRadial] - start";
+
+    RS_Graphic* graphic = getGraphic();
+    RS_DimRadial *radial = new RS_DimRadial(graphic, data, edata);
+    radial->updateDim(true);
+    radial->setPen(pen);
+    graphic->addEntity(radial);
+
+    LC_UndoSection undo(getDocument(), getGraphicView()->getViewPort());
+    undo.addUndoable(radial);
+
+    qDebug() << "[RS_ScriptingApi::addDimRadial] - exit";
+}
+
 bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
 {
     RS_Graphic* graphic = getGraphic();
@@ -1794,7 +1829,9 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
             return addLayer(qUtf8Printable(apiData.layer), apiData.pen, apiData.gc_70.empty() ? 0.0 : apiData.gc_70.front()) ? true : false;
         }
 
-        else if (apiData.etype == "LINE" && !apiData.gc_10.empty() && !apiData.gc_11.empty())
+        else if (apiData.etype == "LINE"
+                 && !apiData.gc_10.empty()
+                 && !apiData.gc_11.empty())
         {
             addLine(apiData.gc_10.front().front(),
                     apiData.gc_10.front().at(1),
@@ -1805,7 +1842,9 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
                     apiData.pen);
         }
 
-        else if (apiData.etype == "CIRCLE" && !apiData.gc_10.empty() && apiData.gc_40.size() == 1)
+        else if (apiData.etype == "CIRCLE"
+                 && !apiData.gc_10.empty()
+                 && apiData.gc_40.size() == 1)
         {
             addCircle(apiData.gc_10.front().front(),
                       apiData.gc_10.front().at(1),
@@ -1814,7 +1853,11 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
                       apiData.pen);
         }
 
-        else if (apiData.etype == "ARC" && !apiData.gc_10.empty() && apiData.gc_40.size() == 1 && apiData.gc_41.size() == 1 && apiData.gc_42.size() == 1)
+        else if (apiData.etype == "ARC"
+                 && !apiData.gc_10.empty()
+                 && apiData.gc_40.size() == 1
+                 && apiData.gc_41.size() == 1
+                 && apiData.gc_42.size() == 1)
         {
             addArc(apiData.gc_10.front().front(),
                    apiData.gc_10.front().at(1),
@@ -1825,7 +1868,10 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
                    apiData.pen);
         }
 
-        else if (apiData.etype == "ELLIPSE" && !apiData.gc_10.empty() && !apiData.gc_11.empty() && apiData.gc_40.size() == 1)
+        else if (apiData.etype == "ELLIPSE"
+                 && !apiData.gc_10.empty()
+                 && !apiData.gc_11.empty()
+                 && apiData.gc_40.size() == 1)
         {
             addEllipse(apiData.gc_10.front().front(),
                        apiData.gc_10.front().at(1),
@@ -1942,7 +1988,10 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
                     apiData.pen);
         }
 
-        else if (apiData.etype == "SOLID" && !apiData.gc_10.empty() && !apiData.gc_11.empty() && !apiData.gc_12.empty())
+        else if (apiData.etype == "SOLID"
+                 && !apiData.gc_10.empty()
+                 && !apiData.gc_11.empty()
+                 && !apiData.gc_12.empty())
         {
             const RS_Vector corner1(apiData.gc_10.front().front(),
                                apiData.gc_10.front().at(1),
@@ -1970,6 +2019,155 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
                 RS_SolidData data(corner1, corner2, corner3);
                 addSolid(data, apiData.pen);
             }
+        }
+
+        else if (apiData.etype == "SPLINE" && !apiData.gc_10.empty())
+        {
+            bool closed = false;
+            bool enoughPoints = false;
+            int splineDegree = 0;
+            int count = 0;
+
+            std::vector<RS_Vector> controlPoints;
+
+            if(!apiData.gc_70.empty())
+            {
+                if (apiData.gc_70.front() & 1)
+                {
+                    closed = true;
+                }
+            }
+
+            if(!apiData.gc_71.empty())
+            {
+                splineDegree = apiData.gc_71.front();
+            }
+
+            for(auto const& pt: apiData.gc_10)
+            {
+                if(pt.size() == 3)
+                {
+                    controlPoints.push_back({ RS_Vector( pt.front(), pt.at(1), pt.at(2)) });
+                }
+
+                if(pt.size() == 2)
+                {
+                    controlPoints.push_back({ RS_Vector( pt.front(), pt.at(1), 0.0) });
+                }
+            }
+
+            count = controlPoints.size();
+
+            switch (splineDegree) {
+                case 1: {
+                    enoughPoints = count > 2;
+                    break;
+                }
+                case 2: {
+                    enoughPoints = count > 3;
+                    break;
+                }
+                case 3: {
+                    enoughPoints = count > 3;
+                    break;
+                }
+                default:
+                    enoughPoints = true;
+            }
+
+            if(count > 2 && enoughPoints)
+            {
+                RS_SplineData data = RS_SplineData(splineDegree, closed);
+                addSpline(data, controlPoints, apiData.pen);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        else if (apiData.etype == "DIMENSION"
+                 && !apiData.gc_100.empty()
+                 && !apiData.gc_10.empty())
+        {
+            qDebug() << "[DIMENSION] - start";
+            for(auto const& dim: apiData.gc_100)
+            {
+                if(dim.toUpper() == "ACDBROTATEDDIMENSION") // posible gc_100 = 3!!
+                {
+                    qDebug() << "[DIMENSION] - exit";
+                    return false;
+                }
+            }
+
+            qDebug() << "[DIMENSION] - start2";
+
+            for(auto const& dim: apiData.gc_100)
+            {
+                if(dim.toUpper() == "ACDBALIGNEDDIMENSION")
+                {
+                    qDebug() << "[DIMENSION] - exit";
+                    return false;
+                }
+
+                else if(dim.toUpper() == "ACDB3POINTANGULARDIMENSION")
+                {
+                    qDebug() << "[DIMENSION] - exit";
+                    return false;
+                }
+
+                else if(dim.toUpper() == "ACDBRADIALDIMENSION")
+                {
+                    qDebug() << "[DIMENSION] - ACDBRADIALDIMENSION";
+                    if (apiData.gc_40.empty())
+                    {
+                        qDebug() << "[DIMENSION] - exit";
+                        return false;
+                    }
+
+                    RS_DimensionData data(RS_Vector(false),
+                                          RS_Vector(false),
+                                          RS_MTextData::VAMiddle,
+                                          RS_MTextData::HACenter,
+                                          RS_MTextData::Exact,
+                                          1.0,
+                                          "",
+                                          "Standard",
+                                          0.0);
+
+                    RS_DimRadialData edata(RS_Vector(apiData.gc_10.front().front(),
+                                                     apiData.gc_10.front().at(1),
+                                                     apiData.gc_10.front().at(2)),
+                                           apiData.gc_40.front());
+
+                    addDimRadial(data, edata, apiData.pen);
+                }
+
+                else if(dim.toUpper() == "ACDBDIAMETRICDIMENSION")
+                {
+                    qDebug() << "[DIMENSION] - exit";
+                    return false;
+                }
+            }
+        }
+
+        else if (apiData.etype == "HATCH" && !apiData.gc_10.empty())
+        {
+            return false;
+        }
+
+        else if (apiData.etype == "INSERT" && !apiData.gc_10.empty())
+        {
+            return false;
+        }
+
+        else if (apiData.etype == "IMAGE"
+                 && !apiData.gc_10.empty()
+                 && !apiData.gc_11.empty()
+                 && !apiData.gc_12.empty()
+                 && !apiData.gc_13.empty())
+        {
+            return false;
         }
 
         else

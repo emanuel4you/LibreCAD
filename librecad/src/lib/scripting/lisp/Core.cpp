@@ -4510,7 +4510,7 @@ static lclValuePtr entget(lclEname *en)
                 mspace->at(2) = lcl::integer(0);
 
                 lclValueVec *layoutTabName = new lclValueVec(3);
-                layoutTabName->at(0) = lcl::integer(100);
+                layoutTabName->at(0) = lcl::integer(410);
                 layoutTabName->at(1) = lcl::symbol(".");
                 layoutTabName->at(2) = lcl::string("Model");
 
@@ -4853,7 +4853,7 @@ static lclValuePtr entget(lclEname *en)
                         lclValueVec *acdbL = new lclValueVec(3);
                         acdbL->at(0) = lcl::integer(100);
                         acdbL->at(1) = lcl::symbol(".");
-                        acdbL->at(2) = lcl::string("AcDbAlignedDimension");
+                        acdbL->at(2) = lcl::string("AcDbDimension");
                         entity->push_back(lcl::list(acdbL));
 
                         lclValueVec *insertpnt = new lclValueVec(4);
@@ -4889,8 +4889,6 @@ static lclValuePtr entget(lclEname *en)
                         linespace->at(1) = lcl::symbol(".");
                         linespace->at(2) = lcl::ldouble(dal->getLineSpacingFactor());
                         entity->push_back(lcl::list(linespace));
-
-
 #if 0
                         dal->getDefinitionPoint();
                         dal->getExtensionPoint1();
@@ -4898,7 +4896,17 @@ static lclValuePtr entget(lclEname *en)
                         dal->getText().toLatin1().data();
                         dal->getLabel().toLatin1().data();
 #endif
+                        lclValueVec *style = new lclValueVec(3);
+                        style->at(0) = lcl::integer(3);
+                        style->at(1) = lcl::symbol(".");
+                        style->at(2) = lcl::string(dal->getData().style.toStdString());
+                        entity->push_back(lcl::list(style));
 
+                        lclValueVec *acdbL2 = new lclValueVec(3);
+                        acdbL2->at(0) = lcl::integer(100);
+                        acdbL2->at(1) = lcl::symbol(".");
+                        acdbL2->at(2) = lcl::string("AcDbAlignedDimension");
+                        entity->push_back(lcl::list(acdbL2));
                     }
                         break;
 
@@ -4916,7 +4924,7 @@ static lclValuePtr entget(lclEname *en)
                         lclValueVec *acdbL = new lclValueVec(3);
                         acdbL->at(0) = lcl::integer(100);
                         acdbL->at(1) = lcl::symbol(".");
-                        acdbL->at(2) = lcl::string("AcDb3PointAngularDimension");
+                        acdbL->at(2) = lcl::string("AcDbDimension");
                         entity->push_back(lcl::list(acdbL));
 
                         lclValueVec *insertpnt = new lclValueVec(4);
@@ -4966,11 +4974,21 @@ static lclValuePtr entget(lclEname *en)
                         linespace->at(1) = lcl::symbol(".");
                         linespace->at(2) = lcl::ldouble(da->getLineSpacingFactor());
                         entity->push_back(lcl::list(linespace));
-
 #if 0
                         da->getText().toLatin1().data();
                         da->getLabel().toLatin1().data();
 #endif
+                        lclValueVec *style = new lclValueVec(3);
+                        style->at(0) = lcl::integer(3);
+                        style->at(1) = lcl::symbol(".");
+                        style->at(2) = lcl::string(da->getData().style.toStdString());
+                        entity->push_back(lcl::list(style));
+
+                        lclValueVec *acdbL2 = new lclValueVec(3);
+                        acdbL2->at(0) = lcl::integer(100);
+                        acdbL2->at(1) = lcl::symbol(".");
+                        acdbL2->at(2) = lcl::string("AcDb3PointAngularDimension");
+                        entity->push_back(lcl::list(acdbL2));
                     }
                         break;
 
@@ -4988,7 +5006,7 @@ static lclValuePtr entget(lclEname *en)
                         lclValueVec *acdbL = new lclValueVec(3);
                         acdbL->at(0) = lcl::integer(100);
                         acdbL->at(1) = lcl::symbol(".");
-                        acdbL->at(2) = lcl::string("AcDbAlignedDimension");
+                        acdbL->at(2) = lcl::string("AcDbDimension");
                         entity->push_back(lcl::list(acdbL));
 
                         lclValueVec *insertpnt = new lclValueVec(4);
@@ -5030,17 +5048,27 @@ static lclValuePtr entget(lclEname *en)
                         linespace->at(1) = lcl::symbol(".");
                         linespace->at(2) = lcl::ldouble(d->getLineSpacingFactor());
                         entity->push_back(lcl::list(linespace));
-
-
 #if 0
                         d->getText().toLatin1().data();
                         d->getLabel().toLatin1().data();
 #endif
+                        lclValueVec *style = new lclValueVec(3);
+                        style->at(0) = lcl::integer(3);
+                        style->at(1) = lcl::symbol(".");
+                        style->at(2) = lcl::string(d->getData().style.toStdString());
+                        entity->push_back(lcl::list(style));
+
                         lclValueVec *acdbL2 = new lclValueVec(3);
                         acdbL2->at(0) = lcl::integer(100);
                         acdbL2->at(1) = lcl::symbol(".");
-                        acdbL2->at(2) = lcl::string("AcDbRotatedDimension");
+                        acdbL2->at(2) = lcl::string("AcDbAlignedDimension");
                         entity->push_back(lcl::list(acdbL2));
+
+                        lclValueVec *acdbL3 = new lclValueVec(3);
+                        acdbL3->at(0) = lcl::integer(100);
+                        acdbL3->at(1) = lcl::symbol(".");
+                        acdbL3->at(2) = lcl::string("AcDbRotatedDimension");
+                        entity->push_back(lcl::list(acdbL3));
                     }
                     break;
 
@@ -5058,7 +5086,7 @@ static lclValuePtr entget(lclEname *en)
                         lclValueVec *acdbL = new lclValueVec(3);
                         acdbL->at(0) = lcl::integer(100);
                         acdbL->at(1) = lcl::symbol(".");
-                        acdbL->at(2) = lcl::string("AcDbRadialDimension");
+                        acdbL->at(2) = lcl::string("AcDbDimension");
                         entity->push_back(lcl::list(acdbL));
 
                         lclValueVec *insertpnt = new lclValueVec(4);
@@ -5086,11 +5114,21 @@ static lclValuePtr entget(lclEname *en)
                         linespace->at(1) = lcl::symbol(".");
                         linespace->at(2) = lcl::ldouble(dr->getLineSpacingFactor());
                         entity->push_back(lcl::list(linespace));
-
 #if 0
                         dr->getText().toLatin1().data();
                         dr->getLabel().toLatin1().data();
 #endif
+                        lclValueVec *style = new lclValueVec(3);
+                        style->at(0) = lcl::integer(3);
+                        style->at(1) = lcl::symbol(".");
+                        style->at(2) = lcl::string(dr->getData().style.toStdString());
+                        entity->push_back(lcl::list(style));
+
+                        lclValueVec *acdbL2 = new lclValueVec(3);
+                        acdbL2->at(0) = lcl::integer(100);
+                        acdbL2->at(1) = lcl::symbol(".");
+                        acdbL2->at(2) = lcl::string("AcDbRadialDimension");
+                        entity->push_back(lcl::list(acdbL2));
                     }
                         break;
 
@@ -5108,7 +5146,7 @@ static lclValuePtr entget(lclEname *en)
                         lclValueVec *acdbL = new lclValueVec(3);
                         acdbL->at(0) = lcl::integer(100);
                         acdbL->at(1) = lcl::symbol(".");
-                        acdbL->at(2) = lcl::string("AcDbDiametricDimension");
+                        acdbL->at(2) = lcl::string("AcDbDimension");
                         entity->push_back(lcl::list(acdbL));
 
                         lclValueVec *insertpnt = new lclValueVec(4);
@@ -5140,6 +5178,17 @@ static lclValuePtr entget(lclEname *en)
                         dr->getText().toLatin1().data();
                         dr->getLabel().toLatin1().data();
 #endif
+                        lclValueVec *style = new lclValueVec(3);
+                        style->at(0) = lcl::integer(3);
+                        style->at(1) = lcl::symbol(".");
+                        style->at(2) = lcl::string(dd->getData().style.toStdString());
+                        entity->push_back(lcl::list(style));
+
+                        lclValueVec *acdbL2 = new lclValueVec(3);
+                        acdbL2->at(0) = lcl::integer(100);
+                        acdbL2->at(1) = lcl::symbol(".");
+                        acdbL2->at(2) = lcl::string("AcDbDiametricDimension");
+                        entity->push_back(lcl::list(acdbL2));
                     }
                         break;
 
@@ -5570,6 +5619,46 @@ static lclValuePtr entget(lclEname *en)
                         numFitPnts->at(2) = lcl::integer(0);
                         entity->push_back(lcl::list(numFitPnts));
 
+                        // value from dxf file result
+                        lclValueVec *knotTolerance = new lclValueVec(3);
+                        knotTolerance->at(0) = lcl::integer(42);
+                        knotTolerance->at(1) = lcl::symbol(".");
+                        knotTolerance->at(2) = lcl::ldouble(1e-07);
+                        entity->push_back(lcl::list(knotTolerance));
+
+                        lclValueVec *ControlpointTolerance = new lclValueVec(3);
+                        ControlpointTolerance->at(0) = lcl::integer(43);
+                        ControlpointTolerance->at(1) = lcl::symbol(".");
+                        ControlpointTolerance->at(2) = lcl::ldouble(1e-07);
+                        entity->push_back(lcl::list(ControlpointTolerance));
+
+                        lclValueVec *fitTolerance = new lclValueVec(3);
+                        fitTolerance->at(0) = lcl::integer(44);
+                        fitTolerance->at(1) = lcl::symbol(".");
+                        fitTolerance->at(2) = lcl::ldouble(1e-07);
+                        entity->push_back(lcl::list(fitTolerance));
+
+                        for (auto &v : spl->getRefPoints())
+                        {
+                            lclValueVec *pnt = new lclValueVec(4);
+                            pnt->at(0) = lcl::integer(10);
+                            pnt->at(1) = lcl::ldouble(v.x);
+                            pnt->at(2) = lcl::ldouble(v.y);
+                            pnt->at(3) = lcl::ldouble(v.z);
+                            entity->push_back(lcl::list(pnt));
+                        }
+
+                        qDebug() << "knotslist.size() >>>>>>>>" << spl->getData().knotslist.size();
+
+                        for (auto &k : spl->getData().knotslist)
+                        {
+                            lclValueVec *knot = new lclValueVec(3);
+                            knot->at(0) = lcl::integer(40);
+                            knot->at(1) = lcl::symbol(".");
+                            knot->at(2) = lcl::ldouble(k);
+                            entity->push_back(lcl::list(knot));
+                        }
+
                         return lcl::list(entity);
                     }
                         break;
@@ -5614,8 +5703,8 @@ static lclValuePtr entget(lclEname *en)
 
                         lclValueVec *size = new lclValueVec(3);
                         size->at(0) = lcl::integer(13);
-                        size->at(1) = lcl::integer(img->getWidth());
-                        size->at(2) = lcl::integer(img->getHeight());
+                        size->at(1) = lcl::ldouble(double(img->getWidth()));
+                        size->at(2) = lcl::ldouble(double(img->getHeight()));
                         entity->push_back(lcl::list(size));
 
                         lclValueVec *file = new lclValueVec(3);
@@ -5697,7 +5786,6 @@ static lclValuePtr entget(lclEname *en)
     }
     return lcl::nilValue();
 }
-
 
 void installCore(lclEnvPtr env) {
     for (auto it = handlers.begin(), end = handlers.end(); it != end; ++it) {
@@ -6024,6 +6112,55 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
                 apiData.gc_13.push_back({ xVal, yVal, zVal });
             }
                 break;
+            case 14:
+            {
+                if (list->count() < 3)
+                {
+                    return false;
+                }
+
+                double xVal;
+                double yVal;
+                double zVal = 0.0;
+
+                if (list->item(1)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *x = VALUE_CAST(lclInteger, list->item(1));
+                    xVal = double(x->value());
+                }
+                else
+                {
+                    const lclDouble *x = VALUE_CAST(lclDouble, list->item(1));
+                    xVal = x->value();
+                }
+                if (list->item(2)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *y = VALUE_CAST(lclInteger, list->item(2));
+                    yVal = double(y->value());
+                }
+                else
+                {
+                    const lclDouble *y = VALUE_CAST(lclDouble, list->item(2));
+                    yVal = y->value();
+                }
+
+                if (list->count() > 3)
+                {
+                    if (list->item(2)->type() == LCLTYPE::INT)
+                    {
+                        const lclInteger *z = VALUE_CAST(lclInteger, list->item(3));
+                        zVal = double(z->value());
+                    }
+                    else
+                    {
+                        const lclDouble *z = VALUE_CAST(lclDouble, list->item(3));
+                        zVal = z->value();
+                    }
+                }
+
+                apiData.gc_14.push_back({ xVal, yVal, zVal });
+            }
+                break;
             case 40:
             {
                 if (!list->isDotted())
@@ -6230,6 +6367,17 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
 
                 const lclInteger *f3 = VALUE_CAST(lclInteger, list->item(2));
                 apiData.gc_73.push_back({f3->value() });
+            }
+                break;
+            case 100:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                const lclString *n = VALUE_CAST(lclString, list->item(2));
+                apiData.gc_100.push_back( { n->value().c_str() });
             }
                 break;
             default:

@@ -35,7 +35,7 @@
 
 #include "qc_applicationwindow.h"
 
-bool getApiData(PyObject *pList, RS_ScriptingApiData &apiData);
+bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData);
 
 RS_Document* RS_PythonCore::getDocument() const
 {
@@ -160,7 +160,7 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
 
     RS_ScriptingApiData apiData;
 
-    if (!getApiData(pList, apiData) || apiData.etype == "")
+    if (!fitTolerance(pList, apiData) || apiData.etype == "")
     {
         Py_RETURN_NONE;
     }
@@ -233,7 +233,7 @@ PyObject *RS_PythonCore::entmod(PyObject *args) const
             {
                 RS_ScriptingApiData apiData;
                 apiData.pen = entity->getPen(false);
-                if (!getApiData(pList, apiData) || apiData.id.empty())
+                if (!fitTolerance(pList, apiData) || apiData.id.empty())
                 {
                     Py_RETURN_NONE;
                 }
@@ -320,7 +320,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             48, width < 0 ? 1.0 : double(width) / 100.0,
                             100, "AcDbEntity",
                             67, 0,
-                            100, "Model",
+                            410, "Model",
                             8, qUtf8Printable(p->getLayer()->getName()),
                             100, "AcDbPoint",
                             10, p->getPos().x, p->getPos().y, p->getPos().z,
@@ -341,7 +341,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             48, width < 0 ? 1.0 : double(width) / 100.0,
                             100, "AcDbEntity",
                             67, 0,
-                            100, "Model",
+                            410, "Model",
                             8, qUtf8Printable(l->getLayer()->getName()),
                             100, "AcDbLine",
                             10, l->getStartpoint().x, l->getStartpoint().y, l->getStartpoint().z,
@@ -384,7 +384,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                                 48, width < 0 ? 1.0 : double(width) / 100.0,
                                 100, "AcDbEntity",
                                 67, 0,
-                                100, "Model",
+                                410, "Model",
                                 8, qUtf8Printable(pl->getLayer()->getName()),
                                 100, "AcDb3dPolyline",
                                 70, fl,
@@ -403,7 +403,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             PyList_SET_ITEM(list, 6, width < 0 ? Py_BuildValue("(id)", 48, 1.0) : Py_BuildValue("(id)", 48, double(width) / 100.0));
                             PyList_SET_ITEM(list, 7, Py_BuildValue("(is)", 100, "AcDbEntity"));
                             PyList_SET_ITEM(list, 8, Py_BuildValue("(ii)", 67, 0));
-                            PyList_SET_ITEM(list, 9, Py_BuildValue("(is)", 100, "Model"));
+                            PyList_SET_ITEM(list, 9, Py_BuildValue("(is)", 410, "Model"));
                             PyList_SET_ITEM(list, 10, Py_BuildValue("(is)", 8, qUtf8Printable(pl->getLayer()->getName())));
                             PyList_SET_ITEM(list, 11, Py_BuildValue("(is)", 100, "AcDbPolyline"));
                             int n = 12;
@@ -436,7 +436,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             48, width < 0 ? 1.0 : double(width) / 100.0,
                             100, "AcDbEntity",
                             67, 0,
-                            100, "Model",
+                            410, "Model",
                             8, qUtf8Printable(a->getLayer()->getName()),
                             100, "AcDbArc",
                             10, a->getCenter().x, a->getCenter().y, a->getCenter().z,
@@ -460,7 +460,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             48, width < 0 ? 1.0 : double(width) / 100.0,
                             100, "AcDbEntity",
                             67, 0,
-                            100, "Model",
+                            410, "Model",
                             8, qUtf8Printable(c->getLayer()->getName()),
                             100, "AcDbCircle",
                             10, c->getCenter().x, c->getCenter().y, c->getCenter().z,
@@ -482,7 +482,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             48, width < 0 ? 1.0 : double(width) / 100.0,
                             100, "AcDbEntity",
                             67, 0,
-                            100, "Model",
+                            410, "Model",
                             8, qUtf8Printable(ellipse->getLayer()->getName()),
                             100, "AcDbEllipse",
                             10, ellipse->getCenter().x, ellipse->getCenter().y, ellipse->getCenter().z,
@@ -495,7 +495,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                     case RS2::EntityDimAligned:
                     {
                         RS_DimAligned* dal = (RS_DimAligned*)e;
-                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(iddd)(iddd)(id)(iddd)]",
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(iddd)(iddd)(id)(is)(is)]",
                             0, "DIMENSION",
                             -1, ename,
                             330, dal->getParent()->getId(),
@@ -505,22 +505,23 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             48, width < 0 ? 1.0 : double(width) / 100.0,
                             100, "AcDbEntity",
                             67, 0,
-                            100, "Model",
+                            410, "Model",
                             8, qUtf8Printable(dal->getLayer()->getName()),
-                            100, "AcDbAlignedDimension",
+                            100, "AcDbDimension",
                             10, dal->getDefinitionPoint().x, dal->getDefinitionPoint().y,dal->getDefinitionPoint().z,
                             11, dal->getMiddleOfText().x, dal->getMiddleOfText().y,dal->getMiddleOfText().z,
                             13, dal->getExtensionPoint1().x, dal->getExtensionPoint1().y, dal->getExtensionPoint1().z,
                             14, dal->getExtensionPoint2().x, dal->getExtensionPoint2().y, dal->getExtensionPoint2().z,
                             41, dal->getLineSpacingFactor(),
-                            210, 0.0, 0.0, 1.0
+                            3, dal->getData().style.toStdString(),
+                            100, "AcDbAlignedDimension"
                         );
                     }
                     break;
                     case RS2::EntityDimAngular:
                     {
                         RS_DimAngular* da = (RS_DimAngular*)e;
-                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(iddd)(iddd)(iddd)(iddd)(id)(iddd)]",
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(iddd)(iddd)(iddd)(iddd)(id)(is)(is)]",
                             0, "DIMENSION",
                             -1, ename,
                             330, da->getParent()->getId(),
@@ -530,9 +531,9 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             48, width < 0 ? 1.0 : double(width) / 100.0,
                             100, "AcDbEntity",
                             67, 0,
-                            100, "Model",
+                            410, "Model",
                             8, qUtf8Printable(da->getLayer()->getName()),
-                            100, "AcDb3PointAngularDimension",
+                            100, "AcDbDimension",
                             10, da->getDefinitionPoint().x, da->getDefinitionPoint().y,da->getDefinitionPoint().z,
                             11, da->getMiddleOfText().x, da->getMiddleOfText().y,da->getMiddleOfText().z,
                             13, da->getDefinitionPoint1().x, da->getDefinitionPoint1().y, da->getDefinitionPoint1().z,
@@ -540,14 +541,15 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             13, da->getDefinitionPoint3().x, da->getDefinitionPoint3().y, da->getDefinitionPoint3().z,
                             14, da->getDefinitionPoint4().x, da->getDefinitionPoint4().y, da->getDefinitionPoint4().z,
                             41, da->getLineSpacingFactor(),
-                            210, 0.0, 0.0, 1.0
+                            3, da->getData().style.toStdString(),
+                            100, "AcDb3PointAngularDimension"
                         );
                     }
                     break;
                     case RS2::EntityDimLinear:
                     {
                         RS_DimLinear* d = (RS_DimLinear*)e;
-                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(iddd)(iddd)(id)(id)(is)(iddd)]",
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(iddd)(iddd)(id)(id)(is)(is)(is)]",
                             0, "DIMENSION",
                             -1, ename,
                             330, d->getParent()->getId(),
@@ -557,24 +559,25 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             48, width < 0 ? 1.0 : double(width) / 100.0,
                             100, "AcDbEntity",
                             67, 0,
-                            100, "Model",
+                            410, "Model",
                             8, qUtf8Printable(d->getLayer()->getName()),
-                            100, "AcDbAlignedDimension",
+                            100, "AcDbDimension",
                             10, d->getDefinitionPoint().x, d->getDefinitionPoint().y,d->getDefinitionPoint().z,
                             11, d->getMiddleOfText().x, d->getMiddleOfText().y, d->getMiddleOfText().z,
                             13, d->getExtensionPoint1().x, d->getExtensionPoint1().y, d->getExtensionPoint1().z,
                             14, d->getExtensionPoint2().x, d->getExtensionPoint2().y, d->getExtensionPoint2().z,
                             50, d->getRadius(),
                             41, d->getLineSpacingFactor(),
-                            100, "AcDbRotatedDimension",
-                            210, 0.0, 0.0, 1.0
+                            3, d->getData().style.toStdString(),
+                            100, "AcDbAlignedDimension",
+                            100, "AcDbRotatedDimension"
                         );
                     }
                     break;
                     case RS2::EntityDimRadial:
                     {
                         RS_DimRadial* dr = (RS_DimRadial*)e;
-                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(id)(id)(iddd)]",
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(id)(id)(is)(is)]",
                             0, "DIMENSION",
                             -1, ename,
                             330, dr->getParent()->getId(),
@@ -584,21 +587,22 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             48, width < 0 ? 1.0 : double(width) / 100.0,
                             100, "AcDbEntity",
                             67, 0,
-                            100, "Model",
+                            410, "Model",
                             8, qUtf8Printable(dr->getLayer()->getName()),
-                            100, "AcDbRadialDimension",
+                            100, "AcDbDimension",
                             10, dr->getDefinitionPoint().x, dr->getDefinitionPoint().y, dr->getDefinitionPoint().z,
                             11, dr->getMiddleOfText().x, dr->getMiddleOfText().y, dr->getMiddleOfText().z,
                             40, dr->getRadius(),
                             41, dr->getLineSpacingFactor(),
-                            210, 0.0, 0.0, 1.0
+                            3, dr->getData().style.toStdString(),
+                            100, "AcDbRadialDimension"
                         );
                     }
                     break;
                     case RS2::EntityDimDiametric:
                     {
                         RS_DimDiametric* dd = (RS_DimDiametric*)e;
-                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(id)(id)(iddd)]",
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(id)(id)(is)(is)]",
                             0, "DIMENSION",
                             -1, ename,
                             330, dd->getParent()->getId(),
@@ -608,16 +612,16 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             48, width < 0 ? 1.0 : double(width) / 100.0,
                             100, "AcDbEntity",
                             67, 0,
-                            100, "Model",
+                            410, "Model",
                             8, qUtf8Printable(dd->getLayer()->getName()),
-                            100, "AcDbRadialDimension",
+                            100, "AcDbDimension",
                             10, dd->getDefinitionPoint().x, dd->getDefinitionPoint().y, dd->getDefinitionPoint().z,
                             11, dd->getMiddleOfText().x, dd->getMiddleOfText().y, dd->getMiddleOfText().z,
                             40, dd->getRadius(),
                             41, dd->getLineSpacingFactor(),
-                            210, 0.0, 0.0, 1.0
+                            3, dd->getData().style.toStdString(),
+                            100, "AcDbRadialDimension"
                         );
-
                     }
                     break;
                     case RS2::EntityInsert:
@@ -633,7 +637,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             48, width < 0 ? 1.0 : double(width) / 100.0,
                             100, "AcDbEntity",
                             67, 0,
-                            100, "Model",
+                            410, "Model",
                             8, qUtf8Printable(i->getLayer()->getName()),
                             100, "AcDbBlockReference",
                             10, i->getInsertionPoint().x, i->getInsertionPoint().y, i->getInsertionPoint().z,
@@ -687,7 +691,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             48, width < 0 ? 1.0 : double(width) / 100.0,
                             100, "AcDbEntity",
                             67, 0,
-                            100, "Model",
+                            410, "Model",
                             8, qUtf8Printable(t->getLayer()->getName()),
                             100, "AcDbMText",
                             10, t->getInsertionPoint().x, t->getInsertionPoint().y, t->getInsertionPoint().z,
@@ -717,7 +721,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             48, width < 0 ? 1.0 : double(width) / 100.0,
                             100, "AcDbEntity",
                             67, 0,
-                            100, "Model",
+                            410, "Model",
                             8, qUtf8Printable(t->getLayer()->getName()),
                             100, "AcDbText",
                             10, t->getInsertionPoint().x, t->getInsertionPoint().y, t->getInsertionPoint().z,
@@ -743,7 +747,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             48, width < 0 ? 1.0 : double(width) / 100.0,
                             100, "AcDbEntity",
                             67, 0,
-                            100, "Model",
+                            410, "Model",
                             8, qUtf8Printable(h->getLayer()->getName()),
                             100, "AcDbHatch",
                             10, 0.0, 0.0, 0.0,
@@ -762,7 +766,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             48, width < 0 ? 1.0 : double(width) / 100.0,
                             100, "AcDbEntity",
                             67, 0,
-                            100, "Model",
+                            410, "Model",
                             8, qUtf8Printable(h->getLayer()->getName()),
                             100, "AcDbHatch",
                             10, 0.0, 0.0, 0.0,
@@ -789,7 +793,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             48, width < 0 ? 1.0 : double(width) / 100.0,
                             100, "AcDbEntity",
                             67, 0,
-                            100, "Model",
+                            410, "Model",
                             8, qUtf8Printable(sol->getLayer()->getName()),
                             100, "AcDbTrace",
                             10, sol->getCorner(0).x, sol->getCorner(0).y, sol->getCorner(0).z,
@@ -808,7 +812,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             48, width < 0 ? 1.0 : double(width) / 100.0,
                             100, "AcDbEntity",
                             67, 0,
-                            100, "Model",
+                            410, "Model",
                             8, qUtf8Printable(sol->getLayer()->getName()),
                             100, "AcDbTrace",
                             10, sol->getCorner(0).x, sol->getCorner(0).y, sol->getCorner(0).z,
@@ -832,7 +836,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             48, width < 0 ? 1.0 : double(width) / 100.0,
                             100, "AcDbEntity",
                             67, 0,
-                            100, "Model",
+                            410, "Model",
                             8, qUtf8Printable(spl->getLayer()->getName()),
                             100, "AcDbSpline",
                             spl->isClosed() ? Py_BuildValue("(ii)", 70, 1) : Py_BuildValue("(ii)", 70, 8),
@@ -859,7 +863,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                         PyList_SET_ITEM(list, 6, width < 0 ? Py_BuildValue("(id)", 48, 1.0) : Py_BuildValue("(id)", 48, double(width) / 100.0));
                         PyList_SET_ITEM(list, 7, Py_BuildValue("(is)", 100, "AcDbEntity"));
                         PyList_SET_ITEM(list, 8, Py_BuildValue("(ii)", 67, 0));
-                        PyList_SET_ITEM(list, 9, Py_BuildValue("(is)", 100, "Model"));
+                        PyList_SET_ITEM(list, 9, Py_BuildValue("(is)", 410, "Model"));
                         PyList_SET_ITEM(list, 10, Py_BuildValue("(is)", 8, qUtf8Printable(img->getLayer()->getName())));
                         PyList_SET_ITEM(list, 11, Py_BuildValue("(iddd)", 10, img->getInsertionPoint().x, img->getInsertionPoint().y, img->getInsertionPoint().z));
                         PyList_SET_ITEM(list, 12, Py_BuildValue("(iddd)", 11, img->getUVector().x, img->getUVector().y, img->getUVector().z));
@@ -928,7 +932,7 @@ PyObject *RS_PythonCore::polar(PyObject *pnt, double ang, double dist) const
                                  y + std::round(dist * std::cos(ang)));
 }
 
-bool getApiData(PyObject *pList, RS_ScriptingApiData &apiData)
+bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
 {
     int gc;
     PyObject *pTuple;
@@ -1159,6 +1163,40 @@ bool getApiData(PyObject *pList, RS_ScriptingApiData &apiData)
             apiData.gc_13.push_back({ xVal, yVal, zVal });
         }
         break;
+        case 14:
+        {
+            double xVal;
+            double yVal;
+            double zVal = 0.0;
+
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+
+            xVal = PyFloat_AsDouble(pValue);
+
+            pValue = PyTuple_GetItem(pTuple, 2);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+
+            yVal = PyFloat_AsDouble(pValue);
+
+            if (PyTuple_Size(pTuple) > 3)
+            {
+                pValue = PyTuple_GetItem(pTuple, 3);
+                if(!PyFloat_Check(pValue)) {
+                    PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                    return false;
+                }
+                zVal = PyFloat_AsDouble(pValue);
+            }
+            apiData.gc_14.push_back({ xVal, yVal, zVal });
+        }
+        break;
         case 40:
         {
             pValue = PyTuple_GetItem(pTuple, 1);
@@ -1300,6 +1338,16 @@ bool getApiData(PyObject *pList, RS_ScriptingApiData &apiData)
                 return false;
             }
             apiData.gc_73.push_back({ static_cast<int>(PyLong_AsLong(pValue)) });
+        }
+        break;
+        case 100:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyUnicode_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
+                return false;
+            }
+            apiData.gc_100.push_back({ PyUnicode_AsUTF8(pValue) });
         }
         break;
         default:
