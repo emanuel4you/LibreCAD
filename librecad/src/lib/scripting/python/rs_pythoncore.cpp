@@ -513,7 +513,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             13, dal->getExtensionPoint1().x, dal->getExtensionPoint1().y, dal->getExtensionPoint1().z,
                             14, dal->getExtensionPoint2().x, dal->getExtensionPoint2().y, dal->getExtensionPoint2().z,
                             41, dal->getLineSpacingFactor(),
-                            3, dal->getData().style.toStdString(),
+                            3, qUtf8Printable(dal->getData().style),
                             100, "AcDbAlignedDimension"
                         );
                     }
@@ -541,7 +541,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             13, da->getDefinitionPoint3().x, da->getDefinitionPoint3().y, da->getDefinitionPoint3().z,
                             14, da->getDefinitionPoint4().x, da->getDefinitionPoint4().y, da->getDefinitionPoint4().z,
                             41, da->getLineSpacingFactor(),
-                            3, da->getData().style.toStdString(),
+                            3, qUtf8Printable(da->getData().style),
                             100, "AcDb3PointAngularDimension"
                         );
                     }
@@ -568,7 +568,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             14, d->getExtensionPoint2().x, d->getExtensionPoint2().y, d->getExtensionPoint2().z,
                             50, d->getRadius(),
                             41, d->getLineSpacingFactor(),
-                            3, d->getData().style.toStdString(),
+                            3, qUtf8Printable(d->getData().style),
                             100, "AcDbAlignedDimension",
                             100, "AcDbRotatedDimension"
                         );
@@ -594,7 +594,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             11, dr->getMiddleOfText().x, dr->getMiddleOfText().y, dr->getMiddleOfText().z,
                             40, dr->getRadius(),
                             41, dr->getLineSpacingFactor(),
-                            3, dr->getData().style.toStdString(),
+                            3, qUtf8Printable(dr->getData().style),
                             100, "AcDbRadialDimension"
                         );
                     }
@@ -619,7 +619,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             11, dd->getMiddleOfText().x, dd->getMiddleOfText().y, dd->getMiddleOfText().z,
                             40, dd->getRadius(),
                             41, dd->getLineSpacingFactor(),
-                            3, dd->getData().style.toStdString(),
+                            3, qUtf8Printable(dd->getData().style),
                             100, "AcDbRadialDimension"
                         );
                     }
