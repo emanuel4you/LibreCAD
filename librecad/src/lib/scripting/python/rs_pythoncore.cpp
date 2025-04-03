@@ -441,8 +441,8 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             100, "AcDbArc",
                             10, a->getCenter().x, a->getCenter().y, a->getCenter().z,
                             40, a->getRadius(),
-                            50, a->getAngle1(),
-                            51, a->getAngle2(),
+                            50, a->isReversed() ? a->getAngle2() : a->getAngle1(),
+                            51, a->isReversed() ? a->getAngle1() : a->getAngle2(),
                             210, 0.0, 0.0, 1.0
                         );
                     }
@@ -472,7 +472,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                     case RS2::EntityEllipse:
                     {
                         RS_Ellipse* ellipse=static_cast<RS_Ellipse*>(e);
-                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(id)(iddd)]",
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(id)(id)(id)(iddd)]",
                             0, "ELLIPSE",
                             -1, ename,
                             330, ellipse->getParent()->getId(),
@@ -488,6 +488,8 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             10, ellipse->getCenter().x, ellipse->getCenter().y, ellipse->getCenter().z,
                             11, ellipse->getMajorP().x, ellipse->getMajorP().y, ellipse->getMajorP().z,
                             40, ellipse->getRatio(),
+                            41, ellipse->isReversed() ? ellipse->getData().angle2 : ellipse->getData().angle1,
+                            42, ellipse->isReversed() ? ellipse->getData().angle1 : ellipse->getData().angle2,
                             210, 0.0, 0.0, 1.0
                         );
                     }
@@ -701,7 +703,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             72, dxfDir,
                             1, qUtf8Printable(t->getText()),
                             43, t->getHeight(),
-                            50, t->getAngle(),
+                            50, t->getAngle()*180/M_PI,
                             73, styleDxf,
                             44, t->getLineSpacingFactor(),
                             210, 0.0, 0.0, 1.0
@@ -711,7 +713,25 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                     case RS2::EntityText:
                     {
                         RS_Text* t = (RS_Text*)e;
-                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(id)(is)(id)(is)(iddd)]",
+                        double x=0.0,y=0.0,z=0.0;
+
+                        if (t->getVAlign() != RS_TextData::VABaseline || t->getHAlign() != RS_TextData::HALeft)
+                        {
+                            if (t->getHAlign() == RS_TextData::HAAligned || t->getHAlign() == RS_TextData::HAFit)
+                            {
+                                x = t->getInsertionPoint().x;
+                                y = t->getInsertionPoint().y;
+                                z = t->getInsertionPoint().z;
+                            }
+                            else
+                            {
+                                x = t->getInsertionPoint().x;
+                                y = t->getInsertionPoint().y;
+                                z = t->getInsertionPoint().z;
+                            }
+                        }
+
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(id)(is)(id)(id)(is)(ii)(ii)(iddd)(ii)(iddd)]",
                             0, "TEXT",
                             -1, ename,
                             330, t->getParent()->getId(),
@@ -727,8 +747,13 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             10, t->getInsertionPoint().x, t->getInsertionPoint().y, t->getInsertionPoint().z,
                             40, t->getUsedTextHeight(),
                             1, qUtf8Printable(t->getText()),
-                            50, t->getAngle(),
+                            50, t->getAngle()*180/M_PI,
+                            41, t->getWidthRel(),
                             7, qUtf8Printable(t->getStyle()),
+                            71, static_cast<int>(t->getTextGeneration()),
+                            72, static_cast<int>(t->getHAlign()),
+                            11, x, y, z,
+                            73, t->getVAlign(),
                             210, 0.0, 0.0, 1.0
                         );
                     }
@@ -1195,6 +1220,74 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                 zVal = PyFloat_AsDouble(pValue);
             }
             apiData.gc_14.push_back({ xVal, yVal, zVal });
+        }
+        break;
+        case 15:
+        {
+            double xVal;
+            double yVal;
+            double zVal = 0.0;
+
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+
+            xVal = PyFloat_AsDouble(pValue);
+
+            pValue = PyTuple_GetItem(pTuple, 2);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+
+            yVal = PyFloat_AsDouble(pValue);
+
+            if (PyTuple_Size(pTuple) > 3)
+            {
+                pValue = PyTuple_GetItem(pTuple, 3);
+                if(!PyFloat_Check(pValue)) {
+                    PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                    return false;
+                }
+                zVal = PyFloat_AsDouble(pValue);
+            }
+            apiData.gc_15.push_back({ xVal, yVal, zVal });
+        }
+        break;
+        case 16:
+        {
+            double xVal;
+            double yVal;
+            double zVal = 0.0;
+
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+
+            xVal = PyFloat_AsDouble(pValue);
+
+            pValue = PyTuple_GetItem(pTuple, 2);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+
+            yVal = PyFloat_AsDouble(pValue);
+
+            if (PyTuple_Size(pTuple) > 3)
+            {
+                pValue = PyTuple_GetItem(pTuple, 3);
+                if(!PyFloat_Check(pValue)) {
+                    PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                    return false;
+                }
+                zVal = PyFloat_AsDouble(pValue);
+            }
+            apiData.gc_16.push_back({ xVal, yVal, zVal });
         }
         break;
         case 40:

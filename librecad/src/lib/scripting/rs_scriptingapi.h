@@ -60,6 +60,8 @@ public:
     std::vector<std::vector<double>> gc_12;
     std::vector<std::vector<double>> gc_13;
     std::vector<std::vector<double>> gc_14;
+    std::vector<std::vector<double>> gc_15;
+    std::vector<std::vector<double>> gc_16;
 
     std::vector<unsigned long> id;
     std::vector<int> gc_70;
