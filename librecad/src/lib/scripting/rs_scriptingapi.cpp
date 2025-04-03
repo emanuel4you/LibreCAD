@@ -995,7 +995,7 @@ unsigned int RS_ScriptingApi::entlast()
     RS_EntityContainer* entityContainer = getContainer();
     unsigned int id = 0;
 
-    if(entityContainer->count())
+    if(entityContainer != nullptr && entityContainer->count())
     {
         for (auto e: *entityContainer)
         {
@@ -1143,7 +1143,7 @@ unsigned int RS_ScriptingApi::entnext(unsigned int current)
     unsigned int maxId = 0;
     unsigned int id = 0;
 
-    if(entityContainer->count())
+    if(entityContainer != nullptr && entityContainer->count())
     {
         for (auto e: *entityContainer)
         {
@@ -3209,7 +3209,7 @@ RS_EntityContainer* RS_ScriptingApi::getContainer() const
 {
     auto& appWin = QC_ApplicationWindow::getAppWindow();
     RS_GraphicView* graphicView = appWin->getGraphicView();
-    return graphicView->getContainer();
+    return graphicView == NULL ? NULL : graphicView->getContainer();
 }
 
 RS_Document* RS_ScriptingApi::getDocument() const

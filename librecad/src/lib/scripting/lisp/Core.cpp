@@ -4430,13 +4430,16 @@ BUILTIN("zerop")
 
 static lclValuePtr entget(lclEname *en)
 {
-    RS_EntityContainer* entityContainer = RS_SCRIPTINGAPI->getContainer();
+    //RS_EntityContainer* entityContainer = RS_SCRIPTINGAPI->getContainer();
 
+    RS_Graphic* graphic = RS_SCRIPTINGAPI->getGraphic();
+#if 0
     if(entityContainer->count())
     {
-        for (auto e: *entityContainer) {
-
-            if (e->getId() == en->value())
+#endif
+        for (RS_Entity *e = graphic->firstEntity(RS2::ResolveNone);
+            e; e = graphic->nextEntity(RS2::ResolveNone)) {
+            if ( !(e->getFlag(RS2::FlagUndone)) && e->getId() == en->value())
             {
                 RS_Pen pen = e->getPen(false);
 
@@ -4498,6 +4501,15 @@ static lclValuePtr entget(lclEname *en)
                     col->at(1) = lcl::symbol(".");
                     col->at(2) = lcl::integer(RS_FilterDXFRW::colorToNumber(color, &exact_rgb));
                     entity->push_back(lcl::list(col));
+
+                    if (exact_rgb >= 0)
+                    {
+                        lclValueVec *col = new lclValueVec(3);
+                        col->at(0) = lcl::integer(420);
+                        col->at(1) = lcl::symbol(".");
+                        col->at(2) = lcl::integer(exact_rgb);
+                        entity->push_back(lcl::list(col));
+                    }
                 }
 
                 lclValueVec *acdb = new lclValueVec(3);
@@ -5777,7 +5789,9 @@ static lclValuePtr entget(lclEname *en)
                 }
                 return lcl::list(entity);
             }
+#if 0
         }
+#endif
     }
     return lcl::nilValue();
 }
