@@ -683,7 +683,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             styleDxf = 1;
                         }
 
-                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(id)(id)(ii)(id)(is)(id)(id)(ii)(id)(iddd)]",
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(id)(id)(ii)(id)(is)(is)(id)(id)(ii)(id)(iddd)]",
                             0, "MTEXT",
                             -1, ename,
                             330, t->getParent()->getId(),
@@ -702,6 +702,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             71, t->getAlignment(),
                             72, dxfDir,
                             1, qUtf8Printable(t->getText()),
+                            7, qUtf8Printable(t->getStyle()),
                             43, t->getHeight(),
                             50, t->getAngle()*180/M_PI,
                             73, styleDxf,
@@ -745,7 +746,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             8, qUtf8Printable(t->getLayer()->getName()),
                             100, "AcDbText",
                             10, t->getInsertionPoint().x, t->getInsertionPoint().y, t->getInsertionPoint().z,
-                            40, t->getUsedTextHeight(),
+                            40, t->getHeight(),
                             1, qUtf8Printable(t->getText()),
                             50, t->getAngle()*180/M_PI,
                             41, t->getWidthRel(),
