@@ -3579,6 +3579,21 @@ BUILTIN("sqrt")
     BUILTIN_FUNCTION(sqrt);
 }
 
+BUILTIN("ssget")
+{
+    int args = CHECK_ARGS_BETWEEN(0, 3);
+
+    if (args == 0)
+    {
+        if (RS_SCRIPTINGAPI->getSelected())
+        {
+            return lcl::string("<selection>");
+        }
+    }
+
+    return lcl::nilValue();
+}
+
 BUILTIN("start_dialog")
 {
     CHECK_ARGS_IS(0);

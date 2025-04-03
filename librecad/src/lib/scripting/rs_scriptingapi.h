@@ -130,7 +130,6 @@ public:
 
     double getDoubleDlg(const char *prompt);
 
-
     char readChar();
 
     bool actionTile(const char *id, const char *action);
@@ -159,6 +158,7 @@ public:
     bool getReal(CommandEdit *cmdline, const char *msg, double &res);
     bool getInteger(CommandEdit *cmdline, const char *msg, int &res);
     bool getString(CommandEdit *cmdline, bool cr, const char *msg, std::string &res);
+    bool getSelected();
     bool getKeyword(CommandEdit *cmdline, const char *msg, std::string &res);
     bool startImage(const char *key);
     bool startList(const char *key, int operation, int index);

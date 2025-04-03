@@ -966,6 +966,12 @@ bool RS_ScriptingApi::trueColorDialog(int &tres, int &res, int tcolor, int color
     return QG_ColorDlg::getTrueColor(tres, res, NULL, tcolor, color, by, tbycolor, bycolor);
 }
 
+bool RS_ScriptingApi::getSelected()
+{
+    qDebug() << "[RS_ScriptingApi::getSelected]";
+    return false;
+}
+
 bool RS_ScriptingApi::entdel(unsigned int id)
 {
     RS_Document* doc = getDocument();
