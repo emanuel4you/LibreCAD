@@ -68,11 +68,11 @@
 /**
  * static instance to class RS_ScriptingApi
  */
-RS_ScriptingApi* RS_ScriptingApi::unique = nullptr;
+RS_ScriptingApi* RS_ScriptingApi::unique = NULL;
 
 RS_ScriptingApi* RS_ScriptingApi::instance() {
     qInfo() << "[RS_ScriptingApi] RS_ScriptingApi::instance requested";
-    if (unique == nullptr) {
+    if (unique == NULL) {
         unique = new RS_ScriptingApi();
     }
     return unique;
@@ -80,7 +80,7 @@ RS_ScriptingApi* RS_ScriptingApi::instance() {
 
 void RS_ScriptingApi::command(const QString &cmd)
 {
-    QG_ActionHandler* actionHandler = nullptr;
+    QG_ActionHandler* actionHandler = NULL;
     actionHandler = QC_ApplicationWindow::getAppWindow()->getActionHandler();
 
     if (actionHandler)
@@ -91,7 +91,7 @@ void RS_ScriptingApi::command(const QString &cmd)
 
 void RS_ScriptingApi::prompt(CommandEdit *cmdline, const char *prompt)
 {
-    if (cmdline != nullptr)
+    if (cmdline)
     {
         cmdline->setPrompt(prompt);
         const std::string result = RS_Scripting_InputHandle::readLine(QObject::tr(prompt), cmdline).toStdString();
@@ -151,20 +151,20 @@ unsigned int RS_ScriptingApi::getEntityId(const std::string &name)
 
 int RS_ScriptingApi::getIntDlg(const char *prompt)
 {
-    return QInputDialog::getInt(nullptr,
+    return QInputDialog::getInt(NULL,
             "LibreCAD",
             QObject::tr(prompt),
-            // , int value = 0, int min = -2147483647, int max = 2147483647, int step = 1, bool *ok = nullptr, Qt::WindowFlags flags = Qt::WindowFlags())
-            0, -2147483647, 2147483647, 1, nullptr, Qt::WindowFlags());
+            // , int value = 0, int min = -2147483647, int max = 2147483647, int step = 1, bool *ok = NULL, Qt::WindowFlags flags = Qt::WindowFlags())
+            0, -2147483647, 2147483647, 1, NULL, Qt::WindowFlags());
 }
 
 double RS_ScriptingApi::getDoubleDlg(const char *prompt)
 {
-    return QInputDialog::getDouble(nullptr,
+    return QInputDialog::getDouble(NULL,
             "LibreCAD",
             QObject::tr(prompt),
-            // double value = 0, double min = -2147483647, double max = 2147483647, int decimals = 1, bool *ok = nullptr, Qt::WindowFlags flags = Qt::WindowFlags(), double step = 1)
-            0.0, -2147483647.0, 2147483647.0, 1, nullptr, Qt::WindowFlags(), 1);
+            // double value = 0, double min = -2147483647, double max = 2147483647, int decimals = 1, bool *ok = NULL, Qt::WindowFlags flags = Qt::WindowFlags(), double step = 1)
+            0.0, -2147483647.0, 2147483647.0, 1, NULL, Qt::WindowFlags(), 1);
 }
 
 std::string RS_ScriptingApi::copyright() const
@@ -185,16 +185,16 @@ std::string RS_ScriptingApi::credits() const
 
 std::string RS_ScriptingApi::getStrDlg(const char *prompt) const
 {
-    return QInputDialog::getText(nullptr,
+    return QInputDialog::getText(NULL,
             "LibreCAD",
             QObject::tr(prompt),
-            //QLineEdit::EchoMode mode = QLineEdit::Normal, const QString &text = QString(), bool *ok = nullptr, Qt::WindowFlags flags = Qt::WindowFlags(), Qt::InputMethodHints inputMethodHints = Qt::ImhNone)
-            QLineEdit::Normal, "", nullptr, Qt::WindowFlags(), Qt::ImhNone).toStdString();
+            //QLineEdit::EchoMode mode = QLineEdit::Normal, const QString &text = QString(), bool *ok = NULL, Qt::WindowFlags flags = Qt::WindowFlags(), Qt::InputMethodHints inputMethodHints = Qt::ImhNone)
+            QLineEdit::Normal, "", NULL, Qt::WindowFlags(), Qt::ImhNone).toStdString();
 }
 
 std::string RS_ScriptingApi::getFileNameDlg(const char *title, const char *filename, const char *ext) const
 {
-    return QFileDialog::getOpenFileName(nullptr,
+    return QFileDialog::getOpenFileName(NULL,
                                         QObject::tr(title),
                                         filename,
                                         QObject::tr(ext)).toStdString();
@@ -242,7 +242,7 @@ bool RS_ScriptingApi::getFiled(const char *title, const char *def, const char *e
             saveFile.setAcceptMode(QFileDialog::AcceptSave);
             saveFile.setOptions(QFileDialog::DontConfirmOverwrite);
         }
-        filename = saveFile.getSaveFileName(nullptr, title, path, fileExt).toStdString();
+        filename = saveFile.getSaveFileName(NULL, title, path, fileExt).toStdString();
 
         if (filename.size())
         {
@@ -265,7 +265,7 @@ bool RS_ScriptingApi::getFiled(const char *title, const char *def, const char *e
         if (fileExt.size() == 0) {
             fileExt = "(*)";
         }
-        filename = QFileDialog::getOpenFileName(nullptr, title, path, fileExt).toStdString();
+        filename = QFileDialog::getOpenFileName(NULL, title, path, fileExt).toStdString();
         if (filename.size())
         {
             return true;
@@ -302,9 +302,9 @@ RS_Vector RS_ScriptingApi::getCorner(CommandEdit *cmdline, const char *msg, cons
     RS_Document* doc = getDocument();
     RS_GraphicView* graphicView = getGraphicView();
 
-    if (graphicView == nullptr || graphicView->getGraphic() == nullptr)
+    if (graphicView == NULL || graphicView->getGraphic() == NULL)
     {
-        qDebug() << "graphicView == nullptr";
+        qDebug() << "graphicView == NULL";
         return RS_Vector();
     }
 
@@ -379,9 +379,9 @@ RS_Vector RS_ScriptingApi::getPoint(CommandEdit *cmdline, const char *msg, const
     RS_Document* doc = getDocument();
     RS_GraphicView* graphicView = getGraphicView();
 
-    if (graphicView == nullptr || graphicView->getGraphic() == nullptr)
+    if (graphicView == NULL || graphicView->getGraphic() == NULL)
     {
-        qDebug() << "graphicView == nullptr";
+        qDebug() << "graphicView == NULL";
         return RS_Vector();
     }
 
@@ -461,9 +461,9 @@ bool RS_ScriptingApi::getDist(CommandEdit *cmdline, const char *msg, const RS_Ve
     RS_Document* doc = getDocument();
     RS_GraphicView* graphicView = getGraphicView();
 
-    if (graphicView == nullptr || graphicView->getGraphic() == nullptr)
+    if (graphicView == NULL || graphicView->getGraphic() == NULL)
     {
-        qDebug() << "graphicView == nullptr";
+        qDebug() << "graphicView == NULL";
         return false;
     }
 
@@ -514,7 +514,7 @@ bool RS_ScriptingApi::getDist(CommandEdit *cmdline, const char *msg, const RS_Ve
 
             if(finished)
             {
-                QObject::disconnect(cmdline, &QLineEdit::returnPressed, startAction, nullptr);
+                QObject::disconnect(cmdline, &QLineEdit::returnPressed, startAction, NULL);
                 graphicView->killAllActions();
                 cmdline->reset();
                 return true;
@@ -586,7 +586,7 @@ bool RS_ScriptingApi::getDist(CommandEdit *cmdline, const char *msg, const RS_Ve
             }
         }
 
-        QObject::disconnect(cmdline, &QLineEdit::returnPressed, endAction, nullptr);
+        QObject::disconnect(cmdline, &QLineEdit::returnPressed, endAction, NULL);
         graphicView->killAllActions();
         graphicView->redraw();
         cmdline->reset();
@@ -616,9 +616,9 @@ bool RS_ScriptingApi::getOrient(CommandEdit *cmdline, const char *msg, const RS_
     RS_Document* doc = getDocument();
     RS_GraphicView* graphicView = getGraphicView();
 
-    if (graphicView == nullptr || graphicView->getGraphic() == nullptr)
+    if (graphicView == NULL || graphicView->getGraphic() == NULL)
     {
-        qDebug() << "graphicView == nullptr";
+        qDebug() << "graphicView == NULL";
         return false;
     }
 
@@ -669,7 +669,7 @@ bool RS_ScriptingApi::getOrient(CommandEdit *cmdline, const char *msg, const RS_
 
             if(finished)
             {
-                QObject::disconnect(cmdline, &QLineEdit::returnPressed, startAction, nullptr);
+                QObject::disconnect(cmdline, &QLineEdit::returnPressed, startAction, NULL);
                 graphicView->killAllActions();
                 cmdline->reset();
                 return true;
@@ -741,7 +741,7 @@ bool RS_ScriptingApi::getOrient(CommandEdit *cmdline, const char *msg, const RS_
             }
         }
 
-        QObject::disconnect(cmdline, &QLineEdit::returnPressed, endAction, nullptr);
+        QObject::disconnect(cmdline, &QLineEdit::returnPressed, endAction, NULL);
         graphicView->killAllActions();
         graphicView->redraw();
         cmdline->reset();
@@ -771,7 +771,7 @@ bool RS_ScriptingApi::getReal(CommandEdit *cmdline, const char *msg, double &res
         prompt = msg;
     }
 
-    if (cmdline != nullptr)
+    if (cmdline)
     {
         while (1)
         {
@@ -815,7 +815,7 @@ bool RS_ScriptingApi::getInteger(CommandEdit *cmdline, const char *msg, int &res
         prompt = msg;
     }
 
-    if (cmdline != nullptr)
+    if (cmdline)
     {
         while (1)
         {
@@ -863,7 +863,7 @@ bool RS_ScriptingApi::getString(CommandEdit *cmdline, bool cr, const char *msg, 
         prompt = msg;
     }
 
-    if (cmdline != nullptr)
+    if (cmdline)
     {
         while (1)
         {
@@ -912,7 +912,7 @@ bool RS_ScriptingApi::getKeyword(CommandEdit *cmdline, const char *msg, std::str
     }
     StringList.push_back(pattern);
 
-    if (cmdline != nullptr)
+    if (cmdline)
     {
         while (1)
         {
@@ -958,12 +958,12 @@ bool RS_ScriptingApi::getKeyword(CommandEdit *cmdline, const char *msg, std::str
 
 bool RS_ScriptingApi::colorDialog(int color, bool by, int &res)
 {
-    return QG_ColorDlg::getIndexColor(res, nullptr, color, by);
+    return QG_ColorDlg::getIndexColor(res, NULL, color, by);
 }
 
 bool RS_ScriptingApi::trueColorDialog(int &tres, int &res, int tcolor, int color, bool by, int tbycolor, int bycolor)
 {
-    return QG_ColorDlg::getTrueColor(tres, res, nullptr, tcolor, color, by, tbycolor, bycolor);
+    return QG_ColorDlg::getTrueColor(tres, res, NULL, tcolor, color, by, tbycolor, bycolor);
 }
 
 bool RS_ScriptingApi::entdel(unsigned int id)
@@ -973,7 +973,7 @@ bool RS_ScriptingApi::entdel(unsigned int id)
     RS_EntityContainer* entityContainer = getContainer();
     LC_UndoSection undo(doc, graphicView->getViewPort());
 
-    if(entityContainer->count())
+    if(entityContainer)
     {
         for (auto e: *entityContainer) {
             if (e->getId() == id)
@@ -995,7 +995,7 @@ unsigned int RS_ScriptingApi::entlast()
     RS_EntityContainer* entityContainer = getContainer();
     unsigned int id = 0;
 
-    if(entityContainer != nullptr && entityContainer->count())
+    if(entityContainer && entityContainer->count())
     {
         for (auto e: *entityContainer)
         {
@@ -1143,7 +1143,7 @@ unsigned int RS_ScriptingApi::entnext(unsigned int current)
     unsigned int maxId = 0;
     unsigned int id = 0;
 
-    if(entityContainer != nullptr && entityContainer->count())
+    if(entityContainer && entityContainer->count())
     {
         for (auto e: *entityContainer)
         {
@@ -1196,7 +1196,7 @@ bool RS_ScriptingApi::entsel(CommandEdit *cmdline, const QString &prompt, unsign
     RS_Document* doc = getDocument();
     RS_GraphicView* graphicView = getGraphicView();
 
-    if (graphicView == nullptr || graphicView->getGraphic() == nullptr)
+    if (graphicView == NULL || graphicView->getGraphic() == NULL)
     {
         return false;
     }
@@ -1578,7 +1578,7 @@ bool RS_ScriptingApi::addLayer(const char *name, const RS_Pen &pen, int state)
     QString layer_name = name;
     QString newLayerName;
 
-    if (nullptr != layerList) {
+    if (NULL != layerList) {
         newLayerName = layer_name;
 
         QString sBaseLayerName( layer_name);
