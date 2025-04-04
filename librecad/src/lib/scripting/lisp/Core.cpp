@@ -2783,7 +2783,8 @@ BUILTIN("prin1")
         case LCLTYPE::FILE: {
             lclFile* f = VALUE_CAST(lclFile, *value);
             char filePtr[32];
-            sprintf(filePtr, "%p", f->value());
+            //sprintf(filePtr, "%p", f->value());
+            snprintf(filePtr, 32, "%p", f->value());
             const String file = filePtr;
             if (pf) {
                 pf->writeLine("\"" + file + "\"");
@@ -2953,7 +2954,8 @@ BUILTIN("princ")
         case LCLTYPE::FILE: {
             lclFile* f = VALUE_CAST(lclFile, *value);
             char filePtr[32];
-            sprintf(filePtr, "%p", f->value());
+            //sprintf(filePtr, "%p", f->value());
+            snprintf(filePtr, 32, "%p", f->value());
             const String file = filePtr;
             if (pf) {
                 pf->writeLine(file);
@@ -3124,7 +3126,8 @@ BUILTIN("print")
         case LCLTYPE::FILE: {
             lclFile* f = VALUE_CAST(lclFile, *value);
             char filePtr[32];
-            sprintf(filePtr, "%p", f->value());
+            //sprintf(filePtr, "%p", f->value());
+            snprintf(filePtr, 32, "%p", f->value());
             const String file = filePtr;
             if (pf) {
                 pf->writeLine("\n\"" + file + "\" ");
@@ -4170,9 +4173,10 @@ BUILTIN("vl-file-size")
         char str[50];
 
 #ifdef _MSC_VER
-        sprintf(str, "%llu", size);
+        snprintf(str, 50, "%llu", size);
 #else
         sprintf(str, "%lu", size);
+        snprintf(str, 50, "%lu", size);
 #endif
         return lcl::string(str);
     }
@@ -4249,7 +4253,8 @@ BUILTIN("vl-filename-mktemp")
 {
     int count = CHECK_ARGS_AT_LEAST(0);
     char num[4];
-    sprintf(num, "%03x", ++tmpFileCount);
+    snprintf(num, 4, "%03x", ++tmpFileCount);
+
     String filename = "tmpfile_";
     std::filesystem::path path("");
     std::filesystem::path p(std::filesystem::temp_directory_path());

@@ -972,7 +972,7 @@ PyObject *RS_PythonCore::ssadd(const char *ename, const char *ss) const
     }
 
     return RS_SCRIPTINGAPI->ssadd(id, ssId, newss)
-            ? Py_BuildValue("s", RS_SCRIPTINGAPI->getSelectionName(newss)) : Py_None;
+            ? Py_BuildValue("s", RS_SCRIPTINGAPI->getSelectionName(newss).c_str()) : Py_None;
 }
 
 PyObject *RS_PythonCore::ssdel(const char *ename, const char *ss) const
