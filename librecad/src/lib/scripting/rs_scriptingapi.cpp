@@ -49,6 +49,7 @@
 #include "intern/qc_actiongetpoint.h"
 #include "intern/qc_actiongetcorner.h"
 #include "intern/qc_actionentsel.h"
+#include "intern/qc_actionselectset.h"
 
 #include <QMessageBox>
 #include <QInputDialog>
@@ -149,6 +150,11 @@ unsigned int RS_ScriptingApi::getEntityId(const std::string &name)
     return static_cast<unsigned int>(stoi(ename, 0, 16));
 }
 
+unsigned int RS_ScriptingApi::getSelectionId(const std::string &name)
+{
+    return getEntityId(name);
+}
+
 int RS_ScriptingApi::getIntDlg(const char *prompt)
 {
     return QInputDialog::getInt(NULL,
@@ -216,6 +222,16 @@ std::string RS_ScriptingApi::getEntityHndl(unsigned int id) const
     ss << std::uppercase << std::hex << id;
     std::string hndl = ss.str();
     return hndl;
+}
+
+std::string RS_ScriptingApi::getSelectionName(unsigned int id) const
+{
+    std::string ename = "<Selection set: ";
+    std::stringstream ss;
+    ss << std::uppercase << std::hex << id;
+    ename += ss.str();
+    ename += ">";
+    return ename;
 }
 
 char RS_ScriptingApi::readChar()
@@ -966,10 +982,45 @@ bool RS_ScriptingApi::trueColorDialog(int &tres, int &res, int tcolor, int color
     return QG_ColorDlg::getTrueColor(tres, res, NULL, tcolor, color, by, tbycolor, bycolor);
 }
 
-bool RS_ScriptingApi::getSelected()
+bool RS_ScriptingApi::getSelected(std::vector<unsigned int> &sset)
 {
-    qDebug() << "[RS_ScriptingApi::getSelected]";
-    return false;
+    Q_UNUSED(sset)
+
+    bool status = false;
+
+    RS_Document* doc = getDocument();
+    RS_GraphicView* graphicView = getGraphicView();
+
+    if (graphicView == NULL || graphicView->getGraphic() == NULL)
+    {
+        qDebug() << "graphicView == NULL";
+        return false;
+    }
+
+    QC_ActionSelectSet *actionSelect = new QC_ActionSelectSet(*doc, *graphicView);
+    if (actionSelect)
+    {
+        graphicView->killAllActions();
+        graphicView->setCurrentAction(actionSelect);
+        QEventLoop ev;
+        while (!actionSelect->isCompleted())
+        {
+            ev.processEvents ();
+            if (!graphicView->getEventHandler()->hasAction())
+                break;
+        }
+    }
+
+    if (actionSelect->isCompleted() && !actionSelect->wasCanceled())
+    {
+        actionSelect->getSelected(sset);
+        status = true;
+    }
+
+    graphicView->killAllActions();
+
+    qDebug() << "[RS_ScriptingApi::getSelected] status:" << status;
+    return status;
 }
 
 bool RS_ScriptingApi::entdel(unsigned int id)
@@ -1188,6 +1239,127 @@ unsigned int RS_ScriptingApi::entnext(unsigned int current)
     }
 
     return 0;
+}
+
+unsigned int RS_ScriptingApi::sslength(const std::string &name)
+{
+    unsigned int result = 0;
+    lclValuePtr value = shadowEnv->get(name);
+
+    if (value)
+    {
+        const lclList* list = DYNAMIC_CAST(lclList, value);
+        if (!list || (list->count() == 0)) {
+            return result;
+        }
+        result = static_cast<unsigned int>(list->count());
+    }
+
+    return result;
+}
+
+bool RS_ScriptingApi::ssname(unsigned int ss, unsigned int idx, unsigned int &id)
+{
+    lclValuePtr value = shadowEnv->get(getSelectionName(ss));
+
+    if (value)
+    {
+        const lclList* list = DYNAMIC_CAST(lclList, value);
+
+        if (!list || list->count() == 0)
+        {
+            return false;
+        }
+
+        if (static_cast<int>(idx) < list->count())
+        {
+            const lclInteger *idVal = VALUE_CAST(lclInteger, list->item(idx));
+            id = idVal->value();
+            return true;
+        }
+    }
+
+    return false;
+}
+
+bool RS_ScriptingApi::ssadd(unsigned int id, unsigned int ss, unsigned int &newss)
+{
+    if (ss+id == 0)
+    {
+        newss = RS_SCRIPTINGAPI->getNewSelectionId();
+        shadowEnv->set(RS_SCRIPTINGAPI->getSelectionName(newss), lcl::list(new lclValueVec(0)));
+        return true;
+    }
+    else
+    {
+        // check db for entity or nil
+
+        lclValuePtr value = shadowEnv->get(getSelectionName(ss));
+
+        if (value)
+        {
+            const lclList* list = DYNAMIC_CAST(lclList, value);
+
+            if (!list)
+            {
+                return false;
+            }
+
+            lclValueVec* items = new lclValueVec(list->count());
+            std::copy(list->begin(), list->end(), items->begin());
+            items->push_back(lcl::integer(id));
+
+            shadowEnv->set(RS_SCRIPTINGAPI->getSelectionName(ss), lcl::list(items));
+            newss = ss;
+
+            return true;
+        }
+    }
+    return false;
+}
+
+bool RS_ScriptingApi::ssdel(unsigned int id, unsigned int ss)
+{
+    bool found = false;
+
+    lclValuePtr value = shadowEnv->get(getSelectionName(ss));
+    if (value)
+    {
+        const lclList* list = DYNAMIC_CAST(lclList, value);
+
+        if (!list || list->count() == 0)
+        {
+            return false;
+        }
+
+        lclValueVec* items = new lclValueVec(0);
+        for (auto it = list->begin(), end = list->end(); it != end; it++)
+        {
+            const lclInteger *idVal = DYNAMIC_CAST(lclInteger, *it);
+            const unsigned int curr = idVal->value();
+
+            if (curr == id)
+            {
+                found = true;
+            }
+            else
+            {
+                items->push_back(lcl::integer(id));
+            }
+        }
+
+        if (found)
+        {
+            shadowEnv->set(getSelectionName(ss), lcl::list(items));
+            return true;
+        }
+        else
+        {
+            delete items;
+        }
+    }
+
+    return false;
 }
 
 bool RS_ScriptingApi::entsel(CommandEdit *cmdline, const QString &prompt, unsigned long &id, RS_Vector &point)
@@ -3246,5 +3418,10 @@ RS_GraphicView* RS_ScriptingApi::getGraphicView() const
     return appWin->getGraphicView();
 }
 
+LC_GraphicViewport* RS_ScriptingApi::getViewPort() const
+{
+    RS_GraphicView *gv = getGraphicView();
+    return gv == NULL ? NULL : gv->getViewPort();
+}
 
 #endif // DEVELOPER

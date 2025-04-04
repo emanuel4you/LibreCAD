@@ -583,8 +583,8 @@ set(SOURCES
 		librecad/src/actions/drawing/selection/rs_actionselectinvert.h
 		librecad/src/actions/drawing/selection/rs_actionselectlayer.cpp
 		librecad/src/actions/drawing/selection/rs_actionselectlayer.h
-		librecad/src/actions/drawing/selection/rs_actionselectsingle.cpp
-		librecad/src/actions/drawing/selection/rs_actionselectsingle.h
+		librecad/src/actions/drawing/selection/rs_actionselectset.cpp
+		librecad/src/actions/drawing/selection/rs_actionselectset.h
 		librecad/src/actions/drawing/selection/rs_actionselectwindow.cpp
 		librecad/src/actions/drawing/selection/rs_actionselectwindow.h
 		librecad/src/actions/drawing/rel_zero/rs_actionsetrelativezero.cpp
@@ -867,6 +867,8 @@ set(SOURCES
         librecad/src/plugins/intern/qc_actiongetrad.h
         librecad/src/plugins/intern/qc_actiongetselect.cpp
         librecad/src/plugins/intern/qc_actiongetselect.h
+        librecad/src/plugins/intern/qc_actionselectset.cpp
+        librecad/src/plugins/intern/qc_actionselectset.h
         librecad/src/plugins/document_interface.h
         librecad/src/plugins/qc_plugininterface.h
 		librecad/src/ui/dialogs/entity/lc_dlgsplinepoints.cpp

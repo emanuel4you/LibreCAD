@@ -31,8 +31,6 @@
 
 #include "Python.h"
 
-#include "rs_document.h"
-
 #include "rs_entitycontainer.h"
 
 class RS_PythonCore
@@ -42,7 +40,9 @@ public:
     ~RS_PythonCore() {}
 
     void command(const char *cmd);
+    int sslength(const char *ss);
     double angle(PyObject *pnt1, PyObject *pnt2) const;
+
     PyObject *assoc(int needle, PyObject *args) const;
     PyObject *entlast() const;
     PyObject *entdel(const char *ename) const;
@@ -50,13 +50,15 @@ public:
     PyObject *entmake(PyObject *args) const;
     PyObject *entmod(PyObject *args) const;
     PyObject *entnext(const char *ename) const;
-    PyObject *entsel(const char* prompt = "") const;
+    PyObject *entsel(const char *prompt = "") const;
     PyObject *polar(PyObject *pnt, double ang, double dist) const;
+    PyObject *ssadd(const char *ename = "", const char *ss = "") const;
+    PyObject *ssdel(const char *ename, const char *ss) const;
+    PyObject *ssname(const char *ss, unsigned int idx) const;
 
     RS_Document *getDocument() const;
     RS_Graphic *getGraphic() const;
     RS_EntityContainer* getContainer() const;
-
 };
 
 #endif // DEVELOPER

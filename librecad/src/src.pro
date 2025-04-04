@@ -1657,6 +1657,7 @@ HEADERS += \
     plugins/intern/qc_actiongetrad.h \
     plugins/intern/qc_actiongetselect.h \
     plugins/intern/qc_actiongetent.h \
+    plugins/intern/qc_actionselectset.h \
     main/main.h \
     main/console_dxf2pdf/console_dxf2pdf.h \
     main/console_dxf2pdf/pdf_print_loop.h
@@ -1671,6 +1672,7 @@ SOURCES += \
     plugins/intern/qc_actiongetrad.cpp \
     plugins/intern/qc_actiongetselect.cpp \
     plugins/intern/qc_actiongetent.cpp \
+    plugins/intern/qc_actionselectset.cpp \
     main/main.cpp \
     main/console_dxf2pdf/console_dxf2pdf.cpp \
     main/console_dxf2pdf/pdf_print_loop.cpp

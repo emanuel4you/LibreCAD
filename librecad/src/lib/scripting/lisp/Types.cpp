@@ -65,6 +65,8 @@ namespace lcl {
                 return typeKeword();
             case LCLTYPE::ENAME:
                 return typeEname();
+            case LCLTYPE::SELECTIONSET:
+                return typeSelectionSet();
             default:
                 return typeUndef();
         }
@@ -103,7 +105,7 @@ namespace lcl {
 
     lclValuePtr integer(int value) {
         return lclValuePtr(new lclInteger(value));
-    };
+    }
 
     lclValuePtr integer(const String& token) {
         return integer(std::stoi(token));
@@ -180,6 +182,10 @@ namespace lcl {
         return lclValuePtr(new lclString(token));
     }
 
+    lclValuePtr selectionset(unsigned int id) {
+        return lclValuePtr(new lclSelectionSet(id));
+    }
+
     lclValuePtr symbol(const String& token) {
         return lclValuePtr(new lclSymbol(token));
     }
@@ -222,7 +228,13 @@ namespace lcl {
     lclValuePtr typeReal() {
         static lclValuePtr c(new lclConstant("REAL"));
         return lclValuePtr(c);
-    };
+    }
+
+    lclValuePtr typeSelectionSet() {
+        static lclValuePtr c(new lclConstant("SELECTIONSET"));
+        return lclValuePtr(c);
+    }
+
     lclValuePtr typeString() {
         static lclValuePtr c(new lclConstant("STR"));
         return lclValuePtr(c);
@@ -416,8 +428,7 @@ lclHash::lclHash(const lclHash::Map& map)
 
 }
 
-lclValuePtr
-lclHash::assoc(lclValueIter argsBegin, lclValueIter argsEnd) const
+lclValuePtr lclHash::assoc(lclValueIter argsBegin, lclValueIter argsEnd) const
 {
     LCL_CHECK(std::distance(argsBegin, argsEnd) % 2 == 0,
             "assoc requires an even-sized list");
@@ -432,8 +443,7 @@ bool lclHash::contains(lclValuePtr key) const
     return it != m_map.end();
 }
 
-lclValuePtr
-lclHash::dissoc(lclValueIter argsBegin, lclValueIter argsEnd) const
+lclValuePtr lclHash::dissoc(lclValueIter argsBegin, lclValueIter argsEnd) const
 {
     lclHash::Map map(m_map);
     for (auto it = argsBegin; it != argsEnd; ++it) {

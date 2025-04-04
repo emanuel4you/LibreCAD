@@ -38,7 +38,7 @@
 
 class lclEmptyInputException : public std::exception { };
 
-enum class LCLTYPE { ATOM, BUILTIN, BOOLEAN, FILE, GUI, INT, LIST, MAP, REAL, STR, SYM, UNDEF, VEC, KEYW, ENAME };
+enum class LCLTYPE { ATOM, BUILTIN, BOOLEAN, FILE, GUI, INT, LIST, MAP, REAL, STR, SYM, UNDEF, VEC, KEYW, ENAME, SELECTIONSET };
 
 #define MAX_DCL_TILES 35
 #define MAX_DCL_ATTR 35
@@ -197,6 +197,30 @@ public:
 
 private:
     const unsigned long int m_value;
+};
+
+class lclSelectionSet : public lclValue {
+public:
+    lclSelectionSet(unsigned int value) : m_value(value) { }
+    lclSelectionSet(const lclSelectionSet& that, lclValuePtr meta)
+        : lclValue(meta), m_value(that.m_value) { }
+
+    virtual String print(bool) const override {
+        return RS_SCRIPTINGAPI->getSelectionName(m_value);
+    }
+
+    virtual LCLTYPE type() const override { return LCLTYPE::SELECTIONSET; }
+
+    unsigned int value() const { return m_value; }
+
+    virtual bool doIsEqualTo(const lclValue*) const override {
+        return false;
+    }
+
+    WITH_META(lclSelectionSet)
+
+private:
+    const unsigned int m_value;
 };
 
 class lclFile : public lclValue {
@@ -1489,6 +1513,7 @@ namespace lcl {
     lclValuePtr ldouble(const String& token);
     lclValuePtr nilValue();
     lclValuePtr nullValue();
+    lclValuePtr selectionset(const unsigned int id);
     lclValuePtr string(const String& token);
     lclValuePtr symbol(const String& token);
     lclValuePtr trueValue();
@@ -1500,6 +1525,7 @@ namespace lcl {
     lclValuePtr typeList();
     lclValuePtr typeMap();
     lclValuePtr typeReal();
+    lclValuePtr typeSelectionSet();
     lclValuePtr typeString();
     lclValuePtr typeSymbol();
     lclValuePtr typeUndef();

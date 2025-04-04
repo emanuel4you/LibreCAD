@@ -2,16 +2,18 @@
 
 #include "rs_python.h"
 #include "rs_lisp.h"
+
 #include "LCL.h"
 #include "Environment.h"
 #include "StaticList.h"
 #include "Types.h"
 #include "lisp.h"
+
 #include "rs_scriptingapi.h"
 #include "rs.h"
 #include "rs_scripting_inputhandle.h"
-
 #include "rs_eventhandler.h"
+#include "rs_filterdxfrw.h"
 #include "rs_graphicview.h"
 #include "rs_entity.h"
 #include "rs_arc.h"
@@ -33,11 +35,7 @@
 #include "rs_solid.h"
 #include "rs_layer.h"
 #include "rs_fontlist.h"
-#include "rs_actionselectsingle.h"
-#include "qc_applicationwindow.h"
 #include "qg_actionhandler.h"
-
-#include "rs_filterdxfrw.h"
 
 #ifndef _WIN32
 #include <termios.h>
@@ -3579,19 +3577,83 @@ BUILTIN("sqrt")
     BUILTIN_FUNCTION(sqrt);
 }
 
+BUILTIN("ssadd")
+{
+    int args = CHECK_ARGS_BETWEEN(0, 2);
+
+    unsigned int id = 0;
+    unsigned int ss = 0;
+    unsigned int newss;
+
+    if (args == 2)
+    {
+        ARG(lclEname, en);
+        ARG(lclSelectionSet, set);
+
+        id = en->value();
+        ss = set->value();
+    }
+
+    return RS_SCRIPTINGAPI->ssadd(id, ss, newss)
+            ? lcl::selectionset(newss) : lcl::nilValue();
+}
+
+BUILTIN("ssdel")
+{
+    CHECK_ARGS_IS(2);
+    ARG(lclEname, en);
+    ARG(lclSelectionSet, set);
+
+    return RS_SCRIPTINGAPI->ssdel(en->value(), set->value())
+            ? lcl::selectionset(set->value()) : lcl::nilValue();
+}
+
 BUILTIN("ssget")
 {
     int args = CHECK_ARGS_BETWEEN(0, 3);
 
     if (args == 0)
     {
-        if (RS_SCRIPTINGAPI->getSelected())
+        std::vector<unsigned int> ssget;
+
+        if (RS_SCRIPTINGAPI->getSelected(ssget))
         {
-            return lcl::string("<selection>");
+            int length = ssget.size();
+            if (length == 0)
+                return lcl::nilValue();
+
+            lclValueVec* items = new lclValueVec(length);
+            for (int i = 0; i < length; i++) {
+                (*items)[i] = lcl::integer(ssget.at(i));
+            }
+
+            unsigned int id = RS_SCRIPTINGAPI->getNewSelectionId();
+            shadowEnv->set(RS_SCRIPTINGAPI->getSelectionName(id), lcl::list(items));
+
+            return lcl::selectionset(id);
         }
     }
 
     return lcl::nilValue();
+}
+
+BUILTIN("sslength")
+{
+    CHECK_ARGS_IS(1);
+    ARG(lclSelectionSet, set);
+
+    return lcl::integer(RS_SCRIPTINGAPI->sslength(set->print(true)));
+}
+
+BUILTIN("ssname")
+{
+    CHECK_ARGS_IS(2);
+    ARG(lclSelectionSet, set);
+    AG_INT(idx);
+
+    unsigned int id;
+    return RS_SCRIPTINGAPI->ssname(set->value(), idx->value(), id)
+            ? lcl::ename(id) : lcl::nilValue();
 }
 
 BUILTIN("start_dialog")

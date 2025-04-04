@@ -28,18 +28,13 @@
 #include "rs_pythoncore.h"
 #include "rs_scriptingapi.h"
 #include "rs_insert.h"
-#include "rs_hatch.h"
-#include "rs_solid.h"
-
 #include "rs_filterdxfrw.h"
-
-#include "qc_applicationwindow.h"
 
 bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData);
 
 RS_Document* RS_PythonCore::getDocument() const
 {
-    return QC_ApplicationWindow::getAppWindow()->getDocument();
+    return RS_SCRIPTINGAPI->getDocument();
 }
 
 RS_EntityContainer* RS_PythonCore::getContainer() const
@@ -62,6 +57,11 @@ void RS_PythonCore::command(const char *cmd)
     {
         RS_SCRIPTINGAPI->command(s);
     }
+}
+
+int RS_PythonCore::sslength(const char *ss)
+{
+    return RS_SCRIPTINGAPI->sslength(ss);
 }
 
 double RS_PythonCore::angle(PyObject *pnt1, PyObject *pnt2) const
@@ -956,6 +956,37 @@ PyObject *RS_PythonCore::polar(PyObject *pnt, double ang, double dist) const
 
     return Py_BuildValue("(dd)", x + std::round(dist * std::sin(ang)),
                                  y + std::round(dist * std::cos(ang)));
+}
+
+PyObject *RS_PythonCore::ssadd(const char *ename, const char *ss) const
+{
+
+    unsigned int id = 0;
+    unsigned int ssId = 0;
+    unsigned int newss;
+
+    if (std::strcmp(ename, "") != 0 || std::strcmp(ss, "") != 0)
+    {
+        id = RS_SCRIPTINGAPI->getEntityId(ename);
+        ssId = RS_SCRIPTINGAPI->getSelectionId(ss);
+    }
+
+    return RS_SCRIPTINGAPI->ssadd(id, ssId, newss)
+            ? Py_BuildValue("s", RS_SCRIPTINGAPI->getSelectionName(newss)) : Py_None;
+}
+
+PyObject *RS_PythonCore::ssdel(const char *ename, const char *ss) const
+{
+    return RS_SCRIPTINGAPI->ssdel(RS_SCRIPTINGAPI->getEntityId(ename),
+                                  RS_SCRIPTINGAPI->getSelectionId(ss))
+            ? Py_BuildValue("s", ss) : Py_None;
+}
+
+PyObject *RS_PythonCore::ssname(const char *ss, unsigned int idx) const
+{
+    unsigned int id;
+    return RS_SCRIPTINGAPI->ssname(RS_SCRIPTINGAPI->getSelectionId(ss), idx, id)
+            ? Py_BuildValue("s", RS_SCRIPTINGAPI->getEntityName(id).c_str()) : Py_None;
 }
 
 bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)

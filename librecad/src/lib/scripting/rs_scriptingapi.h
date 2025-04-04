@@ -29,13 +29,15 @@
 
 #ifdef DEVELOPER
 
-#include "rs_vector.h"
-#include "rs_solid.h"
-#include "rs_graphic.h"
-#include "qc_applicationwindow.h"
-
 #include <QString>
 #include <QLineEdit>
+#include <QList>
+
+#include "rs_vector.h"
+#include "rs_solid.h"
+#include "rs_selection.h"
+#include "rs_graphic.h"
+#include "qc_applicationwindow.h"
 
 #include "commandedit.h"
 #include "document_interface.h"
@@ -115,6 +117,7 @@ public:
     std::string credits() const;
     std::string getEntityName(unsigned int id) const;
     std::string getEntityHndl(unsigned int id) const;
+    std::string getSelectionName(unsigned int id) const;
     std::string getStrDlg(const char *prompt) const;
     std::string getFileNameDlg(const char *title, const char *filename, const char *ext) const;
 
@@ -122,6 +125,9 @@ public:
     unsigned int entnext(unsigned int current=0);
 
     unsigned int getEntityId(const std::string &name);
+    unsigned int getNewSelectionId() { m_selectionId++; return m_selectionId; }
+    unsigned int getSelectionId(const std::string &name);
+    unsigned int sslength(const std::string &name);
     int getIntDlg(const char *prompt);
 
     int loadDialog(const char *filename);
@@ -158,8 +164,11 @@ public:
     bool getReal(CommandEdit *cmdline, const char *msg, double &res);
     bool getInteger(CommandEdit *cmdline, const char *msg, int &res);
     bool getString(CommandEdit *cmdline, bool cr, const char *msg, std::string &res);
-    bool getSelected();
+    bool getSelected(std::vector<unsigned int> &sset);
     bool getKeyword(CommandEdit *cmdline, const char *msg, std::string &res);
+    bool ssadd(unsigned int id, unsigned int ss, unsigned int &newss);
+    bool ssname(unsigned int ss, unsigned int idx, unsigned int &id);
+    bool ssdel(unsigned int id, unsigned int ss);
     bool startImage(const char *key);
     bool startList(const char *key, int operation, int index);
     bool getTile(const char *key, std::string &result);
@@ -171,10 +180,12 @@ public:
     RS_Document* getDocument() const;
     RS_Graphic *getGraphic() const;
     RS_GraphicView* getGraphicView() const;
+    LC_GraphicViewport* getViewPort() const;
 
 private:
-    RS_ScriptingApi() {}
+    RS_ScriptingApi() : m_selectionId(0) { }
     static RS_ScriptingApi* unique;
+    unsigned int m_selectionId;
 };
 
 #endif // DEVELOPER
