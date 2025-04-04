@@ -1049,12 +1049,20 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$GRIDMODE" , 1));
     }
 
-#if 0
-    else if (setvar.toUpper() == "SNAPSTYLE")
+    else if (setvar.toUpper() == "SNAPSTYL")
     {
+        int value;
+        if (!PyArg_Parse(args, "i!", &args, &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        if (value == 1 || value == 0)
+        {
+            RS_SCRIPTINGAPI->getGraphic()->addVariable("$SNAPSTYLE", value, 70);
+        }
         return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$SNAPSTYLE", 0));
     }
-#endif
 
     else if (setvar.toUpper() == "ANGDIR")
     {
@@ -1091,9 +1099,182 @@ PyObject *RS_PythonCore::getvar(const char *id) const
 {
     QString getvar = id;
 
-    if (getvar.toUpper() == "PDMODE")
+    if (getvar.toUpper() == "ACADVER")
     {
-        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$PDMODE" , LC_DEFAULTS_PDMode));
+        QString acadver = RS_SCRIPTINGAPI->getGraphic()->getVariableString("$ACADVER", "");
+        acadver.replace(QRegularExpression("[a-zA-Z]"), "");
+        return Py_BuildValue("s", qUtf8Printable(acadver));
+    }
+
+    else if (getvar.toUpper() == "ANGBASE")
+    {
+        return Py_BuildValue("d", RS_SCRIPTINGAPI->getGraphic()->getVariableDouble("$ANGBASE", 0.0));
+    }
+
+    else if (getvar.toUpper() == "ANGDIR")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$ANGDIR", 0));
+    }
+
+    else if (getvar.toUpper() == "AUNITS")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$AUNITS", 0));
+    }
+
+    else if (getvar.toUpper() == "AUPREC")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$AUPREC", 4));
+    }
+
+    else if (getvar.toUpper() == "CLAYER")
+    {
+        return Py_BuildValue("s", qUtf8Printable(RS_SCRIPTINGAPI->getGraphic()->getVariableString("$CLAYER", "0")));
+    }
+
+    else if (getvar.toUpper() == "DIMSTYLE")
+    {
+        return Py_BuildValue("s", qUtf8Printable(RS_SCRIPTINGAPI->getGraphic()->getVariableString("$DIMSTYLE", "Standard")));
+    }
+
+    else if (getvar.toUpper() == "DIMSCALE")
+    {
+        return Py_BuildValue("d", RS_SCRIPTINGAPI->getGraphic()->getVariableDouble("$DIMSCALE", 1.0));
+    }
+
+    else if (getvar.toUpper() == "DIMASZ")
+    {
+        return Py_BuildValue("d", RS_SCRIPTINGAPI->getGraphic()->getVariableDouble("$DIMASZ", 2.5));
+    }
+
+    else if (getvar.toUpper() == "DIMEXO")
+    {
+        return Py_BuildValue("d", RS_SCRIPTINGAPI->getGraphic()->getVariableDouble("$DIMEXO", 0.625));
+    }
+
+    else if (getvar.toUpper() == "DIMEXE")
+    {
+        return Py_BuildValue("d", RS_SCRIPTINGAPI->getGraphic()->getVariableDouble("$DIMEXE", 1.25));
+    }
+
+    else if (getvar.toUpper() == "DIMFXL")
+    {
+        return Py_BuildValue("d", RS_SCRIPTINGAPI->getGraphic()->getVariableDouble("$DIMFXL", 1.0));
+    }
+
+    else if (getvar.toUpper() == "DIMTXT")
+    {
+        return Py_BuildValue("d", RS_SCRIPTINGAPI->getGraphic()->getVariableDouble("$DIMTXT", 2.5));
+    }
+
+    else if (getvar.toUpper() == "DIMTSZ")
+    {
+        return Py_BuildValue("d", RS_SCRIPTINGAPI->getGraphic()->getVariableDouble("$DIMTSZ", 2.5));
+    }
+
+    else if (getvar.toUpper() == "DIMLFAC")
+    {
+        return Py_BuildValue("d", RS_SCRIPTINGAPI->getGraphic()->getVariableDouble("$DIMLFAC", 1.0));
+    }
+
+    else if (getvar.toUpper() == "DIMGAP")
+    {
+        return Py_BuildValue("d", RS_SCRIPTINGAPI->getGraphic()->getVariableDouble("$DIMGAP", 0.625));
+    }
+
+    else if (getvar.toUpper() == "DIMTIH")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$DIMTIH", 2));
+    }
+
+    else if (getvar.toUpper() == "DIMZIN")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$DIMZIN", 1));
+    }
+
+    else if (getvar.toUpper() == "DIMAZIN")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$DIMAZIN", 0));
+    }
+
+    else if (getvar.toUpper() == "DIMCLRD")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$DIMCLRD", 0));
+    }
+
+    else if (getvar.toUpper() == "DIMCLRE")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$DIMCLRE", 0));
+    }
+
+    else if (getvar.toUpper() == "DIMCLRT")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$DIMCLRT", 0));
+    }
+
+    else if (getvar.toUpper() == "DIMADEC")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$DIMADEC", 0));
+    }
+
+    else if (getvar.toUpper() == "DIMDEC")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$DIMDEC", 2));
+    }
+
+    else if (getvar.toUpper() == "DIMAUNI")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$DIMAUNIT", 0));
+    }
+
+    else if (getvar.toUpper() == "DIMLUNIT")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$DIMLUNIT", 2));
+    }
+
+    else if (getvar.toUpper() == "DIMDSEP")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$DIMDSEP", 0));
+    }
+
+    else if (getvar.toUpper() == "DIMFXLON")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$DIMFXLON", 0));
+    }
+
+    else if (getvar.toUpper() == "DIMTXSTY")
+    {
+        return Py_BuildValue("s", qUtf8Printable(RS_SCRIPTINGAPI->getGraphic()->getVariableString("$DIMTXSTY", "standard")));
+    }
+
+    else if (getvar.toUpper() == "DIMLWD")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$DIMLWD", -2));
+    }
+
+    else if (getvar.toUpper() == "DIMLWE")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$DIMLWE", -2));
+    }
+
+    else if (getvar.toUpper() == "DWGCODEPAGE")
+    {
+        return Py_BuildValue("s", qUtf8Printable(RS_SCRIPTINGAPI->getGraphic()->getVariableString("$DWGCODEPAGE", "ANSI_1252")));
+    }
+
+    else if (getvar.toUpper() == "EXTMIN")
+    {
+    const RS_Vector ext = RS_SCRIPTINGAPI->getGraphic()->getVariableVector("$EXTMIN", RS_Vector(0.0, 0.0, 0.0));
+    const QString value = QString::number(ext.x) + "," + QString::number(ext.y);
+
+        return Py_BuildValue("s", qUtf8Printable(value));
+    }
+
+    else if (getvar.toUpper() == "EXTMAX")
+    {
+    const RS_Vector ext = RS_SCRIPTINGAPI->getGraphic()->getVariableVector("$EXTMAX", RS_Vector(0.0, 0.0, 0.0));
+    const QString value = QString::number(ext.x) + "," + QString::number(ext.y);
+
+        return Py_BuildValue("s", qUtf8Printable(value));
     }
 
     else if (getvar.toUpper() == "GRIDMODE")
@@ -1101,22 +1282,103 @@ PyObject *RS_PythonCore::getvar(const char *id) const
         return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$GRIDMODE" , 1));
     }
 
-#if 0
-    else if (getvar.toUpper() == "SNAPSTYLE")
+    else if (getvar.toUpper() == "GRIDUNIT")
+    {
+    const RS_Vector spacing = RS_SCRIPTINGAPI->getGraphic()->getVariableVector("$GRIDUNIT" , RS_Vector(0.0,0.0));
+    const QString value = QString::number(spacing.x) + "," + QString::number(spacing.y);
+
+        return Py_BuildValue("s", qUtf8Printable(value));
+    }
+
+    else if (getvar.toUpper() == "INSUNITS")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$INSUNITS", 0));
+    }
+
+    #if 0
+    else if (getvar.toUpper() == "JOINSTYLE")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableDouble("$JOINSTYLE", -999.9));
+    }
+    #endif
+
+    else if (getvar.toUpper() == "LUNITS")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$LUNITS", 2));
+    }
+
+    else if (getvar.toUpper() == "LUPREC")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$LUPREC", 4));
+    }
+
+    else if (getvar.toUpper() == "PDMODE")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$PDMODE" , LC_DEFAULTS_PDMode));
+    }
+
+    else if (getvar.toUpper() == "PDSIZE")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableDouble("$PDSIZE", LC_DEFAULTS_PDSize));
+    }
+
+    else if (getvar.toUpper() == "PSVPSCALE")
+    {
+        return Py_BuildValue("d", RS_SCRIPTINGAPI->getGraphic()->getVariableDouble("$PSVPSCALE", 1.0));
+    }
+
+    else if (getvar.toUpper() == "UCSNAME")
+    {
+        return Py_BuildValue("s", qUtf8Printable(RS_SCRIPTINGAPI->getGraphic()->getVariableString("$UCSNAME", "")));
+    }
+
+    else if (getvar.toUpper() == "UCSORG")
+    {
+    const RS_Vector origin = RS_SCRIPTINGAPI->getGraphic()->getVariableVector("$UCSORG" , RS_Vector(0.0,0.0));
+    const QString value = QString::number(origin.x) + "," + QString::number(origin.y);
+
+        return Py_BuildValue("s", qUtf8Printable(value));
+    }
+
+    else if (getvar.toUpper() == "UCSORTHOVIEW")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableDouble("$UCSORTHOVIEW", 0));
+    }
+
+    else if (getvar.toUpper() == "UCSXDIR")
+    {
+    const RS_Vector xAxis = RS_SCRIPTINGAPI->getGraphic()->getVariableVector("$UCSXDIR" , RS_Vector(0.0,0.0));
+    const QString value = QString::number(xAxis.x) + "," + QString::number(xAxis.y);
+
+        return Py_BuildValue("s", qUtf8Printable(value));
+    }
+
+    else if (getvar.toUpper() == "UCSYDIR")
+    {
+    RS_Vector xAxis = RS_SCRIPTINGAPI->getGraphic()->getVariableVector("$UCSXDIR" , RS_Vector(0.0,0.0));
+    const RS_Vector yAxis = RS_SCRIPTINGAPI->getGraphic()->getVariableVector("$UCSYDIR" , xAxis.rotate(M_PI_2));
+    const QString value = QString::number(yAxis.x) + "," + QString::number(yAxis.y);
+
+        return Py_BuildValue("s", qUtf8Printable(value));
+    }
+
+    else if (getvar.toUpper() == "SNAPSTYL")
     {
         return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$SNAPSTYLE", 0));
     }
-#endif
 
-    else if (getvar.toUpper() == "ANGDIR")
+    else if (getvar.toUpper() == "SNAPISOPAIR")
     {
-        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$ANGDIR", 0));
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$SNAPISOPAIR", 0));
     }
 
-    else if (getvar.toUpper() == "$ANGBASE")
+    else if (getvar.toUpper() == "TEXTSTYLE")
     {
-        return Py_BuildValue("d", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$ANGBASE", 0.0));
+        return Py_BuildValue("s", qUtf8Printable(RS_SCRIPTINGAPI->getGraphic()->getVariableString("$TEXTSTYLE", "Standard")));
     }
+
+    else
+    {}
 
     Py_RETURN_NONE;
 }

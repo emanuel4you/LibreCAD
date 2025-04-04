@@ -38,26 +38,27 @@
 
 QC_ActionSelectSet::QC_ActionSelectSet(RS_EntityContainer& container,
                                  RS_GraphicView& graphicView)
-    :RS_ActionInterface("Get Select", container, graphicView)
+    :RS_ActionInterface("Get Selection Set", container, graphicView)
     , canceled(false)
     , completed(false)
     , message(std::make_unique<QString>(tr("Select objects:")))
 {
     //actionType = RS2::ActionGetSelect;
-    //actionType = RS2::ActionSelectWindow;
-    actionType = RS2::ActionDefault;
+    actionType = RS2::ActionSelectWindow;
+    //actionType = RS2::ActionDefault;
 }
 
 QC_ActionSelectSet::QC_ActionSelectSet(RS2::EntityType typeToSelect, RS_EntityContainer& container,
                                        RS_GraphicView& graphicView)
     :RS_ActionInterface("Get Select", container, graphicView)
+    , canceled(false)
     , completed(false)
     , message(std::make_unique<QString>(tr("Select objects:")))
     , typeToSelect(typeToSelect)
 {
     //actionType = RS2::ActionGetSelect;
-    //actionType = RS2::ActionSelectWindow;
-    actionType = RS2::ActionDefault;
+    actionType = RS2::ActionSelectWindow;
+    //actionType = RS2::ActionDefault;
 }
 
 QC_ActionSelectSet::~QC_ActionSelectSet() = default;
@@ -88,9 +89,9 @@ void QC_ActionSelectSet::init(int status)
 {
         RS_ActionInterface::init(status);
         graphicView->setCurrentAction(
-                //new RS_ActionSelectSingle(typeToSelect, *container, *graphicView, this));
+                new RS_ActionSelectSingle(*container, *graphicView, this));
                 //new RS_ActionSelectWindow(typeToSelect, *container, *graphicView, true));
-                new RS_ActionDefault(*container, *graphicView));
+                //new RS_ActionDefault(*container, *graphicView));
 }
 
 void QC_ActionSelectSet::mouseReleaseEvent(QMouseEvent* e)
