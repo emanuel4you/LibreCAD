@@ -9,6 +9,8 @@
 #include "Types.h"
 #include "lisp.h"
 
+#include "lc_defaults.h"
+
 #include "rs_scriptingapi.h"
 #include "rs.h"
 #include "rs_scripting_inputhandle.h"
@@ -2059,11 +2061,37 @@ BUILTIN("getstring")
 
 BUILTIN("getvar") {
     CHECK_ARGS_IS(1);
-    lclSymbol* sym = VALUE_CAST(lclSymbol, *argsBegin);
-    lclValuePtr value = shadowEnv->get(sym->value());
-    if (value) {
-        return value;
+
+    ARG(lclString, id);
+    QString getvar = id->value().c_str();
+
+    if (getvar.toUpper() == "PDMODE")
+    {
+        return lcl::integer(RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$PDMODE" , LC_DEFAULTS_PDMode));
     }
+
+    else if (getvar.toUpper() == "GRIDMODE")
+    {
+        return lcl::integer(RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$GRIDMODE" , 1));
+    }
+
+#if 0
+    else if (getvar.toUpper() == "SNAPSTYLE")
+    {
+        return lcl::integer(RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$SNAPSTYLE", 0));
+    }
+#endif
+
+    else if (getvar.toUpper() == "ANGDIR")
+    {
+        return lcl::integer(RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$ANGDIR", 0));
+    }
+
+    else if (getvar.toUpper() == "$ANGBASE")
+    {
+        return lcl::ldouble(RS_SCRIPTINGAPI->getGraphic()->getVariableDouble("$ANGBASE", 0.0));
+    }
+
     return lcl::nilValue();
 }
 
@@ -3548,7 +3576,81 @@ BUILTIN("setvar")
 {
     CHECK_ARGS_IS(2);
     ARG(lclString, id);
-    return shadowEnv->set(id->value(), EVAL(*argsBegin, NULL));
+    QString setvar = id->value().c_str();
+
+    if (setvar.toUpper() == "PDMODE" && INT_PTR)
+    {
+        ARG(lclInteger, var);
+
+        switch (var->value()) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 32:
+        case 33:
+        case 34:
+        case 35:
+        case 36:
+        case 64:
+        case 65:
+        case 66:
+        case 67:
+        case 68:
+        case 96:
+        case 97:
+        case 98:
+        case 99:
+        case 100:
+            RS_SCRIPTINGAPI->getGraphic()->addVariable("$PDMODE", var->value(), DXF_FORMAT_GC_PDMode);
+            break;
+        default:
+            break;
+        }
+
+        return lcl::integer(RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$PDMODE" , LC_DEFAULTS_PDMode));
+    }
+
+    else if (setvar.toUpper() == "GRIDMODE" && INT_PTR)
+    {
+        ARG(lclInteger, var);
+
+        if (var->value() == 1 || var->value() == 0)
+        {
+            RS_SCRIPTINGAPI->getGraphic()->addVariable("$GRIDMODE", var->value(), 70);
+        }
+
+        return lcl::integer(RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$GRIDMODE" , 1));
+    }
+#if 0
+    else if (setvar.toUpper() == "SNAPSTYLE")
+    {
+        return lcl::integer(RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$SNAPSTYLE", 0));
+    }
+#endif
+    else if (setvar.toUpper() == "ANGDIR" && INT_PTR)
+    {
+        ARG(lclInteger, var);
+
+        if (var->value() == 1 || var->value() == 0)
+        {
+            RS_SCRIPTINGAPI->getGraphic()->addVariable("$ANGDIR", var->value(), 70);
+        }
+
+        return lcl::integer(RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$ANGDIR", 0));
+    }
+
+    else if (setvar.toUpper() == "$ANGBASE" && FLOAT_PTR)
+    {
+        ARG(lclDouble, var);
+
+        RS_SCRIPTINGAPI->getGraphic()->addVariable("$ANGBASE", var->value(), 50);
+
+        return lcl::ldouble(RS_SCRIPTINGAPI->getGraphic()->getVariableDouble("$ANGBASE", 0.0));
+    }
+
+    return lcl::nilValue();
 }
 
 BUILTIN("sin")

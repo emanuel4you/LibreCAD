@@ -30,6 +30,8 @@
 #include "rs_insert.h"
 #include "rs_filterdxfrw.h"
 
+#include "lc_defaults.h"
+
 bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData);
 
 RS_Document* RS_PythonCore::getDocument() const
@@ -987,6 +989,136 @@ PyObject *RS_PythonCore::ssname(const char *ss, unsigned int idx) const
     unsigned int id;
     return RS_SCRIPTINGAPI->ssname(RS_SCRIPTINGAPI->getSelectionId(ss), idx, id)
             ? Py_BuildValue("s", RS_SCRIPTINGAPI->getEntityName(id).c_str()) : Py_None;
+}
+
+PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
+{
+    QString setvar = id;
+
+    if (setvar.toUpper() == "PDMODE")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!", &args, &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        switch (value) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 32:
+        case 33:
+        case 34:
+        case 35:
+        case 36:
+        case 64:
+        case 65:
+        case 66:
+        case 67:
+        case 68:
+        case 96:
+        case 97:
+        case 98:
+        case 99:
+        case 100:
+            RS_SCRIPTINGAPI->getGraphic()->addVariable("$PDMODE", value, DXF_FORMAT_GC_PDMode);
+            break;
+        default:
+            break;
+        }
+
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$PDMODE" , LC_DEFAULTS_PDMode));
+    }
+
+    else if (setvar.toUpper() == "GRIDMODE")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!", &args, &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        if (value == 1 || value == 0)
+        {
+            RS_SCRIPTINGAPI->getGraphic()->addVariable("$GRIDMODE", value, 70);
+        }
+
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$GRIDMODE" , 1));
+    }
+
+#if 0
+    else if (setvar.toUpper() == "SNAPSTYLE")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$SNAPSTYLE", 0));
+    }
+#endif
+
+    else if (setvar.toUpper() == "ANGDIR")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!", &args, &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        if (value == 1 || value == 0)
+        {
+            RS_SCRIPTINGAPI->getGraphic()->addVariable("$ANGDIR", value, 70);
+        }
+
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableDouble("$ANGDIR", 0));
+    }
+
+    else if (setvar.toUpper() == "$ANGBASE")
+    {
+        double value;
+        if (!PyArg_Parse(args, "d!", &args, &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be a float.");
+            Py_RETURN_NONE;
+        }
+        RS_SCRIPTINGAPI->getGraphic()->addVariable("$ANGBASE", value, 50);
+
+        return Py_BuildValue("d", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$ANGBASE", 0.0));
+    }
+
+    Py_RETURN_NONE;
+}
+
+PyObject *RS_PythonCore::getvar(const char *id) const
+{
+    QString getvar = id;
+
+    if (getvar.toUpper() == "PDMODE")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$PDMODE" , LC_DEFAULTS_PDMode));
+    }
+
+    else if (getvar.toUpper() == "GRIDMODE")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$GRIDMODE" , 1));
+    }
+
+#if 0
+    else if (getvar.toUpper() == "SNAPSTYLE")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$SNAPSTYLE", 0));
+    }
+#endif
+
+    else if (getvar.toUpper() == "ANGDIR")
+    {
+        return Py_BuildValue("i", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$ANGDIR", 0));
+    }
+
+    else if (getvar.toUpper() == "$ANGBASE")
+    {
+        return Py_BuildValue("d", RS_SCRIPTINGAPI->getGraphic()->getVariableInt("$ANGBASE", 0.0));
+    }
+
+    Py_RETURN_NONE;
 }
 
 bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)

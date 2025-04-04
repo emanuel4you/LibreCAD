@@ -19,7 +19,7 @@ SWIG_OUT_PYTHON += \
     $${INSTALLDIR}/librecad.py
 
 SWIG_FLAGS += \
-    -v -c++ -python -w509 -w503 -w476 -DDEVELOPER
+    -v -c++ -python -builtin -DDEVELOPER -w302,314,325,503,520,350,351,383,389,394,395,401,402,404,412,476,509,512,504
 
 SWIG = swig
 
@@ -54,6 +54,6 @@ swig.commands = $$SWIG $$SWIG_FLAGS $$SWIG_INCLUDE -outdir $$SWIG_OUT_DIR -o $$G
 swig.output = $$GENERATED_SOURCES
 
 QMAKE_EXTRA_COMPILERS += swig
-QMAKE_EXTRA_TARGETS += swig
+#QMAKE_EXTRA_TARGETS += swig
 QMAKE_CLEAN += $$swig.target
 QMAKE_CLEAN += $$SWIG_OUT_PYTHON

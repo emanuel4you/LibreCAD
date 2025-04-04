@@ -56,6 +56,9 @@ public:
     PyObject *ssdel(const char *ename, const char *ss) const;
     PyObject *ssname(const char *ss, unsigned int idx) const;
 
+    PyObject *getvar(const char *id) const;
+    PyObject *setvar(const char *id, PyObject *args) const;
+
     RS_Document *getDocument() const;
     RS_Graphic *getGraphic() const;
     RS_EntityContainer* getContainer() const;
