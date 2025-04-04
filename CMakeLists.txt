@@ -580,8 +580,8 @@ set(SOURCES
 		librecad/src/actions/drawing/selection/rs_actionselectinvert.h
 		librecad/src/actions/drawing/selection/rs_actionselectlayer.cpp
 		librecad/src/actions/drawing/selection/rs_actionselectlayer.h
-		librecad/src/actions/drawing/selection/rs_actionselectset.cpp
-		librecad/src/actions/drawing/selection/rs_actionselectset.h
+		librecad/src/actions/drawing/selection/rs_actionselectsingle.cpp
+		librecad/src/actions/drawing/selection/rs_actionselectsingle.h
 		librecad/src/actions/drawing/selection/rs_actionselectwindow.cpp
 		librecad/src/actions/drawing/selection/rs_actionselectwindow.h
 		librecad/src/actions/drawing/rel_zero/rs_actionsetrelativezero.cpp
