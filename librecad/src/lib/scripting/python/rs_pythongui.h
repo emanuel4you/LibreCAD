@@ -57,6 +57,7 @@ public:
     PyObject *acadTrueColorDlg(PyObject *color=Py_None, bool allowbylayer=true, PyObject *byColor=Py_None) const;
     PyObject *getDist(const char *prompt = "", const RS_Vector &basePoint=RS_Vector()) const;
     PyObject *getFiled(const char *title = "", const char *def = "", const char *ext = "", int flags=0) const;
+    PyObject *getAngle(const char *prompt = "", const RS_Vector &basePoint=RS_Vector()) const;
     PyObject *getOrient(const char *prompt = "", const RS_Vector &basePoint=RS_Vector()) const;
     PyObject *getInt(const char *prompt = "") const;
     PyObject *getReal(const char *prompt = "") const;

@@ -1535,6 +1535,108 @@ BUILTIN("get_tile")
                                     result) ? lcl::string(result) : lcl::nilValue();
 }
 
+
+BUILTIN("getangle")
+{
+    int args = CHECK_ARGS_BETWEEN(0, 2);
+    QString prompt = "";
+    double x=0.0, y=0.0, z=0.0;
+    double radius;
+    bool ref = false;
+
+    if (args >= 1)
+    {
+        if (NIL_PTR)
+        {
+            argsBegin++;
+        }
+
+        if (argsBegin->ptr()->type() == LCLTYPE::STR)
+        {
+            ARG(lclString, msg);
+            prompt = QObject::tr(msg->value().c_str());
+        }
+
+        if (argsBegin->ptr()->type() == LCLTYPE::LIST)
+        {
+            ref = true;
+            ARG(lclSequence, ptn);
+            if (ptn->count() == 2)
+            {
+                if ((ptn->item(0)->type() == LCLTYPE::REAL || ptn->item(0)->type() == LCLTYPE::INT) &&
+                    (ptn->item(1)->type() == LCLTYPE::REAL || ptn->item(1)->type() == LCLTYPE::INT))
+                {
+                    if (ptn->item(0)->type() == LCLTYPE::REAL)
+                    {
+                        const lclDouble *X = VALUE_CAST(lclDouble, ptn->item(0));
+                        x = X->value();
+                    }
+                    if (ptn->item(0)->type() == LCLTYPE::INT)
+                    {
+                        const lclInteger *X = VALUE_CAST(lclInteger, ptn->item(0));
+                        x = double(X->value());
+                    }
+                    if (ptn->item(1)->type() == LCLTYPE::REAL)
+                    {
+                        const lclDouble *Y = VALUE_CAST(lclDouble, ptn->item(1));
+                        y = Y->value();
+                    }
+                    if (ptn->item(1)->type() == LCLTYPE::INT)
+                    {
+                        const lclInteger *Y = VALUE_CAST(lclInteger, ptn->item(1));
+                        y = double(Y->value());
+                    }
+                }
+            }
+
+            if (ptn->count() == 3)
+            {
+                if ((ptn->item(0)->type() == LCLTYPE::REAL || ptn->item(0)->type() == LCLTYPE::INT) &&
+                    (ptn->item(1)->type() == LCLTYPE::REAL || ptn->item(1)->type() == LCLTYPE::INT) &&
+                    (ptn->item(2)->type() == LCLTYPE::REAL || ptn->item(2)->type() == LCLTYPE::INT))
+                {
+                    if (ptn->item(0)->type() == LCLTYPE::REAL)
+                    {
+                        const lclDouble *X = VALUE_CAST(lclDouble, ptn->item(0));
+                        x = X->value();
+                    }
+                    if (ptn->item(0)->type() == LCLTYPE::INT)
+                    {
+                        const lclInteger *X = VALUE_CAST(lclInteger, ptn->item(0));
+                        x = double(X->value());
+                    }
+                    if (ptn->item(1)->type() == LCLTYPE::REAL)
+                    {
+                        const lclDouble *Y = VALUE_CAST(lclDouble, ptn->item(1));
+                        y = Y->value();
+                    }
+                    if (ptn->item(1)->type() == LCLTYPE::INT)
+                    {
+                        const lclInteger *Y = VALUE_CAST(lclInteger, ptn->item(1));
+                        y = double(Y->value());
+                    }
+
+                    if (ptn->item(2)->type() == LCLTYPE::REAL)
+                    {
+                        const lclDouble *Z = VALUE_CAST(lclDouble, ptn->item(2));
+                        z = Z->value();
+                    }
+                    if (ptn->item(2)->type() == LCLTYPE::INT)
+                    {
+                        const lclInteger *Z = VALUE_CAST(lclInteger, ptn->item(2));
+                        z = double(Z->value());
+                    }
+                }
+            }
+        }
+    }
+
+    return RS_SCRIPTINGAPI->getAngle(Lisp_CommandEdit,
+                                    qUtf8Printable(prompt),
+                                    ref ? RS_Vector(x, y, z) : RS_Vector(),
+                                    radius) ? lcl::ldouble(radius) : lcl::nilValue();
+}
+
 BUILTIN("getcorner")
 {
     int args = CHECK_ARGS_BETWEEN(1, 2);

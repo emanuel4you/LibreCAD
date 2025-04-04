@@ -623,6 +623,14 @@ bool RS_ScriptingApi::getDist(CommandEdit *cmdline, const char *msg, const RS_Ve
     return false;
 }
 
+bool RS_ScriptingApi::getAngle(CommandEdit *cmdline, const char *msg, const RS_Vector &basePoint, double &rad)
+{
+    getOrient(cmdline, msg, basePoint, rad);
+    rad = rad + RS_SCRIPTINGAPI->getGraphic()->getVariableDouble("$ANGBASE", 0.0);
+
+    return false;
+}
+
 bool RS_ScriptingApi::getOrient(CommandEdit *cmdline, const char *msg, const RS_Vector &basePoint, double &rad)
 {
     QString prompt = msg;

@@ -204,6 +204,15 @@ PyObject* RS_PythonGui::getFiled(const char *title, const char *def, const char 
                                      filename) ? Py_BuildValue("s", filename.c_str()) : Py_None;
 }
 
+PyObject* RS_PythonGui::getAngle(const char *prompt, const RS_Vector &basePoint) const
+{
+    double radius;
+    return RS_SCRIPTINGAPI->getAngle(Py_CommandEdit,
+                                    prompt,
+                                    basePoint,
+                                    radius) ? Py_BuildValue("d", radius) : Py_None;
+}
+
 PyObject* RS_PythonGui::getOrient(const char *prompt, const RS_Vector &basePoint) const
 {
     double radius;

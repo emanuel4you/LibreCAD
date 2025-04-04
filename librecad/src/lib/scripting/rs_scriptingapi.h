@@ -160,6 +160,7 @@ public:
     bool vectorImage(int x1, int y1, int x2, int y2, int color);
     bool getFiled(const char *title, const char *def, const char *ext, int flags, std::string &filename);
     bool getDist(CommandEdit *cmdline, const char *msg, const RS_Vector &basePoint, double &distance);
+    bool getAngle(CommandEdit *cmdline, const char *msg, const RS_Vector &basePoint, double &rad);
     bool getOrient(CommandEdit *cmdline, const char *msg, const RS_Vector &basePoint, double &rad);
     bool getReal(CommandEdit *cmdline, const char *msg, double &res);
     bool getInteger(CommandEdit *cmdline, const char *msg, int &res);
