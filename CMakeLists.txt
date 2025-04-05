@@ -45,7 +45,7 @@ find_package(Qt6 REQUIRED COMPONENTS LinguistTools)
 
 find_package(Boost REQUIRED COMPONENTS)
 
-find_package(Freetype REQUIRED)
+find_package(Freetype)
 
 find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
 find_package(SWIG 4 COMPONENTS python REQUIRED)
