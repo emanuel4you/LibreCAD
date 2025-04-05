@@ -25,92 +25,50 @@
 **********************************************************************/
 #include "qc_actionselectset.h"
 
-#include <QMouseEvent>
-#include <QKeyEvent>
-
-#include "rs_actionselectsingle.h"
-
-#include "rs_actionselectwindow.h"
-#include "rs_actiondefault.h"
-
 #include "rs_graphicview.h"
-#include "rs_snapper.h"
 
-QC_ActionSelectSet::QC_ActionSelectSet(RS_EntityContainer& container,
-                                 RS_GraphicView& graphicView)
-    :RS_ActionInterface("Get Selection Set", container, graphicView)
+QC_ActionSelectSet::QC_ActionSelectSet(RS_EntityContainer &container, RS_GraphicView &graphicView)
+    : LC_ActionPreSelectionAwareBase("Selection Set", container, graphicView)
     , canceled(false)
     , completed(false)
-    , message(std::make_unique<QString>(tr("Select objects:")))
 {
-    //actionType = RS2::ActionGetSelect;
-    actionType = RS2::ActionSelectWindow;
-    //actionType = RS2::ActionDefault;
-}
-
-QC_ActionSelectSet::QC_ActionSelectSet(RS2::EntityType typeToSelect, RS_EntityContainer& container,
-                                       RS_GraphicView& graphicView)
-    :RS_ActionInterface("Get Select", container, graphicView)
-    , canceled(false)
-    , completed(false)
-    , message(std::make_unique<QString>(tr("Select objects:")))
-    , typeToSelect(typeToSelect)
-{
-    //actionType = RS2::ActionGetSelect;
-    actionType = RS2::ActionSelectWindow;
-    //actionType = RS2::ActionDefault;
+    actionType = RS2::ActionDefault;
 }
 
 QC_ActionSelectSet::~QC_ActionSelectSet() = default;
 
-void QC_ActionSelectSet::updateMouseButtonHints()
+void QC_ActionSelectSet::init(int status)
 {
-    switch (getStatus()) {
-        case Select:
-            updateMouseWidget(*message, tr("Cancel"));
-            break;
-        default:
-            updateMouseWidget();
-            break;
-    }
+    LC_ActionPreSelectionAwareBase::init(status);
 }
 
-RS2::CursorType QC_ActionSelectSet::doGetMouseCursor([[maybe_unused]] int status)
+bool QC_ActionSelectSet::isAllowTriggerOnEmptySelection()
+{
+    return false;
+}
+
+void QC_ActionSelectSet::doTrigger([[maybe_unused]]bool keepSelected)
+{
+    qDebug() << "[QC_ActionSelectSet::doTrigger]";
+
+    completed = true;
+    finish(false);
+}
+
+void QC_ActionSelectSet::updateMouseButtonHintsForSelection()
+{
+    updateMouseWidgetTRCancel(tr("Select Entities"), MOD_CTRL(tr("???")));
+}
+
+RS2::CursorType QC_ActionSelectSet::doGetMouseCursorSelected([[maybe_unused]]int status)
 {
     return RS2::SelectCursor;
 }
 
-void QC_ActionSelectSet::setMessage(QString msg)
+void QC_ActionSelectSet::onMouseRightButtonRelease([[maybe_unused]]int status, [[maybe_unused]]LC_MouseEvent *e)
 {
-    *message = std::move(msg);
-}
-
-void QC_ActionSelectSet::init(int status)
-{
-        RS_ActionInterface::init(status);
-        graphicView->setCurrentAction(
-                new RS_ActionSelectSingle(*container, *graphicView, this));
-                //new RS_ActionSelectWindow(typeToSelect, *container, *graphicView, true));
-                //new RS_ActionDefault(*container, *graphicView));
-}
-
-void QC_ActionSelectSet::mouseReleaseEvent(QMouseEvent* e)
-{
-    if (e->button()==Qt::RightButton) {
-        completed = true;
-        updateMouseWidget();
-        finish();
-    }
-}
-
-void QC_ActionSelectSet::keyPressEvent(QKeyEvent* e)
-{
-    if (e->key()==Qt::Key_Escape || e->key()==Qt::Key_Enter){
-        updateMouseWidget();
-        finish();
-        completed = true;
-        canceled = true;
-    }
+    completed = true;
+    finish();
 }
 
 /**
@@ -127,16 +85,4 @@ void QC_ActionSelectSet::getSelected(std::vector<unsigned int> &se) const
             se.push_back(e->getId());
         }
     }
-}
-
-void QC_ActionSelectSet::unselectEntities()
-{
-    qDebug() << "[QC_ActionSelectSet::unselectEntities]";
-    for(auto e: *container){ // fixme - iterating all entities for selection
-        if (e->isSelected()) {
-            qDebug() << "is un Selected Id:" << e->getId();
-            e->setSelected(false);
-        }
-    }
-    updateSelectionWidget();
 }
