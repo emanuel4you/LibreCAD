@@ -1002,10 +1002,608 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         Py_RETURN_NONE;
     }
 
-    if (setvar.toUpper() == "PDMODE")
+    if (setvar.toUpper() == "$ANGBASE")
+    {
+        double value;
+        if (!PyArg_Parse(args, "d!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be a float.");
+            Py_RETURN_NONE;
+        }
+
+        graphic->addVariable("$ANGBASE", value, 50);
+
+        return Py_BuildValue("d", graphic->getVariableDouble("$ANGBASE", 0.0));
+    }
+
+    else if (setvar.toUpper() == "ANGDIR")
     {
         int value;
-        if (!PyArg_Parse(args, "i!", &args, &value)) {
+        if (!PyArg_Parse(args, "i!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        if (value == 1 || value == 0)
+        {
+            graphic->addVariable("$ANGDIR", value, 70);
+        }
+
+        return Py_BuildValue("i", graphic->getVariableInt("$ANGDIR", 0));
+    }
+
+    else if (setvar.toUpper() == "AUNITS")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        if (value > -1 && value < 5)
+        {
+            graphic->addVariable("$AUNITS", value, 70);
+        }
+
+        return Py_BuildValue("i", graphic->getVariableInt("$AUNITS", 0));
+    }
+
+    else if (setvar.toUpper() == "AUPREC")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!", &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        if (value > -1 && value < 9)
+        {
+            graphic->addVariable("$AUPREC", value, 70);
+        }
+
+        return Py_BuildValue("i", graphic->getVariableInt("$AUPREC", 4));
+    }
+
+    else if (setvar.toUpper() == "CLAYER")
+    {
+        std::string value;
+        if (!PyArg_Parse(args, "s!", &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be a string.");
+            Py_RETURN_NONE;
+        }
+        graphic->addVariable("$CLAYER", value.c_str(), 7);
+
+        return Py_BuildValue("s", qUtf8Printable(graphic->getVariableString("$CLAYER", "0")));
+    }
+
+    else if (setvar.toUpper() == "DIMSTYLE")
+    {
+        std::string value;
+        if (!PyArg_Parse(args, "s!", &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be a string.");
+            Py_RETURN_NONE;
+        }
+        graphic->addVariable("$DIMSTYLE", value.c_str(), 7);
+
+        return Py_BuildValue("s", qUtf8Printable(graphic->getVariableString("$DIMSTYLE", "Standard")));
+    }
+
+    else if (setvar.toUpper() == "DIMSCALE")
+    {
+        double value;
+        if (!PyArg_Parse(args, "d!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be a float.");
+            Py_RETURN_NONE;
+        }
+
+        graphic->addVariable("$DIMSCALE", value, 50);
+
+        return Py_BuildValue("d", graphic->getVariableDouble("$DIMSCALE", 1.0));
+    }
+
+    else if (setvar.toUpper() == "DIMASZ")
+    {
+        double value;
+        if (!PyArg_Parse(args, "d!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be a float.");
+            Py_RETURN_NONE;
+        }
+
+        graphic->addVariable("$DIMASZ", value, 50);
+
+        return Py_BuildValue("d", graphic->getVariableDouble("$DIMASZ", 2.5));
+    }
+
+    else if (setvar.toUpper() == "DIMEXO")
+    {
+        double value;
+        if (!PyArg_Parse(args, "d!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be a float.");
+            Py_RETURN_NONE;
+        }
+
+        graphic->addVariable("$DIMEXO", value, 50);
+
+        return Py_BuildValue("d", graphic->getVariableDouble("$DIMEXO", 0.625));
+    }
+
+    else if (setvar.toUpper() == "DIMEXE")
+    {
+        double value;
+        if (!PyArg_Parse(args, "d!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be a float.");
+            Py_RETURN_NONE;
+        }
+
+        graphic->addVariable("$DIMEXE", value, 50);
+
+        return Py_BuildValue("d", graphic->getVariableDouble("$DIMEXE", 1.25));
+    }
+
+    else if (setvar.toUpper() == "DIMFXL")
+    {
+        double value;
+        if (!PyArg_Parse(args, "d!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be a float.");
+            Py_RETURN_NONE;
+        }
+
+        graphic->addVariable("$DIMFXL", value, 50);
+
+        return Py_BuildValue("d", graphic->getVariableDouble("$DIMFXL", 1.0));
+    }
+
+    else if (setvar.toUpper() == "DIMTXT")
+    {
+        double value;
+        if (!PyArg_Parse(args, "d!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be a float.");
+            Py_RETURN_NONE;
+        }
+
+        graphic->addVariable("$DIMTXT", value, 50);
+
+        return Py_BuildValue("d", graphic->getVariableDouble("$DIMTXT", 2.5));
+    }
+
+    else if (setvar.toUpper() == "DIMTSZ")
+    {
+        double value;
+        if (!PyArg_Parse(args, "d!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be a float.");
+            Py_RETURN_NONE;
+        }
+
+        graphic->addVariable("$DIMTSZ", value, 50);
+
+        return Py_BuildValue("d", graphic->getVariableDouble("$DIMTSZ", 2.5));
+    }
+
+    else if (setvar.toUpper() == "DIMLFAC")
+    {
+        double value;
+        if (!PyArg_Parse(args, "d!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be a float.");
+            Py_RETURN_NONE;
+        }
+
+        graphic->addVariable("$DIMLFAC", value, 50);
+        return Py_BuildValue("d", graphic->getVariableDouble("$DIMLFAC", 1.0));
+    }
+
+    else if (setvar.toUpper() == "DIMGAP")
+    {
+        double value;
+        if (!PyArg_Parse(args, "d!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be a float.");
+            Py_RETURN_NONE;
+        }
+
+        graphic->addVariable("$DIMGAP", value, 50);
+
+        return Py_BuildValue("d", graphic->getVariableDouble("$DIMGAP", 0.625));
+    }
+
+    else if (setvar.toUpper() == "DIMTIH")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        if (value == 1 || value == 0)
+        {
+            graphic->addVariable("$DIMTIH", value, 70);
+        }
+
+        return Py_BuildValue("i", graphic->getVariableInt("$DIMTIH", 2));
+    }
+
+    else if (setvar.toUpper() == "DIMZIN")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        if (value > -1 && value < 13)
+        {
+            graphic->addVariable("$DIMZIN", value, 70);
+        }
+
+        return Py_BuildValue("i", graphic->getVariableInt("$DIMZIN", 1));
+    }
+
+    else if (setvar.toUpper() == "DIMAZIN")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        if (value > -1 && value < 4)
+        {
+            graphic->addVariable("$DIMAZIN", value, 70);
+        }
+
+        return Py_BuildValue("i", graphic->getVariableInt("$DIMAZIN", 0));
+    }
+
+    else if (setvar.toUpper() == "DIMCLRD")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        if (value > -1 && value < 257)
+        {
+            graphic->addVariable("$DIMCLRD", value, 70);
+        }
+
+        return Py_BuildValue("i", graphic->getVariableInt("$DIMCLRD", 0));
+    }
+
+    else if (setvar.toUpper() == "DIMCLRE")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        if (value > -1 && value < 257)
+        {
+            graphic->addVariable("$DIMCLRE", value, 70);
+        }
+
+        return Py_BuildValue("i", graphic->getVariableInt("$DIMCLRE", 0));
+    }
+
+    else if (setvar.toUpper() == "DIMCLRT")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        graphic->addVariable("$DIMCLRT", value, 70);
+
+        return Py_BuildValue("i", graphic->getVariableInt("$DIMCLRT", 0));
+    }
+
+    else if (setvar.toUpper() == "DIMADEC")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        if (value > -2 && value < 9)
+        {
+            graphic->addVariable("$DIMADEC", value, 70);
+        }
+
+        return Py_BuildValue("i", graphic->getVariableInt("$DIMADEC", 0));
+    }
+
+    else if (setvar.toUpper() == "DIMDEC")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        if (value > -2 && value < 5)
+        {
+            graphic->addVariable("$DIMDEC", value, 70);
+        }
+
+        return Py_BuildValue("i", graphic->getVariableInt("$DIMDEC", 2));
+    }
+
+    else if (setvar.toUpper() == "DIMAUNIT")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        if (value > -2 && value < 4)
+        {
+            graphic->addVariable("$DIMAUNIT", value, 70);
+        }
+
+        return Py_BuildValue("i", graphic->getVariableInt("$DIMAUNIT", 0));
+    }
+
+    else if (setvar.toUpper() == "DIMLUNIT")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        if (value > -1 && value < 7)
+        {
+            graphic->addVariable("$DIMLUNIT", value, 70);
+        }
+
+        return Py_BuildValue("i", graphic->getVariableInt("$DIMLUNIT", 2));
+    }
+
+    else if (setvar.toUpper() == "DIMDSEP")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        if (value == 1 || value == 0)
+        {
+            graphic->addVariable("$DIMLUNIT", value, 70);
+        }
+
+        return Py_BuildValue("i", graphic->getVariableInt("$DIMDSEP", 0));
+    }
+
+    else if (setvar.toUpper() == "DIMFXLON")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        if (value == 1 || value == 0)
+        {
+            graphic->addVariable("$DIMFXLON", value, 70);
+        }
+
+        return Py_BuildValue("i", graphic->getVariableInt("$DIMFXLON", 0));
+    }
+
+    else if (setvar.toUpper() == "DIMTXSTY")
+    {
+        std::string value;
+        if (!PyArg_Parse(args, "s!", &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be a string.");
+            Py_RETURN_NONE;
+        }
+
+        graphic->addVariable("$DIMTXSTY", value.c_str(), 7);
+
+        return Py_BuildValue("s", qUtf8Printable(graphic->getVariableString("$DIMTXSTY", "standard")));
+    }
+
+    else if (setvar.toUpper() == "DIMLWD")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        switch (value)
+        {
+        case -1:
+        case -2:
+        case -3:
+        case 0:
+        case 5:
+        case 9:
+        case 13:
+        case 15:
+        case 18:
+        case 20:
+        case 25:
+        case 30:
+        case 35:
+        case 40:
+        case 50:
+        case 53:
+        case 60:
+        case 70:
+        case 80:
+        case 90:
+        case 100:
+        case 106:
+        case 120:
+        case 140:
+        case 158:
+        case 200:
+        case 211:
+        {
+            graphic->addVariable("$DIMLWD", value, 70);
+        }
+            break;
+        default:
+        {
+            Py_RETURN_NONE;
+        }
+        }
+        return Py_BuildValue("i", graphic->getVariableInt("$DIMLWD", -2));
+    }
+
+    else if (setvar.toUpper() == "DIMLWE")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        switch (value)
+        {
+        case -1:
+        case -2:
+        case -3:
+        case 0:
+        case 5:
+        case 9:
+        case 13:
+        case 15:
+        case 18:
+        case 20:
+        case 25:
+        case 30:
+        case 35:
+        case 40:
+        case 50:
+        case 53:
+        case 60:
+        case 70:
+        case 80:
+        case 90:
+        case 100:
+        case 106:
+        case 120:
+        case 140:
+        case 158:
+        case 200:
+        case 211:
+        {
+            int value;
+        if (!PyArg_Parse(args, "i!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+            graphic->addVariable("$DIMLWE", value, 70);
+            break;
+        }
+
+        default:
+        {
+            Py_RETURN_NONE;
+        }
+        }
+        return Py_BuildValue("i", graphic->getVariableInt("$DIMLWE", -2));
+    }
+
+    else if (setvar.toUpper() == "DWGCODEPAGE")
+    {
+        std::string value;
+        if (!PyArg_Parse(args, "s!", &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be a string.");
+            Py_RETURN_NONE;
+        }
+
+        graphic->addVariable("$DWGCODEPAGE", value.c_str(), 7);
+        return Py_BuildValue("s", qUtf8Printable(graphic->getVariableString("$DWGCODEPAGE", "ANSI_1252")));
+    }
+
+    else if (setvar.toUpper() == "GRIDMODE")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        if (value == 1 || value == 0)
+        {
+            graphic->addVariable("$GRIDMODE", value, 70);
+        }
+
+        return Py_BuildValue("i", graphic->getVariableInt("$GRIDMODE" , 1));
+    }
+
+    else if (setvar.toUpper() == "GRIDUNIT")
+    {
+        const RS_Vector spacing = graphic->getVariableVector("$GRIDUNIT" , RS_Vector(0.0,0.0));
+        const QString value = QString::number(spacing.x) + "," + QString::number(spacing.y);
+
+        return Py_BuildValue("s", qUtf8Printable(value));
+    }
+
+    else if (setvar.toUpper() == "INSUNITS")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        if (value > -1 && value < 22)
+        {
+            graphic->addVariable("$INSUNITS", value, 70);
+        }
+        return Py_BuildValue("i", graphic->getVariableInt("$INSUNITS", 0));
+    }
+
+#if 0
+    else if (setvar.toUpper() =="JOINSTYLE")
+    {
+        return Py_BuildValue("i", graphic->getVariableDouble("$JOINSTYLE", -999.9));
+    }
+#endif
+
+    else if (setvar.toUpper() == "LUNITS")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        if (value > -1 && value < 6)
+        {
+            graphic->addVariable("$LUNITS", value, 70);
+        }
+
+        return Py_BuildValue("i", graphic->getVariableInt("$LUNITS", 2));
+    }
+
+    else if (setvar.toUpper() == "LUPREC")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        if (value > -1 && value < 8)
+        {
+            graphic->addVariable("$LUPREC", value, 70);
+        }
+
+        return Py_BuildValue("i", graphic->getVariableInt("$LUPREC", 4));
+    }
+
+    else if (setvar.toUpper() == "PDMODE")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!",  &value)) {
             PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
             Py_RETURN_NONE;
         }
@@ -1031,8 +1629,16 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         case 98:
         case 99:
         case 100:
+        {
+            int value;
+        if (!PyArg_Parse(args, "i!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
             graphic->addVariable("$PDMODE", value, DXF_FORMAT_GC_PDMode);
             break;
+        }
         default:
             break;
         }
@@ -1040,26 +1646,77 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         return Py_BuildValue("i", graphic->getVariableInt("$PDMODE" , LC_DEFAULTS_PDMode));
     }
 
-    else if (setvar.toUpper() == "GRIDMODE")
+    else if (setvar.toUpper() == "PDSIZE")
     {
-        int value;
-        if (!PyArg_Parse(args, "i!", &args, &value)) {
-            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+        double value;
+        if (!PyArg_Parse(args, "d!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be a float.");
             Py_RETURN_NONE;
         }
 
-        if (value == 1 || value == 0)
-        {
-            graphic->addVariable("$GRIDMODE", value, 70);
+        graphic->addVariable("$PDSIZE", value, DXF_FORMAT_GC_PDSize);
+        return Py_BuildValue("d", graphic->getVariableDouble("$PDSIZE", LC_DEFAULTS_PDSize));
+    }
+
+    else if (setvar.toUpper() == "PSVPSCALE")
+    {
+        double value;
+        if (!PyArg_Parse(args, "d!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be a float.");
+            Py_RETURN_NONE;
         }
 
-        return Py_BuildValue("i", graphic->getVariableInt("$GRIDMODE" , 1));
+        graphic->addVariable("PSVPSCALE", value, 40);
+        return Py_BuildValue("d", graphic->getVariableDouble("$PSVPSCALE", 1.0));
+    }
+
+    else if (setvar.toUpper() == "UCSNAME")
+    {
+        std::string value;
+        if (!PyArg_Parse(args, "s!", &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be a string.");
+            Py_RETURN_NONE;
+        }
+
+        graphic->addVariable("$UCSNAME", value.c_str(), 7);
+
+        return Py_BuildValue("s", qUtf8Printable(graphic->getVariableString("$UCSNAME", "")));
+    }
+
+    else if (setvar.toUpper() == "UCSORG")
+    {
+        const RS_Vector origin = graphic->getVariableVector("$UCSORG", RS_Vector(0.0,0.0));
+        const QString value = QString::number(origin.x) + "," + QString::number(origin.y);
+
+        return Py_BuildValue("s", qUtf8Printable(value));
+    }
+
+    else if (setvar.toUpper() == "UCSORTHOVIEW")
+    {
+        return Py_BuildValue("i", graphic->getVariableDouble("$UCSORTHOVIEW", 0));
+    }
+
+    else if (setvar.toUpper() == "UCSXDIR")
+    {
+        const RS_Vector xAxis = graphic->getVariableVector("$UCSXDIR", RS_Vector(0.0,0.0));
+        const QString value = QString::number(xAxis.x) + "," + QString::number(xAxis.y);
+
+        return Py_BuildValue("s", qUtf8Printable(value));
+    }
+
+    else if (setvar.toUpper() == "UCSYDIR")
+    {
+        RS_Vector xAxis = graphic->getVariableVector("$UCSXDIR" , RS_Vector(0.0,0.0));
+        const RS_Vector yAxis = graphic->getVariableVector("$UCSYDIR" , xAxis.rotate(M_PI_2));
+        const QString value = QString::number(yAxis.x) + "," + QString::number(yAxis.y);
+
+        return Py_BuildValue("s", qUtf8Printable(value));
     }
 
     else if (setvar.toUpper() == "SNAPSTYL")
     {
         int value;
-        if (!PyArg_Parse(args, "i!", &args, &value)) {
+        if (!PyArg_Parse(args, "i!",  &value)) {
             PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
             Py_RETURN_NONE;
         }
@@ -1068,35 +1725,41 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         {
             graphic->addVariable("$SNAPSTYLE", value, 70);
         }
+
         return Py_BuildValue("i", graphic->getVariableInt("$SNAPSTYLE", 0));
     }
 
-    else if (setvar.toUpper() == "ANGDIR")
+    else if (setvar.toUpper() == "SNAPISOPAIR")
     {
         int value;
-        if (!PyArg_Parse(args, "i!", &args, &value)) {
+        if (!PyArg_Parse(args, "i!",  &value)) {
             PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
             Py_RETURN_NONE;
         }
 
-        if (value == 1 || value == 0)
+        if (value > -1 && value < 3)
         {
-            graphic->addVariable("$ANGDIR", value, 70);
+            graphic->addVariable("$SNAPISOPAIR", value, 70);
         }
 
-        return Py_BuildValue("i", graphic->getVariableDouble("$ANGDIR", 0));
+        return Py_BuildValue("i", graphic->getVariableInt("$SNAPISOPAIR", 0));
     }
 
-    else if (setvar.toUpper() == "$ANGBASE")
+    else if (setvar.toUpper() == "TEXTSTYLE")
     {
-        double value;
-        if (!PyArg_Parse(args, "d!", &args, &value)) {
-            PyErr_SetString(PyExc_TypeError, "parameter must be a float.");
+        std::string value;
+        if (!PyArg_Parse(args, "s!", &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be a string.");
             Py_RETURN_NONE;
         }
-        graphic->addVariable("$ANGBASE", value, 50);
 
-        return Py_BuildValue("d", graphic->getVariableInt("$ANGBASE", 0.0));
+        graphic->addVariable("$TEXTSTYLE", value.c_str(), 7);
+        return Py_BuildValue("s", qUtf8Printable(graphic->getVariableString("$TEXTSTYLE", "Standard")));
+    }
+
+    else
+    {
+
     }
 
     Py_RETURN_NONE;
