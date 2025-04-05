@@ -92,6 +92,9 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData);
 #define STR_PTR \
     (argsBegin->ptr()->type() == LCLTYPE::STR)
 
+#define LIST_PTR \
+    (argsBegin->ptr()->type() == LCLTYPE::LIST)
+
 #define NIL_PTR \
     (argsBegin->ptr()->print(true) == "nil")
 
@@ -2367,7 +2370,7 @@ BUILTIN("getvar") {
 
     else if (getvar.toUpper() == "DIMTXSTY")
     {
-        return lcl::integer(graphic->getVariableString("$DIMTXSTY", "standard").toStdString());
+        return lcl::string(graphic->getVariableString("$DIMTXSTY", "standard").toStdString());
     }
 
     else if (getvar.toUpper() == "DIMLWD")
@@ -2388,25 +2391,29 @@ BUILTIN("getvar") {
     else if (getvar.toUpper() == "EXTMIN")
     {
 #if 0
-        const RS_Vector ext = graphic->getVariableVector("$EXTMIN", RS_Vector(0.0, 0.0, 0.0));
+        const RS_Vector ext = graphic->getVariableVector("$EXTMIN", RS_Vector(0.0, 0.0,0.0));
 #else
-        const RS_Vector ext = graphic->getMin();
+        const RS_Vector extMin = graphic->getMin();
 #endif
-        const QString value = QString::number(ext.x) + "," + QString::number(ext.y);
-
-        return lcl::symbol(value.toStdString());
+        lclValueVec* result = new lclValueVec(2);
+        result->at(0) = lcl::ldouble(extMin.x);
+        result->at(0) = lcl::ldouble(extMin.y);
+        result->at(0) = lcl::ldouble(extMin.z);
+        return lcl::list(result);
     }
 
     else if (getvar.toUpper() == "EXTMAX")
     {
 #if 0
-        const RS_Vector ext = graphic->getVariableVector("$EXTMAX", RS_Vector(0.0, 0.0, 0.0));
+        const RS_Vector ext = graphic->getVariableVector("$EXTMAX" , RS_Vector(0.0, 0.0,0.0));
 #else
-        const RS_Vector ext = graphic->getMax();
+        const RS_Vector extMax = graphic->getMax();
 #endif
-        const QString value = QString::number(ext.x) + "," + QString::number(ext.y);
-
-        return lcl::symbol(value.toStdString());
+        lclValueVec* result = new lclValueVec(2);
+        result->at(0) = lcl::ldouble(extMax.x);
+        result->at(0) = lcl::ldouble(extMax.y);
+        result->at(0) = lcl::ldouble(extMax.z);
+        return lcl::list(result);
     }
 
     else if (getvar.toUpper() == "GRIDMODE")
@@ -2417,9 +2424,10 @@ BUILTIN("getvar") {
     else if (getvar.toUpper() == "GRIDUNIT")
     {
         const RS_Vector spacing = graphic->getVariableVector("$GRIDUNIT" , RS_Vector(0.0,0.0));
-        const QString value = QString::number(spacing.x) + "," + QString::number(spacing.y);
-
-        return lcl::symbol(value.toStdString());
+        lclValueVec* result = new lclValueVec(2);
+        result->at(0) = lcl::ldouble(spacing.x);
+        result->at(0) = lcl::ldouble(spacing.y);
+        return lcl::list(result);
     }
 
     else if (getvar.toUpper() == "INSUNITS")
@@ -2467,9 +2475,11 @@ BUILTIN("getvar") {
     else if (getvar.toUpper() == "UCSORG")
     {
         const RS_Vector origin = graphic->getVariableVector("$UCSORG" , RS_Vector(0.0,0.0));
-        const QString value = QString::number(origin.x) + "," + QString::number(origin.y);
 
-        return lcl::symbol(value.toStdString());
+        lclValueVec* result = new lclValueVec(2);
+        result->at(0) = lcl::ldouble(origin.x);
+        result->at(0) = lcl::ldouble(origin.y);
+        return lcl::list(result);
     }
 
     else if (getvar.toUpper() == "UCSORTHOVIEW")
@@ -2480,18 +2490,21 @@ BUILTIN("getvar") {
     else if (getvar.toUpper() == "UCSXDIR")
     {
         const RS_Vector xAxis = graphic->getVariableVector("$UCSXDIR" , RS_Vector(0.0,0.0));
-        const QString value = QString::number(xAxis.x) + "," + QString::number(xAxis.y);
 
-        return lcl::symbol(value.toStdString());
+        lclValueVec* result = new lclValueVec(2);
+        result->at(0) = lcl::ldouble(xAxis.x);
+        result->at(0) = lcl::ldouble(xAxis.y);
+        return lcl::list(result);
     }
 
     else if (getvar.toUpper() == "UCSYDIR")
     {
-        RS_Vector xAxis = graphic->getVariableVector("$UCSXDIR" , RS_Vector(0.0,0.0));
-        const RS_Vector yAxis = graphic->getVariableVector("$UCSYDIR" , xAxis.rotate(M_PI_2));
-        const QString value = QString::number(yAxis.x) + "," + QString::number(yAxis.y);
+        RS_Vector yAxis = graphic->getVariableVector("$UCSYDIR" , RS_Vector(0.0,0.0));
 
-        return lcl::symbol(value.toStdString());
+        lclValueVec* result = new lclValueVec(2);
+        result->at(0) = lcl::ldouble(yAxis.x);
+        result->at(0) = lcl::ldouble(yAxis.y);
+        return lcl::list(result);
     }
 
     else if (getvar.toUpper() == "SNAPSTYL")
@@ -2510,9 +2523,7 @@ BUILTIN("getvar") {
     }
 
     else
-    {
-
-    }
+    {}
 
     return lcl::nilValue();
 }
@@ -4057,7 +4068,7 @@ BUILTIN("setvar")
     {
         ARG(lclString, var);
 
-        graphic->addVariable("$CLAYER", var->value().c_str(), 7);
+        graphic->addVariable("$CLAYER", var->value().c_str(), 8);
 
         return lcl::string(graphic->getVariableString("$CLAYER", "0").toStdString());
     }
@@ -4066,7 +4077,7 @@ BUILTIN("setvar")
     {
         ARG(lclString, var);
 
-        graphic->addVariable("$DIMSTYLE", var->value().c_str(), 7);
+        graphic->addVariable("$DIMSTYLE", var->value().c_str(), 2);
 
         return lcl::string(graphic->getVariableString("$DIMSTYLE", "Standard").toStdString());
     }
@@ -4075,7 +4086,7 @@ BUILTIN("setvar")
     {
         ARG(lclDouble, var);
 
-        graphic->addVariable("$DIMSCALE", var->value(), 50);
+        graphic->addVariable("$DIMSCALE", var->value(), 40);
 
         return lcl::ldouble(graphic->getVariableDouble("$DIMSCALE", 1.0));
     }
@@ -4084,7 +4095,7 @@ BUILTIN("setvar")
     {
         ARG(lclDouble, var);
 
-        graphic->addVariable("$DIMASZ", var->value(), 50);
+        graphic->addVariable("$DIMASZ", var->value(), 40);
 
         return lcl::ldouble(graphic->getVariableDouble("$DIMASZ", 2.5));
     }
@@ -4093,7 +4104,7 @@ BUILTIN("setvar")
     {
         ARG(lclDouble, var);
 
-        graphic->addVariable("$DIMEXO", var->value(), 50);
+        graphic->addVariable("$DIMEXO", var->value(), 40);
 
         return lcl::ldouble(graphic->getVariableDouble("$DIMEXO", 0.625));
     }
@@ -4102,7 +4113,7 @@ BUILTIN("setvar")
     {
         ARG(lclDouble, var);
 
-        graphic->addVariable("$DIMEXE", var->value(), 50);
+        graphic->addVariable("$DIMEXE", var->value(), 40);
 
         return lcl::ldouble(graphic->getVariableDouble("$DIMEXE", 1.25));
     }
@@ -4111,7 +4122,7 @@ BUILTIN("setvar")
     {
         ARG(lclDouble, var);
 
-        graphic->addVariable("$DIMFXL", var->value(), 50);
+        graphic->addVariable("$DIMFXL", var->value(), 40);
 
         return lcl::ldouble(graphic->getVariableDouble("$DIMFXL", 1.0));
     }
@@ -4120,7 +4131,7 @@ BUILTIN("setvar")
     {
         ARG(lclDouble, var);
 
-        graphic->addVariable("$DIMTXT", var->value(), 50);
+        graphic->addVariable("$DIMTXT", var->value(), 40);
 
         return lcl::ldouble(graphic->getVariableDouble("$DIMTXT", 2.5));
     }
@@ -4129,7 +4140,7 @@ BUILTIN("setvar")
     {
         ARG(lclDouble, var);
 
-        graphic->addVariable("$DIMTSZ", var->value(), 50);
+        graphic->addVariable("$DIMTSZ", var->value(), 40);
 
         return lcl::ldouble(graphic->getVariableDouble("$DIMTSZ", 2.5));
     }
@@ -4138,7 +4149,7 @@ BUILTIN("setvar")
     {
         ARG(lclDouble, var);
 
-        graphic->addVariable("$DIMLFAC", var->value(), 50);
+        graphic->addVariable("$DIMLFAC", var->value(), 40);
         return lcl::ldouble(graphic->getVariableDouble("$DIMLFAC", 1.0));
     }
 
@@ -4146,7 +4157,7 @@ BUILTIN("setvar")
     {
         ARG(lclDouble, var);
 
-        graphic->addVariable("$DIMGAP", var->value(), 50);
+        graphic->addVariable("$DIMGAP", var->value(), 40);
 
         return lcl::ldouble(graphic->getVariableDouble("$DIMGAP", 0.625));
     }
@@ -4296,7 +4307,7 @@ BUILTIN("setvar")
     {
         ARG(lclString, var);
 
-        graphic->addVariable("$DIMTXSTY", var->value().c_str(), 7);
+        graphic->addVariable("$DIMTXSTY", var->value().c_str(), 2);
         return lcl::string(graphic->getVariableString("$DIMTXSTY", "standard").toStdString());
     }
 
@@ -4341,7 +4352,8 @@ BUILTIN("setvar")
             break;
         default:
         {
-            return lcl::nilValue();
+            LCL_FAIL("set SYSVAR failed!");
+            break;
         }
         }
         return lcl::integer(graphic->getVariableInt("$DIMLWD", -2));
@@ -4389,7 +4401,8 @@ BUILTIN("setvar")
 
         default:
         {
-            return lcl::nilValue();
+            LCL_FAIL("set SYSVAR failed!");
+            break;
         }
         }
         return lcl::integer(graphic->getVariableInt("$DIMLWE", -2));
@@ -4415,12 +4428,49 @@ BUILTIN("setvar")
         return lcl::integer(graphic->getVariableInt("$GRIDMODE" , 1));
     }
 
-    else if (setvar.toUpper() == "GRIDUNIT" && STR_PTR)
+    else if (setvar.toUpper() == "GRIDUNIT" && LIST_PTR)
     {
-        const RS_Vector spacing = graphic->getVariableVector("$GRIDUNIT" , RS_Vector(0.0,0.0));
-        const QString value = QString::number(spacing.x) + "," + QString::number(spacing.y);
+        ARG(lclSequence, seq);
+        double x, y;
 
-        return lcl::symbol(value.toStdString());
+        if(seq->count() == 2)
+        {
+            if (seq->item(0)->type() == LCLTYPE::INT)
+            {
+                const lclInteger* intX = VALUE_CAST(lclInteger, seq->item(0));
+                x = double(intX->value());
+            }
+            else
+            {
+                const lclDouble* floatX = VALUE_CAST(lclDouble, seq->item(0));
+                x = floatX->value();
+            }
+
+            if (seq->item(1)->type() == LCLTYPE::INT)
+            {
+                const lclInteger* intY = VALUE_CAST(lclInteger, seq->item(1));
+                y = double(intY->value());
+            }
+            else
+            {
+                const lclDouble* floatY = VALUE_CAST(lclDouble, seq->item(1));
+                y = floatY->value();
+            }
+
+            graphic->addVariable("GRIDUNIT", RS_Vector(x,y), 10);
+        }
+        else
+        {
+            LCL_FAIL("set SYSVAR failed!");
+        }
+
+        const RS_Vector spacing = graphic->getVariableVector("$GRIDUNIT" , RS_Vector(0.0,0.0));
+
+        lclValueVec* result = new lclValueVec(2);
+        result->at(0) = lcl::ldouble(spacing.x);
+        result->at(0) = lcl::ldouble(spacing.y);
+
+        return lcl::list(result);
     }
 
     else if (setvar.toUpper() == "INSUNITS" && INT_PTR)
@@ -4469,7 +4519,8 @@ BUILTIN("setvar")
     {
         ARG(lclInteger, var);
 
-        switch (var->value()) {
+        switch (var->value())
+        {
         case 0:
         case 1:
         case 2:
@@ -4497,7 +4548,10 @@ BUILTIN("setvar")
             break;
         }
         default:
+        {
+            LCL_FAIL("set SYSVAR failed!");
             break;
+        }
         }
 
         return lcl::integer(graphic->getVariableInt("$PDMODE" , LC_DEFAULTS_PDMode));
@@ -4517,46 +4571,6 @@ BUILTIN("setvar")
 
         graphic->addVariable("PSVPSCALE", var->value(), 40);
         return lcl::ldouble(graphic->getVariableDouble("$PSVPSCALE", 1.0));
-    }
-
-    else if (setvar.toUpper() == "UCSNAME" && STR_PTR)
-    {
-
-        ARG(lclString, var);
-
-        graphic->addVariable("$UCSNAME", var->value().c_str(), 7);
-
-        return lcl::string(graphic->getVariableString("$UCSNAME", "").toStdString());
-    }
-
-    else if (setvar.toUpper() == "UCSORG" && STR_PTR)
-    {
-        const RS_Vector origin = graphic->getVariableVector("$UCSORG", RS_Vector(0.0,0.0));
-        const QString value = QString::number(origin.x) + "," + QString::number(origin.y);
-
-        return lcl::symbol(value.toStdString());
-    }
-
-    else if (setvar.toUpper() == "UCSORTHOVIEW" && INT_PTR)
-    {
-        return lcl::integer(graphic->getVariableDouble("$UCSORTHOVIEW", 0));
-    }
-
-    else if (setvar.toUpper() == "UCSXDIR" && STR_PTR)
-    {
-        const RS_Vector xAxis = graphic->getVariableVector("$UCSXDIR", RS_Vector(0.0,0.0));
-        const QString value = QString::number(xAxis.x) + "," + QString::number(xAxis.y);
-
-        return lcl::symbol(value.toStdString());
-    }
-
-    else if (setvar.toUpper() == "UCSYDIR" && STR_PTR)
-    {
-        RS_Vector xAxis = graphic->getVariableVector("$UCSXDIR" , RS_Vector(0.0,0.0));
-        const RS_Vector yAxis = graphic->getVariableVector("$UCSYDIR" , xAxis.rotate(M_PI_2));
-        const QString value = QString::number(yAxis.x) + "," + QString::number(yAxis.y);
-
-        return lcl::symbol(value.toStdString());
     }
 
     else if (setvar.toUpper() == "SNAPSTYL" && INT_PTR)
@@ -4592,9 +4606,7 @@ BUILTIN("setvar")
     }
 
     else
-    {
-
-    }
+    { LCL_FAIL("set SYSVAR failed!") }
 
     return lcl::nilValue();
 }

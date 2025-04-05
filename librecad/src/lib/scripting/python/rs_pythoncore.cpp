@@ -1027,6 +1027,11 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         {
             graphic->addVariable("$ANGDIR", value, 70);
         }
+        else
+        {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
+            Py_RETURN_NONE;
+        }
 
         return Py_BuildValue("i", graphic->getVariableInt("$ANGDIR", 0));
     }
@@ -1042,6 +1047,11 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         if (value > -1 && value < 5)
         {
             graphic->addVariable("$AUNITS", value, 70);
+        }
+        else
+        {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
+            Py_RETURN_NONE;
         }
 
         return Py_BuildValue("i", graphic->getVariableInt("$AUNITS", 0));
@@ -1059,6 +1069,11 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         {
             graphic->addVariable("$AUPREC", value, 70);
         }
+        else
+        {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
+            Py_RETURN_NONE;
+        }
 
         return Py_BuildValue("i", graphic->getVariableInt("$AUPREC", 4));
     }
@@ -1070,7 +1085,7 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
             PyErr_SetString(PyExc_TypeError, "parameter must be a string.");
             Py_RETURN_NONE;
         }
-        graphic->addVariable("$CLAYER", value.c_str(), 7);
+        graphic->addVariable("$CLAYER", value.c_str(), 8);
 
         return Py_BuildValue("s", qUtf8Printable(graphic->getVariableString("$CLAYER", "0")));
     }
@@ -1082,7 +1097,7 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
             PyErr_SetString(PyExc_TypeError, "parameter must be a string.");
             Py_RETURN_NONE;
         }
-        graphic->addVariable("$DIMSTYLE", value.c_str(), 7);
+        graphic->addVariable("$DIMSTYLE", value.c_str(), 2);
 
         return Py_BuildValue("s", qUtf8Printable(graphic->getVariableString("$DIMSTYLE", "Standard")));
     }
@@ -1095,7 +1110,7 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
             Py_RETURN_NONE;
         }
 
-        graphic->addVariable("$DIMSCALE", value, 50);
+        graphic->addVariable("$DIMSCALE", value, 40);
 
         return Py_BuildValue("d", graphic->getVariableDouble("$DIMSCALE", 1.0));
     }
@@ -1108,7 +1123,7 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
             Py_RETURN_NONE;
         }
 
-        graphic->addVariable("$DIMASZ", value, 50);
+        graphic->addVariable("$DIMASZ", value, 40);
 
         return Py_BuildValue("d", graphic->getVariableDouble("$DIMASZ", 2.5));
     }
@@ -1121,7 +1136,7 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
             Py_RETURN_NONE;
         }
 
-        graphic->addVariable("$DIMEXO", value, 50);
+        graphic->addVariable("$DIMEXO", value, 40);
 
         return Py_BuildValue("d", graphic->getVariableDouble("$DIMEXO", 0.625));
     }
@@ -1134,7 +1149,7 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
             Py_RETURN_NONE;
         }
 
-        graphic->addVariable("$DIMEXE", value, 50);
+        graphic->addVariable("$DIMEXE", value, 40);
 
         return Py_BuildValue("d", graphic->getVariableDouble("$DIMEXE", 1.25));
     }
@@ -1147,7 +1162,7 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
             Py_RETURN_NONE;
         }
 
-        graphic->addVariable("$DIMFXL", value, 50);
+        graphic->addVariable("$DIMFXL", value, 40);
 
         return Py_BuildValue("d", graphic->getVariableDouble("$DIMFXL", 1.0));
     }
@@ -1160,7 +1175,7 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
             Py_RETURN_NONE;
         }
 
-        graphic->addVariable("$DIMTXT", value, 50);
+        graphic->addVariable("$DIMTXT", value, 40);
 
         return Py_BuildValue("d", graphic->getVariableDouble("$DIMTXT", 2.5));
     }
@@ -1173,7 +1188,7 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
             Py_RETURN_NONE;
         }
 
-        graphic->addVariable("$DIMTSZ", value, 50);
+        graphic->addVariable("$DIMTSZ", value, 40);
 
         return Py_BuildValue("d", graphic->getVariableDouble("$DIMTSZ", 2.5));
     }
@@ -1186,7 +1201,7 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
             Py_RETURN_NONE;
         }
 
-        graphic->addVariable("$DIMLFAC", value, 50);
+        graphic->addVariable("$DIMLFAC", value, 40);
         return Py_BuildValue("d", graphic->getVariableDouble("$DIMLFAC", 1.0));
     }
 
@@ -1198,7 +1213,7 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
             Py_RETURN_NONE;
         }
 
-        graphic->addVariable("$DIMGAP", value, 50);
+        graphic->addVariable("$DIMGAP", value, 40);
 
         return Py_BuildValue("d", graphic->getVariableDouble("$DIMGAP", 0.625));
     }
@@ -1214,6 +1229,11 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         if (value == 1 || value == 0)
         {
             graphic->addVariable("$DIMTIH", value, 70);
+        }
+        else
+        {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
+            Py_RETURN_NONE;
         }
 
         return Py_BuildValue("i", graphic->getVariableInt("$DIMTIH", 2));
@@ -1231,6 +1251,11 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         {
             graphic->addVariable("$DIMZIN", value, 70);
         }
+        else
+        {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
+            Py_RETURN_NONE;
+        }
 
         return Py_BuildValue("i", graphic->getVariableInt("$DIMZIN", 1));
     }
@@ -1246,6 +1271,11 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         if (value > -1 && value < 4)
         {
             graphic->addVariable("$DIMAZIN", value, 70);
+        }
+        else
+        {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
+            Py_RETURN_NONE;
         }
 
         return Py_BuildValue("i", graphic->getVariableInt("$DIMAZIN", 0));
@@ -1263,6 +1293,11 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         {
             graphic->addVariable("$DIMCLRD", value, 70);
         }
+        else
+        {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
+            Py_RETURN_NONE;
+        }
 
         return Py_BuildValue("i", graphic->getVariableInt("$DIMCLRD", 0));
     }
@@ -1278,6 +1313,11 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         if (value > -1 && value < 257)
         {
             graphic->addVariable("$DIMCLRE", value, 70);
+        }
+        else
+        {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
+            Py_RETURN_NONE;
         }
 
         return Py_BuildValue("i", graphic->getVariableInt("$DIMCLRE", 0));
@@ -1308,6 +1348,11 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         {
             graphic->addVariable("$DIMADEC", value, 70);
         }
+        else
+        {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
+            Py_RETURN_NONE;
+        }
 
         return Py_BuildValue("i", graphic->getVariableInt("$DIMADEC", 0));
     }
@@ -1323,6 +1368,11 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         if (value > -2 && value < 5)
         {
             graphic->addVariable("$DIMDEC", value, 70);
+        }
+        else
+        {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
+            Py_RETURN_NONE;
         }
 
         return Py_BuildValue("i", graphic->getVariableInt("$DIMDEC", 2));
@@ -1340,6 +1390,11 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         {
             graphic->addVariable("$DIMAUNIT", value, 70);
         }
+        else
+        {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
+            Py_RETURN_NONE;
+        }
 
         return Py_BuildValue("i", graphic->getVariableInt("$DIMAUNIT", 0));
     }
@@ -1355,6 +1410,11 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         if (value > -1 && value < 7)
         {
             graphic->addVariable("$DIMLUNIT", value, 70);
+        }
+        else
+        {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
+            Py_RETURN_NONE;
         }
 
         return Py_BuildValue("i", graphic->getVariableInt("$DIMLUNIT", 2));
@@ -1372,6 +1432,11 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         {
             graphic->addVariable("$DIMLUNIT", value, 70);
         }
+        else
+        {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
+            Py_RETURN_NONE;
+        }
 
         return Py_BuildValue("i", graphic->getVariableInt("$DIMDSEP", 0));
     }
@@ -1388,6 +1453,11 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         {
             graphic->addVariable("$DIMFXLON", value, 70);
         }
+        else
+        {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
+            Py_RETURN_NONE;
+        }
 
         return Py_BuildValue("i", graphic->getVariableInt("$DIMFXLON", 0));
     }
@@ -1400,7 +1470,7 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
             Py_RETURN_NONE;
         }
 
-        graphic->addVariable("$DIMTXSTY", value.c_str(), 7);
+        graphic->addVariable("$DIMTXSTY", value.c_str(), 2);
 
         return Py_BuildValue("s", qUtf8Printable(graphic->getVariableString("$DIMTXSTY", "standard")));
     }
@@ -1448,6 +1518,7 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
             break;
         default:
         {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
             Py_RETURN_NONE;
         }
         }
@@ -1504,6 +1575,7 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
 
         default:
         {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
             Py_RETURN_NONE;
         }
         }
@@ -1534,16 +1606,39 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         {
             graphic->addVariable("$GRIDMODE", value, 70);
         }
+        else
+        {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
+            Py_RETURN_NONE;
+        }
 
         return Py_BuildValue("i", graphic->getVariableInt("$GRIDMODE" , 1));
     }
 
     else if (setvar.toUpper() == "GRIDUNIT")
     {
-        const RS_Vector spacing = graphic->getVariableVector("$GRIDUNIT" , RS_Vector(0.0,0.0));
-        const QString value = QString::number(spacing.x) + "," + QString::number(spacing.y);
+        double x, y;
+        PyObject *pVec;
 
-        return Py_BuildValue("s", qUtf8Printable(value));
+        if (!PyArg_Parse(args, "O!", &PyTuple_Type, &pVec)) {
+            PyErr_SetString(PyExc_TypeError, "vector must be a tuple.");
+            Py_RETURN_NONE;
+        }
+
+        if (PyTuple_Size(pVec) != 2)
+        {
+            PyErr_SetString(PyExc_TypeError, "vector must have x and y.");
+            Py_RETURN_NONE;
+        }
+
+        x = PyFloat_AsDouble(PyTuple_GetItem(pVec, 0));
+        y = PyFloat_AsDouble(PyTuple_GetItem(pVec, 1));
+
+        graphic->addVariable("GRIDUNIT", RS_Vector(x,y), 10);
+
+        const RS_Vector spacing = graphic->getVariableVector("$GRIDUNIT" , RS_Vector(0.0,0.0));
+
+        return Py_BuildValue("(dd)", spacing.x, spacing.y);
     }
 
     else if (setvar.toUpper() == "INSUNITS")
@@ -1558,6 +1653,12 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         {
             graphic->addVariable("$INSUNITS", value, 70);
         }
+        else
+        {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
+            Py_RETURN_NONE;
+        }
+
         return Py_BuildValue("i", graphic->getVariableInt("$INSUNITS", 0));
     }
 
@@ -1580,6 +1681,11 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         {
             graphic->addVariable("$LUNITS", value, 70);
         }
+        else
+        {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
+            Py_RETURN_NONE;
+        }
 
         return Py_BuildValue("i", graphic->getVariableInt("$LUNITS", 2));
     }
@@ -1595,6 +1701,11 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         if (value > -1 && value < 8)
         {
             graphic->addVariable("$LUPREC", value, 70);
+        }
+        else
+        {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
+            Py_RETURN_NONE;
         }
 
         return Py_BuildValue("i", graphic->getVariableInt("$LUPREC", 4));
@@ -1640,7 +1751,10 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
             break;
         }
         default:
-            break;
+        {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
+            Py_RETURN_NONE;
+        }
         }
 
         return Py_BuildValue("i", graphic->getVariableInt("$PDMODE" , LC_DEFAULTS_PDMode));
@@ -1670,49 +1784,6 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         return Py_BuildValue("d", graphic->getVariableDouble("$PSVPSCALE", 1.0));
     }
 
-    else if (setvar.toUpper() == "UCSNAME")
-    {
-        std::string value;
-        if (!PyArg_Parse(args, "s!", &value)) {
-            PyErr_SetString(PyExc_TypeError, "parameter must be a string.");
-            Py_RETURN_NONE;
-        }
-
-        graphic->addVariable("$UCSNAME", value.c_str(), 7);
-
-        return Py_BuildValue("s", qUtf8Printable(graphic->getVariableString("$UCSNAME", "")));
-    }
-
-    else if (setvar.toUpper() == "UCSORG")
-    {
-        const RS_Vector origin = graphic->getVariableVector("$UCSORG", RS_Vector(0.0,0.0));
-        const QString value = QString::number(origin.x) + "," + QString::number(origin.y);
-
-        return Py_BuildValue("s", qUtf8Printable(value));
-    }
-
-    else if (setvar.toUpper() == "UCSORTHOVIEW")
-    {
-        return Py_BuildValue("i", graphic->getVariableDouble("$UCSORTHOVIEW", 0));
-    }
-
-    else if (setvar.toUpper() == "UCSXDIR")
-    {
-        const RS_Vector xAxis = graphic->getVariableVector("$UCSXDIR", RS_Vector(0.0,0.0));
-        const QString value = QString::number(xAxis.x) + "," + QString::number(xAxis.y);
-
-        return Py_BuildValue("s", qUtf8Printable(value));
-    }
-
-    else if (setvar.toUpper() == "UCSYDIR")
-    {
-        RS_Vector xAxis = graphic->getVariableVector("$UCSXDIR" , RS_Vector(0.0,0.0));
-        const RS_Vector yAxis = graphic->getVariableVector("$UCSYDIR" , xAxis.rotate(M_PI_2));
-        const QString value = QString::number(yAxis.x) + "," + QString::number(yAxis.y);
-
-        return Py_BuildValue("s", qUtf8Printable(value));
-    }
-
     else if (setvar.toUpper() == "SNAPSTYL")
     {
         int value;
@@ -1724,6 +1795,11 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         if (value == 1 || value == 0)
         {
             graphic->addVariable("$SNAPSTYLE", value, 70);
+        }
+        else
+        {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
+            Py_RETURN_NONE;
         }
 
         return Py_BuildValue("i", graphic->getVariableInt("$SNAPSTYLE", 0));
@@ -1740,6 +1816,11 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         if (value > -1 && value < 3)
         {
             graphic->addVariable("$SNAPISOPAIR", value, 70);
+        }
+        else
+        {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
+            Py_RETURN_NONE;
         }
 
         return Py_BuildValue("i", graphic->getVariableInt("$SNAPISOPAIR", 0));
@@ -1759,7 +1840,7 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
 
     else
     {
-
+        PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
     }
 
     Py_RETURN_NONE;
