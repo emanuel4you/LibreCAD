@@ -29,6 +29,7 @@
 #include "rs_scriptingapi.h"
 #include "rs_insert.h"
 #include "rs_filterdxfrw.h"
+#include "rs_settings.h"
 
 #include "lc_defaults.h"
 
@@ -1657,7 +1658,7 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         case 4:
         case 8:
         {
-            graphic->addVariable("$INPUTHISTORYMODE", value, 70);
+            LC_SET("INPUTHISTORYMODE", value);
             break;
         }
         default:
@@ -1667,7 +1668,7 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         }
         }
 
-        return Py_BuildValue("i", graphic->getVariableInt("$INPUTHISTORYMODE" , 1));
+        return Py_BuildValue("i", LC_GET_INT("INPUTHISTORYMODE", 1));
     }
 
     else if (setvar.toUpper() == "INSUNITS")
@@ -1877,300 +1878,28 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
 
 PyObject *RS_PythonCore::getvar(const char *id) const
 {
-    QString getvar = id;
+    int int_result;
+    double v1_result;
+    double v2_result;
+    double v3_result;
+    std::string str_result;
 
-    RS_Graphic *graphic = RS_SCRIPTINGAPI->getGraphic();
+    RS_ScriptingApi::SysVarResult val = RS_SCRIPTINGAPI->getvar(id, int_result, v1_result, v2_result, v3_result, str_result);
 
-    if(!graphic)
-    {
-        Py_RETURN_NONE;
+    switch (val) {
+    case RS_ScriptingApi::Int:
+        return Py_BuildValue("i", int_result);
+    case RS_ScriptingApi::Double:
+        return Py_BuildValue("d", v1_result);
+    case RS_ScriptingApi::Vector2D:
+        return Py_BuildValue("(dd)", v1_result, v2_result);
+    case RS_ScriptingApi::Vector3D:
+        return Py_BuildValue("(ddd)", v1_result, v2_result, v3_result);
+    case RS_ScriptingApi::String:
+        return Py_BuildValue("s", str_result.c_str());
+    default:
+        break;
     }
-
-    if (getvar.toUpper() == "ACADVER")
-    {
-        QString acadver = graphic->getVariableString("$ACADVER", "");
-        acadver.replace(QRegularExpression("[a-zA-Z]"), "");
-        return Py_BuildValue("s", qUtf8Printable(acadver));
-    }
-
-    else if (getvar.toUpper() == "ANGBASE")
-    {
-        return Py_BuildValue("d", graphic->getVariableDouble("$ANGBASE", 0.0));
-    }
-
-    else if (getvar.toUpper() == "ANGDIR")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$ANGDIR", 0));
-    }
-
-    else if (getvar.toUpper() == "AUNITS")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$AUNITS", 0));
-    }
-
-    else if (getvar.toUpper() == "AUPREC")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$AUPREC", 4));
-    }
-
-    else if (getvar.toUpper() == "CLAYER")
-    {
-        return Py_BuildValue("s", qUtf8Printable(graphic->getVariableString("$CLAYER", "0")));
-    }
-
-    else if (getvar.toUpper() == "DIMSTYLE")
-    {
-        return Py_BuildValue("s", qUtf8Printable(graphic->getVariableString("$DIMSTYLE", "Standard")));
-    }
-
-    else if (getvar.toUpper() == "DIMSCALE")
-    {
-        return Py_BuildValue("d", graphic->getVariableDouble("$DIMSCALE", 1.0));
-    }
-
-    else if (getvar.toUpper() == "DIMASZ")
-    {
-        return Py_BuildValue("d", graphic->getVariableDouble("$DIMASZ", 2.5));
-    }
-
-    else if (getvar.toUpper() == "DIMEXO")
-    {
-        return Py_BuildValue("d", graphic->getVariableDouble("$DIMEXO", 0.625));
-    }
-
-    else if (getvar.toUpper() == "DIMEXE")
-    {
-        return Py_BuildValue("d", graphic->getVariableDouble("$DIMEXE", 1.25));
-    }
-
-    else if (getvar.toUpper() == "DIMFXL")
-    {
-        return Py_BuildValue("d", graphic->getVariableDouble("$DIMFXL", 1.0));
-    }
-
-    else if (getvar.toUpper() == "DIMTXT")
-    {
-        return Py_BuildValue("d", graphic->getVariableDouble("$DIMTXT", 2.5));
-    }
-
-    else if (getvar.toUpper() == "DIMTSZ")
-    {
-        return Py_BuildValue("d", graphic->getVariableDouble("$DIMTSZ", 2.5));
-    }
-
-    else if (getvar.toUpper() == "DIMLFAC")
-    {
-        return Py_BuildValue("d", graphic->getVariableDouble("$DIMLFAC", 1.0));
-    }
-
-    else if (getvar.toUpper() == "DIMGAP")
-    {
-        return Py_BuildValue("d", graphic->getVariableDouble("$DIMGAP", 0.625));
-    }
-
-    else if (getvar.toUpper() == "DIMTIH")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$DIMTIH", 2));
-    }
-
-    else if (getvar.toUpper() == "DIMZIN")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$DIMZIN", 1));
-    }
-
-    else if (getvar.toUpper() == "DIMAZIN")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$DIMAZIN", 0));
-    }
-
-    else if (getvar.toUpper() == "DIMCLRD")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$DIMCLRD", 0));
-    }
-
-    else if (getvar.toUpper() == "DIMCLRE")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$DIMCLRE", 0));
-    }
-
-    else if (getvar.toUpper() == "DIMCLRT")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$DIMCLRT", 0));
-    }
-
-    else if (getvar.toUpper() == "DIMADEC")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$DIMADEC", 0));
-    }
-
-    else if (getvar.toUpper() == "DIMDEC")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$DIMDEC", 2));
-    }
-
-    else if (getvar.toUpper() == "DIMAUNI")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$DIMAUNIT", 0));
-    }
-
-    else if (getvar.toUpper() == "DIMLUNIT")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$DIMLUNIT", 2));
-    }
-
-    else if (getvar.toUpper() == "DIMDSEP")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$DIMDSEP", 0));
-    }
-
-    else if (getvar.toUpper() == "DIMFXLON")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$DIMFXLON", 0));
-    }
-
-    else if (getvar.toUpper() == "DIMTXSTY")
-    {
-        return Py_BuildValue("s", qUtf8Printable(graphic->getVariableString("$DIMTXSTY", "standard")));
-    }
-
-    else if (getvar.toUpper() == "DIMLWD")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$DIMLWD", -2));
-    }
-
-    else if (getvar.toUpper() == "DIMLWE")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$DIMLWE", -2));
-    }
-
-    else if (getvar.toUpper() == "DWGCODEPAGE")
-    {
-        return Py_BuildValue("s", qUtf8Printable(graphic->getVariableString("$DWGCODEPAGE", "ANSI_1252")));
-    }
-
-    else if (getvar.toUpper() == "EXTMIN")
-    {
-    const RS_Vector ext = graphic->getVariableVector("$EXTMIN", RS_Vector(0.0, 0.0, 0.0));
-    const QString value = QString::number(ext.x) + "," + QString::number(ext.y);
-
-        return Py_BuildValue("s", qUtf8Printable(value));
-    }
-
-    else if (getvar.toUpper() == "EXTMAX")
-    {
-    const RS_Vector ext = graphic->getVariableVector("$EXTMAX", RS_Vector(0.0, 0.0, 0.0));
-    const QString value = QString::number(ext.x) + "," + QString::number(ext.y);
-
-        return Py_BuildValue("s", qUtf8Printable(value));
-    }
-
-    else if (getvar.toUpper() == "GRIDMODE")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$GRIDMODE" , 1));
-    }
-
-    else if (getvar.toUpper() == "GRIDUNIT")
-    {
-    const RS_Vector spacing = graphic->getVariableVector("$GRIDUNIT" , RS_Vector(0.0,0.0));
-    const QString value = QString::number(spacing.x) + "," + QString::number(spacing.y);
-
-        return Py_BuildValue("s", qUtf8Printable(value));
-    }
-
-    else if ("INPUTHISTORYMODE")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$INPUTHISTORYMODE", 0));
-    }
-
-    else if (getvar.toUpper() == "INSUNITS")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$INSUNITS", 0));
-    }
-
-    #if 0
-    else if (getvar.toUpper() == "JOINSTYLE")
-    {
-        return Py_BuildValue("i", graphic->getVariableDouble("$JOINSTYLE", -999.9));
-    }
-    #endif
-
-    else if (getvar.toUpper() == "LUNITS")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$LUNITS", 2));
-    }
-
-    else if (getvar.toUpper() == "LUPREC")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$LUPREC", 4));
-    }
-
-    else if (getvar.toUpper() == "PDMODE")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$PDMODE" , LC_DEFAULTS_PDMode));
-    }
-
-    else if (getvar.toUpper() == "PDSIZE")
-    {
-        return Py_BuildValue("i", graphic->getVariableDouble("$PDSIZE", LC_DEFAULTS_PDSize));
-    }
-
-    else if (getvar.toUpper() == "PSVPSCALE")
-    {
-        return Py_BuildValue("d", graphic->getVariableDouble("$PSVPSCALE", 1.0));
-    }
-
-    else if (getvar.toUpper() == "UCSNAME")
-    {
-        return Py_BuildValue("s", qUtf8Printable(graphic->getVariableString("$UCSNAME", "")));
-    }
-
-    else if (getvar.toUpper() == "UCSORG")
-    {
-    const RS_Vector origin = graphic->getVariableVector("$UCSORG" , RS_Vector(0.0,0.0));
-    const QString value = QString::number(origin.x) + "," + QString::number(origin.y);
-
-        return Py_BuildValue("s", qUtf8Printable(value));
-    }
-
-    else if (getvar.toUpper() == "UCSORTHOVIEW")
-    {
-        return Py_BuildValue("i", graphic->getVariableDouble("$UCSORTHOVIEW", 0));
-    }
-
-    else if (getvar.toUpper() == "UCSXDIR")
-    {
-    const RS_Vector xAxis = graphic->getVariableVector("$UCSXDIR" , RS_Vector(0.0,0.0));
-    const QString value = QString::number(xAxis.x) + "," + QString::number(xAxis.y);
-
-        return Py_BuildValue("s", qUtf8Printable(value));
-    }
-
-    else if (getvar.toUpper() == "UCSYDIR")
-    {
-    RS_Vector xAxis = graphic->getVariableVector("$UCSXDIR" , RS_Vector(0.0,0.0));
-    const RS_Vector yAxis = graphic->getVariableVector("$UCSYDIR" , xAxis.rotate(M_PI_2));
-    const QString value = QString::number(yAxis.x) + "," + QString::number(yAxis.y);
-
-        return Py_BuildValue("s", qUtf8Printable(value));
-    }
-
-    else if (getvar.toUpper() == "SNAPSTYL")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$SNAPSTYLE", 0));
-    }
-
-    else if (getvar.toUpper() == "SNAPISOPAIR")
-    {
-        return Py_BuildValue("i", graphic->getVariableInt("$SNAPISOPAIR", 0));
-    }
-
-    else if (getvar.toUpper() == "TEXTSTYLE")
-    {
-        return Py_BuildValue("s", qUtf8Printable(graphic->getVariableString("$TEXTSTYLE", "Standard")));
-    }
-
-    else
-    {}
 
     Py_RETURN_NONE;
 }

@@ -42,7 +42,6 @@
 #include "rs_dialogfactory.h"
 #include "rs_math.h"
 #include "rs_settings.h"
-#include "rs_scriptingapi.h"
 
 //namespace {
 // Limits for command file reading
@@ -131,14 +130,7 @@ bool CommandEdit::event(QEvent* e) {
  */
 void CommandEdit::keyPressEvent(QKeyEvent* e)
 {
-    int histmode = 1;
-
-    RS_Graphic *graphic = RS_SCRIPTINGAPI->getGraphic();
-
-    if (graphic != NULL)
-    {
-        histmode = graphic->getVariableInt("$INPUTHISTORYMODE" , 1);
-    }
+    int histmode = LC_GET_INT("INPUTHISTORYMODE", 1);
 
     switch (e->key())
     {

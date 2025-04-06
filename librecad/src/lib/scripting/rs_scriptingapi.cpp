@@ -35,6 +35,7 @@
 #include "rs_entitycontainer.h"
 #include "rs_eventhandler.h"
 #include "rs_dialogs.h"
+#include "rs_settings.h"
 
 #include "lc_undosection.h"
 
@@ -3389,6 +3390,823 @@ bool RS_ScriptingApi::startImage(const char *key)
     }
 
     return false;
+}
+
+bool RS_ScriptingApi::setvar(const char *var, double v1, double v2, const char *str_value)
+{
+    RS_Graphic *graphic = RS_SCRIPTINGAPI->getGraphic();
+
+    if(!graphic)
+    {
+        return false;
+    }
+
+    const QString sysvar = var;
+    int int_value = static_cast<int>(v1);
+
+    if (sysvar.toUpper() == "$ANGBASE")
+    {
+        graphic->addVariable("$ANGBASE", v1, 50);
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "ANGDIR")
+    {
+        if (int_value == 1 || int_value == 0)
+        {
+            graphic->addVariable("$ANGDIR", int_value, 70);
+        }
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "AUNITS")
+    {
+        if (int_value > -1 && int_value < 5)
+        {
+            graphic->addVariable("$AUNITS", int_value, 70);
+        }
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "AUPREC")
+    {
+        if (int_value > -1 && int_value < 9)
+        {
+            graphic->addVariable("$AUPREC", int_value, 70);
+        }
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "CLAYER")
+    {
+        graphic->addVariable("$CLAYER", str_value, 8);
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMSTYLE")
+    {
+        graphic->addVariable("$DIMSTYLE", str_value, 2);
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMSCALE")
+    {
+        graphic->addVariable("$DIMSCALE", v1, 40);
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMASZ")
+    {
+        graphic->addVariable("$DIMASZ", v1, 40);
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMEXO")
+    {
+        graphic->addVariable("$DIMEXO", v1, 40);
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMEXE")
+    {
+        graphic->addVariable("$DIMEXE", v1, 40);
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMFXL")
+    {
+        graphic->addVariable("$DIMFXL", v1, 40);
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMTXT")
+    {
+        graphic->addVariable("$DIMTXT", v1, 40);
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMTSZ")
+    {
+        graphic->addVariable("$DIMTSZ", v1, 40);
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMLFAC")
+    {
+        graphic->addVariable("$DIMLFAC", v1, 40);
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMGAP")
+    {
+        graphic->addVariable("$DIMGAP", v1, 40);
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMTIH")
+    {
+        if (int_value == 1 || int_value == 0)
+        {
+            graphic->addVariable("$DIMTIH", int_value, 70);
+            return true;
+        }
+    }
+
+    else if (sysvar.toUpper() == "DIMZIN")
+    {
+        if (int_value > -1 && int_value < 13)
+        {
+            graphic->addVariable("$DIMZIN", int_value, 70);
+        }
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMAZIN")
+    {
+        if (int_value > -1 && int_value < 4)
+        {
+            graphic->addVariable("$DIMAZIN", int_value, 70);
+        }
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMCLRD")
+    {
+        if (int_value > -1 && int_value < 257)
+        {
+            graphic->addVariable("$DIMCLRD", int_value, 70);
+        }
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMCLRE")
+    {
+        if (int_value > -1 && int_value < 257)
+        {
+            graphic->addVariable("$DIMCLRE", int_value, 70);
+        }
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMCLRT")
+    {
+        graphic->addVariable("$DIMCLRT", int_value, 70);
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMADEC")
+    {
+        if (int_value > -2 && int_value < 9)
+        {
+            graphic->addVariable("$DIMADEC", int_value, 70);
+        }
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMDEC")
+    {
+        if (int_value > -2 && int_value < 5)
+        {
+            graphic->addVariable("$DIMDEC", int_value, 70);
+        }
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMAUNIT")
+    {
+        if (int_value > -2 && int_value < 4)
+        {
+            graphic->addVariable("$DIMAUNIT", int_value, 70);
+        }
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMLUNIT")
+    {
+        if (int_value > -1 && int_value < 7)
+        {
+            graphic->addVariable("$DIMLUNIT", int_value, 70);
+        }
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMDSEP")
+    {
+        if (int_value == 1 || int_value == 0)
+        {
+            graphic->addVariable("$DIMLUNIT", int_value, 70);
+        }
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMFXLON")
+    {
+        if (int_value == 1 || int_value == 0)
+        {
+            graphic->addVariable("$DIMFXLON", int_value, 70);
+        }
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMTXSTY")
+    {
+        graphic->addVariable("$DIMTXSTY", str_value, 2);
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMLWD")
+    {
+        switch (int_value)
+        {
+        case -1:
+        case -2:
+        case -3:
+        case 0:
+        case 5:
+        case 9:
+        case 13:
+        case 15:
+        case 18:
+        case 20:
+        case 25:
+        case 30:
+        case 35:
+        case 40:
+        case 50:
+        case 53:
+        case 60:
+        case 70:
+        case 80:
+        case 90:
+        case 100:
+        case 106:
+        case 120:
+        case 140:
+        case 158:
+        case 200:
+        case 211:
+        {
+            graphic->addVariable("$DIMLWD", int_value, 70);
+            break;
+        }
+
+        default:
+        {
+            return false;
+        }
+        }
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DIMLWE")
+    {
+        switch (int_value)
+        {
+        case -1:
+        case -2:
+        case -3:
+        case 0:
+        case 5:
+        case 9:
+        case 13:
+        case 15:
+        case 18:
+        case 20:
+        case 25:
+        case 30:
+        case 35:
+        case 40:
+        case 50:
+        case 53:
+        case 60:
+        case 70:
+        case 80:
+        case 90:
+        case 100:
+        case 106:
+        case 120:
+        case 140:
+        case 158:
+        case 200:
+        case 211:
+        {
+            graphic->addVariable("$DIMLWE", int_value, 70);
+            break;
+        }
+
+        default:
+        {
+            return false;
+        }
+        }
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "DWGCODEPAGE")
+    {
+        graphic->addVariable("$DWGCODEPAGE", str_value, 7);
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "GRIDMODE")
+    {
+        if (int_value == 1 || int_value == 0)
+        {
+            graphic->addVariable("$GRIDMODE", int_value, 70);
+        }
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "GRIDUNIT")
+    {
+
+        graphic->addVariable("GRIDUNIT", RS_Vector(v1, v2), 10);
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "INPUTHISTORYMODE")
+    {
+        switch (int_value)
+        {
+        case 0:
+        case 1:
+        case 2:
+        case 4:
+        case 8:
+        {
+            LC_SET("INPUTHISTORYMODE", int_value);
+            break;
+        }
+        default:
+        {
+            return false;
+        }
+        }
+
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "INSUNITS")
+    {
+        if (int_value > -1 && int_value < 22)
+        {
+            graphic->addVariable("$INSUNITS", int_value, 70);
+        }
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "LUNITS")
+    {
+        if (int_value > -1 && int_value < 6)
+        {
+            graphic->addVariable("$LUNITS", int_value, 70);
+        }
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "LUPREC")
+    {
+        if (int_value > -1 && int_value < 8)
+        {
+            graphic->addVariable("$LUPREC", int_value, 70);
+        }
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "PDMODE")
+    {
+        switch (int_value)
+        {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 32:
+        case 33:
+        case 34:
+        case 35:
+        case 36:
+        case 64:
+        case 65:
+        case 66:
+        case 67:
+        case 68:
+        case 96:
+        case 97:
+        case 98:
+        case 99:
+        case 100:
+        {
+            graphic->addVariable("$PDMODE", int_value, DXF_FORMAT_GC_PDMode);
+            break;
+        }
+        default:
+        {
+            return false;
+        }
+        }
+
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "PDSIZE")
+    {
+        graphic->addVariable("$PDSIZE", v1, DXF_FORMAT_GC_PDSize);
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "PSVPSCALE")
+    {
+        graphic->addVariable("PSVPSCALE", v1, 40);
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "SNAPSTYL")
+    {
+        if (int_value == 1 || int_value == 0)
+        {
+            graphic->addVariable("$SNAPSTYLE", int_value, 70);
+        }
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "SNAPISOPAIR")
+    {
+        if (int_value > -1 && int_value < 3)
+        {
+            graphic->addVariable("$SNAPISOPAIR", int_value, 70);
+        }
+        return true;
+    }
+
+    else if (sysvar.toUpper() == "TEXTSTYLE")
+    {
+        graphic->addVariable("$TEXTSTYLE", str_value, 7);
+        return true;
+    }
+
+    else
+    {}
+
+    return false;
+}
+
+RS_ScriptingApi::SysVarResult RS_ScriptingApi::getvar(const char *var, int &int_result, double &v1_result, double &v2_result, double &v3_result, std::string &str_result)
+{
+
+    RS_Graphic *graphic = getGraphic();
+
+    if(!graphic)
+    {
+        return RS_ScriptingApi::None;
+    }
+
+    const QString sysvar = var;
+
+    if (sysvar.toUpper() == "ACADVER")
+    {
+        QString acadver = graphic->getVariableString("$ACADVER", "");
+        acadver.replace(QRegularExpression("[a-zA-Z]"), "");
+        str_result = acadver.toStdString();
+        return RS_ScriptingApi::String;
+    }
+
+    else if (sysvar.toUpper() == "ANGBASE")
+    {
+        v1_result = graphic->getVariableDouble("$ANGBASE", 0.0);
+        return RS_ScriptingApi::Double;
+    }
+
+    else if (sysvar.toUpper() == "ANGDIR")
+    {
+        int_result = graphic->getVariableInt("$ANGDIR", 0);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "AUNITS")
+    {
+        int_result = graphic->getVariableInt("$AUNITS", 0);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "AUPREC")
+    {
+        int_result = graphic->getVariableInt("$AUPREC", 4);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "CLAYER")
+    {
+        str_result = graphic->getVariableString("$CLAYER", "0").toStdString();
+        return RS_ScriptingApi::String;
+    }
+
+    else if (sysvar.toUpper() == "DIMSTYLE")
+    {
+        str_result = graphic->getVariableString("$DIMSTYLE", "Standard").toStdString();
+        return RS_ScriptingApi::String;
+    }
+
+    else if (sysvar.toUpper() == "DIMSCALE")
+    {
+        v1_result = graphic->getVariableDouble("$DIMSCALE", 1.0);
+        return RS_ScriptingApi::Double;
+    }
+
+    else if (sysvar.toUpper() == "DIMASZ")
+    {
+        v1_result = graphic->getVariableDouble("$DIMASZ", 2.5);
+        return RS_ScriptingApi::Double;
+    }
+
+    else if (sysvar.toUpper() == "DIMEXO")
+    {
+        v1_result = graphic->getVariableDouble("$DIMEXO", 0.625);
+        return RS_ScriptingApi::Double;
+    }
+
+    else if (sysvar.toUpper() == "DIMEXE")
+    {
+        v1_result = graphic->getVariableDouble("$DIMEXE", 1.25);
+        return RS_ScriptingApi::Double;
+    }
+
+    else if (sysvar.toUpper() == "DIMFXL")
+    {
+        v1_result = graphic->getVariableDouble("$DIMFXL", 1.0);
+        return RS_ScriptingApi::Double;
+    }
+
+    else if (sysvar.toUpper() == "DIMTXT")
+    {
+        v1_result = graphic->getVariableDouble("$DIMTXT", 2.5);
+        return RS_ScriptingApi::Double;
+    }
+
+    else if (sysvar.toUpper() == "DIMTSZ")
+    {
+        v1_result = graphic->getVariableDouble("$DIMTSZ", 2.5);
+        return RS_ScriptingApi::Double;
+    }
+
+    else if (sysvar.toUpper() == "DIMLFAC")
+    {
+        v1_result = graphic->getVariableDouble("$DIMLFAC", 1.0);
+        return RS_ScriptingApi::Double;
+    }
+
+    else if (sysvar.toUpper() == "DIMGAP")
+    {
+        v1_result = graphic->getVariableDouble("$DIMGAP", 0.625);
+        return RS_ScriptingApi::Double;
+    }
+
+    else if (sysvar.toUpper() == "DIMTIH")
+    {
+        int_result = graphic->getVariableInt("$DIMTIH", 2);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "DIMZIN")
+    {
+        int_result = graphic->getVariableInt("$DIMZIN", 1);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "DIMAZIN")
+    {
+        int_result = graphic->getVariableInt("$DIMAZIN", 0);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "DIMCLRD")
+    {
+        int_result = graphic->getVariableInt("$DIMCLRD", 0);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "DIMCLRE")
+    {
+        int_result = graphic->getVariableInt("$DIMCLRE", 0);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "DIMCLRT")
+    {
+        int_result = graphic->getVariableInt("$DIMCLRT", 0);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "DIMADEC")
+    {
+        int_result = graphic->getVariableInt("$DIMADEC", 0);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "DIMDEC")
+    {
+        int_result = graphic->getVariableInt("$DIMDEC", 2);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "DIMAUNI")
+    {
+        int_result = graphic->getVariableInt("$DIMAUNIT", 0);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "DIMLUNIT")
+    {
+        int_result = graphic->getVariableInt("$DIMLUNIT", 2);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "DIMDSEP")
+    {
+        int_result = graphic->getVariableInt("$DIMDSEP", 0);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "DIMFXLON")
+    {
+        int_result = graphic->getVariableInt("$DIMFXLON", 0);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "DIMTXSTY")
+    {
+        str_result = graphic->getVariableString("$DIMTXSTY", "standard").toStdString();
+        return RS_ScriptingApi::String;
+    }
+
+    else if (sysvar.toUpper() == "DIMLWD")
+    {
+        int_result = graphic->getVariableInt("$DIMLWD", -2);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "DIMLWE")
+    {
+        int_result = graphic->getVariableInt("$DIMLWE", -2);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "DWGCODEPAGE")
+    {
+        str_result = graphic->getVariableString("$DWGCODEPAGE", "ANSI_1252").toStdString();
+        return RS_ScriptingApi::String;
+    }
+
+    else if (sysvar.toUpper() == "EXTMIN")
+    {
+#if 0
+        const RS_Vector ext = graphic->getVariableVector("$EXTMIN", RS_Vector(0.0, 0.0,0.0));
+#else
+        const RS_Vector extMin = graphic->getMin();
+#endif
+        v1_result = extMin.x;
+        v2_result = extMin.y;
+        v3_result = extMin.z;
+        return RS_ScriptingApi::Vector3D;
+    }
+
+    else if (sysvar.toUpper() == "EXTMAX")
+    {
+#if 0
+        const RS_Vector ext = graphic->getVariableVector("$EXTMAX" , RS_Vector(0.0, 0.0,0.0));
+#else
+        const RS_Vector extMax = graphic->getMax();
+#endif
+        v1_result = extMax.x;
+        v2_result = extMax.y;
+        v3_result = extMax.z;
+        return RS_ScriptingApi::Vector3D;
+    }
+
+    else if (sysvar.toUpper() == "GRIDMODE")
+    {
+        int_result = graphic->getVariableInt("$GRIDMODE" , 1);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "GRIDUNIT")
+    {
+        const RS_Vector spacing = graphic->getVariableVector("$GRIDUNIT" , RS_Vector(0.0,0.0));
+
+        v1_result = spacing.x;
+        v2_result = spacing.y;
+        return RS_ScriptingApi::Vector2D;
+    }
+
+    else if ("INPUTHISTORYMODE")
+    {
+        int_result = LC_GET_INT("INPUTHISTORYMODE", 1);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "INSUNITS")
+    {
+        int_result = graphic->getVariableInt("$INSUNITS", 0);
+        return RS_ScriptingApi::Int;
+    }
+
+#if 0
+    else if (sysvar.toUpper() == "JOINSTYLE")
+    {
+        int_result = graphic->getVariableDouble("$JOINSTYLE", -999.9);
+        return RS_ScriptingApi::Int;
+    }
+#endif
+
+    else if (sysvar.toUpper() == "LUNITS")
+    {
+        int_result = graphic->getVariableInt("$LUNITS", 2);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "LUPREC")
+    {
+        int_result = graphic->getVariableInt("$LUPREC", 4);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "PDMODE")
+    {
+        int_result = graphic->getVariableInt("$PDMODE" , LC_DEFAULTS_PDMode);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "PDSIZE")
+    {
+        int_result = graphic->getVariableDouble("$PDSIZE", LC_DEFAULTS_PDSize);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "PSVPSCALE")
+    {
+        v1_result = graphic->getVariableDouble("$PSVPSCALE", 1.0);
+        return RS_ScriptingApi::Double;
+    }
+
+    else if (sysvar.toUpper() == "UCSNAME")
+    {
+        str_result = graphic->getVariableString("$UCSNAME", "").toStdString();
+        return RS_ScriptingApi::String;
+    }
+
+    else if (sysvar.toUpper() == "UCSORG")
+    {
+        const RS_Vector origin = graphic->getVariableVector("$UCSORG" , RS_Vector(0.0,0.0));
+        v1_result = origin.x;
+        v2_result = origin.y;
+        return RS_ScriptingApi::Vector2D;
+    }
+
+    else if (sysvar.toUpper() == "UCSORTHOVIEW")
+    {
+        int_result = graphic->getVariableDouble("$UCSORTHOVIEW", 0);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "UCSXDIR")
+    {
+        const RS_Vector xAxis = graphic->getVariableVector("$UCSXDIR" , RS_Vector(0.0,0.0));
+        v1_result = xAxis.x;
+        v2_result = xAxis.y;
+        return RS_ScriptingApi::Vector2D;
+    }
+
+    else if (sysvar.toUpper() == "UCSYDIR")
+    {
+        const RS_Vector yAxis = graphic->getVariableVector("$UCSYDIR" , RS_Vector(0.0,0.0));
+        v1_result = yAxis.x;
+        v2_result = yAxis.y;
+        return RS_ScriptingApi::Vector2D;
+    }
+
+    else if (sysvar.toUpper() == "SNAPSTYL")
+    {
+        int_result = graphic->getVariableInt("$SNAPSTYLE", 0);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "SNAPISOPAIR")
+    {
+        int_result = graphic->getVariableInt("$SNAPISOPAIR", 0);
+        return RS_ScriptingApi::Int;
+    }
+
+    else if (sysvar.toUpper() == "TEXTSTYLE")
+    {
+        str_result = graphic->getVariableString("$TEXTSTYLE", "Standard").toStdString();
+        return RS_ScriptingApi::String;
+    }
+
+    else
+    {}
+
+    return RS_ScriptingApi::None;
 }
 
 RS_EntityContainer* RS_ScriptingApi::getContainer() const

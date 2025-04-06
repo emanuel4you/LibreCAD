@@ -88,6 +88,17 @@ public:
 class RS_ScriptingApi
 {
 public:
+    enum SysVarResult {
+        // NOTE: Concrete values are important here
+        // to work with the combobox index!
+        None = 0,
+        Int = 1,
+        Double = 2,
+        String = 4,
+        Vector2D = 8,
+        Vector3D = 16
+    };
+
     static RS_ScriptingApi* instance();
     ~RS_ScriptingApi() {}
 
@@ -132,6 +143,10 @@ public:
 
     int loadDialog(const char *filename);
     int startDialog();
+
+    bool setvar(const char *var, double v1, double v2, const char *str_value);
+    SysVarResult getvar(const char *var, int &int_result, double &v1_result, double &v2_result, double &v3_result, std::string &str_result);
+
     bool trueColorDialog(int &tres, int &res, int tcolor, int color, bool by, int tbycolor, int bycolor);
 
     double getDoubleDlg(const char *prompt);
