@@ -113,6 +113,7 @@
         <file alias="export.lci">export.svg</file>
         <file alias="export_image.lci">export_image.svg</file>
         <file alias="export_pdf.lci">export_pdf.svg</file>
+        <file alias="export_slide.lci">export_slide.svg</file>
         <file alias="fileopen.lci">fileopen.svg</file>
         <file alias="fillet.lci">fillet.svg</file>
         <file alias="fit_to_page.lci">fit_to_page.svg</file>
@@ -284,6 +285,7 @@
         <file alias="shortcuts_settings.lci">shortcuts_settings.svg</file>
         <file alias="slice_divide.lci">slice_divide.svg</file>
         <file alias="slice_divide_circle.lci">slice_divide_circle.svg</file>
+        <file alias="slide.lci">slide.svg</file>
         <file alias="snap_center.lci">snap_center.svg</file>
         <file alias="snap_distance.lci">snap_distance.svg</file>
         <file alias="snap_endpoints.lci">snap_endpoints.svg</file>

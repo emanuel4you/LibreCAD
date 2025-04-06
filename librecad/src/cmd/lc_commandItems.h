@@ -985,6 +985,22 @@ const LC_CommandItem g_commandList[] = {
             RS2::ActionEditRedo
         },
 
+#ifdef DEVELOPER
+        /* DEVELOPER COMMANDS */
+        // export slide file
+        {
+            {{"mslide", QObject::tr("mslide", "export file as slide")}},
+            {{"ms", QObject::tr("ms", "export file as slide")}},
+            RS2::ActionFileExportMakerSlide
+        },
+        // view slide file
+        {
+            {{"vslide", QObject::tr("vslide", "view a slide file")}},
+            {{"vs", QObject::tr("vs", "view a slide file")}},
+            RS2::ActionFileViewSlide
+        },
+#endif
+
         /* OPTIONS COMMANDS */
         // Drawing Prefs - v2.2.0r2
         {

@@ -900,11 +900,13 @@ HEADERS += actions/dock_widgets/block/rs_actionblocksadd.h \
     actions/drawing/zoom/rs_actionzoomscroll.h \
     actions/drawing/zoom/rs_actionzoomwindow.h \
     actions/file/lc_actionfileexportmakercam.h \
+    actions/file/lc_actionfileexportmakerslide.h \
     actions/file/rs_actionfilenew.h \
     actions/file/rs_actionfilenewtemplate.h \
     actions/file/rs_actionfileopen.h \
     actions/file/rs_actionfilesave.h \
     actions/file/rs_actionfilesaveas.h \
+    actions/file/lc_actionfileviewslide.h \
     # actions/not_used/rs_actioneditpaste.h \
     # actions/not_used/rs_actionmodifydeletequick.h \
     # actions/not_used/rs_actionsetsnapmode.h \
@@ -1075,11 +1077,13 @@ SOURCES += actions/dock_widgets/block/rs_actionblocksadd.cpp \
     actions/drawing/zoom/rs_actionzoomscroll.cpp \
     actions/drawing/zoom/rs_actionzoomwindow.cpp \
     actions/file/lc_actionfileexportmakercam.cpp \
+    actions/file/lc_actionfileexportmakerslide.cpp \
     actions/file/rs_actionfilenew.cpp \
     actions/file/rs_actionfilenewtemplate.cpp \
     actions/file/rs_actionfileopen.cpp \
     actions/file/rs_actionfilesave.cpp \
     actions/file/rs_actionfilesaveas.cpp \
+    actions/file/lc_actionfileviewslide.cpp \
     # actions/not_used/rs_actioneditpaste.cpp \
     # actions/not_used/rs_actionmodifydeletequick.cpp \
     # actions/not_used/rs_actionsetsnapmode.cpp \

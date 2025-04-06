@@ -909,7 +909,7 @@ void Librepad::aboutIde()
     qDebug() << LP_VERSION_STR;
     QMessageBox::about(this,
         tr("About ") + editorName(),
-        QString("<b>" + editorName() + " </b>") +
+        QString("<b>" + editorName() + " Editor </b>") +
         tr("Version: <b>%1</b>").arg(LP_VERSION_STR) + "<br/>" +
         tr("<br>LibreCAD embedded IDE</br><br>by Emanuel GPLv2 (c) 2025</br><br>") +
         QString(R"(<a href="https://github.com/LibreCAD/LibreCAD/graphs/contributors">%1</a>)"

@@ -101,6 +101,10 @@
 #include "rs_actioneditcopy.h"
 #include "rs_actioneditundo.h"
 #include "lc_actionfileexportmakercam.h"
+#ifdef DEVELOPER
+#include "lc_actionfileexportmakerslide.h"
+#include "lc_actionfileviewslide.h"
+#endif
 #include "rs_actionfilenewtemplate.h"
 #include "rs_actionfileopen.h"
 #include "rs_actionfilesaveas.h"
@@ -309,6 +313,14 @@ RS_ActionInterface* QG_ActionHandler::setCurrentAction(RS2::ActionType id) {
         case RS2::ActionFileExportMakerCam:
             a = new LC_ActionFileExportMakerCam(*document, *view);
             break;
+#ifdef DEVELOPER
+        case RS2::ActionFileExportMakerSlide:
+            a = new LC_ActionFileExportMakerSlide(*document, *view);
+            break;
+        case RS2::ActionFileViewSlide:
+            a = new LC_ActionFileViewSlide(*document, *view);
+            break;
+#endif
 
             // Editing actions:
             //
