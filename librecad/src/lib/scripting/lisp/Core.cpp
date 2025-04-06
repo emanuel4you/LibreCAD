@@ -2430,6 +2430,11 @@ BUILTIN("getvar") {
         return lcl::list(result);
     }
 
+    else if ("INPUTHISTORYMODE")
+    {
+        return lcl::integer(graphic->getVariableInt("$INPUTHISTORYMODE", 1));
+    }
+
     else if (getvar.toUpper() == "INSUNITS")
     {
         return lcl::integer(graphic->getVariableInt("$INSUNITS", 0));
@@ -4345,11 +4350,10 @@ BUILTIN("setvar")
         case 200:
         case 211:
         {
-
-
             graphic->addVariable("$DIMLWD", var->value(), 70);
-        }
             break;
+        }
+
         default:
         {
             LCL_FAIL("set SYSVAR failed!");
@@ -4393,8 +4397,6 @@ BUILTIN("setvar")
         case 200:
         case 211:
         {
-            ARG(lclInteger, var);
-
             graphic->addVariable("$DIMLWE", var->value(), 70);
             break;
         }
@@ -4473,6 +4475,31 @@ BUILTIN("setvar")
         return lcl::list(result);
     }
 
+    else if (setvar.toUpper() == "INPUTHISTORYMODE" && INT_PTR)
+    {
+        ARG(lclInteger, var);
+
+        switch (var->value())
+        {
+        case 0:
+        case 1:
+        case 2:
+        case 4:
+        case 8:
+        {
+            graphic->addVariable("$INPUTHISTORYMODE", var->value(), 70);
+            break;
+        }
+        default:
+        {
+            LCL_FAIL("set SYSVAR failed!");
+            break;
+        }
+        }
+
+        return lcl::integer(graphic->getVariableInt("$INPUTHISTORYMODE" , 1));
+    }
+
     else if (setvar.toUpper() == "INSUNITS" && INT_PTR)
     {
         ARG(lclInteger, var);
@@ -4542,8 +4569,6 @@ BUILTIN("setvar")
         case 99:
         case 100:
         {
-            ARG(lclInteger, var);
-
             graphic->addVariable("$PDMODE", var->value(), DXF_FORMAT_GC_PDMode);
             break;
         }

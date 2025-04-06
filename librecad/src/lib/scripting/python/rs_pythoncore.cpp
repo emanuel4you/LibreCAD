@@ -1641,6 +1641,35 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
         return Py_BuildValue("(dd)", spacing.x, spacing.y);
     }
 
+    else if (setvar.toUpper() == "INPUTHISTORYMODE")
+    {
+        int value;
+        if (!PyArg_Parse(args, "i!",  &value)) {
+            PyErr_SetString(PyExc_TypeError, "parameter must be an integer.");
+            Py_RETURN_NONE;
+        }
+
+        switch (value)
+        {
+        case 0:
+        case 1:
+        case 2:
+        case 4:
+        case 8:
+        {
+            graphic->addVariable("$INPUTHISTORYMODE", value, 70);
+            break;
+        }
+        default:
+        {
+            PyErr_SetString(PyExc_ValueError, "can not set SYSVAR");
+            Py_RETURN_NONE;
+        }
+        }
+
+        return Py_BuildValue("i", graphic->getVariableInt("$INPUTHISTORYMODE" , 1));
+    }
+
     else if (setvar.toUpper() == "INSUNITS")
     {
         int value;
@@ -2046,6 +2075,11 @@ PyObject *RS_PythonCore::getvar(const char *id) const
     const QString value = QString::number(spacing.x) + "," + QString::number(spacing.y);
 
         return Py_BuildValue("s", qUtf8Printable(value));
+    }
+
+    else if ("INPUTHISTORYMODE")
+    {
+        return Py_BuildValue("i", graphic->getVariableInt("$INPUTHISTORYMODE", 0));
     }
 
     else if (getvar.toUpper() == "INSUNITS")
