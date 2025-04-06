@@ -345,6 +345,10 @@ set(SOURCES
 		librecad/src/actions/drawing/draw/spline/lc_actiondrawsplinepoints.h
 		librecad/src/actions/file/lc_actionfileexportmakercam.cpp
 		librecad/src/actions/file/lc_actionfileexportmakercam.h
+		librecad/src/actions/file/lc_actionfileexportmakerslide.cpp
+		librecad/src/actions/file/lc_actionfileexportmakerslide.h
+		librecad/src/actions/file/lc_actionfileviewslide.cpp
+		librecad/src/actions/file/lc_actionfileviewslide.h
         librecad/src/actions/dock_widgets/layer/lc_actionlayersexport.cpp
         librecad/src/actions/dock_widgets/layer/lc_actionlayersexport.h
         librecad/src/actions/dock_widgets/layer/lc_actionlayerstoggleconstruction.cpp
