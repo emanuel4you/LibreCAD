@@ -23,8 +23,10 @@
 ** This copyright notice MUST APPEAR in all copies of the script!
 **
 **********************************************************************/
-#include "qc_actionselectset.h"
 
+#ifdef DEVELOPER
+
+#include "qc_actionselectset.h"
 #include "rs_graphicview.h"
 
 QC_ActionSelectSet::QC_ActionSelectSet(RS_EntityContainer &container, RS_GraphicView &graphicView)
@@ -86,3 +88,6 @@ void QC_ActionSelectSet::getSelected(std::vector<unsigned int> &se) const
         }
     }
 }
+
+#endif
+

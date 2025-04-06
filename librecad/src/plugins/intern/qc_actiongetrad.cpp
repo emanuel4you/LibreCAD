@@ -24,6 +24,8 @@
 **
 **********************************************************************/
 
+#ifdef DEVELOPER
+
 #include "qc_actiongetrad.h"
 
 #include <QPointF>
@@ -126,3 +128,5 @@ void QC_ActionGetRad::setBasepoint(QPointF* basepoint){
 void QC_ActionGetRad::setMessage(QString msg){
     pPoints->message = msg;
 }
+
+#endif

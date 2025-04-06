@@ -27,6 +27,8 @@
 #ifndef QC_ACTIONGETDIST_H
 #define QC_ACTIONGETDIST_H
 
+#ifdef DEVELOPER
+
 #include "rs_previewactioninterface.h"
 #include "rs_modification.h"
 
@@ -61,4 +63,7 @@ protected:
     void onCoordinateEvent(int status, bool isZero, const RS_Vector &pos) override;
     void updateMouseButtonHints() override;
 };
-#endif
+
+#endif // DEVELOPER
+
+#endif // QC_ACTIONGETDIST_H

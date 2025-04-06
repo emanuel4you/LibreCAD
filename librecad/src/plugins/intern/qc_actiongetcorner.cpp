@@ -24,6 +24,8 @@
 **
 **********************************************************************/
 
+#ifdef DEVELOPER
+
 #include "qc_actiongetcorner.h"
 
 #include <QPointF>
@@ -149,3 +151,5 @@ void QC_ActionGetCorner::getPoint(QPointF *point){
         point->setY(pPoints->targetPoint.y);
     }
 }
+
+#endif

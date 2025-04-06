@@ -24,6 +24,8 @@
 **
 **********************************************************************/
 
+#ifdef DEVELOPER
+
 #include "qc_actiongetdist.h"
 
 #include <QMouseEvent>
@@ -126,3 +128,5 @@ void QC_ActionGetDist::setBasepoint(QPointF* basepoint){
 void QC_ActionGetDist::setMessage(QString msg){
     pPoints->message = msg;
 }
+
+#endif

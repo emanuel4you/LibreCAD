@@ -27,10 +27,9 @@
 #ifndef QC_ACTIONSELECTSET_H
 #define QC_ACTIONSELECTSET_H
 
-#include <memory>
-#include "rs_actioninterface.h"
+#ifdef DEVELOPER
+
 #include "rs_entitycontainer.h"
-//#include "rs_actionselectwindow.h"
 #include "lc_actionpreselectionawarebase.h"
 
 class QString;
@@ -41,12 +40,8 @@ class QString;
  *
  * @author  Emanuel
  */
-#if 0
-class QC_ActionSelectSet : public RS_ActionInterface {
-#else
 class QC_ActionSelectSet : public LC_ActionPreSelectionAwareBase
 {
-#endif
     Q_OBJECT
 public:
     QC_ActionSelectSet(RS_EntityContainer &container, RS_GraphicView &graphicView);
@@ -64,34 +59,15 @@ protected:
     bool isAllowTriggerOnEmptySelection() override;
     RS2::CursorType doGetMouseCursorSelected(int status) override;
     void onMouseRightButtonRelease(int status, LC_MouseEvent *e) override;
-#if 0
-    QC_ActionSelectSet(RS2::EntityType typeToSelect, RS_EntityContainer& container,
-                       RS_GraphicView& graphicView);
-
-    ~QC_ActionSelectSet() override;
-    void init(int status) override;
-    void mouseReleaseEvent(QMouseEvent* e) override;
-    void keyPressEvent(QKeyEvent* e) override;
-    void setMessage(QString msg);
-    void unselectEntities();
-protected:
-    /**
-     * Action States.
-     */
-    enum Status {
-        Select
-    };
-
-    RS2::CursorType doGetMouseCursor(int status) override;
-    void updateMouseButtonHints() override;
-#endif
 
 private:
     bool canceled;
     bool completed;
 #if 0
-    std::unique_ptr<QString> message;
     RS2::EntityType typeToSelect = RS2::EntityType::EntityUnknown;
 #endif
 };
-#endif
+
+#endif // DEVELOPER
+
+#endif // QC_ACTIONSELECTSET_H
