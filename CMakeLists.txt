@@ -365,8 +365,6 @@ set(SOURCES
         libraries/libslide/src/slide_records.hpp
         libraries/libslide/src/slide_records_visitor_binary_writer.cpp
         libraries/libslide/src/slide_records_visitor_binary_writer.hpp
-        libraries/libslide/src/slide_records_visitor_cairo_drawer.cpp
-        libraries/libslide/src/slide_records_visitor_cairo_drawer.hpp
         libraries/libslide/src/slide_records_visitor.hpp
         libraries/libslide/src/slide_records_visitor_qpainter_drawer.cpp
         libraries/libslide/src/slide_records_visitor_qpainter_drawer.hpp
