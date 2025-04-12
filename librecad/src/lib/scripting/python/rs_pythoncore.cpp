@@ -1018,7 +1018,6 @@ PyObject *RS_PythonCore::setvar(const char *id, PyObject *args) const
 
         v1 = PyFloat_AsDouble(PyTuple_GetItem(pVec, 0));
         v2 = PyFloat_AsDouble(PyTuple_GetItem(pVec, 1));
-
     }
     else
     {

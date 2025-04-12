@@ -29,48 +29,44 @@
 #include "lc_actionfileviewslide.h"
 
 #include "rs_debug.h"
-#include "rs_dialogfactory.h"
-#include "rs_dialogfactoryinterface.h"
 #include "rs_graphic.h"
 
 
 LC_ActionFileViewSlide::LC_ActionFileViewSlide(RS_EntityContainer& container,
-                                                         RS_GraphicView& graphicView)
-    : RS_ActionInterface("View a Slide...", container, graphicView){
+                                                    RS_GraphicView& graphicView)
+    : LC_OverlaySlideAction("View a Slide...", container, graphicView){
     setActionType(RS2::ActionFileViewSlide);
 }
 
-void LC_ActionFileViewSlide::init(int status) {
-    RS_ActionInterface::init(status);
-    trigger();
-}
+void LC_ActionFileViewSlide::init(int status)
+{
+    Q_UNUSED(status)
+    LC_OverlaySlideAction::init(5);
 
-bool LC_ActionFileViewSlide::viewSlide(const QString& fileName, RS_Graphic& graphic){
-    if (fileName.isEmpty()) {
-        LC_ERR<<__func__<<"(): empty file name, no Slide is selected";
-        return false;
+    if (getStatus() == 5)
+    {
+        drawSlide();
     }
-
-    Q_UNUSED(graphic)
-    qDebug() << "[LC_ActionFileViewSlide::viewSlide] filename:" << fileName;
-    // implement foo here
-
-    return true;
 }
 
-void LC_ActionFileViewSlide::trigger() {
-
-	RS_DEBUG->print("LC_ActionFileViewSlide::trigger()");
-
-    if (graphic != nullptr) {
+void LC_ActionFileViewSlide::drawSlide()
+{
+    if (graphic != nullptr)
+    {
         QString filename = QFileDialog::getOpenFileName(NULL,
                                                         tr("open slide"),
                                                         "",
                                                         "AutoCAD Slide (*.sld)");
-        viewSlide(filename, *graphic);
-    }
 
-    finish(false);
+        if (filename.isEmpty()) {
+            LC_ERR<<__func__<<"(): empty file name, no Slide is selected";
+            setStatus(-1);
+            return;
+        }
+
+        setStatus(4);
+        drawOverlaySlide(filename);
+    }
 }
 
 #endif // DEVELOPER

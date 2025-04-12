@@ -26,21 +26,18 @@
 
 #ifdef DEVELOPER
 
-#include "rs_actioninterface.h"
+#include "lc_overlayslideaction.h"
 
 class QString;
 class RS_Graphic;
 
-class LC_ActionFileViewSlide : public RS_ActionInterface {
+class LC_ActionFileViewSlide : public LC_OverlaySlideAction {
     Q_OBJECT
 public:
     LC_ActionFileViewSlide(RS_EntityContainer& container, RS_GraphicView& graphicView);
 
     void init(int status) override;
-    void trigger() override;
-
-    // helper function to generate Slide
-    static bool viewSlide(const QString& fileName, RS_Graphic& graphic);
+    void drawSlide();
 };
 
 #endif // DEVELOPER

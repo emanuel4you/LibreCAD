@@ -246,6 +246,24 @@ void RS_EventHandler::mouseEnterEvent() {
     }
 }
 
+#if 0//def DEVELOPER
+/**
+ * Called by QG_GraphicView
+ */
+void RS_EventHandler::wheelEvent(QWheelEvent *e) {
+    if(hasAction()) {
+        std::shared_ptr<RS_ActionInterface> &lastAction = currentActions.last();
+        lastAction->wheelEvent(e);
+        checkLastActionCompletedAndUncheckQAction(lastAction);
+        cleanUp();
+        e->accept();
+    }
+    else if (defaultAction) {
+        defaultAction->wheelEvent(e);
+    }
+}
+#endif
+
 /**
  * Called by QG_GraphicView
  */

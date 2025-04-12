@@ -37,6 +37,9 @@
 class RS_ActionInterface;
 class QAction;
 class QMouseEvent;
+#ifdef DEVELOPER
+class QWheelEvent;
+#endif
 class QKeyEvent;
 class RS_CommandEvent;
 class RS_Vector;
@@ -69,6 +72,9 @@ public:
     void mouseMoveEvent(QMouseEvent *e);
     void mouseLeaveEvent();
     void mouseEnterEvent();
+#ifdef DEVELOPER
+    void wheelEvent(QWheelEvent *e);
+#endif
 
     void keyPressEvent(QKeyEvent* e);
     void keyReleaseEvent(QKeyEvent* e);
