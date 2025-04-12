@@ -248,6 +248,18 @@ void QG_ActionHandler::killSelectActions() {
     }
 }
 
+#ifdef DEVELOPER
+/**
+ * Kills all running shown actions. Called when a selection action
+ * is launched to zooming/panning confusion.
+ */
+void QG_ActionHandler::killShownActions() {
+    if (view != nullptr) {
+        view->killShownActions();
+    }
+}
+#endif
+
 void QG_ActionHandler::killAllActions() {
     if (view != nullptr) {
         view->killAllActions();
@@ -458,24 +470,31 @@ RS_ActionInterface* QG_ActionHandler::setCurrentAction(RS2::ActionType id) {
             // Zooming actions:
             //
         case RS2::ActionZoomIn:
+            view->killShownActions();
             a = new RS_ActionZoomIn(*document, *view, RS2::In, RS2::Both);
             break;
         case RS2::ActionZoomOut:
+            view->killShownActions();
             a = new RS_ActionZoomIn(*document, *view, RS2::Out, RS2::Both);
             break;
         case RS2::ActionZoomAuto:
+            view->killShownActions();
             a = new RS_ActionZoomAuto(*document, *view);
             break;
         case RS2::ActionZoomWindow:
+            view->killShownActions();
             a = new RS_ActionZoomWindow(*document, *view);
             break;
         case RS2::ActionZoomPan:
+            view->killShownActions();
             a = new RS_ActionZoomPan(*document, *view);
             break;
         case RS2::ActionZoomPrevious:
+            view->killShownActions();
             a = new RS_ActionZoomPrevious(*document, *view);
             break;
         case RS2::ActionZoomRedraw:
+            view->killShownActions();
             a = new RS_ActionZoomRedraw(*document, *view);
             break;
             // Drawing actions:

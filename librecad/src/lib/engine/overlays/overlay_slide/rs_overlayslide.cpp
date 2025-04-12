@@ -40,15 +40,22 @@ RS_OverlaySlide::RS_OverlaySlide(const QString &fileName, int width, int height)
 
 void RS_OverlaySlide::draw(RS_Painter* painter)
 {
-    qDebug() << "color:" << RS_Settings::background;
-    const QColor &bg(RS_Settings::background);
-    const RS_Color &fillColor = RS_Color(bg.red(), bg.green(), bg.blue(), bg.alpha());
-    painter->fillRect(0, 0, m_width, m_height, fillColor);
+    LC_GROUP_GUARD("Colors");
+    bool darkBackground = true;
+    auto bgc = QColor(LC_GET_STR("background", RS_Settings::background));
+    const RS_Color &fillBackground{bgc};
+    if((bgc.red() * 299 + bgc.green() * 587 + bgc.blue() * 114) / 1000 >= 125)
+    {
+        darkBackground = false;
+    }
+
+    painter->fillRect(0, 0, m_width, m_height, fillBackground);
 
     slide_draw_qpainter(painter,
-                            0,
-                            0,
-                            m_width,
-                            m_height,
-                            qUtf8Printable(m_fileName));
+                        0,
+                        0,
+                        m_width,
+                        m_height,
+                        darkBackground,
+                        qUtf8Printable(m_fileName));
 }

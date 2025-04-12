@@ -122,6 +122,9 @@ public:
     QString getCurrentActionName();
     QIcon getCurrentActionIcon();
     void killSelectActions();
+#ifdef DEVELOPER
+    void killShownActions();
+#endif
     void killAllActions();
     void back();
     void enter();

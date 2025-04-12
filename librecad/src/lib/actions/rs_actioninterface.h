@@ -38,9 +38,6 @@
 class QInputEvent;
 class QKeyEvent;
 class QMouseEvent;
-#ifdef DEVELOPER
-class QWheelEvent;
-#endif
 
 class RS_CommandEvent;
 class RS_CoordinateEvent;
@@ -83,9 +80,6 @@ public:
     virtual void mouseMoveEvent(QMouseEvent*);
     virtual void mousePressEvent(QMouseEvent*);
     virtual void mouseReleaseEvent(QMouseEvent*);
-#ifdef DEVELOPER
-    virtual void wheelEvent(QWheelEvent*) {}
-#endif
     virtual void keyPressEvent(QKeyEvent* e);
     virtual void keyReleaseEvent(QKeyEvent* e);
     virtual void coordinateEvent(RS_CoordinateEvent*);

@@ -118,10 +118,6 @@ public:
     void setDeviceName(QString deviceName) {
         m_device = std::move(deviceName);
     }
-#ifdef DEVELOPER
-    void enablePanning(bool state) { panEnabled = state; }
-    void enableZooming(bool state) { zoomEnabled = state; }
-#endif
 
 protected slots:
     void slotHScrolled(int value);
@@ -198,10 +194,6 @@ private:
 
     // for scroll bar adjustment
     std::mutex m_scrollbarMutex;
-#ifdef DEVELOPER
-    bool panEnabled{true};
-    bool zoomEnabled{true};
-#endif
 
 };
 

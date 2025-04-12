@@ -25,6 +25,7 @@
 
 #include "rs_actioninterface.h"
 #include "rs_overlayslide.h"
+#include "rs_commandevent.h"
 
 
 class LC_OverlaySlideAction:public RS_ActionInterface {
@@ -41,9 +42,7 @@ public:
     void finish(bool updateTB = true) override;
     void trigger() override;
     void mouseMoveEvent(QMouseEvent* e) override;
-    void mousePressEvent(QMouseEvent* e) override;
     void mouseReleaseEvent(QMouseEvent* e) override;
-    void wheelEvent(QWheelEvent* e) override;
 
 protected:
 

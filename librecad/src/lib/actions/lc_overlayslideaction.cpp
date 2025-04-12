@@ -38,6 +38,12 @@
 LC_OverlaySlideAction::LC_OverlaySlideAction(const char *name, RS_EntityContainer &container, RS_GraphicView &graphicView, RS2::ActionType actionType)
     : RS_ActionInterface(name, container, graphicView, actionType) {}
 
+void LC_OverlaySlideAction::init(int status)
+{
+    RS_ActionInterface::init(status);
+    setStatus(status);
+}
+
 void LC_OverlaySlideAction::trigger()
 {
     qDebug() << "[LC_OverlaySlideAction::trigger]";
@@ -45,26 +51,17 @@ void LC_OverlaySlideAction::trigger()
     drawablesContainer->clear();
 
     setStatus(-1);
-
-    //finish(true);
 }
 
 void LC_OverlaySlideAction::finish(bool updateTB)
 {
     qDebug() << "[LC_OverlaySlideAction::finish]" << updateTB;
-    auto& appWindow = QC_ApplicationWindow::getAppWindow();
-    QC_MDIWindow* mdiWin = appWindow->getMDIWindow();
 
-    if (!appWindow || !mdiWin) {
-        RS_DEBUG->print(RS_Debug::D_ERROR, "QC_DialogFactory::requestEditBlockWindow(): nullptr ApplicationWindow or MDIWindow");
-        setStatus(-1);
-        return;
+    if (getStatus() == 4)
+    {
+        LC_OverlayDrawablesContainer *drawablesContainer = viewport->getOverlaysDrawablesContainer(RS2::OverlayGraphics::ActionPreviewEntity);
+        drawablesContainer->clear();
     }
-
-    QG_GraphicView* qgGraphicView = mdiWin->getGraphicView();
-    qgGraphicView->enablePanning(true);
-    qgGraphicView->enableZooming(true);
-    RS_ActionInterface::finish(updateTB);
 }
 
 void LC_OverlaySlideAction::drawOverlaySlide(const QString &fileName)
@@ -81,27 +78,6 @@ void LC_OverlaySlideAction::mouseMoveEvent(QMouseEvent* e)
 {
     Q_UNUSED(e)
     qDebug() << "[LC_OverlaySlideAction::mouseMoveEvent]";
-
-    if(middleButtonPressed)
-    {
-        setMouseCursor(RS2::ArrowCursor);
-        trigger();
-    }
-}
-
-void LC_OverlaySlideAction::mousePressEvent(QMouseEvent* e)
-{
-    qDebug() << "[LC_OverlaySlideAction::mousePressEvent]";
-    switch(e->button()){
-        case Qt::MiddleButton:
-            middleButtonPressed = true;
-            setMouseCursor(RS2::ClosedHandCursor);
-            break;
-        case Qt::LeftButton:
-            break;
-        default:
-            break;
-    }
 }
 
 void LC_OverlaySlideAction::mouseReleaseEvent(QMouseEvent* e)
@@ -109,44 +85,10 @@ void LC_OverlaySlideAction::mouseReleaseEvent(QMouseEvent* e)
     qDebug() << "[LC_OverlaySlideAction::mouseReleaseEvent]";
 
     switch(e->button()){
-        case Qt::MiddleButton:
-            middleButtonPressed = false;
-            setMouseCursor(RS2::ArrowCursor);
-            break;
         case Qt::RightButton:
             trigger();
-            break;
-        case Qt::LeftButton:
             break;
         default:
             break;
     }
 }
-
-void LC_OverlaySlideAction::wheelEvent(QWheelEvent* e)
-{
-    Q_UNUSED(e)
-
-    trigger();
-}
-
-void LC_OverlaySlideAction::init(int status)
-{
-    RS_ActionInterface::init(status);
-    setStatus(status);
-
-    auto& appWindow = QC_ApplicationWindow::getAppWindow();
-    QC_MDIWindow* mdiWin = appWindow->getMDIWindow();
-
-    if (!appWindow || !mdiWin) {
-        RS_DEBUG->print(RS_Debug::D_ERROR, "QC_DialogFactory::requestEditBlockWindow(): nullptr ApplicationWindow or MDIWindow");
-        setStatus(-1);
-        return;
-    }
-
-    QG_GraphicView* qgGraphicView = mdiWin->getGraphicView();
-    qgGraphicView->enablePanning(false);
-    qgGraphicView->enableZooming(false);
-}
-
-

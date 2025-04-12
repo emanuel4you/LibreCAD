@@ -246,24 +246,6 @@ void RS_EventHandler::mouseEnterEvent() {
     }
 }
 
-#ifdef DEVELOPER
-/**
- * Called by QG_GraphicView
- */
-void RS_EventHandler::wheelEvent(QWheelEvent *e) {
-    if(hasAction()) {
-        std::shared_ptr<RS_ActionInterface> &lastAction = currentActions.last();
-        lastAction->wheelEvent(e);
-        checkLastActionCompletedAndUncheckQAction(lastAction);
-        cleanUp();
-        e->accept();
-    }
-    else if (defaultAction) {
-        defaultAction->wheelEvent(e);
-    }
-}
-#endif
-
 /**
  * Called by QG_GraphicView
  */
@@ -620,6 +602,27 @@ void RS_EventHandler::killSelectActions() {
         }
     }
 }
+
+#ifdef DEVELOPER
+/**
+ * Kills all running shown actions. Called when a selection action
+ * is launched to zooming/panning confusion.
+ */
+void RS_EventHandler::killShownActions() {
+
+    for (auto it=currentActions.begin();it != currentActions.end();){
+        RS2::ActionType rtti = (*it)->rtti();
+        if (rtti == RS2::ActionFileViewSlide) {
+            if (isActive(*it)) {
+                (*it)->finish();
+            }
+            it= currentActions.erase(it);
+        }else{
+            it++;
+        }
+    }
+}
+#endif
 
 /**
  * Kills all running actions. Called when a window is closed.

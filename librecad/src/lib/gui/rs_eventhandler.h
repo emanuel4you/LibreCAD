@@ -72,9 +72,6 @@ public:
     void mouseMoveEvent(QMouseEvent *e);
     void mouseLeaveEvent();
     void mouseEnterEvent();
-#ifdef DEVELOPER
-    void wheelEvent(QWheelEvent *e);
-#endif
 
     void keyPressEvent(QKeyEvent* e);
     void keyReleaseEvent(QKeyEvent* e);
@@ -91,6 +88,9 @@ public:
     bool isValid(RS_ActionInterface* action) const;
 
     void killSelectActions();
+#ifdef DEVELOPER
+    void killShownActions();
+#endif
     void killAllActions();
 
     bool hasAction();
