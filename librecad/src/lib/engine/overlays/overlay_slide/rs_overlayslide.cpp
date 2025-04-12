@@ -47,10 +47,6 @@ RS_OverlaySlide::RS_OverlaySlide(const QString &fileName, int width, int height)
 
 void RS_OverlaySlide::draw(RS_Painter* painter)
 {
-    //QRectF selectRect(0.0, 0.0, m_corner.x, m_corner.y);
-
-    //RS_Pen p(options->m_colorLineInverted, RS2::Width00, RS2::SolidLine);
-    //painter->setPen(p);
     qDebug() << "color:" << LC_GET_STR("background", RS_Settings::background);
     const QColor &bg(LC_GET_STR("background", RS_Settings::background));
     const RS_Color &fillColor = RS_Color(bg.red(), bg.green(), bg.blue(), bg.alpha());
