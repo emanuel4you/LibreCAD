@@ -327,8 +327,6 @@ set(SOURCES
         libraries/libslide/src/slide_colors.cpp
         libraries/libslide/src/slide_colors.hpp
         libraries/libslide/src/slide.cpp
-        libraries/libslide/src/slide_draw_cairo.cpp
-        libraries/libslide/src/slide_draw_cairo.h
         libraries/libslide/src/slide_draw_qpainter.cpp
         libraries/libslide/src/slide_draw_qpainter.h
         libraries/libslide/src/slide_endian.cpp
