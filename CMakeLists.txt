@@ -73,6 +73,7 @@ include_directories(libraries/jwwlib/src)
 include_directories(libraries/lciconengine)
 include_directories(libraries/libdxfrw/src)
 include_directories(libraries/libdxfrw/src/intern)
+include_directories(libraries/libslide/src)
 include_directories(libraries/muparser/include)
 include_directories(librecad/src/actions)
 include_directories(librecad/src/actions/drawing)
@@ -131,6 +132,7 @@ include_directories(librecad/src/lib/engine/overlays/highlight)
 include_directories(librecad/src/lib/engine/overlays/references)
 include_directories(librecad/src/lib/engine/overlays/info_cursor)
 include_directories(librecad/src/lib/engine/overlays/overlay_box)
+include_directories(librecad/src/lib/engine/overlays/overlay_slide)
 include_directories(librecad/src/lib/engine/overlays/crosshair)
 include_directories(librecad/src/lib/engine/overlays/ucs_mark)
 include_directories(librecad/src/lib/engine/overlays/angles_base)
@@ -315,6 +317,70 @@ set(SOURCES
         libraries/libdxfrw/src/libdxfrw.cpp
         libraries/libdxfrw/src/libdxfrw.h
         libraries/libdxfrw/src/main_doc.h
+        libraries/libslide/src/slide_binary_parser.cpp
+        libraries/libslide/src/slide_binary_parser.hpp
+        libraries/libslide/src/slide_binary_util.hpp
+        libraries/libslide/src/slide_binary_writer.cpp
+        libraries/libslide/src/slide_binary_writer.hpp
+        libraries/libslide/src/slide_cache.cpp
+        libraries/libslide/src/slide_cache.hpp
+        libraries/libslide/src/slide_colors.cpp
+        libraries/libslide/src/slide_colors.hpp
+        libraries/libslide/src/slide.cpp
+        libraries/libslide/src/slide_draw_cairo.cpp
+        libraries/libslide/src/slide_draw_cairo.h
+        libraries/libslide/src/slide_draw_qpainter.cpp
+        libraries/libslide/src/slide_draw_qpainter.h
+        libraries/libslide/src/slide_endian.cpp
+        libraries/libslide/src/slide_endian.hpp
+        libraries/libslide/src/slide_header_binary_parser.cpp
+        libraries/libslide/src/slide_header_binary_parser.hpp
+        libraries/libslide/src/slide_header_binary_writer.cpp
+        libraries/libslide/src/slide_header_binary_writer.hpp
+        libraries/libslide/src/slide_header.hpp
+        libraries/libslide/src/slide.hpp
+        libraries/libslide/src/slide_info_text_writer.cpp
+        libraries/libslide/src/slide_info_text_writer.hpp
+        libraries/libslide/src/slide_library_binary_parser.cpp
+        libraries/libslide/src/slide_library_binary_parser.hpp
+        libraries/libslide/src/slide_library_binary_writer.cpp
+        libraries/libslide/src/slide_library_binary_writer.hpp
+        libraries/libslide/src/slide_library.cpp
+        libraries/libslide/src/slide_library_directory_binary_parser.cpp
+        libraries/libslide/src/slide_library_directory_binary_parser.hpp
+        libraries/libslide/src/slide_library_directory_binary_writer.cpp
+        libraries/libslide/src/slide_library_directory_binary_writer.hpp
+        libraries/libslide/src/slide_library_directory.h
+        libraries/libslide/src/slide_library_directory.hpp
+        libraries/libslide/src/slide_library_header_binary_parser.cpp
+        libraries/libslide/src/slide_library_header_binary_parser.hpp
+        libraries/libslide/src/slide_library_header_binary_writer.cpp
+        libraries/libslide/src/slide_library_header_binary_writer.hpp
+        libraries/libslide/src/slide_library_header.hpp
+        libraries/libslide/src/slide_library.hpp
+        libraries/libslide/src/slide_library_info_text_writer.cpp
+        libraries/libslide/src/slide_library_info_text_writer.hpp
+        libraries/libslide/src/slide_loader.cpp
+        libraries/libslide/src/slide_loader.hpp
+        libraries/libslide/src/slide_record_binary_parser.cpp
+        libraries/libslide/src/slide_record_binary_parser.hpp
+        libraries/libslide/src/slide_records.hpp
+        libraries/libslide/src/slide_records_visitor_binary_writer.cpp
+        libraries/libslide/src/slide_records_visitor_binary_writer.hpp
+        libraries/libslide/src/slide_records_visitor_cairo_drawer.cpp
+        libraries/libslide/src/slide_records_visitor_cairo_drawer.hpp
+        libraries/libslide/src/slide_records_visitor.hpp
+        libraries/libslide/src/slide_records_visitor_qpainter_drawer.cpp
+        libraries/libslide/src/slide_records_visitor_qpainter_drawer.hpp
+        libraries/libslide/src/slide_records_visitor_stat.cpp
+        libraries/libslide/src/slide_records_visitor_stat.hpp
+        libraries/libslide/src/slide_records_visitor_text_writer.cpp
+        libraries/libslide/src/slide_records_visitor_text_writer.hpp
+        libraries/libslide/src/slide_record_text_parser.cpp
+        libraries/libslide/src/slide_record_text_parser.hpp
+        libraries/libslide/src/slide_util.cpp
+        libraries/libslide/src/slide_util.hpp
+        libraries/libslide/src/slide_version.hpp
         libraries/muparser/include/muParser.h
         libraries/muparser/include/muParserBase.h
         libraries/muparser/include/muParserBytecode.h
@@ -706,6 +772,8 @@ set(SOURCES
 		librecad/src/lib/engine/document/entities/rs_mtext.h
 		librecad/src/lib/engine/overlays/overlay_box/rs_overlaybox.cpp
 		librecad/src/lib/engine/overlays/overlay_box/rs_overlaybox.h
+		librecad/src/lib/engine/overlays/overlay_slide/rs_overlayslide.cpp
+		librecad/src/lib/engine/overlays/overlay_slide/rs_overlayslide.h
 		librecad/src/lib/engine/overlays/rs_overlayline.cpp
 		librecad/src/lib/engine/overlays/rs_overlayline.h
 		librecad/src/lib/engine/document/patterns/rs_pattern.cpp
@@ -1470,6 +1538,8 @@ set(SOURCES
 		librecad/src/lib/engine/overlays/ucs_mark/lc_overlayucszero.cpp
 		librecad/src/lib/actions/lc_overlayboxaction.h
 		librecad/src/lib/actions/lc_overlayboxaction.cpp
+		librecad/src/lib/actions/lc_overlayslideaction.h
+		librecad/src/lib/actions/lc_overlayslideaction.cpp
 		librecad/src/lib/engine/overlays/lc_overlayentity.cpp
 		librecad/src/ui/view/lc_printpreviewview.h
 		librecad/src/ui/view/lc_printpreviewview.cpp
