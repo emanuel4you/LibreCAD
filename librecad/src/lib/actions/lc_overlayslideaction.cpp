@@ -123,14 +123,13 @@ void LC_OverlaySlideAction::mouseReleaseEvent(QMouseEvent* e)
     }
 }
 
-#if 0
 void LC_OverlaySlideAction::wheelEvent(QWheelEvent* e)
 {
     Q_UNUSED(e)
 
     trigger();
 }
-#endif
+
 void LC_OverlaySlideAction::init(int status)
 {
     RS_ActionInterface::init(status);

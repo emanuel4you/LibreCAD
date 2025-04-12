@@ -821,7 +821,7 @@ void QG_GraphicView::wheelEvent(QWheelEvent *e) {
 #ifdef DEVELOPER
     if (!zoomEnabled)
     {
-        //getEventHandler()->wheelEvent(e);
+        getEventHandler()->wheelEvent(e);
         return;
     }
 #endif

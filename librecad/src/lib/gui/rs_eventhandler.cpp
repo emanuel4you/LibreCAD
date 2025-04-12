@@ -246,7 +246,7 @@ void RS_EventHandler::mouseEnterEvent() {
     }
 }
 
-#if 0//def DEVELOPER
+#ifdef DEVELOPER
 /**
  * Called by QG_GraphicView
  */

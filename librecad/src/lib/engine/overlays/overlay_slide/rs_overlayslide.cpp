@@ -28,17 +28,10 @@
 #include "rs_overlayslide.h"
 
 #include "rs_debug.h"
-#include "rs_graphicview.h"
 #include "rs_painter.h"
-#include "rs_graphic.h"
-#include <QBrush>
 #include "rs_settings.h"
 #include "lc_overlayentity.h"
 
-#include "slide.hpp"
-#include "slide_library.hpp"
-#include "slide_library_info_text_writer.hpp"
-#include "slide_util.hpp"
 #include "slide_draw_qpainter.h"
 
 
@@ -47,8 +40,8 @@ RS_OverlaySlide::RS_OverlaySlide(const QString &fileName, int width, int height)
 
 void RS_OverlaySlide::draw(RS_Painter* painter)
 {
-    qDebug() << "color:" << LC_GET_STR("background", RS_Settings::background);
-    const QColor &bg(LC_GET_STR("background", RS_Settings::background));
+    qDebug() << "color:" << RS_Settings::background;
+    const QColor &bg(RS_Settings::background);
     const RS_Color &fillColor = RS_Color(bg.red(), bg.green(), bg.blue(), bg.alpha());
     painter->fillRect(0, 0, m_width, m_height, fillColor);
 
