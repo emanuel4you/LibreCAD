@@ -20,6 +20,7 @@
 /* SPDX-License-Identifier: GPL-3.0-or-later */
 
 #include <regex>
+#include <functional>
 #include "slide.hpp"
 #include "slide_colors.hpp"
 #include "slide_records.hpp"
