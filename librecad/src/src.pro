@@ -103,6 +103,7 @@ DEFINES += LC_PRERELEASE=\"$$LC_PRERELEASE\"
 # Additional libraries to load
 LIBS += -L../../generated/lib  \
     -ldxfrw \
+    -lslide \
     -ljwwlib
 
 INCLUDEPATH += \

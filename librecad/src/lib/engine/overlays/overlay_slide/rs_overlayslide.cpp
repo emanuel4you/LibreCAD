@@ -35,13 +35,12 @@
 #include "rs_settings.h"
 #include "lc_overlayentity.h"
 
-#if 0
 #include "slide.hpp"
 #include "slide_library.hpp"
 #include "slide_library_info_text_writer.hpp"
 #include "slide_util.hpp"
 #include "slide_draw_qpainter.h"
-#endif
+
 
 RS_OverlaySlide::RS_OverlaySlide(const QString &fileName, int width, int height)
    : m_fileName(fileName), m_width(width), m_height(height) {}
@@ -56,4 +55,11 @@ void RS_OverlaySlide::draw(RS_Painter* painter)
     const QColor &bg(LC_GET_STR("background", RS_Settings::background));
     const RS_Color &fillColor = RS_Color(bg.red(), bg.green(), bg.blue(), bg.alpha());
     painter->fillRect(0, 0, m_width, m_height, fillColor);
+
+    slide_draw_qpainter(painter,
+                            0,
+                            0,
+                            m_width,
+                            m_height,
+                            qUtf8Printable(m_fileName));
 }
