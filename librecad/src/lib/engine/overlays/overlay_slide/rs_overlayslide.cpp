@@ -35,6 +35,14 @@
 #include "rs_settings.h"
 #include "lc_overlayentity.h"
 
+#if 0
+#include "slide.hpp"
+#include "slide_library.hpp"
+#include "slide_library_info_text_writer.hpp"
+#include "slide_util.hpp"
+#include "slide_draw_qpainter.h"
+#endif
+
 RS_OverlaySlide::RS_OverlaySlide(const QString &fileName, int width, int height)
    : m_fileName(fileName), m_width(width), m_height(height) {}
 
