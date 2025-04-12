@@ -44,10 +44,12 @@ QMAKE_UIC_FLAGS += --connections string
 GEN_LIB_DIR = ../../generated/lib
 msvc {
     PRE_TARGETDEPS += $$GEN_LIB_DIR/dxfrw.lib \
-            $$GEN_LIB_DIR/jwwlib.lib
+            $$GEN_LIB_DIR/jwwlib.lib \
+            $$GEN_LIB_DIR/slide.lib
 } else {
     PRE_TARGETDEPS += $$GEN_LIB_DIR/libdxfrw.a \
-            $$GEN_LIB_DIR/libjwwlib.a
+            $$GEN_LIB_DIR/libjwwlib.a \
+            $$GEN_LIB_DIR/libslide.a
 }
 
 DESTDIR = $${INSTALLDIR}
@@ -106,6 +108,7 @@ LIBS += -L../../generated/lib  \
 INCLUDEPATH += \
     ../../libraries/lciconengine \
     ../../libraries/libdxfrw/src \
+    ../../libraries/libslide/src \
     ../../libraries/jwwlib/src \
     cmd \
     lib/actions \

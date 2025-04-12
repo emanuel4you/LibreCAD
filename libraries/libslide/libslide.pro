@@ -6,7 +6,7 @@ DESTDIR = ../../generated/lib
 
 VERSION = 0.12.1
 
-DLL_NAME = libslide
+DLL_NAME = slide
 TARGET = $$DLL_NAME
 
 GENERATED_DIR = ../../generated/lib/libslide
