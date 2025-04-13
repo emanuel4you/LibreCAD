@@ -494,9 +494,6 @@ void QG_GraphicView::resizeEvent(QResizeEvent* e) {
 void QG_GraphicView::mousePressEvent(QMouseEvent* event){
     // pan zoom with middle mouse button
     if (event->button()==Qt::MiddleButton){
-#ifdef DEVELOPER
-        getEventHandler()->killShownActions();
-#endif
         // fixme - sand - rework this and ensure there is not delay for pan start!!!
         auto *action = new RS_ActionZoomPan(*getContainer(), *this);
         setCurrentAction(action);
@@ -512,9 +509,6 @@ void QG_GraphicView::mouseDoubleClickEvent(QMouseEvent* e){
         default:
             break;
         case Qt::MiddleButton:
-#ifdef DEVELOPER
-            getEventHandler()->killShownActions();
-#endif
             setCurrentAction(new RS_ActionZoomAuto(*getContainer(), *this));
             break;
         case Qt::LeftButton:
@@ -648,10 +642,6 @@ bool QG_GraphicView::event(QEvent *event){
             QPointF g = mapFromGlobal(nge->globalPosition().toPoint());
             RS_Vector mouse = getViewPort()->toWorldFromUi(g.x(), g.y());
             // todo - sand - ucs - replace by direct zoom call?
-
-#ifdef DEVELOPER
-            getEventHandler()->killShownActions();
-#endif
             setCurrentAction(new RS_ActionZoomIn(*getContainer(), *this, direction,
                                                  RS2::Both, &mouse, factor));
         }
@@ -816,10 +806,6 @@ void QG_GraphicView::wheelEvent(QWheelEvent *e) {
     if (getContainer()==nullptr) {
         return;
     }
-
-#ifdef DEVELOPER
-    getEventHandler()->killShownActions();
-#endif
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
 //    RS_Vector mouse = toGraph(e->position());

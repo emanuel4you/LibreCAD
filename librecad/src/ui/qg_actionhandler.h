@@ -48,13 +48,6 @@ public:
   * is launched to reduce confusion.
    */
     void killSelectActions();
-#ifdef DEVELOPER
-/**
- * Kills all running shown only actions. Called when a selection action
- * is launched to zooming/panning confusion.
- */
-    void killShownActions();
-#endif
 /**
   * @brief killAllActions kill all actions
   */
