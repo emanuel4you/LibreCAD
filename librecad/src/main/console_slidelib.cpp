@@ -24,6 +24,8 @@
 
 #include "console_slidelib.h"
 
+#ifdef DEVELOPER
+
 #include <QtCore>
 #include <QCoreApplication>
 #include <QApplication>
@@ -169,3 +171,5 @@ int console_slidelib(int argc, char* argv[])
 
     return app.exec();
 }
+
+#endif //DEVELOPER
