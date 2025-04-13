@@ -7,6 +7,9 @@
 #include "lisp.h"
 #include "rs_color.h"
 #include "rs_dxfcolor.h"
+#include "rs_settings.h"
+
+#include "slide_draw_qpainter.h"
 
 #include <math.h>
 #include <iostream>
@@ -3292,32 +3295,32 @@ QDclLabel::QDclLabel(QWidget *parent)
 
 void QDclLabel::paintEvent(QPaintEvent *event)
 {
-    QPainter painter(this);
+    QPainter *painter = new QPainter(this);
 
     for (auto & l : *m_pixs)
     {
         if (l.action == DCL_LINE)
         {
             color_t color = static_cast<color_t>(l.color);
-            painter.setPen(QPen(getDclQColor(color)));
-            painter.drawLine(l.x1, l.y1, l.x2, l.y2);
+            painter->setPen(QPen(getDclQColor(color)));
+            painter->drawLine(l.x1, l.y1, l.x2, l.y2);
         }
 
         if (l.action == DCL_RECT)
         {
             color_t color = static_cast<color_t>(l.color);
-            painter.fillRect(l.x1, l.y1, l.x2, l.y2, QBrush(getDclQColor(color), Qt::SolidPattern));
+            painter->fillRect(l.x1, l.y1, l.x2, l.y2, QBrush(getDclQColor(color), Qt::SolidPattern));
         }
 
         if (l.action == DCL_TXT)
         {
             QRect boundingRect;
-            QFont font = painter.font();
+            QFont font = painter->font();
             font.setPixelSize(l.y2);
-            painter.setFont(font);
+            painter->setFont(font);
             const color_t color = static_cast<color_t>(l.color);
-            painter.setPen(QPen(getDclQColor(color)));
-            painter.drawText(l.x1, l.y1, l.x2, l.y2, (Qt::AlignLeft | Qt::AlignTop), l.str, &boundingRect);
+            painter->setPen(QPen(getDclQColor(color)));
+            painter->drawText(l.x1, l.y1, l.x2, l.y2, (Qt::AlignLeft | Qt::AlignTop), l.str, &boundingRect);
         }
 
         if (l.action == DCL_PIX)
@@ -3325,7 +3328,7 @@ void QDclLabel::paintEvent(QPaintEvent *event)
             if (QFile::exists(l.str))
             {
                 const QRect target(l.x1, l.y1, l.x2, l.y2);
-                painter.drawImage(target, QImage(l.str));
+                painter->drawImage(target, QImage(l.str));
             }
             else
             {
@@ -3337,8 +3340,20 @@ void QDclLabel::paintEvent(QPaintEvent *event)
         {
             if (QFile::exists(l.str))
             {
-                const QRect target(l.x1, l.y1, l.x2, l.y2);
-                painter.drawImage(target, QImage(l.str));
+                bool darkBackground = true;
+                auto bgc = QColor(LC_GET_STR("background", RS_Settings::background));
+                if((bgc.red() * 299 + bgc.green() * 587 + bgc.blue() * 114) / 1000 >= 125)
+                {
+                    darkBackground = false;
+                }
+
+                slide_draw_qpainter(painter,
+                                    l.x1,
+                                    l.y1,
+                                    l.x2,
+                                    l.y2*l.color/1000,
+                                    darkBackground,
+                                    qUtf8Printable(l.str));
             }
             else
             {
@@ -3346,6 +3361,8 @@ void QDclLabel::paintEvent(QPaintEvent *event)
             }
         }
     }
+
+    delete painter;
 
     QLabel::paintEvent(event);
 }
@@ -3370,14 +3387,14 @@ void QDclLabel::addText(int x1,int y1,int width, int height, const QString &text
 
 void QDclLabel::addPicture(int x1,int y1,int width, int height, double aspect_ratio, const QString &name)
 {
-    int ar = int(aspect_ratio * 100);
+    int ar = int(aspect_ratio * 1000);
     dclVector v = { x1, y1, width, height, ar, name, DCL_PIX };
     m_pixs->push_back(v);
 }
 
 void QDclLabel::addSlide(int x1,int y1,int width, int height, double aspect_ratio, const QString &name)
 {
-    int ar = int(aspect_ratio * 100);
+    int ar = int(aspect_ratio * 1000);
     dclVector v = { x1, y1, width, height, ar, name, DCL_SLD };
     m_pixs->push_back(v);
 }
@@ -3390,33 +3407,34 @@ QDclButton::QDclButton(QWidget *parent)
 
 void QDclButton::paintEvent(QPaintEvent *event)
 {
-    Q_UNUSED(event)
-    QPainter painter(this);
+    Q_UNUSED(event);
+
+    QPainter *painter = new QPainter(this);
 
     for (auto & l : *m_pixs)
     {
         if (l.action == DCL_LINE)
         {
-            const color_t color = static_cast<color_t>(l.color);
-            painter.setPen(QPen(getDclQColor(color)));
-            painter.drawLine(l.x1, l.y1, l.x2, l.y2);
+            color_t color = static_cast<color_t>(l.color);
+            painter->setPen(QPen(getDclQColor(color)));
+            painter->drawLine(l.x1, l.y1, l.x2, l.y2);
         }
 
         if (l.action == DCL_RECT)
         {
-            const color_t color = static_cast<color_t>(l.color);
-            painter.fillRect(l.x1, l.y1, l.x2, l.y2, QBrush(getDclQColor(color), Qt::SolidPattern));
+            color_t color = static_cast<color_t>(l.color);
+            painter->fillRect(l.x1, l.y1, l.x2, l.y2, QBrush(getDclQColor(color), Qt::SolidPattern));
         }
 
         if (l.action == DCL_TXT)
         {
             QRect boundingRect;
-            QFont font = painter.font();
+            QFont font = painter->font();
             font.setPixelSize(l.y2);
-            painter.setFont(font);
+            painter->setFont(font);
             const color_t color = static_cast<color_t>(l.color);
-            painter.setPen(QPen(getDclQColor(color)));
-            painter.drawText(l.x1, l.y1, l.x2, l.y2, (Qt::AlignLeft | Qt::AlignTop), l.str, &boundingRect);
+            painter->setPen(QPen(getDclQColor(color)));
+            painter->drawText(l.x1, l.y1, l.x2, l.y2, (Qt::AlignLeft | Qt::AlignTop), l.str, &boundingRect);
         }
 
         if (l.action == DCL_PIX)
@@ -3424,11 +3442,11 @@ void QDclButton::paintEvent(QPaintEvent *event)
             if (QFile::exists(l.str))
             {
                 const QRect target(l.x1, l.y1, l.x2, l.y2);
-                painter.drawImage(target, QImage(l.str));
+                painter->drawImage(target, QImage(l.str));
             }
             else
             {
-                qDebug() << "[QDclButton::paintEvent] file not found:" << l.str;
+                qDebug() << "[QDclLabel::paintEvent] file not found:" << l.str;
             }
         }
 
@@ -3436,17 +3454,29 @@ void QDclButton::paintEvent(QPaintEvent *event)
         {
             if (QFile::exists(l.str))
             {
-                const QRect target(l.x1, l.y1, l.x2, l.y2);
-                painter.drawImage(target, QImage(l.str));
+                bool darkBackground = true;
+                auto bgc = QColor(LC_GET_STR("background", RS_Settings::background));
+                if((bgc.red() * 299 + bgc.green() * 587 + bgc.blue() * 114) / 1000 >= 125)
+                {
+                    darkBackground = false;
+                }
+
+                slide_draw_qpainter(painter,
+                                    l.x1,
+                                    l.y1,
+                                    l.x2,
+                                    l.y2*l.color/1000,
+                                    darkBackground,
+                                    qUtf8Printable(l.str));
             }
             else
             {
-                qDebug() << "[QDclButton::paintEvent] file not found:" << l.str;
+                qDebug() << "[QDclLabel::paintEvent] file not found:" << l.str;
             }
         }
     }
 
-    //painter.drawRect(event->rect());
+    delete painter;
 }
 
 void QDclButton::addLine(int x1,int y1,int x2,int y2, int color)

@@ -39,6 +39,7 @@
 
 #include "lc_undosection.h"
 
+
 #include "qc_applicationwindow.h"
 #include "qc_applicationwindow.h"
 
@@ -3230,7 +3231,7 @@ bool RS_ScriptingApi::vectorImage(int x1, int y1, int x2, int y2, int color)
     return false;
 }
 
-bool RS_ScriptingApi::pixImage(int x1, int y1, int x2, int y2, const char *path)
+bool RS_ScriptingApi::pixImage(int x, int y, int width, int height, const char *path)
 {
     const lclString *key = VALUE_CAST(lclString, dclEnv->get("start_image_key"));
     const lclInteger *dialogId = VALUE_CAST(lclInteger, dclEnv->get("load_dialog_id"));
@@ -3248,13 +3249,13 @@ bool RS_ScriptingApi::pixImage(int x1, int y1, int x2, int y2, const char *path)
                 case IMAGE:
                 {
                     const lclImage* img = static_cast<const lclImage*>(tile);
-                    img->image()->addPicture(x1, y1, x2, y2, tile->value().aspect_ratio, path);
+                    img->image()->addPicture(x, y, width, height, tile->value().aspect_ratio, path);
                 }
                     break;
                 case IMAGE_BUTTON:
                 {
                     const lclImageButton* img = static_cast<const lclImageButton*>(tile);
-                    img->button()->addPicture(x1, y1, x2, y2, tile->value().aspect_ratio, path);
+                    img->button()->addPicture(x, y, width, height, tile->value().aspect_ratio, path);
                 }
                     break;
                 default:
@@ -3266,7 +3267,7 @@ bool RS_ScriptingApi::pixImage(int x1, int y1, int x2, int y2, const char *path)
     return false;
 }
 
-bool RS_ScriptingApi::slideImage(int x1, int y1, int x2, int y2, const char *path)
+bool RS_ScriptingApi::slideImage(int x, int y, int width, int height, const char *path)
 {
     const lclString *key = VALUE_CAST(lclString, dclEnv->get("start_image_key"));
     const lclInteger *dialogId = VALUE_CAST(lclInteger, dclEnv->get("load_dialog_id"));
@@ -3284,13 +3285,13 @@ bool RS_ScriptingApi::slideImage(int x1, int y1, int x2, int y2, const char *pat
                 case IMAGE:
                 {
                     const lclImage* img = static_cast<const lclImage*>(tile);
-                    img->image()->addSlide(x1, y1, x2, y2, tile->value().aspect_ratio, path);
+                    img->image()->addSlide(x, y, width, height, tile->value().aspect_ratio, path);
                 }
                     break;
                 case IMAGE_BUTTON:
                 {
                     const lclImageButton* img = static_cast<const lclImageButton*>(tile);
-                    img->button()->addSlide(x1, y1, x2, y2, tile->value().aspect_ratio, path);
+                    img->button()->addSlide(x, y, width, height, tile->value().aspect_ratio, path);
                 }
                     break;
                 default:
@@ -3302,7 +3303,7 @@ bool RS_ScriptingApi::slideImage(int x1, int y1, int x2, int y2, const char *pat
     return false;
 }
 
-bool RS_ScriptingApi::textImage(int x1, int y1, int x2, int y2, const char *text, int color)
+bool RS_ScriptingApi::textImage(int x, int y, int width, int height, const char *text, int color)
 {
     const lclString *key = VALUE_CAST(lclString, dclEnv->get("start_image_key"));
     const lclInteger *dialogId = VALUE_CAST(lclInteger, dclEnv->get("load_dialog_id"));
@@ -3320,13 +3321,13 @@ bool RS_ScriptingApi::textImage(int x1, int y1, int x2, int y2, const char *text
                 case IMAGE:
                 {
                     const lclImage* img = static_cast<const lclImage*>(tile);
-                    img->image()->addText(x1, y1, x2, y2, text, color);
+                    img->image()->addText(x, y, width, height, text, color);
                 }
                     break;
                 case IMAGE_BUTTON:
                 {
                     const lclImageButton* img = static_cast<const lclImageButton*>(tile);
-                    img->button()->addText(x1, y1, x2, y2, text, color);
+                    img->button()->addText(x, y, width, height, text, color);
                 }
                     break;
                 default:

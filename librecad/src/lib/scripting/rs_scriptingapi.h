@@ -168,10 +168,10 @@ public:
     bool getAttr(const char *key, const char *attr, std::string &result);
     bool modeTile(const char *key, int mode);
     bool newDialog(const char *name, int id);
-    bool pixImage(int x1, int y1, int x2, int y2, const char *path);
+    bool pixImage(int x, int y, int width, int height, const char *path);
     bool setTile(const char *key, const char *val);
-    bool slideImage(int x1, int y1, int x2, int y2, const char *path);
-    bool textImage(int x1, int y1, int x2, int y2, const char *text, int color);
+    bool slideImage(int x, int y, int width, int height, const char *path);
+    bool textImage(int x, int y, int width, int height, const char *text, int color);
     bool vectorImage(int x1, int y1, int x2, int y2, int color);
     bool getFiled(const char *title, const char *def, const char *ext, int flags, std::string &filename);
     bool getDist(CommandEdit *cmdline, const char *msg, const RS_Vector &basePoint, double &distance);
