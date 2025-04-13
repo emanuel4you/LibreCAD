@@ -33,6 +33,7 @@ int slide_draw_qpainter(QPainter *painter,
                      unsigned y,
                      unsigned width,
                      unsigned height,
+                     bool darkbg,
                      const char *slide_uri)
 {
     try {
@@ -56,7 +57,8 @@ int slide_draw_qpainter(QPainter *painter,
             sld_width, sld_height,
             sld_ratio,
             x, y,
-            width, height
+            width, height,
+            darkbg,
         };
         slide->visit_records(visitor);
 

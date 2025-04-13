@@ -33,6 +33,7 @@ int slide_draw_qpainter(QPainter *qp,
                      unsigned y,
                      unsigned width,
                      unsigned height,
+                     bool darkbg,
                      const char *slide_uri);
 
 #ifdef __cplusplus

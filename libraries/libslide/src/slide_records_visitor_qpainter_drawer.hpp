@@ -36,7 +36,8 @@ public:
                                    unsigned dst_x,       // draw offset x
                                    unsigned dst_y,       // draw offset y
                                    unsigned dst_width,   // draw width
-                                   unsigned dst_height); // draw height
+                                   unsigned dst_height,  // draw height
+                                   bool dark_background);// bg color dark
 
     void accept(SlideRecordVector& r) override;
     void accept(SlideRecordOffsetVector& r) override;
@@ -59,6 +60,7 @@ private:
     double _scale_x;
     double _scale_y;
     uint8_t _color;
+    bool _dark;
 };
 
 } // namespace libslide

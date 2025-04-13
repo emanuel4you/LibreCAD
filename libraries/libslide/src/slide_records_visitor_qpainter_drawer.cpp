@@ -34,14 +34,16 @@ SlideRecordsVisitorQPainterDrawer::SlideRecordsVisitorQPainterDrawer(QPainter *p
                                                                unsigned dst_x,
                                                                unsigned dst_y,
                                                                unsigned dst_width,
-                                                               unsigned dst_height)
+                                                               unsigned dst_height,
+                                                               bool dark_background)
     : _qpainter{painter},
       _dst_x{dst_x},
       _dst_y{dst_y},
       _dst_height{dst_height},
       _last_x{0},
       _last_y{0},
-      _color{0}
+      _color{0},
+      _dark{dark_background}
 {
     //
     // Calculate new_width and new_height taking
@@ -63,9 +65,6 @@ SlideRecordsVisitorQPainterDrawer::SlideRecordsVisitorQPainterDrawer(QPainter *p
 
     _scale_x = 1.0 * new_width  / src_width;
     _scale_y = 1.0 * new_height / src_height;
-
-    // background
-    _qpainter->fillRect(0,0, dst_width, dst_height, QBrush(Qt::black, Qt::SolidPattern));
 }
 
 inline
@@ -141,7 +140,14 @@ void SlideRecordsVisitorQPainterDrawer::accept(SlideRecordSolidFillPolygon& r)
 
 void SlideRecordsVisitorQPainterDrawer::accept(SlideRecordColor& r)
 {
-    RGB rgb = AutoCAD::colors[r.color()];
+    uint8_t color = r.color();
+
+    if (!_dark && color == 7)
+    {
+        color = 0;
+    }
+
+    RGB rgb = AutoCAD::colors[color];
     _qpainter->setPen(QColor(rgb.red, rgb.green, rgb.blue));
 }
 
