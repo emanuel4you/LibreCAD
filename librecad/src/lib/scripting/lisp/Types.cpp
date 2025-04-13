@@ -22,6 +22,7 @@
 #include <QApplication>
 #include <QStyle>
 #include <QAccessible>
+#include <QFileInfo>
 
 typedef std::regex              Regex;
 static const Regex intRegex("^[-+]?\\d+$");
@@ -3338,7 +3339,34 @@ void QDclLabel::paintEvent(QPaintEvent *event)
 
         if (l.action == DCL_SLD)
         {
-            if (QFile::exists(l.str))
+            QString file = l.str;
+
+            if (file.contains("(") && file.contains(")"))
+            {
+                QStringList name = file.split("(");
+                if (name.size() == 2)
+                {
+                    QFileInfo slideFileInfo(name.at(0));
+                    if (slideFileInfo.suffix().toLower() != "slb" ||
+                        slideFileInfo.suffix().toUpper() != "SLB")
+                    {
+                        file = name.at(0) + ".slb(" + name.at(1);
+                    }
+                }
+            }
+            else
+            {
+                QFileInfo slideFileInfo(file);
+                if (slideFileInfo.suffix().toLower() != "sld" ||
+                    slideFileInfo.suffix().toUpper() != "SLD")
+                {
+                    file += ".sld";
+                }
+            }
+
+            const QStringList &path = file.split("(");
+
+            if (path.size() && QFile::exists(path.at(0)))
             {
                 bool darkBackground = true;
                 auto bgc = QColor(LC_GET_STR("background", RS_Settings::background));
@@ -3353,7 +3381,7 @@ void QDclLabel::paintEvent(QPaintEvent *event)
                                     l.x2,
                                     l.y2*l.color/1000,
                                     darkBackground,
-                                    qUtf8Printable(l.str));
+                                    qUtf8Printable(file));
             }
             else
             {
@@ -3452,7 +3480,34 @@ void QDclButton::paintEvent(QPaintEvent *event)
 
         if (l.action == DCL_SLD)
         {
-            if (QFile::exists(l.str))
+            QString file = l.str;
+
+            if (file.contains("(") && file.contains(")"))
+            {
+                QStringList name = file.split("(");
+                if (name.size() == 2)
+                {
+                    QFileInfo slideFileInfo(name.at(0));
+                    if (slideFileInfo.suffix().toLower() != "slb" ||
+                        slideFileInfo.suffix().toUpper() != "SLB")
+                    {
+                        file = name.at(0) + ".slb(" + name.at(1);
+                    }
+                }
+            }
+            else
+            {
+                QFileInfo slideFileInfo(file);
+                if (slideFileInfo.suffix().toLower() != "sld" ||
+                    slideFileInfo.suffix().toUpper() != "SLD")
+                {
+                    file += ".sld";
+                }
+            }
+
+            const QStringList &path = file.split("(");
+
+            if (path.size() && QFile::exists(path.at(0)))
             {
                 bool darkBackground = true;
                 auto bgc = QColor(LC_GET_STR("background", RS_Settings::background));
@@ -3467,11 +3522,11 @@ void QDclButton::paintEvent(QPaintEvent *event)
                                     l.x2,
                                     l.y2*l.color/1000,
                                     darkBackground,
-                                    qUtf8Printable(l.str));
+                                    qUtf8Printable(file));
             }
             else
             {
-                qDebug() << "[QDclLabel::paintEvent] file not found:" << l.str;
+                qDebug() << "[QDclLabel::paintEvent] file not found:" << file;
             }
         }
     }
