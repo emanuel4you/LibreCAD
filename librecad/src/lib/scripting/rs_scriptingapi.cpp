@@ -326,7 +326,7 @@ RS_Vector RS_ScriptingApi::getCorner(CommandEdit *cmdline, const char *msg, cons
         return RS_Vector();
     }
 
-    QC_ActionGetCorner* a = new QC_ActionGetCorner(*doc, *graphicView);
+    auto a = std::make_shared<QC_ActionGetCorner>(*doc, *graphicView);
     if (a)
     {
         QPointF *point = new QPointF;
@@ -403,7 +403,7 @@ RS_Vector RS_ScriptingApi::getPoint(CommandEdit *cmdline, const char *msg, const
         return RS_Vector();
     }
 
-    QC_ActionGetPoint* a = new QC_ActionGetPoint(*doc, *graphicView);
+    auto a = std::make_shared<QC_ActionGetPoint>(*doc, *graphicView);
     if (a)
     {
         QPointF *point = new QPointF;
@@ -491,7 +491,7 @@ bool RS_ScriptingApi::getDist(CommandEdit *cmdline, const char *msg, const RS_Ve
 
     if(!start.valid)
     {
-        QC_ActionGetPoint* startAction = new QC_ActionGetPoint(*doc, *graphicView);
+        auto startAction = std::make_shared<QC_ActionGetPoint>(*doc, *graphicView);
         if (startAction)
         {
             QPointF *startPoint = new QPointF;
@@ -500,7 +500,8 @@ bool RS_ScriptingApi::getDist(CommandEdit *cmdline, const char *msg, const RS_Ve
             startAction->setMessage(prompt);
             graphicView->setCurrentAction(startAction);
 
-            QObject::connect(cmdline, &QLineEdit::returnPressed, startAction, [cmdline, startAction, prompt, &distance, &finished]
+            //QObject::connect(cmdline, &QLineEdit::returnPressed, startAction, [cmdline, startAction, prompt, &distance, &finished]
+            QObject::connect(cmdline, &QLineEdit::returnPressed, static_cast<QC_ActionGetPoint*>(startAction.get()), [cmdline, startAction, prompt, &distance, &finished]
             {
                 const QString result = cmdline->text();
                 static const QRegularExpression floatRegExpr(QStringLiteral("^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$"));
@@ -532,7 +533,7 @@ bool RS_ScriptingApi::getDist(CommandEdit *cmdline, const char *msg, const RS_Ve
 
             if(finished)
             {
-                QObject::disconnect(cmdline, &QLineEdit::returnPressed, startAction, NULL);
+                QObject::disconnect(cmdline, &QLineEdit::returnPressed, static_cast<QC_ActionGetPoint*>(startAction.get()), NULL);
                 graphicView->killAllActions();
                 cmdline->reset();
                 return true;
@@ -563,7 +564,8 @@ bool RS_ScriptingApi::getDist(CommandEdit *cmdline, const char *msg, const RS_Ve
     prompt = QObject::tr("Enter second point: ");
     cmdline->setPrompt(QObject::tr(qUtf8Printable(prompt)));
 
-    QC_ActionGetDist* endAction = new QC_ActionGetDist(*doc, *graphicView);
+    auto endAction = std::make_shared<QC_ActionGetDist>(*doc, *graphicView);
+
     if (endAction)
     {
         QPointF *base = new QPointF(start.x, start.y);
@@ -571,7 +573,7 @@ bool RS_ScriptingApi::getDist(CommandEdit *cmdline, const char *msg, const RS_Ve
         graphicView->setCurrentAction(endAction);
         endAction->setBasepoint(base);
 
-        QObject::connect(cmdline, &QLineEdit::returnPressed, endAction, [cmdline, endAction, prompt, &distance, &finished]
+        QObject::connect(cmdline, &QLineEdit::returnPressed, static_cast<QC_ActionGetDist*>(endAction.get()), [cmdline, endAction, prompt, &distance, &finished]
         {
             const QString result = cmdline->text();
             static const QRegularExpression floatRegExpr(QStringLiteral("^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$"));
@@ -604,7 +606,7 @@ bool RS_ScriptingApi::getDist(CommandEdit *cmdline, const char *msg, const RS_Ve
             }
         }
 
-        QObject::disconnect(cmdline, &QLineEdit::returnPressed, endAction, NULL);
+        QObject::disconnect(cmdline, &QLineEdit::returnPressed, static_cast<QC_ActionGetDist*>(endAction.get()), NULL);
         graphicView->killAllActions();
         graphicView->redraw();
         cmdline->reset();
@@ -654,7 +656,7 @@ bool RS_ScriptingApi::getOrient(CommandEdit *cmdline, const char *msg, const RS_
 
     if(!start.valid)
     {
-        QC_ActionGetPoint* startAction = new QC_ActionGetPoint(*doc, *graphicView);
+        auto startAction = std::make_shared<QC_ActionGetPoint>(*doc, *graphicView);
         if (startAction)
         {
             QPointF *startPoint = new QPointF;
@@ -663,7 +665,7 @@ bool RS_ScriptingApi::getOrient(CommandEdit *cmdline, const char *msg, const RS_
             startAction->setMessage(prompt);
             graphicView->setCurrentAction(startAction);
 
-            QObject::connect(cmdline, &QLineEdit::returnPressed, startAction, [cmdline, startAction, prompt, &rad, &finished]
+            QObject::connect(cmdline, &QLineEdit::returnPressed, static_cast<QC_ActionGetPoint*>(startAction.get()), [cmdline, startAction, prompt, &rad, &finished]
             {
                 const QString result = cmdline->text();
                 static const QRegularExpression floatRegExpr(QStringLiteral("^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$"));
@@ -695,7 +697,7 @@ bool RS_ScriptingApi::getOrient(CommandEdit *cmdline, const char *msg, const RS_
 
             if(finished)
             {
-                QObject::disconnect(cmdline, &QLineEdit::returnPressed, startAction, NULL);
+                QObject::disconnect(cmdline, &QLineEdit::returnPressed, static_cast<QC_ActionGetPoint*>(startAction.get()), NULL);
                 graphicView->killAllActions();
                 cmdline->reset();
                 return true;
@@ -726,7 +728,7 @@ bool RS_ScriptingApi::getOrient(CommandEdit *cmdline, const char *msg, const RS_
     prompt = QObject::tr("Enter second point: ");
     cmdline->setPrompt(QObject::tr(qUtf8Printable(prompt)));
 
-    QC_ActionGetRad* endAction = new QC_ActionGetRad(*doc, *graphicView);
+    auto endAction = std::make_shared<QC_ActionGetRad>(*doc, *graphicView);
     if (endAction)
     {
         QPointF *base = new QPointF(start.x, start.y);
@@ -734,7 +736,7 @@ bool RS_ScriptingApi::getOrient(CommandEdit *cmdline, const char *msg, const RS_
         graphicView->setCurrentAction(endAction);
         endAction->setBasepoint(base);
 
-        QObject::connect(cmdline, &QLineEdit::returnPressed, endAction, [cmdline, endAction, prompt, &rad, &finished]
+        QObject::connect(cmdline, &QLineEdit::returnPressed, static_cast<QC_ActionGetRad*>(endAction.get()), [cmdline, endAction, prompt, &rad, &finished]
         {
             const QString result = cmdline->text();
             static const QRegularExpression floatRegExpr(QStringLiteral("^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$"));
@@ -767,7 +769,7 @@ bool RS_ScriptingApi::getOrient(CommandEdit *cmdline, const char *msg, const RS_
             }
         }
 
-        QObject::disconnect(cmdline, &QLineEdit::returnPressed, endAction, NULL);
+        QObject::disconnect(cmdline, &QLineEdit::returnPressed, static_cast<QC_ActionGetRad*>(endAction.get()), NULL);
         graphicView->killAllActions();
         graphicView->redraw();
         cmdline->reset();
@@ -1007,7 +1009,7 @@ bool RS_ScriptingApi::getSelected(std::vector<unsigned int> &sset)
         return false;
     }
 
-    QC_ActionSelectSet *actionSelect = new QC_ActionSelectSet(*doc, *graphicView);
+    auto actionSelect = std::make_shared<QC_ActionSelectSet>(*doc, *graphicView);
     if (actionSelect)
     {
         graphicView->killAllActions();
@@ -1389,7 +1391,7 @@ bool RS_ScriptingApi::entsel(CommandEdit *cmdline, const QString &prompt, unsign
         return false;
     }
 
-    QC_ActionEntSel* a = new QC_ActionEntSel(*doc, *graphicView);
+    auto a = std::make_shared<QC_ActionEntSel>(*doc, *graphicView);
     if (a)
     {
         a->setMessage(prom);

@@ -494,6 +494,9 @@ void QG_GraphicView::resizeEvent(QResizeEvent* e) {
 void QG_GraphicView::mousePressEvent(QMouseEvent* event){
     // pan zoom with middle mouse button
     if (event->button()==Qt::MiddleButton){
+#ifdef DEVELOPER
+        getEventHandler()->killShownActions();
+#endif
         // fixme - sand - rework this and ensure there is not delay for pan start!!!
         auto action = std::make_shared<RS_ActionZoomPan>(*getContainer(), *this);
         setCurrentAction(action);
@@ -806,6 +809,10 @@ void QG_GraphicView::wheelEvent(QWheelEvent *e) {
     if (getContainer()==nullptr) {
         return;
     }
+
+#ifdef DEVELOPER
+    getEventHandler()->killShownActions();
+#endif
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
 //    RS_Vector mouse = toGraph(e->position());
