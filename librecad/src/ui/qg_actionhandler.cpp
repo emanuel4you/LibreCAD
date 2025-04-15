@@ -101,10 +101,6 @@
 #include "rs_actioneditcopy.h"
 #include "rs_actioneditundo.h"
 #include "lc_actionfileexportmakercam.h"
-#ifdef DEVELOPER
-#include "lc_actionfileexportmakerslide.h"
-#include "lc_actionfileviewslide.h"
-#endif
 #include "rs_actionfilenewtemplate.h"
 #include "rs_actionfileopen.h"
 #include "rs_actionfilesaveas.h"
@@ -248,18 +244,6 @@ void QG_ActionHandler::killSelectActions() {
     }
 }
 
-#ifdef DEVELOPER
-/**
- * Kills all running shown actions. Called when a selection action
- * is launched to zooming/panning confusion.
- */
-void QG_ActionHandler::killShownActions() {
-    if (view != nullptr) {
-        view->killShownActions();
-    }
-}
-#endif
-
 void QG_ActionHandler::killAllActions() {
     if (view != nullptr) {
         view->killAllActions();
@@ -325,14 +309,6 @@ std::shared_ptr<RS_ActionInterface> QG_ActionHandler::setCurrentAction(RS2::Acti
         case RS2::ActionFileExportMakerCam:
             a = std::make_shared<LC_ActionFileExportMakerCam>(*document, *view);
             break;
-#ifdef DEVELOPER
-        case RS2::ActionFileExportMakerSlide:
-            a = std::make_shared<LC_ActionFileExportMakerSlide>(*document, *view);
-            break;
-        case RS2::ActionFileViewSlide:
-            a = std::make_shared<LC_ActionFileViewSlide>(*document, *view);
-            break;
-#endif
 
             // Editing actions:
             //
@@ -470,31 +446,24 @@ std::shared_ptr<RS_ActionInterface> QG_ActionHandler::setCurrentAction(RS2::Acti
             // Zooming actions:
             //
         case RS2::ActionZoomIn:
-            view->killShownActions();
             a = std::make_shared<RS_ActionZoomIn>(*document, *view, RS2::In, RS2::Both);
             break;
         case RS2::ActionZoomOut:
-            view->killShownActions();
             a = std::make_shared<RS_ActionZoomIn>(*document, *view, RS2::Out, RS2::Both);
             break;
         case RS2::ActionZoomAuto:
-            view->killShownActions();
             a = std::make_shared<RS_ActionZoomAuto>(*document, *view);
             break;
         case RS2::ActionZoomWindow:
-            view->killShownActions();
             a = std::make_shared<RS_ActionZoomWindow>(*document, *view);
             break;
         case RS2::ActionZoomPan:
-            view->killShownActions();
             a = std::make_shared<RS_ActionZoomPan>(*document, *view);
             break;
         case RS2::ActionZoomPrevious:
-            view->killShownActions();
             a = std::make_shared<RS_ActionZoomPrevious>(*document, *view);
             break;
         case RS2::ActionZoomRedraw:
-            view->killShownActions();
             a = std::make_shared<RS_ActionZoomRedraw>(*document, *view);
             break;
             // Drawing actions:
