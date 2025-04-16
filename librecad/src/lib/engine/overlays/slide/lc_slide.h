@@ -2,8 +2,8 @@
  *
  This file is part of the LibreCAD project, a 2D CAD program
 
- Copyright (C) 2025 LibreCAD.org
- Copyright (C) 2025 sand1024
+ Copyright (C) 2024 LibreCAD.org
+ Copyright (C) 2024 sand1024
 
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License
@@ -20,37 +20,37 @@
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  ******************************************************************************/
 
-#ifndef LC_OVERLAYSLIDEACTION_H
-#define LC_OVERLAYSLIDEACTION_H
+#ifndef LC_SLIDE_H
+#define LC_SLIDE_H
 
-#include "rs_actioninterface.h"
-#include "rs_overlayslide.h"
-#include "rs_commandevent.h"
+#include "rs_color.h"
+#include "rs_painter.h"
+#include "lc_overlayentity.h"
 
+#include "slide.hpp"
+#include "slide_draw_qpainter.h"
+#include "slide_loader.hpp"
+#include "slide_records_visitor_qpainter_drawer.hpp"
 
-class LC_OverlaySlideAction:public RS_ActionInterface {
+using namespace libslide;
+
+class LC_Slide: public LC_OverlayDrawable
+{
 public:
-    LC_OverlaySlideAction(
-        const char *name,
-        RS_EntityContainer &container,
-        RS_GraphicView &graphicView,
-        RS2::ActionType actionType = RS2::ActionNone);
-
-    ~LC_OverlaySlideAction() override = default;
-
-    void init(int status) override;
-    void finish(bool updateTB = true) override;
-    void trigger() override;
-    void mouseMoveEvent(QMouseEvent* e) override;
-    void mouseReleaseEvent(QMouseEvent* e) override;
-
-protected:
-
-    void drawOverlaySlide(const QString &fileName);
+    LC_Slide(const RS_Vector &d, const QString &file);
+    void draw(RS_Painter* painter) override;
 private:
-    RS_Line *slide;
-    bool middleButtonPressed{false};
+    RS_Vector pos;
+    QString file;
+    RS_Color fillBackground;
+    bool darkBackground = true;
+    Slide *slide;
+#if 0
+    unsigned sld_width;
+    unsigned sld_height;
+    double   sld_ratio;
+    Slide slide;
+#endif
 };
 
-
-#endif // LC_OVERLAYBOXACTION_H
+#endif // LC_SLIDE_H

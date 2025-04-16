@@ -135,7 +135,7 @@ INCLUDEPATH += \
     lib/engine/overlays/crosshair \
     lib/engine/overlays/info_cursor \
     lib/engine/overlays/overlay_box \
-    lib/engine/overlays/overlay_slide \
+    lib/engine/overlays/slide \
     lib/engine/overlays/ucs_mark \
     lib/engine/undo \
     lib/engine/utils \
@@ -304,7 +304,6 @@ HEADERS += \
     actions/drawing/modify/lc_actionmodifyalignref.h \
     actions/drawing/modify/lc_actionmodifyalignsingle.h \
     lib/actions/lc_overlayboxaction.h \
-    lib/actions/lc_overlayslideaction.h \
     lib/engine/document/ucs/lc_ucslist.h \
     lib/engine/overlays/angles_base/lc_overlayanglesbasemark.h \
     lib/engine/overlays/highlight/lc_highlight.h \
@@ -373,7 +372,7 @@ HEADERS += \
     lib/engine/document/entities/rs_mtext.h \
     lib/engine/overlays/rs_overlayline.h \
     lib/engine/overlays/overlay_box/rs_overlaybox.h \
-    lib/engine/overlays/overlay_slide/rs_overlayslide.h \
+    lib/engine/overlays/slide/lc_slide.h \
     lib/engine/document/patterns/rs_pattern.h \
     lib/engine/document/patterns/rs_patternlist.h \
     lib/engine/rs_pen.h \
@@ -537,7 +536,6 @@ SOURCES += \
     actions/drawing/modify/lc_actionmodifyalignref.cpp \
     actions/drawing/modify/lc_actionmodifyalignsingle.cpp \
     lib/actions/lc_overlayboxaction.cpp \
-    lib/actions/lc_overlayslideaction.cpp \
     lib/engine/document/ucs/lc_ucslist.cpp \
     lib/engine/overlays/angles_base/lc_overlayanglesbasemark.cpp \
     lib/engine/overlays/info_cursor/lc_cursoroverlayinfo.cpp \
@@ -627,7 +625,7 @@ SOURCES += \
     lib/engine/document/entities/rs_mtext.cpp \
     lib/engine/overlays/rs_overlayline.cpp \
     lib/engine/overlays/overlay_box/rs_overlaybox.cpp \
-    lib/engine/overlays/overlay_slide/rs_overlayslide.cpp \
+    lib/engine/overlays/slide/lc_slide.cpp \
     lib/engine/document/patterns/rs_pattern.cpp \
     lib/engine/document/patterns/rs_patternlist.cpp \
     lib/engine/document/entities/rs_point.cpp \

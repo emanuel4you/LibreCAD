@@ -500,7 +500,6 @@ bool RS_ScriptingApi::getDist(CommandEdit *cmdline, const char *msg, const RS_Ve
             startAction->setMessage(prompt);
             graphicView->setCurrentAction(startAction);
 
-            //QObject::connect(cmdline, &QLineEdit::returnPressed, startAction, [cmdline, startAction, prompt, &distance, &finished]
             QObject::connect(cmdline, &QLineEdit::returnPressed, static_cast<QC_ActionGetPoint*>(startAction.get()), [cmdline, startAction, prompt, &distance, &finished]
             {
                 const QString result = cmdline->text();

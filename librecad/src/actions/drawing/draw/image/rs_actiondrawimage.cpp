@@ -71,7 +71,6 @@ void RS_ActionDrawImage::init(int status){
     if (!pImg->data.file.isEmpty()){
 //std::cout << "file: " << pImg->data.file << "\n";
 //qDebug() << "file: " << pImg->data.file;
-
         pImg->img = QImage(pImg->data.file);
 
         setStatus(SetTargetPoint);

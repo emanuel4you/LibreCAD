@@ -26,18 +26,35 @@
 
 #ifdef DEVELOPER
 
-#include "lc_overlayslideaction.h"
+#include "rs_actioninterface.h"
+#include "lc_slide.h"
 
-class QString;
-class RS_Graphic;
+#include <QMouseEvent>
 
-class LC_ActionFileViewSlide : public LC_OverlaySlideAction {
+class LC_ActionFileViewSlide : public RS_ActionInterface {
     Q_OBJECT
 public:
     LC_ActionFileViewSlide(RS_EntityContainer& container, RS_GraphicView& graphicView);
 
     void init(int status) override;
+    void trigger() override;
+    void finish(bool updateTB = true) override;
+    void mouseMoveEvent(QMouseEvent* e) override;
+    void mouseReleaseEvent(QMouseEvent* e) override;
+    void drawOverlaySlide(const QString &file);
+    void resume() override;
+
+protected:
+    enum Status {
+        SetSlide,       /**< Setting Slide */
+        ShowSlide       /**< Showing Slide */
+    };
+
     void drawSlide();
+    void clear();
+
+private:
+    LC_Slide *slide;
 };
 
 #endif // DEVELOPER

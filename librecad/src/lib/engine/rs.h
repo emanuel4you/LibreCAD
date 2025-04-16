@@ -169,6 +169,9 @@ namespace RS2 {
         EntityRefArc,
         EntityRefCircle,
         EntityRefEllipse,
+#ifdef DEVELOPER
+        EntitySlide,
+#endif
     };
 
 

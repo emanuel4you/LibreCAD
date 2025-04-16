@@ -24,29 +24,74 @@
 
 #ifdef DEVELOPER
 
-#include <QFileDialog>
-
 #include "lc_actionfileviewslide.h"
 
 #include "rs_debug.h"
-#include "rs_graphic.h"
+#include "rs_graphicview.h"
 
+#include "lc_overlayentitiescontainer.h"
+
+#include <QFileDialog>
 
 LC_ActionFileViewSlide::LC_ActionFileViewSlide(RS_EntityContainer& container,
                                                     RS_GraphicView& graphicView)
-    : LC_OverlaySlideAction("View a Slide...", container, graphicView){
+    : RS_ActionInterface("View slide", container, graphicView)
+{
     setActionType(RS2::ActionFileViewSlide);
 }
 
 void LC_ActionFileViewSlide::init(int status)
 {
-    Q_UNUSED(status)
-    LC_OverlaySlideAction::init(5);
+    RS_ActionInterface::init(status);
+    drawSlide();
+}
 
-    if (getStatus() == 5)
+void LC_ActionFileViewSlide::trigger()
+{
+    finish(false);
+}
+
+void LC_ActionFileViewSlide::resume()
+{
+    if (getStatus() == SetSlide)
     {
-        drawSlide();
+        setStatus(ShowSlide);
+        RS_ActionInterface::resume();
     }
+}
+
+void LC_ActionFileViewSlide::finish(bool updateTB)
+{
+    RS_ActionInterface::finish(updateTB);
+    clear();
+}
+
+void LC_ActionFileViewSlide::mouseMoveEvent(QMouseEvent* e)
+{
+    Q_UNUSED(e)
+}
+
+void LC_ActionFileViewSlide::mouseReleaseEvent(QMouseEvent* e)
+{
+    switch(e->button()){
+            case Qt::RightButton:
+                trigger();
+                break;
+            default:
+                break;
+        }
+}
+
+void LC_ActionFileViewSlide::drawOverlaySlide(const QString &file)
+{
+    qDebug() << "[LC_ActionFileViewSlide::drawOverlaySlide] file:" << file;
+
+
+    RS_DEBUG->print("LC_ActionFileViewSlide::drawOverlaySlide file: %s", qUtf8Printable(file));
+
+    auto sl = new LC_Slide(RS_Vector(graphicView->getWidth(), graphicView->getHeight()), file);
+    LC_OverlayDrawablesContainer *drawablesContainer = viewport->getOverlaysDrawablesContainer(RS2::OverlayGraphics::ActionPreviewEntity);
+    drawablesContainer->add(sl);
 }
 
 void LC_ActionFileViewSlide::drawSlide()
@@ -63,10 +108,14 @@ void LC_ActionFileViewSlide::drawSlide()
             setStatus(-1);
             return;
         }
-
-        setStatus(4);
         drawOverlaySlide(filename);
     }
+}
+
+void LC_ActionFileViewSlide::clear()
+{
+    LC_OverlayDrawablesContainer *drawablesContainer = viewport->getOverlaysDrawablesContainer(RS2::OverlayGraphics::ActionPreviewEntity);
+    drawablesContainer->clear();
 }
 
 #endif // DEVELOPER
