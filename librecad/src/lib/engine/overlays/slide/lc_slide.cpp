@@ -28,34 +28,46 @@
 #include "rs_debug.h"
 #include "rs_settings.h"
 
-#include "slide_draw_qpainter.h"
-
-LC_Slide::LC_Slide(const RS_Vector &d, const QString &file)
-: pos(d)
-, file(file)
-, darkBackground(true)
-{
+LC_Slide::LC_Slide(const RS_Vector& d, const QString& file)
+    : pos(d), file(file), darkBackground(true) {
     LC_GROUP_GUARD("Colors");
     auto bgc = QColor(LC_GET_STR("background", RS_Settings::background));
     fillBackground = bgc;
-    if((bgc.red() * 299 + bgc.green() * 587 + bgc.blue() * 114) / 1000 >= 125)
-    {
+    if ((bgc.red() * 299 + bgc.green() * 587 + bgc.blue() * 114) / 1000 >= 125) {
         darkBackground = false;
+    }
+    slideData = slide_from_uri(qUtf8Printable(file));
+    if (!slideData) {
+        std::ostringstream ss;
+        ss << "Slide " << qUtf8Printable(file) << " not found";
+        throw std::runtime_error{ss.str()};
     }
 }
 
-void LC_Slide::draw(RS_Painter* painter)
-{
-    RS_DEBUG->print("LC_Slide::draw");
+LC_OverlayDrawable* LC_Slide::clone() const {
+    LC_Slide* s = new LC_Slide(*this);
+    return s;
+}
 
+void LC_Slide::draw(RS_Painter* painter) {
+    RS_DEBUG->print("LC_Slide::draw");
     painter->fillRect(0, 0, pos.x, pos.y, fillBackground);
-    slide_draw_qpainter(painter,
-                        0,
-                        0,
-                        pos.x,
-                        pos.y,
-                        darkBackground,
-                        qUtf8Printable(file));
+    auto slide = slideData.value();
+    unsigned sld_width = slide->header().high_x_dot();
+    unsigned sld_height = slide->header().high_y_dot();
+    double sld_ratio = slide->header().aspect_ratio();
+    // Draw slide.
+    SlideRecordsVisitorQPainterDrawer visitor{
+        painter,
+        sld_width, sld_height,
+        sld_ratio,
+        0,
+        0,
+        static_cast<unsigned>(pos.x),
+        static_cast<unsigned>(pos.y),
+        darkBackground
+    };
+    slide->visit_records(visitor);
 }
 
 #endif // DEVELOPER

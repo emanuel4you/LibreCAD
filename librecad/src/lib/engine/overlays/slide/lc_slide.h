@@ -27,16 +27,27 @@
 #include "rs_painter.h"
 #include "lc_overlayentity.h"
 
+#include <iostream>
+#include <sstream>
+#include "slide.hpp"
+#include "slide_draw_qpainter.h"
+#include "slide_loader.hpp"
+#include "slide_records_visitor_qpainter_drawer.hpp"
+
+using namespace libslide;
+
 class LC_Slide: public LC_OverlayDrawable
 {
 public:
     LC_Slide(const RS_Vector &d, const QString &file);
     void draw(RS_Painter* painter) override;
+    LC_OverlayDrawable* clone() const;
 private:
     RS_Vector pos;
     QString file;
     RS_Color fillBackground;
     bool darkBackground = true;
+    std::optional<std::shared_ptr<const Slide>> slideData;
 };
 
 #endif // LC_SLIDE_H
