@@ -26,10 +26,10 @@
 
 #include "lc_actionfileviewslide.h"
 
+#include "lc_overlayentitiescontainer.h"
+
 #include "rs_debug.h"
 #include "rs_graphicview.h"
-
-#include "lc_overlayentitiescontainer.h"
 
 #include <QFileDialog>
 
@@ -84,9 +84,6 @@ void LC_ActionFileViewSlide::mouseReleaseEvent(QMouseEvent* e)
 
 void LC_ActionFileViewSlide::drawOverlaySlide(const QString &file)
 {
-    qDebug() << "[LC_ActionFileViewSlide::drawOverlaySlide] file:" << file;
-
-
     RS_DEBUG->print("LC_ActionFileViewSlide::drawOverlaySlide file: %s", qUtf8Printable(file));
 
     auto sl = new LC_Slide(RS_Vector(graphicView->getWidth(), graphicView->getHeight()), file);
