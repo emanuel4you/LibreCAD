@@ -2,8 +2,8 @@
  *
  This file is part of the LibreCAD project, a 2D CAD program
 
- Copyright (C) 2024 LibreCAD.org
- Copyright (C) 2024 sand1024
+ Copyright (C) 2025 LibreCAD.org
+ Copyright (C) 2025 emanuel
 
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License
@@ -27,13 +27,6 @@
 #include "rs_painter.h"
 #include "lc_overlayentity.h"
 
-#include "slide.hpp"
-#include "slide_draw_qpainter.h"
-#include "slide_loader.hpp"
-#include "slide_records_visitor_qpainter_drawer.hpp"
-
-using namespace libslide;
-
 class LC_Slide: public LC_OverlayDrawable
 {
 public:
@@ -44,13 +37,6 @@ private:
     QString file;
     RS_Color fillBackground;
     bool darkBackground = true;
-    Slide *slide;
-#if 0
-    unsigned sld_width;
-    unsigned sld_height;
-    double   sld_ratio;
-    Slide slide;
-#endif
 };
 
 #endif // LC_SLIDE_H
