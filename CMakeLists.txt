@@ -132,7 +132,7 @@ include_directories(librecad/src/lib/engine/overlays/highlight)
 include_directories(librecad/src/lib/engine/overlays/references)
 include_directories(librecad/src/lib/engine/overlays/info_cursor)
 include_directories(librecad/src/lib/engine/overlays/overlay_box)
-include_directories(librecad/src/lib/engine/overlays/overlay_slide)
+include_directories(librecad/src/lib/engine/overlays/slide)
 include_directories(librecad/src/lib/engine/overlays/crosshair)
 include_directories(librecad/src/lib/engine/overlays/ucs_mark)
 include_directories(librecad/src/lib/engine/overlays/angles_base)
@@ -768,8 +768,8 @@ set(SOURCES
 		librecad/src/lib/engine/document/entities/rs_mtext.h
 		librecad/src/lib/engine/overlays/overlay_box/rs_overlaybox.cpp
 		librecad/src/lib/engine/overlays/overlay_box/rs_overlaybox.h
-		librecad/src/lib/engine/overlays/overlay_slide/rs_overlayslide.cpp
-		librecad/src/lib/engine/overlays/overlay_slide/rs_overlayslide.h
+		librecad/src/lib/engine/overlays/slide/lc_slide.cpp
+		librecad/src/lib/engine/overlays/slide/lc_slide.h
 		librecad/src/lib/engine/overlays/rs_overlayline.cpp
 		librecad/src/lib/engine/overlays/rs_overlayline.h
 		librecad/src/lib/engine/document/patterns/rs_pattern.cpp
@@ -1536,8 +1536,6 @@ set(SOURCES
 		librecad/src/lib/engine/overlays/ucs_mark/lc_overlayucszero.cpp
 		librecad/src/lib/actions/lc_overlayboxaction.h
 		librecad/src/lib/actions/lc_overlayboxaction.cpp
-		librecad/src/lib/actions/lc_overlayslideaction.h
-		librecad/src/lib/actions/lc_overlayslideaction.cpp
 		librecad/src/lib/engine/overlays/lc_overlayentity.cpp
 		librecad/src/ui/view/lc_printpreviewview.h
 		librecad/src/ui/view/lc_printpreviewview.cpp
