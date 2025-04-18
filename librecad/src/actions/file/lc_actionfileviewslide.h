@@ -34,7 +34,6 @@ class LC_ActionFileViewSlide : public RS_ActionInterface {
     Q_OBJECT
 public:
     LC_ActionFileViewSlide(RS_EntityContainer& container, RS_GraphicView& graphicView);
-
     void init(int status) override;
     void trigger() override;
     void finish(bool updateTB = true) override;
@@ -42,7 +41,6 @@ public:
     void mouseReleaseEvent(QMouseEvent* e) override;
     void drawOverlaySlide(const QString &file);
     void resume() override;
-
 protected:
     enum Status {
         SetSlide,       /**< Setting Slide */
@@ -51,7 +49,6 @@ protected:
 
     void drawSlide();
     void clear();
-
 private:
     LC_Slide *slide;
 };

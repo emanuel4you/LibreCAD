@@ -33,11 +33,9 @@
 
 LC_ActionFileViewSlide::LC_ActionFileViewSlide(RS_EntityContainer& container,
                                                     RS_GraphicView& graphicView)
-    : RS_ActionInterface("View slide", container, graphicView)
-{
+    : RS_ActionInterface("View slide", container, graphicView) {
     setActionType(RS2::ActionFileViewSlide);
 }
-
 void LC_ActionFileViewSlide::init(int status)
 {
     RS_ActionInterface::init(status);
