@@ -89,7 +89,7 @@ public:
             const dxfrgb_t color = dc.dxfRGB[i];
             if(qc.red() == color.r && qc.green() == color.g && qc.blue() == color.b)
             {
-                return i + 1;
+                return i;
             }
         }
 

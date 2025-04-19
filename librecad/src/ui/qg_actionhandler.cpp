@@ -102,7 +102,7 @@
 #include "rs_actioneditundo.h"
 #include "lc_actionfileexportmakercam.h"
 #ifdef DEVELOPER
-#include "lc_actionfileexportmakerslide.h"
+#include "lc_actionfileexportslide.h"
 #include "lc_actionfileviewslide.h"
 #endif
 #include "rs_actionfilenewtemplate.h"
@@ -326,7 +326,7 @@ std::shared_ptr<RS_ActionInterface> QG_ActionHandler::setCurrentAction(RS2::Acti
             a = std::make_shared<LC_ActionFileExportMakerCam>(*document, *view);
             break;
 #ifdef DEVELOPER
-        case RS2::ActionFileExportMakerSlide:
+        case RS2::ActionFileExportSlide:
             a = std::make_shared<LC_ActionFileExportMakerSlide>(*document, *view);
             break;
         case RS2::ActionFileViewSlide:

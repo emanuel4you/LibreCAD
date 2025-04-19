@@ -264,7 +264,7 @@ void LC_MenuFactory::createFileMenu(QMenuBar *menu_bar, QList<QMenu *> &topMenuM
     subMenu(m_menuFile, tr("Export"), "export", ":/icons/export.lci", {
         "FileExportMakerCam",
 #ifdef DEVELOPER
-        "FileExportMakerSlide",
+        "FileExportSlide",
 #endif // DEVELOPER
         "FilePrintPDF",
         "FileExport"

@@ -518,8 +518,8 @@ void LC_ActionFactory::createFileActionsUncheckable(QMap<QString, QAction *> &ma
 
     createAction_AH("FileExportMakerCam",RS2::ActionFileExportMakerCam,  tr("Export as CA&M/plain SVG..."), nullptr, nullptr, group, map);
 #ifdef DEVELOPER
-    createAction_AH("FileExportMakerSlide",RS2::ActionFileExportMakerSlide,  tr("Export as Slide..."), ":/icons/export_slide.lci", nullptr, group, map);
     createAction_AH("FileViewSlide",RS2::ActionFileViewSlide,  tr("View a Slide..."), ":/icons/slide.lci", nullptr, group, map);
+    createAction_AH("FileExportSlide",RS2::ActionFileExportSlide,  tr("Export as Slide..."), ":/icons/export_slide.lci", nullptr, group, map);
 #endif // DEVELOPER
 }
 

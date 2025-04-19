@@ -195,7 +195,7 @@ namespace RS2 {
         ActionFilePrintPreview,
         ActionFileExportMakerCam,
 #ifdef DEVELOPER
-        ActionFileExportMakerSlide,
+        ActionFileExportSlide,
         ActionFileViewSlide,
 #endif
         ActionFileQuit,

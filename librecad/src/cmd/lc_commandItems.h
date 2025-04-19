@@ -991,7 +991,7 @@ const LC_CommandItem g_commandList[] = {
         {
             {{"mslide", QObject::tr("mslide", "export file as slide")}},
             {{"ms", QObject::tr("ms", "export file as slide")}},
-            RS2::ActionFileExportMakerSlide
+            RS2::ActionFileExportSlide
         },
         // view slide file
         {
