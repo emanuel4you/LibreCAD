@@ -327,7 +327,7 @@ std::shared_ptr<RS_ActionInterface> QG_ActionHandler::setCurrentAction(RS2::Acti
             break;
 #ifdef DEVELOPER
         case RS2::ActionFileExportSlide:
-            a = std::make_shared<LC_ActionFileExportMakerSlide>(*document, *view);
+            a = std::make_shared<LC_ActionFileExportSlide>(*document, *view);
             break;
         case RS2::ActionFileViewSlide:
             a = std::make_shared<LC_ActionFileViewSlide>(*document, *view);

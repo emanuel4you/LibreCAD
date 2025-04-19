@@ -31,16 +31,13 @@
 class QString;
 class RS_Graphic;
 
-class LC_ActionFileExportMakerSlide : public RS_ActionInterface {
+class LC_ActionFileExportSlide : public RS_ActionInterface {
     Q_OBJECT
 public:
-    LC_ActionFileExportMakerSlide(RS_EntityContainer& container, RS_GraphicView& graphicView);
+    LC_ActionFileExportSlide(RS_EntityContainer& container, RS_GraphicView& graphicView);
 
     void init(int status) override;
     void trigger() override;
-
-    // helper function to generate Slide
-    static bool writeSlide(const QString& fileName, RS_Graphic& graphic);
 };
 
 #endif // DEVELOPER

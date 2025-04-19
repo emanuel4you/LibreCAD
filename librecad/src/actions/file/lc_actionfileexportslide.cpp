@@ -47,15 +47,13 @@
 #include "qc_mdiwindow.h"
 
 #include "slide.hpp"
-#include "slide_colors.hpp"
 #include "slide_records.hpp"
 #include "slide_records_visitor.hpp"
 #include "slide_binary_writer.hpp"
 
 using namespace libslide;
 
-static int
-create_slide(const QString& file,
+static int create_slide(const QString& file,
              uint16_t width,
              uint16_t height,
              double ratio,
@@ -81,40 +79,26 @@ create_slide(const QString& file,
     return 0;
 }
 
-
-LC_ActionFileExportMakerSlide::LC_ActionFileExportMakerSlide(RS_EntityContainer& container,
+LC_ActionFileExportSlide::LC_ActionFileExportSlide(RS_EntityContainer& container,
                                                          RS_GraphicView& graphicView)
     : RS_ActionInterface("Export as Slide ...", container, graphicView){
     setActionType(RS2::ActionFileExportSlide);
 }
 
-void LC_ActionFileExportMakerSlide::init(int status) {
+void LC_ActionFileExportSlide::init(int status) {
     RS_ActionInterface::init(status);
     trigger();
 }
 
-bool LC_ActionFileExportMakerSlide::writeSlide(const QString& fileName, RS_Graphic& graphic){
-    if (fileName.isEmpty()) {
-        LC_ERR<<__func__<<"(): empty file name, no Slide is generated";
-        return false;
-    }
+void LC_ActionFileExportSlide::trigger() {
 
-    Q_UNUSED(graphic)
-    qDebug() << "[LC_ActionFileExportMakerSlide::writeSlide] filename:" << fileName;
-    // implement foo here
-
-    return true;
-}
-
-void LC_ActionFileExportMakerSlide::trigger() {
-
-	RS_DEBUG->print("LC_ActionFileExportMakerSlide::trigger()");
+	RS_DEBUG->print("LC_ActionFileExportSlide::trigger()");
 
     if (graphic == nullptr) {
         return;
     }
 
-    qDebug() << "viewport" << viewport->getHeight() << viewport->getWidth();
+    qDebug() << "viewport" << viewport->getWidth() << viewport->getHeight();
 
     auto& appWin=QC_ApplicationWindow::getAppWindow();
     QC_MDIWindow *w = appWin->getMDIWindow();
@@ -123,21 +107,24 @@ void LC_ActionFileExportMakerSlide::trigger() {
         w->getGraphic()->calculateBorders();
         QSize size;
 
-        double asp = w->getGraphic()->getSize().x/w->getGraphic()->getSize().y * 1.0;
+        double ratio = w->getGraphic()->getSize().x / w->getGraphic()->getSize().y * 1.0;
 
-        size.setWidth(static_cast<int>(w->getGraphic()->getSize().x*asp));
-        size.setHeight(static_cast<int>(w->getGraphic()->getSize().y*asp));
+        size.setWidth(static_cast<int>(w->getGraphic()->getSize().x * ratio));
+        size.setHeight(static_cast<int>(w->getGraphic()->getSize().y * ratio));
 
         if (size.width() == 0)
             return;
 
         QString file = QFileInfo(w->getDocument()->getFilename()).baseName();
         if (file == nullptr)
-            file = "unnamed";
+            file = tr("unnamed");
 
         file = RS_DIALOGFACTORY->requestFileSaveAsDialog(tr("Export as"),
-                                                            file,
+                                                            file + ".sld",
                                                             "AutoCAD Slide (*.sld)");
+
+        if (file.isEmpty())
+            return;
 
         auto picture = std::make_shared<QPixmap>(size);
         std::shared_ptr<QPaintDevice> buffer;
@@ -167,17 +154,14 @@ void LC_ActionFileExportMakerSlide::trigger() {
         renderer.render();
 
         QImage image = picture->toImage();
-
-        QImageWriter iio;
-        // RVT_PORT iio.setImage(img);
-        iio.setFileName("test.ppm");
-        iio.setFormat("PPM");
-        // RVT_PORT if (iio.write()) {
-        iio.write(image);
-
         int rows = image.width();
         int cols = image.height();
-
+#if 0
+        QImageWriter iio;
+        iio.setFileName(file + ".ppm");
+        iio.setFormat("PPM");
+        iio.write(image);
+#endif
         qDebug() << "Width  : " << rows;
         qDebug() << "Height : " << cols;
         qDebug() << "Color depth: " << image.depth();
@@ -221,61 +205,16 @@ void LC_ActionFileExportMakerSlide::trigger() {
         qDebug() << "Colors: " << clist;
 
         QColor currentColor = Qt::black;
-
         std::vector<std::shared_ptr<SlideRecord>> records;
 
+        // scan rows for vectors
         for (int i = 0; i < cols; i++)
         {
             int x, rx, nrun = 0;
             QColor rpixColor = Qt::black;
-#if 0
-            for (x = 0; x < rows; x++) {
-                //int pix = PPM_GETR(pixels[i][x]);
-                QColor pixColor = image.pixelColor(x, i);
 
-                if (pixColor != rpixColor)
-                {
-                    qDebug() << "color" << pixColor;
-
-                    if (nrun > 0) {
-                        if (rpixColor != Qt::black)
-                        {
-                            //outrun(rpix, cols - 1, i, rx, x - 1);
-                            //int color, ysize, y, xstart, xend;
-                            //qDebug() << "outrun" << rpix << cols - 1 << i << rx << x - 1;
-                            //qDebug() << "color" << RS_DXFColor::fromQColor(pixColor);
-                            //qDebug() << "Vector" << rx << cols - 1 - i << x - 1 << cols - 1 - i;
-
-                            if (currentColor != rpixColor)
-                            {
-                                records.push_back(std::make_shared<SlideRecordColor>(RS_DXFColor::fromQColor(rpixColor)));
-                                currentColor = rpixColor;
-                            }
-                            records.push_back(std::make_shared<SlideRecordVector>(rx, cols - 1 - i, x - 1, cols - 1 - i));
-                        }
-                    }
-                    rpixColor = pixColor;
-                    rx = x;
-                    nrun = 1;
-                }
-            }
-
-            if ((nrun > 0) && (rpixColor != Qt::black))
-            {
-                //outrun(rpix, cols - 1, i, rx, rows - 1);
-                qDebug() << "Vector2" << cols - 1 << i << rx << rows - 1;
-                if (currentColor != rpixColor)
-                {
-                    records.push_back(std::make_shared<SlideRecordColor>(RS_DXFColor::fromQColor(rpixColor)-1));
-                    currentColor = rpixColor;
-                }
-                records.push_back(std::make_shared<SlideRecordVector>(cols - 1, i, rx, rows - 1));
-            }
-        }
-#else
             for (x = 0; x < rows; x++)
             {
-                //int pix = PPM_GETR(pixels[i][x]);
                 const QColor &pixColor = image.pixelColor(x, i);
 
                 if (pixColor != rpixColor)
@@ -284,11 +223,7 @@ void LC_ActionFileExportMakerSlide::trigger() {
                     if (nrun > 0) {
                         if (rpixColor != Qt::black)
                         {
-                            //outrun(rpix, cols - 1, i, rx, x - 1);
-                            //int color, ysize, y, xstart, xend;
-                            //qDebug() << "outrun" << rpix << cols - 1 << i << rx << x - 1;
-                            //qDebug() << "Vector" << rx << cols - 1 - i << x - 1 << cols - 1 - i;
-
+                            //out(rpix, cols - 1, i, rx, x - 1);
                             if (currentColor != rpixColor)
                             {
                                 records.push_back(std::make_shared<SlideRecordColor>(RS_DXFColor::fromQColor(rpixColor)));
@@ -296,13 +231,14 @@ void LC_ActionFileExportMakerSlide::trigger() {
                             }
 
                             int _ysize = rx, _y = cols - 1 - i, _xstart = x - 1, _xend = cols - 1 - i;
-                            qDebug() << "vector" << _ysize << _y << _xstart << _xend;
+                            //qDebug() << "vector" << _ysize << _y << _xstart << _xend;
 
+                            // push_back all horizontal lines > 1 pixel
                             if (_ysize != _xstart)
                             {
                                 for (int b = _ysize; b <= _xstart; b++)
                                 {
-                                    qDebug() << "setPixel" << b << cols;
+                                    //qDebug() << "setPixel" << b << cols;
                                     image.setPixel(b, i, qRgb(0, 0, 0));
                                 }
 
@@ -322,6 +258,7 @@ void LC_ActionFileExportMakerSlide::trigger() {
             }
         }
 
+        // scan cols for vectors and pixel
         for (int i = 0; i < rows; i++)
         {
             int y, ry, nrun = 0;
@@ -341,8 +278,8 @@ void LC_ActionFileExportMakerSlide::trigger() {
                                 currentColor = rpixColor;
                             }
 
-                            int _xsize = ry-1, _x = i, _ystart = y - 2, _yend = i;
-                            qDebug() << "vector" << _xsize << _x << _ystart << _yend;
+                            int _xsize = ry - 1, _x = i, _ystart = y - 2, _yend = i;
+                            //qDebug() << "vector" << _xsize << _x << _ystart << _yend;
 #if 0
                             for (int b = _xsize; b <= _ystart; b++)
                             {
@@ -350,8 +287,8 @@ void LC_ActionFileExportMakerSlide::trigger() {
                                 image.setPixel(i, b+1, qRgb(0, 0, 0));
                             }
 #endif
+                            // push_back all bertical lines and 1 pixels
                             records.push_back(std::make_shared<SlideRecordVector>(_x, cols-_xsize-2, _yend, cols-_ystart-2));
-
                         }
                     }
                     rpixColor = pixColor;
@@ -365,7 +302,7 @@ void LC_ActionFileExportMakerSlide::trigger() {
                 records.push_back(std::make_shared<SlideRecordVector>(rows - 1, i, ry, cols - 1));
             }
         }
-#endif
+
         records.push_back(std::make_shared<SlideRecordEndOfFile>());
         create_slide(qUtf8Printable(file), rows, cols, 1.0 * rows / cols, records);
 
