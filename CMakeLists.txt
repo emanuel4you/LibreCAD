@@ -897,6 +897,8 @@ set(SOURCES
         librecad/src/main/console_dxf2pdf/pdf_print_loop.h
         librecad/src/main/console_dxf2png.cpp
         librecad/src/main/console_dxf2png.h
+        librecad/src/main/console_dxf2sld.cpp
+        librecad/src/main/console_dxf2sld.h
         librecad/src/main/console_slidelib.cpp
         librecad/src/main/console_slidelib.h
         librecad/src/main/doc_plugin_interface.cpp

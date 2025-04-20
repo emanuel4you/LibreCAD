@@ -156,7 +156,7 @@ void LC_ActionFileExportSlide::trigger() {
         QImage image = picture->toImage();
         int rows = image.width();
         int cols = image.height();
-#if 0
+#if 1
         QImageWriter iio;
         iio.setFileName(file + ".ppm");
         iio.setFormat("PPM");
@@ -204,6 +204,11 @@ void LC_ActionFileExportSlide::trigger() {
         qDebug() << "Color size: " << clist.size();
         qDebug() << "Colors: " << clist;
 
+        for (int n = 0; n < clist.size(); n++)
+        {
+            qDebug() << "[RS_DXFColor::fromQColor]" << clist.at(n) << RS_DXFColor::fromQColor(clist.at(n));
+        }
+
         QColor currentColor = Qt::black;
         std::vector<std::shared_ptr<SlideRecord>> records;
 
@@ -219,7 +224,6 @@ void LC_ActionFileExportSlide::trigger() {
 
                 if (pixColor != rpixColor)
                 {
-
                     if (nrun > 0) {
                         if (rpixColor != Qt::black)
                         {

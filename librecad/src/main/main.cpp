@@ -42,6 +42,7 @@
 #include "console_dxf2png.h"
 #ifdef DEVELOPER
 #include "console_slidelib.h"
+#include "console_dxf2sld.h"
 #endif
 #include "lc_application.h"
 #include "main.h"
@@ -92,6 +93,9 @@ int main(int argc, char** argv)
             return console_dxf2png(argc, argv);
         }
 #ifdef DEVELOPER
+        if (arg.compare("dxf2sld") == 0) {
+            return console_dxf2sld(argc, argv);
+        }
         if (arg.compare("slidelib") == 0) {
             return console_slidelib(argc, argv);
         }

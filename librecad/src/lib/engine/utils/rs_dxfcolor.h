@@ -87,13 +87,29 @@ public:
         for (int i = 0; i < MAX_DXF_IDX_COLOR; i++)
         {
             const dxfrgb_t color = dc.dxfRGB[i];
+
             if(qc.red() == color.r && qc.green() == color.g && qc.blue() == color.b)
             {
                 return i;
             }
         }
 
-        return -1;
+        int value = -1;
+        int dist = 255;
+        for (int i = 0; i < MAX_DXF_IDX_COLOR; i++)
+        {
+            const dxfrgb_t color = dc.dxfRGB[i];
+            int absRed = abs(qc.red() - color.r);
+            int absGreen = abs(qc.green() - color.g);
+            int absBlue = abs(qc.blue() - color.b);
+
+            if (dist > (absRed + absGreen + absBlue))
+            {
+                dist = absRed + absGreen + absBlue;
+                value = i;
+            }
+        }
+        return value;
     }
 
     static const char* getName(int index)
