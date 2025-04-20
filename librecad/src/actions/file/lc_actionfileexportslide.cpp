@@ -106,12 +106,19 @@ void LC_ActionFileExportSlide::trigger() {
     if (w) {
         w->getGraphic()->calculateBorders();
         QSize size;
-
+#if 0
         double ratio = w->getGraphic()->getSize().x / w->getGraphic()->getSize().y * 1.0;
 
         size.setWidth(static_cast<int>(w->getGraphic()->getSize().x * ratio));
         size.setHeight(static_cast<int>(w->getGraphic()->getSize().y * ratio));
+#else
+        double width = viewport->getWidth();
+        double heigth = viewport->getHeight();
+        double ratio = width / heigth;
 
+        size.setWidth(width * ratio);
+        size.setHeight(heigth * ratio);
+#endif
         if (size.width() == 0)
             return;
 
@@ -140,15 +147,17 @@ void LC_ActionFileExportSlide::trigger() {
         painter.eraseRect(0, 0, size.width(), size.height());
 
         // fixme - sand - rework to more generic printing (add progress or confirmation ?)
-
+#if 0
         LC_GraphicViewport viewport = LC_GraphicViewport();
         viewport.setSize(size.width(), size.height());
         viewport.setBorders(2, 2, 2, 2);
         viewport.setContainer(graphic);
         viewport.zoomAuto(false);
         viewport.loadSettings();
+#endif
+        //LC_PrintViewportRenderer renderer = LC_PrintViewportRenderer(&viewport, &painter);
+        LC_PrintViewportRenderer renderer = LC_PrintViewportRenderer(viewport, &painter);
 
-        LC_PrintViewportRenderer renderer = LC_PrintViewportRenderer(&viewport, &painter);
         renderer.setBackground(Qt::black);
         renderer.loadSettings();
         renderer.render();
