@@ -117,6 +117,9 @@ public:
     QString getCurrentActionName() const;
     QIcon getCurrentActionIcon() const;
     void killSelectActions() const;
+#ifdef DEVELOPER
+    void killShownActions() const;
+#endif
     void killAllActions() const;
     void back() const;
     void processEnterKey();

@@ -29,6 +29,10 @@ class LC_QTStatusbarManager;
 class QG_MouseWidget;
 class QG_SelectionWidget;
 class QG_CommandWidget;
+#ifdef DEVELOPER
+class QG_Lsp_CommandWidget;
+class QG_Py_CommandWidget;
+#endif
 class QG_CoordinateWidget;
 class LC_ActionOptionsManager;
 
@@ -60,6 +64,16 @@ public:
         m_commandWidget = command_widget;
     }
 
+#ifdef DEVELOPER
+    void setLspCommandWidget(QG_Lsp_CommandWidget *command_widget){
+        m_lspCommandWidget = command_widget;
+    }
+
+    void setPyCommandWidget(QG_Py_CommandWidget *command_widget){
+        m_pyCommandWidget = command_widget;
+    }
+#endif
+
     void setSelectionWidget(QG_SelectionWidget *selection_widget){
         m_selectionWidget = selection_widget;
     }
@@ -79,6 +93,10 @@ private:
     LC_ActionOptionsManager* m_actionOptionsManager {nullptr};
     QG_CoordinateWidget* m_coordinateWidget{nullptr};
     QG_CommandWidget* m_commandWidget{nullptr};
+#ifdef DEVELOPER
+    QG_Lsp_CommandWidget* m_lspCommandWidget{nullptr};
+    QG_Py_CommandWidget* m_pyCommandWidget{nullptr};
+#endif
     QG_SelectionWidget* m_selectionWidget{nullptr};
     QG_MouseWidget* m_mouseWidget{nullptr};
     LC_QTStatusbarManager* m_statusBarManager{nullptr};

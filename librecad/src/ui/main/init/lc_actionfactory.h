@@ -40,6 +40,9 @@ public:
     void initActions(LC_ActionGroupManager* agm, bool useTheme);
 
     QList<QAction*> file_actions;
+#ifdef DEVELOPER
+    QList<QAction*> developer_actions;
+#endif
     QList<QAction*> line_actions;
     QList<QAction*> point_actions;
     QList<QAction*> shape_actions;
@@ -81,6 +84,9 @@ private:
     void createPenActionsUncheckable(QMap<QString, QAction *> &map, QActionGroup *group) const;
     void createOrderActionsUncheckable(QMap<QString, QAction *> &map, QActionGroup *group) const;
     void createLayerActionsUncheckable(QMap<QString, QAction *> &map, QActionGroup *group) const;
+#ifdef DEVELOPER
+    void createDeveloperActionsUncheckable(QMap<QString, QAction *> &map, QActionGroup *group);
+#endif
     void createBlockActionsUncheckable(QMap<QString, QAction *> &map, QActionGroup *group) const;
     void createOptionsActionsUncheckable(QMap<QString, QAction *> &map, QActionGroup *group);
     void createFileActionsUncheckable(QMap<QString, QAction *> &map, QActionGroup *group);

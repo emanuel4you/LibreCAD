@@ -37,6 +37,10 @@ class QG_CoordinateWidget;
 class QG_SelectionWidget;
 class QG_MouseWidget;
 class QG_CommandWidget;
+#ifdef DEVELOPER
+class QG_Lsp_CommandWidget;
+class QG_Py_CommandWidget;
+#endif // DEVELOPER
 class RS_Document;
 class RS_Vector;
 
@@ -60,6 +64,16 @@ public:
     QG_CommandWidget* getCommandWidget() const{
         return m_commandWidget;
     }
+
+#ifdef DEVELOPER
+    QG_Lsp_CommandWidget* getLspCommandWidget() const{
+        return m_lspCommandWidget;
+    }
+
+    QG_Py_CommandWidget* getPyCommandWidget() const{
+        return m_pyCommandWidget;
+    }
+#endif
 
 /**
  * Links the dialog factory to a main app window.
@@ -133,6 +147,15 @@ public:
         m_commandWidget = command_widget;
     }
 
+#ifdef DEVELOPER
+    void set_lsp_command_widget(QG_Lsp_CommandWidget* command_widget) {
+        m_lspCommandWidget = command_widget;
+    }
+    void set_py_command_widget(QG_Py_CommandWidget* command_widget) {
+        m_pyCommandWidget = command_widget;
+    }
+#endif
+
     void set_rel_zero_coordinates_widget(LC_RelZeroCoordinatesWidget* rel_zero_coordinates_widget) {
         m_relZeroCoordinatesWidget = rel_zero_coordinates_widget;
     }
@@ -146,6 +169,11 @@ protected:
     QG_SelectionWidget* m_selectionWidget = nullptr;
 //! Pointer to the command line widget
     QG_CommandWidget* m_commandWidget = nullptr;
+
+#ifdef DEVELOPER
+    QG_Lsp_CommandWidget* m_lspCommandWidget = nullptr;
+    QG_Py_CommandWidget* m_pyCommandWidget = nullptr;
+#endif
 
     LC_RelZeroCoordinatesWidget *m_relZeroCoordinatesWidget;
 

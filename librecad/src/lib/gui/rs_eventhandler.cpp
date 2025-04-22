@@ -394,6 +394,31 @@ void RS_EventHandler::killSelectActions() {
     }
 }
 
+#ifdef DEVELOPER
+/**
+ * Kills all running shown actions. Called when a selection action
+ * is launched to zooming/panning confusion.
+ */
+void RS_EventHandler::killShownActions()
+{
+    RS_DEBUG->print(__FILE__ ": %s: line %d: begin\n", __func__, __LINE__);
+
+    for (auto it=m_currentActions.begin();it != m_currentActions.end();){
+        RS2::ActionType rtti = (*it)->rtti();
+        if (rtti == RS2::ActionFileViewSlide) {
+            if (isActive(*it)) {
+                (*it)->finish();
+            }
+            it = m_currentActions.erase(it);
+        }else{
+            it++;
+        }
+    }
+    RS_DEBUG->print(__FILE__ ": %s: line %d: begin\n", __func__, __LINE__);
+
+}
+#endif
+
 /**
  * Kills all running actions. Called when a window is closed.
  */

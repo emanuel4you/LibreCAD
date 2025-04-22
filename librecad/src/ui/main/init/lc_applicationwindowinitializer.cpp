@@ -48,6 +48,10 @@
 #include "qc_dialogfactory.h"
 #include "qg_actionhandler.h"
 #include "qg_commandwidget.h"
+#ifdef DEVELOPER
+#include "qg_lsp_commandwidget.h"
+#include "qg_py_commandwidget.h"
+#endif
 #include "qg_recentfiles.h"
 #include "qg_snaptoolbar.h"
 #include "rs_commands.h"

@@ -825,6 +825,10 @@ void QG_GraphicView::wheelEvent(QWheelEvent *e) {
         return;
     }
 
+#ifdef DEVELOPER
+    getEventHandler()->killShownActions();
+#endif
+
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
 //    RS_Vector mouse = toGraph(e->position());
     const QPointF &uiEventPosition = e->position();

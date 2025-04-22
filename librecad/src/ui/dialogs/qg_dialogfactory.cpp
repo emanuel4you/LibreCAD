@@ -41,6 +41,10 @@
 #include "qc_applicationwindow.h"
 #include "qg_blockdialog.h"
 #include "qg_commandwidget.h"
+#ifdef DEVELOPER
+#include "qg_lsp_commandwidget.h"
+#include "qg_py_commandwidget.h"
+#endif
 #include "qg_dlgarc.h"
 #include "qg_dlgattributes.h"
 #include "qg_dlgcircle.h"
@@ -917,6 +921,14 @@ void QG_DialogFactory::commandMessage(const QString& message) {
     if (m_commandWidget) {
         m_commandWidget->appendHistory(message);
     }
+#ifdef DEVELOPER
+    if (m_lspCommandWidget) {
+        m_lspCommandWidget->appendHistory(message);
+    }
+        if (m_pyCommandWidget) {
+        m_pyCommandWidget->appendHistory(message);
+    }
+#endif
     RS_DEBUG->print("QG_DialogFactory::commandMessage: OK");
 
 }
@@ -925,6 +937,14 @@ void QG_DialogFactory::command(const QString& message) {
     if (m_commandWidget) {
         m_commandWidget->setInput(message);
     }
+#ifdef DEVELOPER
+    if (m_lspCommandWidget) {
+        m_lspCommandWidget->setInput(message);
+    }
+    if (m_pyCommandWidget) {
+        m_pyCommandWidget->setInput(message);
+    }
+#endif
     RS_DEBUG->print("QG_DialogFactory::command: OK");
 }
 
@@ -933,6 +953,14 @@ void QG_DialogFactory::commandPrompt(const QString& message) {
     if (m_commandWidget) {
         m_commandWidget->setCommand(message);
     }
+#ifdef DEVELOPER
+    if (m_lspCommandWidget) {
+        m_lspCommandWidget->setCommand(message);
+    }
+    if (m_pyCommandWidget) {
+        m_pyCommandWidget->setCommand(message);
+    }
+#endif
     RS_DEBUG->print("QG_DialogFactory::command: OK");
 }
 

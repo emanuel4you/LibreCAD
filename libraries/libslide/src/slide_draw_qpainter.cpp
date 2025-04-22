@@ -1,0 +1,71 @@
+/**
+ *   AutoCAD slide library
+ *
+ *   Copyright (C) 2023-2024 Dmitry Klionsky aka ten0s <dm.klionsky@gmail.com>
+ *
+ *   This program is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* SPDX-License-Identifier: GPL-3.0-or-later */
+
+#include <iostream>
+#include <sstream>
+#include "slide.hpp"
+#include "slide_draw_qpainter.h"
+#include "slide_loader.hpp"
+#include "slide_records_visitor_qpainter_drawer.hpp"
+
+using namespace libslide;
+
+int slide_draw_qpainter(QPainter *painter,
+                     unsigned x,
+                     unsigned y,
+                     unsigned width,
+                     unsigned height,
+                     bool darkbg,
+                     const char *slide_uri)
+{
+    try {
+        // Load slide.
+        auto maybeSlide = slide_from_uri(slide_uri);
+
+        if (!maybeSlide) {
+            std::ostringstream ss;
+            ss << "Slide " << slide_uri << " not found";
+            throw std::runtime_error{ss.str()};
+        }
+
+        auto slide = maybeSlide.value();
+        unsigned sld_width  = slide->header().high_x_dot();
+        unsigned sld_height = slide->header().high_y_dot();
+        double   sld_ratio  = slide->header().aspect_ratio();
+
+        // Draw slide.
+        SlideRecordsVisitorQPainterDrawer visitor{
+            painter,
+            sld_width, sld_height,
+            sld_ratio,
+            x, y,
+            width, height,
+            darkbg,
+        };
+        slide->visit_records(visitor);
+
+    } catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << "\n";
+        return -1;
+    }
+
+    return 0;
+}

@@ -54,6 +54,10 @@
 #include "lc_actioneditpastetransform.h"
 #include "lc_actionentitylayertoggle.h"
 #include "lc_actionfileexportmakercam.h"
+#ifdef DEVELOPER
+#include "lc_actionfileexportslide.h"
+#include "lc_actionfileviewslide.h"
+#endif
 #include "lc_actioninfo3pointsangle.h"
 #include "lc_actioninfopickcoordinates.h"
 #include "lc_actioninfoproperties.h"
@@ -333,24 +337,45 @@ namespace InnerFactory{
                 return new RS_ActionToolRegenerateDimensions(ctx);
             }
             case RS2::ActionZoomIn: {
+#ifdef DEVELOPER
+                view->killShownActions();
+#endif
                 return new RS_ActionZoomIn(ctx, RS2::In, RS2::Both);
             }
             case RS2::ActionZoomOut: {
+#ifdef DEVELOPER
+                view->killShownActions();
+#endif
                 return new RS_ActionZoomIn(ctx, RS2::Out, RS2::Both);
             }
             case RS2::ActionZoomAuto: {
+#ifdef DEVELOPER
+                view->killShownActions();
+#endif
                 return new RS_ActionZoomAuto(ctx);
             }
             case RS2::ActionZoomWindow: {
+#ifdef DEVELOPER
+                view->killShownActions();
+#endif
                 return new RS_ActionZoomWindow(ctx);
             }
             case RS2::ActionZoomPan: {
+#ifdef DEVELOPER
+                view->killShownActions();
+#endif
                 return new RS_ActionZoomPan(ctx);
             }
             case RS2::ActionZoomPrevious: {
+#ifdef DEVELOPER
+                view->killShownActions();
+#endif
                 return new RS_ActionZoomPrevious(ctx);
             }
             case RS2::ActionZoomRedraw: {
+#ifdef DEVELOPER
+                view->killShownActions();
+#endif
                 return new RS_ActionZoomRedraw(ctx);
             }
             case RS2::ActionDrawPoint: {
@@ -917,6 +942,14 @@ namespace InnerFactory{
             case RS2::ActionFileExportMakerCam: {
                 return new LC_ActionFileExportMakerCam(ctx);
             }
+#ifdef DEVELOPER
+            case RS2::ActionFileExportSlide: {
+                return new LC_ActionFileExportSlide(ctx);
+            }
+            case RS2::ActionFileViewSlide: {
+                return new LC_ActionFileViewSlide(ctx);
+            }
+#endif
             case RS2::ActionSnapMiddleManual: {
                 auto currentAction = ctx->getCurrentAction();
                 if (currentAction != nullptr) {
