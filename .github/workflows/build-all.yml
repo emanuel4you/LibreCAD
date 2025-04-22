@@ -2,7 +2,7 @@ name: Continuous build
 on:
   push:
     branches:
-      - master
+      - developer
       - 2.2.1
 
 jobs:
@@ -24,12 +24,13 @@ jobs:
           sudo apt-get -qq install libgl-dev libxcb-cursor0 libmuparser-dev libboost-dev libssl-dev libssl3
           sudo apt-get -qq install imagemagick librsvg2-bin libfreetype6-dev libicu-dev pkg-config libfuse2 rsync
           sudo apt-get -qq install cmake
+          sudo apt-get -qq install swig libpython3-all-dev
           
       - name: Set Dark splash
         # Test setting dark splash screen for `2.2.2_alpha`,
         # then switch "Loading..." label text color to white.
         # Comment this if `master` is used for releases.
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/developer'
         run: |
           mkdir -p ${{github.workspace}}/librecad/res/main
           rsync ${{github.workspace}}/desktop/media/splash/librecad01_dark.png ${{github.workspace}}/librecad/res/main/splash_librecad.png
@@ -76,6 +77,7 @@ jobs:
           sudo apt-get -qq install libgl-dev libxcb-cursor0 libmuparser-dev libboost-dev libssl-dev libssl3
           sudo apt-get -qq install imagemagick librsvg2-bin libfreetype6-dev libicu-dev pkg-config libfuse2 rsync
           sudo apt-get -qq install cmake
+          sudo apt-get -qq install swig libpython3-all-dev
 
       - name: Install Clang
         run: |
