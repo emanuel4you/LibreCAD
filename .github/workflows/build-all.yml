@@ -24,7 +24,14 @@ jobs:
           sudo apt-get -qq install libgl-dev libxcb-cursor0 libmuparser-dev libboost-dev libssl-dev libssl3
           sudo apt-get -qq install imagemagick librsvg2-bin libfreetype6-dev libicu-dev pkg-config libfuse2 rsync
           sudo apt-get -qq install cmake
-          sudo apt-get -qq install swig libpython3-all-dev
+
+      - name: Install swig
+        run: |
+          sudo apt-get -qq install swig
+
+      - name: Install python3 dev
+        run: |
+          sudo apt-get -qq install libpython3-all-dev
           
       - name: Set Dark splash
         # Test setting dark splash screen for `2.2.2_alpha`,
@@ -77,7 +84,14 @@ jobs:
           sudo apt-get -qq install libgl-dev libxcb-cursor0 libmuparser-dev libboost-dev libssl-dev libssl3
           sudo apt-get -qq install imagemagick librsvg2-bin libfreetype6-dev libicu-dev pkg-config libfuse2 rsync
           sudo apt-get -qq install cmake
-          sudo apt-get -qq install swig libpython3-all-dev
+
+      - name: Install swig
+        run: |
+          sudo apt-get -qq install swig
+
+      - name: Install python3 dev
+        run: |
+          sudo apt-get -qq install libpython3-all-dev
 
       - name: Install Clang
         run: |
@@ -182,6 +196,14 @@ jobs:
       - name: Install boost dependencies
         run: |
           brew install boost
+
+      - name: Install swig
+        run: |
+          brew install swig
+
+      - name: Install python3 dev
+        run: |
+          brew install libpython3-all-dev
 
       # XProtect can cause random failures if it decides that the DMG we create
       # during the packaging phase is malware.
