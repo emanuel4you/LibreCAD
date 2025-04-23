@@ -30,7 +30,6 @@
 #include <iostream>
 #include <sstream>
 #include "slide.hpp"
-#include "slide_draw_qpainter.h"
 #include "slide_loader.hpp"
 #include "slide_records_visitor_qpainter_drawer.hpp"
 

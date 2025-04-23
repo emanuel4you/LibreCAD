@@ -36,7 +36,8 @@ LC_Slide::LC_Slide(const RS_Vector& d, const QString& file)
     if ((bgc.red() * 299 + bgc.green() * 587 + bgc.blue() * 114) / 1000 >= 125) {
         darkBackground = false;
     }
-    slideData = slide_from_uri(qUtf8Printable(file));
+
+    slideData = Slide::from_file(qUtf8Printable(file));
     if (!slideData) {
         std::ostringstream ss;
         ss << "Slide " << qUtf8Printable(file) << " not found";
