@@ -121,7 +121,7 @@ SlideLibrary::find(const std::string& name) const
 std::optional<std::shared_ptr<const Slide>>
 SlideLibrary::find(size_t idx) const
 {
-    if (idx >= 0 && idx < _slides.size()) {
+    if (idx < _slides.size()) {
         return _slides.at(idx);
     }
     return {};
@@ -147,7 +147,7 @@ SlideLibrary::remove(const std::string& name)
 bool
 SlideLibrary::remove(size_t idx)
 {
-    if (idx >= 0 && idx < _slides.size()) {
+    if (idx < _slides.size()) {
         _dirs.erase(_dirs.begin() + idx);
         _slides.erase(_slides.begin() + idx);
 

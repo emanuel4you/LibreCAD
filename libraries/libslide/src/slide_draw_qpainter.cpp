@@ -38,15 +38,16 @@ int slide_draw_qpainter(QPainter *painter,
 {
     try {
         // Load slide.
-        auto maybeSlide = slide_from_uri(slide_uri);
+        std::optional<std::shared_ptr<const Slide>> slideData;
+        slideData = Slide::from_file(slide_uri);
 
-        if (!maybeSlide) {
+        if (!slideData) {
             std::ostringstream ss;
             ss << "Slide " << slide_uri << " not found";
             throw std::runtime_error{ss.str()};
         }
 
-        auto slide = maybeSlide.value();
+        auto slide = slideData.value();
         unsigned sld_width  = slide->header().high_x_dot();
         unsigned sld_height = slide->header().high_y_dot();
         double   sld_ratio  = slide->header().aspect_ratio();
