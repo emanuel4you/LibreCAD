@@ -411,7 +411,7 @@ set(SOURCES
         libraries/muparser/src/muParserDLL.cpp
         libraries/muparser/src/muParserError.cpp
         libraries/muparser/src/muParserInt.cpp
-        libraries/muparser/src/muParserTokenrs_lisp_reader.cpp
+        libraries/muparser/src/muParserTokenReader.cpp
 		librecad/src/actions/drawing/draw/dimensions/lc_actiondimarc.cpp
 		librecad/src/actions/drawing/draw/dimensions/lc_actiondimarc.h
 		librecad/src/actions/drawing/draw/circle/lc_actiondrawcircle2pr.cpp
