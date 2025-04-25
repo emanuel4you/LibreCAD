@@ -411,7 +411,7 @@ set(SOURCES
         libraries/muparser/src/muParserDLL.cpp
         libraries/muparser/src/muParserError.cpp
         libraries/muparser/src/muParserInt.cpp
-        libraries/muparser/src/muParserTokenReader.cpp
+        libraries/muparser/src/muParserTokenrs_lisp_reader.cpp
 		librecad/src/actions/drawing/draw/dimensions/lc_actiondimarc.cpp
 		librecad/src/actions/drawing/draw/dimensions/lc_actiondimarc.h
 		librecad/src/actions/drawing/draw/circle/lc_actiondrawcircle2pr.cpp
@@ -876,29 +876,31 @@ set(SOURCES
         librecad/src/lib/modification/rs_selection.h
         librecad/src/lib/printing/lc_printing.cpp
         librecad/src/lib/printing/lc_printing.h
-        librecad/src/lib/scripting/lisp/Core.cpp
-        librecad/src/lib/scripting/lisp/Debug.h
-        librecad/src/lib/scripting/lisp/Environment.cpp
-        librecad/src/lib/scripting/lisp/Environment.h
-        librecad/src/lib/scripting/lisp/lisp.cpp
-        librecad/src/lib/scripting/lisp/lisp.h
-        librecad/src/lib/scripting/lisp/Reader.cpp
-        librecad/src/lib/scripting/lisp/LCL.h
-        librecad/src/lib/scripting/lisp/RefCountedPtr.h
-        librecad/src/lib/scripting/lisp/StaticList.h
-        librecad/src/lib/scripting/lisp/lstring.cpp
-        librecad/src/lib/scripting/lisp/Types.cpp
-        librecad/src/lib/scripting/lisp/lstring.h
-        librecad/src/lib/scripting/lisp/Types.h
-        librecad/src/lib/scripting/lisp/Validation.cpp
-        librecad/src/lib/scripting/python/rs_pythoncore.cpp
-        librecad/src/lib/scripting/python/rs_pythoncore.h
-        librecad/src/lib/scripting/python/rs_pythondcl.cpp
-        librecad/src/lib/scripting/python/rs_pythondcl.h
-        librecad/src/lib/scripting/python/rs_pythongui.cpp
-        librecad/src/lib/scripting/python/rs_pythongui.h
-        librecad/src/lib/scripting/python/rs_pythonlisp.cpp
-        librecad/src/lib/scripting/python/rs_pythonlisp.h
+        librecad/src/lib/scripting/lisp/rs_lisp_core.cpp
+        librecad/src/lib/scripting/lisp/rs_lisp_debug.h
+        librecad/src/lib/scripting/lisp/rs_lisp_env.cpp
+        librecad/src/lib/scripting/lisp/rs_lisp_env.h
+        librecad/src/lib/scripting/lisp/rs_lisp_main.cpp
+        librecad/src/lib/scripting/lisp/rs_lisp_main.h
+        librecad/src/lib/scripting/lisp/rs_lisp_version.h
+        librecad/src/lib/scripting/lisp/rs_lisp_reader.cpp
+        librecad/src/lib/scripting/lisp/rs_lisp_lcl.h
+        librecad/src/lib/scripting/lisp/rs_lisp_RefCountedPtr.h
+        librecad/src/lib/scripting/lisp/rs_lisp_staticlist.h
+        librecad/src/lib/scripting/lisp/rs_lisp_string.cpp
+        librecad/src/lib/scripting/lisp/rs_lisp_string.h
+        librecad/src/lib/scripting/lisp/rs_lisp_types.cpp
+        librecad/src/lib/scripting/lisp/rs_lisp_types.h
+        librecad/src/lib/scripting/lisp/rs_lisp_validation.cpp
+        librecad/src/lib/scripting/lisp/rs_lisp_validation.h
+        librecad/src/lib/scripting/python/rs_python_core.cpp
+        librecad/src/lib/scripting/python/rs_python_core.h
+        librecad/src/lib/scripting/python/rs_python_dcl.cpp
+        librecad/src/lib/scripting/python/rs_python_dcl.h
+        librecad/src/lib/scripting/python/rs_python_gui.cpp
+        librecad/src/lib/scripting/python/rs_python_gui.h
+        librecad/src/lib/scripting/python/rs_python_lisp.cpp
+        librecad/src/lib/scripting/python/rs_python_lisp.h
         librecad/src/lib/scripting/rs_dialogs.cpp
         librecad/src/lib/scripting/rs_dialogs.h
         librecad/src/lib/scripting/rs_lisp.cpp
