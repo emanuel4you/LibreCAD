@@ -1342,7 +1342,7 @@ BUILTIN("entmod")
     {
         const lclList *list = VALUE_CAST(lclList, seq->item(i));
 
-        if (list->isDotted() && list->item(0)->print(true) == "0")
+        if (list->isDotted() && list->item(0)->print(true) == "-1")
         {
             const lclEname *ename = VALUE_CAST(lclEname, list->item(2));
             entityId = ename->value();
@@ -3873,6 +3873,45 @@ BUILTIN("ssget")
             shadowEnv->set(RS_SCRIPTINGAPI->getSelectionName(id), lcl::list(items));
 
             return lcl::selectionset(id);
+        }
+    }
+
+    if (args > 0)
+    {
+        ARG(lclString, sel);
+
+        if (sel->value() == "A")
+        {
+
+        }
+
+        if (sel->value() == "X")
+        {
+            if (args == 2)
+            {
+                ARG(lclSequence, filter);
+
+                if (!filter->isDotted())
+                {
+                      return lcl::nilValue();
+                }
+
+                if (filter->item(0)->print(true) == "-1")
+                {
+#if 0
+                    const lclEname *ename = VALUE_CAST(lclEname, filter->item(2));
+                    int entityId = ename->value();
+#endif
+                }
+
+                if (filter->item(0)->print(true) == "0")
+                {
+#if 0
+                    const lclString *name = VALUE_CAST(lclString, filter->item(2));
+                    //name->value();
+#endif
+                }
+            }
         }
     }
 
