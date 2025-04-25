@@ -25,11 +25,11 @@
 #include "rs_python.h"
 #include "rs_lisp.h"
 
-#include "LCL.h"
-#include "Environment.h"
-#include "StaticList.h"
-#include "Types.h"
-#include "lisp.h"
+#include "rs_lisp_lcl.h"
+#include "rs_lisp_env.h"
+#include "rs_lisp_staticlist.h"
+#include "rs_lisp_types.h"
+#include "rs_lisp_main.h"
 
 #include "lc_defaults.h"
 

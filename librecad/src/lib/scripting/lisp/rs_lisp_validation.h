@@ -20,13 +20,13 @@
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  ******************************************************************************/
 
-#ifndef INCLUDE_VALIDATION_H
-#define INCLUDE_VALIDATION_H
+#ifndef INCLUDE_RS_LISP_VALIDATION_H
+#define INCLUDE_RS_LISP_VALIDATION_H
 
 #ifdef DEVELOPER
 
-#include "lisp.h"
-#include "lstring.h"
+#include "rs_lisp_main.h"
+#include "rs_lisp_string.h"
 #include <iostream>
 
 //if (!(condition)) { try { throw STRF(__VA_ARGS__); } catch (const char* e) { std::cerr << e << std::endl; } } else { }
@@ -66,4 +66,4 @@ extern int checkArgsEven(const char* name, int got);
 
 #endif // DEVELOPER
 
-#endif // INCLUDE_VALIDATION_H
+#endif // INCLUDE_RS_LISP_VALIDATION_H

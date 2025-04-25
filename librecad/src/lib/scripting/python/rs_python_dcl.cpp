@@ -21,7 +21,7 @@
  ******************************************************************************/
 
 #include "rs_python.h"
-#include "rs_pythondcl.h"
+#include "rs_python_dcl.h"
 #include "rs_scriptingapi.h"
 
 

@@ -20,12 +20,12 @@
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  ******************************************************************************/
 
-#ifndef INCLUDE_REFCOUNTEDPTR_H
-#define INCLUDE_REFCOUNTEDPTR_H
+#ifndef INCLUDE_RS_LISP_REFCOUNTEDPTR_H
+#define INCLUDE_RS_LISP_REFCOUNTEDPTR_H
 
 #ifdef DEVELOPER
 
-#include "Debug.h"
+#include "rs_lisp_debug.h"
 
 #include <cstddef>
 
@@ -100,4 +100,4 @@ private:
 
 #endif // DEVELOPER
 
-#endif // INCLUDE_REFCOUNTEDPTR_H
+#endif // INCLUDE_RS_LISP_REFCOUNTEDPTR_H

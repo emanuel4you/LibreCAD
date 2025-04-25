@@ -22,10 +22,10 @@
 
 #ifdef DEVELOPER
 
-#include "Debug.h"
-#include "Environment.h"
-#include "Types.h"
-#include "lisp.h"
+#include "rs_lisp_debug.h"
+#include "rs_lisp_env.h"
+#include "rs_lisp_types.h"
+#include "rs_lisp_main.h"
 #include "rs_color.h"
 #include "rs_dxfcolor.h"
 #include "rs_settings.h"

@@ -23,8 +23,8 @@
 
 #ifdef DEVELOPER
 
-#include "Debug.h"
-#include "lstring.h"
+#include "rs_lisp_debug.h"
+#include "rs_lisp_string.h"
 
 #include <stdarg.h>
 #include <stdio.h>

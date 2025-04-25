@@ -23,7 +23,7 @@
 #ifdef DEVELOPER
 
 #include "rs_python.h"
-#include "lisp.h"
+#include "rs_lisp_main.h"
 
 #include "rs_graphicview.h"
 #include "rs_scriptingapi.h"
@@ -72,9 +72,9 @@
 #include <QTextStream>
 #include <QRegularExpression>
 
-#include "LCL.h"
-#include "Types.h"
-#include "Environment.h"
+#include "rs_lisp_lcl.h"
+#include "rs_lisp_types.h"
+#include "rs_lisp_env.h"
 
 #include <iostream>
 #include <sstream>

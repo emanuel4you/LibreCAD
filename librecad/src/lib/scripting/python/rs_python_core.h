@@ -20,8 +20,8 @@
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  ******************************************************************************/
 
-#ifndef RS_PYTHONCORE_H
-#define RS_PYTHONCORE_H
+#ifndef RS_PYTHON_CORE_H
+#define RS_PYTHON_CORE_H
 
 #ifdef DEVELOPER
 
@@ -62,4 +62,4 @@ public:
 
 #endif // DEVELOPER
 
-#endif // RS_PYTHONCORE_H
+#endif // RS_PYTHON_CORE_H

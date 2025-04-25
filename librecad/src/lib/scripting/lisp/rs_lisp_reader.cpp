@@ -23,8 +23,8 @@
 
 #ifdef DEVELOPER
 
-#include "LCL.h"
-#include "Types.h"
+#include "rs_lisp_lcl.h"
+#include "rs_lisp_types.h"
 
 #include <regex>
 #include <fstream>

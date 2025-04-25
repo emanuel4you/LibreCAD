@@ -22,12 +22,12 @@
 
 #ifdef DEVELOPER
 
-#include "lisp.h"
-#include "LCL.h"
+#include "rs_lisp_main.h"
+#include "rs_lisp_lcl.h"
 
-#include "Environment.h"
+#include "rs_lisp_env.h"
 //#include "ReadLine.h"
-#include "Types.h"
+#include "rs_lisp_types.h"
 
 #include <iostream>
 #include <filesystem>

@@ -20,8 +20,8 @@
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  ******************************************************************************/
 
-#ifndef LISP_VERSION_H
-#define LISP_VERSION_H
+#ifndef RS_LISP_VERSION_H
+#define RS_LISP_VERSION_H
 
 #ifdef DEVELOPER
 
@@ -85,4 +85,4 @@
 
 #endif // DEVELOPER
 
-#endif // LISP_VERSION_H
+#endif // RS_LISP_VERSION_H

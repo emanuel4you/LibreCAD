@@ -20,24 +20,41 @@
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  ******************************************************************************/
 
-#ifndef RS_PYTHONLISP_H
-#define RS_PYTHONLISP_H
+#ifndef RS_LISP_MAIN_H
+#define RS_LISP_MAIN_H
 
 #ifdef DEVELOPER
 
-class RS_PythonLisp
-{
-public:
-    RS_PythonLisp() {}
-    ~RS_PythonLisp() {}
+#include "rs_lisp_version.h"
+#include "qg_lsp_commandedit.h"
+#include <rs_lisp_lcl.h>
 
-    int RunSimpleString(const char *cmd);
-    int RunSimpleFile(const char *filename);
+#include <stdio.h>
+#include <streambuf>
+#include <string>
+#include <ostream>
+#include <iostream>
+#include <sstream>
 
-    const char *EvalSimpleString(const char *cmd);
-    const char *EvalSimpleFile(const char *filename);
-};
+extern int lisp_error;
+extern class QG_Lsp_CommandEdit *Lisp_CommandEdit;
+
+const char *Lisp_GetVersion();
+
+int Lisp_Initialize(int argc=0, char* argv[]=NULL);
+
+int Lisp_GetError();
+
+void Lisp_FreeError();
+
+int LispRun_SimpleFile(const char *filename);
+
+int LispRun_SimpleString(const char *command);
+
+const std::string Lisp_EvalString(const String& input);
+
+const std::string Lisp_EvalFile(const char *filename);
 
 #endif // DEVELOPER
 
-#endif // RS_PYTHONLISP_H
+#endif // RS_LISP_MAIN_H

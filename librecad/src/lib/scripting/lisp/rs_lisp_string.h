@@ -20,49 +20,25 @@
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  ******************************************************************************/
 
-#ifndef INCLUDE_LCL_H
-#define INCLUDE_LCL_H
+#ifndef INCLUDE_RS_LISP_STRING_H
+#define INCLUDE_RS_LISP_STRING_H
 
 #ifdef DEVELOPER
 
-#include "Debug.h"
-#include "RefCountedPtr.h"
-#include "lstring.h"
-#include "Validation.h"
-#include <sstream>
-
+#include <string>
 #include <vector>
 
-class lclValue;
-typedef RefCountedPtr<lclValue>  lclValuePtr;
-typedef std::vector<lclValuePtr> lclValueVec;
-typedef lclValueVec::iterator    lclValueIter;
+typedef std::string         String;
+typedef std::vector<String> StringVec;
 
-class lclEnv;
-typedef RefCountedPtr<lclEnv>    lclEnvPtr;
+#define STRF        stringPrintf
+#define PLURAL(n)   &("s"[(n)==1])
 
-// lisp.cpp
-extern lclValuePtr APPLY(lclValuePtr op,
-                         lclValueIter argsBegin, lclValueIter argsEnd);
-extern lclValuePtr EVAL(lclValuePtr ast, lclEnvPtr env);
-
-extern String rep(const String& input, lclEnvPtr env);
-
-// Core.cpp
-extern void installCore(lclEnvPtr env);
-extern String noQuotes(const String& s);
-
-// Reader.cpp
-
-typedef struct LclAlias {
-    String alias = "", command = "";
-} LclAlias_t;
-
-extern std::vector<LclAlias_t> LclCom;
-extern bool isAlias(const String& alias);
-extern lclValuePtr readStr(const String& input);
-extern lclValuePtr loadDcl(const String& path);
+extern String stringPrintf(const char* fmt, ...);
+extern String copyAndFree(char* mallocedString);
+extern String escape(const String& s);
+extern String unescape(const String& s);
 
 #endif // DEVELOPER
 
-#endif // INCLUDE_LCL_H
+#endif // INCLUDE_RS_LISP_STRING_H

@@ -20,47 +20,40 @@
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  ******************************************************************************/
 
-#ifndef INCLUDE_ENVIRONMENT_H
-#define INCLUDE_ENVIRONMENT_H
-
 #ifdef DEVELOPER
 
-#include "LCL.h"
+#include "rs_lisp_validation.h"
 
-#include <map>
+int checkArgsIs(const char* name, int expected, int got)
+{
+    LCL_CHECK(got == expected,
+           "\"%s\" expects %d arg%s, %d supplied",
+           name, expected, PLURAL(expected), got);
+    return got;
+}
 
-class lclEnv : public RefCounted {
-public:
-    lclEnv(lclEnvPtr outer = NULL);
-    lclEnv(lclEnvPtr outer,
-           const StringVec& bindings,
-           lclValueIter argsBegin,
-           lclValueIter argsEnd);
+int checkArgsBetween(const char* name, int min, int max, int got)
+{
+    LCL_CHECK((got >= min) && (got <= max),
+           "\"%s\" expects between %d and %d arg%s, %d supplied",
+           name, min, max, PLURAL(max), got);
+    return got;
+}
 
-    ~lclEnv();
+int checkArgsAtLeast(const char* name, int min, int got)
+{
+    LCL_CHECK(got >= min,
+           "\"%s\" expects at least %d arg%s, %d supplied",
+           name, min, PLURAL(min), got);
+    return got;
+}
 
-    void setLamdaMode(bool mode) { m_isLamda = mode; }
-    bool isLamda() const { return m_isLamda; }
-
-    lclValuePtr get(const String& symbol);
-    lclEnvPtr   find(const String& symbol);
-    lclValuePtr set(const String& symbol, lclValuePtr value);
-    lclEnvPtr   getRoot();
-
-private:
-    typedef std::map<String, lclValuePtr> Map;
-    Map m_map;
-    lclEnvPtr m_outer;
-    StringVec m_bindings;
-    bool m_isLamda = false;
-};
-
-extern lclEnvPtr replEnv;
-
-extern lclEnvPtr shadowEnv;
-
-extern lclEnvPtr dclEnv;
+int checkArgsEven(const char* name, int got)
+{
+    LCL_CHECK(got % 2 == 0,
+           "\"%s\" expects an even number of args, %d supplied",
+           name, got);
+    return got;
+}
 
 #endif // DEVELOPER
-
-#endif // INCLUDE_ENVIRONMENT_H

@@ -23,8 +23,8 @@
 
 #ifdef DEVELOPER
 
-#include "Environment.h"
-#include "Types.h"
+#include "rs_lisp_env.h"
+#include "rs_lisp_types.h"
 
 #include <iostream>
 #include <algorithm>

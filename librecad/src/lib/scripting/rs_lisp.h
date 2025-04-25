@@ -27,7 +27,7 @@
 
 #include <QString>
 #include <QThread>
-#include "lisp.h"
+#include "rs_lisp_main.h"
 
 #define RS_LISP RS_Lisp::instance()
 

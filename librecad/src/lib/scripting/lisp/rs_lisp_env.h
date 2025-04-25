@@ -20,41 +20,47 @@
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  ******************************************************************************/
 
-#ifndef LISP_H
-#define LISP_H
+#ifndef INCLUDE_RS_LISP_ENV_H
+#define INCLUDE_RS_LISP_ENV_H
 
 #ifdef DEVELOPER
 
-#include "lisp_version.h"
-#include "qg_lsp_commandedit.h"
-#include <LCL.h>
+#include "rs_lisp_lcl.h"
 
-#include <stdio.h>
-#include <streambuf>
-#include <string>
-#include <ostream>
-#include <iostream>
-#include <sstream>
+#include <map>
 
-extern int lisp_error;
-extern class QG_Lsp_CommandEdit *Lisp_CommandEdit;
+class lclEnv : public RefCounted {
+public:
+    lclEnv(lclEnvPtr outer = NULL);
+    lclEnv(lclEnvPtr outer,
+           const StringVec& bindings,
+           lclValueIter argsBegin,
+           lclValueIter argsEnd);
 
-const char *Lisp_GetVersion();
+    ~lclEnv();
 
-int Lisp_Initialize(int argc=0, char* argv[]=NULL);
+    void setLamdaMode(bool mode) { m_isLamda = mode; }
+    bool isLamda() const { return m_isLamda; }
 
-int Lisp_GetError();
+    lclValuePtr get(const String& symbol);
+    lclEnvPtr   find(const String& symbol);
+    lclValuePtr set(const String& symbol, lclValuePtr value);
+    lclEnvPtr   getRoot();
 
-void Lisp_FreeError();
+private:
+    typedef std::map<String, lclValuePtr> Map;
+    Map m_map;
+    lclEnvPtr m_outer;
+    StringVec m_bindings;
+    bool m_isLamda = false;
+};
 
-int LispRun_SimpleFile(const char *filename);
+extern lclEnvPtr replEnv;
 
-int LispRun_SimpleString(const char *command);
+extern lclEnvPtr shadowEnv;
 
-const std::string Lisp_EvalString(const String& input);
-
-const std::string Lisp_EvalFile(const char *filename);
+extern lclEnvPtr dclEnv;
 
 #endif // DEVELOPER
 
-#endif // LISP_H
+#endif // INCLUDE_RS_LISP_ENV_H

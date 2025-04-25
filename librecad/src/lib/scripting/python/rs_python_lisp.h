@@ -20,32 +20,24 @@
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  ******************************************************************************/
 
-#include "rs_pythonlisp.h"
-#include "lisp.h"
-#include <string>
+#ifndef RS_PYTHON_LISP_H
+#define RS_PYTHON_LISP_H
 
 #ifdef DEVELOPER
 
-int RS_PythonLisp::RunSimpleString(const char *cmd)
+class RS_PythonLisp
 {
-    return LispRun_SimpleString(cmd);
-}
+public:
+    RS_PythonLisp() {}
+    ~RS_PythonLisp() {}
 
-int RS_PythonLisp::RunSimpleFile(const char *filename)
-{
-    return LispRun_SimpleFile(filename);
-}
+    int RunSimpleString(const char *cmd);
+    int RunSimpleFile(const char *filename);
 
-const char *RS_PythonLisp::EvalSimpleString(const char *cmd)
-{
-    static std::string result = Lisp_EvalString(cmd);
-    return result.c_str();
-}
-
-const char *RS_PythonLisp::EvalSimpleFile(const char *filename)
-{
-    static std::string result = Lisp_EvalFile(filename);
-    return result.c_str();
-}
+    const char *EvalSimpleString(const char *cmd);
+    const char *EvalSimpleFile(const char *filename);
+};
 
 #endif // DEVELOPER
+
+#endif // RS_PYTHON_LISP_H

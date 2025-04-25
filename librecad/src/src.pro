@@ -240,7 +240,7 @@ INCLUDEPATH += \
     ui/dialogs/file/export \
     ui/dialogs/file/export/layers \
     ui/dialogs/file/export/image \
-    ui/dialogs/file/export/makercam \        
+    ui/dialogs/file/export/makercam \
     ui/dialogs/main \
     ui/dialogs/settings \
     ui/dialogs/settings/options_device \
@@ -530,20 +530,20 @@ HEADERS += \
     lib/engine/utils/lc_rtree.h \
     lib/engine/undo/lc_undosection.h \
     lib/printing/lc_printing.h \
-    lib/scripting/lisp/Debug.h \
-    lib/scripting/lisp/Environment.h \
-    lib/scripting/lisp/LCL.h \
-    lib/scripting/lisp/lisp.h \
-    lib/scripting/lisp/lisp_version.h \
-    lib/scripting/lisp/RefCountedPtr.h \
-    lib/scripting/lisp/StaticList.h \
-    lib/scripting/lisp/lstring.h \
-    lib/scripting/lisp/Types.h \
-    lib/scripting/lisp/Validation.h \
-    lib/scripting/python/rs_pythoncore.h \
-    lib/scripting/python/rs_pythondcl.h \
-    lib/scripting/python/rs_pythongui.h \
-    lib/scripting/python/rs_pythonlisp.h \
+    lib/scripting/lisp/rs_lisp_debug.h \
+    lib/scripting/lisp/rs_lisp_env.h \
+    lib/scripting/lisp/rs_lisp_lcl.h \
+    lib/scripting/lisp/rs_lisp_main.h \
+    lib/scripting/lisp/rs_lisp_version.h \
+    lib/scripting/lisp/rs_lisp_RefCountedPtr.h \
+    lib/scripting/lisp/rs_lisp_staticlist.h \
+    lib/scripting/lisp/rs_lisp_string.h \
+    lib/scripting/lisp/rs_lisp_types.h \
+    lib/scripting/lisp/rs_lisp_validation.h \
+    lib/scripting/python/rs_python_core.h \
+    lib/scripting/python/rs_python_dcl.h \
+    lib/scripting/python/rs_python_gui.h \
+    lib/scripting/python/rs_python_lisp.h \
     lib/scripting/rs_dialogs.h \
     lib/scripting/rs_lisp.h \
     lib/scripting/rs_python.h \
@@ -785,18 +785,18 @@ SOURCES += \
     lib/engine/undo/lc_undosection.cpp \
     lib/engine/rs.cpp \
     lib/printing/lc_printing.cpp \
-    lib/scripting/lisp/Core.cpp \
-    lib/scripting/lisp/Environment.cpp \
-    lib/scripting/lisp/Environment.h \
-    lib/scripting/lisp/lisp.cpp \
-    lib/scripting/lisp/Reader.cpp \
-    lib/scripting/lisp/lstring.cpp \
-    lib/scripting/lisp/Types.cpp \
-    lib/scripting/lisp/Validation.cpp \
-    lib/scripting/python/rs_pythoncore.cpp \
-    lib/scripting/python/rs_pythondcl.cpp \
-    lib/scripting/python/rs_pythongui.cpp \
-    lib/scripting/python/rs_pythonlisp.cpp \
+    lib/scripting/lisp/rs_lisp_core.cpp \
+    lib/scripting/lisp/rs_lisp_env.cpp \
+    lib/scripting/lisp/rs_lisp_env.h \
+    lib/scripting/lisp/rs_lisp_main.cpp \
+    lib/scripting/lisp/rs_lisp_reader.cpp \
+    lib/scripting/lisp/rs_lisp_string.cpp \
+    lib/scripting/lisp/rs_lisp_types.cpp \
+    lib/scripting/lisp/rs_lisp_validation.cpp \
+    lib/scripting/python/rs_python_core.cpp \
+    lib/scripting/python/rs_python_dcl.cpp \
+    lib/scripting/python/rs_python_gui.cpp \
+    lib/scripting/python/rs_python_lisp.cpp \
     lib/scripting/rs_dialogs.cpp \
     lib/scripting/rs_lisp.cpp \
     lib/scripting/rs_python.cpp \

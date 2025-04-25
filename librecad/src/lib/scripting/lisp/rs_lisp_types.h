@@ -20,14 +20,14 @@
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  ******************************************************************************/
 
-#ifndef INCLUDE_TYPES_H
-#define INCLUDE_TYPES_H
+#ifndef INCLUDE_RS_LISP_TYPES_H
+#define INCLUDE_RS_LISP_TYPES_H
 
 #ifdef DEVELOPER
 
 #include "rs_scriptingapi.h"
 
-#include "LCL.h"
+#include "rs_lisp_lcl.h"
 
 #include <exception>
 #include <stdio.h>
@@ -1589,4 +1589,4 @@ namespace lcl {
 
 #endif // DEVELOPER
 
-#endif // INCLUDE_TYPES_H
+#endif // INCLUDE_RS_LISP_TYPES_H

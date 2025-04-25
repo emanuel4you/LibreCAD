@@ -20,7 +20,7 @@
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  ******************************************************************************/
 
-#include "rs_pythongui.h"
+#include "rs_python_gui.h"
 #include "rs_python.h"
 #include "rs_scriptingapi.h"
 

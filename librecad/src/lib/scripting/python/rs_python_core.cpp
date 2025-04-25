@@ -21,7 +21,7 @@
  ******************************************************************************/
 
 #include "rs_python.h"
-#include "rs_pythoncore.h"
+#include "rs_python_core.h"
 #include "rs_scriptingapi.h"
 #include "rs_insert.h"
 #include "rs_filterdxfrw.h"
