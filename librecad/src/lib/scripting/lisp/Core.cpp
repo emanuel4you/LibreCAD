@@ -1374,7 +1374,6 @@ BUILTIN("entmod")
                     return lcl::nilValue();
                 }
 
-                entity->setPen(apiData.pen);
                 if (RS_SCRIPTINGAPI->entmod(entity, apiData))
                 {
                     lclEname *en = new lclEname(apiData.id.front());
@@ -6245,7 +6244,7 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
                 }
 
                 const lclString *t = VALUE_CAST(lclString, list->item(2));
-                apiData.text.push_back( { t->value().c_str() });
+                apiData.text = t->value().c_str();
             }
                 break;
             case 2:
@@ -6278,7 +6277,7 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
                 }
 
                 const lclString *s = VALUE_CAST(lclString, list->item(2));
-                apiData.style.push_back( { s->value().c_str() });
+                apiData.style = s->value().c_str();
             }
                 break;
             case 8:
@@ -6299,29 +6298,27 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
                     return false;
                 }
 
-                double xVal;
-                double yVal;
-                double zVal = 0.0;
+                RS_Vector pnt;
 
                 if (list->item(1)->type() == LCLTYPE::INT)
                 {
                     const lclInteger *x = VALUE_CAST(lclInteger, list->item(1));
-                    xVal = double(x->value());
+                    pnt.x = double(x->value());
                 }
                 else
                 {
                     const lclDouble *x = VALUE_CAST(lclDouble, list->item(1));
-                    xVal = x->value();
+                    pnt.x = x->value();
                 }
                 if (list->item(2)->type() == LCLTYPE::INT)
                 {
                     const lclInteger *y = VALUE_CAST(lclInteger, list->item(2));
-                    yVal = double(y->value());
+                    pnt.y = double(y->value());
                 }
                 else
                 {
                     const lclDouble *y = VALUE_CAST(lclDouble, list->item(2));
-                    yVal = y->value();
+                    pnt.y = y->value();
                 }
 
                 if (list->count() > 3)
@@ -6329,16 +6326,16 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
                     if (list->item(2)->type() == LCLTYPE::INT)
                     {
                         const lclInteger *z = VALUE_CAST(lclInteger, list->item(3));
-                        zVal = double(z->value());
+                        pnt.z = double(z->value());
                     }
                     else
                     {
                         const lclDouble *z = VALUE_CAST(lclDouble, list->item(3));
-                        zVal = z->value();
+                        pnt.z = z->value();
                     }
                 }
 
-                apiData.gc_10.push_back({ xVal, yVal, zVal });
+                apiData.gc_10.push_back({ pnt });
             }
                 break;
             case 11:
@@ -6348,29 +6345,27 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
                     return false;
                 }
 
-                double xVal;
-                double yVal;
-                double zVal = 0.0;
+                RS_Vector pnt;
 
                 if (list->item(1)->type() == LCLTYPE::INT)
                 {
                     const lclInteger *x = VALUE_CAST(lclInteger, list->item(1));
-                    xVal = double(x->value());
+                    pnt.x = double(x->value());
                 }
                 else
                 {
                     const lclDouble *x = VALUE_CAST(lclDouble, list->item(1));
-                    xVal = x->value();
+                    pnt.x = x->value();
                 }
                 if (list->item(2)->type() == LCLTYPE::INT)
                 {
                     const lclInteger *y = VALUE_CAST(lclInteger, list->item(2));
-                    yVal = double(y->value());
+                    pnt.y = double(y->value());
                 }
                 else
                 {
                     const lclDouble *y = VALUE_CAST(lclDouble, list->item(2));
-                    yVal = y->value();
+                    pnt.y = y->value();
                 }
 
                 if (list->count() > 3)
@@ -6378,16 +6373,16 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
                     if (list->item(2)->type() == LCLTYPE::INT)
                     {
                         const lclInteger *z = VALUE_CAST(lclInteger, list->item(3));
-                        zVal = double(z->value());
+                        pnt.z = double(z->value());
                     }
                     else
                     {
                         const lclDouble *z = VALUE_CAST(lclDouble, list->item(3));
-                        zVal = z->value();
+                        pnt.z = z->value();
                     }
                 }
 
-                apiData.gc_11.push_back({ xVal, yVal, zVal });
+                apiData.gc_11.push_back({ pnt });
             }
                 break;
             case 12:
@@ -6397,29 +6392,27 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
                     return false;
                 }
 
-                double xVal;
-                double yVal;
-                double zVal = 0.0;
+                RS_Vector pnt;
 
                 if (list->item(1)->type() == LCLTYPE::INT)
                 {
                     const lclInteger *x = VALUE_CAST(lclInteger, list->item(1));
-                    xVal = double(x->value());
+                    pnt.x = double(x->value());
                 }
                 else
                 {
                     const lclDouble *x = VALUE_CAST(lclDouble, list->item(1));
-                    xVal = x->value();
+                    pnt.x = x->value();
                 }
                 if (list->item(2)->type() == LCLTYPE::INT)
                 {
                     const lclInteger *y = VALUE_CAST(lclInteger, list->item(2));
-                    yVal = double(y->value());
+                    pnt.y = double(y->value());
                 }
                 else
                 {
                     const lclDouble *y = VALUE_CAST(lclDouble, list->item(2));
-                    yVal = y->value();
+                    pnt.y = y->value();
                 }
 
                 if (list->count() > 3)
@@ -6427,16 +6420,16 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
                     if (list->item(2)->type() == LCLTYPE::INT)
                     {
                         const lclInteger *z = VALUE_CAST(lclInteger, list->item(3));
-                        zVal = double(z->value());
+                        pnt.z = double(z->value());
                     }
                     else
                     {
                         const lclDouble *z = VALUE_CAST(lclDouble, list->item(3));
-                        zVal = z->value();
+                        pnt.z = z->value();
                     }
                 }
 
-                apiData.gc_12.push_back({ xVal, yVal, zVal });
+                apiData.gc_12.push_back({ pnt });
             }
                 break;
             case 13:
@@ -6446,29 +6439,27 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
                     return false;
                 }
 
-                double xVal;
-                double yVal;
-                double zVal = 0.0;
+                RS_Vector pnt;
 
                 if (list->item(1)->type() == LCLTYPE::INT)
                 {
                     const lclInteger *x = VALUE_CAST(lclInteger, list->item(1));
-                    xVal = double(x->value());
+                    pnt.x = double(x->value());
                 }
                 else
                 {
                     const lclDouble *x = VALUE_CAST(lclDouble, list->item(1));
-                    xVal = x->value();
+                    pnt.x = x->value();
                 }
                 if (list->item(2)->type() == LCLTYPE::INT)
                 {
                     const lclInteger *y = VALUE_CAST(lclInteger, list->item(2));
-                    yVal = double(y->value());
+                    pnt.y = double(y->value());
                 }
                 else
                 {
                     const lclDouble *y = VALUE_CAST(lclDouble, list->item(2));
-                    yVal = y->value();
+                    pnt.y = y->value();
                 }
 
                 if (list->count() > 3)
@@ -6476,16 +6467,16 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
                     if (list->item(2)->type() == LCLTYPE::INT)
                     {
                         const lclInteger *z = VALUE_CAST(lclInteger, list->item(3));
-                        zVal = double(z->value());
+                        pnt.z = double(z->value());
                     }
                     else
                     {
                         const lclDouble *z = VALUE_CAST(lclDouble, list->item(3));
-                        zVal = z->value();
+                        pnt.z = z->value();
                     }
                 }
 
-                apiData.gc_13.push_back({ xVal, yVal, zVal });
+                apiData.gc_13.push_back({ pnt });
             }
                 break;
             case 14:
@@ -6495,29 +6486,27 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
                     return false;
                 }
 
-                double xVal;
-                double yVal;
-                double zVal = 0.0;
+                RS_Vector pnt;
 
                 if (list->item(1)->type() == LCLTYPE::INT)
                 {
                     const lclInteger *x = VALUE_CAST(lclInteger, list->item(1));
-                    xVal = double(x->value());
+                    pnt.x = double(x->value());
                 }
                 else
                 {
                     const lclDouble *x = VALUE_CAST(lclDouble, list->item(1));
-                    xVal = x->value();
+                    pnt.x = x->value();
                 }
                 if (list->item(2)->type() == LCLTYPE::INT)
                 {
                     const lclInteger *y = VALUE_CAST(lclInteger, list->item(2));
-                    yVal = double(y->value());
+                    pnt.y = double(y->value());
                 }
                 else
                 {
                     const lclDouble *y = VALUE_CAST(lclDouble, list->item(2));
-                    yVal = y->value();
+                    pnt.y = y->value();
                 }
 
                 if (list->count() > 3)
@@ -6525,16 +6514,16 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
                     if (list->item(2)->type() == LCLTYPE::INT)
                     {
                         const lclInteger *z = VALUE_CAST(lclInteger, list->item(3));
-                        zVal = double(z->value());
+                        pnt.z = double(z->value());
                     }
                     else
                     {
                         const lclDouble *z = VALUE_CAST(lclDouble, list->item(3));
-                        zVal = z->value();
+                        pnt.z = z->value();
                     }
                 }
 
-                apiData.gc_14.push_back({ xVal, yVal, zVal });
+                apiData.gc_14.push_back({ pnt });
             }
                 break;
             case 15:
@@ -6544,29 +6533,27 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
                     return false;
                 }
 
-                double xVal;
-                double yVal;
-                double zVal = 0.0;
+                RS_Vector pnt;
 
                 if (list->item(1)->type() == LCLTYPE::INT)
                 {
                     const lclInteger *x = VALUE_CAST(lclInteger, list->item(1));
-                    xVal = double(x->value());
+                    pnt.x = double(x->value());
                 }
                 else
                 {
                     const lclDouble *x = VALUE_CAST(lclDouble, list->item(1));
-                    xVal = x->value();
+                    pnt.x = x->value();
                 }
                 if (list->item(2)->type() == LCLTYPE::INT)
                 {
                     const lclInteger *y = VALUE_CAST(lclInteger, list->item(2));
-                    yVal = double(y->value());
+                    pnt.y = double(y->value());
                 }
                 else
                 {
                     const lclDouble *y = VALUE_CAST(lclDouble, list->item(2));
-                    yVal = y->value();
+                    pnt.y = y->value();
                 }
 
                 if (list->count() > 3)
@@ -6574,16 +6561,16 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
                     if (list->item(2)->type() == LCLTYPE::INT)
                     {
                         const lclInteger *z = VALUE_CAST(lclInteger, list->item(3));
-                        zVal = double(z->value());
+                        pnt.z = double(z->value());
                     }
                     else
                     {
                         const lclDouble *z = VALUE_CAST(lclDouble, list->item(3));
-                        zVal = z->value();
+                        pnt.z = z->value();
                     }
                 }
 
-                apiData.gc_15.push_back({ xVal, yVal, zVal });
+                apiData.gc_15.push_back({ pnt });
             }
                 break;
             case 16:
@@ -6593,29 +6580,27 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
                     return false;
                 }
 
-                double xVal;
-                double yVal;
-                double zVal = 0.0;
+                RS_Vector pnt;
 
                 if (list->item(1)->type() == LCLTYPE::INT)
                 {
                     const lclInteger *x = VALUE_CAST(lclInteger, list->item(1));
-                    xVal = double(x->value());
+                    pnt.x = double(x->value());
                 }
                 else
                 {
                     const lclDouble *x = VALUE_CAST(lclDouble, list->item(1));
-                    xVal = x->value();
+                    pnt.x = x->value();
                 }
                 if (list->item(2)->type() == LCLTYPE::INT)
                 {
                     const lclInteger *y = VALUE_CAST(lclInteger, list->item(2));
-                    yVal = double(y->value());
+                    pnt.y = double(y->value());
                 }
                 else
                 {
                     const lclDouble *y = VALUE_CAST(lclDouble, list->item(2));
-                    yVal = y->value();
+                    pnt.y = y->value();
                 }
 
                 if (list->count() > 3)
@@ -6623,16 +6608,16 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
                     if (list->item(2)->type() == LCLTYPE::INT)
                     {
                         const lclInteger *z = VALUE_CAST(lclInteger, list->item(3));
-                        zVal = double(z->value());
+                        pnt.z = double(z->value());
                     }
                     else
                     {
                         const lclDouble *z = VALUE_CAST(lclDouble, list->item(3));
-                        zVal = z->value();
+                        pnt.z = z->value();
                     }
                 }
 
-                apiData.gc_16.push_back({ xVal, yVal, zVal });
+                apiData.gc_16.push_back({ pnt });
             }
                 break;
             case 40:
@@ -6689,6 +6674,25 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
                 {
                     const lclDouble *r3 = VALUE_CAST(lclDouble, list->item(2));
                     apiData.gc_42.push_back({ r3->value() });
+                }
+            }
+                break;
+            case 43:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                if (list->item(2)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *r3 = VALUE_CAST(lclInteger, list->item(2));
+                    apiData.gc_43.push_back({ double(r3->value()) });
+                }
+                else
+                {
+                    const lclDouble *r3 = VALUE_CAST(lclDouble, list->item(2));
+                    apiData.gc_43.push_back({ r3->value() });
                 }
             }
                 break;
@@ -6788,6 +6792,44 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
                 }
             }
                 break;
+            case 52:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                if (list->item(2)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *a2 = VALUE_CAST(lclInteger, list->item(2));
+                    apiData.gc_52.push_back({ double(a2->value()) });
+                }
+                else
+                {
+                    const lclDouble *a2 = VALUE_CAST(lclDouble, list->item(2));
+                    apiData.gc_52.push_back({ a2->value() });
+                }
+            }
+                break;
+            case 53:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                if (list->item(2)->type() == LCLTYPE::INT)
+                {
+                    const lclInteger *a2 = VALUE_CAST(lclInteger, list->item(2));
+                    apiData.gc_53.push_back({ double(a2->value()) });
+                }
+                else
+                {
+                    const lclDouble *a2 = VALUE_CAST(lclDouble, list->item(2));
+                    apiData.gc_53.push_back({ a2->value() });
+                }
+            }
+                break;
             case 62:
             {
                 if (!list->isDotted())
@@ -6851,7 +6893,40 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
                 }
 
                 const lclString *n = VALUE_CAST(lclString, list->item(2));
-                apiData.gc_100.push_back( { n->value().c_str() });
+                apiData.eSubtype = n->value().c_str();
+            }
+                break;
+            case 281:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                const lclInteger *f3 = VALUE_CAST(lclInteger, list->item(2));
+                apiData.gc_281.push_back({f3->value() });
+            }
+                break;
+            case 282:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                const lclInteger *f3 = VALUE_CAST(lclInteger, list->item(2));
+                apiData.gc_282.push_back({f3->value() });
+            }
+                break;
+            case 283:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                const lclInteger *f3 = VALUE_CAST(lclInteger, list->item(2));
+                apiData.gc_283.push_back({f3->value() });
             }
                 break;
             default:

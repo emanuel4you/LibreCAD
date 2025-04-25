@@ -41,7 +41,7 @@
 #include "rs_image.h"
 #include "rs_layer.h"
 
-bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData);
+bool getApiData(PyObject *pList, RS_ScriptingApiData &apiData);
 
 RS_Document* RS_PythonCore::getDocument() const
 {
@@ -171,7 +171,7 @@ PyObject *RS_PythonCore::entmake(PyObject *args) const
 
     RS_ScriptingApiData apiData;
 
-    if (!fitTolerance(pList, apiData) || apiData.etype == "")
+    if (!getApiData(pList, apiData) || apiData.etype == "")
     {
         Py_RETURN_NONE;
     }
@@ -244,11 +244,10 @@ PyObject *RS_PythonCore::entmod(PyObject *args) const
             {
                 RS_ScriptingApiData apiData;
                 apiData.pen = entity->getPen(false);
-                if (!fitTolerance(pList, apiData) || apiData.id.empty())
+                if (!getApiData(pList, apiData) || apiData.id.empty())
                 {
                     Py_RETURN_NONE;
                 }
-                entity->setPen(apiData.pen);
 
                 if (RS_SCRIPTINGAPI->entmod(entity, apiData))
                 {
@@ -1070,7 +1069,7 @@ PyObject *RS_PythonCore::getvar(const char *id) const
     Py_RETURN_NONE;
 }
 
-bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
+bool getApiData(PyObject *pList, RS_ScriptingApiData &apiData)
 {
     int gc;
     PyObject *pTuple;
@@ -1121,7 +1120,7 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                 PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
                 return false;
             }
-            apiData.text.push_back({ PyUnicode_AsUTF8(pValue) });
+            apiData.text = PyUnicode_AsUTF8(pValue);
         }
         break;
         case 2:
@@ -1152,7 +1151,7 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                 PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
                 return false;
             }
-            apiData.style.push_back({ PyUnicode_AsUTF8(pValue) });
+            apiData.style = PyUnicode_AsUTF8(pValue);
         }
         break;
         case 8:
@@ -1167,9 +1166,7 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
         break;
         case 10:
         {
-            double xVal;
-            double yVal;
-            double zVal = 0.0;
+            RS_Vector pnt;
 
             pValue = PyTuple_GetItem(pTuple, 1);
             if(!PyFloat_Check(pValue)) {
@@ -1177,7 +1174,7 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                 return false;
             }
 
-            xVal = PyFloat_AsDouble(pValue);
+            pnt.x = PyFloat_AsDouble(pValue);
 
             pValue = PyTuple_GetItem(pTuple, 2);
             if(!PyFloat_Check(pValue)) {
@@ -1185,7 +1182,7 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                 return false;
             }
 
-            yVal = PyFloat_AsDouble(pValue);
+            pnt.y = PyFloat_AsDouble(pValue);
 
             if (PyTuple_Size(pTuple) > 3)
             {
@@ -1194,16 +1191,14 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                     PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
                     return false;
                 }
-                zVal = PyFloat_AsDouble(pValue);
+                pnt.z = PyFloat_AsDouble(pValue);
             }
-            apiData.gc_10.push_back({ xVal, yVal, zVal });
+            apiData.gc_10.push_back({ pnt });
         }
         break;
         case 11:
         {
-            double xVal;
-            double yVal;
-            double zVal = 0.0;
+            RS_Vector pnt;
 
             pValue = PyTuple_GetItem(pTuple, 1);
             if(!PyFloat_Check(pValue)) {
@@ -1211,7 +1206,7 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                 return false;
             }
 
-            xVal = PyFloat_AsDouble(pValue);
+            pnt.x = PyFloat_AsDouble(pValue);
 
             pValue = PyTuple_GetItem(pTuple, 2);
             if(!PyFloat_Check(pValue)) {
@@ -1219,7 +1214,7 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                 return false;
             }
 
-            yVal = PyFloat_AsDouble(pValue);
+            pnt.y = PyFloat_AsDouble(pValue);
 
             if (PyTuple_Size(pTuple) > 3)
             {
@@ -1228,16 +1223,14 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                     PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
                     return false;
                 }
-                zVal = PyFloat_AsDouble(pValue);
+                pnt.z = PyFloat_AsDouble(pValue);
             }
-            apiData.gc_11.push_back({ xVal, yVal, zVal });
+            apiData.gc_11.push_back({ pnt });
         }
         break;
         case 12:
         {
-            double xVal;
-            double yVal;
-            double zVal = 0.0;
+            RS_Vector pnt;
 
             pValue = PyTuple_GetItem(pTuple, 1);
             if(!PyFloat_Check(pValue)) {
@@ -1245,7 +1238,7 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                 return false;
             }
 
-            xVal = PyFloat_AsDouble(pValue);
+            pnt.x = PyFloat_AsDouble(pValue);
 
             pValue = PyTuple_GetItem(pTuple, 2);
             if(!PyFloat_Check(pValue)) {
@@ -1253,7 +1246,7 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                 return false;
             }
 
-            yVal = PyFloat_AsDouble(pValue);
+            pnt.y = PyFloat_AsDouble(pValue);
 
             if (PyTuple_Size(pTuple) > 3)
             {
@@ -1262,16 +1255,14 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                     PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
                     return false;
                 }
-                zVal = PyFloat_AsDouble(pValue);
+                pnt.z = PyFloat_AsDouble(pValue);
             }
-            apiData.gc_12.push_back({ xVal, yVal, zVal });
+            apiData.gc_12.push_back({ pnt });
         }
         break;
         case 13:
         {
-            double xVal;
-            double yVal;
-            double zVal = 0.0;
+            RS_Vector pnt;
 
             pValue = PyTuple_GetItem(pTuple, 1);
             if(!PyFloat_Check(pValue)) {
@@ -1279,7 +1270,7 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                 return false;
             }
 
-            xVal = PyFloat_AsDouble(pValue);
+            pnt.x = PyFloat_AsDouble(pValue);
 
             pValue = PyTuple_GetItem(pTuple, 2);
             if(!PyFloat_Check(pValue)) {
@@ -1287,7 +1278,7 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                 return false;
             }
 
-            yVal = PyFloat_AsDouble(pValue);
+            pnt.y = PyFloat_AsDouble(pValue);
 
             if (PyTuple_Size(pTuple) > 3)
             {
@@ -1296,16 +1287,14 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                     PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
                     return false;
                 }
-                zVal = PyFloat_AsDouble(pValue);
+                pnt.z = PyFloat_AsDouble(pValue);
             }
-            apiData.gc_13.push_back({ xVal, yVal, zVal });
+            apiData.gc_13.push_back({ pnt });
         }
         break;
         case 14:
         {
-            double xVal;
-            double yVal;
-            double zVal = 0.0;
+            RS_Vector pnt;
 
             pValue = PyTuple_GetItem(pTuple, 1);
             if(!PyFloat_Check(pValue)) {
@@ -1313,7 +1302,7 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                 return false;
             }
 
-            xVal = PyFloat_AsDouble(pValue);
+            pnt.x = PyFloat_AsDouble(pValue);
 
             pValue = PyTuple_GetItem(pTuple, 2);
             if(!PyFloat_Check(pValue)) {
@@ -1321,7 +1310,7 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                 return false;
             }
 
-            yVal = PyFloat_AsDouble(pValue);
+            pnt.y = PyFloat_AsDouble(pValue);
 
             if (PyTuple_Size(pTuple) > 3)
             {
@@ -1330,16 +1319,14 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                     PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
                     return false;
                 }
-                zVal = PyFloat_AsDouble(pValue);
+                pnt.z = PyFloat_AsDouble(pValue);
             }
-            apiData.gc_14.push_back({ xVal, yVal, zVal });
+            apiData.gc_14.push_back({ pnt });
         }
         break;
         case 15:
         {
-            double xVal;
-            double yVal;
-            double zVal = 0.0;
+            RS_Vector pnt;
 
             pValue = PyTuple_GetItem(pTuple, 1);
             if(!PyFloat_Check(pValue)) {
@@ -1347,7 +1334,7 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                 return false;
             }
 
-            xVal = PyFloat_AsDouble(pValue);
+            pnt.x = PyFloat_AsDouble(pValue);
 
             pValue = PyTuple_GetItem(pTuple, 2);
             if(!PyFloat_Check(pValue)) {
@@ -1355,7 +1342,7 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                 return false;
             }
 
-            yVal = PyFloat_AsDouble(pValue);
+            pnt.y = PyFloat_AsDouble(pValue);
 
             if (PyTuple_Size(pTuple) > 3)
             {
@@ -1364,16 +1351,14 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                     PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
                     return false;
                 }
-                zVal = PyFloat_AsDouble(pValue);
+                pnt.z = PyFloat_AsDouble(pValue);
             }
-            apiData.gc_15.push_back({ xVal, yVal, zVal });
+            apiData.gc_15.push_back({ pnt });
         }
         break;
         case 16:
         {
-            double xVal;
-            double yVal;
-            double zVal = 0.0;
+            RS_Vector pnt;
 
             pValue = PyTuple_GetItem(pTuple, 1);
             if(!PyFloat_Check(pValue)) {
@@ -1381,7 +1366,7 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                 return false;
             }
 
-            xVal = PyFloat_AsDouble(pValue);
+            pnt.x = PyFloat_AsDouble(pValue);
 
             pValue = PyTuple_GetItem(pTuple, 2);
             if(!PyFloat_Check(pValue)) {
@@ -1389,7 +1374,7 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                 return false;
             }
 
-            yVal = PyFloat_AsDouble(pValue);
+            pnt.y = PyFloat_AsDouble(pValue);
 
             if (PyTuple_Size(pTuple) > 3)
             {
@@ -1398,9 +1383,9 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                     PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
                     return false;
                 }
-                zVal = PyFloat_AsDouble(pValue);
+                pnt.z = PyFloat_AsDouble(pValue);
             }
-            apiData.gc_16.push_back({ xVal, yVal, zVal });
+            apiData.gc_16.push_back({ pnt });
         }
         break;
         case 40:
@@ -1431,6 +1416,16 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                 return false;
             }
             apiData.gc_42.push_back({ PyFloat_AsDouble(pValue) });
+        }
+        break;
+        case 43:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+            apiData.gc_43.push_back({ PyFloat_AsDouble(pValue) });
         }
         break;
         case 44:
@@ -1496,6 +1491,26 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
             apiData.gc_51.push_back({ PyFloat_AsDouble(pValue) });
         }
         break;
+        case 52:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+            apiData.gc_52.push_back({ PyFloat_AsDouble(pValue) });
+        }
+        break;
+        case 53:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyFloat_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "tuple item must be a float.");
+                return false;
+            }
+            apiData.gc_53.push_back({ PyFloat_AsDouble(pValue) });
+        }
+        break;
         case 62:
         {
             pValue = PyTuple_GetItem(pTuple, 1);
@@ -1553,7 +1568,37 @@ bool fitTolerance(PyObject *pList, RS_ScriptingApiData &apiData)
                 PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
                 return false;
             }
-            apiData.gc_100.push_back({ PyUnicode_AsUTF8(pValue) });
+            apiData.eSubtype = PyUnicode_AsUTF8(pValue);
+        }
+        break;
+        case 281:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyLong_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
+                return false;
+            }
+            apiData.gc_281.push_back({ static_cast<int>(PyLong_AsLong(pValue)) });
+        }
+        break;
+        case 282:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyLong_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
+                return false;
+            }
+            apiData.gc_282.push_back({ static_cast<int>(PyLong_AsLong(pValue)) });
+        }
+        break;
+        case 283:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyLong_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
+                return false;
+            }
+            apiData.gc_283.push_back({ static_cast<int>(PyLong_AsLong(pValue)) });
         }
         break;
         default:

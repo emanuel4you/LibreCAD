@@ -35,6 +35,7 @@
 #include "rs_dimdiametric.h"
 #include "rs_dimlinear.h"
 #include "rs_dimradial.h"
+#include "rs_insert.h"
 #include "rs_vector.h"
 #include "rs_solid.h"
 #include "rs_spline.h"
@@ -57,16 +58,19 @@ public:
     ~RS_ScriptingApiData() {}
 
     QString etype;
+    QString eSubtype;
     QString block;
     QString layer;
+    QString text;
+    QString style;
 
-    std::vector<std::vector<double>> gc_10;
-    std::vector<std::vector<double>> gc_11;
-    std::vector<std::vector<double>> gc_12;
-    std::vector<std::vector<double>> gc_13;
-    std::vector<std::vector<double>> gc_14;
-    std::vector<std::vector<double>> gc_15;
-    std::vector<std::vector<double>> gc_16;
+    std::vector<RS_Vector> gc_10;
+    std::vector<RS_Vector> gc_11;
+    std::vector<RS_Vector> gc_12;
+    std::vector<RS_Vector> gc_13;
+    std::vector<RS_Vector> gc_14;
+    std::vector<RS_Vector> gc_15;
+    std::vector<RS_Vector> gc_16;
 
     std::vector<unsigned long> id;
     std::vector<int> gc_70;
@@ -74,16 +78,20 @@ public:
     std::vector<int> gc_72;
     std::vector<int> gc_73;
 
+    std::vector<int> gc_281;
+    std::vector<int> gc_282;
+    std::vector<int> gc_283;
+
     std::vector<double> gc_40;
     std::vector<double> gc_41;
     std::vector<double> gc_42;
+    std::vector<double> gc_43;
     std::vector<double> gc_44;
     std::vector<double> gc_45;
     std::vector<double> gc_50;
     std::vector<double> gc_51;
-    std::vector<QString> gc_100;
-    std::vector<QString> text;
-    std::vector<QString> style;
+    std::vector<double> gc_52;
+    std::vector<double> gc_53;
 
     RS_Pen pen;
 };
@@ -116,13 +124,14 @@ public:
     void prompt(CommandEdit *cmdline, const char *prompt);
 
     void addArc(const RS_Vector &pnt, double rad, double ang1, double ang2, const RS_Pen &pen);
+    void addBlock(const RS_InsertData &data, const RS_Pen &pen);
     void addCircle(const RS_Vector &pnt, double rad, const RS_Pen &pen);
     void addDimAligned(const RS_DimensionData &data, const RS_DimAlignedData &edata, const RS_Pen &pen);
     void addDimAngular(const RS_DimensionData &data, const RS_DimAngularData &edata, const RS_Pen &pen);
     void addDimDiametric(const RS_DimensionData &data, const RS_DimDiametricData &edata, const RS_Pen &pen);
     void addDimLinear(const RS_DimensionData &data, const RS_DimLinearData &edata, const RS_Pen &pen);
     void addDimRadial(const RS_DimensionData &data, const RS_DimRadialData &edata, const RS_Pen &pen);
-    void addEllipse(double x1, double y1, double z1, double x2, double y2, double z2, double rad, const RS_Pen &pen);
+    void addEllipse(const RS_Vector &center, const RS_Vector &majorP, double rad, const RS_Pen &pen);
     void addLine(const RS_Vector &start, const RS_Vector &end, const RS_Pen &pen);
     void addPoint(const RS_Vector &pnt, const RS_Pen &pen);
     void addLwPolyline(const std::vector<Plug_VertexData> &points, bool closed, const RS_Pen &pen);

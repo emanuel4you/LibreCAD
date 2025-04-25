@@ -46,24 +46,6 @@
 #include "rs_mtext.h"
 #include "rs_layer.h"
 
-#if 0
-
-#include "rs_block.h"
-#include "rs_circle.h"
-#include "rs_ellipse.h"
-#include "rs_line.h"
-#include "rs_hatch.h"
-#include "rs_image.h"
-#include "rs_insert.h"
-#include "rs_mtext.h"
-#include "rs_point.h"
-#include "rs_polyline.h"
-#include "rs_settings.h"
-#include "rs_text.h"
-#include "rs_solid.h"
-#include "rs_layer.h"
-#endif
-
 #include "lc_defaults.h"
 #include "lc_undosection.h"
 #include "lc_actioncontext.h"
@@ -1876,12 +1858,23 @@ void RS_ScriptingApi::addArc(const RS_Vector &pnt, double rad, double ang1, doub
     undo.addUndoable(arc);
 }
 
-void RS_ScriptingApi::addEllipse(double x1, double y1, double z1, double x2, double y2, double z2, double rad, const RS_Pen &pen)
+void RS_ScriptingApi::addBlock(const RS_InsertData &data, const RS_Pen &pen)
+{
+    RS_EntityContainer* container = getContainer();
+    RS_Insert *block = new RS_Insert(container, data);
+    block->setPen(pen);
+    container->addEntity(block);
+
+    LC_UndoSection undo(getDocument(), getGraphicView()->getViewPort());
+    undo.addUndoable(block);
+}
+
+void RS_ScriptingApi::addEllipse(const RS_Vector &center, const RS_Vector &majorP, double rad, const RS_Pen &pen)
 {
     RS_EntityContainer* container = getContainer();
     RS_EllipseData data;
-    data.center = RS_Vector(x1, y1, z1);
-    data.majorP = RS_Vector(x2, y2, z2);
+    data.center = center;
+    data.majorP = majorP;
     data.ratio = rad;
     RS_Ellipse *ellipse = new RS_Ellipse(container, data);
     ellipse->setPen(pen);
@@ -2083,7 +2076,8 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
 {
     RS_Graphic* graphic = getGraphic();
 
-    if (graphic) {
+    if (graphic)
+    {
         if (apiData.etype == "LAYER" && apiData.layer != "")
         {
             return addLayer(qUtf8Printable(apiData.layer), apiData.pen, apiData.gc_70.empty() ? 0.0 : apiData.gc_70.front()) ? true : false;
@@ -2093,35 +2087,27 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
                  && !apiData.gc_10.empty()
                  && !apiData.gc_11.empty())
         {
-            addLine(RS_Vector(apiData.gc_10.front().front(),
-                        apiData.gc_10.front().at(1),
-                        apiData.gc_10.front().at(2)),
-                    RS_Vector(apiData.gc_11.front().front(),
-                        apiData.gc_11.front().at(1),
-                        apiData.gc_11.front().at(2)),
+            addLine(apiData.gc_10.front(),
+                    apiData.gc_11.front(),
                     apiData.pen);
         }
 
         else if (apiData.etype == "CIRCLE"
                  && !apiData.gc_10.empty()
-                 && apiData.gc_40.size() == 1)
+                 && !apiData.gc_40.empty())
         {
-            addCircle(RS_Vector(apiData.gc_10.front().front(),
-                        apiData.gc_10.front().at(1),
-                        apiData.gc_10.front().at(2)),
+            addCircle(apiData.gc_10.front(),
                       apiData.gc_40.front(),
                       apiData.pen);
         }
 
         else if (apiData.etype == "ARC"
                  && !apiData.gc_10.empty()
-                 && apiData.gc_40.size() == 1
-                 && apiData.gc_41.size() == 1
-                 && apiData.gc_42.size() == 1)
+                 && !apiData.gc_40.empty()
+                 && !apiData.gc_50.empty()
+                 && !apiData.gc_51.empty())
         {
-            addArc(RS_Vector(apiData.gc_10.front().front(),
-                    apiData.gc_10.front().at(1),
-                    apiData.gc_10.front().at(2)),
+            addArc(apiData.gc_10.front(),
                    apiData.gc_40.front(),
                    apiData.gc_50.front(),
                    apiData.gc_51.front(),
@@ -2131,24 +2117,17 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
         else if (apiData.etype == "ELLIPSE"
                  && !apiData.gc_10.empty()
                  && !apiData.gc_11.empty()
-                 && apiData.gc_40.size() == 1)
+                 && !apiData.gc_40.empty())
         {
-            addEllipse(apiData.gc_10.front().front(),
-                       apiData.gc_10.front().at(1),
-                       apiData.gc_10.front().at(2),
-                       apiData.gc_11.front().front(),
-                       apiData.gc_11.front().at(1),
-                       apiData.gc_11.front().at(2),
+            addEllipse(apiData.gc_10.front(),
+                       apiData.gc_11.front(),
                        apiData.gc_40.front(),
                        apiData.pen);
         }
 
         else if (apiData.etype == "POINT" && !apiData.gc_10.empty())
         {
-            addPoint(RS_Vector(apiData.gc_10.front().front(),
-                            apiData.gc_10.front().at(1),
-                            apiData.gc_10.front().at(2)),
-                        apiData.pen);
+            addPoint(apiData.gc_10.front(), apiData.pen);
         }
 
         else if (apiData.etype == "LWPOLYLINE" && !apiData.gc_10.empty())
@@ -2159,16 +2138,16 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
             {
                 for (unsigned int i = 0; i < apiData.gc_10.size(); i++)
                 {
-                    vertex.push_back(Plug_VertexData(QPointF(apiData.gc_10.at(i).front(),
-                                            apiData.gc_10.at(i).at(1)),
+                    vertex.push_back(Plug_VertexData(QPointF(apiData.gc_10.at(i).x,
+                                            apiData.gc_10.at(i).y),
                                             apiData.gc_42.at(i)));
                 }
             }
             else
             {
                 for(auto const& pt: apiData.gc_10){
-                    vertex.push_back(Plug_VertexData(QPointF(pt.front(),
-                                            pt.at(1)),
+                    vertex.push_back(Plug_VertexData(QPointF(pt.x,
+                                            pt.y),
                                             0.0));
                 }
             }
@@ -2181,9 +2160,6 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
             double height = 0.0;
             double width = 100.0;
             double angle = 0.0;
-            const RS_Vector v(apiData.gc_10.front().front(),
-                               apiData.gc_10.front().at(1),
-                               apiData.gc_10.front().at(2));
 
             if(!apiData.gc_40.empty())
             {
@@ -2200,15 +2176,15 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
                 angle = apiData.gc_50.front();
             }
 
-            addMText(v,
+            addMText(apiData.gc_10.front(),
                      height,
                      width,
                      angle,
                      apiData.gc_73.empty() ? 0.0 : apiData.gc_73.front(),
                      apiData.gc_72.empty() ? 0.0 : apiData.gc_72.front(),
                      apiData.gc_71.empty() ? 0.0 : apiData.gc_71.front(),
-                     apiData.text.empty() ? "" : apiData.text.front(),
-                     apiData.style.empty() ? "STANDARD" : apiData.style.front(),
+                     apiData.text.isEmpty() ? "" : apiData.text,
+                     apiData.style.isEmpty() ? "STANDARD" : apiData.style,
                      apiData.pen);
         }
 
@@ -2217,9 +2193,6 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
             double height = 0.0;
             double width = 1.0;
             double angle = 0.0;
-            const RS_Vector v(apiData.gc_10.front().front(),
-                               apiData.gc_10.front().at(1),
-                               apiData.gc_10.front().at(2));
 
             if(!apiData.gc_40.empty())
             {
@@ -2236,15 +2209,15 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
                 angle = apiData.gc_50.front();
             }
 
-            addText(v,
+            addText(apiData.gc_10.front(),
                     height,
                     width,
                     angle,
                     apiData.gc_73.empty() ? 0.0 : apiData.gc_73.front(),
                     apiData.gc_72.empty() ? 0.0 : apiData.gc_72.front(),
                     apiData.gc_71.empty() ? 0.0 : apiData.gc_71.front(),
-                    apiData.text.empty() ? "" : apiData.text.front(),
-                    apiData.style.empty() ? "STANDARD" : apiData.style.front(),
+                    apiData.text.isEmpty() ? "" : apiData.text,
+                    apiData.style.isEmpty() ? "STANDARD" : apiData.style,
                     apiData.pen);
         }
 
@@ -2253,30 +2226,21 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
                  && !apiData.gc_11.empty()
                  && !apiData.gc_12.empty())
         {
-            const RS_Vector corner1(apiData.gc_10.front().front(),
-                               apiData.gc_10.front().at(1),
-                               apiData.gc_10.front().at(2));
-
-            const RS_Vector corner2(apiData.gc_11.front().front(),
-                               apiData.gc_11.front().at(1),
-                               apiData.gc_11.front().at(2));
-
-            const RS_Vector corner3(apiData.gc_12.front().front(),
-                               apiData.gc_12.front().at(1),
-                               apiData.gc_12.front().at(2));
-
             if(!apiData.gc_13.empty())
             {
-                const RS_Vector corner4(apiData.gc_13.front().front(),
-                                   apiData.gc_13.front().at(1),
-                                   apiData.gc_13.front().at(2));
+                RS_SolidData data(apiData.gc_10.front(),
+                                  apiData.gc_11.front(),
+                                  apiData.gc_12.front(),
+                                  apiData.gc_13.front());
 
-                RS_SolidData data(corner1, corner2, corner3, corner4);
                 addSolid(data, apiData.pen);
             }
             else
             {
-                RS_SolidData data(corner1, corner2, corner3);
+                RS_SolidData data(apiData.gc_10.front(),
+                                  apiData.gc_11.front(),
+                                  apiData.gc_12.front());
+
                 addSolid(data, apiData.pen);
             }
         }
@@ -2305,15 +2269,7 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
 
             for(auto const& pt: apiData.gc_10)
             {
-                if(pt.size() == 3)
-                {
-                    controlPoints.push_back({ RS_Vector( pt.front(), pt.at(1), pt.at(2)) });
-                }
-
-                if(pt.size() == 2)
-                {
-                    controlPoints.push_back({ RS_Vector( pt.front(), pt.at(1), 0.0) });
-                }
+                controlPoints.push_back({ pt });
             }
 
             count = controlPoints.size();
@@ -2347,67 +2303,157 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
         }
 
         else if (apiData.etype == "DIMENSION"
-                 && !apiData.gc_100.empty()
+                 && !apiData.eSubtype.isEmpty()
                  && !apiData.gc_10.empty())
         {
             qDebug() << "[DIMENSION] - start";
-            for(auto const& dim: apiData.gc_100)
+
+            RS_Vector middleOfText;
+            RS_MTextData::MTextLineSpacingStyle lineSpacingStyle = RS_MTextData::AtLeast;
+            double lineSpacingFactor = 1.0;
+            double angle = 0.0;
+            QString text = "";
+            QString style = "Standard";
+
+            if(!apiData.text.isEmpty())
             {
-                if(dim.toUpper() == "ACDBROTATEDDIMENSION") // posible gc_100 = 3!!
+                text = apiData.text.front();
+            }
+
+            if(!apiData.block.size())
+            {
+                style = apiData.block;
+            }
+
+            if(!apiData.gc_11.empty())
+            {
+                middleOfText = apiData.gc_11.front();
+            }
+
+            if(!apiData.gc_41.empty())
+            {
+                lineSpacingFactor = apiData.gc_41.front();
+            }
+
+            if(!apiData.gc_53.empty())
+            {
+                angle = apiData.gc_53.front();
+            }
+
+            if(!apiData.gc_72.empty())
+            {
+                if (apiData.gc_72.front() == 2)
                 {
-                    qDebug() << "[DIMENSION] - exit";
-                    return false;
+                    lineSpacingStyle = RS_MTextData::Exact;
                 }
             }
 
-            qDebug() << "[DIMENSION] - start2";
+            RS_DimensionData data(apiData.gc_10.front(),
+                                  middleOfText,
+                                  RS_MTextData::VAMiddle,
+                                  RS_MTextData::HACenter,
+                                  lineSpacingStyle,
+                                  lineSpacingFactor,
+                                  text,
+                                  style,
+                                  angle);
 
-            for(auto const& dim: apiData.gc_100)
+            if(apiData.eSubtype.toUpper() == "ACDBROTATEDDIMENSION") // posible eSubtype = 3!!
             {
-                if(dim.toUpper() == "ACDBALIGNEDDIMENSION")
+                qDebug() << "[DIMENSION] - exit";
+                if (apiData.gc_13.empty()
+                        || apiData.gc_13.empty()
+                        || apiData.gc_14.empty())
                 {
                     qDebug() << "[DIMENSION] - exit";
                     return false;
                 }
 
-                else if(dim.toUpper() == "ACDB3POINTANGULARDIMENSION")
+                double angle = 0.0, oblique = 0.0;
+
+                if (!apiData.gc_50.empty())
+                {
+                    angle = apiData.gc_50.front();
+                }
+
+                if (!apiData.gc_52.empty())
+                {
+                    oblique = apiData.gc_52.front();
+                }
+
+                RS_DimLinearData edata(apiData.gc_13.front(),
+                                       apiData.gc_14.front(),
+                                       angle,
+                                       oblique);
+
+                addDimLinear(data, edata, apiData.pen);
+            }
+
+            qDebug() << "[DIMENSION] - start2";
+            if(apiData.eSubtype.toUpper() == "ACDBALIGNEDDIMENSION")
+            {
+                if (apiData.gc_13.empty()
+                        || apiData.gc_13.empty()
+                        || apiData.gc_14.empty())
                 {
                     qDebug() << "[DIMENSION] - exit";
                     return false;
                 }
 
-                else if(dim.toUpper() == "ACDBRADIALDIMENSION")
-                {
-                    qDebug() << "[DIMENSION] - ACDBRADIALDIMENSION";
-                    if (apiData.gc_40.empty())
-                    {
-                        qDebug() << "[DIMENSION] - exit";
-                        return false;
-                    }
+                RS_DimAlignedData edata(apiData.gc_13.front(),
+                                        apiData.gc_14.front());
 
-                    RS_DimensionData data(RS_Vector(false),
-                                          RS_Vector(false),
-                                          RS_MTextData::VAMiddle,
-                                          RS_MTextData::HACenter,
-                                          RS_MTextData::Exact,
-                                          1.0,
-                                          "",
-                                          "Standard",
-                                          0.0);
+                addDimAligned(data, edata, apiData.pen);
+            }
 
-                    RS_DimRadialData edata(RS_Vector(apiData.gc_10.front().front(),
-                                                     apiData.gc_10.front().at(1),
-                                                     apiData.gc_10.front().at(2)),
-                                           apiData.gc_40.front());
-
-                    addDimRadial(data, edata, apiData.pen);
-                }
-
-                else if(dim.toUpper() == "ACDBDIAMETRICDIMENSION")
+            else if(apiData.eSubtype.toUpper() == "ACDB3POINTANGULARDIMENSION")
+            {
+                qDebug() << "[DIMENSION] - exit";
+                if (apiData.gc_13.empty()
+                        || apiData.gc_14.empty()
+                        || apiData.gc_15.empty()
+                        || apiData.gc_16.empty())
                 {
                     qDebug() << "[DIMENSION] - exit";
                     return false;
                 }
+
+                RS_DimAngularData edata(apiData.gc_13.front(),
+                                        apiData.gc_14.front(),
+                                        apiData.gc_15.front(),
+                                        apiData.gc_16.front());
+
+                addDimAngular(data, edata, apiData.pen);
+            }
+
+            else if(apiData.eSubtype.toUpper() == "ACDBRADIALDIMENSION")
+            {
+                qDebug() << "[DIMENSION] - ACDBRADIALDIMENSION";
+                if (apiData.gc_40.empty() || apiData.gc_15.empty())
+                {
+                    qDebug() << "[DIMENSION] - exit";
+                    return false;
+                }
+
+                RS_DimRadialData edata(apiData.gc_15.front(),
+                                       apiData.gc_40.front());
+
+                addDimRadial(data, edata, apiData.pen);
+            }
+
+            else if(apiData.eSubtype.toUpper() == "ACDBDIAMETRICDIMENSION")
+            {
+                qDebug() << "[DIMENSION] - exit";
+                if (apiData.gc_40.empty() || apiData.gc_15.empty())
+                {
+                    qDebug() << "[DIMENSION] - exit";
+                    return false;
+                }
+
+                RS_DimDiametricData edata(apiData.gc_15.front(),
+                                          apiData.gc_40.front());
+
+                addDimDiametric(data, edata, apiData.pen);
             }
         }
 
@@ -2416,9 +2462,65 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
             return false;
         }
 
-        else if (apiData.etype == "INSERT" && !apiData.gc_10.empty())
+        else if (apiData.etype == "INSERT" && !apiData.gc_10.empty() && !apiData.block.isEmpty())
         {
-            return false;
+            RS_Vector scaleFactor(1.0, 1.0, 1.0);
+            RS_Vector spacing(0.0, 0.0);
+            double angle = 0.0;
+            double cols = 1.0;
+            double rows = 1.0;
+
+            if (!apiData.gc_41.empty())
+            {
+                scaleFactor.x = apiData.gc_41.front();
+            }
+
+            if (!apiData.gc_42.empty())
+            {
+                scaleFactor.y = apiData.gc_42.front();
+            }
+
+            if (!apiData.gc_43.empty())
+            {
+                scaleFactor.z = apiData.gc_43.front();
+            }
+
+            if (!apiData.gc_44.empty())
+            {
+                spacing.x = apiData.gc_44.front();
+            }
+
+            if (!apiData.gc_45.empty())
+            {
+                spacing.y =  apiData.gc_45.front();
+            }
+
+            if (!apiData.gc_50.empty())
+            {
+                angle = apiData.gc_50.front();
+            }
+
+            if (!apiData.gc_70.empty())
+            {
+                cols = apiData.gc_70.front();
+            }
+
+            if (!apiData.gc_71.empty())
+            {
+                rows = apiData.gc_71.front();
+            }
+
+            RS_InsertData data(apiData.block,
+                               apiData.gc_10.front(),
+                                scaleFactor,
+                                angle,
+                                cols,
+                                rows,
+                                spacing,
+                                nullptr,
+                                RS2::Update);
+
+            addBlock(data, apiData.pen);
         }
 
         else if (apiData.etype == "IMAGE"
@@ -2427,6 +2529,37 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
                  && !apiData.gc_12.empty()
                  && !apiData.gc_13.empty())
         {
+#if 0
+            int brightness = 50;
+            int contrast = 50;
+            int fade = 0;
+            //QString file;
+
+            if (!apiData.gc_281.empty())
+            {
+                brightness = apiData.gc_281.front();
+            }
+
+            if (!apiData.gc_282.empty())
+            {
+                contrast = apiData.gc_282.front();
+            }
+
+            if (!apiData.gc_283.empty())
+            {
+                fade = apiData.gc_283.front();
+            }
+
+            RS_ImageData edata(handle,
+                               apiData.gc_10.front(),
+                               apiData.gc_11.front(),
+                               apiData.gc_12.front(),
+                               apiData.gc_13.front()),
+                         file,
+                         brightness,
+                         contrast,
+                         fade);
+#endif
             return false;
         }
 
@@ -2442,6 +2575,7 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
 
         return true;
     }
+
     return false;
 }
 
@@ -2454,166 +2588,183 @@ bool RS_ScriptingApi::entmod(RS_Entity *entity, const RS_ScriptingApiData &apiDa
                 if (!apiData.gc_10.empty())
                 {
                     RS_Point* p = (RS_Point*)entity;
-                    const std::vector<double> pos = apiData.gc_10.front();
-                    p->setPos(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
+                    p->setPos(apiData.gc_10.front());
                 }
             }
             break;
         case RS2::EntityLine:
         {
-            if (!apiData.gc_10.empty() || !apiData.gc_11.empty())
+            RS_Line* l = (RS_Line*)entity;
+            if (!apiData.gc_10.empty())
             {
-                RS_Line* l = (RS_Line*)entity;
-                if (!apiData.gc_10.empty())
-                {
-                    const std::vector<double> pos = apiData.gc_10.front();
-                    l->setStartpoint(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
-                }
+                l->setStartpoint(apiData.gc_10.front());
+            }
 
-                if (!apiData.gc_11.empty())
-                {
-                    const std::vector<double> pos = apiData.gc_11.front();
-                    l->setEndpoint(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
-                }
+            if (!apiData.gc_11.empty())
+            {
+                l->setEndpoint(apiData.gc_11.front());
             }
         }
             break;
         case RS2::EntityArc:
         {
-            if (!apiData.gc_10.empty() ||
-                !apiData.gc_40.empty() ||
-                !apiData.gc_50.empty() ||
-                !apiData.gc_51.empty())
+            RS_Arc* a = (RS_Arc*)entity;
+
+            if (!apiData.gc_10.empty())
             {
-                RS_Arc* a = (RS_Arc*)entity;
+                a->setCenter(apiData.gc_10.front());
+            }
 
-                if (!apiData.gc_10.empty())
-                {
-                    const std::vector<double> pos = apiData.gc_10.front();
-                    a->setCenter(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
-                }
+            if (!apiData.gc_40.empty())
+            {
+                a->setRadius(apiData.gc_40.front());
+            }
 
-                if (!apiData.gc_40.empty())
-                {
-                    a->setRadius(apiData.gc_40.front());
-                }
+            if (!apiData.gc_50.empty())
+            {
+                a->setAngle1(apiData.gc_50.front());
+            }
 
-                if (!apiData.gc_50.empty())
-                {
-                    a->setAngle1(apiData.gc_50.front());
-                }
-
-                if (!apiData.gc_51.empty())
-                {
-                    a->setAngle2(apiData.gc_51.front());
-                }
+            if (!apiData.gc_51.empty())
+            {
+                a->setAngle2(apiData.gc_51.front());
             }
         }
             break;
         case RS2::EntityCircle:
         {
-            if (!apiData.gc_10.empty() || !apiData.gc_40.empty())
+            RS_Circle* c = (RS_Circle*)entity;
+            if (!apiData.gc_10.empty())
             {
-                RS_Circle* c = (RS_Circle*)entity;
-                if (!apiData.gc_10.empty())
-                {
-                    const std::vector<double> pos = apiData.gc_10.front();
-                    c->setCenter(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
-                }
+                c->setCenter(apiData.gc_10.front());
+            }
 
-                if (!apiData.gc_40.empty())
-                {
-                    c->setRadius(apiData.gc_40.front());
-                }
+            if (!apiData.gc_40.empty())
+            {
+                c->setRadius(apiData.gc_40.front());
             }
         }
             break;
         case RS2::EntityEllipse:
         {
-            if (!apiData.gc_10.empty() || !apiData.gc_11.empty())
+            RS_Ellipse* ellipse=static_cast<RS_Ellipse*>(entity);
+
+            if (!apiData.gc_10.empty())
             {
-                RS_Ellipse* ellipse=static_cast<RS_Ellipse*>(entity);
+                ellipse->setCenter(apiData.gc_10.front());
+            }
 
-                if (!apiData.gc_10.empty())
-                {
-                    const std::vector<double> pos = apiData.gc_10.front();
-                    ellipse->setCenter(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
-                }
+            if (!apiData.gc_11.empty())
+            {
+                ellipse->setMajorP(apiData.gc_11.front());
+            }
 
-                if (!apiData.gc_11.empty())
-                {
-                    const std::vector<double> pos = apiData.gc_11.front();
-                    ellipse->setMajorP(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
-                }
-
-                if (!apiData.gc_40.empty())
-                {
-                    ellipse->setRatio(apiData.gc_40.front());
-                }
+            if (!apiData.gc_40.empty())
+            {
+                ellipse->setRatio(apiData.gc_40.front());
             }
         }
             break;
         case RS2::EntityInsert:
         {
+            RS_Insert* i = (RS_Insert*)entity;
+
             if (!apiData.gc_10.empty())
             {
-                RS_Insert* i = (RS_Insert*)entity;
-                const std::vector<double> pos = apiData.gc_10.front();
-                i->setInsertionPoint(RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
+                i->setInsertionPoint(apiData.gc_10.front());
+            }
+
+            if (!apiData.gc_41.empty())
+            {
+                RS_Vector scale(i->getScale());
+                scale.x = apiData.gc_41.front();
+                i->setScale(scale);
+            }
+
+            if (!apiData.gc_42.empty())
+            {
+                RS_Vector scale(i->getScale());
+                scale.y = apiData.gc_42.front();
+                i->setScale(scale);
+            }
+
+            if (!apiData.gc_43.empty())
+            {
+                RS_Vector scale(i->getScale());
+                scale.z = apiData.gc_43.front();
+                i->setScale(scale);
+            }
+
+            if (!apiData.gc_44.empty())
+            {
+                RS_Vector spacing(i->getSpacing());
+                spacing.x = apiData.gc_44.front();
+                i->setSpacing(spacing);
+            }
+
+            if (!apiData.gc_45.empty())
+            {
+                RS_Vector spacing(i->getSpacing());
+                spacing.y = apiData.gc_45.front();
+                i->setSpacing(spacing);
+            }
+
+            if (!apiData.gc_50.empty())
+            {
+                i->setAngle(apiData.gc_50.front());
+            }
+
+            if (!apiData.gc_70.empty())
+            {
+                i->setCols(apiData.gc_70.front());
+            }
+
+            if (!apiData.gc_71.empty())
+            {
+                i->setRows(apiData.gc_71.front());
             }
         }
             break;
         case RS2::EntityMText:
         {
-            if (!apiData.gc_10.empty() ||
-                !apiData.text.empty() ||
-                !apiData.style.empty())
+            RS_MText* mt = (RS_MText*)entity;
+
+            if (!apiData.gc_10.empty())
             {
-                RS_MText* mt = (RS_MText*)entity;
+                mt->moveRef(mt->getInsertionPoint(), apiData.gc_10.front());
+            }
 
-                if (!apiData.gc_10.empty())
-                {
-                    const std::vector<double> pos = apiData.gc_10.front();
-                    mt->moveRef(RS_Vector(0,0,0), RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
-                }
+            if (!apiData.text.isEmpty())
+            {
+                mt->setText(apiData.text.front());
+            }
 
-                if (!apiData.text.empty())
-                {
-                    mt->setText(apiData.text.front());
-                }
-
-                if (!apiData.style.empty())
-                {
-                    mt->setStyle(apiData.style.front());
-                }
+            if (!apiData.style.isEmpty())
+            {
+                mt->setStyle(apiData.style.front());
             }
         }
             break;
         case RS2::EntityText:
         {
-            if (!apiData.gc_10.empty() ||
-                !apiData.text.empty() ||
-                !apiData.style.empty())
+            RS_Text* t = (RS_Text*)entity;
+
+            if (!apiData.gc_10.empty())
             {
-                RS_Text* t = (RS_Text*)entity;
+                t->moveRef(t->getInsertionPoint(), apiData.gc_10.front());
+            }
 
-                if (!apiData.gc_10.empty())
-                {
-                    const std::vector<double> pos = apiData.gc_10.front();
-                    t->moveRef(RS_Vector(0,0,0), RS_Vector(pos.at(0), pos.at(1), pos.at(2)));
-                }
+            if (!apiData.text.isEmpty())
+            {
+                t->setText(apiData.text.front());
+            }
 
-                if (!apiData.text.empty())
-                {
-                    t->setText(apiData.text.front());
-                }
-
-                if (!apiData.style.empty())
-                {
-                    t->setStyle(apiData.style.front());
-                }
+            if (!apiData.style.isEmpty())
+            {
+                t->setStyle(apiData.style.front());
             }
         }
+        entity->setPen(apiData.pen);
             break;
         default:
         {
