@@ -67,8 +67,6 @@
 #include "intern/qc_actionselectset.h"
 #include "intern/qc_actionsingleset.h"
 
-#include "intern/qc_actiongetent.h"
-
 #include <QMessageBox>
 #include <QInputDialog>
 #include <QFileDialog>

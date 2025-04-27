@@ -171,6 +171,10 @@ void LC_ApplicationWindowInitializer::initCentralWidget(){
     // a screen different from the main window, disabled for the time being
     // send key events for mdiAreaCAD to command widget by default
     m_appWin->m_mdiAreaCAD->installEventFilter(m_appWin->m_commandWidget);
+#ifdef DEVELOPER
+    m_appWin->m_mdiAreaCAD->installEventFilter(m_appWin->m_lspCommandWidget);
+    m_appWin->m_mdiAreaCAD->installEventFilter(m_appWin->m_pyCommandWidget);
+#endif
 
     connect(m_appWin->getAction("FileClose"), &QAction::triggered, m_appWin->m_mdiAreaCAD, &QMdiArea::closeActiveSubWindow);
 }
@@ -225,6 +229,10 @@ void LC_ApplicationWindowInitializer::initDialogFactory() const {
 
     // fixme - sand - temporary setters, remove later
     factory->set_command_widget(m_appWin->m_commandWidget);
+#ifdef DEVELOPER
+    factory->set_lsp_command_widget(m_appWin->m_lspCommandWidget);
+    factory->set_py_command_widget(m_appWin->m_pyCommandWidget);
+#endif
     factory->set_rel_zero_coordinates_widget(m_appWin->m_relativeZeroCoordinatesWidget);
     factory->set_selection_widget(m_appWin->m_selectionWidget);
 }
@@ -259,6 +267,10 @@ void LC_ApplicationWindowInitializer::initActionContext() const {
 
     action_context->setActionOptionsManager(m_appWin->m_actionOptionsManager);
     action_context->setCommandWidget(m_appWin->m_commandWidget);
+#ifdef DEVELOPER
+    action_context->setLspCommandWidget(m_appWin->m_lspCommandWidget);
+    action_context->setPyCommandWidget(m_appWin->m_pyCommandWidget);
+#endif
     action_context->setCoordinateWidget(m_appWin->m_coordinateWidget);
     action_context->setMouseWidget(m_appWin->m_mouseWidget);
     action_context->setSelectionWidget(m_appWin->m_selectionWidget);

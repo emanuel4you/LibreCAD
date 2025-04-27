@@ -57,7 +57,7 @@ typedef struct entity_id_name {
 } entity_id_name_t;
 
 static const entity_id_name_t entityIds[MAX_ENTITY_ID] = {
-{ "INSERT", RS2::EntityBlock, },
+{ "INSERT", RS2::EntityInsert, }, // block
 { "POINT", RS2::EntityPoint, },
 { "LINE", RS2::EntityLine, },
 { "LWPOLYLINE", RS2::EntityPolyline, },
