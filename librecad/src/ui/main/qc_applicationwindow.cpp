@@ -29,10 +29,6 @@
 
 // Changes: https://github.com/LibreCAD/LibreCAD/commits/master/librecad/src/main/qc_applicationwindow.cpp
 
-#ifdef DEVELOPER
-#include "rs_python.h"
-#include "rs_lisp.h"
-#endif
 #include "qc_applicationwindow.h"
 
 #include <QCloseEvent>
@@ -43,9 +39,7 @@
 #include <QStatusBar>
 #include <QTimer>
 #include <QDockWidget>
-#ifdef DEVELOPER
-#include  <QSplashScreen>
-#endif
+
 #include "lc_actiongroupmanager.h"
 #include "lc_actionoptionsmanager.h"
 #include "lc_actionsshortcutsdialog.h"
@@ -82,12 +76,6 @@
 #include "qg_activelayername.h"
 #include "qg_blockwidget.h"
 #include "qg_commandwidget.h"
-#ifdef DEVELOPER
-#include "qg_lsp_commandwidget.h"
-#include "qg_py_commandwidget.h"
-#include "librelisp.h"
-#include "librepython.h"
-#endif // DEVELOPER
 #include "qg_coordinatewidget.h"
 #include "qg_exitdialog.h"
 #include "qg_graphicview.h"
@@ -548,37 +536,6 @@ void QC_ApplicationWindow::slotFocusOptionsWidget(){
 void QC_ApplicationWindow::slotError(const QString& msg) {
   m_commandWidget->appendHistory(msg);
 }
-
-#ifdef DEVELOPER
-
-void QC_ApplicationWindow::slotFocusLspCommandLine() {
-    // if command widget is not visible - show it first
-
-    auto* cmd_dockwidget = findChild<QDockWidget*>("lsp_command_dockwidget");
-    if (cmd_dockwidget->isHidden()) {
-        cmd_dockwidget->show();
-    }
-    m_lspCommandWidget->setFocus();
-
-}
-
-void QC_ApplicationWindow::slotFocusPyOptionsWidget(){
-}
-
-void QC_ApplicationWindow::slotFocusPyCommandLine() {
-    // if command widget is not visible - show it first
-
-    auto* cmd_dockwidget = findChild<QDockWidget*>("py_command_dockwidget");
-    if (cmd_dockwidget->isHidden()) {
-        cmd_dockwidget->show();
-    }
-    m_pyCommandWidget->setFocus();
-
-}
-
-void QC_ApplicationWindow::slotFocusLspOptionsWidget(){
-}
-#endif
 
 void QC_ApplicationWindow::slotShowDrawingOptions() {
     m_actionHandler->setCurrentAction(RS2::ActionOptionsDrawingGrid);
@@ -1877,10 +1834,6 @@ void QC_ApplicationWindow::enableWidgets(bool enable) {
         // command widget should be enabled for print preview as it supports commands...
         // fixme - command widget should be aware of print preview mode and do not support other commands...
         enableWidget(m_commandWidget, enable);
-#ifdef DEVELOPER
-        enableWidget(m_lspCommandWidget, enable);
-        enableWidget(m_pyCommandWidget, enable);
-#endif
     }
     // fixme - disable widgets from status bar ??
 }
@@ -1901,78 +1854,3 @@ void QC_ApplicationWindow::fireWorkspacesChanged(){
     bool hasWorkspaces = m_workspacesInvoker->hasWorkspaces();
     emit workspacesChanged(hasWorkspaces);
 }
-#ifdef DEVELOPER
-/**
- * Menu Developer -> load LISP script.
- */
-void QC_ApplicationWindow::slotLoadLisp() {
-    RS_DEBUG->print(__func__);
-
-    QString selfilter = tr("AutoLisp (*.lsp)");
-    QString path = QFileDialog::getOpenFileName(
-        this,
-        tr("Run file"),
-        QApplication::applicationDirPath(),
-        tr("Lisp files (*.lsp *.lisp *.mal);;AutoLisp (*.lsp);;Mal (*.mal)" ),
-        &selfilter
-    );
-
-    if (!path.isEmpty()) {
-        RS_LISP->runFile(path);
-    }
-}
-
-/**
- * Menu Developer -> LibreLisp Editor.
- */
-void QC_ApplicationWindow::slotLibreLisp() {
-    RS_DEBUG->print(__func__);
-    QSplashScreen *splash = new QSplashScreen;
-    splash->setPixmap(QPixmap(":/images/splash_librelisp.png"));
-    splash->show();
-    qApp->processEvents();
-    splash->showMessage(QObject::tr("Loading LibreLisp IDE..."),
-                        Qt::AlignRight|Qt::AlignBottom, Qt::black);
-
-    LibreLisp *l = new LibreLisp(this);
-    QTimer::singleShot(1000, l, SLOT(show()));
-    QTimer::singleShot(2000, splash, SLOT(close()));
-}
-
-/**
- * Menu Developer -> load Python script.
- */
-void QC_ApplicationWindow::slotLoadPython() {
-    RS_DEBUG->print(__func__);
-
-    QString selfilter = tr("Python Script (*.py)");
-    QString path = QFileDialog::getOpenFileName(
-        this,
-        tr("Run file"),
-        QApplication::applicationDirPath(),
-        tr("Python files (*.py *.pyc);;Python Script (*.py);;Python compiled Script (*.pyc)" ),
-        &selfilter
-    );
-
-    if (!path.isEmpty()) {
-        RS_PYTHON->runFile(path);
-    }
-}
-
-/**
- * Menu Developer -> LibrePython Editor.
- */
-void QC_ApplicationWindow::slotLibrePython() {
-    RS_DEBUG->print(__func__);
-    QSplashScreen *splash = new QSplashScreen;
-    splash->setPixmap(QPixmap(":/images/splash_librepython.png"));
-    splash->show();
-    qApp->processEvents();
-    splash->showMessage(QObject::tr("Loading LibrePython IDE..."),
-                        Qt::AlignRight|Qt::AlignBottom, Qt::black);
-
-    LibrePython *p = new LibrePython(this);
-    QTimer::singleShot(1000, p, SLOT(show()));
-    QTimer::singleShot(2000, splash, SLOT(close()));
-}
-#endif // DEVELOPER
