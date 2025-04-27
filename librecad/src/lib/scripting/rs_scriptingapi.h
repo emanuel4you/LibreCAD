@@ -79,16 +79,16 @@ class RS_ScriptingApiData
 public:
     RS_ScriptingApiData()
     {
-        etype = block = layer = "";
+        etype = block = layer = text = style = linetype = "";
     }
     ~RS_ScriptingApiData() {}
 
     QString etype;
-    QString eSubtype;
     QString block;
     QString layer;
     QString text;
     QString style;
+    QString linetype;
 
     std::vector<RS_Vector> gc_10;
     std::vector<RS_Vector> gc_11;
@@ -99,6 +99,8 @@ public:
     std::vector<RS_Vector> gc_16;
 
     std::vector<unsigned long> id;
+    std::vector<int> gc_lineWidth;
+    std::vector<int> gc_62;
     std::vector<int> gc_70;
     std::vector<int> gc_71;
     std::vector<int> gc_72;
@@ -107,6 +109,8 @@ public:
     std::vector<int> gc_281;
     std::vector<int> gc_282;
     std::vector<int> gc_283;
+
+    std::vector<int> gc_402;
 
     std::vector<double> gc_40;
     std::vector<double> gc_41;
@@ -118,6 +122,8 @@ public:
     std::vector<double> gc_51;
     std::vector<double> gc_52;
     std::vector<double> gc_53;
+
+    std::vector<QString> gc_100;
 
     RS_Pen pen;
 };
@@ -223,11 +229,10 @@ public:
     bool getInteger(CommandEdit *cmdline, const char *msg, int &res);
     bool getString(CommandEdit *cmdline, bool cr, const char *msg, std::string &res);
     bool getSelection(unsigned int &id);
-    bool getSingleSelection(unsigned int &id);
-    bool getSelectionByIndexColor(int index, unsigned int &id);
-    bool getSelectionByTrueColor(int trueColor, unsigned int &id);
-    bool getSelectionByLayer(const QString &layer, unsigned int &id);
-    bool getSelectionByName(const QString &name, unsigned int &id);
+    bool getSingleSelection(std::vector<unsigned int> &selection_set);
+    bool selectAll(std::vector<unsigned int> &selection_set);
+    bool getSelectionByData(const RS_ScriptingApiData &apiData, std::vector<unsigned int> &selection_set);
+    bool filterByData(RS_Entity *entity, const RS_ScriptingApiData &apiData);
     bool getKeyword(CommandEdit *cmdline, const char *msg, std::string &res);
     bool ssadd(unsigned int id, unsigned int ss, unsigned int &newss);
     bool ssname(unsigned int ss, unsigned int idx, unsigned int &id);

@@ -1078,11 +1078,10 @@ bool RS_ScriptingApi::getSelection(unsigned int &id)
     return status;
 }
 
-bool RS_ScriptingApi::getSingleSelection(unsigned int &id)
+bool RS_ScriptingApi::getSingleSelection(std::vector<unsigned int> &selection_set)
 {
     qDebug() << "[RS_ScriptingApi::getSingleSelection] start";
     bool status = false;
-    std::vector<unsigned int> ssget;
 
     if (getGraphicView() == NULL || getGraphic() == NULL){
         qDebug() << "graphicView == NULL";
@@ -1112,59 +1111,103 @@ bool RS_ScriptingApi::getSingleSelection(unsigned int &id)
 
     if (actionSelect->isCompleted())
     {
-        actionSelect->getSelected(ssget);
+        actionSelect->getSelected(selection_set);
         status = true;
     }
 
     ctx->getGraphicView()->killAllActions();
 
-    int length = ssget.size();
+    int length = selection_set.size();
     if (length == 0)
     {
         return false;
     }
 
-    lclValueVec* items = new lclValueVec(length);
-    for (int i = 0; i < length; i++) {
-        (*items)[i] = lcl::integer(ssget.at(i));
-    }
-
-    id = getNewSelectionId();
-    shadowEnv->set(getSelectionName(getNewSelectionId()), lcl::list(items));
-
     qDebug() << "[RS_ScriptingApi::getSingleSelection] status:" << status;
     return status;
 }
 
-bool RS_ScriptingApi::getSelectionByName(const QString &name, unsigned int &id)
+bool RS_ScriptingApi::filterByData(RS_Entity *entity, const RS_ScriptingApiData &apiData)
 {
-    std::vector<unsigned int> ssget;
-    RS2::EntityType rtti = getEntityIdbyName(name);
+    bool hasData = false;
+
+    if(!apiData.etype.isEmpty())
+    {
+        hasData = false;
+        if(entity->rtti() == getEntityIdbyName(apiData.etype))
+        {
+            hasData = true;
+        }
+    }
+
+    if(!apiData.layer.isEmpty())
+    {
+        hasData = false;
+        if(entity->getLayer()->getName() == apiData.layer)
+        {
+            hasData = true;
+        }
+    }
+
+    if(!apiData.gc_lineWidth.empty())
+    {
+        hasData = false;
+        if(entity->getPen(false).getWidth() == apiData.pen.getWidth())
+        {
+            hasData = true;
+        }
+    }
+
+    if(!apiData.linetype.isEmpty())
+    {
+        hasData = false;
+        if(entity->getPen(false).getLineType() == apiData.pen.getLineType())
+        {
+            hasData = true;
+        }
+    }
+
+    if(!apiData.gc_62.empty())
+    {
+        hasData = false;
+        const RS_Color color = entity->getPen(false).getColor();
+        int exact_rgb;
+
+        if(RS_FilterDXFRW::colorToNumber(color, &exact_rgb) == apiData.gc_62.front())
+        {
+            hasData = true;
+        }
+    }
+
+    if(!apiData.gc_402.empty())
+    {
+        hasData = false;
+        const RS_Color color = entity->getPen(false).getColor();
+        int exact_rgb;
+        RS_FilterDXFRW::colorToNumber(color, &exact_rgb);
+
+        if(exact_rgb == apiData.gc_402.front())
+        {
+            hasData = true;
+        }
+    }
+
+    return hasData;
+}
+
+bool RS_ScriptingApi::getSelectionByData(const RS_ScriptingApiData &apiData, std::vector<unsigned int> &selection_set)
+{
     RS_EntityContainer* entityContainer = getContainer();
 
     if(entityContainer && entityContainer->count())
     {
         for (auto e: *entityContainer)
         {
-            if(e->rtti() == rtti)
+            if(filterByData(e, apiData))
             {
-                ssget.push_back(e->getId());
+                selection_set.push_back(e->getId());
             }
         }
-
-        int length = ssget.size();
-        if (length == 0)
-        {
-            return false;
-        }
-
-        lclValueVec* items = new lclValueVec(length);
-        for (int i = 0; i < length; i++) {
-            (*items)[i] = lcl::integer(ssget.at(i));
-        }
-
-        id = getNewSelectionId();
-        shadowEnv->set(getSelectionName(getNewSelectionId()), lcl::list(items));
 
         return true;
     }
@@ -1172,111 +1215,16 @@ bool RS_ScriptingApi::getSelectionByName(const QString &name, unsigned int &id)
     return false;
 }
 
-bool RS_ScriptingApi::getSelectionByLayer(const QString &layer, unsigned int &id)
+bool RS_ScriptingApi::selectAll(std::vector<unsigned int> &selection_set)
 {
-    std::vector<unsigned int> ssget;
     RS_EntityContainer* entityContainer = getContainer();
 
     if(entityContainer && entityContainer->count())
     {
         for (auto e: *entityContainer)
         {
-            if(e->getLayer()->getName() == layer)
-            {
-                ssget.push_back(e->getId());
-            }
+            selection_set.push_back(e->getId());
         }
-
-        int length = ssget.size();
-        if (length == 0)
-        {
-            return false;
-        }
-
-        lclValueVec* items = new lclValueVec(length);
-        for (int i = 0; i < length; i++) {
-            (*items)[i] = lcl::integer(ssget.at(i));
-        }
-
-        id = getNewSelectionId();
-        shadowEnv->set(getSelectionName(getNewSelectionId()), lcl::list(items));
-
-        return true;
-    }
-
-    return false;
-}
-
-bool RS_ScriptingApi::getSelectionByIndexColor(int index, unsigned int &id)
-{
-    std::vector<unsigned int> ssget;
-    RS_EntityContainer* entityContainer = getContainer();
-
-    if(entityContainer && entityContainer->count())
-    {
-        for (auto e: *entityContainer)
-        {
-            const RS_Color color = e->getPen(false).getColor();
-            int exact_rgb;
-
-            if(RS_FilterDXFRW::colorToNumber(color, &exact_rgb) == index)
-            {
-                ssget.push_back(e->getId());
-            }
-        }
-
-        int length = ssget.size();
-        if (length == 0)
-        {
-            return false;
-        }
-
-        lclValueVec* items = new lclValueVec(length);
-        for (int i = 0; i < length; i++) {
-            (*items)[i] = lcl::integer(ssget.at(i));
-        }
-
-        id = getNewSelectionId();
-        shadowEnv->set(getSelectionName(getNewSelectionId()), lcl::list(items));
-
-        return true;
-    }
-
-    return false;
-}
-
-bool RS_ScriptingApi::getSelectionByTrueColor(int trueColor, unsigned int &id)
-{
-    std::vector<unsigned int> ssget;
-    RS_EntityContainer* entityContainer = getContainer();
-
-    if(entityContainer && entityContainer->count())
-    {
-        for (auto e: *entityContainer)
-        {
-            const RS_Color color = e->getPen(false).getColor();
-            int exact_rgb;
-            RS_FilterDXFRW::colorToNumber(color, &exact_rgb);
-
-            if((exact_rgb >=0) && (exact_rgb == trueColor))
-            {
-                ssget.push_back(e->getId());
-            }
-        }
-
-        int length = ssget.size();
-        if (length == 0)
-        {
-            return false;
-        }
-
-        lclValueVec* items = new lclValueVec(length);
-        for (int i = 0; i < length; i++) {
-            (*items)[i] = lcl::integer(ssget.at(i));
-        }
-
-        id = getNewSelectionId();
-        shadowEnv->set(getSelectionName(getNewSelectionId()), lcl::list(items));
 
         return true;
     }
@@ -2544,7 +2492,7 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
         }
 
         else if (apiData.etype == "DIMENSION"
-                 && !apiData.eSubtype.isEmpty()
+                 && !apiData.gc_100.empty()
                  && !apiData.gc_10.empty())
         {
             qDebug() << "[DIMENSION] - start";
@@ -2599,7 +2547,7 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
                                   style,
                                   angle);
 
-            if(apiData.eSubtype.toUpper() == "ACDBROTATEDDIMENSION") // posible eSubtype = 3!!
+            if(apiData.gc_100.front().toUpper() == "ACDBROTATEDDIMENSION") // posible eSubtype = 3!!
             {
                 qDebug() << "[DIMENSION] - exit";
                 if (apiData.gc_13.empty()
@@ -2631,7 +2579,7 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
             }
 
             qDebug() << "[DIMENSION] - start2";
-            if(apiData.eSubtype.toUpper() == "ACDBALIGNEDDIMENSION")
+            if(apiData.gc_100.front().toUpper() == "ACDBALIGNEDDIMENSION")
             {
                 if (apiData.gc_13.empty()
                         || apiData.gc_13.empty()
@@ -2647,7 +2595,7 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
                 addDimAligned(data, edata, apiData.pen);
             }
 
-            else if(apiData.eSubtype.toUpper() == "ACDB3POINTANGULARDIMENSION")
+            else if(apiData.gc_100.front().toUpper() == "ACDB3POINTANGULARDIMENSION")
             {
                 qDebug() << "[DIMENSION] - exit";
                 if (apiData.gc_13.empty()
@@ -2667,7 +2615,7 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
                 addDimAngular(data, edata, apiData.pen);
             }
 
-            else if(apiData.eSubtype.toUpper() == "ACDBRADIALDIMENSION")
+            else if(apiData.gc_100.front().toUpper() == "ACDBRADIALDIMENSION")
             {
                 qDebug() << "[DIMENSION] - ACDBRADIALDIMENSION";
                 if (apiData.gc_40.empty() || apiData.gc_15.empty())
@@ -2682,7 +2630,7 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
                 addDimRadial(data, edata, apiData.pen);
             }
 
-            else if(apiData.eSubtype.toUpper() == "ACDBDIAMETRICDIMENSION")
+            else if(apiData.gc_100.front().toUpper() == "ACDBDIAMETRICDIMENSION")
             {
                 qDebug() << "[DIMENSION] - exit";
                 if (apiData.gc_40.empty() || apiData.gc_15.empty())

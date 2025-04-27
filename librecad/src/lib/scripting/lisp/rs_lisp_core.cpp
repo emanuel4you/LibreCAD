@@ -3863,83 +3863,100 @@ BUILTIN("ssget")
         }
     }
 
-    if (args > 0)
+    std::vector<unsigned int> selection_set;
+
+    if (args > 0 && STR_PTR)
     {
         ARG(lclString, sel);
-#if 0
-        if (sel->value() == "A")
-        {
+        const QString &selMethod = sel->value().c_str();
 
-        }
-#endif
-        if (sel->value() == ":S")
+        if(selMethod.toUpper().contains("X"))
         {
-            qDebug() << "[getSingleSelection] :S";
-            if (RS_SCRIPTINGAPI->getSingleSelection(id))
+            if (args == 1 && !RS_SCRIPTINGAPI->selectAll(selection_set))
             {
-                qDebug() << "[getSingleSelection] ok";
-                return lcl::selectionset(id);
+                return lcl::nilValue();
             }
-        }
 
-        if (sel->value() == "X")
-        {
-            if (args == 2)
+            else if (args == 2)
             {
-                ARG(lclSequence, filter);
+                ARG(lclSequence, seq);
+                const int length = seq->count();
+                lclValueVec* items = new lclValueVec(length);
+                std::copy(seq->begin(), seq->end(), items->begin());
 
-                if (!filter->isDotted())
+                RS_ScriptingApiData apiData;
+
+                if (!getApiData(items, apiData))
                 {
                     return lcl::nilValue();
                 }
 
-                const lclInteger* gc = VALUE_CAST(lclInteger, filter->item(0));
+                if (RS_SCRIPTINGAPI->getSelectionByData(apiData, selection_set))
+                {
+                    return lcl::selectionset(id);
+                }
+            }
 
-                switch (gc->value()) {
-                case 0:
-                {
-                    const lclString *name = VALUE_CAST(lclString, filter->item(2));
-                    if (RS_SCRIPTINGAPI->getSelectionByName(name->value().c_str(), id))
-                    {
-                        return lcl::selectionset(id);
-                    }
-                }
-                    break;
-                case 8:
-                {
-                    const lclString *layer = VALUE_CAST(lclString, filter->item(2));
-                    if (RS_SCRIPTINGAPI->getSelectionByLayer(layer->value().c_str(), id))
-                    {
-                        return lcl::selectionset(id);
-                    }
-                }
-                    break;
-                case 62:
-                {
-                    const lclInteger *idx = VALUE_CAST(lclInteger, filter->item(2));
-                    if (RS_SCRIPTINGAPI->getSelectionByIndexColor(idx->value(), id))
-                    {
-                        return lcl::selectionset(id);
-                    }
-                }
-                    break;
-                case 420:
-                {
-                    const lclInteger *tc = VALUE_CAST(lclInteger, filter->item(2));
-                    if (RS_SCRIPTINGAPI->getSelectionByTrueColor(tc->value(), id))
-                    {
-                        return lcl::selectionset(id);
-                    }
-                }
-                    break;
-                default:
-                    break;
-                }
+            else
+            {
+                return lcl::nilValue();
+            }
+        }
+
+        if (selMethod.toUpper().contains(":S"))
+        {
+            qDebug() << "[getSingleSelection] :S";
+            if (!RS_SCRIPTINGAPI->getSingleSelection(selection_set))
+            {
+                return lcl::nilValue();
+            }
+        }
+
+        if (selMethod.toUpper().contains("A"))
+        {
+            qDebug() << "[selectAll] A";
+
+            if (!selMethod.toUpper().contains("-A") && !RS_SCRIPTINGAPI->selectAll(selection_set))
+            {
+                return lcl::nilValue();
+            }
+        }
+
+        if (selMethod.toUpper().contains("L"))
+        {
+            unsigned int id = RS_SCRIPTINGAPI->entlast();
+            if(id > 0 && !selMethod.toUpper().contains("-L"))
+            {
+                selection_set.push_back(id);
+            }
+        }
+
+        if (selMethod.toUpper().contains("P"))
+        {
+            unsigned int id = RS_SCRIPTINGAPI->entnext();
+            if(id > 0 && !selMethod.toUpper().contains("-P"))
+            {
+                selection_set.push_back(id);
             }
         }
     }
 
-    return lcl::nilValue();
+    unsigned int length = selection_set.size();
+
+    if (length == 0)
+    {
+        return lcl::nilValue();
+    }
+
+    lclValueVec* items = new lclValueVec(length);
+    for (unsigned int i = 0; i < length; i++) {
+        (*items)[i] = lcl::integer(selection_set.at(i));
+    }
+
+    id = RS_SCRIPTINGAPI->getNewSelectionId();
+    shadowEnv->set(RS_SCRIPTINGAPI->getSelectionName(id), lcl::list(items));
+
+    return lcl::selectionset(id);
 }
 
 BUILTIN("sslength")
@@ -6313,6 +6330,7 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
                 }
 
                 const lclString *ltype = VALUE_CAST(lclString, list->item(2));
+                apiData.linetype = ltype->value().c_str();
                 apiData.pen.setLineType(RS_FilterDXFRW::nameToLineType(ltype->value().c_str()));
             }
                 break;
@@ -6798,6 +6816,7 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
                     }
                 }
 
+                apiData.gc_lineWidth.push_back(width);
                 apiData.pen.setWidth(RS2::intToLineWidth(width));
             }
                 break;
@@ -6886,6 +6905,7 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
 
                 const lclInteger *color = VALUE_CAST(lclInteger, list->item(2));
                 apiData.pen.setColor(RS_FilterDXFRW::numberToColor(color->value()));
+                apiData.gc_62.push_back({ color->value() });
             }
                 break;
             case 70:
@@ -6940,7 +6960,7 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
                 }
 
                 const lclString *n = VALUE_CAST(lclString, list->item(2));
-                apiData.eSubtype = n->value().c_str();
+                apiData.gc_100.push_back({ n->value().c_str() });
             }
                 break;
             case 281:
@@ -6974,6 +6994,17 @@ bool getApiData(lclValueVec* items, RS_ScriptingApiData &apiData)
 
                 const lclInteger *f3 = VALUE_CAST(lclInteger, list->item(2));
                 apiData.gc_283.push_back({f3->value() });
+            }
+                break;
+            case 402:
+            {
+                if (!list->isDotted())
+                {
+                    return false;
+                }
+
+                const lclInteger *c = VALUE_CAST(lclInteger, list->item(2));
+                apiData.gc_402.push_back({c->value() });
             }
                 break;
             default:

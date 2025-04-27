@@ -1158,6 +1158,7 @@ bool getApiData(PyObject *pList, RS_ScriptingApiData &apiData)
                 return false;
             }
 
+            apiData.linetype = PyUnicode_AsUTF8(pValue);
             apiData.pen.setLineType(RS_FilterDXFRW::nameToLineType(PyUnicode_AsUTF8(pValue)));
         }
         break;
@@ -1485,6 +1486,7 @@ bool getApiData(PyObject *pList, RS_ScriptingApiData &apiData)
                 width *= 100;
             }
 
+            apiData.gc_lineWidth.push_back(width);
             apiData.pen.setWidth(RS2::intToLineWidth(width));
         }
         break;
@@ -1536,6 +1538,7 @@ bool getApiData(PyObject *pList, RS_ScriptingApiData &apiData)
                 return false;
             }
             apiData.pen.setColor(RS_FilterDXFRW::numberToColor(PyLong_AsLong(pValue)));
+            apiData.gc_62.push_back({ static_cast<int>(PyLong_AsLong(pValue)) });
         }
         break;
         case 70:
@@ -1585,7 +1588,7 @@ bool getApiData(PyObject *pList, RS_ScriptingApiData &apiData)
                 PyErr_SetString(PyExc_TypeError, "tuple item must be a string.");
                 return false;
             }
-            apiData.eSubtype = PyUnicode_AsUTF8(pValue);
+            apiData.gc_100.push_back({ PyUnicode_AsUTF8(pValue) });
         }
         break;
         case 281:
@@ -1616,6 +1619,16 @@ bool getApiData(PyObject *pList, RS_ScriptingApiData &apiData)
                 return false;
             }
             apiData.gc_283.push_back({ static_cast<int>(PyLong_AsLong(pValue)) });
+        }
+        break;
+        case 402:
+        {
+            pValue = PyTuple_GetItem(pTuple, 1);
+            if(!PyLong_Check(pValue)) {
+                PyErr_SetString(PyExc_TypeError, "first tuple item must be an integer.");
+                return false;
+            }
+            apiData.gc_402.push_back({ static_cast<int>(PyLong_AsLong(pValue)) });
         }
         break;
         default:
