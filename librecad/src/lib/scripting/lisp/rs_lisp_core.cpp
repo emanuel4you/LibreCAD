@@ -3853,25 +3853,12 @@ BUILTIN("ssdel")
 BUILTIN("ssget")
 {
     int args = CHECK_ARGS_BETWEEN(0, 3);
+    unsigned int id;
 
     if (args == 0)
     {
-        std::vector<unsigned int> ssget;
-
-        if (RS_SCRIPTINGAPI->getSelected(ssget))
+        if (RS_SCRIPTINGAPI->getSelection(id))
         {
-            int length = ssget.size();
-            if (length == 0)
-                return lcl::nilValue();
-
-            lclValueVec* items = new lclValueVec(length);
-            for (int i = 0; i < length; i++) {
-                (*items)[i] = lcl::integer(ssget.at(i));
-            }
-
-            unsigned int id = RS_SCRIPTINGAPI->getNewSelectionId();
-            shadowEnv->set(RS_SCRIPTINGAPI->getSelectionName(id), lcl::list(items));
-
             return lcl::selectionset(id);
         }
     }
@@ -3879,10 +3866,20 @@ BUILTIN("ssget")
     if (args > 0)
     {
         ARG(lclString, sel);
-
+#if 0
         if (sel->value() == "A")
         {
 
+        }
+#endif
+        if (sel->value() == ":S")
+        {
+            qDebug() << "[getSingleSelection] :S";
+            if (RS_SCRIPTINGAPI->getSingleSelection(id))
+            {
+                qDebug() << "[getSingleSelection] ok";
+                return lcl::selectionset(id);
+            }
         }
 
         if (sel->value() == "X")
@@ -3893,23 +3890,50 @@ BUILTIN("ssget")
 
                 if (!filter->isDotted())
                 {
-                      return lcl::nilValue();
+                    return lcl::nilValue();
                 }
 
-                if (filter->item(0)->print(true) == "-1")
-                {
-#if 0
-                    const lclEname *ename = VALUE_CAST(lclEname, filter->item(2));
-                    int entityId = ename->value();
-#endif
-                }
+                const lclInteger* gc = VALUE_CAST(lclInteger, filter->item(0));
 
-                if (filter->item(0)->print(true) == "0")
+                switch (gc->value()) {
+                case 0:
                 {
-#if 0
                     const lclString *name = VALUE_CAST(lclString, filter->item(2));
-                    //name->value();
-#endif
+                    if (RS_SCRIPTINGAPI->getSelectionByName(name->value().c_str(), id))
+                    {
+                        return lcl::selectionset(id);
+                    }
+                }
+                    break;
+                case 8:
+                {
+                    const lclString *layer = VALUE_CAST(lclString, filter->item(2));
+                    if (RS_SCRIPTINGAPI->getSelectionByLayer(layer->value().c_str(), id))
+                    {
+                        return lcl::selectionset(id);
+                    }
+                }
+                    break;
+                case 62:
+                {
+                    const lclInteger *idx = VALUE_CAST(lclInteger, filter->item(2));
+                    if (RS_SCRIPTINGAPI->getSelectionByIndexColor(idx->value(), id))
+                    {
+                        return lcl::selectionset(id);
+                    }
+                }
+                    break;
+                case 420:
+                {
+                    const lclInteger *tc = VALUE_CAST(lclInteger, filter->item(2));
+                    if (RS_SCRIPTINGAPI->getSelectionByTrueColor(tc->value(), id))
+                    {
+                        return lcl::selectionset(id);
+                    }
+                }
+                    break;
+                default:
+                    break;
                 }
             }
         }
@@ -5735,30 +5759,7 @@ static lclValuePtr entget(lclEname *en)
                         linespace->at(1) = lcl::symbol(".");
                         linespace->at(2) = lcl::ldouble(dim->getLineSpacingFactor());
                         entity->push_back(lcl::list(linespace));
-#if 0
-                    {
 
-                        lclValueVec *radius = new lclValueVec(3);
-                        radius->at(0) = lcl::integer(40);
-                        radius->at(1) = lcl::symbol(".");
-                        radius->at(2) = lcl::ldouble(dr->getRadius());
-                        entity->push_back(lcl::list(radius));
-
-                        lclValueVec *txtAng = new lclValueVec(3);
-                        txtAng->at(0) = lcl::integer(53);
-                        txtAng->at(1) = lcl::symbol(".");
-                        txtAng->at(2) = lcl::ldouble(dal->getAngle()*180/M_PI);
-                        entity->push_back(lcl::list(txtAng));
-
-                        lclValueVec *ang = new lclValueVec(3);
-                        ang->at(0) = lcl::integer(50);
-                        ang->at(1) = lcl::symbol(".");
-                        ang->at(2) = lcl::ldouble(0.0);
-                        entity->push_back(lcl::list(ang));
-                    }
-
-#endif
-                        // ??
                         lclValueVec *FixedLength = new lclValueVec(3);
                         FixedLength->at(0) = lcl::integer(42);
                         FixedLength->at(1) = lcl::symbol(".");
@@ -5815,14 +5816,14 @@ static lclValuePtr entget(lclEname *en)
                             leader->at(1) = lcl::symbol(".");
                             leader->at(2) = lcl::ldouble(dr->getLeader());
                             entity->push_back(lcl::list(leader));
-#if 0
-                            lclValueVec *radius = new lclValueVec(3);
-                            radius->at(0) = lcl::integer(40);
-                            radius->at(1) = lcl::symbol(".");
-                            radius->at(2) = lcl::ldouble(dim->getRadius());
-                            entity->push_back(lcl::list(radius));
 
-#endif
+                            lclValueVec *defPnt = new lclValueVec(4);
+                            defPnt->at(0) = lcl::integer(15);
+                            defPnt->at(1) = lcl::ldouble(dim->getDefinitionPoint().x);
+                            defPnt->at(2) = lcl::ldouble(dim->getDefinitionPoint().y);
+                            defPnt->at(3) = lcl::ldouble(dim->getDefinitionPoint().z);
+                            entity->push_back(lcl::list(defPnt));
+
                             lclValueVec *acdbL2 = new lclValueVec(3);
                             acdbL2->at(0) = lcl::integer(100);
                             acdbL2->at(1) = lcl::symbol(".");
@@ -5835,6 +5836,13 @@ static lclValuePtr entget(lclEname *en)
                             RS_DimRadial* dr = (RS_DimRadial*)e;
                             dimType->at(2) = lcl::integer(4+32);
                             entity->insert(entity->end()-6, lcl::list(dimType));
+
+                            lclValueVec *defPnt = new lclValueVec(4);
+                            defPnt->at(0) = lcl::integer(15);
+                            defPnt->at(1) = lcl::ldouble(dim->getDefinitionPoint().x);
+                            defPnt->at(2) = lcl::ldouble(dim->getDefinitionPoint().y);
+                            defPnt->at(3) = lcl::ldouble(dim->getDefinitionPoint().z);
+                            entity->push_back(lcl::list(defPnt));
 
                             lclValueVec *leader = new lclValueVec(3);
                             leader->at(0) = lcl::integer(40);

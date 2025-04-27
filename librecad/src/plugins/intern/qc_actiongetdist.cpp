@@ -40,7 +40,7 @@ struct QC_ActionGetDist::Points {
 };
 
 QC_ActionGetDist::QC_ActionGetDist(LC_ActionContext* actionContext)
-        :RS_PreviewActionInterface("Get Distance", actionContext)
+        :RS_PreviewActionInterface("Get Distance", actionContext, RS2::ActionGetDist)
         , m_canceled(false)
         , m_completed{false}
         , m_setTargetPoint{false}

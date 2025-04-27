@@ -193,6 +193,12 @@ namespace RS2 {
 #ifdef DEVELOPER
         ActionFileExportSlide,
         ActionFileViewSlide,
+        ActionEntSel,
+        ActionGetCorner,
+        ActionGetDist,
+        ActionGetRad,
+        ActionSelectSet,
+        ActionSingleSet,
 #endif
         ActionFileQuit,
 

@@ -20,46 +20,44 @@
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  ******************************************************************************/
 
-#ifndef QC_ACTIONSELECTSET_H
-#define QC_ACTIONSELECTSET_H
+#ifndef QC_ACTIONSINGLESET_H
+#define QC_ACTIONSINGLESET_H
 
-#ifdef DEVELOPER
-
-#include "rs_entitycontainer.h"
-#include "lc_actionpreselectionawarebase.h"
+#include "rs_actioninterface.h"
 
 class QString;
 
+
 /**
- * This action class can handle user events to select entities from script.
+ * This action class can handle user events to select entities from script api.
  *
  * @author  Emanuel
  */
-class QC_ActionSelectSet : public LC_ActionPreSelectionAwareBase
-{
+class QC_ActionSingleSet : public RS_ActionInterface {
     Q_OBJECT
 public:
-    QC_ActionSelectSet(LC_ActionContext *actionContext);
-    ~QC_ActionSelectSet() override;
+    QC_ActionSingleSet(LC_ActionContext* actionContext );
+    ~QC_ActionSingleSet() override;
     void init(int status) override;
-
-
+    void mouseReleaseEvent(QMouseEvent* e) override;
+    void keyPressEvent(QKeyEvent* e) override;
+    void setMessage(QString msg);
+    bool isCompleted() const{return m_completed;}
     void getSelected(std::vector<unsigned int> &se) const;
-    bool wasCanceled(){ return m_canceled; }
-    bool isCompleted() const{ return m_completed; }
-
+    void unselectEntities();
 protected:
-    void updateMouseButtonHintsForSelection() override;
-    void doTrigger(bool keepSelected) override;
-    bool isAllowTriggerOnEmptySelection() override;
-    RS2::CursorType doGetMouseCursorSelected(int status) override;
-    void onMouseRightButtonRelease(int status, LC_MouseEvent *e) override;
+    /**
+     * Action States.
+     */
+    enum Status {
+        Select
+    };
 
+    RS2::CursorType doGetMouseCursor(int status) override;
+    void updateMouseButtonHints() override;
 private:
-    bool m_canceled;
-    bool m_completed;
+    bool m_completed = false;
+    std::unique_ptr<QString> m_message;
+    RS2::EntityType m_entityTypeToSelect = RS2::EntityType::EntityUnknown;
 };
-
-#endif // DEVELOPER
-
-#endif // QC_ACTIONSELECTSET_H
+#endif // QC_ACTIONSINGLESET_H

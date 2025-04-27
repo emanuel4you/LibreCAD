@@ -22,6 +22,8 @@
 
 #ifdef DEVELOPER
 
+#include <string>
+
 #include "rs_python.h"
 #include "rs_lisp_main.h"
 
@@ -34,6 +36,7 @@
 #include "rs_eventhandler.h"
 #include "rs_dialogs.h"
 #include "rs_settings.h"
+#include "rs_filterdxfrw.h"
 
 #include "rs_line.h"
 #include "rs_circle.h"
@@ -62,6 +65,9 @@
 #include "intern/qc_actiongetcorner.h"
 #include "intern/qc_actionentsel.h"
 #include "intern/qc_actionselectset.h"
+#include "intern/qc_actionsingleset.h"
+
+#include "intern/qc_actiongetent.h"
 
 #include <QMessageBox>
 #include <QInputDialog>
@@ -78,6 +84,24 @@
 
 #include <iostream>
 #include <sstream>
+
+/**
+ * helper function getEntityIdbyName
+ */
+RS2::EntityType getEntityIdbyName(const QString &name)
+{
+    RS2::EntityType type = RS2::EntityUnknown;
+
+    for (auto e : entityIds)
+    {
+       if (name.compare(e.name) == 0)
+       {
+           type = e.id;
+           break;
+       }
+    }
+    return type;
+}
 
 /**
  * static instance to class RS_ScriptingApi
@@ -571,7 +595,7 @@ bool RS_ScriptingApi::getDist(CommandEdit *cmdline, const char *msg, const RS_Ve
     prompt = QObject::tr("Enter second point: ");
     cmdline->setPrompt(QObject::tr(qUtf8Printable(prompt)));
 
-    auto endAction = std::make_shared<QC_ActionGetDist >(ctx);
+    auto endAction = std::make_shared<QC_ActionGetDist>(ctx);
 
     if (endAction)
     {
@@ -736,7 +760,7 @@ bool RS_ScriptingApi::getOrient(CommandEdit *cmdline, const char *msg, const RS_
     prompt = QObject::tr("Enter second point: ");
     cmdline->setPrompt(QObject::tr(qUtf8Printable(prompt)));
 
-    auto endAction = std::make_shared<QC_ActionGetRad >(ctx);
+    auto endAction = std::make_shared<QC_ActionGetRad>(ctx);
     if (endAction)
     {
         QPointF *base = new QPointF(start.x, start.y);
@@ -1002,11 +1026,10 @@ bool RS_ScriptingApi::trueColorDialog(int &tres, int &res, int tcolor, int color
     return QG_ColorDlg::getTrueColor(tres, res, NULL, tcolor, color, by, tbycolor, bycolor);
 }
 
-bool RS_ScriptingApi::getSelected(std::vector<unsigned int> &sset)
+bool RS_ScriptingApi::getSelection(unsigned int &id)
 {
-    Q_UNUSED(sset)
-
     bool status = false;
+    std::vector<unsigned int> ssget;
 
     if (getGraphicView() == NULL || getGraphic() == NULL){
         qDebug() << "graphicView == NULL";
@@ -1016,7 +1039,7 @@ bool RS_ScriptingApi::getSelected(std::vector<unsigned int> &sset)
     auto& appWin = QC_ApplicationWindow::getAppWindow();
     LC_DefaultActionContext *ctx = appWin->getActionContext();
 
-    auto actionSelect = std::make_shared<QC_ActionSelectSet >(ctx);
+    auto actionSelect = std::make_shared<QC_ActionSelectSet>(ctx);
     if (actionSelect)
     {
         ctx->getGraphicView()->killAllActions();
@@ -1033,14 +1056,234 @@ bool RS_ScriptingApi::getSelected(std::vector<unsigned int> &sset)
 
     if (actionSelect->isCompleted() && !actionSelect->wasCanceled())
     {
-        actionSelect->getSelected(sset);
+        actionSelect->getSelected(ssget);
         status = true;
     }
 
     ctx->getGraphicView()->killAllActions();
 
+    int length = ssget.size();
+    if (length == 0)
+    {
+        return false;
+    }
+
+    lclValueVec* items = new lclValueVec(length);
+    for (int i = 0; i < length; i++) {
+        (*items)[i] = lcl::integer(ssget.at(i));
+    }
+
+    id = getNewSelectionId();
+    shadowEnv->set(getSelectionName(getNewSelectionId()), lcl::list(items));
+
     qDebug() << "[RS_ScriptingApi::getSelected] status:" << status;
     return status;
+}
+
+bool RS_ScriptingApi::getSingleSelection(unsigned int &id)
+{
+    qDebug() << "[RS_ScriptingApi::getSingleSelection] start";
+    bool status = false;
+    std::vector<unsigned int> ssget;
+
+    if (getGraphicView() == NULL || getGraphic() == NULL){
+        qDebug() << "graphicView == NULL";
+        return false;
+    }
+
+    auto& appWin = QC_ApplicationWindow::getAppWindow();
+    LC_DefaultActionContext *ctx = appWin->getActionContext();
+
+    auto actionSelect = std::make_shared<QC_ActionSingleSet>(ctx);
+    if (actionSelect)
+    {
+        ctx->getGraphicView()->killAllActions();
+        ctx->getGraphicView()->setCurrentAction(actionSelect);
+
+        QEventLoop ev;
+        while (!actionSelect->isCompleted())
+        {
+
+            ev.processEvents();
+            if (!ctx->getGraphicView()->getEventHandler()->hasAction())
+            {
+                break;
+            }
+        }
+    }
+
+    if (actionSelect->isCompleted())
+    {
+        actionSelect->getSelected(ssget);
+        status = true;
+    }
+
+    ctx->getGraphicView()->killAllActions();
+
+    int length = ssget.size();
+    if (length == 0)
+    {
+        return false;
+    }
+
+    lclValueVec* items = new lclValueVec(length);
+    for (int i = 0; i < length; i++) {
+        (*items)[i] = lcl::integer(ssget.at(i));
+    }
+
+    id = getNewSelectionId();
+    shadowEnv->set(getSelectionName(getNewSelectionId()), lcl::list(items));
+
+    qDebug() << "[RS_ScriptingApi::getSingleSelection] status:" << status;
+    return status;
+}
+
+bool RS_ScriptingApi::getSelectionByName(const QString &name, unsigned int &id)
+{
+    std::vector<unsigned int> ssget;
+    RS2::EntityType rtti = getEntityIdbyName(name);
+    RS_EntityContainer* entityContainer = getContainer();
+
+    if(entityContainer && entityContainer->count())
+    {
+        for (auto e: *entityContainer)
+        {
+            if(e->rtti() == rtti)
+            {
+                ssget.push_back(e->getId());
+            }
+        }
+
+        int length = ssget.size();
+        if (length == 0)
+        {
+            return false;
+        }
+
+        lclValueVec* items = new lclValueVec(length);
+        for (int i = 0; i < length; i++) {
+            (*items)[i] = lcl::integer(ssget.at(i));
+        }
+
+        id = getNewSelectionId();
+        shadowEnv->set(getSelectionName(getNewSelectionId()), lcl::list(items));
+
+        return true;
+    }
+
+    return false;
+}
+
+bool RS_ScriptingApi::getSelectionByLayer(const QString &layer, unsigned int &id)
+{
+    std::vector<unsigned int> ssget;
+    RS_EntityContainer* entityContainer = getContainer();
+
+    if(entityContainer && entityContainer->count())
+    {
+        for (auto e: *entityContainer)
+        {
+            if(e->getLayer()->getName() == layer)
+            {
+                ssget.push_back(e->getId());
+            }
+        }
+
+        int length = ssget.size();
+        if (length == 0)
+        {
+            return false;
+        }
+
+        lclValueVec* items = new lclValueVec(length);
+        for (int i = 0; i < length; i++) {
+            (*items)[i] = lcl::integer(ssget.at(i));
+        }
+
+        id = getNewSelectionId();
+        shadowEnv->set(getSelectionName(getNewSelectionId()), lcl::list(items));
+
+        return true;
+    }
+
+    return false;
+}
+
+bool RS_ScriptingApi::getSelectionByIndexColor(int index, unsigned int &id)
+{
+    std::vector<unsigned int> ssget;
+    RS_EntityContainer* entityContainer = getContainer();
+
+    if(entityContainer && entityContainer->count())
+    {
+        for (auto e: *entityContainer)
+        {
+            const RS_Color color = e->getPen(false).getColor();
+            int exact_rgb;
+
+            if(RS_FilterDXFRW::colorToNumber(color, &exact_rgb) == index)
+            {
+                ssget.push_back(e->getId());
+            }
+        }
+
+        int length = ssget.size();
+        if (length == 0)
+        {
+            return false;
+        }
+
+        lclValueVec* items = new lclValueVec(length);
+        for (int i = 0; i < length; i++) {
+            (*items)[i] = lcl::integer(ssget.at(i));
+        }
+
+        id = getNewSelectionId();
+        shadowEnv->set(getSelectionName(getNewSelectionId()), lcl::list(items));
+
+        return true;
+    }
+
+    return false;
+}
+
+bool RS_ScriptingApi::getSelectionByTrueColor(int trueColor, unsigned int &id)
+{
+    std::vector<unsigned int> ssget;
+    RS_EntityContainer* entityContainer = getContainer();
+
+    if(entityContainer && entityContainer->count())
+    {
+        for (auto e: *entityContainer)
+        {
+            const RS_Color color = e->getPen(false).getColor();
+            int exact_rgb;
+            RS_FilterDXFRW::colorToNumber(color, &exact_rgb);
+
+            if((exact_rgb >=0) && (exact_rgb == trueColor))
+            {
+                ssget.push_back(e->getId());
+            }
+        }
+
+        int length = ssget.size();
+        if (length == 0)
+        {
+            return false;
+        }
+
+        lclValueVec* items = new lclValueVec(length);
+        for (int i = 0; i < length; i++) {
+            (*items)[i] = lcl::integer(ssget.at(i));
+        }
+
+        id = getNewSelectionId();
+        shadowEnv->set(getSelectionName(getNewSelectionId()), lcl::list(items));
+
+        return true;
+    }
+
+    return false;
 }
 
 bool RS_ScriptingApi::entdel(unsigned int id)

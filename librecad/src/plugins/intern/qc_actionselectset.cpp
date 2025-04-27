@@ -26,7 +26,7 @@
 #include "rs_graphicview.h"
 
 QC_ActionSelectSet::QC_ActionSelectSet(LC_ActionContext* actionContext)
-    : LC_ActionPreSelectionAwareBase("Selection Set", actionContext, RS2::ActionDefault)
+    : LC_ActionPreSelectionAwareBase("Selection Set", actionContext, RS2::ActionSelectSet)
     , m_canceled{false}
     , m_completed{false}
 {

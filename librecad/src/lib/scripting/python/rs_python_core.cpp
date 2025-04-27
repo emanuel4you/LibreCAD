@@ -589,7 +589,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                     case RS2::EntityDimRadial:
                     {
                         RS_DimRadial* dr = (RS_DimRadial*)e;
-                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(id)(id)(is)(is)]",
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(iddd)(id)(id)(is)(is)]",
                             0, "DIMENSION",
                             -1, ename,
                             330, dr->getParent()->getId(),
@@ -602,8 +602,9 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             410, "Model",
                             8, qUtf8Printable(dr->getLayer()->getName()),
                             100, "AcDbDimension",
-                            10, dr->getDefinitionPoint().x, dr->getDefinitionPoint().y, dr->getDefinitionPoint().z,
+                            10, dr->getData().definitionPoint.x, dr->getData().definitionPoint.y, dr->getData().definitionPoint.z,
                             11, dr->getMiddleOfText().x, dr->getMiddleOfText().y, dr->getMiddleOfText().z,
+                            15, dr->getDefinitionPoint().x, dr->getDefinitionPoint().y, dr->getDefinitionPoint().z,
                             40, dr->getRadius(),
                             41, dr->getLineSpacingFactor(),
                             3, qUtf8Printable(dr->getData().style),
@@ -614,7 +615,7 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                     case RS2::EntityDimDiametric:
                     {
                         RS_DimDiametric* dd = (RS_DimDiametric*)e;
-                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(id)(id)(is)(is)]",
+                        return Py_BuildValue("[(is)(is)(ii)(is)(is)(ii)(id)(is)(ii)(is)(is)(is)(iddd)(iddd)(iddd)(id)(id)(is)(is)]",
                             0, "DIMENSION",
                             -1, ename,
                             330, dd->getParent()->getId(),
@@ -627,8 +628,9 @@ PyObject *RS_PythonCore::entget(const char *ename) const
                             410, "Model",
                             8, qUtf8Printable(dd->getLayer()->getName()),
                             100, "AcDbDimension",
-                            10, dd->getDefinitionPoint().x, dd->getDefinitionPoint().y, dd->getDefinitionPoint().z,
+                            10, dd->getData().definitionPoint.x, dd->getData().definitionPoint.y, dd->getData().definitionPoint.z,
                             11, dd->getMiddleOfText().x, dd->getMiddleOfText().y, dd->getMiddleOfText().z,
+                            15, dd->getDefinitionPoint().x, dd->getDefinitionPoint().y, dd->getDefinitionPoint().z,
                             40, dd->getRadius(),
                             41, dd->getLineSpacingFactor(),
                             3, qUtf8Printable(dd->getData().style),
@@ -990,6 +992,21 @@ PyObject *RS_PythonCore::ssdel(const char *ename, const char *ss) const
     return RS_SCRIPTINGAPI->ssdel(RS_SCRIPTINGAPI->getEntityId(ename),
                                   RS_SCRIPTINGAPI->getSelectionId(ss))
             ? Py_BuildValue("s", ss) : Py_None;
+}
+
+PyObject *RS_PythonCore::ssget(PyObject *args) const
+{
+    unsigned int id;
+
+    if (args == Py_None)
+    {
+        if (RS_SCRIPTINGAPI->getSelection(id))
+        {
+            return Py_BuildValue("s", RS_SCRIPTINGAPI->getSelectionName(id).c_str());
+        }
+    }
+
+    Py_RETURN_NONE;
 }
 
 PyObject *RS_PythonCore::ssname(const char *ss, unsigned int idx) const

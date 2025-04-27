@@ -963,6 +963,8 @@ set(SOURCES
         librecad/src/plugins/intern/qc_actiongetselect.h
         librecad/src/plugins/intern/qc_actionselectset.cpp
         librecad/src/plugins/intern/qc_actionselectset.h
+        librecad/src/plugins/intern/qc_actionsingleset.cpp
+        librecad/src/plugins/intern/qc_actionsingleset.h
         librecad/src/plugins/document_interface.h
         librecad/src/plugins/qc_plugininterface.h
 		librecad/src/ui/dialogs/entity/lc_dlgsplinepoints.cpp

@@ -33,7 +33,7 @@
 #include "rs_snapper.h"
 
 QC_ActionEntSel::QC_ActionEntSel(LC_ActionContext* actionContext)
-        :RS_ActionInterface("Get Entity", actionContext, RS2::ActionDefault)
+        :RS_ActionInterface("Get Entity", actionContext, RS2::ActionEntSel)
         , m_canceled(false)
         , m_completed{false}
         , m_message(std::make_unique<QString>(tr("Select objects:")))

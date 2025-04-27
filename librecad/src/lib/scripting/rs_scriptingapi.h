@@ -41,12 +41,38 @@
 #include "rs_spline.h"
 #include "rs_selection.h"
 #include "rs_graphic.h"
+#include "rs.h"
 #include "qc_applicationwindow.h"
 
 #include "commandedit.h"
 #include "document_interface.h"
 
+#define MAX_ENTITY_ID 13
+
 #define RS_SCRIPTINGAPI RS_ScriptingApi::instance()
+
+typedef struct entity_id_name {
+    const char* name;
+    RS2::EntityType id;
+} entity_id_name_t;
+
+static const entity_id_name_t entityIds[MAX_ENTITY_ID] = {
+{ "INSERT", RS2::EntityBlock, },
+{ "POINT", RS2::EntityPoint, },
+{ "LINE", RS2::EntityLine, },
+{ "LWPOLYLINE", RS2::EntityPolyline, },
+{ "ARC", RS2::EntityArc, },
+{ "CIRCLE", RS2::EntityCircle, },
+{ "ELLIPSE", RS2::EntityEllipse, },
+{ "SOLID", RS2::EntitySolid, },
+{ "MTEXT", RS2::EntityMText, },
+{ "TEXT", RS2::EntityText, },
+{ "HATCH", RS2::EntityHatch, },
+{ "IMAGE", RS2::EntityImage, },
+{ "SPLINE", RS2::EntitySpline, }
+};
+
+RS2::EntityType getEntityIdbyName(const QString &name);
 
 class RS_ScriptingApiData
 {
@@ -196,7 +222,12 @@ public:
     bool getReal(CommandEdit *cmdline, const char *msg, double &res);
     bool getInteger(CommandEdit *cmdline, const char *msg, int &res);
     bool getString(CommandEdit *cmdline, bool cr, const char *msg, std::string &res);
-    bool getSelected(std::vector<unsigned int> &sset);
+    bool getSelection(unsigned int &id);
+    bool getSingleSelection(unsigned int &id);
+    bool getSelectionByIndexColor(int index, unsigned int &id);
+    bool getSelectionByTrueColor(int trueColor, unsigned int &id);
+    bool getSelectionByLayer(const QString &layer, unsigned int &id);
+    bool getSelectionByName(const QString &name, unsigned int &id);
     bool getKeyword(CommandEdit *cmdline, const char *msg, std::string &res);
     bool ssadd(unsigned int id, unsigned int ss, unsigned int &newss);
     bool ssname(unsigned int ss, unsigned int idx, unsigned int &id);

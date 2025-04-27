@@ -42,7 +42,7 @@ struct QC_ActionGetCorner::Points {
 };
 
 QC_ActionGetCorner::QC_ActionGetCorner(LC_ActionContext* actionContext)
-        :RS_PreviewActionInterface("Get Point", actionContext)
+        :RS_PreviewActionInterface("Get Point", actionContext, RS2::ActionGetCorner)
         , m_canceled(false)
         , m_completed{false}
         , m_setTargetPoint{false}

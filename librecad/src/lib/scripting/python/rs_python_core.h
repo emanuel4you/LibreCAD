@@ -50,6 +50,7 @@ public:
     PyObject *polar(PyObject *pnt, double ang, double dist) const;
     PyObject *ssadd(const char *ename = "", const char *ss = "") const;
     PyObject *ssdel(const char *ename, const char *ss) const;
+    PyObject *ssget(PyObject *args) const;
     PyObject *ssname(const char *ss, unsigned int idx) const;
 
     PyObject *getvar(const char *id) const;

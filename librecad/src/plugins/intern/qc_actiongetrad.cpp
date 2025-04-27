@@ -41,7 +41,7 @@ struct QC_ActionGetRad::Points {
 };
 
 QC_ActionGetRad::QC_ActionGetRad(LC_ActionContext* actionContext)
-        :RS_PreviewActionInterface("Get Point", actionContext)
+        :RS_PreviewActionInterface("Get Point", actionContext, RS2::ActionGetRad)
         , m_canceled(false)
         , m_completed{false}
         , m_setTargetPoint{false}
