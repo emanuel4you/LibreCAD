@@ -3870,7 +3870,7 @@ BUILTIN("ssget")
         ARG(lclString, sel);
         const QString &selMethod = sel->value().c_str();
 
-        if(selMethod.toUpper().contains("X"))
+        if(selMethod.contains("X", Qt::CaseInsensitive))
         {
             if (args == 1 && !RS_SCRIPTINGAPI->selectAll(selection_set))
             {
@@ -3903,7 +3903,7 @@ BUILTIN("ssget")
             }
         }
 
-        if (selMethod.toUpper().contains(":S"))
+        if (selMethod.contains(":S", Qt::CaseInsensitive))
         {
             qDebug() << "[getSingleSelection] :S";
             if (!RS_SCRIPTINGAPI->getSingleSelection(selection_set))
@@ -3912,29 +3912,29 @@ BUILTIN("ssget")
             }
         }
 
-        if (selMethod.toUpper().contains("A"))
+        if (selMethod.contains("A", Qt::CaseInsensitive))
         {
             qDebug() << "[selectAll] A";
 
-            if (!selMethod.toUpper().contains("-A") && !RS_SCRIPTINGAPI->selectAll(selection_set))
+            if (!selMethod.contains("-A", Qt::CaseInsensitive) && !RS_SCRIPTINGAPI->selectAll(selection_set))
             {
                 return lcl::nilValue();
             }
         }
 
-        if (selMethod.toUpper().contains("L"))
+        if (selMethod.contains("L", Qt::CaseInsensitive))
         {
             unsigned int id = RS_SCRIPTINGAPI->entlast();
-            if(id > 0 && !selMethod.toUpper().contains("-L"))
+            if(id > 0 && !selMethod.contains("-L", Qt::CaseInsensitive))
             {
                 selection_set.push_back(id);
             }
         }
 
-        if (selMethod.toUpper().contains("P"))
+        if (selMethod.contains("P", Qt::CaseInsensitive))
         {
             unsigned int id = RS_SCRIPTINGAPI->entnext();
-            if(id > 0 && !selMethod.toUpper().contains("-P"))
+            if(id > 0 && !selMethod.contains("-P", Qt::CaseInsensitive))
             {
                 selection_set.push_back(id);
             }

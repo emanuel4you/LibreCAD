@@ -345,7 +345,7 @@ void QG_Lsp_CommandWidget::dockingButtonTriggered(bool /*docked*/)
     auto* cmd_dockwidget = QC_ApplicationWindow::getAppWindow()->findChild<QDockWidget*>("lsp_command_dockwidget");
     cmd_dockwidget->setFloating(!cmd_dockwidget->isFloating());
     m_docking->setText(cmd_dockwidget->isFloating() ? tr("Dock") : tr("Float"));
-    setWindowTitle(cmd_dockwidget->isFloating() ? tr("Lisp Command line") : tr("Lisp Cmd"));
+    setWindowTitle(cmd_dockwidget->isFloating() ? tr("Lisp Command Line") : tr("Lisp Cmd"));
 }
 
 #endif // DEVELOPER

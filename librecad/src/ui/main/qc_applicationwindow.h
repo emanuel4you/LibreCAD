@@ -397,9 +397,9 @@ protected:
     QG_LibraryWidget* m_libraryWidget {nullptr};
     QG_CommandWidget* m_commandWidget {nullptr};
 #ifdef DEVELOPER
-    /** Lips Command line */
+    /** Lips Command Line */
     QG_Lsp_CommandWidget* m_lspCommandWidget {nullptr};
-    /** Python Command line */
+    /** Python Command Line */
     QG_Py_CommandWidget* m_pyCommandWidget {nullptr};
 #endif // DEVELOPER
     LC_PenWizard* m_penWizard {nullptr};

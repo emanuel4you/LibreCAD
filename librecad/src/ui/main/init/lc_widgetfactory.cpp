@@ -275,7 +275,7 @@ QDockWidget * LC_WidgetFactory::createCmdWidget(QG_ActionHandler *action_handler
 
 #ifdef DEVELOPER
 QDockWidget * LC_WidgetFactory::createLspCmdWidget(QG_ActionHandler *action_handler){
-    auto dock = createDockWidget(tr("Lisp Command line"), "lsp_command_dockwidget", tr("Cmd"));
+    auto dock = createDockWidget(tr("Lisp Command Line"), "lsp_command_dockwidget", tr("Cmd"));
 
     auto widget = new QG_Lsp_CommandWidget(action_handler, dock, "Lisp Command");
     widget->setActionHandler(action_handler);
@@ -294,7 +294,7 @@ QDockWidget * LC_WidgetFactory::createLspCmdWidget(QG_ActionHandler *action_hand
 }
 
 QDockWidget * LC_WidgetFactory::createPyCmdWidget(QG_ActionHandler *action_handler){
-    auto dock = createDockWidget(tr("Python Command line"), "py_command_dockwidget", tr("Cmd"));
+    auto dock = createDockWidget(tr("Python Command Line"), "py_command_dockwidget", tr("Cmd"));
 
     auto widget = new QG_Py_CommandWidget(action_handler, dock, "Python Command");
     widget->setActionHandler(action_handler);

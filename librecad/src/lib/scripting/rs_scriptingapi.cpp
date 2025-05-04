@@ -1972,8 +1972,8 @@ bool RS_ScriptingApi::addLayer(const char *name, const RS_Pen &pen, int state)
         QString sNumLayerName;
         int nlen {1};
         int i {0};
-        QRegularExpression re("^(.*\\D+|)(\\d*)$");
-        QRegularExpressionMatch match( re.match(layer_name));
+        static const QRegularExpression re(QStringLiteral("^(.*\\D+|)(\\d*)$"));
+        QRegularExpressionMatch match(re.match(layer_name));
         if (match.hasMatch()) {
             sBaseLayerName = match.captured(1);
             if( 1 < match.lastCapturedIndex()) {
@@ -4280,7 +4280,8 @@ RS_ScriptingApi::SysVarResult RS_ScriptingApi::getvar(const char *var, int &int_
     if (sysvar.toUpper() == "ACADVER")
     {
         QString acadver = graphic->getVariableString("$ACADVER", "");
-        acadver.replace(QRegularExpression("[a-zA-Z]"), "");
+        static const QRegularExpression regexp(QStringLiteral("[a-zA-Z]"));
+        acadver.replace(regexp, "");
         str_result = acadver.toStdString();
         return RS_ScriptingApi::String;
     }

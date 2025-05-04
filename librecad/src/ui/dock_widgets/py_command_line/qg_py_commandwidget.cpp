@@ -346,7 +346,7 @@ void QG_Py_CommandWidget::dockingButtonTriggered(bool /*docked*/)
     auto* cmd_dockwidget = QC_ApplicationWindow::getAppWindow()->findChild<QDockWidget*>("py_command_dockwidget");
     cmd_dockwidget->setFloating(!cmd_dockwidget->isFloating());
     m_docking->setText(cmd_dockwidget->isFloating() ? tr("Dock") : tr("Float"));
-    setWindowTitle(cmd_dockwidget->isFloating() ? tr("Python Command line") : tr("Python Cmd"));
+    setWindowTitle(cmd_dockwidget->isFloating() ? tr("Python Command Line") : tr("Python Cmd"));
 }
 
 #endif // DEVELOPER

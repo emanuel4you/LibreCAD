@@ -54,9 +54,9 @@
 
 CommandEdit::CommandEdit(QWidget* parent)
     : QLineEdit(parent)
-    , m_doProcess{true}
-    , m_doProcessLc{false}
-    , m_keycode_mode{false}
+    , m_doProcess(true)
+    , m_doProcessLc(false)
+    , m_keycode_mode(false)
     , m_path(QDir(QDir::homePath() + QDir::separator() + "." + cmdLang() + "-history-librecad").absolutePath())
 {
     setStyleSheet("selection-color: white; selection-background-color: green;");
