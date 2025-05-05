@@ -405,7 +405,8 @@ void RS_EventHandler::killShownActions()
 
     for (auto it=m_currentActions.begin();it != m_currentActions.end();){
         RS2::ActionType rtti = (*it)->rtti();
-        if (rtti == RS2::ActionFileViewSlide) {
+        if (rtti == RS2::ActionFileViewSlide ||
+            rtti == RS2::ActionGrDraw) {
             if (isActive(*it)) {
                 (*it)->finish();
             }

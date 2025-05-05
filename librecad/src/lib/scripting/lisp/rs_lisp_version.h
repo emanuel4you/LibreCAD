@@ -58,7 +58,7 @@
 #ifndef __LISP__
 #define LISP_MAJOR_VER  1
 #define LISP_MINOR_VER  3
-#define LISP_PATCHLEVEL 4
+#define LISP_PATCHLEVEL 5
 #define LISP_BUILD "devel"
 
 #define LISP_VERSION LISP_MAJOR_VER * 10000 \

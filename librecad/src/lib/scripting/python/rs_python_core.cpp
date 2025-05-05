@@ -108,6 +108,51 @@ double RS_PythonCore::angle(PyObject *pnt1, PyObject *pnt2) const
     return std::atan2(y2 - y1, x2 - x1);
 }
 
+PyObject *RS_PythonCore::grdraw(PyObject *start, PyObject *end, int color, int highlight) const
+{
+    bool hlight = false;
+    PyObject *pStart, *pEnd;
+    RS_Vector startPnt, endPnt;
+
+    if (highlight > 0)
+    {
+        hlight = true;
+    }
+
+    if (!PyArg_Parse(start, "O!", &PyTuple_Type, &pStart)) {
+        PyErr_SetString(PyExc_TypeError, "point must be a tuple.");
+        Py_RETURN_NONE;
+    }
+
+    if (!PyArg_Parse(end, "O!", &PyTuple_Type, &pEnd)) {
+        PyErr_SetString(PyExc_TypeError, "point must be a tuple.");
+        Py_RETURN_NONE;
+    }
+
+    if (PyTuple_Size(pStart) < 2 || PyTuple_Size(pEnd) < 2)
+    {
+        PyErr_SetString(PyExc_TypeError, "point must have x and y.");
+        Py_RETURN_NONE;
+    }
+
+    startPnt.x = PyFloat_AsDouble(PyTuple_GetItem(pStart, 0));
+    startPnt.y = PyFloat_AsDouble(PyTuple_GetItem(pStart, 1));
+    endPnt.x = PyFloat_AsDouble(PyTuple_GetItem(pStart, 0));
+    endPnt.y = PyFloat_AsDouble(PyTuple_GetItem(pStart, 1));
+
+    if (PyTuple_Size(pStart) == 3)
+    {
+        startPnt.z = PyFloat_AsDouble(PyTuple_GetItem(pStart, 2));
+    }
+    if (PyTuple_Size(pEnd) == 3)
+    {
+        endPnt.z = PyFloat_AsDouble(PyTuple_GetItem(pEnd, 2));
+    }
+    RS_SCRIPTINGAPI->grdraw(startPnt, endPnt, color, hlight);
+
+    Py_RETURN_NONE;
+}
+
 PyObject *RS_PythonCore::assoc(int needle, PyObject *args) const
 {
     qDebug() << "[RS_PythonCore::assoc] - start";

@@ -136,6 +136,7 @@ INCLUDEPATH += \
     lib/engine/overlays/crosshair \
     lib/engine/overlays/info_cursor \
     lib/engine/overlays/overlay_box \
+    lib/engine/overlays/grdraw \
     lib/engine/overlays/slide \
     lib/engine/overlays/ucs_mark \
     lib/engine/undo \
@@ -389,6 +390,7 @@ HEADERS += \
     lib/engine/document/entities/rs_line.h \
     lib/engine/document/entities/rs_mtext.h \
     lib/engine/overlays/rs_overlayline.h \
+    lib/engine/overlays/grdraw/lc_grdraw.h \
     lib/engine/overlays/overlay_box/rs_overlaybox.h \
     lib/engine/overlays/slide/lc_slide.h \
     lib/engine/document/patterns/rs_pattern.h \
@@ -693,6 +695,7 @@ SOURCES += \
     lib/engine/document/entities/rs_line.cpp \
     lib/engine/document/entities/rs_mtext.cpp \
     lib/engine/overlays/rs_overlayline.cpp \
+    lib/engine/overlays/grdraw/lc_grdraw.cpp \
     lib/engine/overlays/overlay_box/rs_overlaybox.cpp \
     lib/engine/overlays/slide/lc_slide.cpp \
     lib/engine/document/patterns/rs_pattern.cpp \
@@ -1733,6 +1736,7 @@ HEADERS += \
     plugins/intern/qc_actiongetrad.h \
     plugins/intern/qc_actiongetselect.h \
     plugins/intern/qc_actiongetent.h \
+    plugins/intern/qc_actiongrdraw.h \
     plugins/intern/qc_actionselectset.h \
     plugins/intern/qc_actionsingleset.h \
     main/main.h \
@@ -1749,6 +1753,7 @@ SOURCES += \
     plugins/intern/qc_actiongetrad.cpp \
     plugins/intern/qc_actiongetselect.cpp \
     plugins/intern/qc_actiongetent.cpp \
+    plugins/intern/qc_actiongrdraw.cpp \
     plugins/intern/qc_actionselectset.cpp \
     plugins/intern/qc_actionsingleset.cpp \
     main/main.cpp \

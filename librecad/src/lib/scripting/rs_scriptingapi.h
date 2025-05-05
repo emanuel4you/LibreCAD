@@ -171,6 +171,7 @@ public:
     void addSpline(const RS_SplineData data, const std::vector<RS_Vector> &points, const RS_Pen &pen);
     void addMText(const RS_Vector &pnt, double height, double width, double angle, int spacing, int direction, int attach, const QString &txt, const QString &style, const RS_Pen &pen);
     void addText(const RS_Vector &pnt, double height, double width, double angle, int valign, int halign, int generation, const QString &txt, const QString &style, const RS_Pen &pen);
+    void grdraw(const RS_Vector &start, const RS_Vector &end, int color, bool highlight);
 
     std::string copyright() const;
     std::string credits() const;

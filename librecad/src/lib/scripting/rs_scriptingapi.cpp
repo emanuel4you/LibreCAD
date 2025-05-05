@@ -63,6 +63,7 @@
 #include "intern/qc_actiongetdist.h"
 #include "intern/qc_actiongetpoint.h"
 #include "intern/qc_actiongetcorner.h"
+#include "intern/qc_actiongrdraw.h"
 #include "intern/qc_actionentsel.h"
 #include "intern/qc_actionselectset.h"
 #include "intern/qc_actionsingleset.h"
@@ -2259,6 +2260,34 @@ void RS_ScriptingApi::addDimRadial(const RS_DimensionData &data, const RS_DimRad
 
     LC_UndoSection undo(getDocument(), getGraphicView()->getViewPort());
     undo.addUndoable(dim);
+}
+
+void RS_ScriptingApi::grdraw(const RS_Vector &start, const RS_Vector &end, int color, bool highlight)
+{
+    if (getGraphicView() == NULL || getGraphic() == NULL){
+        qDebug() << "graphicView == NULL";
+        return;
+    }
+
+    auto& appWin = QC_ApplicationWindow::getAppWindow();
+    LC_DefaultActionContext *ctx = appWin->getActionContext();
+
+    auto a = std::make_shared<QC_ActionGrDraw>(ctx);
+    if (a)
+    {
+        ctx->getGraphicView()->killAllActions();
+        ctx->getGraphicView()->setCurrentAction(a);
+
+        a->drawLine(start, end, color, highlight);
+        QEventLoop ev;
+
+        while (a->getStatus() > -1)
+        {
+            ev.processEvents ();
+            if (!ctx->getGraphicView()->getEventHandler()->hasAction())
+                break;
+        }
+    }
 }
 
 bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)

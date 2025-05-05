@@ -197,6 +197,7 @@ namespace RS2 {
         ActionGetCorner,
         ActionGetDist,
         ActionGetRad,
+        ActionGrDraw,
         ActionSelectSet,
         ActionSingleSet,
 #endif

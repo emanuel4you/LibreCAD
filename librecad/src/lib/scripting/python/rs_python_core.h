@@ -40,6 +40,7 @@ public:
     double angle(PyObject *pnt1, PyObject *pnt2) const;
 
     PyObject *assoc(int needle, PyObject *args) const;
+    PyObject *grdraw(PyObject *start, PyObject *end, int color, int highlight) const;
     PyObject *entlast() const;
     PyObject *entdel(const char *ename) const;
     PyObject *entget(const char *ename) const;

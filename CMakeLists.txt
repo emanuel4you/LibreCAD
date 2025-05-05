@@ -103,6 +103,7 @@ include_directories(librecad/src/lib/engine/utils)
 include_directories(librecad/src/lib/engine/clipboard)
 include_directories(librecad/src/lib/engine/settings)
 include_directories(librecad/src/lib/engine/overlays)
+include_directories(librecad/src/lib/engine/overlays/grdraw)
 include_directories(librecad/src/lib/engine/overlays/slide)
 include_directories(librecad/src/lib/engine/overlays/preview)
 include_directories(librecad/src/lib/engine/overlays/highlight)
@@ -782,6 +783,8 @@ set(SOURCES
 		librecad/src/lib/engine/document/entities/rs_line.h
 		librecad/src/lib/engine/document/entities/rs_mtext.cpp
 		librecad/src/lib/engine/document/entities/rs_mtext.h
+		librecad/src/lib/engine/overlays/grdraw/lc_grdraw.cpp
+		librecad/src/lib/engine/overlays/grdraw/lc_grdraw.h
 		librecad/src/lib/engine/overlays/overlay_box/rs_overlaybox.cpp
 		librecad/src/lib/engine/overlays/overlay_box/rs_overlaybox.h
 		librecad/src/lib/engine/overlays/slide/lc_slide.cpp
@@ -961,6 +964,8 @@ set(SOURCES
         librecad/src/plugins/intern/qc_actiongetrad.h
         librecad/src/plugins/intern/qc_actiongetselect.cpp
         librecad/src/plugins/intern/qc_actiongetselect.h
+        librecad/src/plugins/intern/qc_actiongrdraw.cpp
+        librecad/src/plugins/intern/qc_actiongrdraw.h
         librecad/src/plugins/intern/qc_actionselectset.cpp
         librecad/src/plugins/intern/qc_actionselectset.h
         librecad/src/plugins/intern/qc_actionsingleset.cpp
