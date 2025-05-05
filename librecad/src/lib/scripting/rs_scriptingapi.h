@@ -74,6 +74,13 @@ static const entity_id_name_t entityIds[MAX_ENTITY_ID] = {
 
 RS2::EntityType getEntityIdbyName(const QString &name);
 
+typedef struct grdraw_line {
+    RS_Vector start;
+    RS_Vector end;
+    int color = 0;
+    bool highlight = false;
+} grdraw_line_t;
+
 class RS_ScriptingApiData
 {
 public:
@@ -172,6 +179,7 @@ public:
     void addMText(const RS_Vector &pnt, double height, double width, double angle, int spacing, int direction, int attach, const QString &txt, const QString &style, const RS_Pen &pen);
     void addText(const RS_Vector &pnt, double height, double width, double angle, int valign, int halign, int generation, const QString &txt, const QString &style, const RS_Pen &pen);
     void grdraw(const RS_Vector &start, const RS_Vector &end, int color, bool highlight);
+    void grvecs(const std::vector<grdraw_line_t> &lines);
 
     std::string copyright() const;
     std::string credits() const;

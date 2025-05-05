@@ -153,6 +153,64 @@ PyObject *RS_PythonCore::grdraw(PyObject *start, PyObject *end, int color, int h
     Py_RETURN_NONE;
 }
 
+PyObject *RS_PythonCore::grvecs(PyObject *vlist, PyObject *trans) const
+{
+    PyObject *pVlist;
+    Q_UNUSED(trans)
+
+    if (!PyArg_Parse(vlist, "O!", &PyTuple_Type, &pVlist)) {
+        PyErr_SetString(PyExc_TypeError, "point must be a tuple.");
+        Py_RETURN_NONE;
+    }
+
+    if (PyTuple_Size(pVlist) < 2)
+    {
+        Py_RETURN_NONE;
+    }
+
+    std::vector<grdraw_line_t> lines(0);
+
+    for (int i = 0; i < PyTuple_Size(pVlist); i++)
+    {
+        grdraw_line_t line;
+
+        PyObject *pItem = PyTuple_GetItem(pVlist, i);
+
+        if(PyLong_Check(pItem)) {
+            line.color = PyLong_AsLong(pItem);
+            pItem = PyTuple_GetItem(pVlist, ++i);
+        }
+
+        line.start.x = PyFloat_AsDouble(PyTuple_GetItem(pItem, 0));
+        line.start.y = PyFloat_AsDouble(PyTuple_GetItem(pItem, 1));
+
+        if (PyTuple_Size(pItem) == 3)
+        {
+            line.start.z = PyFloat_AsDouble(PyTuple_GetItem(pItem, 1));
+        }
+
+        pItem = PyTuple_GetItem(pVlist, ++i);
+
+        line.end.x = PyFloat_AsDouble(PyTuple_GetItem(pItem, 0));
+        line.end.y = PyFloat_AsDouble(PyTuple_GetItem(pItem, 1));
+
+        if (PyTuple_Size(pItem) == 3)
+        {
+            line.end.z = PyFloat_AsDouble(PyTuple_GetItem(pItem, 1));
+        }
+
+        lines.push_back(line);
+    }
+
+    if (lines.size())
+    {
+        RS_SCRIPTINGAPI->grvecs(lines);
+    }
+
+    Py_RETURN_NONE;
+}
+
+
 PyObject *RS_PythonCore::assoc(int needle, PyObject *args) const
 {
     qDebug() << "[RS_PythonCore::assoc] - start";

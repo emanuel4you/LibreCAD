@@ -2290,6 +2290,38 @@ void RS_ScriptingApi::grdraw(const RS_Vector &start, const RS_Vector &end, int c
     }
 }
 
+void RS_ScriptingApi::grvecs(const std::vector<grdraw_line_t> &lines)
+{
+    if (getGraphicView() == NULL || getGraphic() == NULL){
+        qDebug() << "graphicView == NULL";
+        return;
+    }
+
+    auto& appWin = QC_ApplicationWindow::getAppWindow();
+    LC_DefaultActionContext *ctx = appWin->getActionContext();
+
+    auto a = std::make_shared<QC_ActionGrDraw>(ctx);
+    if (a)
+    {
+        ctx->getGraphicView()->killAllActions();
+        ctx->getGraphicView()->setCurrentAction(a);
+
+        for (unsigned i = 0; i < lines.size(); i++)
+        {
+            a->drawLine(lines.at(i).start, lines.at(i).end, lines.at(i).color, lines.at(i).highlight);
+        }
+
+        QEventLoop ev;
+
+        while (a->getStatus() > -1)
+        {
+            ev.processEvents ();
+            if (!ctx->getGraphicView()->getEventHandler()->hasAction())
+                break;
+        }
+    }
+}
+
 bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
 {
     RS_Graphic* graphic = getGraphic();

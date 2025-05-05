@@ -2259,150 +2259,209 @@ BUILTIN("grdraw") {
        }
     }
 
-    if (start->count() == 2)
+    if (start->count() < 2)
     {
-        if ((start->item(0)->type() == LCLTYPE::REAL || start->item(0)->type() == LCLTYPE::INT) &&
-            (start->item(1)->type() == LCLTYPE::REAL || start->item(1)->type() == LCLTYPE::INT))
+        return lcl::nilValue();
+    }
+
+    if (start->item(0)->type() == LCLTYPE::REAL)
+    {
+        const lclDouble *X = VALUE_CAST(lclDouble, start->item(0));
+        startPnt.x = X->value();
+    }
+    if (start->item(0)->type() == LCLTYPE::INT)
+    {
+        const lclInteger *X = VALUE_CAST(lclInteger, start->item(0));
+        startPnt.x = double(X->value());
+    }
+    if (start->item(1)->type() == LCLTYPE::REAL)
+    {
+        const lclDouble *Y = VALUE_CAST(lclDouble, start->item(1));
+        startPnt.y = Y->value();
+    }
+    if (start->item(1)->type() == LCLTYPE::INT)
+    {
+        const lclInteger *Y = VALUE_CAST(lclInteger, start->item(1));
+        startPnt.y = double(Y->value());
+    }
+
+    if (start->count() == 3)
+    {
+        if (start->item(2)->type() == LCLTYPE::REAL)
         {
-            if (start->item(0)->type() == LCLTYPE::REAL)
-            {
-                const lclDouble *X = VALUE_CAST(lclDouble, start->item(0));
-                startPnt.x = X->value();
-            }
-            if (start->item(0)->type() == LCLTYPE::INT)
-            {
-                const lclInteger *X = VALUE_CAST(lclInteger, start->item(0));
-                startPnt.x = double(X->value());
-            }
-            if (start->item(1)->type() == LCLTYPE::REAL)
-            {
-                const lclDouble *Y = VALUE_CAST(lclDouble, start->item(1));
-                startPnt.y = Y->value();
-            }
-            if (start->item(1)->type() == LCLTYPE::INT)
-            {
-                const lclInteger *Y = VALUE_CAST(lclInteger, start->item(1));
-                startPnt.y = double(Y->value());
-            }
+            const lclDouble *Z = VALUE_CAST(lclDouble, start->item(2));
+            startPnt.z = Z->value();
+        }
+        if (start->item(2)->type() == LCLTYPE::INT)
+        {
+            const lclInteger *Z = VALUE_CAST(lclInteger, start->item(2));
+            startPnt.z = double(Z->value());
+        }
+    }
+
+    if (end->count() < 2)
+    {
+        return lcl::nilValue();
+    }
+
+    if (end->item(0)->type() == LCLTYPE::REAL)
+    {
+        const lclDouble *X = VALUE_CAST(lclDouble, end->item(0));
+        endPnt.x = X->value();
+    }
+    if (end->item(0)->type() == LCLTYPE::INT)
+    {
+        const lclInteger *X = VALUE_CAST(lclInteger, end->item(0));
+        endPnt.x = double(X->value());
+    }
+    if (end->item(1)->type() == LCLTYPE::REAL)
+    {
+        const lclDouble *Y = VALUE_CAST(lclDouble, end->item(1));
+        endPnt.y = Y->value();
+    }
+    if (end->item(1)->type() == LCLTYPE::INT)
+    {
+        const lclInteger *Y = VALUE_CAST(lclInteger, end->item(1));
+        endPnt.y = double(Y->value());
+    }
+
+    if (end->count() == 3)
+    {
+        if (end->item(2)->type() == LCLTYPE::REAL)
+        {
+            const lclDouble *Z = VALUE_CAST(lclDouble, end->item(2));
+            endPnt.z = Z->value();
+        }
+        if (end->item(2)->type() == LCLTYPE::INT)
+        {
+            const lclInteger *Z = VALUE_CAST(lclInteger, end->item(2));
+            endPnt.z = double(Z->value());
+        }
+    }
+
+    RS_SCRIPTINGAPI->grdraw(startPnt, endPnt, color->value(), highlight);
+
+    return lcl::nilValue();
+}
+
+BUILTIN("grvecs")
+{
+    int args = CHECK_ARGS_BETWEEN(1, 2);
+
+    ARG(lclSequence, vlist);
+    if (args == 2)
+    {
+       ARG(lclSequence, trans);
+       Q_UNUSED(trans)
+    }
+
+    if(vlist->count() < 2)
+    {
+        lcl::nilValue();
+    }
+
+    std::vector<grdraw_line_t> lines(0);
+
+    for (int i = 0; i < vlist->count(); i++)
+    {
+        grdraw_line_t line;
+        if (vlist->item(i)->type() == LCLTYPE::INT)
+        {
+            const lclInteger *c = VALUE_CAST(lclInteger, vlist->item(i));
+            line.color = c->value();
+            i++;
         }
 
-    }
-    else if (start->count() == 3)
-    {
-        if ((start->item(0)->type() == LCLTYPE::REAL || start->item(0)->type() == LCLTYPE::INT) &&
-            (start->item(1)->type() == LCLTYPE::REAL || start->item(1)->type() == LCLTYPE::INT) &&
-            (start->item(2)->type() == LCLTYPE::REAL || start->item(2)->type() == LCLTYPE::INT))
-        {
-            if (start->item(0)->type() == LCLTYPE::REAL)
-            {
-                const lclDouble *X = VALUE_CAST(lclDouble, start->item(0));
-                startPnt.x = X->value();
-            }
-            if (start->item(0)->type() == LCLTYPE::INT)
-            {
-                const lclInteger *X = VALUE_CAST(lclInteger, start->item(0));
-                startPnt.x = double(X->value());
-            }
-            if (start->item(1)->type() == LCLTYPE::REAL)
-            {
-                const lclDouble *Y = VALUE_CAST(lclDouble, start->item(1));
-                startPnt.y = Y->value();
-            }
-            if (start->item(1)->type() == LCLTYPE::INT)
-            {
-                const lclInteger *Y = VALUE_CAST(lclInteger, start->item(1));
-                startPnt.y = double(Y->value());
-            }
+        const lclList *start = VALUE_CAST(lclList, vlist->item(i++));
+        const lclList *end = VALUE_CAST(lclList, vlist->item(i));
 
+        if (start->count() < 2)
+        {
+            return lcl::nilValue();
+        }
+
+        if (start->item(0)->type() == LCLTYPE::REAL)
+        {
+            const lclDouble *X = VALUE_CAST(lclDouble, start->item(0));
+            line.start.x = X->value();
+        }
+        if (start->item(0)->type() == LCLTYPE::INT)
+        {
+            const lclInteger *X = VALUE_CAST(lclInteger, start->item(0));
+            line.start.x = double(X->value());
+        }
+        if (start->item(1)->type() == LCLTYPE::REAL)
+        {
+            const lclDouble *Y = VALUE_CAST(lclDouble, start->item(1));
+            line.start.y = Y->value();
+        }
+        if (start->item(1)->type() == LCLTYPE::INT)
+        {
+            const lclInteger *Y = VALUE_CAST(lclInteger, start->item(1));
+            line.start.y = double(Y->value());
+        }
+
+        if (start->count() == 3)
+        {
             if (start->item(2)->type() == LCLTYPE::REAL)
             {
                 const lclDouble *Z = VALUE_CAST(lclDouble, start->item(2));
-                startPnt.z = Z->value();
+                line.start.z = Z->value();
             }
             if (start->item(2)->type() == LCLTYPE::INT)
             {
                 const lclInteger *Z = VALUE_CAST(lclInteger, start->item(2));
-                startPnt.z = double(Z->value());
+                line.start.z = double(Z->value());
             }
         }
-    }
-    else
-    {
-        return lcl::nilValue();
-    }
 
-    if (end->count() == 2)
-    {
-        if ((end->item(0)->type() == LCLTYPE::REAL || end->item(0)->type() == LCLTYPE::INT) &&
-            (end->item(1)->type() == LCLTYPE::REAL || end->item(1)->type() == LCLTYPE::INT))
+        if (end->count() < 2)
         {
-            if (end->item(0)->type() == LCLTYPE::REAL)
-            {
-                const lclDouble *X = VALUE_CAST(lclDouble, end->item(0));
-                endPnt.x = X->value();
-            }
-            if (end->item(0)->type() == LCLTYPE::INT)
-            {
-                const lclInteger *X = VALUE_CAST(lclInteger, end->item(0));
-                endPnt.x = double(X->value());
-            }
-            if (end->item(1)->type() == LCLTYPE::REAL)
-            {
-                const lclDouble *Y = VALUE_CAST(lclDouble, end->item(1));
-                endPnt.y = Y->value();
-            }
-            if (end->item(1)->type() == LCLTYPE::INT)
-            {
-                const lclInteger *Y = VALUE_CAST(lclInteger, end->item(1));
-                endPnt.y = double(Y->value());
-            }
+            return lcl::nilValue();
         }
-    }
-    else if (end->count() == 3)
-    {
-        if ((end->item(0)->type() == LCLTYPE::REAL || end->item(0)->type() == LCLTYPE::INT) &&
-            (end->item(1)->type() == LCLTYPE::REAL || end->item(1)->type() == LCLTYPE::INT) &&
-            (end->item(2)->type() == LCLTYPE::REAL || end->item(2)->type() == LCLTYPE::INT))
-        {
-            if (end->item(0)->type() == LCLTYPE::REAL)
-            {
-                const lclDouble *X = VALUE_CAST(lclDouble, end->item(0));
-                endPnt.x = X->value();
-            }
-            if (end->item(0)->type() == LCLTYPE::INT)
-            {
-                const lclInteger *X = VALUE_CAST(lclInteger, end->item(0));
-                endPnt.x = double(X->value());
-            }
-            if (end->item(1)->type() == LCLTYPE::REAL)
-            {
-                const lclDouble *Y = VALUE_CAST(lclDouble, end->item(1));
-                endPnt.y = Y->value();
-            }
-            if (end->item(1)->type() == LCLTYPE::INT)
-            {
-                const lclInteger *Y = VALUE_CAST(lclInteger, end->item(1));
-                endPnt.y = double(Y->value());
-            }
 
+        if (end->item(0)->type() == LCLTYPE::REAL)
+        {
+            const lclDouble *X = VALUE_CAST(lclDouble, end->item(0));
+            line.end.x = X->value();
+        }
+        if (end->item(0)->type() == LCLTYPE::INT)
+        {
+            const lclInteger *X = VALUE_CAST(lclInteger, end->item(0));
+            line.end.x = double(X->value());
+        }
+        if (end->item(1)->type() == LCLTYPE::REAL)
+        {
+            const lclDouble *Y = VALUE_CAST(lclDouble, end->item(1));
+            line.end.y = Y->value();
+        }
+        if (end->item(1)->type() == LCLTYPE::INT)
+        {
+            const lclInteger *Y = VALUE_CAST(lclInteger, end->item(1));
+            line.end.y = double(Y->value());
+        }
+
+        if (end->count() == 3)
+        {
             if (end->item(2)->type() == LCLTYPE::REAL)
             {
                 const lclDouble *Z = VALUE_CAST(lclDouble, end->item(2));
-                endPnt.z = Z->value();
+                line.end.z = Z->value();
             }
             if (end->item(2)->type() == LCLTYPE::INT)
             {
                 const lclInteger *Z = VALUE_CAST(lclInteger, end->item(2));
-                endPnt.z = double(Z->value());
+                line.end.z = double(Z->value());
             }
         }
-    }
-    else
-    {
-        return lcl::nilValue();
+
+        lines.push_back(line);
     }
 
-    RS_SCRIPTINGAPI->grdraw(startPnt, endPnt, color->value(), highlight);
+    if (lines.size())
+    {
+        RS_SCRIPTINGAPI->grvecs(lines);
+    }
 
     return lcl::nilValue();
 }
