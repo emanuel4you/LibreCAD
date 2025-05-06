@@ -72,6 +72,7 @@
 #include <QInputDialog>
 #include <QFileDialog>
 #include <QEventLoop>
+#include <QStatusBar>
 
 #include <QFile>
 #include <QTextStream>
@@ -2320,6 +2321,16 @@ void RS_ScriptingApi::grvecs(const std::vector<grdraw_line_t> &lines)
                 break;
         }
     }
+}
+
+bool RS_ScriptingApi::grtext(int flag, const char *msg)
+{
+    if (flag == -1)
+    {
+        QC_ApplicationWindow::getAppWindow()->statusBar()->showMessage(msg);
+        return true;
+    }
+    return false;
 }
 
 bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)

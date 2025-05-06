@@ -210,6 +210,17 @@ PyObject *RS_PythonCore::grvecs(PyObject *vlist, PyObject *trans) const
     Py_RETURN_NONE;
 }
 
+PyObject *RS_PythonCore::grtext(int flag, const char *msg) const
+{
+    if (std::strcmp(msg, "") != 0
+            && RS_SCRIPTINGAPI->grtext(flag, msg))
+    {
+        return Py_BuildValue("s", msg);
+    }
+
+    Py_RETURN_NONE;
+}
+
 
 PyObject *RS_PythonCore::assoc(int needle, PyObject *args) const
 {

@@ -239,6 +239,7 @@ public:
     bool getString(CommandEdit *cmdline, bool cr, const char *msg, std::string &res);
     bool getSelection(unsigned int &id);
     bool getSingleSelection(std::vector<unsigned int> &selection_set);
+    bool grtext(int flag, const char *msg);
     bool selectAll(std::vector<unsigned int> &selection_set);
     bool getSelectionByData(const RS_ScriptingApiData &apiData, std::vector<unsigned int> &selection_set);
     bool filterByData(RS_Entity *entity, const RS_ScriptingApiData &apiData);

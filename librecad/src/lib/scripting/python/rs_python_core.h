@@ -42,6 +42,7 @@ public:
     PyObject *assoc(int needle, PyObject *args) const;
     PyObject *grdraw(PyObject *start, PyObject *end, int color, int highlight = 0) const;
     PyObject *grvecs(PyObject *vlist, PyObject *trans) const;
+    PyObject *grtext(int flag, const char *msg) const;
     PyObject *entlast() const;
     PyObject *entdel(const char *ename) const;
     PyObject *entget(const char *ename) const;

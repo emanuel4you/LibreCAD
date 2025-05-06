@@ -2344,6 +2344,21 @@ BUILTIN("grdraw") {
     return lcl::nilValue();
 }
 
+BUILTIN("grtext")
+{
+    CHECK_ARGS_IS(2);
+    ARG(lclInteger, flag);
+    ARG(lclString, msg);
+
+    if (msg->value() != ""
+            && RS_SCRIPTINGAPI->grtext(flag->value(), msg->value().c_str()))
+    {
+        return lcl::string(msg->value());
+    }
+
+    return lcl::nilValue();
+}
+
 BUILTIN("grvecs")
 {
     int args = CHECK_ARGS_BETWEEN(1, 2);
