@@ -357,8 +357,7 @@ RS_Vector RS_ScriptingApi::getCorner(CommandEdit *cmdline, const char *msg, cons
         return RS_Vector();
     }
 
-    auto& appWin = QC_ApplicationWindow::getAppWindow();
-    LC_DefaultActionContext *ctx = appWin->getActionContext();
+    auto ctx = QC_ApplicationWindow::getAppWindow()->getActionContext();
 
     auto a = std::make_shared<QC_ActionGetCorner>(ctx);
     if (a)
@@ -433,8 +432,7 @@ RS_Vector RS_ScriptingApi::getPoint(CommandEdit *cmdline, const char *msg, const
         return RS_Vector();
     }
 
-    auto& appWin = QC_ApplicationWindow::getAppWindow();
-    LC_DefaultActionContext *ctx = appWin->getActionContext();
+    auto ctx = QC_ApplicationWindow::getAppWindow()->getActionContext();
 
     auto a = std::make_shared<QC_ActionGetPoint>(ctx);
     if (a)
@@ -514,8 +512,7 @@ bool RS_ScriptingApi::getDist(CommandEdit *cmdline, const char *msg, const RS_Ve
         return false;
     }
 
-    auto& appWin = QC_ApplicationWindow::getAppWindow();
-    LC_DefaultActionContext *ctx = appWin->getActionContext();
+    auto ctx = QC_ApplicationWindow::getAppWindow()->getActionContext();
 
     QEventLoop ev;
 
@@ -678,8 +675,7 @@ bool RS_ScriptingApi::getOrient(CommandEdit *cmdline, const char *msg, const RS_
         return false;
     }
 
-    auto& appWin = QC_ApplicationWindow::getAppWindow();
-    LC_DefaultActionContext *ctx = appWin->getActionContext();
+    auto ctx = QC_ApplicationWindow::getAppWindow()->getActionContext();
 
     QEventLoop ev;
 
@@ -1036,8 +1032,7 @@ bool RS_ScriptingApi::getSelection(unsigned int &id)
         return false;
     }
 
-    auto& appWin = QC_ApplicationWindow::getAppWindow();
-    LC_DefaultActionContext *ctx = appWin->getActionContext();
+    auto ctx = QC_ApplicationWindow::getAppWindow()->getActionContext();
 
     auto actionSelect = std::make_shared<QC_ActionSelectSet>(ctx);
     if (actionSelect)
@@ -1090,8 +1085,7 @@ bool RS_ScriptingApi::getSingleSelection(std::vector<unsigned int> &selection_se
         return false;
     }
 
-    auto& appWin = QC_ApplicationWindow::getAppWindow();
-    LC_DefaultActionContext *ctx = appWin->getActionContext();
+    auto ctx = QC_ApplicationWindow::getAppWindow()->getActionContext();
 
     auto actionSelect = std::make_shared<QC_ActionSingleSet>(ctx);
     if (actionSelect)
@@ -1587,8 +1581,7 @@ bool RS_ScriptingApi::entsel(CommandEdit *cmdline, const QString &prompt, unsign
         return false;
     }
 
-    auto& appWin = QC_ApplicationWindow::getAppWindow();
-    LC_DefaultActionContext *ctx = appWin->getActionContext();
+    auto ctx = QC_ApplicationWindow::getAppWindow()->getActionContext();
 
     auto a = std::make_shared<QC_ActionEntSel>(ctx);
     if (a)
@@ -2270,8 +2263,7 @@ void RS_ScriptingApi::grdraw(const RS_Vector &start, const RS_Vector &end, int c
         return;
     }
 
-    auto& appWin = QC_ApplicationWindow::getAppWindow();
-    LC_DefaultActionContext *ctx = appWin->getActionContext();
+    auto ctx = QC_ApplicationWindow::getAppWindow()->getActionContext();
 
     auto a = std::make_shared<QC_ActionGrDraw>(ctx);
     if (a)
@@ -2298,8 +2290,7 @@ void RS_ScriptingApi::grvecs(const std::vector<grdraw_line_t> &lines)
         return;
     }
 
-    auto& appWin = QC_ApplicationWindow::getAppWindow();
-    LC_DefaultActionContext *ctx = appWin->getActionContext();
+    auto ctx = QC_ApplicationWindow::getAppWindow()->getActionContext();
 
     auto a = std::make_shared<QC_ActionGrDraw>(ctx);
     if (a)
@@ -2617,7 +2608,10 @@ bool RS_ScriptingApi::entmake(const RS_ScriptingApiData &apiData)
                                   lineSpacingFactor,
                                   text,
                                   style,
-                                  angle);
+                                  angle,
+                                  0.0 /* double hdir */,
+                                  true /* bool autoTextLocation */ );
+
 
             if(apiData.gc_100.front().toUpper() == "ACDBROTATEDDIMENSION") // posible eSubtype = 3!!
             {

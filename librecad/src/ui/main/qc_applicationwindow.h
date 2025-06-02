@@ -320,10 +320,8 @@ public:
     QG_LibraryWidget* getLibraryWidget(){return m_libraryWidget;}
 
     LC_ActionContext* getActionContext();
-
 #ifdef DEVELOPER
     QG_ActionHandler* getActionHandler() { return m_actionHandler.get(); }
-    //LC_DefaultActionContext* getActionContext() { return m_actionContext; }
 #endif
 protected:
     void closeEvent(QCloseEvent*) override;
