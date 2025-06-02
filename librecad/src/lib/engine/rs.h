@@ -190,17 +190,6 @@ namespace RS2 {
         ActionFilePrintPDF,
         ActionFilePrintPreview,
         ActionFileExportMakerCam,
-#ifdef DEVELOPER
-        ActionFileExportSlide,
-        ActionFileViewSlide,
-        ActionEntSel,
-        ActionGetCorner,
-        ActionGetDist,
-        ActionGetRad,
-        ActionGrDraw,
-        ActionSelectSet,
-        ActionSingleSet,
-#endif
         ActionFileQuit,
 
         ActionEditKillAllActions,
