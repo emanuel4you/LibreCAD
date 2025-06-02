@@ -54,6 +54,7 @@
         <file alias="cross_circle1.lci">cross_circle1.svg</file>
         <file alias="cursor.lci">cursor.svg</file>
         <file alias="cut.lci">cut.svg</file>
+        <file alias="debug.lci">debug.svg</file>
         <file alias="delete.lci">delete.svg</file>
         <file alias="delete_between_nodes.lci">delete_between_nodes.svg</file>
         <file alias="delete_freehand.lci">delete_freehand.svg</file>
@@ -112,6 +113,7 @@
         <file alias="export.lci">export.svg</file>
         <file alias="export_image.lci">export_image.svg</file>
         <file alias="export_pdf.lci">export_pdf.svg</file>
+        <file alias="export_slide.lci">export_slide.svg</file>
         <file alias="fileopen.lci">fileopen.svg</file>
         <file alias="fillet.lci">fillet.svg</file>
         <file alias="fit_to_page.lci">fit_to_page.svg</file>
@@ -195,6 +197,7 @@
         <file alias="nview_visible.lci">nview_visible.svg</file>
         <file alias="offset.lci">offset.svg</file>
         <file alias="open.lci">open.svg</file>
+        <file alias="open_script.lci">open_script.svg</file>
         <file alias="options.lci">options.svg</file>
         <file alias="order.lci">order.svg</file>
         <file alias="page_landscape.lci">page_landscape.svg</file>
@@ -253,6 +256,7 @@
         <file alias="redraw.lci">redraw.svg</file>
         <file alias="remove.lci">remove.svg</file>
         <file alias="rename_active_block.lci">rename_active_block.svg</file>
+        <file alias="recent.lci">recent.svg</file>
         <file alias="restr_hor.lci">restr_hor.svg</file>
         <file alias="restr_ortho.lci">restr_ortho.svg</file>
         <file alias="restr_ver.lci">restr_ver.svg</file>
@@ -260,6 +264,7 @@
         <file alias="revert_direction.lci">revert_direction.svg</file>
         <file alias="rotate.lci">rotate.svg</file>
         <file alias="rotate2.lci">rotate2.svg</file>
+        <file alias="run.lci">run.svg</file>
         <file alias="save.lci">save.svg</file>
         <file alias="save_all.lci">save_all.svg</file>
         <file alias="save_as.lci">save_as.svg</file>
@@ -280,6 +285,7 @@
         <file alias="shortcuts_settings.lci">shortcuts_settings.svg</file>
         <file alias="slice_divide.lci">slice_divide.svg</file>
         <file alias="slice_divide_circle.lci">slice_divide_circle.svg</file>
+        <file alias="slide.lci">slide.svg</file>
         <file alias="snap_center.lci">snap_center.svg</file>
         <file alias="snap_distance.lci">snap_distance.svg</file>
         <file alias="snap_endpoints.lci">snap_endpoints.svg</file>
@@ -318,6 +324,7 @@
         <file alias="tolerance1.lci">tolerance1.svg</file>
         <file alias="tolerance2.lci">tolerance2.svg</file>
         <file alias="total_length_selected_entities.lci">total_length_selected_entities.svg</file>
+        <file alias="trace.lci">trace.svg</file>
         <file alias="trim.lci">trim.svg</file>
         <file alias="trim2.lci">trim2.svg</file>
         <file alias="trim_segments.lci">trim_segments.svg</file>
@@ -330,6 +337,7 @@
         <file alias="ucs_wcs.lci">ucs_wcs.svg</file>
         <file alias="undo.lci">undo.svg</file>
         <file alias="unlocked.lci">unlocked.svg</file>
+        <file alias="untrace.lci">untrace.svg</file>
         <file alias="up.lci">up.svg</file>
         <file alias="upmost.lci">upmost.svg</file>
         <file alias="valign_bottom.lci">valign_bottom.svg</file>
