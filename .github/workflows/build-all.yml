@@ -12,9 +12,10 @@ jobs:
       output1: ${{ steps.artifact-upload-step.outputs.artifact-id }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@main
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: developer
 
       - name: Install dependencies
         run: |
@@ -72,9 +73,10 @@ jobs:
       output1: ${{ steps.artifact-upload-step.outputs.artifact-id }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@main
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: developer
 
       - name: Install Qt and dependencies
         run: |
@@ -141,10 +143,10 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
-        uses: actions/checkout@main
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: master
+          ref: developer
 
       - name: Install Qt6
         uses: jurplel/install-qt-action@v4
@@ -179,9 +181,10 @@ jobs:
       output1: ${{ steps.artifact-upload-step.outputs.artifact-id }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@main
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: developer
 
       - name: uninstall p7zip
         run: |
@@ -232,9 +235,10 @@ jobs:
       output1: ${{ steps.artifact-upload-step.outputs.artifact-id }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@main
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: developer
 
       - name: Install Qt6
         uses: jurplel/install-qt-action@v4
@@ -326,9 +330,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@main
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: developer
 
       - name: Delete existing
         run: gh release delete "2.2.2_alpha-latest" -y
