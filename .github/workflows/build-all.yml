@@ -2,7 +2,7 @@ name: Continuous build
 on:
   push:
     branches:
-      - developer
+      - master
       - 2.2.1
 
 jobs:
@@ -12,10 +12,9 @@ jobs:
       output1: ${{ steps.artifact-upload-step.outputs.artifact-id }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@main
         with:
           fetch-depth: 0
-          ref: developer
 
       - name: Install dependencies
         run: |
@@ -25,20 +24,12 @@ jobs:
           sudo apt-get -qq install libgl-dev libxcb-cursor0 libmuparser-dev libboost-dev libssl-dev libssl3
           sudo apt-get -qq install imagemagick librsvg2-bin libfreetype6-dev libicu-dev pkg-config libfuse2 rsync
           sudo apt-get -qq install cmake
-
-      - name: Install swig
-        run: |
-          sudo apt-get -qq install swig
-
-      - name: Install python3 dev
-        run: |
-          sudo apt-get -qq install libpython3-all-dev
           
       - name: Set Dark splash
         # Test setting dark splash screen for `2.2.2_alpha`,
         # then switch "Loading..." label text color to white.
         # Comment this if `master` is used for releases.
-        if: github.ref == 'refs/heads/developer'
+        if: github.ref == 'refs/heads/master'
         run: |
           mkdir -p ${{github.workspace}}/librecad/res/main
           rsync ${{github.workspace}}/desktop/media/splash/librecad01_dark.png ${{github.workspace}}/librecad/res/main/splash_librecad.png
@@ -73,10 +64,9 @@ jobs:
       output1: ${{ steps.artifact-upload-step.outputs.artifact-id }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@main
         with:
           fetch-depth: 0
-          ref: developer
 
       - name: Install Qt and dependencies
         run: |
@@ -86,14 +76,6 @@ jobs:
           sudo apt-get -qq install libgl-dev libxcb-cursor0 libmuparser-dev libboost-dev libssl-dev libssl3
           sudo apt-get -qq install imagemagick librsvg2-bin libfreetype6-dev libicu-dev pkg-config libfuse2 rsync
           sudo apt-get -qq install cmake
-
-      - name: Install swig
-        run: |
-          sudo apt-get -qq install swig
-
-      - name: Install python3 dev
-        run: |
-          sudo apt-get -qq install libpython3-all-dev
 
       - name: Install Clang
         run: |
@@ -143,10 +125,10 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@main
         with:
           fetch-depth: 0
-          ref: developer
+          ref: master
 
       - name: Install Qt6
         uses: jurplel/install-qt-action@v4
@@ -181,10 +163,9 @@ jobs:
       output1: ${{ steps.artifact-upload-step.outputs.artifact-id }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@main
         with:
           fetch-depth: 0
-          ref: developer
 
       - name: uninstall p7zip
         run: |
@@ -199,14 +180,6 @@ jobs:
       - name: Install boost dependencies
         run: |
           brew install boost
-
-      - name: Install swig
-        run: |
-          brew install swig
-
-      - name: Install python3
-        run: |
-          brew install python3
 
       # XProtect can cause random failures if it decides that the DMG we create
       # during the packaging phase is malware.
@@ -235,10 +208,9 @@ jobs:
       output1: ${{ steps.artifact-upload-step.outputs.artifact-id }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@main
         with:
           fetch-depth: 0
-          ref: developer
 
       - name: Install Qt6
         uses: jurplel/install-qt-action@v4
@@ -330,10 +302,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@main
         with:
           fetch-depth: 0
-          ref: developer
 
       - name: Delete existing
         run: gh release delete "2.2.2_alpha-latest" -y
