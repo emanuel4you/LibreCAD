@@ -232,6 +232,7 @@ bool setupDebugLevel(char level) {
  * Main. Creates Application window.
  */
  // fixme - sand - refactor and split to several specialized functions
+#ifndef BUILD_TESTS
 int main(int argc, char** argv) {
     QT_REQUIRE_VERSION(argc, argv, "5.2.1");
 
@@ -430,6 +431,7 @@ int main(int argc, char** argv) {
 
     return execApplication(app);
 }
+#endif // BUILD_TESTS
 
 /**
  * Handles command line arguments that might not require a GUI.
