@@ -63,6 +63,10 @@ class QG_ActionHandler;
 class QG_ActiveLayerName;
 class QG_BlockWidget;
 class QG_CommandWidget;
+#ifdef DEVELOPER // DEVELOPER
+class QG_Lsp_CommandWidget;
+class QG_Py_CommandWidget;
+#endif // DEVELOPER
 class QG_CoordinateWidget;
 class QG_LayerWidget;
 class QG_LibraryWidget;
@@ -136,6 +140,12 @@ public slots:
     void slotKillAllActions();
     void slotFocusCommandLine();
     void slotFocusOptionsWidget();
+#ifdef DEVELOPER
+    void slotFocusLspCommandLine();
+    void slotFocusLspOptionsWidget();
+    void slotFocusPyCommandLine();
+    void slotFocusPyOptionsWidget();
+#endif // DEVELOPER
     void slotError(const QString& msg);
     void slotShowDrawingOptions();
     void slotShowDrawingOptionsUnits();
@@ -209,6 +219,12 @@ public slots:
      * update layer name when active layer changed
      */
     void slotUpdateActiveLayer();
+#ifdef DEVELOPER
+    void slotLoadLisp();
+    void slotLoadPython();
+    void slotLibreLisp();
+    void slotLibrePython();
+#endif
     void toggleFullscreen(bool checked);
     void setPreviousZoomEnable(bool enable);
     void widgetOptionsDialog();
@@ -308,6 +324,9 @@ public:
     QG_LibraryWidget* getLibraryWidget() const {return m_libraryWidget;}
     LC_ActionGroup* getActionGroup(const QString &groupName) const;
     LC_ActionContext* getActionContext() const;
+#ifdef DEVELOPER
+    QG_ActionHandler* getActionHandler() { return m_actionHandler.get(); }
+#endif
 protected:
     void closeEvent(QCloseEvent*) override;
     bool isAcceptableDragNDropFileName(const QString& fileName);
@@ -382,6 +401,12 @@ protected:
     QG_BlockWidget* m_blockWidget {nullptr};
     QG_LibraryWidget* m_libraryWidget {nullptr};
     QG_CommandWidget* m_commandWidget {nullptr};
+#ifdef DEVELOPER
+    /** Lips Command Line */
+    QG_Lsp_CommandWidget* m_lspCommandWidget {nullptr};
+    /** Python Command Line */
+    QG_Py_CommandWidget* m_pyCommandWidget {nullptr};
+#endif // DEVELOPER
     LC_PenWizard* m_penWizard {nullptr};
     LC_PenPaletteWidget* m_penPaletteWidget {nullptr};
     LC_NamedViewsListWidget* m_namedViewsWidget {nullptr};

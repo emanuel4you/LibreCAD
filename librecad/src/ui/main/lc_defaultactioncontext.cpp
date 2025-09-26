@@ -26,6 +26,10 @@
 #include "lc_qtstatusbarmanager.h"
 #include "qg_actionhandler.h"
 #include "qg_commandwidget.h"
+#ifdef DEVELOPER
+#include "qg_lsp_commandwidget.h"
+#include "qg_py_commandwidget.h"
+#endif
 #include "qg_coordinatewidget.h"
 #include "qg_mousewidget.h"
 #include "qg_selectionwidget.h"
@@ -70,6 +74,16 @@ void LC_DefaultActionContext::updateMouseWidget(const QString &left, const QStri
         m_commandWidget->setCommand(left);
     }
 
+#ifdef DEVELOPER
+    if (m_lspCommandWidget != nullptr) {
+        m_lspCommandWidget->setCommand(left);
+    }
+
+    if (m_pyCommandWidget != nullptr) {
+        m_pyCommandWidget->setCommand(left);
+    }
+#endif
+
     if (m_statusBarManager != nullptr){
         m_statusBarManager->setActionHelp(left, right, modifiers);
     }
@@ -79,12 +93,30 @@ void LC_DefaultActionContext::commandMessage(const QString &message){
     if (m_commandWidget != nullptr) {
         m_commandWidget->appendHistory(message);
     }
+#ifdef DEVELOPER
+    if (m_lspCommandWidget != nullptr) {
+        m_lspCommandWidget->appendHistory(message);
+    }
+
+    if (m_pyCommandWidget != nullptr) {
+        m_pyCommandWidget->appendHistory(message);
+    }
+#endif
 }
 
 void LC_DefaultActionContext::commandPrompt(const QString &message){
     if (m_commandWidget != nullptr) {
         m_commandWidget->setCommand(message);
     }
+#ifdef DEVELOPER
+    if (m_lspCommandWidget != nullptr) {
+        m_lspCommandWidget->setCommand(message);
+    }
+
+    if (m_pyCommandWidget != nullptr) {
+        m_pyCommandWidget->setCommand(message);
+    }
+#endif
 }
 
 void LC_DefaultActionContext::updateCoordinateWidget(const RS_Vector &abs, const RS_Vector &rel, bool updateFormat){

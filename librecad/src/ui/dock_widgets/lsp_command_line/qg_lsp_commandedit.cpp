@@ -1,0 +1,167 @@
+/*******************************************************************************
+*
+ This file is part of the LibreCAD project, a 2D CAD program
+
+ Copyright (C) 2025 LibreCAD.org
+ Copyright (C) 2025 emanuel
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License
+ as published by the Free Software Foundation; either version 2
+ of the License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ ******************************************************************************/
+
+#ifdef DEVELOPER
+
+#include "rs_lisp.h"
+#include "qg_lsp_commandedit.h"
+
+#include <QRegularExpression>
+#include <QDebug>
+
+//namespace {
+// Limits for command file reading
+// limit for the number of lines read together
+//constexpr unsigned g_maxLinesToRead = 10240;
+// the maximum line length allowed
+//constexpr unsigned g_maxLineLength = 4096;
+//}
+
+/**
+ * Default Constructor. You must call init manually if you choose
+ * to use this constructor.
+ */
+QG_Lsp_CommandEdit::QG_Lsp_CommandEdit(QWidget* parent)
+    : CommandEdit(parent)
+{
+    reset();
+}
+
+void QG_Lsp_CommandEdit::reset()
+{
+    if (this->dockName() == "Lisp Ide")
+    {
+        setPrompt("_$ ");
+    }
+    else
+    {
+        setPrompt(QObject::tr("Command: "));
+    }
+    doProcess(true);
+    doProcessLc(false);
+    prompt();
+    setFocus();
+}
+
+void QG_Lsp_CommandEdit::processInput(QString input)
+{
+    qDebug() << "[QG_Lsp_CommandEdit::processInput] input:" << input;
+    setCurrent();
+
+    if (!m_doProcess)
+    {
+        qDebug() << "[QG_Lsp_CommandEdit::processInput] !m_doProcess";
+        m_doProcess = true;
+        return;
+    }
+
+    if (input.size() == 0)
+    {
+        it = historyList.end();
+        emit message("");
+        prompt();
+        return;
+    }
+
+    if (input == "(clear)" ||
+        input == QObject::tr("clear"))
+    {
+        emit clearCommandsHistory();
+        prompt();
+        return;
+    }
+
+    if (input == "help" ||
+        input == "copyright" ||
+        input == "credits" ||
+        input == "license")
+    {
+        input = "(" + input + ")";
+    }
+
+    static QRegularExpression lispRegex(QStringLiteral("[ \t]*[\[!(\"'`~:^]|[ \t]*@[a-zA-Z_-]"));
+    QRegularExpressionMatch lispCom = lispRegex.match(input);
+
+    if (isAlias(qUtf8Printable(input)) || lispCom.hasMatch())
+    {
+        QString buffer_out = "";
+        //QString buffer_err = "";
+
+        buffer_out += RS_LISP->runCommand(input).c_str();
+        historyList.append(input);
+        it = historyList.end();
+        prompt();
+
+        emit message(input);
+        if (buffer_out.compare("") != 0) {
+            const QString out = buffer_out;
+            emit message(out);
+        }
+    }
+    else
+    {
+        input.replace("pline", "polyline");
+        // author: ravas
+
+        // convert 10..0 to @10,0
+        static const QRegularExpression regex(R"~(([-\w\.\\]+)\.\.)~");
+        input.replace(regex, "@\\1,");
+
+        if (isForeignCommand(input))
+        {
+            if (input.contains(";"))
+            {
+                foreach (auto str, input.split(";"))
+                {
+                    if (str.contains("\\"))
+                        processVariable(str);
+                    else
+                        emit command(str);
+                }
+            }
+            else
+            {
+                if (input.contains("\\"))
+                    processVariable(input);
+                else
+                    emit command(input);
+            }
+
+            historyList.append(input);
+            it = historyList.end();
+            prompt();
+        }
+    }
+}
+
+void QG_Lsp_CommandEdit::setCurrent()
+{
+    Lisp_CommandEdit = this;
+}
+
+void QG_Lsp_CommandEdit::runFile(const QString& path)
+{
+    setCurrent();
+    emit message(RS_LISP->runFileCmd(path).c_str());
+}
+
+#endif // DEVELOPER

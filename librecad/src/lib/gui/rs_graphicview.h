@@ -117,6 +117,9 @@ public:
     RS_ActionInterface *getCurrentAction() const;
     QString getCurrentActionName() const;
     QIcon getCurrentActionIcon() const;
+#ifdef DEVELOPER
+    void killShownActions() const;
+#endif
     void killAllActions() const;
     void back() const;
     void processEnterKey();

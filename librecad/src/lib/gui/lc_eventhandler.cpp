@@ -382,6 +382,28 @@ void LC_EventHandler::killAllActions(){
     }
 }
 
+#ifdef DEVELOPER
+/**
+ * Kills all running shown actions. Called when a selection action
+ * is launched to zooming/panning confusion.
+ */
+void LC_EventHandler::killShownActions()
+{
+    for (auto it=m_currentActions.begin();it != m_currentActions.end();){
+        RS2::ActionType rtti = (*it)->rtti();
+        if (rtti == RS2::ActionFileViewSlide ||
+            rtti == RS2::ActionGrDraw) {
+            if (isActive(*it)) {
+                (*it)->finish();
+            }
+            it = m_currentActions.erase(it);
+        }else{
+            it++;
+        }
+    }
+}
+#endif
+
 /**
  * @return true if the action is within currentActions
  */

@@ -70,6 +70,9 @@ public:
     RS_ActionInterface* getCurrentAction();
     bool isValid(RS_ActionInterface* action) const;
     void killAllActions();
+#ifdef DEVELOPER
+    void killShownActions();
+#endif
     bool hasAction();
     void setSnapMode(RS_SnapMode sm);
     void setSnapRestriction(RS2::SnapRestriction sr);

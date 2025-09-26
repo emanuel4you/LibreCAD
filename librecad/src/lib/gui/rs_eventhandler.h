@@ -80,6 +80,9 @@ public:
     bool isValid(RS_ActionInterface* action) const;
 
     void killSelectActions();
+#ifdef DEVELOPER
+    void killShownActions();
+#endif
     void killAllActions();
 
     bool hasAction();

@@ -42,8 +42,9 @@ QC_ActionGetSelect::QC_ActionGetSelect(LC_ActionContext* actionContext)
 QC_ActionGetSelect::QC_ActionGetSelect(RS2::EntityType typeToSelect, LC_ActionContext* actionContext)
     :RS_ActionInterface("Get Select", actionContext, RS2::ActionGetSelect)
     , m_completed(false)
-    , m_message(std::make_unique<QString>(tr("Select objects:"))),
-     m_entityTypeToSelect(typeToSelect){
+    , m_message(std::make_unique<QString>(tr("Select objects:")))
+    , m_entityTypeToSelect(typeToSelect)
+{
 }
 
 QC_ActionGetSelect::~QC_ActionGetSelect() = default;

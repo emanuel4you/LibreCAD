@@ -11,6 +11,7 @@ TARGET = libraries
 SUBDIRS     = \
         lciconengine \
         libdxfrw \
+        libslide \
         jwwlib
 
 macx|win32|equals(build_muparser, "true")|!packagesExist(muparser){

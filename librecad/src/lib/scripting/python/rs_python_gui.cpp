@@ -1,0 +1,227 @@
+/*******************************************************************************
+*
+ This file is part of the LibreCAD project, a 2D CAD program
+
+ Copyright (C) 2025 LibreCAD.org
+ Copyright (C) 2025 emanuel
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License
+ as published by the Free Software Foundation; either version 2
+ of the License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ ******************************************************************************/
+
+#include "rs_python_gui.h"
+#include "rs_python.h"
+#include "rs_scriptingapi.h"
+
+void RS_PythonGui::initGet(const char *str, int bit)
+{
+    RS_SCRIPTINGAPI->initGet(bit, str);
+}
+
+void RS_PythonGui::prompt(const char *prompt)
+{
+    RS_SCRIPTINGAPI->prompt(Py_CommandEdit, prompt);
+}
+
+void RS_PythonGui::MessageBox(const char *message)
+{
+    RS_SCRIPTINGAPI->msgInfo(message);
+}
+
+int RS_PythonGui::GetIntDialog(const char *prompt)
+{
+    return RS_SCRIPTINGAPI->getIntDlg(prompt);
+}
+
+double RS_PythonGui::GetDoubleDialog(const char *prompt)
+{
+    return RS_SCRIPTINGAPI->getDoubleDlg(prompt);
+}
+
+char RS_PythonGui::readChar()
+{
+    return RS_SCRIPTINGAPI->readChar();
+}
+
+const char *RS_PythonGui::OpenFileDialog(const char *title, const char *filename, const char *ext)
+{
+    return RS_SCRIPTINGAPI->getFileNameDlg(title, filename, ext).c_str();
+}
+
+const char *RS_PythonGui::GetStringDialog(const char *prompt)
+{
+    return RS_SCRIPTINGAPI->getStrDlg(prompt).c_str();
+}
+
+PyObject* RS_PythonGui::acadColorDlg(int color, bool by) const
+{
+    int result;
+    return RS_SCRIPTINGAPI->colorDialog(color,
+                                        by,
+                                        result) ? Py_BuildValue("i", result) : Py_None;
+}
+
+PyObject* RS_PythonGui::acadTrueColorDlg(PyObject *color, bool allowbylayer, PyObject *byColor) const
+{
+    if (color == Py_None)
+    {
+        Py_RETURN_NONE;
+    }
+
+    int tcolor = -1, icolor = -1, tbycolor = -1, bycolor = -1;
+
+    int gc, col, result, tresult;;
+
+    if (!PyArg_ParseTuple(color, "ii", &gc, &col)) {
+        Py_RETURN_NONE;
+    }
+
+    if(gc == 52)
+    {
+        icolor = col;
+    }
+
+    if(gc == 402)
+    {
+        tcolor = col;
+    }
+
+    if (byColor != Py_None)
+    {
+        if (!PyArg_ParseTuple(byColor, "ii", &gc, &col)) {
+            Py_RETURN_NONE;
+        }
+
+        if(gc == 52)
+        {
+            bycolor = col;
+        }
+
+        if(gc == 402)
+        {
+            tbycolor = col;
+        }
+    }
+
+    bool take = RS_SCRIPTINGAPI->trueColorDialog(tresult,
+                                                 result,
+                                                 tcolor,
+                                                 icolor,
+                                                 allowbylayer,
+                                                 tbycolor,
+                                                 bycolor
+                                                 );
+
+    if (take)
+    {
+        if (tresult != -1 && result != -1)
+        {
+            Py_BuildValue("((ii)(ii))", 52, result, 402, tresult);
+        }
+
+
+        else if (result != -1)
+        {
+            Py_BuildValue("((ii))", 52, result);
+        }
+
+        else if (tresult != -1)
+        {
+            Py_BuildValue("((ii))", 402, tresult);
+        }
+    }
+
+    Py_RETURN_NONE;
+}
+
+PyObject* RS_PythonGui::getString(bool cr, const char *prompt) const
+{
+    std::string result;
+    return RS_SCRIPTINGAPI->getString(Py_CommandEdit,
+                                      cr,
+                                      prompt,
+                                      result) ? Py_BuildValue("s", result.c_str()) : Py_None;
+
+}
+
+RS_Vector RS_PythonGui::getCorner(const char *prompt, const RS_Vector &basePoint) const
+{
+    return RS_SCRIPTINGAPI->getCorner(Py_CommandEdit, qUtf8Printable(prompt), basePoint);
+}
+
+RS_Vector RS_PythonGui::getPoint(const char *prompt, const RS_Vector basePoint) const
+{
+    return RS_SCRIPTINGAPI->getPoint(Py_CommandEdit, qUtf8Printable(prompt), basePoint);
+}
+
+PyObject* RS_PythonGui::getDist(const char *prompt, const RS_Vector &basePoint) const
+{
+    double distance;
+    return RS_SCRIPTINGAPI->getDist(Py_CommandEdit,
+                                    qUtf8Printable(prompt),
+                                    basePoint,
+                                    distance) ? Py_BuildValue("d", distance) : Py_None;
+}
+
+PyObject* RS_PythonGui::getInt(const char *prompt) const
+{
+    int result;
+    return RS_SCRIPTINGAPI->getInteger(Py_CommandEdit,
+                                    prompt,
+                                    result) ? Py_BuildValue("i", result) : Py_None;
+}
+
+PyObject* RS_PythonGui::getReal(const char *prompt) const
+{
+    double result;
+    return RS_SCRIPTINGAPI->getReal(Py_CommandEdit,
+                                    prompt,
+                                    result) ? Py_BuildValue("d", result) : Py_None;
+}
+
+PyObject* RS_PythonGui::getFiled(const char *title, const char *def, const char *ext, int flags) const
+{
+    std::string filename;
+    return RS_SCRIPTINGAPI->getFiled(title,
+                                     def,
+                                     ext,
+                                     flags,
+                                     filename) ? Py_BuildValue("s", filename.c_str()) : Py_None;
+}
+
+PyObject* RS_PythonGui::getAngle(const char *prompt, const RS_Vector &basePoint) const
+{
+    double radius;
+    return RS_SCRIPTINGAPI->getAngle(Py_CommandEdit,
+                                    prompt,
+                                    basePoint,
+                                    radius) ? Py_BuildValue("d", radius) : Py_None;
+}
+
+PyObject* RS_PythonGui::getOrient(const char *prompt, const RS_Vector &basePoint) const
+{
+    double radius;
+    return RS_SCRIPTINGAPI->getOrient(Py_CommandEdit,
+                                    prompt,
+                                    basePoint,
+                                    radius) ? Py_BuildValue("d", radius) : Py_None;
+}
+
+PyObject* RS_PythonGui::getKword(const char *prompt) const
+{
+    std::string result;
+    return RS_SCRIPTINGAPI->getKeyword(Py_CommandEdit,
+                                      prompt,
+                                      result) ? Py_BuildValue("s", result.c_str()) : Py_None;
+}

@@ -166,6 +166,18 @@ bool RS_GraphicView::setCurrentAction(std::shared_ptr<RS_ActionInterface> action
     return false;
 }
 
+#ifdef DEVELOPER
+/**
+ * Kills all running shown actions. Called when a selection action
+ * is launched to zooming/panning confusion.
+ */
+void RS_GraphicView::killShownActions() const {
+    if (m_eventHandler) {
+        m_eventHandler->killShownActions();
+    }
+}
+#endif
+
 /**
  * Kills all running actions.
  */

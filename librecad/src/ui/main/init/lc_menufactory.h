@@ -79,6 +79,9 @@ protected:
     QMenu* m_menuEdit {nullptr};
     QMenu* m_menuView {nullptr};
     QMenu* m_menuPlugins {nullptr};
+#if DEVELOPER
+    QMenu* m_menuDeveloper {nullptr};
+#endif
     QMenu* m_menuWorkspace {nullptr};
     QMenu* m_menuHelp {nullptr};
     QMenu* m_menuToolsCombined {nullptr};
@@ -100,6 +103,9 @@ protected:
     void createEditMenu(QMenuBar *menu_bar, QList<QMenu *> &topMenuMenus);
     void createViewMenu(QMenuBar *menu_bar, QList<QMenu *> &topMenuMenus);
     void createPluginsMenu(QMenuBar *menu_bar, QList<QMenu *> &topMenuMenus);
+#if DEVELOPER
+    void createDeveloperMenu(QMenuBar *menu_bar, QList<QMenu *> &topMenuMenus);
+#endif
     void createWorkspaceMenu(QMenuBar *menu_bar, QList<QMenu *> &topMenuMenus);
     void findViewAndUCSToggleActions(QList<QDockWidget*> dockwidgetsList, QAction*& namedViewsToggleViewAction,
                                      QAction*& ucsToggleViewAction);
