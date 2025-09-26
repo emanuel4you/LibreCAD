@@ -42,10 +42,6 @@
 #include "qg_activelayername.h"
 #include "qg_blockwidget.h"
 #include "qg_commandwidget.h"
-#ifdef DEVELOPER
-#include "qg_lsp_commandwidget.h"
-#include "qg_py_commandwidget.h"
-#endif
 #include "qg_coordinatewidget.h"
 #include "qg_layerwidget.h"
 #include "qg_librarywidget.h"
@@ -273,46 +269,6 @@ QDockWidget * LC_WidgetFactory::createCmdWidget(QG_ActionHandler *action_handler
     return dock;
 }
 
-#ifdef DEVELOPER
-QDockWidget * LC_WidgetFactory::createLspCmdWidget(QG_ActionHandler *action_handler){
-    auto dock = createDockWidget(tr("Lisp Command Line"), "lsp_command_dockwidget", tr("Cmd"));
-
-    auto widget = new QG_Lsp_CommandWidget(action_handler, dock, "Lisp Command");
-    widget->setActionHandler(action_handler);
-
-    dock->setWidget(widget);
-    widget->getDockingAction()->setText(dock->isFloating() ? tr("Dock") : tr("Float"));
-
-    connect(widget->leCommand, &QG_Lsp_CommandEdit::escape, m_appWin, &QC_ApplicationWindow::slotFocus);
-    // fixme - sand - disable setting vertical caption so far as this is now controlled in uniform way by widget
-    // setttings.
-    // fixme - sand - remove this call and the slot later, if there will no request from the users to recover this
-    // connect(dock, &QDockWidget::dockLocationChanged,m_appWin, &QC_ApplicationWindow::modifyCommandTitleBar);
-
-    m_appWin->m_lspCommandWidget = widget;
-    return dock;
-}
-
-QDockWidget * LC_WidgetFactory::createPyCmdWidget(QG_ActionHandler *action_handler){
-    auto dock = createDockWidget(tr("Python Command Line"), "py_command_dockwidget", tr("Cmd"));
-
-    auto widget = new QG_Py_CommandWidget(action_handler, dock, "Python Command");
-    widget->setActionHandler(action_handler);
-
-    dock->setWidget(widget);
-    widget->getDockingAction()->setText(dock->isFloating() ? tr("Dock") : tr("Float"));
-
-    connect(widget->leCommand, &QG_Py_CommandEdit::escape, m_appWin, &QC_ApplicationWindow::slotFocus);
-    // fixme - sand - disable setting vertical caption so far as this is now controlled in uniform way by widget
-    // setttings.
-    // fixme - sand - remove this call and the slot later, if there will no request from the users to recover this
-    // connect(dock, &QDockWidget::dockLocationChanged,m_appWin, &QC_ApplicationWindow::modifyCommandTitleBar);
-
-    m_appWin->m_pyCommandWidget = widget;
-    return dock;
-}
-#endif
-
 /**
  * This slot modifies the commandline's title bar
  * depending on the dock area it is moved to.
@@ -358,10 +314,6 @@ void LC_WidgetFactory::createRightSidebar(QG_ActionHandler* action_handler){
     QDockWidget *dock_block = createBlockListWidget(action_handler);
     QDockWidget *dock_library = createLibraryWidget(action_handler);
     QDockWidget *dock_command = createCmdWidget(action_handler);
-#ifdef DEVELOPER
-    QDockWidget *lsp_dock_command = createLspCmdWidget(action_handler);
-    QDockWidget *py_dock_command = createPyCmdWidget(action_handler);
-#endif
     QDockWidget *doc_pen_wiz = createPenWizardWidget();
 
     m_appWin->addDockWidget(Qt::RightDockWidgetArea, doc_pen_wiz);
@@ -376,10 +328,6 @@ void LC_WidgetFactory::createRightSidebar(QG_ActionHandler* action_handler){
     m_appWin->addDockWidget(Qt::RightDockWidgetArea, dock_views);
     m_appWin->tabifyDockWidget(dock_views, dock_ucss);
     m_appWin->addDockWidget(Qt::RightDockWidgetArea, dock_command);
-#ifdef DEVELOPER
-    m_appWin->addDockWidget(Qt::RightDockWidgetArea, lsp_dock_command);
-    m_appWin->addDockWidget(Qt::RightDockWidgetArea, py_dock_command);
-#endif
 
     updateDockWidgetsTitleBarType(m_appWin, verticalTitle);
 }

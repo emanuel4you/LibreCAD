@@ -155,9 +155,6 @@ void LC_ActionFactory::fillActionContainer(LC_ActionGroupManager* agm, bool useT
     createOptionsActionsUncheckable(a_map, agm->getGroupByName("options"));
     createSelectActionsUncheckable(a_map, agm->getGroupByName("select"));
     createFileActionsUncheckable(a_map, agm->getGroupByName("file"));
-#ifdef DEVELOPER
-    createDeveloperActionsUncheckable(a_map, agm->getGroupByName("developer"));
-#endif
     createViewActionsUncheckable(a_map, agm->getGroupByName("view"));
     createNamedViewActionsUncheckable(a_map, agm->getGroupByName("namedViews"));
     createWorkspacesActionsUncheckable(a_map, agm->getGroupByName("workspaces"));
@@ -600,22 +597,7 @@ void LC_ActionFactory::createFileActionsUncheckable(QMap<QString, QAction *> &ma
     });
 
     createAction_AH("FileExportMakerCam",RS2::ActionFileExportMakerCam,  tr("Export as CA&M/plain SVG..."), nullptr, nullptr, group, map);
-#ifdef DEVELOPER
-    createAction_AH("FileViewSlide",RS2::ActionFileViewSlide,  tr("View a Slide..."), ":/icons/slide.lci", nullptr, group, map);
-    createAction_AH("FileExportSlide",RS2::ActionFileExportSlide,  tr("Export as Slide..."), ":/icons/export_slide.lci", nullptr, group, map);
-#endif // DEVELOPER
 }
-
-#ifdef DEVELOPER
-void LC_ActionFactory::createDeveloperActionsUncheckable(QMap<QString, QAction *> &map, QActionGroup *group) {
-    createMainWindowActions(map, group, {
-        {"LoadLisp",        &QC_ApplicationWindow::slotLoadLisp,          tr("Load &Lisp"),          ":/icons/open_script.lci",  "load-lisp"},
-        {"LibreLisp",       &QC_ApplicationWindow::slotLibreLisp,         tr("LibreL&isp IDE"),      ":/images/librecad.png",      "libre-lisp"},
-        {"LoadPython",      &QC_ApplicationWindow::slotLoadPython,        tr("Load &Python"),        ":/icons/open_script.lci",  "load-python"},
-        {"LibrePython",     &QC_ApplicationWindow::slotLibrePython,       tr("LibreP&ython IDE"),    ":/images/librecad.png",      "libre-python"}
-    });
-}
-#endif // DEVELOPER
 
 void LC_ActionFactory::createWidgetActions(QMap<QString, QAction *> &map, QActionGroup *group) {
     createMainWindowActions(map, group, {
@@ -639,12 +621,6 @@ void LC_ActionFactory::createViewActionsUncheckable(QMap<QString, QAction *> &ma
     createMainWindowActions(map, group, {
         {"FocusCommand", &QC_ApplicationWindow::slotFocusCommandLine,   tr("Focus on &Command Line"),   ":/icons/editclear.lci"},
         {"FocusOptions", &QC_ApplicationWindow::slotFocusOptionsWidget, tr("Focus on &Options Widget"), ":/icons/drawing_settings.lci"}
-#ifdef DEVELOPER
-        ,{"FocusLispCommand", &QC_ApplicationWindow::slotFocusLspCommandLine, tr("Focus on &Lisp Command Line"),   ":/icons/editclear.lci"},
-        {"FocusOptions",      &QC_ApplicationWindow::slotFocusLspOptionsWidget,  tr("Focus on &Options Widget"),      ":/icons/drawing_settings.lci"},
-        {"FocusPyCommand",    &QC_ApplicationWindow::slotFocusPyCommandLine,  tr("Focus on &Python Command Line"), ":/icons/editclear.lci"},
-        {"FocusOptions",      &QC_ApplicationWindow::slotFocusPyOptionsWidget,  tr("Focus on &Options Widget"),      ":/icons/drawing_settings.lci"}
-#endif // DEVELOPER
     });
 
     createActionHandlerActions(map, group, {
@@ -778,10 +754,6 @@ void LC_ActionFactory::setDefaultShortcuts(QMap<QString, QAction*>& map, LC_Acti
         {"FilePrint", QKeySequence::Print},
         {"FileQuit", QKeySequence::Quit},
         {"FocusCommand", QKeySequence(Qt::CTRL | Qt::Key_M)}, // commandLineShortcuts}, // fixme - restore shortcuts for focus command line!!!
-#ifdef DEVELOPER
-        {"FocusLspCommand", QKeySequence(Qt::CTRL | Qt::Key_I)},
-        {"FocusPyCommand", QKeySequence(Qt::CTRL | Qt::Key_P)},
-#endif
 #if defined(Q_OS_LINUX)
         {"Fullscreen", QKeySequence("F11")},
 #else
@@ -818,16 +790,6 @@ void LC_ActionFactory::fillActionLists(QMap<QString, QAction *> &map){
                         "FileSaveAs",
                         "FileSaveAll"
                     }, map);
-
-#ifdef DEVELOPER
-    fillActionsList(developer_actions,
-                    {
-                        "LoadLisp",
-                        "LibreLisp",
-                        "LoadPython",
-                        "LibrePython"
-                    }, map);
-#endif
 
     fillActionsList(shape_actions,
                     {

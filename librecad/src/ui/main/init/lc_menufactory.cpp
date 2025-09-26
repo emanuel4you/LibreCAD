@@ -74,9 +74,6 @@ void LC_MenuFactory::doCreateMenus(QMenuBar *menu_bar, bool firstCreation) {
         createEditMenu(menu_bar, topMenuMenus);
         createViewMenu(menu_bar, topMenuMenus);
         createPluginsMenu(menu_bar, topMenuMenus);
-#if DEVELOPER
-        createDeveloperMenu(menu_bar, topMenuMenus);
-#endif
         createToolsMenu(menu_bar, topMenuMenus);
         createWorkspaceMenu(menu_bar, topMenuMenus);
         prepareWorkspaceMenuComponents();
@@ -90,9 +87,6 @@ void LC_MenuFactory::doCreateMenus(QMenuBar *menu_bar, bool firstCreation) {
         topMenuMenus << m_menuEdit;
         topMenuMenus << m_menuView;
         topMenuMenus << m_menuPlugins;
-#if DEVELOPER
-        topMenuMenus << m_menuDeveloper;
-#endif
         if (m_menuOptions.expandToolsMenu) {
             // fixme - sand - icons - potentially this may lead to the waste if menus are switched often (which is hardly the case but still).
             // this is due to the fact that menubar.clear() does not delete original actions/sub menus, but just removes them from the list.
@@ -270,17 +264,11 @@ void LC_MenuFactory::createFileMenu(QMenuBar *menu_bar, QList<QMenu *> &topMenuM
 
     subMenu(m_menuFile, tr("Export"), "export", ":/icons/export.lci", {
         "FileExportMakerCam",
-#ifdef DEVELOPER
-        "FileExportSlide",
-#endif // DEVELOPER
         "FilePrintPDF",
         "FileExport"
     });
 
     addActions(m_menuFile, {
-#ifdef DEVELOPER
-        "FileViewSlide",
-#endif // DEVELOPER
         "",
         "FilePrint",
         "FilePrintPreview",
@@ -374,19 +362,6 @@ void LC_MenuFactory::createPluginsMenu(QMenuBar *menu_bar, QList<QMenu *> &topMe
     topMenuMenus << m_menuPlugins;
 }
 
-#if DEVELOPER
-void LC_MenuFactory::createDeveloperMenu(QMenuBar *menu_bar, QList<QMenu *> &topMenuMenus){
-    m_menuDeveloper = menu(tr("Deve&loper"),"developer", menu_bar, {
-                                 "",
-                                 "LoadLisp",
-                                 "LibreLisp",
-                                 "",
-                                 "LoadPython",
-                                 "LibrePython",
-                             });
-    topMenuMenus << m_menuDeveloper;
-}
-#endif
 void LC_MenuFactory::createWorkspaceMenu(QMenuBar *menu_bar, QList<QMenu *> &topMenuMenus){
     m_menuWorkspace = menu(tr("&Workspace"), "workspaces", menu_bar, {
                              "Fullscreen" // temp way to show this menu on OS X
@@ -413,9 +388,6 @@ void LC_MenuFactory::prepareWorkspaceMenuComponents(){
     QList<QDockWidget*> dockwidgetsList = m_appWin->findChildren<QDockWidget*>();
     m_appWin->sortWidgetsByTitle(dockwidgetsList);
 
-#ifdef DEVELOPER
-    m_appWin->sortCommandLines(dockwidgetsList);
-#endif
     QAction* namedViewsToggleViewAction = nullptr;
     QAction* ucsToggleViewAction = nullptr;
 
