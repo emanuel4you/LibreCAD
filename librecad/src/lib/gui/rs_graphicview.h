@@ -34,7 +34,6 @@
 #include "lc_graphicviewportlistener.h"
 #include "rs.h"
 
-class LC_EventHandler;
 struct LC_InfoCursorOverlayPrefs;
 class QDateTime;
 class QMouseEvent;
@@ -74,7 +73,7 @@ public:
  * connected to this view is a graphic and valid.
  * NULL otherwise.
  */
-    RS_Graphic *getGraphic(bool resolve = false) const;
+    RS_Graphic *getGraphic() const;
     LC_GraphicViewport* getViewPort() const
     {
         return m_viewport.get();
@@ -117,6 +116,10 @@ public:
     RS_ActionInterface *getCurrentAction() const;
     QString getCurrentActionName() const;
     QIcon getCurrentActionIcon() const;
+    void killSelectActions() const;
+#ifdef DEVELOPER
+    void killShownActions() const;
+#endif
     void killAllActions() const;
     void back() const;
     void processEnterKey();
@@ -133,7 +136,7 @@ public:
     RS_SnapMode getDefaultSnapMode() const;
     void setSnapRestriction(RS2::SnapRestriction sr);
     RS2::SnapRestriction getSnapRestriction() const;
-    bool isCurrentActionRunning(RS_ActionInterface* action);
+    RS_EventHandler *getEventHandler() const;
     /**
   * Enables or disables print preview.
   */
@@ -160,7 +163,10 @@ public:
 
     RS2::EntityType getTypeToSelect() const;
     void setTypeToSelect(RS2::EntityType mType);
+
+    void setForcedActionKillAllowed(bool forcedActionKillAllowed);
     virtual QString obtainEntityDescription(RS_Entity *entity, RS2::EntityDescriptionLevel shortDescription);
+
     LC_InfoCursorOverlayPrefs* getInfoCursorOverlayPreferences();
 
     bool getPanOnZoom() const;
@@ -174,23 +180,20 @@ public:
     void onViewportChanged() override;
     void onRelativeZeroChanged(const RS_Vector &pos) override;
     void onUCSChanged(LC_UCS* ucs) override;
-    void notifyCurrentActionChanged(RS2::ActionType actionType);
-    bool hasAction();
-    void notifyLastActionFinished();
+    void notifyNoActiveAction();
 signals:
     void ucsChanged(LC_UCS* ucs);
     void relativeZeroChanged(const RS_Vector &);
     void previous_zoom_state(bool);
 
-    void currentActionChanged(RS2::ActionType actionType);
+    void currentActionChanged(RS_ActionInterface* action);
 protected:
     void setRenderer(std::unique_ptr<LC_WidgetViewPortRenderer> renderer);
     LC_WidgetViewPortRenderer* getRenderer() const;
     void resizeEvent(QResizeEvent *event) override;
     void onViewportRedrawNeeded() override;
-    LC_EventHandler *getEventHandler() const;
 private:
-    std::unique_ptr<LC_EventHandler> m_eventHandler;
+    std::unique_ptr<RS_EventHandler> m_eventHandler;
     RS_EntityContainer *container = nullptr;
     std::unique_ptr<LC_GraphicViewport> m_viewport;
     std::unique_ptr<LC_WidgetViewPortRenderer> m_renderer;
@@ -213,6 +216,7 @@ private:
 
     RS2::EntityType typeToSelect = RS2::EntityType::EntityUnknown;
 
+    bool forcedActionKillAllowed = true;
     bool showEntityDescriptionOnHover = false;
     bool m_panOnZoom = false;
     bool m_skipFirstZoom = false;

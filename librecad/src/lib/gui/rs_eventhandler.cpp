@@ -65,16 +65,12 @@ RS_EventHandler::~RS_EventHandler() {
 }
 
 void RS_EventHandler::uncheckQAction(){
-    if (m_QAction != nullptr) {
-        m_QAction->setChecked(false);
-        m_QAction = nullptr;
-    }
-    if (hasAction()){
-        auto lastAction = m_currentActions.last();
-        // m_graphicView->notifyActiveAction(lastAction.get()); // ugly fix to properly restore previous action icon etc.
-    }
-    else {
-        // m_graphicView->notifyNoActiveAction();
+    if (!hasAction()){
+        if (m_QAction != nullptr) {
+            m_QAction->setChecked(false);
+            m_QAction = nullptr;
+        }
+        m_graphicView->notifyNoActiveAction();
     }
 }
 
@@ -122,7 +118,7 @@ void RS_EventHandler::mouseReleaseEvent(QMouseEvent* e) {
         //    if (actionIndex>=0 && currentActions[actionIndex] &&
         //            !currentActions[actionIndex]->isFinished()) {
         std::shared_ptr<RS_ActionInterface> &lastAction = m_currentActions.last();
-        // LC_ERR<< "call action "<< lastAction->getName();
+        LC_ERR<< "call action "<< lastAction->getName();
 
         lastAction->mouseReleaseEvent(e);
 
@@ -138,15 +134,6 @@ void RS_EventHandler::mouseReleaseEvent(QMouseEvent* e) {
             e->ignore();
         }
     }
-}
-
-void RS_EventHandler::notifyLastActionFinished() {
-    std::shared_ptr<RS_ActionInterface> &lastAction = m_currentActions.last();
-    int lastActionStatus = lastAction->getStatus();
-    if (lastActionStatus < 0){
-        uncheckQAction();
-    }
-    cleanUp();
 }
 
 void RS_EventHandler::checkLastActionCompletedAndUncheckQAction(const std::shared_ptr<RS_ActionInterface> &lastAction) {
@@ -344,11 +331,8 @@ bool RS_EventHandler::setCurrentAction(std::shared_ptr<RS_ActionInterface> actio
     // Predecessor of the new action or NULL:
     auto& predecessor = hasAction() ? m_currentActions.last() : m_defaultAction;
     // Suspend current action:
-    if (predecessor != nullptr) {
-        predecessor->suspend();
-        predecessor->hideOptions();
-    }
-
+    predecessor->suspend();
+    predecessor->hideOptions();
 
     // Set current action:
     m_currentActions.push_back(action);
@@ -365,7 +349,7 @@ bool RS_EventHandler::setCurrentAction(std::shared_ptr<RS_ActionInterface> actio
         RS_DEBUG->print("RS_EventHandler::setCurrentAction: show options");
         action->showOptions();
         RS_DEBUG->print("RS_EventHandler::setCurrentAction: set predecessor");
-        action->setPredecessor(predecessor);
+        action->setPredecessor(predecessor.get());
         passedActionIsNotFinished = true;
     }
 
@@ -381,7 +365,7 @@ bool RS_EventHandler::setCurrentAction(std::shared_ptr<RS_ActionInterface> actio
         bool hasActionToCheck = hasAction();
         m_QAction->setChecked(hasActionToCheck);
         if (!hasActionToCheck) {
-            // m_graphicView->notifyNoActiveAction();
+            m_graphicView->notifyNoActiveAction();
         }
     }
     return passedActionIsNotFinished;
@@ -392,6 +376,7 @@ bool RS_EventHandler::setCurrentAction(std::shared_ptr<RS_ActionInterface> actio
  * is launched to reduce confusion.
  */
 void RS_EventHandler::killSelectActions() {
+
     for (auto it=m_currentActions.begin();it != m_currentActions.end();){
         RS2::ActionType rtti = (*it)->rtti();
         if (rtti == RS2::ActionSelectSingle ||
@@ -409,6 +394,32 @@ void RS_EventHandler::killSelectActions() {
     }
 }
 
+#ifdef DEVELOPER
+/**
+ * Kills all running shown actions. Called when a selection action
+ * is launched to zooming/panning confusion.
+ */
+void RS_EventHandler::killShownActions()
+{
+    RS_DEBUG->print(__FILE__ ": %s: line %d: begin\n", __func__, __LINE__);
+
+    for (auto it=m_currentActions.begin();it != m_currentActions.end();){
+        RS2::ActionType rtti = (*it)->rtti();
+        if (rtti == RS2::ActionFileViewSlide ||
+            rtti == RS2::ActionGrDraw) {
+            if (isActive(*it)) {
+                (*it)->finish();
+            }
+            it = m_currentActions.erase(it);
+        }else{
+            it++;
+        }
+    }
+    RS_DEBUG->print(__FILE__ ": %s: line %d: begin\n", __func__, __LINE__);
+
+}
+#endif
+
 /**
  * Kills all running actions. Called when a window is closed.
  */
@@ -419,7 +430,7 @@ void RS_EventHandler::killAllActions()
     if (m_QAction)    {
         m_QAction->setChecked(false);
         m_QAction = nullptr;
-        // m_graphicView->notifyNoActiveAction();
+        m_graphicView->notifyNoActiveAction();
     }
 
     for(auto& p: m_currentActions){
@@ -462,9 +473,8 @@ void RS_EventHandler::cleanUp() {
     RS_DEBUG->print("RS_EventHandler::cleanUp");
 
     if (hasAction()) {
-        auto lastAction = m_currentActions.last();
-        lastAction->resume();
-        lastAction->showOptions();
+        m_currentActions.last()->resume();
+        m_currentActions.last()->showOptions();
     } else {
         if (m_defaultAction) {
             m_defaultAction->resume();
@@ -521,22 +531,11 @@ QAction* RS_EventHandler::getQAction(){
   return m_QAction;
 }
 
-void RS_EventHandler::setQAction(QAction* action, bool killOtherActions) {
-    //    LC_ERR << __func__ << "()";
+void RS_EventHandler::setQAction(QAction *action) {
+//    LC_ERR << __func__ << "()";
     debugActions();
-    if (killOtherActions) {
-        if (m_QAction != nullptr && action != nullptr && m_QAction != action) {
-            auto property = action->property("RS2:actionType");
-            if (property.isValid()) {
-                int rtti = property.toInt();
-                if (rtti != RS2::ActionZoomPan && rtti != RS2::ActionSetRelativeZero) {
-                    killAllActions();
-                }
-            }
-            else {
-                killAllActions();
-            }
-        }
+    if (m_QAction != nullptr && m_QAction != action) {
+        killAllActions();
     }
     m_QAction = action;
 }

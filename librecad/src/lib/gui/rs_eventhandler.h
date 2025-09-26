@@ -53,7 +53,7 @@ public:
     explicit RS_EventHandler(RS_GraphicView* parent = 0);
     ~RS_EventHandler() override;
     void uncheckQAction();
-    void setQAction(QAction* action, bool forceKillOtherActions);
+    void setQAction(QAction* action);
     QAction* getQAction();
 
     void back();
@@ -80,6 +80,9 @@ public:
     bool isValid(RS_ActionInterface* action) const;
 
     void killSelectActions();
+#ifdef DEVELOPER
+    void killShownActions();
+#endif
     void killAllActions();
 
     bool hasAction();
@@ -89,8 +92,6 @@ public:
     void setSnapRestriction(RS2::SnapRestriction sr);
     //! return true if the current action is for selecting
     bool inSelectionMode();
-
-    void notifyLastActionFinished();
 private:
     std::unique_ptr<LC_CoordinatesParser> m_coordinatesParser;
     RS_GraphicView* m_graphicView;

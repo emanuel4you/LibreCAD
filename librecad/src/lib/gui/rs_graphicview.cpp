@@ -29,12 +29,12 @@
 #include "rs_graphicview.h"
 
 #include "lc_cursoroverlayinfo.h"
-#include "lc_eventhandler.h"
 #include "lc_graphicviewport.h"
 #include "lc_shortcuts_manager.h"
 #include "lc_widgetviewportrenderer.h"
 #include "rs_actioninterface.h"
 #include "rs_entitycontainer.h"
+#include "rs_eventhandler.h"
 #include "rs_graphic.h"
 #include "rs_grid.h"
 #include "rs_linetypepattern.h"
@@ -52,7 +52,7 @@
  */
 RS_GraphicView::RS_GraphicView(QWidget *parent, Qt::WindowFlags f)
     :QWidget(parent, f)
-    , m_eventHandler{std::make_unique<LC_EventHandler>(this)}
+    , m_eventHandler{std::make_unique<RS_EventHandler>(this)}
     , m_viewport{std::make_unique<LC_GraphicViewport>()}
     , defaultSnapMode{std::make_unique<RS_SnapMode>()}
     , infoCursorOverlayPreferences{std::make_unique<LC_InfoCursorOverlayPrefs>()}{
@@ -151,6 +151,14 @@ QIcon RS_GraphicView::getCurrentActionIcon() const {
 
 bool RS_GraphicView::setEventHandlerAction(std::shared_ptr<RS_ActionInterface> action){
     bool actionActive = m_eventHandler->setCurrentAction(action);
+    if (actionActive) {
+        if (m_eventHandler->hasAction()) {
+            emit currentActionChanged(action.get());
+        }
+        else {
+            notifyNoActiveAction();
+        }
+    }
     return actionActive;
 }
 
@@ -167,10 +175,35 @@ bool RS_GraphicView::setCurrentAction(std::shared_ptr<RS_ActionInterface> action
 }
 
 /**
+ * Kills all running selection actions. Called when a selection action
+ * is launched to reduce confusion.
+ */
+// fixme - sand - files - review this method again. Why it is so special and different from killAllActions?
+// actually, selection may be performed by any inherited class of RS_ActionSelectBase...
+// leave if for now as it, yet return later.
+void RS_GraphicView::killSelectActions() const {
+    if (m_eventHandler != nullptr) {
+        m_eventHandler->killSelectActions();
+    }
+}
+
+#ifdef DEVELOPER
+/**
+ * Kills all running shown actions. Called when a selection action
+ * is launched to zooming/panning confusion.
+ */
+void RS_GraphicView::killShownActions() const {
+    if (m_eventHandler) {
+        m_eventHandler->killShownActions();
+    }
+}
+#endif
+
+/**
  * Kills all running actions.
  */
 void RS_GraphicView::killAllActions() const {
-    if (m_eventHandler != nullptr) {
+    if (m_eventHandler != nullptr && forcedActionKillAllowed) {
         m_eventHandler->killAllActions();
     }
 }
@@ -193,6 +226,7 @@ void RS_GraphicView::processEnterKey() {
     }
 }
 
+void keyPressEvent(QKeyEvent *event);
 
 void RS_GraphicView::keyPressEvent(QKeyEvent *event) {
     if (m_eventHandler && m_eventHandler->hasAction()) {
@@ -231,7 +265,6 @@ void RS_GraphicView::zoomAuto(bool axis){
     m_viewport->zoomAuto(axis);
 }
 
-
 void RS_GraphicView::onViewportChanged() {
     adjustOffsetControls();
     adjustZoomControls();
@@ -251,16 +284,8 @@ void RS_GraphicView::onUCSChanged(LC_UCS* ucs) {
     redraw();
 }
 
-void RS_GraphicView::notifyCurrentActionChanged(RS2::ActionType actionType) {
-    emit currentActionChanged(actionType);
-}
-
-bool RS_GraphicView::hasAction() {
-    return getEventHandler()->hasAction();
-}
-
-void RS_GraphicView::notifyLastActionFinished() {
-    return getEventHandler()->notifyLastActionFinished();
+void RS_GraphicView::notifyNoActiveAction(){
+    emit currentActionChanged(nullptr);
 }
 
 void RS_GraphicView::onRelativeZeroChanged(const RS_Vector &pos) {
@@ -305,23 +330,15 @@ void RS_GraphicView::setSnapRestriction(RS2::SnapRestriction sr) {
     }
 }
 
-LC_EventHandler *RS_GraphicView::getEventHandler() const {
+RS_EventHandler *RS_GraphicView::getEventHandler() const {
     return m_eventHandler.get();
 }
 
-bool RS_GraphicView::isCurrentActionRunning(RS_ActionInterface* action) {
-    return m_eventHandler->isValid(action);
-}
-
-RS_Graphic *RS_GraphicView::getGraphic(bool resolve) const {
-    if (container != nullptr){
-        if (resolve) {
-            return container->getGraphic();
-        }
-        if (container->rtti() == RS2::EntityGraphic) {
-            return static_cast<RS_Graphic *>(container);
-        }
+RS_Graphic *RS_GraphicView::getGraphic() const {
+    if (container && container->rtti() == RS2::EntityGraphic) {
+        return static_cast<RS_Graphic *>(container);
     }
+
     return nullptr;
 }
 
@@ -357,6 +374,9 @@ void RS_GraphicView::setTypeToSelect(RS2::EntityType mType) {
     typeToSelect = mType;
 }
 
+void RS_GraphicView::setForcedActionKillAllowed(bool enabled) {
+    forcedActionKillAllowed = enabled;
+}
 
 QString RS_GraphicView::obtainEntityDescription([[maybe_unused]]RS_Entity *entity, [[maybe_unused]]RS2::EntityDescriptionLevel descriptionLevel) {
     return "";
