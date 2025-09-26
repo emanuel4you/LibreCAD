@@ -34,6 +34,7 @@
 
 class LC_ActionFactory;
 class LC_ActionGroupManager;
+class LC_ActionGroup;
 class LC_ActionOptionsManager;
 class LC_AnglesBasisWidget;
 class LC_AppWindowDialogsInvoker;
@@ -62,10 +63,6 @@ class QG_ActionHandler;
 class QG_ActiveLayerName;
 class QG_BlockWidget;
 class QG_CommandWidget;
-#ifdef DEVELOPER // DEVELOPER
-class QG_Lsp_CommandWidget;
-class QG_Py_CommandWidget;
-#endif // DEVELOPER
 class QG_CoordinateWidget;
 class QG_LayerWidget;
 class QG_LibraryWidget;
@@ -116,7 +113,7 @@ public:
     bool loadStyleSheet(const QString &path);
 
     bool eventFilter(QObject *obj, QEvent *event) override;
-    void onViewCurrentActionChanged(const RS_ActionInterface *action);
+    void onViewCurrentActionChanged(RS2::ActionType actionType);
     QAction* getAction(const QString& name) const override;
 
     void activateWindow(QMdiSubWindow* w){
@@ -135,22 +132,19 @@ public:
 public slots:
     void relayAction(QAction* q_action);
     void slotFocus();
+    void disableUIForAbsentDrawing();
     void slotKillAllActions();
     void slotFocusCommandLine();
     void slotFocusOptionsWidget();
-#ifdef DEVELOPER
-    void slotFocusLspCommandLine();
-    void slotFocusLspOptionsWidget();
-    void slotFocusPyCommandLine();
-    void slotFocusPyOptionsWidget();
-#endif // DEVELOPER
     void slotError(const QString& msg);
     void slotShowDrawingOptions();
     void slotShowDrawingOptionsUnits();
     void slotWorkspacesMenuAboutToShow();
+    QMenu* createGraphicViewContentMenu(QMouseEvent* event, QG_GraphicView* view, RS_Entity* entity, const RS_Vector& pos);
+
     void slotWindowsMenuActivated(bool);
     void slotPenChanged(const RS_Pen& p);
-    void setupCustomMenu(QG_GraphicView* view);
+
 
     //void slotSnapsChanged(RS_SnapMode s);
     void slotEnableActions(bool enable);
@@ -215,12 +209,6 @@ public slots:
      * update layer name when active layer changed
      */
     void slotUpdateActiveLayer();
-#ifdef DEVELOPER
-    void slotLoadLisp();
-    void slotLoadPython();
-    void slotLibreLisp();
-    void slotLibrePython();
-#endif
     void toggleFullscreen(bool checked);
     void setPreviousZoomEnable(bool enable);
     void widgetOptionsDialog();
@@ -317,12 +305,9 @@ public:
     void openFile(const QString& fileName, RS2::FormatType type);
     void changeDrawingOptions(int tabIndex);
     void closeWindow(QC_MDIWindow* w) override;
-    QG_LibraryWidget* getLibraryWidget(){return m_libraryWidget;}
-
-    LC_ActionContext* getActionContext();
-#ifdef DEVELOPER
-    QG_ActionHandler* getActionHandler() { return m_actionHandler.get(); }
-#endif
+    QG_LibraryWidget* getLibraryWidget() const {return m_libraryWidget;}
+    LC_ActionGroup* getActionGroup(const QString &groupName) const;
+    LC_ActionContext* getActionContext() const;
 protected:
     void closeEvent(QCloseEvent*) override;
     bool isAcceptableDragNDropFileName(const QString& fileName);
@@ -397,12 +382,6 @@ protected:
     QG_BlockWidget* m_blockWidget {nullptr};
     QG_LibraryWidget* m_libraryWidget {nullptr};
     QG_CommandWidget* m_commandWidget {nullptr};
-#ifdef DEVELOPER
-    /** Lips Command Line */
-    QG_Lsp_CommandWidget* m_lspCommandWidget {nullptr};
-    /** Python Command Line */
-    QG_Py_CommandWidget* m_pyCommandWidget {nullptr};
-#endif // DEVELOPER
     LC_PenWizard* m_penWizard {nullptr};
     LC_PenPaletteWidget* m_penPaletteWidget {nullptr};
     LC_NamedViewsListWidget* m_namedViewsWidget {nullptr};

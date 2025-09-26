@@ -40,9 +40,6 @@ public:
     void initActions(LC_ActionGroupManager* agm, bool useTheme);
 
     QList<QAction*> file_actions;
-#ifdef DEVELOPER
-    QList<QAction*> developer_actions;
-#endif
     QList<QAction*> line_actions;
     QList<QAction*> point_actions;
     QList<QAction*> shape_actions;
@@ -84,9 +81,6 @@ private:
     void createPenActionsUncheckable(QMap<QString, QAction *> &map, QActionGroup *group) const;
     void createOrderActionsUncheckable(QMap<QString, QAction *> &map, QActionGroup *group) const;
     void createLayerActionsUncheckable(QMap<QString, QAction *> &map, QActionGroup *group) const;
-#ifdef DEVELOPER
-    void createDeveloperActionsUncheckable(QMap<QString, QAction *> &map, QActionGroup *group);
-#endif
     void createBlockActionsUncheckable(QMap<QString, QAction *> &map, QActionGroup *group) const;
     void createOptionsActionsUncheckable(QMap<QString, QAction *> &map, QActionGroup *group);
     void createFileActionsUncheckable(QMap<QString, QAction *> &map, QActionGroup *group);
@@ -95,6 +89,8 @@ private:
     void createViewActionsUncheckable(QMap<QString, QAction *> &map, QActionGroup *group);
     void createSelectActionsUncheckable(QMap<QString, QAction *> &map, QActionGroup *group) const;
     void createEditActionsUncheckable(QMap<QString, QAction *> &map, QActionGroup *group) const;
+    void createDrawDimensionsUncheckable(QMap<QString, QAction*>& map, QActionGroup* group) const;
+    void createInteractivePickActions(QMap<QString, QAction*>& map, QActionGroup* group) const;
     void createWorkspacesActionsUncheckable(QMap<QString, QAction *> &map, QActionGroup *group);
     void createNamedViewActionsUncheckable(QMap<QString, QAction *> &map, QActionGroup *group);
 
