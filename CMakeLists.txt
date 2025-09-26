@@ -454,10 +454,10 @@ set(SOURCES
         librecad/src/actions/drawing/draw/spline/lc_actiondrawsplinepoints.h
         librecad/src/actions/file/lc_actionfileexportmakercam.cpp
         librecad/src/actions/file/lc_actionfileexportmakercam.h
-	librecad/src/actions/file/lc_actionfileexportslide.cpp
-	librecad/src/actions/file/lc_actionfileexportslide.h
-	librecad/src/actions/file/lc_actionfileviewslide.cpp
-	librecad/src/actions/file/lc_actionfileviewslide.h
+        librecad/src/actions/file/lc_actionfileexportslide.cpp
+        librecad/src/actions/file/lc_actionfileexportslide.h
+        librecad/src/actions/file/lc_actionfileviewslide.cpp
+        librecad/src/actions/file/lc_actionfileviewslide.h
         librecad/src/actions/dock_widgets/layer/lc_actionlayersexport.cpp
         librecad/src/actions/dock_widgets/layer/lc_actionlayersexport.h
         librecad/src/actions/dock_widgets/layer/lc_actionlayerstoggleconstruction.cpp
@@ -1087,6 +1087,10 @@ set(SOURCES
         librecad/src/ui/action_options/circle/qg_circletan2options.h
         librecad/src/ui/dock_widgets/command_line/qg_commandwidget.cpp
         librecad/src/ui/dock_widgets/command_line/qg_commandwidget.h
+        librecad/src/ui/dock_widgets/lsp_command_line/qg_lsp_commandwidget.cpp
+        librecad/src/ui/dock_widgets/lsp_command_line/qg_lsp_commandwidget.h
+        librecad/src/ui/dock_widgets/py_command_line/qg_py_commandwidget.cpp
+        librecad/src/ui/dock_widgets/py_command_line/qg_py_commandwidget.h
         librecad/src/ui/components/status_bar/qg_coordinatewidget.cpp
         librecad/src/ui/components/status_bar/qg_coordinatewidget.h
         librecad/src/ui/dialogs/entity/qg_dimensionlabeleditor.cpp
@@ -1109,6 +1113,10 @@ set(SOURCES
         librecad/src/ui/dialogs/actions/modify/qg_dlgmove.h
         librecad/src/ui/dialogs/actions/modify/qg_dlgmoverotate.cpp
         librecad/src/ui/dialogs/actions/modify/qg_dlgmoverotate.h
+        librecad/src/ui/dialogs/color/qg_colordlg.cpp
+        librecad/src/ui/dialogs/color/qg_colordlg.h
+        librecad/src/ui/dialogs/color/qg_colorwell.cpp
+        librecad/src/ui/dialogs/color/qg_colorwell.h
         librecad/src/ui/dialogs/entity/qg_dlgmtext.cpp
         librecad/src/ui/dialogs/entity/qg_dlgmtext.h
         librecad/src/ui/dialogs/settings/dimstyles/dimstyle_manager/lc_dlgdimstylemanager.h
@@ -1237,6 +1245,24 @@ set(SOURCES
         librecad/src/ui/dock_widgets/cad/lc_caddockwidget.cpp
         librecad/src/ui/dock_widgets/pen_wizard/lc_penwizard.cpp
         librecad/src/ui/dock_widgets/pen_wizard/lc_penwizard.h
+        librecad/src/ui/editor/librelisp.cpp
+        librecad/src/ui/editor/librelisp.h
+        librecad/src/ui/editor/librepad.cpp
+        librecad/src/ui/editor/librepad.h
+        librecad/src/ui/editor/librepython.cpp
+        librecad/src/ui/editor/librepython.h
+        librecad/src/ui/editor/dclhighlighter.cpp
+        librecad/src/ui/editor/dclhighlighter.h
+        librecad/src/ui/editor/pythonhighlighter.cpp
+        librecad/src/ui/editor/pythonhighlighter.h
+        librecad/src/ui/editor/lisphighlighter.cpp
+        librecad/src/ui/editor/lisphighlighter.h
+        librecad/src/ui/editor/lpmessage.cpp
+        librecad/src/ui/editor/lpmessage.h
+        librecad/src/ui/editor/lpsearchbar.cpp
+        librecad/src/ui/editor/lpsearchbar.h
+        librecad/src/ui/editor/texteditor.cpp
+        librecad/src/ui/editor/texteditor.h
         librecad/src/ui/main/init/lc_widgetfactory.cpp
         librecad/src/ui/main/init/lc_widgetfactory.h
         librecad/src/ui/main/init/lc_toolbarfactory.h
@@ -1266,6 +1292,10 @@ set(SOURCES
         librecad/src/ui/dock_widgets/command_line/qg_commandedit.h
         librecad/src/ui/dock_widgets/command_line/qg_commandhistory.cpp
         librecad/src/ui/dock_widgets/command_line/qg_commandhistory.h
+        librecad/src/ui/dock_widgets/lsp_command_line/qg_lsp_commandedit.cpp
+        librecad/src/ui/dock_widgets/lsp_command_line/qg_lsp_commandedit.h
+        librecad/src/ui/dock_widgets/py_command_line/qg_py_commandedit.cpp
+        librecad/src/ui/dock_widgets/py_command_line/qg_py_commandedit.h
         librecad/src/ui/dialogs/qg_dialogfactory.cpp
         librecad/src/ui/dialogs/qg_dialogfactory.h
         librecad/src/ui/dialogs/file/qg_filedialog.cpp
@@ -1388,6 +1418,10 @@ set(SOURCES
         librecad/src/ui/action_options/modify/lc_modifygapoptions.cpp
         librecad/src/ui/dock_widgets/entity_info/lc_quickinfowidget.cpp
         librecad/src/ui/components/lc_plaintextedit.h
+        librecad/src/ui/components/commandedit.h
+        librecad/src/ui/components/commandedit.cpp
+        librecad/src/ui/components/commandhistory.h
+        librecad/src/ui/components/commandhistory.cpp
         librecad/src/actions/drawing/info/lc_actioninfoproperties.cpp
         librecad/src/actions/dock_widgets/entity_info/lc_actioninfopickcoordinates.cpp
         librecad/src/ui/dock_widgets/entity_info/lc_quickinfopointsdata.h
