@@ -45,6 +45,7 @@ jobs:
           sed -i 's/Qt::black/Qt::white/g' ${{github.workspace}}/librecad/src/main/main.cpp
       - name: Build and analyze
         run: |
+          ls
           echo "cmake"
           cmake -S . -B unix -DBUILD_TESTS=ON
           echo "cmake build"
