@@ -27,7 +27,6 @@ find_package(Freetype)
 find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
 find_package(SWIG 4 COMPONENTS python REQUIRED)
 include (UseSWIG)
-include_directories(${Python3_INCLUDE_DIRS})
 
 # Define all sources (as before)
 file(GLOB_RECURSE AUTO_EXCLUDED_SOURCES
@@ -138,6 +137,7 @@ set(SHARED_INCLUDES
     librecad/src/lib/engine/overlays/overlay_box
     librecad/src/lib/engine/overlays/preview
     librecad/src/lib/engine/overlays/references
+    librecad/src/lib/engine/overlays/slide
     librecad/src/lib/engine/overlays/ucs_mark
     librecad/src/lib/engine/settings
     librecad/src/lib/engine/undo
@@ -158,6 +158,8 @@ set(SHARED_INCLUDES
     librecad/src/lib/modification
     librecad/src/lib/printing
     librecad/src/lib/scripting
+    librecad/src/lib/scripting/lisp
+    librecad/src/lib/scripting/python
     librecad/src/main
     librecad/src/main/console_dxf2pdf
     librecad/src/plugins
@@ -1713,6 +1715,8 @@ target_include_directories(librecad_lib PRIVATE
 
 set_source_files_properties(${FILE} PROPERTIES CPLUSPLUS ON)
 set_source_files_properties(${FILE} PROPERTIES SWIG_FLAGS -builtin)
+
+include_directories(${Python3_INCLUDE_DIRS} ${SHARED_INCLUDES})
 
 swig_add_library(librepython TYPE USE_BUILD_SHARED_LIBS LANGUAGE python SOURCES ${FILE})
 swig_link_libraries(librepython Qt6::Core Qt6::Widgets Qt6::Gui Python3::Module)
