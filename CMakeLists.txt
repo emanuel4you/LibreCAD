@@ -132,6 +132,7 @@ set(SHARED_INCLUDES
     librecad/src/lib/engine/overlays
     librecad/src/lib/engine/overlays/angles_base
     librecad/src/lib/engine/overlays/crosshair
+    librecad/src/lib/engine/overlays/grdraw
     librecad/src/lib/engine/overlays/highlight
     librecad/src/lib/engine/overlays/info_cursor
     librecad/src/lib/engine/overlays/overlay_box
