@@ -48,8 +48,8 @@ file(GLOB_RECURSE AUTO_EXCLUDED_SOURCES
     "${PROJECT_SOURCE_DIR}/librecad/src/lib/modification/*.*"
     "${PROJECT_SOURCE_DIR}/librecad/src/lib/printing/*.*"
     "${PROJECT_SOURCE_DIR}/librecad/src/lib/scripting/*.*"
-    "${PROJECT_SOURCE_DIR}/librecad/src/lib/scripting/lisp/*.*"
-    "${PROJECT_SOURCE_DIR}/librecad/src/lib/scripting/python/*.*"
+#    "${PROJECT_SOURCE_DIR}/librecad/src/lib/scripting/lisp/*.*"
+#    "${PROJECT_SOURCE_DIR}/librecad/src/lib/scripting/python/*.*"
 )
 
 set(SHARED_INCLUDES
@@ -1505,8 +1505,12 @@ set(SHARED_SOURCES
     librecad/src/ui/dock_widgets/command_line/qg_commandwidget.h
     librecad/src/ui/dock_widgets/lsp_command_line/qg_lsp_commandwidget.cpp
     librecad/src/ui/dock_widgets/lsp_command_line/qg_lsp_commandwidget.h
+    librecad/src/ui/dock_widgets/lsp_command_line/qg_lsp_commandedit.cpp
+    librecad/src/ui/dock_widgets/lsp_command_line/qg_lsp_commandedit.h
     librecad/src/ui/dock_widgets/py_command_line/qg_py_commandwidget.cpp
     librecad/src/ui/dock_widgets/py_command_line/qg_py_commandwidget.h
+    librecad/src/ui/dock_widgets/py_command_line/qg_py_commandedit.cpp
+    librecad/src/ui/dock_widgets/py_command_line/qg_py_commandedit.h
     librecad/src/ui/dock_widgets/entity_info/lc_quickinfobasedata.cpp
     librecad/src/ui/dock_widgets/entity_info/lc_quickinfoentitydata.cpp
     librecad/src/ui/dock_widgets/entity_info/lc_quickinfopointsdata.cpp
@@ -1715,16 +1719,15 @@ target_include_directories(librecad_lib PRIVATE
 )
 
 set_source_files_properties(${FILE} PROPERTIES CPLUSPLUS ON)
-set_source_files_properties(${FILE} PROPERTIES SWIG_FLAGS -builtin)
-
 include_directories(${Python3_INCLUDE_DIRS} ${SHARED_INCLUDES})
 
 swig_add_library(librepython TYPE USE_BUILD_SHARED_LIBS LANGUAGE python SOURCES ${FILE})
-swig_link_libraries(librepython Qt6::Core Qt6::Widgets Qt6::Gui Python3::Module)
+swig_link_libraries(librepython Qt6::Core Qt6::Widgets Qt6::Gui Python3::Module librecad_lib)
 
 target_link_libraries(librecad_lib PRIVATE
-    Qt6::Core Qt6::Widgets Qt6::Gui Qt6::PrintSupport Qt6::Svg Qt6::Network Python3::Python librepython
+    Qt6::Core Qt6::Widgets Qt6::Gui Qt6::PrintSupport Qt6::Svg Qt6::Network
     ${Boost_LIBRARIES}
+    Python3::Python
 )
 set_property(TARGET librecad_lib PROPERTY AUTOUIC_OPTIONS --connections string)
 set_property(TARGET librepython PROPERTY OUTPUT_NAME librecad)
@@ -1759,7 +1762,7 @@ target_include_directories(librecad PRIVATE
 
 target_link_libraries(librecad PRIVATE
    librecad_lib
-   Qt6::Core Qt6::Widgets Qt6::Gui Qt6::PrintSupport Qt6::Svg Qt6::Network
+   Qt6::Core Qt6::Widgets Qt6::Gui Qt6::PrintSupport Qt6::Svg Qt6::Network Python3::Python librepython
 )
 install(TARGETS librecad RUNTIME DESTINATION bin)
 
