@@ -11,10 +11,22 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
+set(SWIG_FILES_PATH librecad/src)
+set(FILE ${SWIG_FILES_PATH}/python.i)
+set(CMAKE_SWIG_FLAGS ${CMAKE_SWIG_FLAGS} -v -c++ -DDEVELOPER)
+set(CMAKE_SWIG_FLAGS ${CMAKE_SWIG_FLAGS} -w302,401,402,412,314,509,512,504,325,503,520,350,351,383,389,394,395,404)
+
+add_compile_definitions(DEVELOPER)
+add_compile_definitions(RS_OPT_PYTHON)
+
 find_package(Qt6 COMPONENTS Gui Core Widgets PrintSupport Svg Network REQUIRED)
 find_package(Qt6 REQUIRED COMPONENTS LinguistTools)
 find_package(Boost REQUIRED)
 find_package(Freetype)
+
+find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
+find_package(SWIG 4 COMPONENTS python REQUIRED)
+include (UseSWIG)
 
 # Define all sources (as before)
 file(GLOB_RECURSE AUTO_EXCLUDED_SOURCES
@@ -25,6 +37,8 @@ file(GLOB_RECURSE AUTO_EXCLUDED_SOURCES
     "${PROJECT_SOURCE_DIR}/librecad/src/lib/engine/clipboard/*.*"
     "${PROJECT_SOURCE_DIR}/librecad/src/lib/engine/document/*.*"
     "${PROJECT_SOURCE_DIR}/librecad/src/lib/engine/overlays/*.*"
+    "${PROJECT_SOURCE_DIR}/librecad/src/lib/engine/overlays/grdraw/*.*"
+    "${PROJECT_SOURCE_DIR}/librecad/src/lib/engine/overlays/slide/*.*"
     "${PROJECT_SOURCE_DIR}/librecad/src/lib/engine/undo/*.*"
     "${PROJECT_SOURCE_DIR}/librecad/src/lib/engine/utils/*.*"
     "${PROJECT_SOURCE_DIR}/librecad/src/lib/fileio/*.*"
@@ -34,6 +48,8 @@ file(GLOB_RECURSE AUTO_EXCLUDED_SOURCES
     "${PROJECT_SOURCE_DIR}/librecad/src/lib/modification/*.*"
     "${PROJECT_SOURCE_DIR}/librecad/src/lib/printing/*.*"
     "${PROJECT_SOURCE_DIR}/librecad/src/lib/scripting/*.*"
+#    "${PROJECT_SOURCE_DIR}/librecad/src/lib/scripting/lisp/*.*"
+#    "${PROJECT_SOURCE_DIR}/librecad/src/lib/scripting/python/*.*"
 )
 
 set(SHARED_INCLUDES
@@ -42,6 +58,7 @@ set(SHARED_INCLUDES
     libraries/lciconengine
     libraries/libdxfrw/src
     libraries/libdxfrw/src/intern
+    libraries/libslide/src
     libraries/muparser/include
     librecad/res/arrows
     librecad/res/controls
@@ -115,11 +132,13 @@ set(SHARED_INCLUDES
     librecad/src/lib/engine/overlays
     librecad/src/lib/engine/overlays/angles_base
     librecad/src/lib/engine/overlays/crosshair
+    librecad/src/lib/engine/overlays/grdraw
     librecad/src/lib/engine/overlays/highlight
     librecad/src/lib/engine/overlays/info_cursor
     librecad/src/lib/engine/overlays/overlay_box
     librecad/src/lib/engine/overlays/preview
     librecad/src/lib/engine/overlays/references
+    librecad/src/lib/engine/overlays/slide
     librecad/src/lib/engine/overlays/ucs_mark
     librecad/src/lib/engine/settings
     librecad/src/lib/engine/undo
@@ -140,6 +159,8 @@ set(SHARED_INCLUDES
     librecad/src/lib/modification
     librecad/src/lib/printing
     librecad/src/lib/scripting
+    librecad/src/lib/scripting/lisp
+    librecad/src/lib/scripting/python
     librecad/src/main
     librecad/src/main/console_dxf2pdf
     librecad/src/plugins
@@ -182,6 +203,7 @@ set(SHARED_INCLUDES
     librecad/src/ui/dialogs
     librecad/src/ui/dialogs/actions
     librecad/src/ui/dialogs/actions/modify
+    librecad/src/ui/dialogs/color
     librecad/src/ui/dialogs/creators
     librecad/src/ui/dialogs/entity
     librecad/src/ui/dialogs/file
@@ -205,6 +227,8 @@ set(SHARED_INCLUDES
     librecad/src/ui/dock_widgets/block_widget
     librecad/src/ui/dock_widgets/cad
     librecad/src/ui/dock_widgets/command_line
+    librecad/src/ui/dock_widgets/lsp_command_line
+    librecad/src/ui/dock_widgets/py_command_line
     librecad/src/ui/dock_widgets/entity_info
     librecad/src/ui/dock_widgets/layer_widget
     librecad/src/ui/dock_widgets/layers_tree
@@ -214,6 +238,7 @@ set(SHARED_INCLUDES
     librecad/src/ui/dock_widgets/ucs_list
     librecad/src/ui/dock_widgets/views_list
     librecad/src/ui/dock_widgets/workspaces
+    librecad/src/ui/editor
     librecad/src/ui/main
     librecad/src/ui/main/fontviewer
     librecad/src/ui/main/init
@@ -298,6 +323,66 @@ set(SHARED_SOURCES
     libraries/libdxfrw/src/libdxfrw.cpp
     libraries/libdxfrw/src/libdxfrw.h
     libraries/libdxfrw/src/main_doc.h
+    libraries/libslide/src/slide_binary_parser.cpp
+    libraries/libslide/src/slide_binary_parser.hpp
+    libraries/libslide/src/slide_binary_util.hpp
+    libraries/libslide/src/slide_binary_writer.cpp
+    libraries/libslide/src/slide_binary_writer.hpp
+    libraries/libslide/src/slide_cache.cpp
+    libraries/libslide/src/slide_cache.hpp
+    libraries/libslide/src/slide_colors.cpp
+    libraries/libslide/src/slide_colors.hpp
+    libraries/libslide/src/slide.cpp
+    libraries/libslide/src/slide_draw_qpainter.cpp
+    libraries/libslide/src/slide_draw_qpainter.h
+    libraries/libslide/src/slide_endian.cpp
+    libraries/libslide/src/slide_endian.hpp
+    libraries/libslide/src/slide_header_binary_parser.cpp
+    libraries/libslide/src/slide_header_binary_parser.hpp
+    libraries/libslide/src/slide_header_binary_writer.cpp
+    libraries/libslide/src/slide_header_binary_writer.hpp
+    libraries/libslide/src/slide_header.hpp
+    libraries/libslide/src/slide.hpp
+    libraries/libslide/src/slide_info_text_writer.cpp
+    libraries/libslide/src/slide_info_text_writer.hpp
+    libraries/libslide/src/slide_library_binary_parser.cpp
+    libraries/libslide/src/slide_library_binary_parser.hpp
+    libraries/libslide/src/slide_library_binary_writer.cpp
+    libraries/libslide/src/slide_library_binary_writer.hpp
+    libraries/libslide/src/slide_library.cpp
+    libraries/libslide/src/slide_library_directory_binary_parser.cpp
+    libraries/libslide/src/slide_library_directory_binary_parser.hpp
+    libraries/libslide/src/slide_library_directory_binary_writer.cpp
+    libraries/libslide/src/slide_library_directory_binary_writer.hpp
+    libraries/libslide/src/slide_library_directory.h
+    libraries/libslide/src/slide_library_directory.hpp
+    libraries/libslide/src/slide_library_header_binary_parser.cpp
+    libraries/libslide/src/slide_library_header_binary_parser.hpp
+    libraries/libslide/src/slide_library_header_binary_writer.cpp
+    libraries/libslide/src/slide_library_header_binary_writer.hpp
+    libraries/libslide/src/slide_library_header.hpp
+    libraries/libslide/src/slide_library.hpp
+    libraries/libslide/src/slide_library_info_text_writer.cpp
+    libraries/libslide/src/slide_library_info_text_writer.hpp
+    libraries/libslide/src/slide_loader.cpp
+    libraries/libslide/src/slide_loader.hpp
+    libraries/libslide/src/slide_record_binary_parser.cpp
+    libraries/libslide/src/slide_record_binary_parser.hpp
+    libraries/libslide/src/slide_records.hpp
+    libraries/libslide/src/slide_records_visitor_binary_writer.cpp
+    libraries/libslide/src/slide_records_visitor_binary_writer.hpp
+    libraries/libslide/src/slide_records_visitor.hpp
+    libraries/libslide/src/slide_records_visitor_qpainter_drawer.cpp
+    libraries/libslide/src/slide_records_visitor_qpainter_drawer.hpp
+    libraries/libslide/src/slide_records_visitor_stat.cpp
+    libraries/libslide/src/slide_records_visitor_stat.hpp
+    libraries/libslide/src/slide_records_visitor_text_writer.cpp
+    libraries/libslide/src/slide_records_visitor_text_writer.hpp
+    libraries/libslide/src/slide_record_text_parser.cpp
+    libraries/libslide/src/slide_record_text_parser.hpp
+    libraries/libslide/src/slide_util.cpp
+    libraries/libslide/src/slide_util.hpp
+    libraries/libslide/src/slide_version.hpp
     librecad/src/actions/dock_widgets/block/rs_actionblocksadd.cpp
     librecad/src/actions/dock_widgets/block/rs_actionblocksadd.h
     librecad/src/actions/dock_widgets/block/rs_actionblocksattributes.cpp
@@ -686,6 +771,10 @@ set(SHARED_SOURCES
     librecad/src/actions/drawing/zoom/rs_actionzoomwindow.h
     librecad/src/actions/file/lc_actionfileexportmakercam.cpp
     librecad/src/actions/file/lc_actionfileexportmakercam.h
+    librecad/src/actions/file/lc_actionfileexportslide.cpp
+    librecad/src/actions/file/lc_actionfileexportslide.h
+    librecad/src/actions/file/lc_actionfileviewslide.cpp
+    librecad/src/actions/file/lc_actionfileviewslide.h
     librecad/src/actions/options/rs_actionoptionsdrawing.cpp
     librecad/src/actions/options/rs_actionoptionsdrawing.h
     librecad/src/actions/print_preview/rs_actionprintpreview.cpp
@@ -877,8 +966,12 @@ set(SHARED_SOURCES
     librecad/src/lib/engine/overlays/lc_overlayentity.h
     librecad/src/lib/engine/overlays/lc_overlaysmanager.cpp
     librecad/src/lib/engine/overlays/lc_overlaysmanager.h
+    librecad/src/lib/engine/overlays/grdraw/lc_grdraw.cpp
+    librecad/src/lib/engine/overlays/grdraw/lc_grdraw.h
     librecad/src/lib/engine/overlays/overlay_box/rs_overlaybox.cpp
     librecad/src/lib/engine/overlays/overlay_box/rs_overlaybox.h
+    librecad/src/lib/engine/overlays/slide/lc_slide.cpp
+    librecad/src/lib/engine/overlays/slide/lc_slide.h
     librecad/src/lib/engine/overlays/preview/rs_preview.cpp
     librecad/src/lib/engine/overlays/preview/rs_preview.h
     librecad/src/lib/engine/overlays/references/lc_refarc.cpp
@@ -928,6 +1021,7 @@ set(SHARED_SOURCES
     librecad/src/lib/engine/undo/rs_undoable.h
     librecad/src/lib/engine/undo/rs_undocycle.cpp
     librecad/src/lib/engine/undo/rs_undocycle.h
+    librecad/src/lib/engine/utils/rs_dxfcolor.h
     librecad/src/lib/engine/utils/lc_rectregion.cpp
     librecad/src/lib/engine/utils/lc_rectregion.h
     librecad/src/lib/engine/utils/lc_rtree.cpp
@@ -1026,12 +1120,45 @@ set(SHARED_SOURCES
     librecad/src/lib/modification/rs_selection.h
     librecad/src/lib/printing/lc_printing.cpp
     librecad/src/lib/printing/lc_printing.h
+    librecad/src/lib/scripting/lisp/rs_lisp_core.cpp
+    librecad/src/lib/scripting/lisp/rs_lisp_debug.h
+    librecad/src/lib/scripting/lisp/rs_lisp_env.cpp
+    librecad/src/lib/scripting/lisp/rs_lisp_env.h
+    librecad/src/lib/scripting/lisp/rs_lisp_main.cpp
+    librecad/src/lib/scripting/lisp/rs_lisp_main.h
+    librecad/src/lib/scripting/lisp/rs_lisp_version.h
+    librecad/src/lib/scripting/lisp/rs_lisp_reader.cpp
+    librecad/src/lib/scripting/lisp/rs_lisp_lcl.h
+    librecad/src/lib/scripting/lisp/rs_lisp_RefCountedPtr.h
+    librecad/src/lib/scripting/lisp/rs_lisp_staticlist.h
+    librecad/src/lib/scripting/lisp/rs_lisp_string.cpp
+    librecad/src/lib/scripting/lisp/rs_lisp_string.h
+    librecad/src/lib/scripting/lisp/rs_lisp_types.cpp
+    librecad/src/lib/scripting/lisp/rs_lisp_types.h
+    librecad/src/lib/scripting/lisp/rs_lisp_validation.cpp
+    librecad/src/lib/scripting/lisp/rs_lisp_validation.h
+    librecad/src/lib/scripting/python/rs_python_core.cpp
+    librecad/src/lib/scripting/python/rs_python_core.h
+    librecad/src/lib/scripting/python/rs_python_dcl.cpp
+    librecad/src/lib/scripting/python/rs_python_dcl.h
+    librecad/src/lib/scripting/python/rs_python_gui.cpp
+    librecad/src/lib/scripting/python/rs_python_gui.h
+    librecad/src/lib/scripting/python/rs_python_lisp.cpp
+    librecad/src/lib/scripting/python/rs_python_lisp.h
+    librecad/src/lib/scripting/rs_dialogs.cpp
+    librecad/src/lib/scripting/rs_dialogs.h
+    librecad/src/lib/scripting/rs_lisp.cpp
+    librecad/src/lib/scripting/rs_lisp.h
     librecad/src/lib/scripting/rs_python.cpp
     librecad/src/lib/scripting/rs_python.h
     librecad/src/lib/scripting/rs_python_wrappers.cpp
     librecad/src/lib/scripting/rs_python_wrappers.h
     librecad/src/lib/scripting/rs_script.cpp
     librecad/src/lib/scripting/rs_script.h
+    librecad/src/lib/scripting/rs_scriptingapi.cpp
+    librecad/src/lib/scripting/rs_scriptingapi.h
+    librecad/src/lib/scripting/rs_scripting_inputhandle.cpp
+    librecad/src/lib/scripting/rs_scripting_inputhandle.h
     librecad/src/lib/scripting/rs_scriptlist.cpp
     librecad/src/lib/scripting/rs_scriptlist.h
     librecad/src/lib/scripting/rs_simplepython.cpp
@@ -1209,6 +1336,10 @@ set(SHARED_SOURCES
     librecad/src/ui/components/layouts/lc_flexlayout.cpp
     librecad/src/ui/components/layouts/lc_flexlayout.h
     librecad/src/ui/components/lc_plaintextedit.h
+    librecad/src/ui/components/commandedit.h
+    librecad/src/ui/components/commandedit.cpp
+    librecad/src/ui/components/commandhistory.h
+    librecad/src/ui/components/commandhistory.cpp
     librecad/src/ui/components/pen/qg_widgetpen.cpp
     librecad/src/ui/components/pen/qg_widgetpen.h
     librecad/src/ui/components/qg_scrollbar.h
@@ -1248,6 +1379,10 @@ set(SHARED_SOURCES
     librecad/src/ui/dialogs/actions/modify/qg_dlgrotate2.h
     librecad/src/ui/dialogs/actions/modify/qg_dlgscale.cpp
     librecad/src/ui/dialogs/actions/modify/qg_dlgscale.h
+    librecad/src/ui/dialogs/color/qg_colordlg.cpp
+    librecad/src/ui/dialogs/color/qg_colordlg.h
+    librecad/src/ui/dialogs/color/qg_colorwell.cpp
+    librecad/src/ui/dialogs/color/qg_colorwell.h
     librecad/src/ui/dialogs/actions/qg_layerdialog.cpp
     librecad/src/ui/dialogs/actions/qg_layerdialog.h
     librecad/src/ui/dialogs/creators/lc_dlgmenuassigner.cpp
@@ -1386,6 +1521,14 @@ set(SHARED_SOURCES
     librecad/src/ui/dock_widgets/command_line/qg_commandhistory.h
     librecad/src/ui/dock_widgets/command_line/qg_commandwidget.cpp
     librecad/src/ui/dock_widgets/command_line/qg_commandwidget.h
+    librecad/src/ui/dock_widgets/lsp_command_line/qg_lsp_commandwidget.cpp
+    librecad/src/ui/dock_widgets/lsp_command_line/qg_lsp_commandwidget.h
+    librecad/src/ui/dock_widgets/lsp_command_line/qg_lsp_commandedit.cpp
+    librecad/src/ui/dock_widgets/lsp_command_line/qg_lsp_commandedit.h
+    librecad/src/ui/dock_widgets/py_command_line/qg_py_commandwidget.cpp
+    librecad/src/ui/dock_widgets/py_command_line/qg_py_commandwidget.h
+    librecad/src/ui/dock_widgets/py_command_line/qg_py_commandedit.cpp
+    librecad/src/ui/dock_widgets/py_command_line/qg_py_commandedit.h
     librecad/src/ui/dock_widgets/entity_info/lc_quickinfobasedata.cpp
     librecad/src/ui/dock_widgets/entity_info/lc_quickinfoentitydata.cpp
     librecad/src/ui/dock_widgets/entity_info/lc_quickinfopointsdata.cpp
@@ -1454,6 +1597,24 @@ set(SHARED_SOURCES
     librecad/src/ui/dock_widgets/views_list/lc_namedviewsmodel.h
     librecad/src/ui/dock_widgets/workspaces/lc_workspacelistbutton.cpp
     librecad/src/ui/dock_widgets/workspaces/lc_workspacelistbutton.h
+    librecad/src/ui/editor/librelisp.cpp
+    librecad/src/ui/editor/librelisp.h
+    librecad/src/ui/editor/librepad.cpp
+    librecad/src/ui/editor/librepad.h
+    librecad/src/ui/editor/librepython.cpp
+    librecad/src/ui/editor/librepython.h
+    librecad/src/ui/editor/dclhighlighter.cpp
+    librecad/src/ui/editor/dclhighlighter.h
+    librecad/src/ui/editor/pythonhighlighter.cpp
+    librecad/src/ui/editor/pythonhighlighter.h
+    librecad/src/ui/editor/lisphighlighter.cpp
+    librecad/src/ui/editor/lisphighlighter.h
+    librecad/src/ui/editor/lpmessage.cpp
+    librecad/src/ui/editor/lpmessage.h
+    librecad/src/ui/editor/lpsearchbar.cpp
+    librecad/src/ui/editor/lpsearchbar.h
+    librecad/src/ui/editor/texteditor.cpp
+    librecad/src/ui/editor/texteditor.h
     librecad/src/ui/lc_actionhandlerfactory.cpp
     librecad/src/ui/lc_actionhandlerfactory.h
     librecad/src/ui/lc_snapmanager.cpp
@@ -1475,6 +1636,20 @@ set(SHARED_SOURCES
     librecad/src/ui/main/lc_appwindowaware.cpp
     librecad/src/ui/main/lc_appwindowaware.h
     librecad/src/ui/main/lc_defaultactioncontext.cpp
+    librecad/src/plugins/intern/qc_actionentsel.cpp
+    librecad/src/plugins/intern/qc_actionentsel.h
+    librecad/src/plugins/intern/qc_actiongetcorner.cpp
+    librecad/src/plugins/intern/qc_actiongetcorner.h
+    librecad/src/plugins/intern/qc_actiongetdist.cpp
+    librecad/src/plugins/intern/qc_actiongetdist.h
+    librecad/src/plugins/intern/qc_actiongetrad.cpp
+    librecad/src/plugins/intern/qc_actiongetrad.h
+    librecad/src/plugins/intern/qc_actiongrdraw.cpp
+    librecad/src/plugins/intern/qc_actiongrdraw.h
+    librecad/src/plugins/intern/qc_actionselectset.cpp
+    librecad/src/plugins/intern/qc_actionselectset.h
+    librecad/src/plugins/intern/qc_actionsingleset.cpp
+    librecad/src/plugins/intern/qc_actionsingleset.h
     librecad/src/ui/main/lc_defaultactioncontext.h
     librecad/src/ui/main/lc_mdiapplicationwindow.cpp
     librecad/src/ui/main/lc_mdiapplicationwindow.h
@@ -1554,10 +1729,18 @@ target_include_directories(librecad_lib PRIVATE
     ${MUPARSER_SOURCES}
 )
 
+set_source_files_properties(${FILE} PROPERTIES CPLUSPLUS ON)
+include_directories(${Python3_INCLUDE_DIRS} ${SHARED_INCLUDES})
+
+swig_add_library(librepython TYPE USE_BUILD_SHARED_LIBS LANGUAGE python SOURCES ${FILE})
+swig_link_libraries(librepython Qt6::Core Qt6::Widgets Qt6::Gui Python3::Module librecad_lib)
+
 target_link_libraries(librecad_lib PRIVATE
     Qt6::Core Qt6::Widgets Qt6::Gui Qt6::PrintSupport Qt6::Svg Qt6::Network
+    Python3::Python
 )
 set_property(TARGET librecad_lib PROPERTY AUTOUIC_OPTIONS --connections string)
+set_property(TARGET librepython PROPERTY OUTPUT_NAME librecad)
 
 if(WIN32)
     target_compile_definitions(librecad_lib PRIVATE _USE_MATH_DEFINES)
@@ -1571,6 +1754,10 @@ set(MAIN_SOURCES
     librecad/src/main/console_dxf2pdf/pdf_print_loop.h
     librecad/src/main/console_dxf2png.cpp
     librecad/src/main/console_dxf2png.h
+    librecad/src/main/console_dxf2sld.cpp
+    librecad/src/main/console_dxf2sld.h
+    librecad/src/main/console_slidelib.cpp
+    librecad/src/main/console_slidelib.h
     librecad/src/ui/dialogs/main/qg_dlginitial.cpp
     librecad/src/ui/dialogs/main/qg_dlginitial.h
     ${LIBRECAD_RES}
@@ -1586,7 +1773,7 @@ target_include_directories(librecad PRIVATE
 
 target_link_libraries(librecad PRIVATE
    librecad_lib
-   Qt6::Core Qt6::Widgets Qt6::Gui Qt6::PrintSupport Qt6::Svg Qt6::Network
+   Qt6::Core Qt6::Widgets Qt6::Gui Qt6::PrintSupport Qt6::Svg Qt6::Network Python3::Python librepython
 )
 install(TARGETS librecad RUNTIME DESTINATION bin)
 
