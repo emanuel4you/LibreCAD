@@ -1023,7 +1023,8 @@ QMenu* LC_MenuFactory::createGraphicViewDefaultPopupMenu(QG_GraphicView* graphic
                        "DrawSpline",
                        "DrawSplinePoints",
                        "DrawParabola4Points",
-                       "DrawParabolaFD"
+                       "DrawParabolaFD",
+                       "DrawHyerbolaFP"
                    });
 
         auto ellipseGroup = m_actionGroupManager->getActionGroup("ellipse");
@@ -1789,7 +1790,6 @@ void LC_MenuFactory::createGVMenuEntitySpecific(QMenu* contextMenu, QG_GraphicVi
                 break;
             }
             case RS2::EntityHyperbola: {
-                // addAction(contextMenu, "DrawArcTangential");
                 createGVMenuModifyGeneral(contextMenu, graphicView, entity, pos, actionContext);
                 break;
             }
