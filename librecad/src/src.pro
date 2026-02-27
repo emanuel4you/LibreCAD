@@ -62,7 +62,7 @@ unix {
         TARGET = LibreCAD
         VERSION=$$system(echo "$${LC_VERSION}" | sed -e 's/\-.*//g')
         QMAKE_INFO_PLIST = Info.plist.app
-        DEFINES += QC_APPDIR="\"LibreCAD\""
+        DEFINES += QC_APPDIR=\\\"LibreCAD\\\"
         ICON = ../res/images/librecad.icns
         contains(DISABLE_POSTSCRIPT, false) {
             QMAKE_POST_LINK = /bin/sh $$_PRO_FILE_PWD_/../../scripts/postprocess-osx.sh $$OUT_PWD/$${DESTDIR}/$${TARGET}.app/ $$[QT_INSTALL_BINS];
@@ -71,7 +71,7 @@ unix {
     }
     else {
         TARGET = librecad
-        DEFINES += QC_APPDIR="\"librecad\""
+        DEFINES += QC_APPDIR=\\\"librecad\\\"
         RC_FILE = ../res/images/librecad.icns
         contains(DISABLE_POSTSCRIPT, false) {
             QMAKE_POST_LINK = cd $$_PRO_FILE_PWD_/../.. && scripts/postprocess-unix.sh
@@ -81,9 +81,9 @@ unix {
 }
 win32 {
     TARGET = LibreCAD
+    DEFINES += QC_APPDIR=\\\"librecad\\\"
 
     CONFIG += console
-    DEFINES += QC_APPDIR="\"LibreCAD\""
 
     # add MSYSGIT_DIR = PathToGitBinFolder (without quotes) in custom.pro file, for commit hash in about dialog
     !isEmpty( MSYSGIT_DIR ) {
@@ -354,6 +354,7 @@ HEADERS += \
     actions/drawing/selection/lc_actionsingleentityselectbase.h \
     lib/actions/lc_actioninfomessagebuilder.h \
     lib/actions/lc_overlayboxaction.h \
+    lib/engine/document/container/lc_pathbuilder.h \
     lib/engine/document/dimstyles/lc_dimstyle.h \
     lib/engine/document/dimstyles/lc_dimstyleslist.h \
     lib/engine/document/dimstyles/lc_dimarrowregistry.h \
@@ -693,6 +694,7 @@ SOURCES += \
     actions/drawing/selection/lc_actionsingleentityselectbase.cpp \
     lib/actions/lc_actioninfomessagebuilder.cpp \
     lib/actions/lc_overlayboxaction.cpp \
+    lib/engine/document/container/lc_pathbuilder.cpp \
     lib/engine/document/dimstyles/lc_dimstyle.cpp \
     lib/engine/document/dimstyles/lc_dimstyleslist.cpp \
     lib/engine/document/dimstyles/lc_dimarrowregistry.cpp \

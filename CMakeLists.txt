@@ -10,7 +10,7 @@ set(CMAKE_AUTOUIC_OPTIONS --connections string)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
-
+add_compile_definitions(QC_APPDIR=librecad)
 find_package(Qt6 COMPONENTS Gui Core Widgets PrintSupport Svg Network REQUIRED)
 find_package(Qt6 REQUIRED COMPONENTS LinguistTools)
 find_package(Boost REQUIRED)
@@ -726,6 +726,8 @@ set(SHARED_SOURCES
     librecad/src/lib/engine/document/container/lc_containertraverser.h
     librecad/src/lib/engine/document/container/lc_looputils.cpp
     librecad/src/lib/engine/document/container/lc_looputils.h
+    librecad/src/lib/engine/document/container/lc_pathbuilder.h
+    librecad/src/lib/engine/document/container/lc_pathbuilder.cpp
     librecad/src/lib/engine/document/container/rs_entitycontainer.cpp
     librecad/src/lib/engine/document/container/rs_entitycontainer.h
     librecad/src/lib/engine/document/dimstyles/lc_dimarrowregistry.cpp
