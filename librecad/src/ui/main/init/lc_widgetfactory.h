@@ -60,10 +60,6 @@ private:
     QDockWidget *createBlockListWidget(QG_ActionHandler *actionHandler);
     QDockWidget *createLibraryWidget(QG_ActionHandler *action_handler);
     QDockWidget *createCmdWidget(QG_ActionHandler *action_handler);
-#ifdef DEVELOPER
-    QDockWidget *createLspCmdWidget(QG_ActionHandler *action_handler);
-    QDockWidget *createPyCmdWidget(QG_ActionHandler *action_handler);
-#endif
     void modifyCommandTitleBar(Qt::DockWidgetArea area) const;
     QDockWidget* createPenWizardWidget();
     void initLeftCADSidebar();
