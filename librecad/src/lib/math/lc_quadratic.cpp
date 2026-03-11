@@ -802,11 +802,6 @@ LC_Quadratic LC_Quadratic::getDualCurve() const
   double E_prime = 2 * B * D - 4 * A * E;
   double F_prime = 4 * A * C - B * B;
 
-  // Degenerate if F_prime == 0 (dual at infinity)
-  if (std::abs(F_prime) < RS_TOLERANCE) {
-    return LC_Quadratic{};
-  }
-
   return LC_Quadratic({
       A_prime,
       B_prime,

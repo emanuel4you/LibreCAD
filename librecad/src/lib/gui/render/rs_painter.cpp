@@ -752,17 +752,17 @@ void RS_Painter::drawEllipseUI(const RS_Vector& uiCenter, const RS_Vector& uiRad
 }
 
 void RS_Painter::drawEllipseArcWCS(const RS_Vector& wcsCenter, double wcsMajorRadius, double ratio, double wcsAngleDegrees,
-                                   double angle1Degrees, double angle2Degrees, double angularLength, bool reversed) {
+                                   double angle1Degrees, double angularLength, bool reversed) {
     double uiMajorRadius = toGuiDX(wcsMajorRadius);
     double uiMinorRadius = ratio * uiMajorRadius;
 
     const RS_Vector uiCenter = toGui(wcsCenter);
     double uiAngleDegrees = toUCSAngleDegrees(wcsAngleDegrees);
-    drawEllipseArcUI(uiCenter, {uiMajorRadius, uiMinorRadius}, uiAngleDegrees, angle1Degrees, angle2Degrees, angularLength, reversed);
+    drawEllipseArcUI(uiCenter, {uiMajorRadius, uiMinorRadius}, uiAngleDegrees, angle1Degrees, angularLength, reversed);
 }
 
 void RS_Painter::drawEllipseArcUI(const RS_Vector& uiCenter, const RS_Vector& uiRadii, double uiMajorAngleDegrees,
-                                   double angle1Degrees,[[maybe_unused]] double angle2Degrees, double angularLength,[[maybe_unused]] bool reversed) {
+                                   double angle1Degrees, double angularLength, bool reversed) {
     // TODO - it also should be refactored to be consistent with drawEllipseUI()
     if (std::max(uiRadii.x, uiRadii.y) < minEllipseMajorRadius){
         QPainter::drawPoint(QPointF(uiCenter.x, uiCenter.y));
@@ -783,7 +783,8 @@ void RS_Painter::drawEllipseArcUI(const RS_Vector& uiCenter, const RS_Vector& ui
         const bool useSpline = std::max(uiRadii.x, uiRadii.y) > getMaximumArcNonErrorRadius();
 
         QPainterPath path;
-        addEllipseArcToPath(path, uiRadii, angle1Degrees, angularLength, useSpline);
+        double startDegrees = reversed ? angle1Degrees - angularLength : angle1Degrees;
+        addEllipseArcToPath(path, uiRadii, startDegrees, angularLength, useSpline);
         QPainter::drawPath(path);
     }
 }
@@ -1084,7 +1085,7 @@ void RS_Painter::drawEntityPolyline(const RS_Polyline* polyline){
                 const double uiMinorRadius = data.ratio * uiMajorRadius;
                 if (data.isArc) {
                     drawEllipseArcUI(uiCenter, {uiMajorRadius, uiMinorRadius}, toWorldAngleDegrees(data.angleDegrees), /*view.toWorldAngleDegrees(*/data.startAngleDegrees/*)*/,
-                                   /*view.toWorldAngleDegrees(*/data.otherAngleDegrees/*)*/, data.angularLength, data.reversed);
+                                    data.angularLength, data.reversed);
                 }
                 else {
                     drawEllipseUI(uiCenter, {uiMajorRadius, uiMinorRadius}, toWorldAngleDegrees(data.angleDegrees));
