@@ -262,7 +262,7 @@ jobs:
           brew install swig
       - name: Install python3
         run: |
-          brew install python3
+          brew install python@3.12
 
       # XProtect can cause random failures if it decides that the DMG we create
       # during the packaging phase is malware.
