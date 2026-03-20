@@ -1900,6 +1900,8 @@ if(BUILD_TESTS)
         Qt6::PrintSupport
         Qt6::Svg
         Qt6::Widgets
+        Python3::Python
+        librepython
     )
 
     # Enable C++17 for the test target (matching LibreCAD's standard)
