@@ -50,7 +50,7 @@
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="166" />
         <source>To be created:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Létre kell hozni:</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="166" />
@@ -70,7 +70,7 @@
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="169" />
         <source>Center:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Központ:</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="198" />
@@ -95,7 +95,7 @@
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="413" />
         <source>Specify angle</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">A szög megadása</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="416" />
@@ -204,7 +204,7 @@
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimlinearbase.cpp" line="306" />
         <source>Snap to Adjacent Dim</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Snap Advanced Dim</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimlinearbase.cpp" line="321" />
@@ -286,12 +286,12 @@
     <message>
         <location filename="../src/ui/action_options/curve/lc_actiondrawarc2poptions.ui" line="144" />
         <source>Pick angle from the drawing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Válassza ki a szög a rajz</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/curve/lc_actiondrawarc2poptions.ui" line="92" />
         <source>Radius of arc</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Az ívsugár</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/curve/lc_actiondrawarc2poptions.ui" line="95" />
@@ -316,7 +316,7 @@
     <message>
         <location filename="../src/ui/action_options/curve/lc_actiondrawarc2poptions.ui" line="71" />
         <source>Length of the arc</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Az ív hossza</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/curve/lc_actiondrawarc2poptions.ui" line="74" />
@@ -326,7 +326,7 @@
     <message>
         <location filename="../src/ui/action_options/curve/lc_actiondrawarc2poptions.cpp" line="48" />
         <source>Pick radius from drawing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Húzási sugár kiválasztása</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/curve/lc_actiondrawarc2poptions.cpp" line="55" />
@@ -965,27 +965,27 @@ vagy [% 2]</translation>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="181" />
         <source>Specify the first point on parabola</source>
-        <translation type="unfinished" />
+        <translation>Adja meg az első pontot a parabolán</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="184" />
         <source>Specify the second point on parabola</source>
-        <translation type="unfinished" />
+        <translation>Adja meg a második pontot a parabolán</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="187" />
         <source>Specify the third point on parabola</source>
-        <translation type="unfinished" />
+        <translation>Adja meg a harmadik pontot a parabolán</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="190" />
         <source>Specify the fourth point on parabola</source>
-        <translation type="unfinished" />
+        <translation>Adja meg a negyedik pontot a parabolán</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="193" />
         <source>Specify the Axis on parabola</source>
-        <translation type="unfinished" />
+        <translation>Adja meg a tengelyt a parabolán</translation>
     </message>
 </context>
 <context>
@@ -993,7 +993,7 @@ vagy [% 2]</translation>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabolaFD.cpp" line="275" />
         <source>Specify the focus of parabola</source>
-        <translation type="unfinished" />
+        <translation>Adja meg a parabola fókuszát</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabolaFD.cpp" line="278" />
@@ -1003,12 +1003,12 @@ vagy [% 2]</translation>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabolaFD.cpp" line="282" />
         <source>Specify the start point on parabola</source>
-        <translation type="unfinished" />
+        <translation>Adja meg a kezdőpontot a parabolán</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabolaFD.cpp" line="286" />
         <source>Specify the end point on parabola</source>
-        <translation type="unfinished" />
+        <translation>Adja meg a végpontot a parabolán</translation>
     </message>
 </context>
 <context>
@@ -1172,7 +1172,7 @@ vagy [% 2]</translation>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_actiondrawrectangle3points.cpp" line="604" />
         <source>Specify angle</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">A szög megadása</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_actiondrawrectangle3points.cpp" line="607" />
@@ -1185,22 +1185,22 @@ vagy [% 2]</translation>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawslicedivide.cpp" line="212" />
         <source>Line</source>
-        <translation type="unfinished">Vonal</translation>
+        <translation>Vonal</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawslicedivide.cpp" line="222" />
         <source>Arc</source>
-        <translation type="unfinished">Ív</translation>
+        <translation>Ív</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawslicedivide.cpp" line="232" />
         <source>Circle</source>
-        <translation type="unfinished">Kör</translation>
+        <translation>Kör</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawslicedivide.cpp" line="596" />
         <source>Select line</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">A sor kiválasztása</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawslicedivide.cpp" line="599" />
@@ -7473,6 +7473,11 @@ Biztos vagy benne, hogy el fogod dobni a változtatásokat?</translation>
         <translation>Szerkesztés</translation>
     </message>
     <message>
+        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="26" />
+        <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="39" />
         <source>Silently update existing view with same name by created one</source>
         <translation>Csendesen frissíteni a meglévő nézet az azonos nevű létrehozott egy</translation>
@@ -7483,9 +7488,8 @@ Biztos vagy benne, hogy el fogod dobni a változtatásokat?</translation>
         <translation>Megjelenítés</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="58" />
         <source>Toolip with view details for table items</source>
-        <translation>Toolip az asztali elemek megtekintéséhez</translation>
+        <translation type="vanished">Toolip az asztali elemek megtekintéséhez</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="68" />
@@ -7493,9 +7497,8 @@ Biztos vagy benne, hogy el fogod dobni a változtatásokat?</translation>
         <translation>UCS Details oszlop</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="75" />
         <source>If checked, type of grid for saved view will be shown</source>
-        <translation>Ha be van jelölve, megjelenik a mentett nézethez tartozó rács típusa</translation>
+        <translation type="vanished">Ha be van jelölve, megjelenik a mentett nézethez tartozó rács típusa</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="78" />
@@ -7508,9 +7511,23 @@ Biztos vagy benne, hogy el fogod dobni a változtatásokat?</translation>
         <translation>Típus ikon oszlop</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="65" />
         <source>If checked, the column with details of view's coordinate system will be show</source>
-        <translation>Ha be van jelölve, a nézetkoordináta-rendszer részleteivel rendelkező oszlop látható lesz</translation>
+        <translation type="vanished">Ha be van jelölve, a nézetkoordináta-rendszer részleteivel rendelkező oszlop látható lesz</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="58" />
+        <source>Tooltip with view details for table items</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="65" />
+        <source>If checked, the column with details of view's coordinate system will be show.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="75" />
+        <source>If checked, type of grid for saved view will be shown.</source>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="85" />
@@ -7549,8 +7566,12 @@ Biztos vagy benne, hogy el fogod dobni a változtatásokat?</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="144" />
+        <source>Defines which action should be performed on double click on view item of the table.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <source>Defines which action should be performed on double click on view item of the table. </source>
-        <translation>Meghatározza, hogy milyen intézkedést kell végrehajtani, ha dupla kattintás megtekintésére tétel a táblázat.</translation>
+        <translation type="vanished">Meghatározza, hogy milyen intézkedést kell végrehajtani, ha dupla kattintás megtekintésére tétel a táblázat.</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="148" />
@@ -7593,9 +7614,8 @@ Biztos vagy benne, hogy el fogod dobni a változtatásokat?</translation>
         <translation>Ha be van jelölve, és a létrehozás során már létezik a megadott név nézete, azt új pozícióval frissítjük. Ellenkező esetben az új nézet egyedi nevére lesz szükség.</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="26" />
         <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently. </source>
-        <translation>Ha be van jelölve, a visszaigazoló ablak megjelenik a nézet eltávolításakor. Ellenkező esetben némán eltávolítjuk a kilátást.</translation>
+        <translation type="vanished">Ha be van jelölve, a visszaigazoló ablak megjelenik a nézet eltávolításakor. Ellenkező esetben némán eltávolítjuk a kilátást.</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="29" />
@@ -7975,9 +7995,8 @@ Biztos vagy benne, hogy el fogod dobni a változtatásokat?</translation>
         <translation>Ha a csatolt, a tooltipp további információkat UCS jelenik meg az asztali elem.</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="29" />
         <source>Toolip with UCS details for table items</source>
-        <translation>Toolip UCS részletekkel asztali elemek</translation>
+        <translation type="vanished">Toolip UCS részletekkel asztali elemek</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="39" />
@@ -7985,9 +8004,8 @@ Biztos vagy benne, hogy el fogod dobni a változtatásokat?</translation>
         <translation>Típus ikon oszlop</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="46" />
         <source>If checked, column with details of UCS origin and angle will be shown in the table</source>
-        <translation>Ha be van jelölve, a táblázatban fel kell tüntetni az UCS eredetére és szögére vonatkozó adatokat tartalmazó oszlopot</translation>
+        <translation type="vanished">Ha be van jelölve, a táblázatban fel kell tüntetni az UCS eredetére és szögére vonatkozó adatokat tartalmazó oszlopot</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="49" />
@@ -8005,9 +8023,33 @@ Biztos vagy benne, hogy el fogod dobni a változtatásokat?</translation>
         <translation>Szerkesztés</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="85" />
         <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently. </source>
-        <translation>Ha be van jelölve, a visszaigazoló ablak megjelenik a nézet eltávolításakor. Ellenkező esetben némán eltávolítjuk a kilátást.</translation>
+        <translation type="vanished">Ha be van jelölve, a visszaigazoló ablak megjelenik a nézet eltávolításakor. Ellenkező esetben némán eltávolítjuk a kilátást.</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="29" />
+        <source>Tooltip with UCS details for table items</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="36" />
+        <source>If checked, the column with icon for type of UCS will be shown in the table.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="46" />
+        <source>If checked, column with details of UCS origin and angle will be shown in the table.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="56" />
+        <source>If checked, the column with type of grid for UCS will be shown.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="85" />
+        <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently.</source>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="88" />
@@ -8030,6 +8072,11 @@ Biztos vagy benne, hogy el fogod dobni a változtatásokat?</translation>
         <translation>Műveletek</translation>
     </message>
     <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="114" />
+        <source>Defines how drawing's view window should be adjusted after UCS is applied.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="118" />
         <source>Zoom Auto</source>
         <translation>Automatikus nagyítás</translation>
@@ -8050,9 +8097,18 @@ Biztos vagy benne, hogy el fogod dobni a változtatásokat?</translation>
         <translation>Ha be van jelölve, kattintson a táblázat elem fogja alkalmazni koordináták rendszer. Ellenkező esetben a koordinátarendszert kifejezetten alkalmazni kell.</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="153" />
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="196" />
+        <source>Defines delay between UCS marker blinks.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="232" />
+        <source>Defines amount of blinks of UCS marker for UCS highlighting.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <source>Defines which action should be performed on double click on the item of the table. </source>
-        <translation>Meghatározza, hogy milyen intézkedéseket kell végrehajtani a dupla kattintással a tételt a táblázat.</translation>
+        <translation type="vanished">Meghatározza, hogy milyen intézkedéseket kell végrehajtani a dupla kattintással a tételt a táblázat.</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="139" />
@@ -8060,24 +8116,26 @@ Biztos vagy benne, hogy el fogod dobni a változtatásokat?</translation>
         <translation>Helyreállítani UCS egyetlen kattintással asztalonként</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="36" />
         <source>If checked, the column with icon for type of UCS will be shown in the table. </source>
-        <translation>Ha ez be van jelölve, az UCS típusára vonatkozó ikont tartalmazó oszlop megjelenik a táblázatban.</translation>
+        <translation type="vanished">Ha ez be van jelölve, az UCS típusára vonatkozó ikont tartalmazó oszlop megjelenik a táblázatban.</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="56" />
         <source>If checked, the column with type of grid for UCS will be shown</source>
-        <translation>Ha ez be van jelölve, az UCS-hez tartozó rács típusát tartalmazó oszlop látható lesz</translation>
+        <translation type="vanished">Ha ez be van jelölve, az UCS-hez tartozó rács típusát tartalmazó oszlop látható lesz</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="114" />
         <source>Defines how drawing's view window should be adjusted after UCS is applied</source>
-        <translation>Meghatározza, hogyan kell beállítani a rajzolási ablak UCS alkalmazása után</translation>
+        <translation type="vanished">Meghatározza, hogyan kell beállítani a rajzolási ablak UCS alkalmazása után</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="146" />
         <source>On double-click on table item</source>
         <translation>A dupla kattints az asztalra elem</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="153" />
+        <source>Defines which action should be performed on double click on the item of the table.</source>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="157" />
@@ -8110,9 +8168,8 @@ Biztos vagy benne, hogy el fogod dobni a változtatásokat?</translation>
         <translation>UCS kiemelés</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="196" />
         <source>Defines delay between UCS marker blinks</source>
-        <translation>Határozza meg a UCS marker blinkek közötti késleltetést</translation>
+        <translation type="vanished">Határozza meg a UCS marker blinkek közötti késleltetést</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="199" />
@@ -8130,9 +8187,8 @@ Biztos vagy benne, hogy el fogod dobni a változtatásokat?</translation>
         <translation>Blink Delay:</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="232" />
         <source>Defines amount of blinks of UCS marker for UCS highlighting</source>
-        <translation>Meghatározza a UCS jelölő pislogásának mennyiségét</translation>
+        <translation type="vanished">Meghatározza a UCS jelölő pislogásának mennyiségét</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="235" />
@@ -24079,8 +24135,7 @@ Ez a művelet nem visszavonható.</translation>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776" />
         <source>Remove %n layer(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform />
         </translation>
     </message>
     <message>
@@ -24110,8 +24165,7 @@ Ez a művelet nem visszavonható.</translation>
         <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514" />
         <source>Remove %n block(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform />
         </translation>
     </message>
     <message>

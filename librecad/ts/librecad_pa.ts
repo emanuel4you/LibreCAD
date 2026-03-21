@@ -5,18 +5,18 @@
     <message>
         <location filename="../src/ui/dock_widgets/pen_wizard/colorwizard.ui" line="14" />
         <source>Frame</source>
-        <translation type="unfinished" />
+        <translation>ਫਰੇਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_wizard/colorwizard.ui" line="59" />
         <source>Add to favorites</source>
-        <translation type="unfinished" />
+        <translation>ਮਨਪਸੰਦ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_wizard/colorwizard.ui" line="62" />
         <location filename="../src/ui/dock_widgets/pen_wizard/colorwizard.ui" line="86" />
         <source>...</source>
-        <translation type="unfinished" />
+        <translation>...</translation>
     </message>
 </context>
 <context>
@@ -24,17 +24,17 @@
     <message>
         <location filename="../src/ui/components/comboboxes/comboboxoption.ui" line="14" />
         <source>Frame</source>
-        <translation type="unfinished" />
+        <translation>ਫਰੇਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/components/comboboxes/comboboxoption.ui" line="26" />
         <source>GroupBox</source>
-        <translation type="unfinished" />
+        <translation>ਗਰੁੱਪ ਬਾਕਸ</translation>
     </message>
     <message>
         <location filename="../src/ui/components/comboboxes/comboboxoption.ui" line="41" />
         <source>Set</source>
-        <translation type="unfinished" />
+        <translation>ਸੈੱਟ ਕਰੋ</translation>
     </message>
 </context>
 <context>
@@ -176,12 +176,12 @@
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimarc.cpp" line="189" />
         <source>Select arc entity</source>
-        <translation type="unfinished" />
+        <translation>ਆਰਕ ਐਂਟੀਟੀ ਚੁਣੋ</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimarc.cpp" line="192" />
         <source>Specify dimension arc location</source>
-        <translation type="unfinished" />
+        <translation>ਆਰਕ ਡਾਇਮੈਂਸ਼ਨ ਦੀ ਥਾਂ ਨਿਰਧਾਰਤ ਕਰੋ</translation>
     </message>
 </context>
 <context>
@@ -463,27 +463,28 @@
         <location filename="../src/actions/drawing/draw/circle/lc_actiondrawcircle2pr.cpp" line="196" />
         <source>radius=%1 is too small for points selected
 distance between points=%2 is larger than diameter=%3</source>
-        <translation type="unfinished" />
+        <translation>ਰੇਡੀਅਸ=%1 ਚੁਣੇ ਗਏ ਬਿੰਦੂਆਂ ਲਈ ਬਹੁਤ ਛੋਟਾ ਹੈ
+ਬਿੰਦੂਆਂ ਵਿਚਾਲੇ ਦੀ ਦੂਰੀ=%2 ਡਾਇਮੀਟਰ=%3 ਤੋਂ ਵੱਧ ਹੈ</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/circle/lc_actiondrawcircle2pr.cpp" line="208" />
         <source>Select from two possible circle centers</source>
-        <translation type="unfinished" />
+        <translation>ਦੋ ਸੰਭਾਵਿਤ ਸਰਕਲ ਸੈਂਟਰਾਂ ਵਿੱਚੋਂ ਚੁਣੋ</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/circle/lc_actiondrawcircle2pr.cpp" line="230" />
         <source>Specify first point</source>
-        <translation type="unfinished">ਪਹਿਲਾਂ ਬਿੰਦੂ ਦਿਓ</translation>
+        <translation>ਪਹਿਲਾ ਬਿੰਦੂ ਨਿਰਧਾਰਤ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/circle/lc_actiondrawcircle2pr.cpp" line="233" />
         <source>Specify second point</source>
-        <translation type="unfinished">ਦੂਜਾ ਬਿੰਦੂ ਦਿਓ</translation>
+        <translation>ਦੂਜਾ ਬਿੰਦੂ ਨਿਰਧਾਰਤ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/circle/lc_actiondrawcircle2pr.cpp" line="236" />
         <source>Select circle center</source>
-        <translation type="unfinished" />
+        <translation>ਸਰਕਲ ਸੈਂਟਰ ਚੁਣੋ</translation>
     </message>
 </context>
 <context>
@@ -727,30 +728,32 @@ or[x|y|p|number|edges]</source>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="537" />
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="542" />
         <source>Back</source>
-        <translation type="unfinished">ਪਿੱਛੇ</translation>
+        <translation>ਪਿੱਛੇ</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="534" />
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="537" />
         <source>Specify distance (%1)
 or [%2]</source>
-        <translation type="unfinished" />
+        <translation>ਦੂਰੀ ਨਿਰਧਾਰਤ ਕਰੋ (%1)
+ਜਾਂ [%2]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="534" />
         <source>X</source>
-        <translation type="unfinished" />
+        <translation>X</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="537" />
         <source>Y</source>
-        <translation type="unfinished" />
+        <translation>Y</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="542" />
         <source>Specify  distance (angle %1 deg)
 or [%2]</source>
-        <translation type="unfinished" />
+        <translation>ਦੂਰੀ ਨਿਰਧਾਰਤ ਕਰੋ (ਕੋਣ %1 ਡਿਗਰੀ)
+ਜਾਂ [%2]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="547" />
@@ -849,7 +852,7 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/polygon/lc_actiondrawlinepolygon3.cpp" line="51" />
         <source>Specify a tangent</source>
-        <translation type="unfinished" />
+        <translation>ਇੱਕ ਟੈਨਜੈਂਟ ਨਿਰਧਾਰਤ ਕਰੋ</translation>
     </message>
 </context>
 <context>
@@ -862,19 +865,19 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="477" />
         <source>Specify direction (x or y) or [%1]</source>
-        <translation type="unfinished" />
+        <translation>ਦਿਸ਼ਾ ਨਿਰਧਾਰਤ ਕਰੋ (x ਜਾਂ y) ਜਾਂ [%1]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="491" />
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="495" />
         <source>Specify distance (%1) or [%2]</source>
-        <translation type="unfinished" />
+        <translation>ਦੂਰੀ ਨਿਰਧਾਰਤ ਕਰੋ (%1) ਜਾਂ [%2]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="134" />
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="491" />
         <source>X</source>
-        <translation type="unfinished" />
+        <translation>X</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="117" />
@@ -890,7 +893,7 @@ or [%2]</source>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="128" />
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="495" />
         <source>Y</source>
-        <translation type="unfinished" />
+        <translation>Y</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="153" />
@@ -900,7 +903,7 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="501" />
         <source>Specify distance (%1 deg) or [%2]</source>
-        <translation type="unfinished" />
+        <translation>ਦੂਰੀ ਨਿਰਧਾਰਤ ਕਰੋ (%1 ਡਿਗਰੀ) ਜਾਂ [%2]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="516" />
@@ -910,7 +913,7 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="528" />
         <source>Specify point or [%1]</source>
-        <translation type="unfinished" />
+        <translation>ਬਿੰਦੂ ਨਿਰਧਾਰਤ ਕਰੋ ਜਾਂ [%1]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="577" />
@@ -956,27 +959,27 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="181" />
         <source>Specify the first point on parabola</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਰਾਬੋਲਾ ਉੱਤੇ ਪਹਿਲਾ ਬਿੰਦੂ ਨਿਰਧਾਰਤ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="184" />
         <source>Specify the second point on parabola</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਰਾਬੋਲਾ ਉੱਤੇ ਦੂਜਾ ਬਿੰਦੂ ਨਿਰਧਾਰਤ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="187" />
         <source>Specify the third point on parabola</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਰਾਬੋਲਾ ਉੱਤੇ ਤੀਜਾ ਬਿੰਦੂ ਨਿਰਧਾਰਤ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="190" />
         <source>Specify the fourth point on parabola</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਰਾਬੋਲਾ ਉੱਤੇ ਚੌਥਾ ਬਿੰਦੂ ਨਿਰਧਾਰਤ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="193" />
         <source>Specify the Axis on parabola</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਰਾਬੋਲਾ ਉੱਤੇ ਧੁਰਾ ਨਿਰਧਾਰਤ ਕਰੋ</translation>
     </message>
 </context>
 <context>
@@ -984,7 +987,7 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabolaFD.cpp" line="275" />
         <source>Specify the focus of parabola</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਰਾਬੋਲਾ ਦਾ ਫੋਕਸ ਨਿਰਧਾਰਤ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabolaFD.cpp" line="278" />
@@ -994,12 +997,12 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabolaFD.cpp" line="282" />
         <source>Specify the start point on parabola</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਰਾਬੋਲਾ ਉੱਤੇ ਸ਼ੁਰੂਆਤੀ ਬਿੰਦੂ ਨਿਰਧਾਰਤ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabolaFD.cpp" line="286" />
         <source>Specify the end point on parabola</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਰਾਬੋਲਾ ਉੱਤੇ ਅੰਤਿਮ ਬਿੰਦੂ ਨਿਰਧਾਰਤ ਕਰੋ</translation>
     </message>
 </context>
 <context>
@@ -1176,17 +1179,17 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawslicedivide.cpp" line="212" />
         <source>Line</source>
-        <translation type="unfinished">ਰੇਖਾ</translation>
+        <translation>ਲਾਈਨ</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawslicedivide.cpp" line="222" />
         <source>Arc</source>
-        <translation type="unfinished">ਚਾਪ</translation>
+        <translation>ਆਰਕ</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawslicedivide.cpp" line="232" />
         <source>Circle</source>
-        <translation type="unfinished">ਚੱਕਰ</translation>
+        <translation>ਸਰਕਲ</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawslicedivide.cpp" line="596" />
@@ -1204,33 +1207,33 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/spline/lc_actiondrawsplinepoints.cpp" line="214" />
         <source>Specify first control point</source>
-        <translation type="unfinished">ਪਹਿਲਾਂ ਕੰਟਰੋਲ ਬਿੰਦੂ ਦਿਓ</translation>
+        <translation>ਪਹਿਲਾ ਕੰਟਰੋਲ ਬਿੰਦੂ ਨਿਰਧਾਰਤ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/spline/lc_actiondrawsplinepoints.cpp" line="231" />
         <source>Specify next control point or [%1]</source>
-        <translation type="unfinished">ਅਗਲਾ ਕੰਟਰੋਲ ਬਿੰਦੂ ਜਾਂ [%1] ਦਿਓ</translation>
+        <translation>ਅਗਲਾ ਕੰਟਰੋਲ ਬਿੰਦੂ ਨਿਰਧਾਰਤ ਕਰੋ ਜਾਂ [%1]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/spline/lc_actiondrawsplinepoints.cpp" line="231" />
         <source>Back</source>
-        <translation type="unfinished">ਪਿੱਛੇ</translation>
+        <translation>ਪਿੱਛੇ</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/spline/lc_actiondrawsplinepoints.cpp" line="233" />
         <source>Specify next control point</source>
-        <translation type="unfinished">ਅਗਲਾ ਕੰਟਰੋਲ ਬਿੰਦੂ ਦਿਓ</translation>
+        <translation>ਅਗਲਾ ਕੰਟਰੋਲ ਬਿੰਦੂ ਨਿਰਧਾਰਤ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/spline/lc_actiondrawsplinepoints.cpp" line="265" />
         <location filename="../src/actions/drawing/draw/spline/lc_actiondrawsplinepoints.cpp" line="286" />
         <source>Cannot undo: Not enough entities defined yet.</source>
-        <translation type="unfinished">ਵਾਪਸੀ ਨਹੀਂ: ਹਾਲੇ ਲੋੜੀਦੀਆਂ ਇਕਾਈਆਂ ਨਹੀਂ ਦਿੱਤੀਆਂ ਹਨ।</translation>
+        <translation>ਅਣਡੰਨਾ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ: ਅਜੇ ਲੋੜੀਂਦੀਆਂ ਐਂਟੀਟੀਆਂ ਤੋਂ ਘੱਟ ਹਨ।</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/spline/lc_actiondrawsplinepoints.cpp" line="302" />
         <source>Cannot undo: Nothing could be redone.</source>
-        <translation type="unfinished" />
+        <translation>ਅਣਡੰਨਾ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ: ਕੁਝ ਵੀ ਮੁੜ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।</translation>
     </message>
 </context>
 <context>
@@ -1294,254 +1297,254 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="514" />
         <source>&amp;Window Zoom</source>
-        <translation type="unfinished">ਝਰੋਖਾ ਜ਼ੂਮ(&amp;W)</translation>
+        <translation>&amp;ਵਿੰਡੋ ਜ਼ੂਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="328" />
         <source>Zoom &amp;Panning</source>
-        <translation type="unfinished" />
+        <translation>ਜ਼ੂਮ &amp;ਪੈਨਿੰਗ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="239" />
         <source>Select Entity</source>
-        <translation type="unfinished">ਇਕਾਈ ਚੁਣੋ</translation>
+        <translation>ਐਂਟੀਟੀ ਚੁਣੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="240" />
         <source>Select Window</source>
-        <translation type="unfinished">ਝਰੋਖਾ ਚੁਣੋ</translation>
+        <translation>ਵਿੰਡੋ ਚੁਣੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="241" />
         <source>Deselect Window</source>
-        <translation type="unfinished" />
+        <translation>ਵਿੰਡੋ ਅਣਚੁਣੀ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="242" />
         <source>(De-)Select &amp;Contour</source>
-        <translation type="unfinished">ਖਾਕਾ (ਨਾ-)ਚੁਣੋ(&amp;C)</translation>
+        <translation>(ਅਣ)ਚੁਣੋ &amp;ਕੰਟੂਰ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="243" />
         <source>Select Intersected Entities</source>
-        <translation type="unfinished">ਕਾਂਟਵੀਆਂ ਇਕਾਈਆਂ ਚੁਣੋ</translation>
+        <translation>ਕਟਾਉਂਦੀਆਂ ਐਂਟੀਟੀਆਂ ਚੁਣੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="244" />
         <source>Deselect Intersected Entities</source>
-        <translation type="unfinished">ਕਾਂਟਵੀਆਂ ਇਕਾਈਆਂ ਨਾ-ਚੁਣੋ</translation>
+        <translation>ਕਟਾਉਂਦੀਆਂ ਐਂਟੀਟੀਆਂ ਅਣਚੁਣੀਆਂ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="245" />
         <source>(De-)Select Layer</source>
-        <translation type="unfinished">ਪਰਤ (ਨ-)ਚੁਣੋ</translation>
+        <translation>(ਅਣ)ਚੁਣੋ ਲੇਅਰ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="228" />
         <source>&amp;Points</source>
-        <translation type="unfinished">ਬਿੰਦੂ(&amp;P)</translation>
+        <translation>&amp;ਬਿੰਦੂ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="200" />
         <source>&amp;2 Points</source>
-        <translation type="unfinished">&amp;2 ਬਿੰਦੂ</translation>
+        <translation>&amp;2 ਬਿੰਦੂ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="201" />
         <source>&amp;Angle</source>
-        <translation type="unfinished">ਕੋਣ(&amp;A)</translation>
+        <translation>&amp;ਕੋਣ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="202" />
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="341" />
         <source>&amp;Horizontal</source>
-        <translation type="unfinished">ਖਿਤਿਜੀ(&amp;H)</translation>
+        <translation>&amp;ਹਰੀਜ਼ੋਂਟਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="203" />
         <source>Vertical</source>
-        <translation type="unfinished">ਲੰਬਕਾਰੀ</translation>
+        <translation>ਵਰਟੀਕਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="204" />
         <source>&amp;Freehand Line</source>
-        <translation type="unfinished">ਹੱਥ ਨਾਲ ਰੇਖਾ(&amp;F)</translation>
+        <translation>&amp;ਫ੍ਰੀਹੈਂਡ ਲਾਈਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="205" />
         <source>&amp;Parallel</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਪੈਰਲਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="206" />
         <source>Parallel through point</source>
-        <translation type="unfinished">ਬਿੰਦੂ ਰਾਹੀਂ ਸਮਾਂਤਰ</translation>
+        <translation>ਪੈਰਲਲ ਬਿੰਦੂ ਰਾਹੀਂ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="186" />
         <source>Rectangle</source>
-        <translation type="unfinished">ਚਤੁਰਭੁਜ</translation>
+        <translation>ਆਇਤ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="207" />
         <source>Bisector</source>
-        <translation type="unfinished">ਦੋ-ਖੰਡ</translation>
+        <translation>ਬਾਈਸੈਕਟਰ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="208" />
         <source>Tangent (P,C)</source>
-        <translation type="unfinished">ਸਪਰਸ਼ ਰੇਖਾ (P,C)</translation>
+        <translation>ਟੈਨਜੈਂਟ (P,C)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="209" />
         <source>Tangent (C,C)</source>
-        <translation type="unfinished">ਸਪਰਸ਼ ਰੇਖਾ (C,C)</translation>
+        <translation>ਟੈਨਜੈਂਟ (C,C)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="210" />
         <source>Tangent &amp;Orthogonal</source>
-        <translation type="unfinished" />
+        <translation>ਟੈਨਜੈਂਟ &amp;ਆਰਥੋਗੋਨਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="211" />
         <source>Orthogonal</source>
-        <translation type="unfinished">ਲੰਬਕਾਰੀ ਕਾਂਟ</translation>
+        <translation>ਆਰਥੋਗੋਨਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="212" />
         <source>Relative angle</source>
-        <translation type="unfinished">ਅਨੁਸਾਰੀ ਕੋਣ</translation>
+        <translation>ਰਿਲੇਟਿਵ ਕੋਣ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="187" />
         <source>Pol&amp;ygon (Cen,Cor)</source>
-        <translation type="unfinished">ਬਹੁਭੁਜ(ਕੇਂਦਰ, ਕੋਨਾ)(&amp;y)</translation>
+        <translation>ਪੌਲੀਗੌਨ (Cen,Cor)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="189" />
         <source>Polygo&amp;n (Cor,Cor)</source>
-        <translation type="unfinished">ਬਹੁਭੁਜ(ਕੋਨਾ, ਕੋਨਾ)(&amp;n)</translation>
+        <translation>ਪੌਲੀਗੌਨ (Cor,Cor)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="213" />
         <source>Snake</source>
-        <translation type="unfinished" />
+        <translation>ਸਾਪ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="214" />
         <source>Snake (X)</source>
-        <translation type="unfinished" />
+        <translation>ਸਾਪ (X)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="215" />
         <source>Snake (Y)</source>
-        <translation type="unfinished" />
+        <translation>ਸਾਪ (Y)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="192" />
         <source>Rectangle (1 Point)</source>
-        <translation type="unfinished" />
+        <translation>ਆਇਤ (1 ਬਿੰਦੂ)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="193" />
         <source>Rectangle (2 Points)</source>
-        <translation type="unfinished" />
+        <translation>ਆਇਤ (2 ਬਿੰਦੂ)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="194" />
         <source>Rectangle (3 Points)</source>
-        <translation type="unfinished" />
+        <translation>ਆਇਤ (3 ਬਿੰਦੂ)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="191" />
         <source>Star</source>
-        <translation type="unfinished" />
+        <translation>ਤਾਰਾ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="216" />
         <source>Angle From Line</source>
-        <translation type="unfinished" />
+        <translation>ਲਾਈਨ ਤੋਂ ਕੋਣ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="217" />
         <source>Orthogonal From Line</source>
-        <translation type="unfinished" />
+        <translation>ਆਰਥੋਗੋਨਲ ਤੋਂ ਲਾਈਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="218" />
         <source>From Point To Line</source>
-        <translation type="unfinished" />
+        <translation>ਬਿੰਦੂ ਤੋਂ ਲਾਈਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="221" />
         <source>Slice/Divide Line</source>
-        <translation type="unfinished" />
+        <translation>ਸਲਾਈਸ/ਵੰਡ ਲਾਈਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="222" />
         <source>Slice/Divide Circle</source>
-        <translation type="unfinished" />
+        <translation>ਸਲਾਈਸ/ਵੰਡ ਸਰਕਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="229" />
         <source>Line of Points</source>
-        <translation type="unfinished" />
+        <translation>ਬਿੰਦੂਆਂ ਦੀ ਲਾਈਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="251" />
         <source>Center, &amp;Point</source>
-        <translation type="unfinished">ਕੇਂਦਰ, ਬਿੰਦੂ(&amp;P)</translation>
+        <translation>ਸੈਂਟਰ, &amp;ਬਿੰਦੂ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="252" />
         <source>By Arc</source>
-        <translation type="unfinished" />
+        <translation>ਆਰਕ ਰਾਹੀਂ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="253" />
         <source>Center, &amp;Radius</source>
-        <translation type="unfinished">ਕੇਂਦਰ, ਅਰਧ-ਵਿਆਸ(&amp;R)</translation>
+        <translation>ਸੈਂਟਰ, &amp;ਰੇਡੀਅਸ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="254" />
         <source>2 Points</source>
-        <translation type="unfinished">2 ਬਿੰਦੂ</translation>
+        <translation>2 ਬਿੰਦੂ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="255" />
         <source>2 Points, Radius</source>
-        <translation type="unfinished" />
+        <translation>2 ਬਿੰਦੂ, ਰੇਡੀਅਸ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="256" />
         <source>3 Points</source>
-        <translation type="unfinished">3 ਬਿੰਦੂ</translation>
+        <translation>3 ਬਿੰਦੂ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="257" />
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="276" />
         <source>&amp;Concentric</source>
-        <translation type="unfinished">ਸਮਕੇਂਦਰੀ(&amp;C)</translation>
+        <translation>&amp;ਕੰਸੈਂਟ੍ਰਿਕ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="258" />
         <source>Circle &amp;Inscribed</source>
-        <translation type="unfinished" />
+        <translation>ਸਰਕਲ &amp;ਇਨਸਕ੍ਰਾਈਬਡ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="262" />
         <source>Tangential, 2 P&amp;oints</source>
-        <translation type="unfinished" />
+        <translation>ਟੈਨਜੈਂਟੀਅਲ, 2 ਬਿੰਦੂ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="268" />
         <source>&amp;Center, Point, Angles</source>
-        <translation type="unfinished">ਕੇਂਦਰ, ਬਿੰਦੂ, ਕੋਣ(&amp;C)</translation>
+        <translation>&amp;ਸੈਂਟਰ, ਬਿੰਦੂ, ਕੋਣ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="271" />
         <source>&amp;3 Points</source>
-        <translation type="unfinished">&amp;3 ਬਿੰਦੂ</translation>
+        <translation>&amp;3 ਬਿੰਦੂ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="274" />
@@ -1556,7 +1559,7 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="277" />
         <source>Arc &amp;Tangential</source>
-        <translation type="unfinished" />
+        <translation>ਆਰਕ &amp;ਟੈਨਜੈਂਟੀਅਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="289" />
@@ -1571,77 +1574,77 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="302" />
         <source>&amp;Ellipse (Axis)</source>
-        <translation type="unfinished">ਅੰਡਾਕਾਰ(ਧੁਰਾ)(&amp;E)</translation>
+        <translation>&amp;ਐਲਿਪਸ (ਧੁਰਾ)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="303" />
         <source>Ellipse &amp;Arc (Axis)</source>
-        <translation type="unfinished" />
+        <translation>ਐਲਿਪਸ &amp;ਆਰਕ (ਧੁਰਾ)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="304" />
         <source>Ellipse &amp;Foci Point</source>
-        <translation type="unfinished" />
+        <translation>ਐਲਿਪਸ &amp;ਫੋਕੀ ਬਿੰਦੂ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="305" />
         <source>Ellipse &amp;4 Point</source>
-        <translation type="unfinished" />
+        <translation>ਐਲਿਪਸ &amp;4 ਬਿੰਦੂ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="306" />
         <source>Ellipse Center and &amp;3 Points</source>
-        <translation type="unfinished" />
+        <translation>ਐਲਿਪਸ ਸੈਂਟਰ ਅਤੇ &amp;3 ਬਿੰਦੂ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="307" />
         <source>Ellipse &amp;Inscribed</source>
-        <translation type="unfinished" />
+        <translation>ਐਲਿਪਸ &amp;ਇਨਸਕ੍ਰਾਈਬਡ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="287" />
         <source>&amp;Spline</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਸਪਲਾਈਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="288" />
         <source>&amp;Spline through points</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਸਪਲਾਈਨ ਬਿੰਦੂਆਂ ਰਾਹੀਂ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="313" />
         <source>&amp;Polyline</source>
-        <translation type="unfinished">ਬਹੁਭੁਜ(&amp;P)</translation>
+        <translation>&amp;ਪੌਲੀਲਾਈਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="314" />
         <source>&amp;Add node</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਨੋਡ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="315" />
         <source>A&amp;ppend node</source>
-        <translation type="unfinished" />
+        <translation>ਨੋਡ &amp;ਜੋੜੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="316" />
         <source>&amp;Delete node</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਨੋਡ ਮਿਟਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="317" />
         <source>Delete &amp;between two nodes</source>
-        <translation type="unfinished" />
+        <translation>ਦੋ ਨੋਡਾਂ ਵਿਚਾਲੇ &amp;ਮਿਟਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="318" />
         <source>&amp;Trim segments</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਸੈਗਮੈਂਟ ਟ੍ਰਿਮ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="319" />
         <source>Create &amp;Equidistant Polylines</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਬਰਾਬਰ ਦੂਰੀ ਵਾਲੀਆਂ ਪੌਲੀਲਾਈਨਾਂ ਬਣਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="321" />
@@ -1651,177 +1654,177 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="329" />
         <source>&amp;MText</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਐੱਮ ਟੈਕਸਟ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="330" />
         <source>&amp;Text</source>
-        <translation type="unfinished">ਪਾਠ(&amp;T)</translation>
+        <translation>&amp;ਟੈਕਸਟ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="331" />
         <source>&amp;Hatch</source>
-        <translation type="unfinished">ਮੋਘਾ(&amp;H)</translation>
+        <translation>&amp;ਹੈਚ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="332" />
         <source>Insert &amp;Image</source>
-        <translation type="unfinished" />
+        <translation>ਚਿੱਤਰ &amp;ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="339" />
         <source>&amp;Aligned</source>
-        <translation type="unfinished">ਇਕਸਾਰ(&amp;A)</translation>
+        <translation>&amp;ਅਲਾਈਨਡ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="340" />
         <source>&amp;Linear</source>
-        <translation type="unfinished">ਰੇਖਿਕ(&amp;L)</translation>
+        <translation>&amp;ਲੀਨੀਅਰ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="342" />
         <source>&amp;Vertical</source>
-        <translation type="unfinished">ਲੰਬਕਾਰੀ(&amp;V)</translation>
+        <translation>&amp;ਵਰਟੀਕਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="343" />
         <source>&amp;Radial</source>
-        <translation type="unfinished">ਰੇਡੀਅਲ(&amp;R)</translation>
+        <translation>&amp;ਰੇਡੀਅਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="344" />
         <source>&amp;Diametric</source>
-        <translation type="unfinished">ਡਾਈਮੈਟਰਿਕ(&amp;D)</translation>
+        <translation>&amp;ਡਾਇਮੀਟ੍ਰਿਕ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="345" />
         <source>&amp;Angular</source>
-        <translation type="unfinished">ਕੋਣੀ(&amp;A)</translation>
+        <translation>&amp;ਐਂਗੂਲਰ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="347" />
         <source>&amp;Leader</source>
-        <translation type="unfinished">ਲੀਡਰ(&amp;L)</translation>
+        <translation>&amp;ਲੀਡਰ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="368" />
         <source>&amp;Attributes</source>
-        <translation type="unfinished">ਗੁਣ(&amp;A)</translation>
+        <translation>&amp;ਐਟ੍ਰੀਬਿਊਟਸ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="369" />
         <source>&amp;Delete</source>
-        <translation type="unfinished">ਹਟਾਓ(&amp;D)</translation>
+        <translation>&amp;ਮਿਟਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="370" />
         <source>&amp;Move / Copy</source>
-        <translation type="unfinished">ਭੇਜੋ /  ਨਕਲ(&amp;M)</translation>
+        <translation>&amp;ਭੇਜੋ / ਕਾਪੀ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="371" />
         <source>Re&amp;vert direction</source>
-        <translation type="unfinished" />
+        <translation>ਦਿਸ਼ਾ &amp;ਉਲਟਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="372" />
         <source>&amp;Rotate</source>
-        <translation type="unfinished">ਘੁੰਮਾਓ(&amp;R)</translation>
+        <translation>&amp;ਘੁਮਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="373" />
         <source>&amp;Scale</source>
-        <translation type="unfinished">ਪੈਮਾਨਾ(&amp;S)</translation>
+        <translation>&amp;ਸਕੇਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="374" />
         <source>&amp;Mirror</source>
-        <translation type="unfinished">ਪ੍ਰਤੀਬਿੰਬ(&amp;M)</translation>
+        <translation>&amp;ਮਿਰਰ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="376" />
         <source>Rotate T&amp;wo</source>
-        <translation type="unfinished">ਦੋ ਘੁੰਮਾਓ(&amp;w)</translation>
+        <translation>ਦੋ ਘੁਮਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="377" />
         <source>&amp;Properties</source>
-        <translation type="unfinished">ਵਿਸ਼ੇਸਤਾ(&amp;P)</translation>
+        <translation>&amp;ਗੁਣ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="378" />
         <source>&amp;Trim</source>
-        <translation type="unfinished">ਛਾਂਟੋ(&amp;T)</translation>
+        <translation>&amp;ਟ੍ਰਿਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="380" />
         <source>&amp;Lengthen</source>
-        <translation type="unfinished">Lengthen(&amp;L)</translation>
+        <translation>&amp;ਲੰਮਾ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="382" />
         <source>&amp;Divide</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਵੰਡੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="383" />
         <source>&amp;Stretch</source>
-        <translation type="unfinished">ਖਿੱਚੋ(&amp;S)</translation>
+        <translation>&amp;ਸਟ੍ਰੈਚ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="384" />
         <source>&amp;Bevel</source>
-        <translation type="unfinished">ਬੀਵੀਲ(&amp;B)</translation>
+        <translation>&amp;ਬੈਵਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="385" />
         <source>&amp;Fillet</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਫਿਲੈਟ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="386" />
         <source>&amp;Explode Text into Letters</source>
-        <translation type="unfinished">ਸ਼ਬਦਾਂ ਨੂੰ ਅੱਖਰਾਂ ਵਿੱਚ ਫੈਲਾਉ(&amp;E)</translation>
+        <translation>&amp;ਟੈਕਸਟ ਨੂੰ ਅੱਖਰਾਂ ਵਿੱਚ ਫਟਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="500" />
         <source>&amp;Distance Point to Point</source>
-        <translation type="unfinished">ਬਿੰਦੂ ਤੋਂ ਬਿੰਦੂ ਦੂਰੀ(&amp;D)</translation>
+        <translation>&amp;ਬਿੰਦੂ ਤੋਂ ਬਿੰਦੂ ਤੱਕ ਦੂਰੀ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="503" />
         <source>An&amp;gle between two lines</source>
-        <translation type="unfinished" />
+        <translation>ਦੋ ਲਾਈਨਾਂ ਵਿਚਾਲੇ &amp;ਕੋਣ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="505" />
         <source>Polygonal &amp;Area</source>
-        <translation type="unfinished" />
+        <translation>ਪਾਲੀਗੋਨਲ &amp;ਖੇਤਰ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="662" />
         <source>&amp;Undo</source>
-        <translation type="unfinished">ਵਾਪਸ(&amp;U)</translation>
+        <translation>&amp;ਅਣਡੰਨਾ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="663" />
         <source>&amp;Redo</source>
-        <translation type="unfinished">ਮੁੜ ਪਹਿਲਾਂ(&amp;R)</translation>
+        <translation>&amp;ਮੁੜ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="691" />
         <source>Cu&amp;t</source>
-        <translation type="unfinished">ਕੱਟੋ(&amp;t)</translation>
+        <translation>ਕੱਟੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="693" />
         <source>&amp;Copy</source>
-        <translation type="unfinished">ਨਕਲ(&amp;C)</translation>
+        <translation>&amp;ਕਾਪੀ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="695" />
         <source>&amp;Paste</source>
-        <translation type="unfinished">ਚੇਪੋ(&amp;P)</translation>
+        <translation>&amp;ਪੇਸਟ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="190" />
@@ -1871,12 +1874,12 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="284" />
         <source>Para&amp;bola 4 points</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਰਾ&amp;ਬੋਲਾ 4 ਬਿੰਦੂ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="285" />
         <source>Parabola &amp;Focus Directrix</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਰਾਬੋਲਾ &amp;ਫੋਕਸ ਡਾਇਰੈਕਟ੍ਰਿਕਸ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="290" />
@@ -1936,22 +1939,22 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="388" />
         <source>Break/Divide</source>
-        <translation type="unfinished" />
+        <translation>ਤੋੜੋ/ਵੰਡੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="389" />
         <source>Line Gap</source>
-        <translation type="unfinished" />
+        <translation>ਲਾਈਨ ਗੈਪ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="390" />
         <source>Line Join</source>
-        <translation type="unfinished" />
+        <translation>ਲਾਈਨ ਜੁਆਇਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="391" />
         <source>Duplicate</source>
-        <translation type="unfinished" />
+        <translation>ਡੁਪਲੀਕੇਟ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="392" />
@@ -1971,27 +1974,27 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="400" />
         <source>Update Current Pen by Active Layer' Pen</source>
-        <translation type="unfinished" />
+        <translation>ਐਕਟਿਵ ਲੇਅਰ ਦੀ ਪੈਨ ਨਾਲ ਮੌਜੂਦਾ ਪੈਨ ਅੱਪਡੇਟ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="406" />
         <source>&amp;Pick Pen From Entity</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਐਂਟੀਟੀ ਤੋਂ ਪੈਨ ਚੁਣੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="407" />
         <source>&amp;Pick Pen From Entity (Resolved)</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਐਂਟੀਟੀ ਤੋਂ ਪੈਨ ਚੁਣੋ (ਹੱਲ ਕੀਤਾ)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="408" />
         <source>Apply Pen to Entity</source>
-        <translation type="unfinished" />
+        <translation>ਐਂਟੀਟੀ ਉੱਤੇ ਪੈਨ ਲਾਗੂ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="409" />
         <source>Copy Pen</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਨ ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="415" />
@@ -2597,112 +2600,112 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="536" />
         <source>&amp;Add Layer</source>
-        <translation type="unfinished">ਪਰਤ ਸ਼ਾਮਿਲ(&amp;A)</translation>
+        <translation>&amp;ਲੇਅਰ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="537" />
         <source>&amp;Remove Layer</source>
-        <translation type="unfinished">ਬਲਾਕ ਹਟਾਓ(&amp;R)</translation>
+        <translation>&amp;ਲੇਅਰ ਹਟਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="538" />
         <source>&amp;Edit Layer</source>
-        <translation type="unfinished">ਪਰਤ ਸੋਧ(&amp;E)</translation>
+        <translation>&amp;ਲੇਅਰ ਸੰਪਾਦਿਤ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="539" />
         <source>Toggle Layer Loc&amp;k</source>
-        <translation type="unfinished" />
+        <translation>ਲੇਅਰ ਲਾਕ ਬਦਲੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="540" />
         <source>&amp;Toggle Layer Visibility</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਲੇਅਰ ਦਿਖਾਈ ਬਦਲੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="541" />
         <source>Toggle Layer &amp;Print</source>
-        <translation type="unfinished" />
+        <translation>ਲੇਅਰ ਪ੍ਰਿੰਟ ਬਦਲੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="542" />
         <source>Toggle &amp;Construction Layer</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਕੰਸਟ੍ਰਕਸ਼ਨ ਲੇਅਰ ਬਦਲੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="552" />
         <source>&amp;Add Block</source>
-        <translation type="unfinished">ਬਲਾਕ ਸ਼ਾਮਿਲ(&amp;A)</translation>
+        <translation>&amp;ਬਲਾਕ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="553" />
         <source>&amp;Remove Block</source>
-        <translation type="unfinished">ਬਲਾਕ ਹਟਾਓ(&amp;R)</translation>
+        <translation>&amp;ਬਲਾਕ ਹਟਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="554" />
         <source>&amp;Rename Block</source>
-        <translation type="unfinished">ਬਲਾਕ ਨਾਂ-ਤਬਦੀਲ(&amp;R)</translation>
+        <translation>&amp;ਬਲਾਕ ਨਾਮ ਬਦਲੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="555" />
         <source>&amp;Edit Block</source>
-        <translation type="unfinished">ਬਲਾਕ ਸੋਧ(&amp;E)</translation>
+        <translation>&amp;ਬਲਾਕ ਸੰਪਾਦਿਤ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="556" />
         <source>&amp;Save Block</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਬਲਾਕ ਸੰਭਾਲੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="557" />
         <source>&amp;Insert Block</source>
-        <translation type="unfinished">ਬਲਾਕ ਸ਼ਾਮਿਲ(&amp;I)</translation>
+        <translation>&amp;ਬਲਾਕ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="558" />
         <source>Toggle Block &amp;Visibility</source>
-        <translation type="unfinished" />
+        <translation>ਬਲਾਕ ਦਿਖਾਈ ਬਦਲੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="559" />
         <source>&amp;Create Block</source>
-        <translation type="unfinished">ਬਲਾਕ ਬਣਾਓ(&amp;C)</translation>
+        <translation>&amp;ਬਲਾਕ ਬਣਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="387" />
         <source>Ex&amp;plode</source>
-        <translation type="unfinished" />
+        <translation>ਐਕਸ&amp;ਪਲੋਡ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="569" />
         <source>&amp;Application Preferences</source>
-        <translation type="unfinished">ਕਾਰਜ ਪਸੰਦ(&amp;A)</translation>
+        <translation>&amp;ਐਪਲੀਕੇਸ਼ਨ ਤਰਜੀਹਾਂ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="565" />
         <source>Current &amp;Drawing Preferences</source>
-        <translation type="unfinished">ਮੌਜੂਦਾ ਡਰਾਇੰਗ ਪਸੰਦ(&amp;D)</translation>
+        <translation>ਮੌਜੂਦਾ &amp;ਡ੍ਰਾਇੰਗ ਤਰਜੀਹਾਂ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="654" />
         <source>Select &amp;All</source>
-        <translation type="unfinished">ਸਭ ਚੁਣੋ(&amp;A)</translation>
+        <translation>&amp;ਸਭ ਚੁਣੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="655" />
         <source>Deselect &amp;all</source>
-        <translation type="unfinished">ਸਭ ਨਾ-ਚੁਣੋ(&amp;A)</translation>
+        <translation>ਸਭ ਅਣਚੁਣਾ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="756" />
         <source>Ctrl+K</source>
-        <translation type="unfinished" />
+        <translation>Ctrl+K</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="656" />
         <source>Invert Selection</source>
-        <translation type="unfinished">ਉਲਟ ਚੋਣ</translation>
+        <translation>ਚੋਣ ਉਲਟਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="619" />
@@ -2722,179 +2725,179 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="631" />
         <source>Zoom &amp;In</source>
-        <translation type="unfinished">ਅਕਾਰ ਵਧਾਓ(&amp;I)</translation>
+        <translation>&amp;ਜ਼ੂਮ ਇਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="632" />
         <source>Zoom &amp;Out</source>
-        <translation type="unfinished">ਅਕਾਰ ਘਟਾਓ(&amp;O)</translation>
+        <translation>&amp;ਜ਼ੂਮ ਆਊਟ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="633" />
         <source>&amp;Auto Zoom</source>
-        <translation type="unfinished">ਸਵੈ-ਜ਼ੂਮ(&amp;A)</translation>
+        <translation>&amp;ਆਟੋ ਜ਼ੂਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="634" />
         <source>Previous &amp;View</source>
-        <translation type="unfinished" />
+        <translation>ਪਿਛਲੀ &amp;ਵਿਊ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="635" />
         <source>&amp;Redraw</source>
-        <translation type="unfinished">ਮੁੜ-ਖਿੱਚੋ(&amp;R)</translation>
+        <translation>&amp;ਮੁੜ ਡ੍ਰਾਅ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="593" />
         <source>&amp;New</source>
-        <translation type="unfinished">ਨਵਾਂ(&amp;N)</translation>
+        <translation>&amp;ਨਵਾਂ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="594" />
         <source>New From &amp;Template</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਟੈਮਪਲੇਟ ਤੋਂ ਨਵਾਂ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="595" />
         <source>&amp;Open...</source>
-        <translation type="unfinished">ਖੋਲੋ(&amp;O)...</translation>
+        <translation>&amp;ਖੋਲ੍ਹੋ...</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="596" />
         <source>&amp;Save</source>
-        <translation type="unfinished">ਸੰਭਾਲੋ(&amp;S)</translation>
+        <translation>&amp;ਸੰਭਾਲੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="597" />
         <source>Save &amp;as...</source>
-        <translation type="unfinished">ਏਦਾਂ ਸੰਭਾਲੋ(&amp;a)...</translation>
+        <translation>ਸੰਭਾਲੋ &amp;ਜਿਵੇਂ...</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="589" />
         <source>&amp;Export as image</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਚਿੱਤਰ ਵਜੋਂ ਐਕਸਪੋਰਟ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="585" />
         <source>&amp;Close</source>
-        <translation type="unfinished">ਬੰਦ ਕਰੋ(&amp;C)</translation>
+        <translation>&amp;ਬੰਦ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="599" />
         <source>&amp;Print...</source>
-        <translation type="unfinished">ਛਾਪੋ(&amp;P)...</translation>
+        <translation>&amp;ਪ੍ਰਿੰਟ...</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="591" />
         <source>Export as PDF</source>
-        <translation type="unfinished" />
+        <translation>PDF ਵਜੋਂ ਐਕਸਪੋਰਟ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="579" />
         <source>Print Pre&amp;view</source>
-        <translation type="unfinished">ਛਪਾਈ ਝਲਕ(&amp;v)</translation>
+        <translation>ਪ੍ਰਿੰਟ ਪ੍ਰੀ&amp;ਵਿਊ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="600" />
         <source>&amp;Quit</source>
-        <translation type="unfinished">ਬਾਹਰ(&amp;Q)</translation>
+        <translation>&amp;ਛੱਡੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="592" />
         <source>&amp;Block</source>
-        <translation type="unfinished">ਬਲਾਕ(&amp;B)</translation>
+        <translation>&amp;ਬਲਾਕ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="517" />
         <source>&amp;Fullscreen</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਪੂਰਾ ਸਕ੍ਰੀਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="518" />
         <source>&amp;Grid</source>
-        <translation type="unfinished">ਗਰਿੱਡ(&amp;G)</translation>
+        <translation>&amp;ਗ੍ਰਿਡ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="773" />
         <source>Ctrl+G</source>
         <comment>Toggle Grid</comment>
-        <translation type="unfinished" />
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="519" />
         <source>&amp;Draft</source>
-        <translation type="unfinished">ਡਰਾਫਟ(&amp;D)</translation>
+        <translation>&amp;ਡ੍ਰਾਫਟ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="522" />
         <source>&amp;Statusbar</source>
-        <translation type="unfinished">ਸਥਿਤੀ ਪੱਟੀ(&amp;S)</translation>
+        <translation>&amp;ਸਟੇਟਸਬਾਰ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="776" />
         <source>Ctrl+I</source>
         <comment>Hide Statusbar</comment>
-        <translation type="unfinished" />
+        <translation>Ctrl+I</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="626" />
         <source>Focus on &amp;Command Line</source>
-        <translation type="unfinished">ਕਮਾਂਡ ਰੇਖਾ ਉੱਤੇ ਫੋਕਸ(&amp;C)</translation>
+        <translation>&amp;ਕਮਾਂਡ ਲਾਈਨ ਉੱਤੇ ਫੋਕਸ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="570" />
         <source>Widget Options</source>
-        <translation type="unfinished" />
+        <translation>ਵਿਜੈੱਟ ਆਪਸ਼ਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="608" />
         <source>Left</source>
-        <translation type="unfinished">ਖੱਬਾ</translation>
+        <translation>ਖੱਬਾ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="609" />
         <source>Right</source>
-        <translation type="unfinished">ਸੱਜਾ</translation>
+        <translation>ਸੱਜਾ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="610" />
         <source>Top</source>
-        <translation type="unfinished" />
+        <translation>ਉੱਪਰ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="611" />
         <source>Bottom</source>
-        <translation type="unfinished" />
+        <translation>ਹੇਠਾਂ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="612" />
         <source>Floating</source>
-        <translation type="unfinished" />
+        <translation>ਫਲੋਟਿੰਗ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="573" />
         <source>Reload Style Sheet</source>
-        <translation type="unfinished" />
+        <translation>ਸਟਾਈਲ ਸ਼ੀਟ ਮੁੜ ਲੋਡ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="572" />
         <source>Device Options</source>
-        <translation type="unfinished" />
+        <translation>ਡਿਵਾਈਸ ਆਪਸ਼ਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="375" />
         <source>Mo&amp;ve and Rotate</source>
-        <translation type="unfinished" />
+        <translation>ਭੇਜੋ ਅਤੇ ਘੁਮਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="379" />
         <source>Tr&amp;im Two</source>
-        <translation type="unfinished" />
+        <translation>ਟ੍ਰਿਮ ਟੂ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="381" />
         <source>O&amp;ffset</source>
-        <translation type="unfinished" />
+        <translation>ਆਫਸੈੱਟ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="423" />
@@ -3010,57 +3013,57 @@ or [%2]</source>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="775" />
         <source>Ctrl+D</source>
         <comment>Toggle Draft Mode</comment>
-        <translation type="unfinished" />
+        <translation>Ctrl+D</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="188" />
         <source>Pol&amp;ygon (Cen,Tan)</source>
-        <translation type="unfinished" />
+        <translation>ਪੌਲੀਗੌਨ (Cen,Tan)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="346" />
         <source>&amp;Arc</source>
-        <translation type="unfinished">ਚਾਪ(&amp;A)</translation>
+        <translation>&amp;ਆਰਕ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="532" />
         <source>&amp;Show all layers</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਸਾਰੇ ਲੇਅਰ ਵਿਖਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="533" />
         <source>&amp;Hide all layers</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਸਾਰੇ ਲੇਅਰ ਲੁਕਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="534" />
         <source>&amp;Unlock all</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਸਭ ਅਨਲਾਕ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="535" />
         <source>&amp;Lock all</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਸਭ ਲਾਕ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="543" />
         <source>&amp;Export Selected Layer(s)</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਚੁਣੇ ਲੇਅਰ ਐਕਸਪੋਰਟ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="544" />
         <source>Export &amp;Visible Layer(s)</source>
-        <translation type="unfinished" />
+        <translation>ਦਿਖਾਈ ਦੇ ਰਹੇ ਲੇਅਰ ਐਕਸਪੋਰਟ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="550" />
         <source>&amp;Show all blocks</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਸਾਰੇ ਬਲਾਕ ਵਿਖਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="551" />
         <source>&amp;Hide all blocks</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਸਾਰੇ ਬਲਾਕ ਲੁਕਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="571" />
@@ -3070,22 +3073,22 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="603" />
         <source>Export as CA&amp;M/plain SVG...</source>
-        <translation type="unfinished" />
+        <translation>CA&amp;M/ਪਲੇਨ SVG ਵਜੋਂ ਐਕਸਪੋਰਟ...</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="590" />
         <source>Close All</source>
-        <translation type="unfinished" />
+        <translation>ਸਭ ਬੰਦ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="618" />
         <source>Re-dock Widgets</source>
-        <translation type="unfinished" />
+        <translation>ਵਿਜੈੱਟ ਮੁੜ ਡੌਕ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="598" />
         <source>Save A&amp;ll...</source>
-        <translation type="unfinished" />
+        <translation>ਸਭ ਸੰਭਾਲੋ...</translation>
     </message>
 </context>
 <context>
@@ -3093,7 +3096,7 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/file/lc_actionfileexportmakercam.cpp" line="106" />
         <source>Export as</source>
-        <translation type="unfinished" />
+        <translation>ਇਸ ਤਰ੍ਹਾਂ ਐਕਸਪੋਰਟ</translation>
     </message>
 </context>
 <context>
@@ -3974,12 +3977,12 @@ End Edge Point: (%9 , %10)</source>
     <message>
         <location filename="../src/actions/drawing/pen/lc_actionpenapply.cpp" line="168" />
         <source>Specify entity to pick the pen</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਨ ਚੁਣਨ ਲਈ ਐਂਟੀਟੀ ਨਿਰਧਾਰਤ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/pen/lc_actionpenapply.cpp" line="171" />
         <source>Specify entity to apply pen</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਨ ਲਾਗੂ ਕਰਨ ਲਈ ਐਂਟੀਟੀ ਨਿਰਧਾਰਤ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/pen/lc_actionpenapply.cpp" line="171" />
@@ -3992,7 +3995,7 @@ End Edge Point: (%9 , %10)</source>
     <message>
         <location filename="../src/actions/drawing/pen/lc_actionpenpick.cpp" line="88" />
         <source>Specify entity to pick the pen</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਨ ਚੁਣਨ ਲਈ ਐਂਟੀਟੀ ਨਿਰਧਾਰਤ ਕਰੋ</translation>
     </message>
 </context>
 <context>
@@ -4100,17 +4103,17 @@ End Edge Point: (%9 , %10)</source>
     <message>
         <location filename="../src/actions/drawing/snap/lc_actionsnapmiddlemanual.cpp" line="227" />
         <source>Specify percentage / start-point</source>
-        <translation type="unfinished" />
+        <translation>ਪ੍ਰਤੀਸ਼ਤ / ਸ਼ੁਰੂਆਤੀ ਬਿੰਦੂ ਨਿਰਧਾਰਤ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/snap/lc_actionsnapmiddlemanual.cpp" line="230" />
         <source>Specify start point</source>
-        <translation type="unfinished" />
+        <translation>ਸ਼ੁਰੂਆਤੀ ਬਿੰਦੂ ਨਿਰਧਾਰਤ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/snap/lc_actionsnapmiddlemanual.cpp" line="233" />
         <source>Specify end point</source>
-        <translation type="unfinished" />
+        <translation>ਅੰਤਿਮ ਬਿੰਦੂ ਨਿਰਧਾਰਤ ਕਰੋ</translation>
     </message>
 </context>
 <context>
@@ -4668,7 +4671,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation>ਫਾਰਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="131" />
@@ -4678,7 +4681,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="134" />
         <source>Replace arc</source>
-        <translation type="unfinished" />
+        <translation>ਆਰਕ ਬਦਲੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="62" />
@@ -4723,7 +4726,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="32" />
         <source>Pen:</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਨ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="102" />
@@ -4733,7 +4736,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="124" />
         <source>Layer:</source>
-        <translation type="unfinished">ਪਰਤ:</translation>
+        <translation>ਲੇਅਰ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="39" />
@@ -4743,7 +4746,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="42" />
         <source>Radius Shift:</source>
-        <translation type="unfinished" />
+        <translation>ਰੇਡੀਅਸ ਸ਼ਿਫਟ:</translation>
     </message>
 </context>
 <context>
@@ -4828,22 +4831,22 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="20" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation>ਫਾਰਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="140" />
         <source>X:</source>
-        <translation type="unfinished" />
+        <translation>X:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="83" />
         <source>Angle:</source>
-        <translation type="unfinished">ਕੋਣ:</translation>
+        <translation>ਕੋਣ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="38" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation>ਟਾਈਪ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="133" />
@@ -4863,17 +4866,17 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="209" />
         <source>Extension</source>
-        <translation type="unfinished" />
+        <translation>ਐਕਸਟੈਂਸ਼ਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="214" />
         <source>Total Length</source>
-        <translation type="unfinished" />
+        <translation>ਕੁੱਲ ਲੰਬਾਈ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="219" />
         <source>Percent</source>
-        <translation type="unfinished" />
+        <translation>ਪ੍ਰਤੀਸ਼ਤ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="227" />
@@ -4898,7 +4901,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="168" />
         <source>Y:</source>
-        <translation type="unfinished" />
+        <translation>Y:</translation>
     </message>
 </context>
 <context>
@@ -4906,12 +4909,12 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dialogs/settings/options_device/lc_deviceoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation>ਫਾਰਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/dialogs/settings/options_device/lc_deviceoptions.ui" line="20" />
         <source>Device</source>
-        <translation type="unfinished" />
+        <translation>ਡਿਵਾਈਸ</translation>
     </message>
     <message>
         <location filename="../src/ui/dialogs/settings/options_device/lc_deviceoptions.ui" line="26" />
@@ -4921,7 +4924,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dialogs/settings/options_device/lc_deviceoptions.ui" line="56" />
         <source>Save</source>
-        <translation type="unfinished" />
+        <translation>ਸੰਭਾਲੋ</translation>
     </message>
 </context>
 <context>
@@ -7449,6 +7452,11 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
+        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="26" />
+        <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="39" />
         <source>Silently update existing view with same name by created one</source>
         <translation type="unfinished" />
@@ -7459,18 +7467,8 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="58" />
-        <source>Toolip with view details for table items</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="68" />
         <source>UCS Details column</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="75" />
-        <source>If checked, type of grid for saved view will be shown</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -7484,8 +7482,18 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
+        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="58" />
+        <source>Tooltip with view details for table items</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="65" />
-        <source>If checked, the column with details of view's coordinate system will be show</source>
+        <source>If checked, the column with details of view's coordinate system will be show.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="75" />
+        <source>If checked, type of grid for saved view will be shown.</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -7525,7 +7533,7 @@ Are you sure you are going to discard changes?</source>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="144" />
-        <source>Defines which action should be performed on double click on view item of the table. </source>
+        <source>Defines which action should be performed on double click on view item of the table.</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -7566,11 +7574,6 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="36" />
         <source>If checked and during creation the view with entered name already exists, it will be updated by new position. Otherwise, unique name of new view will be required.</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="26" />
-        <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently. </source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -7951,18 +7954,8 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="29" />
-        <source>Toolip with UCS details for table items</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="39" />
         <source>Type icon column</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="46" />
-        <source>If checked, column with details of UCS origin and angle will be shown in the table</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -7981,8 +7974,28 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="29" />
+        <source>Tooltip with UCS details for table items</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="36" />
+        <source>If checked, the column with icon for type of UCS will be shown in the table.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="46" />
+        <source>If checked, column with details of UCS origin and angle will be shown in the table.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="56" />
+        <source>If checked, the column with type of grid for UCS will be shown.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="85" />
-        <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently. </source>
+        <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently.</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -8006,6 +8019,11 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="114" />
+        <source>Defines how drawing's view window should be adjusted after UCS is applied.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="118" />
         <source>Zoom Auto</source>
         <translation type="unfinished" />
@@ -8026,8 +8044,13 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="153" />
-        <source>Defines which action should be performed on double click on the item of the table. </source>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="196" />
+        <source>Defines delay between UCS marker blinks.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="232" />
+        <source>Defines amount of blinks of UCS marker for UCS highlighting.</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -8036,23 +8059,13 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="36" />
-        <source>If checked, the column with icon for type of UCS will be shown in the table. </source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="56" />
-        <source>If checked, the column with type of grid for UCS will be shown</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="114" />
-        <source>Defines how drawing's view window should be adjusted after UCS is applied</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="146" />
         <source>On double-click on table item</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="153" />
+        <source>Defines which action should be performed on double click on the item of the table.</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -8086,11 +8099,6 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="196" />
-        <source>Defines delay between UCS marker blinks</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="199" />
         <source> ms</source>
         <translation type="unfinished" />
@@ -8103,11 +8111,6 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="225" />
         <source>Blink Delay:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="232" />
-        <source>Defines amount of blinks of UCS marker for UCS highlighting</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -8512,7 +8515,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation>ਫਾਰਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="122" />
@@ -8532,7 +8535,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="157" />
         <source>Pen:</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਨ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="171" />
@@ -8542,7 +8545,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="174" />
         <source>In Place</source>
-        <translation type="unfinished" />
+        <translation>ਥਾਂ ਤੇ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="181" />
@@ -8552,7 +8555,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="164" />
         <source>Layer:</source>
-        <translation type="unfinished">ਪਰਤ:</translation>
+        <translation>ਲੇਅਰ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="69" />
@@ -8597,12 +8600,12 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="150" />
         <source>Offset Y:</source>
-        <translation type="unfinished" />
+        <translation>Y ਆਫਸੈੱਟ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="62" />
         <source>Offset X:</source>
-        <translation type="unfinished" />
+        <translation>X ਆਫਸੈੱਟ:</translation>
     </message>
 </context>
 <context>
@@ -9297,7 +9300,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="20" />
         <source>Layer Settings</source>
-        <translation type="unfinished">ਪਰਤ ਵਿਵਸਥਾ</translation>
+        <translation>ਲੇਅਰ ਸੈਟਿੰਗਾਂ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="48" />
@@ -9307,12 +9310,12 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="64" />
         <source>Parent Layers Path:</source>
-        <translation type="unfinished" />
+        <translation>ਮਾਤਾ ਲੇਅਰਾਂ ਦਾ ਪਾਥ:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="81" />
         <source>Layer Type</source>
-        <translation type="unfinished" />
+        <translation>ਲੇਅਰ ਟਾਈਪ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="93" />
@@ -9322,7 +9325,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="96" />
         <source>Informational</source>
-        <translation type="unfinished" />
+        <translation>ਜਾਣਕਾਰੀ ਵਾਲਾ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="106" />
@@ -9332,7 +9335,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="109" />
         <source>Normal</source>
-        <translation type="unfinished" />
+        <translation>ਸਧਾਰਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="119" />
@@ -9342,7 +9345,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="122" />
         <source>Dimensions</source>
-        <translation type="unfinished">ਮਾਪ</translation>
+        <translation>ਡਾਇਮੈਂਸ਼ਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="132" />
@@ -9352,18 +9355,19 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="135" />
         <source>Alternative Position</source>
-        <translation type="unfinished" />
+        <translation>ਵਿਕਲਪਿਕ ਸਥਿਤੀ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="148" />
         <source>A Construction Layer has entities of infinite straight lines intended to be used for geometric construction.
        The contents of a Construction Layer should not appear in printout.</source>
-        <translation type="unfinished" />
+        <translation>ਇੱਕ ਕੰਸਟ੍ਰਕਸ਼ਨ ਲੇਅਰ ਵਿੱਚ ਅਨੰਤ ਸਿੱਧੀਆਂ ਲਾਈਨਾਂ ਵਾਲੀਆਂ ਐਂਟੀਟੀਆਂ ਹਨ ਜੋ ਜਿਓਮੈਟ੍ਰਿਕ ਬਣਾਉਣ ਲਈ ਵਰਤੀਆਂ ਜਾਂਦੀਆਂ ਹਨ।
+       ਕੰਸਟ੍ਰਕਸ਼ਨ ਲੇਅਰ ਦੀ ਸਮੱਗਰੀ ਉਸ ਉੱਪਰ ਛਾਪਣ ਵਿੱਚ ਨਹੀਂ ਦਿਖਾਈ ਦੇਣੀ ਚਾਹੀਦੀ।</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="152" />
         <source>Construction Layer</source>
-        <translation type="unfinished" />
+        <translation>ਕੰਸਟ੍ਰਕਸ਼ਨ ਲੇਅਰ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="181" />
@@ -9373,39 +9377,39 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="197" />
         <source>Layer Name:</source>
-        <translation type="unfinished">ਪਰਤ ਨਾਂ:</translation>
+        <translation>ਲੇਅਰ ਦਾ ਨਾਮ:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="61" />
         <source>Rename Virtual Layer</source>
-        <translation type="unfinished" />
+        <translation>ਵਰਚੁਅਲ ਲੇਅਰ ਨਾਮ ਬਦਲੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="65" />
         <source>Add Secondary Layer</source>
-        <translation type="unfinished" />
+        <translation>ਸੈਕੰਡਰੀ ਲੇਅਰ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="71" />
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="78" />
         <source>Add Layer</source>
-        <translation type="unfinished" />
+        <translation>ਲੇਅਰ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="84" />
         <source>Edit Layer</source>
-        <translation type="unfinished" />
+        <translation>ਲੇਅਰ ਸੰਪਾਦਿਤ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="176" />
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="214" />
         <source>Default Pen</source>
-        <translation type="unfinished">ਮੂਲ ਪੈਨ</translation>
+        <translation>ਡਿਫੌਲਟ ਪੈਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="193" />
         <source>Rename Layer</source>
-        <translation type="unfinished" />
+        <translation>ਲੇਅਰ ਨਾਮ ਬਦਲੋ</translation>
     </message>
 </context>
 <context>
@@ -9466,7 +9470,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="20" />
         <source>Layers Tree Options</source>
-        <translation type="unfinished" />
+        <translation>ਲੇਅਰ ਟ੍ਰੀ ਆਪਸ਼ਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="36" />
@@ -9476,7 +9480,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="39" />
         <source>Naming Convention</source>
-        <translation type="unfinished" />
+        <translation>ਨਾਮਕਰਣ ਰੀਤੀ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="64" />
@@ -9486,17 +9490,17 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="77" />
         <source>Layer Level Name Separator</source>
-        <translation type="unfinished" />
+        <translation>ਲੇਅਰ ਲੈਵਲ ਨਾਮ ਵਿਭਾਜਕ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="97" />
         <source>Secondary Layer Suffixes</source>
-        <translation type="unfinished" />
+        <translation>ਸੈਕੰਡਰੀ ਲੇਅਰ ਸਫਿਕਸ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="103" />
         <source>Dimensional</source>
-        <translation type="unfinished" />
+        <translation>ਡਾਇਮੈਂਸ਼ਨਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="116" />
@@ -9506,7 +9510,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="126" />
         <source>Informational</source>
-        <translation type="unfinished" />
+        <translation>ਜਾਣਕਾਰੀ ਵਾਲਾ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="139" />
@@ -9516,7 +9520,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="149" />
         <source>Alternative Position </source>
-        <translation type="unfinished" />
+        <translation>ਵਿਕਲਪਿਕ ਸਥਿਤੀ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="162" />
@@ -9526,12 +9530,12 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="175" />
         <source>Duplicating Name</source>
-        <translation type="unfinished" />
+        <translation>ਨਾਮ ਡੁਪਲੀਕੇਟ ਕਰਨਾ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="181" />
         <source>Prefix</source>
-        <translation type="unfinished" />
+        <translation>ਪ੍ਰੀਫਿਕਸ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="194" />
@@ -9541,7 +9545,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="204" />
         <source>Suffix</source>
-        <translation type="unfinished" />
+        <translation>ਸਫਿਕਸ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="217" />
@@ -9556,7 +9560,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="234" />
         <source>Display and Operations</source>
-        <translation type="unfinished" />
+        <translation>ਡਿਸਪਲੇਅ ਅਤੇ ਆਪਰੇਸ਼ਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="240" />
@@ -9566,7 +9570,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="243" />
         <source>Show full name as ToolTip</source>
-        <translation type="unfinished" />
+        <translation>ਪੂਰਾ ਨਾਮ ਟੂਲਟਿੱਪ ਵਜੋਂ ਵਿਖਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="250" />
@@ -9576,7 +9580,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="253" />
         <source>Show layer type icons</source>
-        <translation type="unfinished" />
+        <translation>ਲੇਅਰ ਟਾਈਪ ਆਈਕਾਨ ਵਿਖਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="266" />
@@ -9586,7 +9590,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="269" />
         <source>Show indented layer names. Ident size:</source>
-        <translation type="unfinished" />
+        <translation>ਇੰਡੈਂਟਡ ਲੇਅਰ ਨਾਮ ਵਿਖਾਓ। ਇੰਡੈਂਟ ਸਾਈਜ਼:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="276" />
@@ -9601,7 +9605,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="308" />
         <source>Allow restructuring via Drag&amp;Drop</source>
-        <translation type="unfinished" />
+        <translation>ਡ੍ਰੈਗ&amp;ਡ੍ਰੌਪ ਰਾਹੀਂ ਪੁਨਰਸੰਰਚਨਾ ਦੀ ਇਜਾਜ਼ਤ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="315" />
@@ -9611,7 +9615,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="318" />
         <source>Rename secondary layers on primary rename</source>
-        <translation type="unfinished" />
+        <translation>ਪ੍ਰਾਈਮਰੀ ਨਾਮ ਬਦਲਣ ਤੇ ਸੈਕੰਡਰੀ ਲੇਅਰਾਂ ਦਾ ਨਾਮ ਬਦਲੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="326" />
@@ -9621,7 +9625,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="329" />
         <source>Colors</source>
-        <translation type="unfinished" />
+        <translation>ਰੰਗ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="335" />
@@ -9650,7 +9654,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="444" />
         <source>Matched item in highlight filter mode</source>
-        <translation type="unfinished" />
+        <translation>ਹਾਈਲਾਈਟ ਫਿਲਟਰ ਮੋਡ ਵਿੱਚ ਮਿਲਦਾ ਆਈਟਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="464" />
@@ -9660,22 +9664,22 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="479" />
         <source>#1E90FF</source>
-        <translation type="unfinished" />
+        <translation>#1E90FF</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="507" />
         <source>Virtual layer background color</source>
-        <translation type="unfinished" />
+        <translation>ਵਰਚੁਅਲ ਲੇਅਰ ਬੈਕਗ੍ਰਾਊਂਡ ਰੰਗ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="534" />
         <source>Threeview items separator grid</source>
-        <translation type="unfinished" />
+        <translation>ਥ੍ਰੀਵਿਊ ਆਈਟਮਾਂ ਵਿਭਾਜਕ ਗ੍ਰਿਡ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="544" />
         <source>Selected items background color</source>
-        <translation type="unfinished" />
+        <translation>ਚੁਣੀਆਂ ਆਈਟਮਾਂ ਦਾ ਬੈਕਗ੍ਰਾਊਂਡ ਰੰਗ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="579" />
@@ -9685,7 +9689,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="582" />
         <source>Active layer background color</source>
-        <translation type="unfinished" />
+        <translation>ਐਕਟਿਵ ਲੇਅਰ ਬੈਕਗ੍ਰਾਊਂਡ ਰੰਗ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="603" />
@@ -9695,27 +9699,27 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="606" />
         <source>Default Pens</source>
-        <translation type="unfinished" />
+        <translation>ਡਿਫੌਲਟ ਪੈਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.cpp" line="70" />
         <source>Normal Layer</source>
-        <translation type="unfinished" />
+        <translation>ਨੌਰਮਲ ਲੇਅਰ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.cpp" line="71" />
         <source>Dimensional Layer</source>
-        <translation type="unfinished" />
+        <translation>ਡਾਇਮੈਂਸ਼ਨਲ ਲੇਅਰ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.cpp" line="72" />
         <source>Informational Layer</source>
-        <translation type="unfinished" />
+        <translation>ਜਾਣਕਾਰੀ ਵਾਲੀ ਲੇਅਰ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.cpp" line="73" />
         <source>Alternative Position Layer</source>
-        <translation type="unfinished" />
+        <translation>ਵਿਕਲਪਿਕ ਸਥਿਤੀ ਲੇਅਰ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.cpp" line="103" />
@@ -9756,7 +9760,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.cpp" line="231" />
         <source>Select Color</source>
-        <translation type="unfinished" />
+        <translation>ਰੰਗ ਚੁਣੋ</translation>
     </message>
 </context>
 <context>
@@ -9764,240 +9768,240 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="146" />
         <source>Filter</source>
-        <translation type="unfinished" />
+        <translation>ਫਿਲਟਰ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="148" />
         <source>Looking for matching layer names</source>
-        <translation type="unfinished" />
+        <translation>ਮਿਲਦੇ ਲੇਅਰ ਨਾਮ ਲੱਭ ਰਿਹਾ ਹੈ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="153" />
         <source>Highlight Mode</source>
-        <translation type="unfinished" />
+        <translation>ਹਾਈਲਾਈਟ ਮੋਡ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="163" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation>ਸੈਟਿੰਗਾਂ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="182" />
         <source>Show all layers</source>
-        <translation type="unfinished">ਸਭ ਪਰਤਾਂ ਵੇਖਾਓ</translation>
+        <translation>ਸਾਰੀਆਂ ਲੇਅਰਾਂ ਵਿਖਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="189" />
         <source>Hide all layers</source>
-        <translation type="unfinished">ਸਭ ਪਰਤਾਂ ਓਹਲੇ</translation>
+        <translation>ਸਾਰੀਆਂ ਲੇਅਰਾਂ ਲੁਕਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="196" />
         <source>Show Secondary Layers</source>
-        <translation type="unfinished" />
+        <translation>ਸੈਕੰਡਰੀ ਲੇਅਰਾਂ ਵਿਖਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="206" />
         <source>Show Active Layer Only</source>
-        <translation type="unfinished" />
+        <translation>ਸਿਰਫ ਐਕਟਿਵ ਲੇਅਰ ਵਿਖਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="214" />
         <source>Expand All</source>
-        <translation type="unfinished" />
+        <translation>ਸਭ ਫੈਲਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="222" />
         <source>Collapse All</source>
-        <translation type="unfinished" />
+        <translation>ਸਭ ਸਮੇਟੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="230" />
         <source>Collapse Secondary</source>
-        <translation type="unfinished" />
+        <translation>ਸੈਕੰਡਰੀ ਸਮੇਟੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="238" />
         <source>Unlock all layers</source>
-        <translation type="unfinished" />
+        <translation>ਸਾਰੀਆਂ ਲੇਅਰਾਂ ਅਨਲਾਕ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="245" />
         <source>Lock all layers</source>
-        <translation type="unfinished" />
+        <translation>ਸਾਰੀਆਂ ਲੇਅਰਾਂ ਲਾਕ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="252" />
         <source>Add a layer</source>
-        <translation type="unfinished">ਇੱਕ ਪਰਤ ਸ਼ਾਮਿਲ</translation>
+        <translation>ਇੱਕ ਲੇਅਰ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="259" />
         <source>Add dimensions Layer</source>
-        <translation type="unfinished" />
+        <translation>ਡਾਇਮੈਂਸ਼ਨ ਲੇਅਰ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="268" />
         <source>Remove layer</source>
-        <translation type="unfinished" />
+        <translation>ਲੇਅਰ ਹਟਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="275" />
         <source>Modify layer attributes / rename</source>
-        <translation type="unfinished">ਪਰਤ ਗੁਣ ਸੋਧ / ਨਾਂ-ਤਬਦੀਲ</translation>
+        <translation>ਲੇਅਰ ਐਟ੍ਰੀਬਿਊਟ ਬਦਲੋ / ਨਾਮ ਬਦਲੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="282" />
         <source>Flat List Mode)</source>
-        <translation type="unfinished" />
+        <translation>ਫਲੈਟ ਲਿਸਟ ਮੋਡ)</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="651" />
         <source>&amp;Add Child Layer</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਚਾਈਲਡ ਲੇਅਰ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="652" />
         <source>&amp;Rename</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਨਾਮ ਬਦਲੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="653" />
         <source>&amp;Remove Layers (Sub-Tree)</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਲੇਅਰਾਂ ਹਟਾਓ (ਸਬ-ਟ੍ਰੀ)</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="655" />
         <source>&amp;Copy Structure (Sub-Tree)</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਸਟ੍ਰਕਚਰ ਕਾਪੀ ਕਰੋ (ਸਬ-ਟ੍ਰੀ)</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="656" />
         <source>&amp;Duplicate Content (Sub-Tree)</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਸਮੱਗਰੀ ਡੁਪਲੀਕੇਟ ਕਰੋ (ਸਬ-ਟ੍ਰੀ)</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="658" />
         <source>&amp;Select Entities (Sub-Tree)</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਐਂਟੀਟੀ ਚੁਣੋ (ਸਬ-ਟ੍ਰੀ)</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="663" />
         <source>&amp;Edit Layer &amp;Attributes</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਲੇਅਰ &amp;ਐਟ੍ਰੀਬਿਊਟ ਸੰਪਾਦਿਤ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="665" />
         <source>&amp;Remove Layer</source>
-        <translation type="unfinished">ਬਲਾਕ ਹਟਾਓ(&amp;R)</translation>
+        <translation>&amp;ਲੇਅਰ ਹਟਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="674" />
         <source>&amp;Add Dimensions Sub-Layer</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਡਾਇਮੈਂਸ਼ਨ ਸਬ-ਲੇਅਰ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="678" />
         <source>&amp;Add Info Sub-Layer</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਇਨਫੋ ਸਬ-ਲੇਅਰ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="682" />
         <source>&amp;Add Alternative View Sub-Layer</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਵਿਕਲਪਿਕ ਵਿਊ ਸਬ-ਲੇਅਰ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="688" />
         <source>&amp;Remove Sub-layers</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਸਬ-ਲੇਅਰ ਹਟਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="696" />
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="706" />
         <source>Convert to Dimensional Layer</source>
-        <translation type="unfinished" />
+        <translation>ਡਾਇਮੈਂਸ਼ਨਲ ਲੇਅਰ ਵਿੱਚ ਬਦਲੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="697" />
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="709" />
         <source>Convert to Info Layer</source>
-        <translation type="unfinished" />
+        <translation>ਇਨਫੋ ਲੇਅਰ ਵਿੱਚ ਬਦਲੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="698" />
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="712" />
         <source>Convert to Alternative Position Layer</source>
-        <translation type="unfinished" />
+        <translation>ਵਿਕਲਪਿਕ ਸਥਿਤੀ ਲੇਅਰ ਵਿੱਚ ਬਦਲੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="704" />
         <source>Convert to Normal Layer</source>
-        <translation type="unfinished" />
+        <translation>ਨੌਰਮਲ ਲੇਅਰ ਵਿੱਚ ਬਦਲੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="718" />
         <source>&amp;Select Layer's Entities</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਲੇਅਰ ਦੀਆਂ ਐਂਟੀਟੀਆਂ ਚੁਣੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="721" />
         <source>&amp;Create Layer Copy</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਲੇਅਰ ਕਾਪੀ ਬਣਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="722" />
         <source>&amp;Duplicate Layer With Content</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਸਮੱਗਰੀ ਨਾਲ ਲੇਅਰ ਡੁਪਲੀਕੇਟ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="726" />
         <source>Move Selection to Layer</source>
-        <translation type="unfinished" />
+        <translation>ਚੋਣ ਨੂੰ ਲੇਅਰ ਵਿੱਚ ਭੇਜੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="727" />
         <source>Duplicate Selection to Layer</source>
-        <translation type="unfinished" />
+        <translation>ਚੋਣ ਨੂੰ ਲੇਅਰ ਵਿੱਚ ਡੁਪਲੀਕੇਟ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="734" />
         <source>&amp;Add Layer</source>
-        <translation type="unfinished">ਪਰਤ ਸ਼ਾਮਿਲ(&amp;A)</translation>
+        <translation>&amp;ਲੇਅਰ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="736" />
         <source>&amp;Freeze Others Layers</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਹੋਰ ਲੇਅਰਾਂ ਫ੍ਰੀਜ਼ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="737" />
         <source>&amp;Defreeze All Layers</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਸਭ ਲੇਅਰਾਂ ਡੀਫ੍ਰੀਜ਼ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="738" />
         <source>&amp;Freeze All Layers</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਸਭ ਲੇਅਰਾਂ ਫ੍ਰੀਜ਼ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="739" />
         <source>&amp;Unlock All Layers</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਸਭ ਲੇਅਰਾਂ ਅਨਲਾਕ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="740" />
         <source>&amp;Lock All Layers</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਸਭ ਲੇਅਰਾਂ ਲਾਕ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="741" />
         <source>Enable &amp;Printing All Layers</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਸਭ ਲੇਅਰਾਂ ਲਈ ਪ੍ਰਿੰਟਿੰਗ ਸਮਰੱਥ ਬਣਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="742" />
         <source>&amp;Disable Printing All Layers</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਸਭ ਲੇਅਰਾਂ ਲਈ ਪ੍ਰਿੰਟਿੰਗ ਅਸਮਰੱਥ ਬਣਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="745" />
@@ -10017,7 +10021,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="755" />
         <source>&amp;Find And Remove Empty Layers</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਖਾਲੀ ਲੇਅਰਾਂ ਲੱਭੋ ਅਤੇ ਹਟਾਓ</translation>
     </message>
 </context>
 <context>
@@ -10025,7 +10029,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation>ਫਾਰਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="163" />
@@ -10035,7 +10039,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="166" />
         <source>Free</source>
-        <translation type="unfinished" />
+        <translation>ਫ੍ਰੀ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="212" />
@@ -10070,12 +10074,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="125" />
         <source>Divide</source>
-        <translation type="unfinished">ਭਾਗ</translation>
+        <translation>ਵੰਡੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="132" />
         <source>Offset:</source>
-        <translation type="unfinished" />
+        <translation>ਆਫਸੈੱਟ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="50" />
@@ -10091,29 +10095,29 @@ Please specify a different value.</source>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="66" />
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="276" />
         <source>Start</source>
-        <translation type="unfinished">ਸ਼ੁਰੂ</translation>
+        <translation>ਸ਼ੁਰੂ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="71" />
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="281" />
         <source>Middle</source>
-        <translation type="unfinished">ਮੱਧ</translation>
+        <translation>ਮੱਧ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="76" />
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="286" />
         <source>End</source>
-        <translation type="unfinished">ਅੰਤ</translation>
+        <translation>ਅੰਤ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="226" />
         <source>Tick Snap:</source>
-        <translation type="unfinished" />
+        <translation>ਟਿਕ ਸਨੈਪ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="156" />
         <source>Line Snap:</source>
-        <translation type="unfinished" />
+        <translation>ਲਾਈਨ ਸਨੈਪ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="205" />
@@ -10128,12 +10132,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="149" />
         <source>Rel</source>
-        <translation type="unfinished" />
+        <translation>ਰਿਲੇਟਿਵ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="139" />
         <source>Length:</source>
-        <translation type="unfinished">ਲੰਬਾਈ:</translation>
+        <translation>ਲੰਬਾਈ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="57" />
@@ -10149,12 +10153,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="294" />
         <source>Angle:</source>
-        <translation type="unfinished">ਕੋਣ:</translation>
+        <translation>ਕੋਣ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="180" />
         <source>Snap Distance:</source>
-        <translation type="unfinished" />
+        <translation>ਸਨੈਪ ਦੂਰੀ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="102" />
@@ -10167,22 +10171,22 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation>ਫਾਰਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="335" />
         <source>Angle:</source>
-        <translation type="unfinished">ਕੋਣ:</translation>
+        <translation>ਕੋਣ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="342" />
         <source>Size:</source>
-        <translation type="unfinished" />
+        <translation>ਸਾਈਜ਼:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="266" />
         <source>End offset:</source>
-        <translation type="unfinished" />
+        <translation>ਅੰਤ ਆਫਸੈੱਟ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="259" />
@@ -10202,22 +10206,22 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="124" />
         <source>Start</source>
-        <translation type="unfinished">ਸ਼ੁਰੂ</translation>
+        <translation>ਸ਼ੁਰੂ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="129" />
         <source>Middle</source>
-        <translation type="unfinished">ਮੱਧ</translation>
+        <translation>ਮੱਧ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="134" />
         <source>End</source>
-        <translation type="unfinished">ਅੰਤ</translation>
+        <translation>ਅੰਤ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="171" />
         <source>Length:</source>
-        <translation type="unfinished">ਲੰਬਾਈ:</translation>
+        <translation>ਲੰਬਾਈ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="196" />
@@ -10227,7 +10231,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="142" />
         <source>Snap:</source>
-        <translation type="unfinished" />
+        <translation>ਸਨੈਪ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="203" />
@@ -10247,12 +10251,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="322" />
         <source>To Intersection</source>
-        <translation type="unfinished" />
+        <translation>ਕਟਾਉਂਦੇ ਤੱਕ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="327" />
         <source>Fixed Length</source>
-        <translation type="unfinished" />
+        <translation>ਫਿਕਸਡ ਲੰਬਾਈ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="65" />
@@ -10262,7 +10266,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="68" />
         <source>Orthogonal</source>
-        <translation type="unfinished">ਲੰਬਕਾਰੀ ਕਾਂਟ</translation>
+        <translation>ਆਰਥੋਗੋਨਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="44" />
@@ -10275,7 +10279,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="20" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation>ਫਾਰਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="38" />
@@ -10285,7 +10289,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="41" />
         <source>Create Polyline</source>
-        <translation type="unfinished" />
+        <translation>ਪੌਲੀਲਾਈਨ ਬਣਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="66" />
@@ -10296,29 +10300,29 @@ Please specify a different value.</source>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="70" />
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="124" />
         <source>Extend/Trim</source>
-        <translation type="unfinished" />
+        <translation>ਐਕਸਟੈਂਡ/ਟ੍ਰਿਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="75" />
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="129" />
         <source>Add segment</source>
-        <translation type="unfinished" />
+        <translation>ਸੈਗਮੈਂਟ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="80" />
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="134" />
         <source>No change</source>
-        <translation type="unfinished" />
+        <translation>ਕੋਈ ਤਬਦੀਲੀ ਨਹੀਂ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="88" />
         <source>Line 1:</source>
-        <translation type="unfinished" />
+        <translation>ਲਾਈਨ 1:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="95" />
         <source>Line 2:</source>
-        <translation type="unfinished" />
+        <translation>ਲਾਈਨ 2:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="120" />
@@ -10333,27 +10337,27 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="164" />
         <source>Active Pen</source>
-        <translation type="unfinished" />
+        <translation>ਐਕਟਿਵ ਪੈਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="169" />
         <source>Line 1</source>
-        <translation type="unfinished" />
+        <translation>ਲਾਈਨ 1</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="174" />
         <source>Line 2</source>
-        <translation type="unfinished" />
+        <translation>ਲਾਈਨ 2</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="179" />
         <source>Both lines</source>
-        <translation type="unfinished" />
+        <translation>ਦੋਵੇਂ ਲਾਈਨਾਂ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="187" />
         <source>Attributes:</source>
-        <translation type="unfinished" />
+        <translation>ਐਟ੍ਰੀਬਿਊਟ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="207" />
@@ -10363,7 +10367,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="210" />
         <source>Remove originals</source>
-        <translation type="unfinished" />
+        <translation>ਅਸਲੀ ਹਟਾਓ</translation>
     </message>
 </context>
 <context>
@@ -10371,7 +10375,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="20" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation>ਫਾਰਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="67" />
@@ -10381,22 +10385,22 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="71" />
         <source>None</source>
-        <translation type="unfinished">ਕੋਈ ਨਹੀਂ</translation>
+        <translation>ਕੋਈ ਨਹੀਂ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="76" />
         <source>Both</source>
-        <translation type="unfinished" />
+        <translation>ਦੋਵੇਂ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="81" />
         <source>Start</source>
-        <translation type="unfinished">ਸ਼ੁਰੂ</translation>
+        <translation>ਸ਼ੁਰੂ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="86" />
         <source>End</source>
-        <translation type="unfinished">ਅੰਤ</translation>
+        <translation>ਅੰਤ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="153" />
@@ -10411,7 +10415,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="257" />
         <source>Edge Points:</source>
-        <translation type="unfinished" />
+        <translation>ਐਜ ਬਿੰਦੂ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="264" />
@@ -10426,7 +10430,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="118" />
         <source>Fit Line</source>
-        <translation type="unfinished" />
+        <translation>ਫਿੱਟ ਲਾਈਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="143" />
@@ -10441,12 +10445,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="41" />
         <source>Angle:</source>
-        <translation type="unfinished">ਕੋਣ:</translation>
+        <translation>ਕੋਣ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="212" />
         <source>Number of points:</source>
-        <translation type="unfinished" />
+        <translation>ਬਿੰਦੂਆਂ ਦੀ ਗਿਣਤੀ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="176" />
@@ -10456,7 +10460,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="179" />
         <source>Fixed Distance</source>
-        <translation type="unfinished" />
+        <translation>ਫਿਕਸਡ ਦੂਰੀ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="250" />
@@ -11269,7 +11273,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifybreakdivideoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation>ਫਾਰਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifybreakdivideoptions.ui" line="45" />
@@ -11279,7 +11283,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifybreakdivideoptions.ui" line="48" />
         <source>Remove Segments</source>
-        <translation type="unfinished" />
+        <translation>ਸੈਗਮੈਂਟ ਹਟਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifybreakdivideoptions.ui" line="55" />
@@ -11289,7 +11293,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifybreakdivideoptions.ui" line="58" />
         <source>Remove Selected</source>
-        <translation type="unfinished" />
+        <translation>ਚੁਣਿਆ ਹਟਾਓ</translation>
     </message>
 </context>
 <context>
@@ -11297,12 +11301,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation>ਫਾਰਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="184" />
         <source>Snap Distance:</source>
-        <translation type="unfinished" />
+        <translation>ਸਨੈਪ ਦੂਰੀ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="32" />
@@ -11312,12 +11316,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="95" />
         <source>Line Snap:</source>
-        <translation type="unfinished" />
+        <translation>ਲਾਈਨ ਸਨੈਪ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="54" />
         <source>Gap Size:</source>
-        <translation type="unfinished" />
+        <translation>ਗੈਪ ਆਕਾਰ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="68" />
@@ -11327,12 +11331,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="158" />
         <source>Free</source>
-        <translation type="unfinished" />
+        <translation>ਫ੍ਰੀ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="61" />
         <source>Gap Snap:</source>
-        <translation type="unfinished" />
+        <translation>ਗੈਪ ਸਨੈਪ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="36" />
@@ -12601,47 +12605,47 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="20" />
         <source>Pen Palette Settings</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਨ ਪੈਲੈਟ ਸੈਟਿੰਗਾਂ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="208" />
         <source>Columns to display</source>
-        <translation type="unfinished" />
+        <translation>ਦਿਖਾਉਣ ਲਈ ਕਾਲਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="214" />
         <source>Line Type Name</source>
-        <translation type="unfinished" />
+        <translation>ਲਾਈਨ ਟਾਈਪ ਨਾਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="221" />
         <source>Color Name</source>
-        <translation type="unfinished" />
+        <translation>ਰੰਗ ਨਾਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="228" />
         <source>Line Type Icon</source>
-        <translation type="unfinished" />
+        <translation>ਲਾਈਨ ਟਾਈਪ ਆਈਕਾਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="235" />
         <source>Color Icon</source>
-        <translation type="unfinished" />
+        <translation>ਰੰਗ ਆਈਕਾਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="242" />
         <source>Line Width Icon</source>
-        <translation type="unfinished" />
+        <translation>ਲਾਈਨ ਚੌੜਾਈ ਆਈਕਾਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="249" />
         <source>Line Width Name</source>
-        <translation type="unfinished" />
+        <translation>ਲਾਈਨ ਚੌੜਾਈ ਨਾਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="26" />
         <source>Colors</source>
-        <translation type="unfinished" />
+        <translation>ਰੰਗ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="32" />
@@ -12663,7 +12667,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="79" />
         <source>Active Pen Background:</source>
-        <translation type="unfinished" />
+        <translation>ਐਕਟਿਵ ਪੈਨ ਬੈਕਗ੍ਰਾਊਂਡ:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="100" />
@@ -12673,17 +12677,17 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="103" />
         <source>Entire table row is bold for active pen</source>
-        <translation type="unfinished" />
+        <translation>ਸਾਰੀ ਟੇਬਲ ਰੋ ਐਕਟਿਵ ਪੈਨ ਲਈ ਬੋਲਡ ਹੈ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="110" />
         <source>Grid Color:</source>
-        <translation type="unfinished" />
+        <translation>ਗ੍ਰਿਡ ਰੰਗ:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="117" />
         <source>Matched Item Color:</source>
-        <translation type="unfinished" />
+        <translation>ਮਿਲਦਾ ਆਈਟਮ ਰੰਗ:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="124" />
@@ -12698,22 +12702,22 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="321" />
         <source>Case-insensitive pens filtering</source>
-        <translation type="unfinished" />
+        <translation>ਕੇਸ-ਇਨਸੈਂਸਿਟਿਵ ਪੈਨ ਫਿਲਟਰਿੰਗ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="151" />
         <source>Controls whether tooltip will be shown for table item or not</source>
-        <translation type="unfinished" />
+        <translation>ਕੰਟਰੋਲ ਕਰਦਾ ਹੈ ਕਿ ਟੇਬਲ ਆਈਟਮ ਲਈ ਟੂਲਟਿੱਪ ਵਿਖਾਈ ਜਾਵੇ ਜਾਂ ਨਾ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="154" />
         <source>Show tooltip for table items</source>
-        <translation type="unfinished" />
+        <translation>ਟੇਬਲ ਆਈਟਮਾਂ ਲਈ ਟੂਲਟਿੱਪ ਵਿਖਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="259" />
         <source>Show colorn name as</source>
-        <translation type="unfinished" />
+        <translation>ਰੰਗ ਨਾਮ ਵਿਖਾਓ ਜਿਵੇਂ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="265" />
@@ -12723,7 +12727,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="268" />
         <source>HEX</source>
-        <translation type="unfinished" />
+        <translation>HEX</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="275" />
@@ -12733,7 +12737,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="278" />
         <source>RGB</source>
-        <translation type="unfinished" />
+        <translation>RGB</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="285" />
@@ -12743,7 +12747,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="288" />
         <source>Natural name where possible</source>
-        <translation type="unfinished" />
+        <translation>ਸੰਭਵ ਤੌਰ ਤੇ ਕੁਦਰਤੀ ਨਾਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="298" />
@@ -12753,12 +12757,12 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="301" />
         <source>Show info message if no entities may be selected by pen</source>
-        <translation type="unfinished" />
+        <translation>ਜੇ ਪੈਨ ਨਾਲ ਕੋਈ ਐਂਟੀਟੀ ਚੁਣੀ ਨਾ ਜਾ ਸਕੇ ਤਾਂ ਇਨਫੋ ਮੈਸੇਜ ਵਿਖਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="176" />
         <source>On double click on table item</source>
-        <translation type="unfinished" />
+        <translation>ਟੇਬਲ ਆਈਟਮ ਤੇ ਡਬਲ ਕਲਿੱਕ ਤੇ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="183" />
@@ -12768,17 +12772,17 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.cpp" line="51" />
         <source>Do nothing</source>
-        <translation type="unfinished" />
+        <translation>ਕੁਝ ਨਾ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.cpp" line="52" />
         <source>Select entities by attributes pen</source>
-        <translation type="unfinished" />
+        <translation>ਐਟ੍ਰੀਬਿਊਟ ਪੈਨ ਰਾਹੀਂ ਐਂਟੀਟੀ ਚੁਣੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.cpp" line="53" />
         <source>Select entities by drawing pen</source>
-        <translation type="unfinished" />
+        <translation>ਡ੍ਰਾਇੰਗ ਪੈਨ ਰਾਹੀਂ ਐਂਟੀਟੀ ਚੁਣੋ</translation>
     </message>
 </context>
 <context>
@@ -12786,93 +12790,93 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="20" />
         <source>Pen Palette</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਨ ਪੈਲੈਟ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="46" />
         <source>Fill Pen Editor by Entity Drawing Pen</source>
-        <translation type="unfinished" />
+        <translation>ਐਂਟੀਟੀ ਡ੍ਰਾਇੰਗ ਪੈਨ ਰਾਹੀਂ ਪੈਨ ਐਡੀਟਰ ਭਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="63" />
         <source>Fill Pen Editor by Entity Attributes</source>
-        <translation type="unfinished" />
+        <translation>ਐਂਟੀਟੀ ਐਟ੍ਰੀਬਿਊਟ ਰਾਹੀਂ ਪੈਨ ਐਡੀਟਰ ਭਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="80" />
         <source>Select Entities By Drawing Pen</source>
-        <translation type="unfinished" />
+        <translation>ਡ੍ਰਾਇੰਗ ਪੈਨ ਰਾਹੀਂ ਐਂਟੀਟੀ ਚੁਣੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="97" />
         <source>Select Entities By Pen Attributes</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਨ ਐਟ੍ਰੀਬਿਊਟ ਰਾਹੀਂ ਐਂਟੀਟੀ ਚੁਣੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="117" />
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="120" />
         <source>Save</source>
-        <translation type="unfinished" />
+        <translation>ਸੰਭਾਲੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="134" />
         <source>Apply Pen To Selection</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਨ ਚੋਣ ਉੱਤੇ ਲਾਗੂ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="151" />
         <source>Fill Editor Pen by Current Pen</source>
-        <translation type="unfinished" />
+        <translation>ਮੌਜੂਦਾ ਪੈਨ ਰਾਹੀਂ ਐਡੀਟਰ ਪੈਨ ਭਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="168" />
         <source>Apply Editor Pen As Current Pen</source>
-        <translation type="unfinished" />
+        <translation>ਐਡੀਟਰ ਪੈਨ ਨੂੰ ਮੌਜੂਦਾ ਪੈਨ ਵਜੋਂ ਲਾਗੂ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="171" />
         <source>to current</source>
-        <translation type="unfinished" />
+        <translation>ਮੌਜੂਦਾ ਲਈ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="185" />
         <source>Update Current Pen by Active Layer' Pen</source>
-        <translation type="unfinished" />
+        <translation>ਐਕਟਿਵ ਲੇਅਰ ਦੀ ਪੈਨ ਰਾਹੀਂ ਮੌਜੂਦਾ ਪੈਨ ਅੱਪਡੇਟ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="202" />
         <source>Fill Pen Editor from Active Layer's Pen</source>
-        <translation type="unfinished" />
+        <translation>ਐਕਟਿਵ ਲੇਅਰ ਦੀ ਪੈਨ ਤੋਂ ਪੈਨ ਐਡੀਟਰ ਭਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="205" />
         <source>Pick from Active Layer</source>
-        <translation type="unfinished" />
+        <translation>ਐਕਟਿਵ ਲੇਅਰ ਤੋਂ ਚੁਣੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="219" />
         <source>Apply Editor Pen to Active Layer Pen</source>
-        <translation type="unfinished" />
+        <translation>ਐਡੀਟਰ ਪੈਨ ਨੂੰ ਐਕਟਿਵ ਲੇਅਰ ਪੈਨ ਉੱਤੇ ਲਾਗੂ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="222" />
         <source>Apply To Layer</source>
-        <translation type="unfinished" />
+        <translation>ਲੇਅਰ ਉੱਤੇ ਲਾਗੂ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="236" />
         <source>Remove Selected Pen</source>
-        <translation type="unfinished" />
+        <translation>ਚੁਣੀ ਪੈਨ ਹਟਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="239" />
         <source>Delete Pen</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਨ ਮਿਟਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="336" />
         <source>Type:</source>
-        <translation type="unfinished" />
+        <translation>ਟਾਈਪ:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="343" />
@@ -12882,7 +12886,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="362" />
         <source>Width:</source>
-        <translation type="unfinished">ਚੌੜਾਈ:</translation>
+        <translation>ਚੌੜਾਈ:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="369" />
@@ -12892,7 +12896,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="399" />
         <source>Pen Name:</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਨ ਨਾਮ:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="433" />
@@ -12902,12 +12906,12 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="452" />
         <source>Color:</source>
-        <translation type="unfinished">ਰੰਗ:</translation>
+        <translation>ਰੰਗ:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="484" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation>ਸੈਟਿੰਗਾਂ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="515" />
@@ -12917,7 +12921,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="518" />
         <source>Filter...</source>
-        <translation type="unfinished" />
+        <translation>ਫਿਲਟਰ...</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="547" />
@@ -12927,59 +12931,61 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="550" />
         <source>Highlight Mode</source>
-        <translation type="unfinished" />
+        <translation>ਹਾਈਲਾਈਟ ਮੋਡ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="278" />
         <source>&amp;Apply Pen To Selection</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਪੈਨ ਚੋਣ ਉੱਤੇ ਲਾਗੂ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="279" />
         <source>&amp;Set As Current Pen</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਮੌਜੂਦਾ ਪੈਨ ਵਜੋਂ ਸੈੱਟ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="280" />
         <source>&amp;Apply Pen To Active Layer</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਐਕਟਿਵ ਲੇਅਰ ਉੱਤੇ ਪੈਨ ਲਾਗੂ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="281" />
         <source>&amp;Select Entities With Attributes Pen</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਐਟ੍ਰੀਬਿਊਟ ਪੈਨ ਵਾਲੀਆਂ ਐਂਟੀਟੀ ਚੁਣੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="282" />
         <source>&amp;Select Entities With Drawing Pen</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਡ੍ਰਾਇੰਗ ਪੈਨ ਵਾਲੀਆਂ ਐਂਟੀਟੀ ਚੁਣੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="285" />
         <source>&amp;Edit Pen</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਪੈਨ ਸੰਪਾਦਿਤ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="286" />
         <source>&amp;Remove Pen</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਪੈਨ ਹਟਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="289" />
         <source>&amp;Remove Pens</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਪੈਨ ਹਟਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="404" />
         <source>Pen palette</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਨ ਪੈਲੈਟ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="405" />
         <source>Location of pens file is changed, please restart the application so new pens file will be used.
 
 Please note that if you'll save pen via editor without restart, current pens from palette will be saved in the new file and therefore existing content of it will be overridden.</source>
-        <translation type="unfinished" />
+        <translation>ਪੈਨ ਫਾਈਲ ਦੀ ਥਾਂ ਬਦਲੀ ਗਈ ਹੈ, ਕਿਰਪਾ ਕਰਕੇ ਐਪਲੀਕੇਸ਼ਨ ਰੀਸਟਾਰਟ ਕਰੋ ਤਾਂ ਜੋ ਨਵੀਂ ਪੈਨ ਫਾਈਲ ਵਰਤੀ ਜਾ ਸਕੇ।
+
+ਨੋਟ: ਜੇ ਤੁਸੀਂ ਰੀਸਟਾਰਟ ਤੋਂ ਬਿਨਾਂ ਐਡੀਟਰ ਰਾਹੀਂ ਪੈਨ ਸੰਭਾਲਦੇ ਹੋ ਤਾਂ ਪੈਲੈਟ ਤੋਂ ਮੌਜੂਦਾ ਪੈਨ ਨਵੀਂ ਫਾਈਲ ਵਿੱਚ ਸੰਭਾਲੇ ਜਾਣਗੇ ਅਤੇ ਇਸ ਲਈ ਮੌਜੂਦਾ ਸਮੱਗਰੀ ਓਵਰਰਾਈਟ ਹੋ ਜਾਵੇਗੀ।</translation>
     </message>
 </context>
 <context>
@@ -14335,12 +14341,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation>ਫਾਰਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="381" />
         <source>Edges:</source>
-        <translation type="unfinished" />
+        <translation>ਕਿਨਾਰੇ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="388" />
@@ -14350,7 +14356,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="391" />
         <source>Snap shift</source>
-        <translation type="unfinished" />
+        <translation>ਸਨੈਪ ਸ਼ਿਫਟ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="229" />
@@ -14365,17 +14371,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="199" />
         <source>Both</source>
-        <translation type="unfinished" />
+        <translation>ਦੋਵੇਂ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="204" />
         <source>Vertical</source>
-        <translation type="unfinished">ਲੰਬਕਾਰੀ</translation>
+        <translation>ਵਰਟੀਕਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="209" />
         <source>Horizontal</source>
-        <translation type="unfinished">ਖਿਤਿਜੀ</translation>
+        <translation>ਹਰੀਜ਼ੋਂਟਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="339" />
@@ -14390,17 +14396,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="240" />
         <source>Straight</source>
-        <translation type="unfinished" />
+        <translation>ਸਿੱਧਾ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="245" />
         <source>Round</source>
-        <translation type="unfinished" />
+        <translation>ਗੋਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="250" />
         <source>Bevel</source>
-        <translation type="unfinished" />
+        <translation>ਬੈਵਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="307" />
@@ -14410,7 +14416,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="310" />
         <source>Base Angle:</source>
-        <translation type="unfinished" />
+        <translation>ਬੇਸ ਐਂਗਲ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="258" />
@@ -14420,12 +14426,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="261" />
         <source>Size inner</source>
-        <translation type="unfinished" />
+        <translation>ਅੰਦਰੂਨੀ ਆਕਾਰ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="32" />
         <source>Length Y:</source>
-        <translation type="unfinished" />
+        <translation>ਲੰਬਾਈ Y:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="46" />
@@ -14435,22 +14441,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="49" />
         <source>Polyline</source>
-        <translation type="unfinished" />
+        <translation>ਪੌਲੀਲਾਈਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="419" />
         <source>Snap:</source>
-        <translation type="unfinished" />
+        <translation>ਸਨੈਪ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="412" />
         <source>Height:</source>
-        <translation type="unfinished">ਉਚਾਈ:</translation>
+        <translation>ਉਚਾਈ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="174" />
         <source>Radius:</source>
-        <translation type="unfinished">ਅਰਧ-ਵਿਆਸ:</translation>
+        <translation>ਰੇਡੀਅਸ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="146" />
@@ -14460,7 +14466,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="56" />
         <source>Length X:</source>
-        <translation type="unfinished" />
+        <translation>ਲੰਬਾਈ X:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="75" />
@@ -14480,47 +14486,47 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="86" />
         <source>Top-left</source>
-        <translation type="unfinished" />
+        <translation>ਉੱਪਰ-ਖੱਬਾ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="91" />
         <source>Top</source>
-        <translation type="unfinished" />
+        <translation>ਉੱਪਰ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="96" />
         <source>Top-right</source>
-        <translation type="unfinished" />
+        <translation>ਉੱਪਰ-ਸੱਜਾ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="101" />
         <source>Left</source>
-        <translation type="unfinished">ਖੱਬਾ</translation>
+        <translation>ਖੱਬਾ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="106" />
         <source>Middle</source>
-        <translation type="unfinished">ਮੱਧ</translation>
+        <translation>ਮੱਧ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="111" />
         <source>Right</source>
-        <translation type="unfinished">ਸੱਜਾ</translation>
+        <translation>ਸੱਜਾ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="116" />
         <source>Bottom-left</source>
-        <translation type="unfinished" />
+        <translation>ਹੇਠਾਂ-ਖੱਬਾ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="121" />
         <source>Bottom</source>
-        <translation type="unfinished" />
+        <translation>ਹੇਠਾਂ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="126" />
         <source>Bottom-right</source>
-        <translation type="unfinished" />
+        <translation>ਹੇਠਾਂ-ਸੱਜਾ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="160" />
@@ -14550,12 +14556,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="374" />
         <source>Width:</source>
-        <translation type="unfinished">ਚੌੜਾਈ:</translation>
+        <translation>ਚੌੜਾਈ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="405" />
         <source>Corners:</source>
-        <translation type="unfinished" />
+        <translation>ਕੋਨੇ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="445" />
@@ -14583,7 +14589,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation>ਫਾਰਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="251" />
@@ -14593,17 +14599,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="255" />
         <source>Both</source>
-        <translation type="unfinished" />
+        <translation>ਦੋਵੇਂ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="260" />
         <source>Vertical</source>
-        <translation type="unfinished">ਲੰਬਕਾਰੀ</translation>
+        <translation>ਵਰਟੀਕਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="265" />
         <source>Horizontal</source>
-        <translation type="unfinished">ਖਿਤਿਜੀ</translation>
+        <translation>ਹਰੀਜ਼ੋਂਟਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="32" />
@@ -14614,25 +14620,25 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="36" />
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="201" />
         <source>Corner</source>
-        <translation type="unfinished" />
+        <translation>ਕੋਨਾ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="41" />
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="206" />
         <source>Mid-Vertical</source>
-        <translation type="unfinished" />
+        <translation>ਮੱਧ-ਵਰਟੀਕਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="46" />
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="211" />
         <source>Mid-Horizontal</source>
-        <translation type="unfinished" />
+        <translation>ਮੱਧ-ਹਰੀਜ਼ੋਂਟਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="51" />
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="216" />
         <source>Middle</source>
-        <translation type="unfinished">ਮੱਧ</translation>
+        <translation>ਮੱਧ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="105" />
@@ -14647,7 +14653,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="171" />
         <source>Corners:</source>
-        <translation type="unfinished" />
+        <translation>ਕੋਨੇ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="197" />
@@ -14662,7 +14668,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="354" />
         <source>Edges:</source>
-        <translation type="unfinished" />
+        <translation>ਕਿਨਾਰੇ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="361" />
@@ -14672,7 +14678,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="91" />
         <source>Start Snap:</source>
-        <translation type="unfinished" />
+        <translation>ਸ਼ੁਰੂ ਸਨੈਪ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="190" />
@@ -14687,17 +14693,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="321" />
         <source>Snap shift</source>
-        <translation type="unfinished" />
+        <translation>ਸਨੈਪ ਸ਼ਿਫਟ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="304" />
         <source>Length X:</source>
-        <translation type="unfinished" />
+        <translation>ਲੰਬਾਈ X:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="311" />
         <source>Radius:</source>
-        <translation type="unfinished">ਅਰਧ-ਵਿਆਸ:</translation>
+        <translation>ਰੇਡੀਅਸ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="294" />
@@ -14707,7 +14713,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="297" />
         <source>Base Angle:</source>
-        <translation type="unfinished" />
+        <translation>ਬੇਸ ਐਂਗਲ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="164" />
@@ -14717,7 +14723,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="347" />
         <source>End Snap:</source>
-        <translation type="unfinished" />
+        <translation>ਅੰਤ ਸਨੈਪ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="69" />
@@ -14727,17 +14733,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="73" />
         <source>Straight</source>
-        <translation type="unfinished" />
+        <translation>ਸਿੱਧਾ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="78" />
         <source>Round</source>
-        <translation type="unfinished" />
+        <translation>ਗੋਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="83" />
         <source>Bevel</source>
-        <translation type="unfinished" />
+        <translation>ਬੈਵਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="131" />
@@ -14747,7 +14753,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="231" />
         <source>Length Y:</source>
-        <translation type="unfinished" />
+        <translation>ਲੰਬਾਈ Y:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="59" />
@@ -14757,7 +14763,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="62" />
         <source>Polyline</source>
-        <translation type="unfinished" />
+        <translation>ਪੌਲੀਲਾਈਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="340" />
@@ -14770,7 +14776,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation>ਫਾਰਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="121" />
@@ -14785,7 +14791,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="89" />
         <source>Fixed Inner Angle:</source>
-        <translation type="unfinished" />
+        <translation>ਫਿਕਸਡ ਅੰਦਰੂਨੀ ਕੋਣ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="187" />
@@ -14795,7 +14801,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="322" />
         <source>Length X:</source>
-        <translation type="unfinished" />
+        <translation>ਲੰਬਾਈ X:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="290" />
@@ -14810,22 +14816,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="372" />
         <source>Straight</source>
-        <translation type="unfinished" />
+        <translation>ਸਿੱਧਾ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="377" />
         <source>Round</source>
-        <translation type="unfinished" />
+        <translation>ਗੋਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="382" />
         <source>Bevel</source>
-        <translation type="unfinished" />
+        <translation>ਬੈਵਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="390" />
         <source>Corners:</source>
-        <translation type="unfinished" />
+        <translation>ਕੋਨੇ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="248" />
@@ -14835,12 +14841,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="251" />
         <source>Snap shift</source>
-        <translation type="unfinished" />
+        <translation>ਸਨੈਪ ਸ਼ਿਫਟ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="258" />
         <source>Length Y:</source>
-        <translation type="unfinished" />
+        <translation>ਲੰਬਾਈ Y:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="315" />
@@ -14855,7 +14861,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="265" />
         <source>Radius:</source>
-        <translation type="unfinished">ਅਰਧ-ਵਿਆਸ:</translation>
+        <translation>ਰੇਡੀਅਸ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="32" />
@@ -14865,7 +14871,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="35" />
         <source>Polyline</source>
-        <translation type="unfinished" />
+        <translation>ਪੌਲੀਲਾਈਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="128" />
@@ -14875,7 +14881,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="152" />
         <source>Edges:</source>
-        <translation type="unfinished" />
+        <translation>ਕਿਨਾਰੇ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="354" />
@@ -14900,17 +14906,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="432" />
         <source>Both</source>
-        <translation type="unfinished" />
+        <translation>ਦੋਵੇਂ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="437" />
         <source>Vertical</source>
-        <translation type="unfinished">ਲੰਬਕਾਰੀ</translation>
+        <translation>ਵਰਟੀਕਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="442" />
         <source>Horizontal</source>
-        <translation type="unfinished">ਖਿਤਿਜੀ</translation>
+        <translation>ਹਰੀਜ਼ੋਂਟਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="450" />
@@ -14925,7 +14931,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="162" />
         <source>Fixed Base Angle:</source>
-        <translation type="unfinished" />
+        <translation>ਫਿਕਸਡ ਬੇਸ ਐਂਗਲ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="194" />
@@ -14935,7 +14941,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="197" />
         <source>Quadrangle</source>
-        <translation type="unfinished" />
+        <translation>ਚਤੁਰਭੁਜ</translation>
     </message>
 </context>
 <context>
@@ -15255,12 +15261,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/test/lc_simpletests.cpp" line="34" />
         <source>De&amp;bugging</source>
-        <translation type="unfinished">ਡੀਬੱਗਿੰਗ(&amp;b)</translation>
+        <translation>ਡੀ&amp;ਬੱਗਿੰਗ</translation>
     </message>
     <message>
         <location filename="../src/test/lc_simpletests.cpp" line="78" />
         <source>Insert Image</source>
-        <translation type="unfinished" />
+        <translation>ਚਿੱਤਰ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
 </context>
 <context>
@@ -15268,12 +15274,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation>ਫਾਰਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="382" />
         <source>Start Circle Angle:</source>
-        <translation type="unfinished" />
+        <translation>ਸ਼ੁਰੂਆਤੀ ਸਰਕਲ ਕੋਣ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="375" />
@@ -15283,7 +15289,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="189" />
         <source>Offset:</source>
-        <translation type="unfinished" />
+        <translation>ਆਫਸੈੱਟ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="284" />
@@ -15293,7 +15299,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="196" />
         <source>Angle:</source>
-        <translation type="unfinished">ਕੋਣ:</translation>
+        <translation>ਕੋਣ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="66" />
@@ -15303,7 +15309,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="86" />
         <source>Distance:</source>
-        <translation type="unfinished">ਦੂਰੀ:</translation>
+        <translation>ਦੂਰੀ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="111" />
@@ -15318,7 +15324,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="182" />
         <source>Divide</source>
-        <translation type="unfinished">ਭਾਗ</translation>
+        <translation>ਵੰਡੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="203" />
@@ -15338,7 +15344,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="291" />
         <source>Tick snap:</source>
-        <translation type="unfinished" />
+        <translation>ਟਿਕ ਸਨੈਪ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="322" />
@@ -15363,12 +15369,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="315" />
         <source>Rel</source>
-        <translation type="unfinished" />
+        <translation>ਰਿਲੇਟਿਵ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="298" />
         <source>Tick Length:</source>
-        <translation type="unfinished" />
+        <translation>ਟਿਕ ਲੰਬਾਈ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="250" />
@@ -15379,18 +15385,18 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="156" />
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="254" />
         <source>Start</source>
-        <translation type="unfinished">ਸ਼ੁਰੂ</translation>
+        <translation>ਸ਼ੁਰੂ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="259" />
         <source>Middle</source>
-        <translation type="unfinished">ਮੱਧ</translation>
+        <translation>ਮੱਧ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="161" />
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="264" />
         <source>End</source>
-        <translation type="unfinished">ਅੰਤ</translation>
+        <translation>ਅੰਤ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="413" />
@@ -15400,7 +15406,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="416" />
         <source>Fixed </source>
-        <translation type="unfinished" />
+        <translation>ਫਿਕਸਡ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="454" />
@@ -15410,7 +15416,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="464" />
         <source>Count:</source>
-        <translation type="unfinished" />
+        <translation>ਗਿਣਤੀ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="142" />
@@ -15420,17 +15426,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="146" />
         <source>None</source>
-        <translation type="unfinished">ਕੋਈ ਨਹੀਂ</translation>
+        <translation>ਕੋਈ ਨਹੀਂ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="151" />
         <source>Both</source>
-        <translation type="unfinished" />
+        <translation>ਦੋਵੇਂ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="169" />
         <source>Edge Tick:</source>
-        <translation type="unfinished" />
+        <translation>ਐਜ ਟਿਕ:</translation>
     </message>
 </context>
 <context>
@@ -15773,7 +15779,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation>ਫਾਰਮ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="42" />
@@ -15783,7 +15789,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="45" />
         <source>Symmetric</source>
-        <translation type="unfinished" />
+        <translation>ਸਮਮਿਤ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="114" />
@@ -15793,7 +15799,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="131" />
         <source>Number:</source>
-        <translation type="unfinished">ਅੰਕ:</translation>
+        <translation>ਨੰਬਰ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="157" />
@@ -15818,7 +15824,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="35" />
         <source>Radius Outer</source>
-        <translation type="unfinished" />
+        <translation>ਬਾਹਰੀ ਰੇਡੀਅਸ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="121" />
@@ -15828,7 +15834,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="124" />
         <source>Radius Inner</source>
-        <translation type="unfinished" />
+        <translation>ਅੰਦਰੂਨੀ ਰੇਡੀਅਸ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="82" />
@@ -15838,7 +15844,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="85" />
         <source>Polyline</source>
-        <translation type="unfinished" />
+        <translation>ਪੌਲੀਲਾਈਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="150" />
@@ -16351,7 +16357,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/main/init/lc_widgetfactory.cpp" line="239" />
         <source>Library Browser</source>
-        <translation type="unfinished" />
+        <translation>ਲਾਇਬ੍ਰੇਰੀ ਬ੍ਰਾਊਜ਼ਰ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_widgetfactory.cpp" line="239" />
@@ -16367,18 +16373,18 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/main/init/lc_widgetfactory.cpp" line="261" />
         <source>Dock</source>
-        <translation type="unfinished" />
+        <translation>ਡੌਕ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_widgetfactory.cpp" line="261" />
         <location filename="../src/ui/main/init/lc_widgetfactory.cpp" line="285" />
         <source>Float</source>
-        <translation type="unfinished" />
+        <translation>ਫਲੋਟ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_widgetfactory.cpp" line="102" />
         <source>Select</source>
-        <translation type="unfinished">ਚੁਣੋ</translation>
+        <translation>ਚੁਣੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_widgetfactory.cpp" line="94" />
@@ -16567,7 +16573,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/main/init/lc_widgetfactory.cpp" line="105" />
         <source>Modify</source>
-        <translation type="unfinished">ਸੋਧੀ</translation>
+        <translation>ਬਦਲੋ</translation>
     </message>
 </context>
 <context>
@@ -16575,19 +16581,19 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dialogs/settings/options_widget/lc_widgetoptionsdialog.ui" line="26" />
         <source>Widget Options</source>
-        <translation type="unfinished" />
+        <translation>ਵਿਜੈੱਟ ਆਪਸ਼ਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/dialogs/settings/options_widget/lc_widgetoptionsdialog.ui" line="161" />
         <source>Toolbar</source>
-        <translation type="unfinished" />
+        <translation>ਟੂਲਬਾਰ</translation>
     </message>
     <message>
         <location filename="../src/ui/dialogs/settings/options_widget/lc_widgetoptionsdialog.ui" line="211" />
         <location filename="../src/ui/dialogs/settings/options_widget/lc_widgetoptionsdialog.ui" line="581" />
         <location filename="../src/ui/dialogs/settings/options_widget/lc_widgetoptionsdialog.ui" line="619" />
         <source>Icon Size</source>
-        <translation type="unfinished" />
+        <translation>ਆਈਕਾਨ ਸਾਈਜ਼</translation>
     </message>
     <message>
         <location filename="../src/ui/dialogs/settings/options_widget/lc_widgetoptionsdialog.ui" line="574" />
@@ -16613,7 +16619,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dialogs/settings/options_widget/lc_widgetoptionsdialog.ui" line="113" />
         <source>Style</source>
-        <translation type="unfinished" />
+        <translation>ਸਟਾਈਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/dialogs/settings/options_widget/lc_widgetoptionsdialog.ui" line="221" />
@@ -16695,22 +16701,22 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dialogs/settings/options_widget/lc_widgetoptionsdialog.ui" line="81" />
         <source>Style Sheet</source>
-        <translation type="unfinished" />
+        <translation>ਸਟਾਈਲ ਸ਼ੀਟ</translation>
     </message>
     <message>
         <location filename="../src/ui/dialogs/settings/options_widget/lc_widgetoptionsdialog.ui" line="484" />
         <source>Statusbar</source>
-        <translation type="unfinished">ਸਥਿਤੀ ਪੱਟੀ</translation>
+        <translation>ਸਟੇਟਸਬਾਰ</translation>
     </message>
     <message>
         <location filename="../src/ui/dialogs/settings/options_widget/lc_widgetoptionsdialog.ui" line="539" />
         <source>Height</source>
-        <translation type="unfinished" />
+        <translation>ਉਚਾਈ</translation>
     </message>
     <message>
         <location filename="../src/ui/dialogs/settings/options_widget/lc_widgetoptionsdialog.ui" line="516" />
         <source>Font Size</source>
-        <translation type="unfinished" />
+        <translation>ਫੌਂਟ ਸਾਈਜ਼</translation>
     </message>
     <message>
         <location filename="../src/ui/dialogs/settings/options_widget/lc_widgetoptionsdialog.ui" line="500" />
@@ -16725,7 +16731,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dialogs/settings/options_widget/lc_widgetoptionsdialog.ui" line="135" />
         <source>Input the path of a Qt style sheet.</source>
-        <translation type="unfinished" />
+        <translation>Qt ਸਟਾਈਲ ਸ਼ੀਟ ਦਾ ਪਾਥ ਦਾਖਲ ਕਰੋ।</translation>
     </message>
     <message>
         <location filename="../src/ui/dialogs/settings/options_widget/lc_widgetoptionsdialog.ui" line="173" />
@@ -16877,27 +16883,27 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dialogs/settings/options_drawing/lg_dimzerosbox.cpp" line="34" />
         <source>select:</source>
-        <translation type="unfinished" />
+        <translation>ਚੁਣੋ:</translation>
     </message>
     <message>
         <location filename="../src/ui/dialogs/settings/options_drawing/lg_dimzerosbox.cpp" line="37" />
         <source>remove left</source>
-        <translation type="unfinished" />
+        <translation>ਖੱਬਾ ਹਟਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/dialogs/settings/options_drawing/lg_dimzerosbox.cpp" line="41" />
         <source>remove right</source>
-        <translation type="unfinished" />
+        <translation>ਸੱਜਾ ਹਟਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/dialogs/settings/options_drawing/lg_dimzerosbox.cpp" line="59" />
         <source>remove 0'</source>
-        <translation type="unfinished" />
+        <translation>0' ਹਟਾਓ</translation>
     </message>
     <message>
         <location filename="../src/ui/dialogs/settings/options_drawing/lg_dimzerosbox.cpp" line="63" />
         <source>remove 0"</source>
-        <translation type="unfinished" />
+        <translation>0" ਹਟਾਓ</translation>
     </message>
 </context>
 <context>
@@ -16905,22 +16911,22 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/action_options/polyline/qg_polylineequidistantoptions.ui" line="32" />
         <source>Line Relative Angle Options</source>
-        <translation type="unfinished">ਰੇਖਾ ਅਨੁਸਾਰੀ ਕੋਣ ਚੋਣ</translation>
+        <translation>ਲਾਈਨ ਰਿਲੇਟਿਵ ਐਂਗਲ ਆਪਸ਼ਨ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polyline/qg_polylineequidistantoptions.ui" line="94" />
         <source>Spacing:</source>
-        <translation type="unfinished">ਖਾਲੀ ਥਾਂ:</translation>
+        <translation>ਸਪੇਸਿੰਗ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polyline/qg_polylineequidistantoptions.ui" line="81" />
         <source>Distance from original polyline</source>
-        <translation type="unfinished" />
+        <translation>ਅਸਲੀ ਪੌਲੀਲਾਈਨ ਤੋਂ ਦੂਰੀ</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polyline/qg_polylineequidistantoptions.ui" line="56" />
         <source>Copies:</source>
-        <translation type="unfinished" />
+        <translation>ਕਾਪੀਆਂ:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polyline/qg_polylineequidistantoptions.ui" line="120" />
@@ -16938,12 +16944,12 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/plugins/intern/qc_actiongetent.cpp" line="38" />
         <source>Select object:</source>
-        <translation type="unfinished" />
+        <translation>ਆਬਜੈਕਟ ਚੁਣੋ:</translation>
     </message>
     <message>
         <location filename="../src/plugins/intern/qc_actiongetent.cpp" line="44" />
         <source>Cancel</source>
-        <translation type="unfinished">ਰੱਦ ਕਰੋ</translation>
+        <translation>ਰੱਦ ਕਰੋ</translation>
     </message>
 </context>
 <context>
@@ -16951,7 +16957,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/plugins/intern/qc_actiongetpoint.cpp" line="108" />
         <source>Cancel</source>
-        <translation type="unfinished">ਰੱਦ ਕਰੋ</translation>
+        <translation>ਰੱਦ ਕਰੋ</translation>
     </message>
 </context>
 <context>
@@ -16960,12 +16966,12 @@ Warning: this action can NOT be undone!</source>
         <location filename="../src/plugins/intern/qc_actiongetselect.cpp" line="39" />
         <location filename="../src/plugins/intern/qc_actiongetselect.cpp" line="45" />
         <source>Select objects:</source>
-        <translation type="unfinished" />
+        <translation>ਆਬਜੈਕਟ ਚੁਣੋ:</translation>
     </message>
     <message>
         <location filename="../src/plugins/intern/qc_actiongetselect.cpp" line="54" />
         <source>Cancel</source>
-        <translation type="unfinished">ਰੱਦ ਕਰੋ</translation>
+        <translation>ਰੱਦ ਕਰੋ</translation>
     </message>
 </context>
 <context>
@@ -17047,12 +17053,12 @@ Please check the permissions.</source>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="1122" />
         <source>Auto-saving drawing...</source>
-        <translation type="unfinished" />
+        <translation>ਆਟੋ-ਸੇਵ ਡ੍ਰਾਇੰਗ...</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="1128" />
         <source>Auto-saved drawing</source>
-        <translation type="unfinished" />
+        <translation>ਆਟੋ-ਸੇਵ ਡ੍ਰਾਇੰਗ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="1133" />
@@ -17060,96 +17066,101 @@ Please check the permissions.</source>
 %1
 Please check the permissions.
 Auto-save disabled.</source>
-        <translation type="unfinished" />
+        <translation>ਫਾਈਲ ਆਟੋ-ਸੇਵ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕਦੀ
+%1
+ਕਿਰਪਾ ਕਰਕੇ ਇਜਾਜ਼ਤਾਂ ਚੈੱਕ ਕਰੋ।
+ਆਟੋ-ਸੇਵ ਅਯੋਗ ਕੀਤਾ ਗਿਆ।</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="997" />
         <source>Warning: File already opened : </source>
-        <translation type="unfinished" />
+        <translation>ਚੇਤਾਵਨੀ: ਫਾਈਲ ਪਹਿਲਾਂ ਹੀ ਖੁੱਲ੍ਹੀ ਹੈ :</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="249" />
         <source>Cannot save the file </source>
-        <translation type="unfinished" />
+        <translation>ਫਾਈਲ ਸੰਭਾਲੀ ਨਹੀਂ ਜਾ ਸਕਦੀ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="249" />
         <source> , please check the filename and permissions.</source>
-        <translation type="unfinished" />
+        <translation>, ਕਿਰਪਾ ਕਰਕੇ ਫਾਈਲ ਨਾਮ ਅਤੇ ਇਜਾਜ਼ਤਾਂ ਚੈੱਕ ਕਰੋ।</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="813" />
         <source>New document from template: </source>
-        <translation type="unfinished" />
+        <translation>ਟੈਮਪਲੇਟ ਤੋਂ ਨਵਾਂ ਦਸਤਾਵੇਜ਼:</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="845" />
         <source>Select Template aborted</source>
-        <translation type="unfinished" />
+        <translation>ਟੈਮਪਲੇਟ ਚੋਣ ਰੱਦ ਕੀਤੀ ਗਈ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="1135" />
         <source>Auto-saving failed</source>
-        <translation type="unfinished" />
+        <translation>ਆਟੋ-ਸੇਵ ਅਸਫਲ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="207" />
         <source>Draft Mode</source>
-        <translation type="unfinished" />
+        <translation>ਡ੍ਰਾਫਟ ਮੋਡ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="1010" />
         <source>Cannot open the file
 %1
 Please check its existence and permissions.</source>
-        <translation type="unfinished" />
+        <translation>ਫਾਈਲ ਖੋਲ੍ਹੀ ਨਹੀਂ ਜਾ ਸਕਦੀ
+%1
+ਕਿਰਪਾ ਕਰਕੇ ਇਸ ਦੀ ਮੌਜੂਦਗੀ ਅਤੇ ਇਜਾਜ਼ਤਾਂ ਚੈੱਕ ਕਰੋ।</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="989" />
         <source>File '%1' does not exist. Opening aborted</source>
-        <translation type="unfinished" />
+        <translation>ਫਾਈਲ '%1' ਮੌਜੂਦ ਨਹੀਂ। ਖੋਲ੍ਹਣਾ ਰੱਦ ਕੀਤਾ ਗਿਆ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="226" />
         <source>Saving drawing: %1</source>
-        <translation type="unfinished" />
+        <translation>ਡ੍ਰਾਇੰਗ ਸੰਭਾਲੀ ਜਾ ਰਹੀ ਹੈ: %1</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="232" />
         <source>Save cancelled</source>
-        <translation type="unfinished" />
+        <translation>ਸੰਭਾਲਣਾ ਰੱਦ ਕੀਤਾ ਗਿਆ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="361" />
         <source>&amp;Save</source>
-        <translation type="unfinished">ਸੰਭਾਲੋ(&amp;S)</translation>
+        <translation>&amp;ਸੰਭਾਲੋ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="362" />
         <source>Save &amp;as...</source>
-        <translation type="unfinished">ਏਦਾਂ ਸੰਭਾਲੋ(&amp;a)...</translation>
+        <translation>ਸੰਭਾਲੋ &amp;ਜਿਵੇਂ...</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="365" />
         <source>&amp;Save %1</source>
-        <translation type="unfinished" />
+        <translation>&amp;ਸੰਭਾਲੋ %1</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="366" />
         <source>Save %1 &amp;as...</source>
-        <translation type="unfinished" />
+        <translation>%1 ਸੰਭਾਲੋ &amp;ਜਿਵੇਂ...</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="1099" />
         <source>Save All cancelled</source>
-        <translation type="unfinished" />
+        <translation>ਸਭ ਸੰਭਾਲਣਾ ਰੱਦ ਕੀਤਾ ਗਿਆ</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="1217" />
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="1223" />
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="1237" />
         <source>Close All cancelled</source>
-        <translation type="unfinished" />
+        <translation>ਸਭ ਬੰਦ ਕਰਨਾ ਰੱਦ ਕੀਤਾ ਗਿਆ</translation>
     </message>
 </context>
 <context>

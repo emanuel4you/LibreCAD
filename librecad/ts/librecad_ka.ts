@@ -176,12 +176,12 @@
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimarc.cpp" line="189" />
         <source>Select arc entity</source>
-        <translation type="unfinished" />
+        <translation>აირჩიეთ მრუდი ენტიტეტი</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimarc.cpp" line="192" />
         <source>Specify dimension arc location</source>
-        <translation type="unfinished" />
+        <translation>მიუთითეთ ზომის მრუდის მდებარეობა</translation>
     </message>
 </context>
 <context>
@@ -463,12 +463,13 @@
         <location filename="../src/actions/drawing/draw/circle/lc_actiondrawcircle2pr.cpp" line="196" />
         <source>radius=%1 is too small for points selected
 distance between points=%2 is larger than diameter=%3</source>
-        <translation type="unfinished" />
+        <translation>რადიუსი=%1 ძალიან მცირეა არჩეული წერტილებისთვის
+წერტილებს შორის მანძილი=%2 მეტია დიამეტრზე=%3</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/circle/lc_actiondrawcircle2pr.cpp" line="208" />
         <source>Select from two possible circle centers</source>
-        <translation type="unfinished" />
+        <translation>აირჩიეთ ორი შესაძლო წრის ცენტრიდან</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/circle/lc_actiondrawcircle2pr.cpp" line="230" />
@@ -725,32 +726,34 @@ or[x|y|p|number|edges]</source>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="534" />
         <source>X</source>
-        <translation type="unfinished">X</translation>
+        <translation>X</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="534" />
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="537" />
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="542" />
         <source>Back</source>
-        <translation type="unfinished">უკან</translation>
+        <translation>უკან</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="534" />
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="537" />
         <source>Specify distance (%1)
 or [%2]</source>
-        <translation type="unfinished" />
+        <translation>მიუთითეთ მანძილი (%1)
+ან [%2]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="537" />
         <source>Y</source>
-        <translation type="unfinished">Y</translation>
+        <translation>Y</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="542" />
         <source>Specify  distance (angle %1 deg)
 or [%2]</source>
-        <translation type="unfinished" />
+        <translation>მიუთითეთ მანძილი (კუთხე %1 გრადუსი)
+ან [%2]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="547" />
@@ -862,19 +865,19 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="477" />
         <source>Specify direction (x or y) or [%1]</source>
-        <translation type="unfinished" />
+        <translation>მიუთითეთ მიმართულება (x ან y) ან [%1]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="491" />
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="495" />
         <source>Specify distance (%1) or [%2]</source>
-        <translation type="unfinished" />
+        <translation>მიუთითეთ მანძილი (%1) ან [%2]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="134" />
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="491" />
         <source>X</source>
-        <translation type="unfinished">X</translation>
+        <translation>X</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="117" />
@@ -890,7 +893,7 @@ or [%2]</source>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="128" />
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="495" />
         <source>Y</source>
-        <translation type="unfinished">Y</translation>
+        <translation>Y</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="153" />
@@ -900,7 +903,7 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="501" />
         <source>Specify distance (%1 deg) or [%2]</source>
-        <translation type="unfinished" />
+        <translation>მიუთითეთ მანძილი (%1 გრადუსი) ან [%2]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="516" />
@@ -910,7 +913,7 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="528" />
         <source>Specify point or [%1]</source>
-        <translation type="unfinished" />
+        <translation>მიუთითეთ წერტილი ან [%1]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="577" />
@@ -956,27 +959,27 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="181" />
         <source>Specify the first point on parabola</source>
-        <translation type="unfinished" />
+        <translation>მიუთითეთ პირველი წერტილი პარაბოლაზე</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="184" />
         <source>Specify the second point on parabola</source>
-        <translation type="unfinished" />
+        <translation>მიუთითეთ მეორე წერტილი პარაბოლაზე</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="187" />
         <source>Specify the third point on parabola</source>
-        <translation type="unfinished" />
+        <translation>მიუთითეთ მესამე წერტილი პარაბოლაზე</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="190" />
         <source>Specify the fourth point on parabola</source>
-        <translation type="unfinished" />
+        <translation>მიუთითეთ მეოთხე წერტილი პარაბოლაზე</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="193" />
         <source>Specify the Axis on parabola</source>
-        <translation type="unfinished" />
+        <translation>მიუთითეთ ღერძი პარაბოლაზე</translation>
     </message>
 </context>
 <context>
@@ -984,7 +987,7 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabolaFD.cpp" line="275" />
         <source>Specify the focus of parabola</source>
-        <translation type="unfinished" />
+        <translation>მიუთითეთ პარაბოლის ფოკუსი</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabolaFD.cpp" line="278" />
@@ -994,12 +997,12 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabolaFD.cpp" line="282" />
         <source>Specify the start point on parabola</source>
-        <translation type="unfinished" />
+        <translation>მიუთითეთ საწყისი წერტილი პარაბოლაზე</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabolaFD.cpp" line="286" />
         <source>Specify the end point on parabola</source>
-        <translation type="unfinished" />
+        <translation>მიუთითეთ საბოლოო წერტილი პარაბოლაზე</translation>
     </message>
 </context>
 <context>
@@ -1176,17 +1179,17 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawslicedivide.cpp" line="212" />
         <source>Line</source>
-        <translation type="unfinished">ხაზი</translation>
+        <translation>ხაზი</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawslicedivide.cpp" line="222" />
         <source>Arc</source>
-        <translation type="unfinished">რკალი</translation>
+        <translation>მრუდი</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawslicedivide.cpp" line="232" />
         <source>Circle</source>
-        <translation type="unfinished">წრე</translation>
+        <translation>წრე</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawslicedivide.cpp" line="596" />
@@ -1225,12 +1228,12 @@ or [%2]</source>
         <location filename="../src/actions/drawing/draw/spline/lc_actiondrawsplinepoints.cpp" line="265" />
         <location filename="../src/actions/drawing/draw/spline/lc_actiondrawsplinepoints.cpp" line="286" />
         <source>Cannot undo: Not enough entities defined yet.</source>
-        <translation type="unfinished" />
+        <translation>ვერ გაუქმდება: ჯერ საკმარისი ენტიტეტები არ არის განსაზღვრული.</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/spline/lc_actiondrawsplinepoints.cpp" line="302" />
         <source>Cannot undo: Nothing could be redone.</source>
-        <translation type="unfinished" />
+        <translation>ვერ გაუქმდება: არაფერია გასაკეთებელი.</translation>
     </message>
 </context>
 <context>
@@ -1299,12 +1302,12 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="328" />
         <source>Zoom &amp;Panning</source>
-        <translation type="unfinished" />
+        <translation>გადიდება &amp;პანორამირება</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="239" />
         <source>Select Entity</source>
-        <translation type="unfinished" />
+        <translation>ენტიტეტის არჩევა</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="240" />
@@ -1319,22 +1322,22 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="242" />
         <source>(De-)Select &amp;Contour</source>
-        <translation type="unfinished" />
+        <translation>(გა)არჩევა &amp;კონტურის</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="243" />
         <source>Select Intersected Entities</source>
-        <translation type="unfinished" />
+        <translation>გადაკვეთილი ენტიტეტების არჩევა</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="244" />
         <source>Deselect Intersected Entities</source>
-        <translation type="unfinished" />
+        <translation>გადაკვეთილი ენტიტეტების არჩევის გაუქმება</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="245" />
         <source>(De-)Select Layer</source>
-        <translation type="unfinished" />
+        <translation>(გა)არჩევა ფენის</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="228" />
@@ -1375,7 +1378,7 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="206" />
         <source>Parallel through point</source>
-        <translation type="unfinished" />
+        <translation>პარალელური წერტილის გავლით</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="186" />
@@ -1390,17 +1393,17 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="208" />
         <source>Tangent (P,C)</source>
-        <translation type="unfinished" />
+        <translation>მხები (P,C)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="209" />
         <source>Tangent (C,C)</source>
-        <translation type="unfinished" />
+        <translation>მხები (C,C)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="210" />
         <source>Tangent &amp;Orthogonal</source>
-        <translation type="unfinished" />
+        <translation>მხები &amp;ორთოგონალური</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="211" />
@@ -1410,82 +1413,82 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="212" />
         <source>Relative angle</source>
-        <translation type="unfinished" />
+        <translation>შედარებითი კუთხე</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="187" />
         <source>Pol&amp;ygon (Cen,Cor)</source>
-        <translation type="unfinished" />
+        <translation>მრავალკუთხა (ცენტრი,კუთხე)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="189" />
         <source>Polygo&amp;n (Cor,Cor)</source>
-        <translation type="unfinished" />
+        <translation>მრავალკუთხა (კუთხე,კუთხე)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="213" />
         <source>Snake</source>
-        <translation type="unfinished" />
+        <translation>გველი</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="214" />
         <source>Snake (X)</source>
-        <translation type="unfinished" />
+        <translation>გველი (X)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="215" />
         <source>Snake (Y)</source>
-        <translation type="unfinished" />
+        <translation>გველი (Y)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="192" />
         <source>Rectangle (1 Point)</source>
-        <translation type="unfinished" />
+        <translation>მართკუთხა (1 წერტილი)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="193" />
         <source>Rectangle (2 Points)</source>
-        <translation type="unfinished" />
+        <translation>მართკუთხა (2 წერტილი)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="194" />
         <source>Rectangle (3 Points)</source>
-        <translation type="unfinished" />
+        <translation>მართკუთხა (3 წერტილი)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="191" />
         <source>Star</source>
-        <translation type="unfinished" />
+        <translation>ვარსკვლავი</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="216" />
         <source>Angle From Line</source>
-        <translation type="unfinished" />
+        <translation>კუთხე ხაზიდან</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="217" />
         <source>Orthogonal From Line</source>
-        <translation type="unfinished" />
+        <translation>ორთოგონალური ხაზიდან</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="218" />
         <source>From Point To Line</source>
-        <translation type="unfinished" />
+        <translation>წერტილიდან ხაზამდე</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="221" />
         <source>Slice/Divide Line</source>
-        <translation type="unfinished" />
+        <translation>ხაზის დაჭრა/გაყოფა</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="222" />
         <source>Slice/Divide Circle</source>
-        <translation type="unfinished" />
+        <translation>წრის დაჭრა/გაყოფა</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="229" />
         <source>Line of Points</source>
-        <translation type="unfinished" />
+        <translation>წერტილების ხაზი</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="251" />
@@ -1495,7 +1498,7 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="252" />
         <source>By Arc</source>
-        <translation type="unfinished" />
+        <translation>მრუდით</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="253" />
@@ -1526,17 +1529,17 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="258" />
         <source>Circle &amp;Inscribed</source>
-        <translation type="unfinished" />
+        <translation>წრე &amp;ჩასმული</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="262" />
         <source>Tangential, 2 P&amp;oints</source>
-        <translation type="unfinished" />
+        <translation>მხები, 2 წერტილი</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="268" />
         <source>&amp;Center, Point, Angles</source>
-        <translation type="unfinished" />
+        <translation>&amp;ცენტრი, წერტილი, კუთხეები</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="271" />
@@ -1571,32 +1574,32 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="302" />
         <source>&amp;Ellipse (Axis)</source>
-        <translation type="unfinished" />
+        <translation>&amp;ელიფსი (ღერძი)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="303" />
         <source>Ellipse &amp;Arc (Axis)</source>
-        <translation type="unfinished" />
+        <translation>ელიფსი &amp;მრუდი (ღერძი)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="304" />
         <source>Ellipse &amp;Foci Point</source>
-        <translation type="unfinished" />
+        <translation>ელიფსი &amp;ფოკუსის წერტილი</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="305" />
         <source>Ellipse &amp;4 Point</source>
-        <translation type="unfinished" />
+        <translation>ელიფსი &amp;4 წერტილი</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="306" />
         <source>Ellipse Center and &amp;3 Points</source>
-        <translation type="unfinished" />
+        <translation>ელიფსის ცენტრი და &amp;3 წერტილი</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="307" />
         <source>Ellipse &amp;Inscribed</source>
-        <translation type="unfinished" />
+        <translation>ელიფსი &amp;ჩასმული</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="287" />
@@ -1606,7 +1609,7 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="288" />
         <source>&amp;Spline through points</source>
-        <translation type="unfinished" />
+        <translation>&amp;სპლაინი წერტილებით</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="313" />
@@ -1636,12 +1639,12 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="318" />
         <source>&amp;Trim segments</source>
-        <translation type="unfinished" />
+        <translation>&amp;სეგმენტების მოჭრა</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="319" />
         <source>Create &amp;Equidistant Polylines</source>
-        <translation type="unfinished" />
+        <translation>შექმნა &amp;თანაბარი მანძილის პოლილაინების</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="321" />
@@ -1651,7 +1654,7 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="329" />
         <source>&amp;MText</source>
-        <translation type="unfinished" />
+        <translation>&amp;მრავალხაზიანი ტექსტი</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="330" />
@@ -1661,7 +1664,7 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="331" />
         <source>&amp;Hatch</source>
-        <translation type="unfinished" />
+        <translation>&amp;ჰაჩი</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="332" />
@@ -1691,7 +1694,7 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="344" />
         <source>&amp;Diametric</source>
-        <translation type="unfinished" />
+        <translation>&amp;დიამეტრალური</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="345" />
@@ -1771,7 +1774,7 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="384" />
         <source>&amp;Bevel</source>
-        <translation type="unfinished" />
+        <translation>&amp;ჩასმა</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="385" />
@@ -1781,7 +1784,7 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="386" />
         <source>&amp;Explode Text into Letters</source>
-        <translation type="unfinished" />
+        <translation>&amp;ტექსტის აფეთქება ასოებად</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="423" />
@@ -1821,22 +1824,22 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="500" />
         <source>&amp;Distance Point to Point</source>
-        <translation type="unfinished" />
+        <translation>&amp;მანძილი წერტილიდან წერტილამდე</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="503" />
         <source>An&amp;gle between two lines</source>
-        <translation type="unfinished" />
+        <translation>კ&amp;უთხე ორ ხაზს შორის</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="505" />
         <source>Polygonal &amp;Area</source>
-        <translation type="unfinished" />
+        <translation>მრავალკუთხა &amp;ფართობი</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="565" />
         <source>Current &amp;Drawing Preferences</source>
-        <translation type="unfinished" />
+        <translation>მიმდინარე &amp;ნახატის პარამეტრები</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="619" />
@@ -2316,12 +2319,12 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="284" />
         <source>Para&amp;bola 4 points</source>
-        <translation type="unfinished" />
+        <translation>პარა&amp;ბოლა 4 წერტილი</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="285" />
         <source>Parabola &amp;Focus Directrix</source>
-        <translation type="unfinished" />
+        <translation>პარაბოლა &amp;ფოკუსი დირექტრისა</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="286" />
@@ -2416,22 +2419,22 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="388" />
         <source>Break/Divide</source>
-        <translation type="unfinished" />
+        <translation>გაწყვეტა/გაყოფა</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="389" />
         <source>Line Gap</source>
-        <translation type="unfinished" />
+        <translation>ხაზის შუალედი</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="390" />
         <source>Line Join</source>
-        <translation type="unfinished" />
+        <translation>ხაზის შეერთება</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="391" />
         <source>Duplicate</source>
-        <translation type="unfinished" />
+        <translation>დუბლიკატი</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="392" />
@@ -2451,27 +2454,27 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="400" />
         <source>Update Current Pen by Active Layer' Pen</source>
-        <translation type="unfinished" />
+        <translation>მიმდინარე პენის განახლება აქტიური ფენის პენით</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="406" />
         <source>&amp;Pick Pen From Entity</source>
-        <translation type="unfinished" />
+        <translation>&amp;ენტიტეტიდან პენის არჩევა</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="407" />
         <source>&amp;Pick Pen From Entity (Resolved)</source>
-        <translation type="unfinished" />
+        <translation>&amp;ენტიტეტიდან პენის არჩევა (გადაწყვეტილი)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="408" />
         <source>Apply Pen to Entity</source>
-        <translation type="unfinished" />
+        <translation>ენტიტეტზე პენის გადატანა</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="409" />
         <source>Copy Pen</source>
-        <translation type="unfinished" />
+        <translation>პენის კოპირება</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="415" />
@@ -2712,22 +2715,22 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="539" />
         <source>Toggle Layer Loc&amp;k</source>
-        <translation type="unfinished" />
+        <translation>ფენის ჩაკეტვის გადართვა</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="540" />
         <source>&amp;Toggle Layer Visibility</source>
-        <translation type="unfinished" />
+        <translation>ფენის ხილვადობის &amp;გადართვა</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="541" />
         <source>Toggle Layer &amp;Print</source>
-        <translation type="unfinished" />
+        <translation>ფენის &amp;ბეჭდვის გადართვა</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="542" />
         <source>Toggle &amp;Construction Layer</source>
-        <translation type="unfinished" />
+        <translation>მშენებლობის ფენის გადართვა</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="552" />
@@ -2762,7 +2765,7 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="558" />
         <source>Toggle Block &amp;Visibility</source>
-        <translation type="unfinished" />
+        <translation>ბლოკის ხილვადობის გადართვა</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="559" />
@@ -2974,7 +2977,7 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="379" />
         <source>Tr&amp;im Two</source>
-        <translation type="unfinished" />
+        <translation>ორის &amp;მოჭრა</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="381" />
@@ -3015,7 +3018,7 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="188" />
         <source>Pol&amp;ygon (Cen,Tan)</source>
-        <translation type="unfinished" />
+        <translation>მრავალკუთხა (ცენტრი,მხები)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="346" />
@@ -3055,12 +3058,12 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="550" />
         <source>&amp;Show all blocks</source>
-        <translation type="unfinished" />
+        <translation>&amp;ყველა ბლოკის ჩვენება</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="551" />
         <source>&amp;Hide all blocks</source>
-        <translation type="unfinished" />
+        <translation>&amp;ყველა ბლოკის დამალვა</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="571" />
@@ -3070,7 +3073,7 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="603" />
         <source>Export as CA&amp;M/plain SVG...</source>
-        <translation type="unfinished" />
+        <translation>ექსპორტი როგორც CA&amp;M/უბრალო SVG...</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="590" />
@@ -3080,7 +3083,7 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="618" />
         <source>Re-dock Widgets</source>
-        <translation type="unfinished" />
+        <translation>ვიჯეტების ხელახლა დოკირება</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="598" />
@@ -3974,12 +3977,12 @@ End Edge Point: (%9 , %10)</source>
     <message>
         <location filename="../src/actions/drawing/pen/lc_actionpenapply.cpp" line="168" />
         <source>Specify entity to pick the pen</source>
-        <translation type="unfinished" />
+        <translation>მიუთითეთ ენტიტეტი პენის ასარჩევად</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/pen/lc_actionpenapply.cpp" line="171" />
         <source>Specify entity to apply pen</source>
-        <translation type="unfinished" />
+        <translation>მიუთითეთ ენტიტეტი პენის გადასატანად</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/pen/lc_actionpenapply.cpp" line="171" />
@@ -3992,7 +3995,7 @@ End Edge Point: (%9 , %10)</source>
     <message>
         <location filename="../src/actions/drawing/pen/lc_actionpenpick.cpp" line="88" />
         <source>Specify entity to pick the pen</source>
-        <translation type="unfinished" />
+        <translation>მიუთითეთ ენტიტეტი პენის ასარჩევად</translation>
     </message>
 </context>
 <context>
@@ -4100,17 +4103,17 @@ End Edge Point: (%9 , %10)</source>
     <message>
         <location filename="../src/actions/drawing/snap/lc_actionsnapmiddlemanual.cpp" line="227" />
         <source>Specify percentage / start-point</source>
-        <translation type="unfinished" />
+        <translation>მიუთითეთ პროცენტი / საწყისი წერტილი</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/snap/lc_actionsnapmiddlemanual.cpp" line="230" />
         <source>Specify start point</source>
-        <translation type="unfinished" />
+        <translation>მიუთითეთ საწყისი წერტილი</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/snap/lc_actionsnapmiddlemanual.cpp" line="233" />
         <source>Specify end point</source>
-        <translation type="unfinished" />
+        <translation>მიუთითეთ საბოლოო წერტილი</translation>
     </message>
 </context>
 <context>
@@ -4668,7 +4671,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished">ფორმა</translation>
+        <translation>ფორმა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="131" />
@@ -4678,7 +4681,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="134" />
         <source>Replace arc</source>
-        <translation type="unfinished" />
+        <translation>მრუდის ჩანაცვლება</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="62" />
@@ -4723,7 +4726,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="32" />
         <source>Pen:</source>
-        <translation type="unfinished" />
+        <translation>პენი:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="102" />
@@ -4733,7 +4736,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="124" />
         <source>Layer:</source>
-        <translation type="unfinished">ფენა:</translation>
+        <translation>ფენა:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="39" />
@@ -4743,7 +4746,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="42" />
         <source>Radius Shift:</source>
-        <translation type="unfinished" />
+        <translation>რადიუსის გადაწევა:</translation>
     </message>
 </context>
 <context>
@@ -4828,22 +4831,22 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="20" />
         <source>Form</source>
-        <translation type="unfinished">ფორმა</translation>
+        <translation>ფორმა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="140" />
         <source>X:</source>
-        <translation type="unfinished" />
+        <translation>X:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="83" />
         <source>Angle:</source>
-        <translation type="unfinished">კუთხე:</translation>
+        <translation>კუთხე:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="38" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation>ტიპი</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="133" />
@@ -4863,17 +4866,17 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="209" />
         <source>Extension</source>
-        <translation type="unfinished" />
+        <translation>გაგრძელება</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="214" />
         <source>Total Length</source>
-        <translation type="unfinished">ჯამური სიგრძე</translation>
+        <translation>სრული სიგრძე</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="219" />
         <source>Percent</source>
-        <translation type="unfinished" />
+        <translation>პროცენტი</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="227" />
@@ -4898,7 +4901,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="168" />
         <source>Y:</source>
-        <translation type="unfinished" />
+        <translation>Y:</translation>
     </message>
 </context>
 <context>
@@ -7449,6 +7452,11 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
+        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="26" />
+        <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="39" />
         <source>Silently update existing view with same name by created one</source>
         <translation type="unfinished" />
@@ -7459,18 +7467,8 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="58" />
-        <source>Toolip with view details for table items</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="68" />
         <source>UCS Details column</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="75" />
-        <source>If checked, type of grid for saved view will be shown</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -7484,8 +7482,18 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
+        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="58" />
+        <source>Tooltip with view details for table items</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="65" />
-        <source>If checked, the column with details of view's coordinate system will be show</source>
+        <source>If checked, the column with details of view's coordinate system will be show.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="75" />
+        <source>If checked, type of grid for saved view will be shown.</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -7525,7 +7533,7 @@ Are you sure you are going to discard changes?</source>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="144" />
-        <source>Defines which action should be performed on double click on view item of the table. </source>
+        <source>Defines which action should be performed on double click on view item of the table.</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -7566,11 +7574,6 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="36" />
         <source>If checked and during creation the view with entered name already exists, it will be updated by new position. Otherwise, unique name of new view will be required.</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="26" />
-        <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently. </source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -7951,18 +7954,8 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="29" />
-        <source>Toolip with UCS details for table items</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="39" />
         <source>Type icon column</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="46" />
-        <source>If checked, column with details of UCS origin and angle will be shown in the table</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -7981,8 +7974,28 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="29" />
+        <source>Tooltip with UCS details for table items</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="36" />
+        <source>If checked, the column with icon for type of UCS will be shown in the table.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="46" />
+        <source>If checked, column with details of UCS origin and angle will be shown in the table.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="56" />
+        <source>If checked, the column with type of grid for UCS will be shown.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="85" />
-        <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently. </source>
+        <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently.</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -8006,6 +8019,11 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="114" />
+        <source>Defines how drawing's view window should be adjusted after UCS is applied.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="118" />
         <source>Zoom Auto</source>
         <translation type="unfinished" />
@@ -8026,8 +8044,13 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="153" />
-        <source>Defines which action should be performed on double click on the item of the table. </source>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="196" />
+        <source>Defines delay between UCS marker blinks.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="232" />
+        <source>Defines amount of blinks of UCS marker for UCS highlighting.</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -8036,23 +8059,13 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="36" />
-        <source>If checked, the column with icon for type of UCS will be shown in the table. </source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="56" />
-        <source>If checked, the column with type of grid for UCS will be shown</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="114" />
-        <source>Defines how drawing's view window should be adjusted after UCS is applied</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="146" />
         <source>On double-click on table item</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="153" />
+        <source>Defines which action should be performed on double click on the item of the table.</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -8086,11 +8099,6 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="196" />
-        <source>Defines delay between UCS marker blinks</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="199" />
         <source> ms</source>
         <translation type="unfinished" />
@@ -8103,11 +8111,6 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="225" />
         <source>Blink Delay:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="232" />
-        <source>Defines amount of blinks of UCS marker for UCS highlighting</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -8512,7 +8515,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished">ფორმა</translation>
+        <translation>ფორმა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="122" />
@@ -8532,7 +8535,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="157" />
         <source>Pen:</source>
-        <translation type="unfinished" />
+        <translation>პენი:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="171" />
@@ -8542,7 +8545,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="174" />
         <source>In Place</source>
-        <translation type="unfinished" />
+        <translation>ადგილზე</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="181" />
@@ -8552,7 +8555,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="164" />
         <source>Layer:</source>
-        <translation type="unfinished">ფენა:</translation>
+        <translation>ფენა:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="69" />
@@ -8597,12 +8600,12 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="150" />
         <source>Offset Y:</source>
-        <translation type="unfinished" />
+        <translation>Y ოფსეტი:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="62" />
         <source>Offset X:</source>
-        <translation type="unfinished" />
+        <translation>X ოფსეტი:</translation>
     </message>
 </context>
 <context>
@@ -9297,7 +9300,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="20" />
         <source>Layer Settings</source>
-        <translation type="unfinished" />
+        <translation>ფენის პარამეტრები</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="48" />
@@ -9307,12 +9310,12 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="64" />
         <source>Parent Layers Path:</source>
-        <translation type="unfinished" />
+        <translation>მშობელი ფენების ბილიკი:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="81" />
         <source>Layer Type</source>
-        <translation type="unfinished" />
+        <translation>ფენის ტიპი</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="93" />
@@ -9322,7 +9325,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="96" />
         <source>Informational</source>
-        <translation type="unfinished" />
+        <translation>ინფორმაციული</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="106" />
@@ -9332,7 +9335,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="109" />
         <source>Normal</source>
-        <translation type="unfinished" />
+        <translation>ნორმალური</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="119" />
@@ -9342,7 +9345,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="122" />
         <source>Dimensions</source>
-        <translation type="unfinished">ზომები</translation>
+        <translation>ზომები</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="132" />
@@ -9352,18 +9355,19 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="135" />
         <source>Alternative Position</source>
-        <translation type="unfinished" />
+        <translation>ალტერნატიული პოზიცია</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="148" />
         <source>A Construction Layer has entities of infinite straight lines intended to be used for geometric construction.
        The contents of a Construction Layer should not appear in printout.</source>
-        <translation type="unfinished" />
+        <translation>მშენებლობის ფენა შეიცავს უსასრულო სწორი ხაზების ენტიტეტებს გეომეტრიული მშენებლობისთვის.
+       მშენებლობის ფენის შიგთავსი არ უნდა გამოჩნდეს ბეჭდვაში.</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="152" />
         <source>Construction Layer</source>
-        <translation type="unfinished" />
+        <translation>მშენებლობის ფენა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="181" />
@@ -9373,39 +9377,39 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="197" />
         <source>Layer Name:</source>
-        <translation type="unfinished">ფენის სახელი:</translation>
+        <translation>ფენის სახელი:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="61" />
         <source>Rename Virtual Layer</source>
-        <translation type="unfinished" />
+        <translation>ვირტუალური ფენის სახელის შეცვლა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="65" />
         <source>Add Secondary Layer</source>
-        <translation type="unfinished" />
+        <translation>მეორადი ფენის დამატება</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="71" />
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="78" />
         <source>Add Layer</source>
-        <translation type="unfinished" />
+        <translation>ფენის დამატება</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="84" />
         <source>Edit Layer</source>
-        <translation type="unfinished" />
+        <translation>ფენის რედაქტირება</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="176" />
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="214" />
         <source>Default Pen</source>
-        <translation type="unfinished" />
+        <translation>ნაგულისხმევი პენი</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="193" />
         <source>Rename Layer</source>
-        <translation type="unfinished" />
+        <translation>ფენის სახელის შეცვლა</translation>
     </message>
 </context>
 <context>
@@ -9466,7 +9470,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="20" />
         <source>Layers Tree Options</source>
-        <translation type="unfinished" />
+        <translation>ფენების ხის პარამეტრები</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="36" />
@@ -9476,7 +9480,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="39" />
         <source>Naming Convention</source>
-        <translation type="unfinished" />
+        <translation>დასახელების წესი</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="64" />
@@ -9486,17 +9490,17 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="77" />
         <source>Layer Level Name Separator</source>
-        <translation type="unfinished" />
+        <translation>ფენის დონის სახელის გამყოფი</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="97" />
         <source>Secondary Layer Suffixes</source>
-        <translation type="unfinished" />
+        <translation>მეორადი ფენების სუფიქსები</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="103" />
         <source>Dimensional</source>
-        <translation type="unfinished" />
+        <translation>ზომითი</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="116" />
@@ -9506,7 +9510,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="126" />
         <source>Informational</source>
-        <translation type="unfinished" />
+        <translation>ინფორმაციული</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="139" />
@@ -9516,7 +9520,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="149" />
         <source>Alternative Position </source>
-        <translation type="unfinished" />
+        <translation>ალტერნატიული პოზიცია</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="162" />
@@ -9526,12 +9530,12 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="175" />
         <source>Duplicating Name</source>
-        <translation type="unfinished" />
+        <translation>სახელის დუბლირება</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="181" />
         <source>Prefix</source>
-        <translation type="unfinished" />
+        <translation>პრეფიქსი</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="194" />
@@ -9541,7 +9545,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="204" />
         <source>Suffix</source>
-        <translation type="unfinished" />
+        <translation>სუფიქსი</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="217" />
@@ -9556,7 +9560,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="234" />
         <source>Display and Operations</source>
-        <translation type="unfinished" />
+        <translation>ჩვენება და ოპერაციები</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="240" />
@@ -9566,7 +9570,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="243" />
         <source>Show full name as ToolTip</source>
-        <translation type="unfinished" />
+        <translation>სრული სახელის ჩვენება ინსტრუმენტის მინიშნებად</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="250" />
@@ -9576,7 +9580,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="253" />
         <source>Show layer type icons</source>
-        <translation type="unfinished" />
+        <translation>ფენის ტიპის ხატულების ჩვენება</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="266" />
@@ -9586,7 +9590,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="269" />
         <source>Show indented layer names. Ident size:</source>
-        <translation type="unfinished" />
+        <translation>ინდენტირებული ფენის სახელების ჩვენება. ინდენტის ზომა:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="276" />
@@ -9601,7 +9605,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="308" />
         <source>Allow restructuring via Drag&amp;Drop</source>
-        <translation type="unfinished" />
+        <translation>სტრუქტურის გადაწყობის დაშვება Drag&amp;Drop-ით</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="315" />
@@ -9611,7 +9615,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="318" />
         <source>Rename secondary layers on primary rename</source>
-        <translation type="unfinished" />
+        <translation>მეორადი ფენების სახელის შეცვლა ძირითადის შეცვლისას</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="326" />
@@ -9621,7 +9625,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="329" />
         <source>Colors</source>
-        <translation type="unfinished" />
+        <translation>ფერები</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="335" />
@@ -9650,7 +9654,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="444" />
         <source>Matched item in highlight filter mode</source>
-        <translation type="unfinished" />
+        <translation>დამთხვევი ელემენტი გამოჩენის ფილტრის რეჟიმში</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="464" />
@@ -9660,22 +9664,22 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="479" />
         <source>#1E90FF</source>
-        <translation type="unfinished">#1E90FF</translation>
+        <translation>#1E90FF</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="507" />
         <source>Virtual layer background color</source>
-        <translation type="unfinished" />
+        <translation>ვირტუალური ფენის ფონის ფერი</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="534" />
         <source>Threeview items separator grid</source>
-        <translation type="unfinished" />
+        <translation>სამი ხედის ელემენტების გამყოფი ბადე</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="544" />
         <source>Selected items background color</source>
-        <translation type="unfinished" />
+        <translation>არჩეული ელემენტების ფონის ფერი</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="579" />
@@ -9685,7 +9689,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="582" />
         <source>Active layer background color</source>
-        <translation type="unfinished" />
+        <translation>აქტიური ფენის ფონის ფერი</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="603" />
@@ -9695,27 +9699,27 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="606" />
         <source>Default Pens</source>
-        <translation type="unfinished" />
+        <translation>ნაგულისხმევი პენები</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.cpp" line="70" />
         <source>Normal Layer</source>
-        <translation type="unfinished" />
+        <translation>ნორმალური ფენა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.cpp" line="71" />
         <source>Dimensional Layer</source>
-        <translation type="unfinished" />
+        <translation>ზომითი ფენა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.cpp" line="72" />
         <source>Informational Layer</source>
-        <translation type="unfinished" />
+        <translation>ინფორმაციული ფენა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.cpp" line="73" />
         <source>Alternative Position Layer</source>
-        <translation type="unfinished" />
+        <translation>ალტერნატიული პოზიციის ფენა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.cpp" line="103" />
@@ -9756,7 +9760,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.cpp" line="231" />
         <source>Select Color</source>
-        <translation type="unfinished" />
+        <translation>ფერის არჩევა</translation>
     </message>
 </context>
 <context>
@@ -9764,240 +9768,240 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="146" />
         <source>Filter</source>
-        <translation type="unfinished">ფილტრი</translation>
+        <translation>ფილტრი</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="148" />
         <source>Looking for matching layer names</source>
-        <translation type="unfinished" />
+        <translation>ფენის სახელების ძებნა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="153" />
         <source>Highlight Mode</source>
-        <translation type="unfinished" />
+        <translation>გამოჩენის რეჟიმი</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="163" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation>პარამეტრები</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="182" />
         <source>Show all layers</source>
-        <translation type="unfinished">ყველა ფენის შექმნა</translation>
+        <translation>ყველა ფენის ჩვენება</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="189" />
         <source>Hide all layers</source>
-        <translation type="unfinished">ყველა ფენის დამალვა</translation>
+        <translation>ყველა ფენის დამალვა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="196" />
         <source>Show Secondary Layers</source>
-        <translation type="unfinished" />
+        <translation>მეორადი ფენების ჩვენება</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="206" />
         <source>Show Active Layer Only</source>
-        <translation type="unfinished" />
+        <translation>მხოლოდ აქტიური ფენის ჩვენება</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="214" />
         <source>Expand All</source>
-        <translation type="unfinished" />
+        <translation>ყველას გაშლა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="222" />
         <source>Collapse All</source>
-        <translation type="unfinished" />
+        <translation>ყველას ჩაკეცვა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="230" />
         <source>Collapse Secondary</source>
-        <translation type="unfinished" />
+        <translation>მეორადის ჩაკეცვა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="238" />
         <source>Unlock all layers</source>
-        <translation type="unfinished">ყველა ფენის განბლოკვა</translation>
+        <translation>ყველა ფენის განბლოკვა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="245" />
         <source>Lock all layers</source>
-        <translation type="unfinished">ყველა ფენის დაბლოკვა</translation>
+        <translation>ყველა ფენის დაბლოკვა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="252" />
         <source>Add a layer</source>
-        <translation type="unfinished">ფენის დამატება</translation>
+        <translation>ფენის დამატება</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="259" />
         <source>Add dimensions Layer</source>
-        <translation type="unfinished" />
+        <translation>ზომების ფენის დამატება</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="268" />
         <source>Remove layer</source>
-        <translation type="unfinished">ფენის წაშლა</translation>
+        <translation>ფენის წაშლა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="275" />
         <source>Modify layer attributes / rename</source>
-        <translation type="unfinished" />
+        <translation>ფენის ატრიბუტების შეცვლა / სახელის შეცვლა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="282" />
         <source>Flat List Mode)</source>
-        <translation type="unfinished" />
+        <translation>ბრტყელი სიის რეჟიმი)</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="651" />
         <source>&amp;Add Child Layer</source>
-        <translation type="unfinished" />
+        <translation>&amp;შვილობილი ფენის დამატება</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="652" />
         <source>&amp;Rename</source>
-        <translation type="unfinished" />
+        <translation>&amp;სახელის შეცვლა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="653" />
         <source>&amp;Remove Layers (Sub-Tree)</source>
-        <translation type="unfinished" />
+        <translation>&amp;ფენების წაშლა (ქვე-ხე)</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="655" />
         <source>&amp;Copy Structure (Sub-Tree)</source>
-        <translation type="unfinished" />
+        <translation>&amp;სტრუქტურის კოპირება (ქვე-ხე)</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="656" />
         <source>&amp;Duplicate Content (Sub-Tree)</source>
-        <translation type="unfinished" />
+        <translation>&amp;შიგთავსის დუბლირება (ქვე-ხე)</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="658" />
         <source>&amp;Select Entities (Sub-Tree)</source>
-        <translation type="unfinished" />
+        <translation>&amp;ენტიტეტების არჩევა (ქვე-ხე)</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="663" />
         <source>&amp;Edit Layer &amp;Attributes</source>
-        <translation type="unfinished" />
+        <translation>ფენის &amp;ატრიბუტების &amp;რედაქტირება</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="665" />
         <source>&amp;Remove Layer</source>
-        <translation type="unfinished">&amp;ფენის წაშლა</translation>
+        <translation>&amp;ფენის წაშლა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="674" />
         <source>&amp;Add Dimensions Sub-Layer</source>
-        <translation type="unfinished" />
+        <translation>&amp;ზომების ქვე-ფენის დამატება</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="678" />
         <source>&amp;Add Info Sub-Layer</source>
-        <translation type="unfinished" />
+        <translation>&amp;ინფორმაციის ქვე-ფენის დამატება</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="682" />
         <source>&amp;Add Alternative View Sub-Layer</source>
-        <translation type="unfinished" />
+        <translation>&amp;ალტერნატიული ხედის ქვე-ფენის დამატება</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="688" />
         <source>&amp;Remove Sub-layers</source>
-        <translation type="unfinished" />
+        <translation>&amp;ქვე-ფენების წაშლა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="696" />
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="706" />
         <source>Convert to Dimensional Layer</source>
-        <translation type="unfinished" />
+        <translation>ზომით ფენად გადაკეთება</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="697" />
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="709" />
         <source>Convert to Info Layer</source>
-        <translation type="unfinished" />
+        <translation>ინფორმაციულ ფენად გადაკეთება</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="698" />
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="712" />
         <source>Convert to Alternative Position Layer</source>
-        <translation type="unfinished" />
+        <translation>ალტერნატიული პოზიციის ფენად გადაკეთება</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="704" />
         <source>Convert to Normal Layer</source>
-        <translation type="unfinished" />
+        <translation>ნორმალურ ფენად გადაკეთება</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="718" />
         <source>&amp;Select Layer's Entities</source>
-        <translation type="unfinished" />
+        <translation>ფენის ენტიტეტების &amp;არჩევა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="721" />
         <source>&amp;Create Layer Copy</source>
-        <translation type="unfinished" />
+        <translation>ფენის &amp;კოპიის შექმნა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="722" />
         <source>&amp;Duplicate Layer With Content</source>
-        <translation type="unfinished" />
+        <translation>ფენის &amp;დუბლირება შიგთავსით</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="726" />
         <source>Move Selection to Layer</source>
-        <translation type="unfinished" />
+        <translation>არჩევის გადატანა ფენაში</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="727" />
         <source>Duplicate Selection to Layer</source>
-        <translation type="unfinished" />
+        <translation>არჩევის დუბლირება ფენაში</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="734" />
         <source>&amp;Add Layer</source>
-        <translation type="unfinished">&amp;ფენის დამატება</translation>
+        <translation>ფენის &amp;დამატება</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="736" />
         <source>&amp;Freeze Others Layers</source>
-        <translation type="unfinished" />
+        <translation>სხვა ფენების &amp;გაყინვა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="737" />
         <source>&amp;Defreeze All Layers</source>
-        <translation type="unfinished" />
+        <translation>ყველა ფენის &amp;გალღობა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="738" />
         <source>&amp;Freeze All Layers</source>
-        <translation type="unfinished" />
+        <translation>ყველა ფენის &amp;გაყინვა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="739" />
         <source>&amp;Unlock All Layers</source>
-        <translation type="unfinished" />
+        <translation>ყველა ფენის &amp;განბლოკვა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="740" />
         <source>&amp;Lock All Layers</source>
-        <translation type="unfinished" />
+        <translation>ყველა ფენის &amp;დაბლოკვა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="741" />
         <source>Enable &amp;Printing All Layers</source>
-        <translation type="unfinished" />
+        <translation>ყველა ფენის &amp;ბეჭდვის ჩართვა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="742" />
         <source>&amp;Disable Printing All Layers</source>
-        <translation type="unfinished" />
+        <translation>ყველა ფენის &amp;ბეჭდვის გამორთვა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="745" />
@@ -10017,7 +10021,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="755" />
         <source>&amp;Find And Remove Empty Layers</source>
-        <translation type="unfinished" />
+        <translation>&amp;ცარიელი ფენების პოვნა და წაშლა</translation>
     </message>
 </context>
 <context>
@@ -10025,7 +10029,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished">ფორმა</translation>
+        <translation>ფორმა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="163" />
@@ -10035,7 +10039,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="166" />
         <source>Free</source>
-        <translation type="unfinished" />
+        <translation>თავისუფალი</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="212" />
@@ -10070,12 +10074,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="125" />
         <source>Divide</source>
-        <translation type="unfinished">გაყოფა</translation>
+        <translation>გაყოფა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="132" />
         <source>Offset:</source>
-        <translation type="unfinished">წანაცვლება:</translation>
+        <translation>ოფსეტი:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="50" />
@@ -10091,29 +10095,29 @@ Please specify a different value.</source>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="66" />
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="276" />
         <source>Start</source>
-        <translation type="unfinished">დასაწყისი</translation>
+        <translation>დაწყება</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="71" />
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="281" />
         <source>Middle</source>
-        <translation type="unfinished">შუა</translation>
+        <translation>შუა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="76" />
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="286" />
         <source>End</source>
-        <translation type="unfinished">დასასრული</translation>
+        <translation>დასასრული</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="226" />
         <source>Tick Snap:</source>
-        <translation type="unfinished" />
+        <translation>ნიშნის სნაპი:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="156" />
         <source>Line Snap:</source>
-        <translation type="unfinished" />
+        <translation>ხაზის სნაპი:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="205" />
@@ -10128,12 +10132,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="149" />
         <source>Rel</source>
-        <translation type="unfinished" />
+        <translation>შედარებითი</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="139" />
         <source>Length:</source>
-        <translation type="unfinished">ხანგრძლივობა:</translation>
+        <translation>სიგრძე:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="57" />
@@ -10149,12 +10153,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="294" />
         <source>Angle:</source>
-        <translation type="unfinished">კუთხე:</translation>
+        <translation>კუთხე:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="180" />
         <source>Snap Distance:</source>
-        <translation type="unfinished" />
+        <translation>სნაპის მანძილი:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="102" />
@@ -10167,22 +10171,22 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished">ფორმა</translation>
+        <translation>ფორმა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="335" />
         <source>Angle:</source>
-        <translation type="unfinished">კუთხე:</translation>
+        <translation>კუთხე:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="342" />
         <source>Size:</source>
-        <translation type="unfinished" />
+        <translation>ზომა:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="266" />
         <source>End offset:</source>
-        <translation type="unfinished" />
+        <translation>დასასრულის ოფსეტი:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="259" />
@@ -10202,22 +10206,22 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="124" />
         <source>Start</source>
-        <translation type="unfinished">დასაწყისი</translation>
+        <translation>დაწყება</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="129" />
         <source>Middle</source>
-        <translation type="unfinished">შუა</translation>
+        <translation>შუა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="134" />
         <source>End</source>
-        <translation type="unfinished">დასასრული</translation>
+        <translation>დასასრული</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="171" />
         <source>Length:</source>
-        <translation type="unfinished">ხანგრძლივობა:</translation>
+        <translation>სიგრძე:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="196" />
@@ -10227,7 +10231,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="142" />
         <source>Snap:</source>
-        <translation type="unfinished" />
+        <translation>სნაპი:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="203" />
@@ -10247,12 +10251,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="322" />
         <source>To Intersection</source>
-        <translation type="unfinished" />
+        <translation>გადაკვეთამდე</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="327" />
         <source>Fixed Length</source>
-        <translation type="unfinished" />
+        <translation>ფიქსირებული სიგრძე</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="65" />
@@ -10262,7 +10266,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="68" />
         <source>Orthogonal</source>
-        <translation type="unfinished">ორთოგონალური</translation>
+        <translation>ორთოგონალური</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="44" />
@@ -10275,7 +10279,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="20" />
         <source>Form</source>
-        <translation type="unfinished">ფორმა</translation>
+        <translation>ფორმა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="38" />
@@ -10285,7 +10289,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="41" />
         <source>Create Polyline</source>
-        <translation type="unfinished" />
+        <translation>პოლილაინის შექმნა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="66" />
@@ -10296,29 +10300,29 @@ Please specify a different value.</source>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="70" />
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="124" />
         <source>Extend/Trim</source>
-        <translation type="unfinished" />
+        <translation>გაგრძელება/მოჭრა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="75" />
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="129" />
         <source>Add segment</source>
-        <translation type="unfinished" />
+        <translation>სეგმენტის დამატება</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="80" />
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="134" />
         <source>No change</source>
-        <translation type="unfinished" />
+        <translation>ცვლილება არა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="88" />
         <source>Line 1:</source>
-        <translation type="unfinished" />
+        <translation>ხაზი 1:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="95" />
         <source>Line 2:</source>
-        <translation type="unfinished" />
+        <translation>ხაზი 2:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="120" />
@@ -10333,27 +10337,27 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="164" />
         <source>Active Pen</source>
-        <translation type="unfinished" />
+        <translation>აქტიური პენი</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="169" />
         <source>Line 1</source>
-        <translation type="unfinished" />
+        <translation>ხაზი 1</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="174" />
         <source>Line 2</source>
-        <translation type="unfinished" />
+        <translation>ხაზი 2</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="179" />
         <source>Both lines</source>
-        <translation type="unfinished" />
+        <translation>ორივე ხაზი</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="187" />
         <source>Attributes:</source>
-        <translation type="unfinished" />
+        <translation>ატრიბუტები:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="207" />
@@ -10363,7 +10367,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="210" />
         <source>Remove originals</source>
-        <translation type="unfinished" />
+        <translation>ორიგინალების წაშლა</translation>
     </message>
 </context>
 <context>
@@ -10371,7 +10375,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="20" />
         <source>Form</source>
-        <translation type="unfinished">ფორმა</translation>
+        <translation>ფორმა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="67" />
@@ -10381,22 +10385,22 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="71" />
         <source>None</source>
-        <translation type="unfinished" />
+        <translation>არაფერი</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="76" />
         <source>Both</source>
-        <translation type="unfinished" />
+        <translation>ორივე</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="81" />
         <source>Start</source>
-        <translation type="unfinished">დასაწყისი</translation>
+        <translation>დაწყება</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="86" />
         <source>End</source>
-        <translation type="unfinished">დასასრული</translation>
+        <translation>დასასრული</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="153" />
@@ -10411,7 +10415,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="257" />
         <source>Edge Points:</source>
-        <translation type="unfinished" />
+        <translation>კიდის წერტილები:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="264" />
@@ -10426,7 +10430,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="118" />
         <source>Fit Line</source>
-        <translation type="unfinished" />
+        <translation>ხაზის მორგება</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="143" />
@@ -10441,12 +10445,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="41" />
         <source>Angle:</source>
-        <translation type="unfinished">კუთხე:</translation>
+        <translation>კუთხე:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="212" />
         <source>Number of points:</source>
-        <translation type="unfinished" />
+        <translation>წერტილების რაოდენობა:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="176" />
@@ -10456,7 +10460,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="179" />
         <source>Fixed Distance</source>
-        <translation type="unfinished" />
+        <translation>ფიქსირებული მანძილი</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="250" />
@@ -11269,7 +11273,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifybreakdivideoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished">ფორმა</translation>
+        <translation>ფორმა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifybreakdivideoptions.ui" line="45" />
@@ -11279,7 +11283,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifybreakdivideoptions.ui" line="48" />
         <source>Remove Segments</source>
-        <translation type="unfinished" />
+        <translation>სეგმენტების წაშლა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifybreakdivideoptions.ui" line="55" />
@@ -11289,7 +11293,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifybreakdivideoptions.ui" line="58" />
         <source>Remove Selected</source>
-        <translation type="unfinished" />
+        <translation>არჩეულის წაშლა</translation>
     </message>
 </context>
 <context>
@@ -11297,12 +11301,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished">ფორმა</translation>
+        <translation>ფორმა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="184" />
         <source>Snap Distance:</source>
-        <translation type="unfinished" />
+        <translation>სნაპის მანძილი:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="32" />
@@ -11312,12 +11316,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="95" />
         <source>Line Snap:</source>
-        <translation type="unfinished" />
+        <translation>ხაზის სნაპი:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="54" />
         <source>Gap Size:</source>
-        <translation type="unfinished" />
+        <translation>გაპის ზომა:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="68" />
@@ -11327,12 +11331,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="158" />
         <source>Free</source>
-        <translation type="unfinished" />
+        <translation>თავისუფალი</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="61" />
         <source>Gap Snap:</source>
-        <translation type="unfinished" />
+        <translation>გაპის სნაპი:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="36" />
@@ -12601,47 +12605,47 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="20" />
         <source>Pen Palette Settings</source>
-        <translation type="unfinished" />
+        <translation>პენის პალიტრის პარამეტრები</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="208" />
         <source>Columns to display</source>
-        <translation type="unfinished" />
+        <translation>საჩვენებელი სვეტები</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="214" />
         <source>Line Type Name</source>
-        <translation type="unfinished" />
+        <translation>ხაზის ტიპის სახელი</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="221" />
         <source>Color Name</source>
-        <translation type="unfinished" />
+        <translation>ფერის სახელი</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="228" />
         <source>Line Type Icon</source>
-        <translation type="unfinished" />
+        <translation>ხაზის ტიპის ხატულა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="235" />
         <source>Color Icon</source>
-        <translation type="unfinished" />
+        <translation>ფერის ხატულა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="242" />
         <source>Line Width Icon</source>
-        <translation type="unfinished" />
+        <translation>ხაზის სიგანის ხატულა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="249" />
         <source>Line Width Name</source>
-        <translation type="unfinished" />
+        <translation>ხაზის სიგანის სახელი</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="26" />
         <source>Colors</source>
-        <translation type="unfinished" />
+        <translation>ფერები</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="32" />
@@ -12663,7 +12667,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="79" />
         <source>Active Pen Background:</source>
-        <translation type="unfinished" />
+        <translation>აქტიური პენის ფონი:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="100" />
@@ -12673,17 +12677,17 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="103" />
         <source>Entire table row is bold for active pen</source>
-        <translation type="unfinished" />
+        <translation>აქტიური პენის მთლიანი მწკრივი სქელია</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="110" />
         <source>Grid Color:</source>
-        <translation type="unfinished" />
+        <translation>ბადის ფერი:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="117" />
         <source>Matched Item Color:</source>
-        <translation type="unfinished" />
+        <translation>დამთხვევი ელემენტის ფერი:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="124" />
@@ -12698,22 +12702,22 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="321" />
         <source>Case-insensitive pens filtering</source>
-        <translation type="unfinished" />
+        <translation>დიდი/პატარა ასოების გაუთვალისწინებელი პენების გაფილტვრა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="151" />
         <source>Controls whether tooltip will be shown for table item or not</source>
-        <translation type="unfinished" />
+        <translation>აკონტროლებს ხდება თუ არა ინსტრუმენტის მინიშნების ჩვენება ცხრილის ელემენტზე</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="154" />
         <source>Show tooltip for table items</source>
-        <translation type="unfinished" />
+        <translation>ცხრილის ელემენტებზე ინსტრუმენტის მინიშნების ჩვენება</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="259" />
         <source>Show colorn name as</source>
-        <translation type="unfinished" />
+        <translation>ფერის სახელის ჩვენება როგორც</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="265" />
@@ -12723,7 +12727,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="268" />
         <source>HEX</source>
-        <translation type="unfinished" />
+        <translation>HEX</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="275" />
@@ -12733,7 +12737,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="278" />
         <source>RGB</source>
-        <translation type="unfinished" />
+        <translation>RGB</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="285" />
@@ -12743,7 +12747,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="288" />
         <source>Natural name where possible</source>
-        <translation type="unfinished" />
+        <translation>ბუნებრივი სახელი სადაც შესაძლებელია</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="298" />
@@ -12753,12 +12757,12 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="301" />
         <source>Show info message if no entities may be selected by pen</source>
-        <translation type="unfinished" />
+        <translation>ინფორმაციული შეტყობინების ჩვენება თუ პენით ენტიტეტი არ აირჩევა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="176" />
         <source>On double click on table item</source>
-        <translation type="unfinished" />
+        <translation>ცხრილის ელემენტზე ორმაგი დაწკაპუნებისას</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="183" />
@@ -12768,17 +12772,17 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.cpp" line="51" />
         <source>Do nothing</source>
-        <translation type="unfinished" />
+        <translation>არაფერი</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.cpp" line="52" />
         <source>Select entities by attributes pen</source>
-        <translation type="unfinished" />
+        <translation>ენტიტეტების არჩევა ატრიბუტების პენით</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.cpp" line="53" />
         <source>Select entities by drawing pen</source>
-        <translation type="unfinished" />
+        <translation>ენტიტეტების არჩევა ხატვის პენით</translation>
     </message>
 </context>
 <context>
@@ -12786,93 +12790,93 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="20" />
         <source>Pen Palette</source>
-        <translation type="unfinished" />
+        <translation>პენის პალიტრა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="46" />
         <source>Fill Pen Editor by Entity Drawing Pen</source>
-        <translation type="unfinished" />
+        <translation>პენის რედაქტორის შევსება ენტიტეტის ხატვის პენით</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="63" />
         <source>Fill Pen Editor by Entity Attributes</source>
-        <translation type="unfinished" />
+        <translation>პენის რედაქტორის შევსება ენტიტეტის ატრიბუტებით</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="80" />
         <source>Select Entities By Drawing Pen</source>
-        <translation type="unfinished" />
+        <translation>ენტიტეტების არჩევა ხატვის პენით</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="97" />
         <source>Select Entities By Pen Attributes</source>
-        <translation type="unfinished" />
+        <translation>ენტიტეტების არჩევა პენის ატრიბუტებით</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="117" />
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="120" />
         <source>Save</source>
-        <translation type="unfinished">შენახვა</translation>
+        <translation>შენახვა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="134" />
         <source>Apply Pen To Selection</source>
-        <translation type="unfinished" />
+        <translation>პენის გადატანა არჩევაზე</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="151" />
         <source>Fill Editor Pen by Current Pen</source>
-        <translation type="unfinished" />
+        <translation>რედაქტორის პენის შევსება მიმდინარე პენით</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="168" />
         <source>Apply Editor Pen As Current Pen</source>
-        <translation type="unfinished" />
+        <translation>რედაქტორის პენის გადატანა მიმდინარე პენად</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="171" />
         <source>to current</source>
-        <translation type="unfinished" />
+        <translation>მიმდინარეზე</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="185" />
         <source>Update Current Pen by Active Layer' Pen</source>
-        <translation type="unfinished" />
+        <translation>მიმდინარე პენის განახლება აქტიური ფენის პენით</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="202" />
         <source>Fill Pen Editor from Active Layer's Pen</source>
-        <translation type="unfinished" />
+        <translation>პენის რედაქტორის შევსება აქტიური ფენის პენიდან</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="205" />
         <source>Pick from Active Layer</source>
-        <translation type="unfinished" />
+        <translation>არჩევა აქტიური ფენიდან</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="219" />
         <source>Apply Editor Pen to Active Layer Pen</source>
-        <translation type="unfinished" />
+        <translation>რედაქტორის პენის გადატანა აქტიური ფენის პენზე</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="222" />
         <source>Apply To Layer</source>
-        <translation type="unfinished" />
+        <translation>ფენაზე გადატანა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="236" />
         <source>Remove Selected Pen</source>
-        <translation type="unfinished" />
+        <translation>არჩეული პენის წაშლა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="239" />
         <source>Delete Pen</source>
-        <translation type="unfinished" />
+        <translation>პენის წაშლა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="336" />
         <source>Type:</source>
-        <translation type="unfinished" />
+        <translation>ტიპი:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="343" />
@@ -12882,7 +12886,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="362" />
         <source>Width:</source>
-        <translation type="unfinished">სიგანე:</translation>
+        <translation>სიგანე:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="369" />
@@ -12892,7 +12896,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="399" />
         <source>Pen Name:</source>
-        <translation type="unfinished" />
+        <translation>პენის სახელი:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="433" />
@@ -12902,12 +12906,12 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="452" />
         <source>Color:</source>
-        <translation type="unfinished">ფერი:</translation>
+        <translation>ფერი:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="484" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation>პარამეტრები</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="515" />
@@ -12917,7 +12921,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="518" />
         <source>Filter...</source>
-        <translation type="unfinished" />
+        <translation>ფილტრი...</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="547" />
@@ -12927,59 +12931,61 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="550" />
         <source>Highlight Mode</source>
-        <translation type="unfinished" />
+        <translation>გამოჩენის რეჟიმი</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="278" />
         <source>&amp;Apply Pen To Selection</source>
-        <translation type="unfinished" />
+        <translation>&amp;პენის გადატანა არჩევაზე</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="279" />
         <source>&amp;Set As Current Pen</source>
-        <translation type="unfinished" />
+        <translation>&amp;მიმდინარე პენად დაყენება</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="280" />
         <source>&amp;Apply Pen To Active Layer</source>
-        <translation type="unfinished" />
+        <translation>&amp;პენის გადატანა აქტიურ ფენაზე</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="281" />
         <source>&amp;Select Entities With Attributes Pen</source>
-        <translation type="unfinished" />
+        <translation>&amp;ენტიტეტების არჩევა ატრიბუტების პენით</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="282" />
         <source>&amp;Select Entities With Drawing Pen</source>
-        <translation type="unfinished" />
+        <translation>&amp;ენტიტეტების არჩევა ხატვის პენით</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="285" />
         <source>&amp;Edit Pen</source>
-        <translation type="unfinished" />
+        <translation>&amp;პენის რედაქტირება</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="286" />
         <source>&amp;Remove Pen</source>
-        <translation type="unfinished" />
+        <translation>&amp;პენის წაშლა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="289" />
         <source>&amp;Remove Pens</source>
-        <translation type="unfinished" />
+        <translation>&amp;პენების წაშლა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="404" />
         <source>Pen palette</source>
-        <translation type="unfinished" />
+        <translation>პენის პალიტრა</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="405" />
         <source>Location of pens file is changed, please restart the application so new pens file will be used.
 
 Please note that if you'll save pen via editor without restart, current pens from palette will be saved in the new file and therefore existing content of it will be overridden.</source>
-        <translation type="unfinished" />
+        <translation>პენების ფაილის მდებარეობა შეიცვალა, გთხოვთ გადატვირთოთ პროგრამა ახალი ფაილის გამოსაყენებლად.
+
+გაითვალისწინეთ: თუ რედაქტორით შეინახავთ პენს გადატვირთვის გარეშე, პალიტრის მიმდინარე პენები შეინახება ახალ ფაილში და არსებული შიგთავსი გადაიწერება.</translation>
     </message>
 </context>
 <context>
@@ -14335,12 +14341,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished">ფორმა</translation>
+        <translation>ფორმა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="381" />
         <source>Edges:</source>
-        <translation type="unfinished" />
+        <translation>კიდეები:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="388" />
@@ -14350,7 +14356,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="391" />
         <source>Snap shift</source>
-        <translation type="unfinished" />
+        <translation>სნაპის გადაწევა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="229" />
@@ -14365,17 +14371,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="199" />
         <source>Both</source>
-        <translation type="unfinished" />
+        <translation>ორივე</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="204" />
         <source>Vertical</source>
-        <translation type="unfinished">ვერტიკალური</translation>
+        <translation>ვერტიკალური</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="209" />
         <source>Horizontal</source>
-        <translation type="unfinished">ჰორიზონტალური</translation>
+        <translation>ჰორიზონტალური</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="339" />
@@ -14390,17 +14396,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="240" />
         <source>Straight</source>
-        <translation type="unfinished" />
+        <translation>სწორი</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="245" />
         <source>Round</source>
-        <translation type="unfinished" />
+        <translation>მრგვალი</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="250" />
         <source>Bevel</source>
-        <translation type="unfinished" />
+        <translation>ჩასმული</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="307" />
@@ -14410,7 +14416,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="310" />
         <source>Base Angle:</source>
-        <translation type="unfinished" />
+        <translation>ძირითადი კუთხე:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="258" />
@@ -14420,12 +14426,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="261" />
         <source>Size inner</source>
-        <translation type="unfinished" />
+        <translation>შიდა ზომა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="32" />
         <source>Length Y:</source>
-        <translation type="unfinished" />
+        <translation>სიგრძე Y:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="46" />
@@ -14435,22 +14441,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="49" />
         <source>Polyline</source>
-        <translation type="unfinished">პოლიხაზი</translation>
+        <translation>პოლილაინი</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="419" />
         <source>Snap:</source>
-        <translation type="unfinished" />
+        <translation>სნაპი:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="412" />
         <source>Height:</source>
-        <translation type="unfinished">სიმაღლე:</translation>
+        <translation>სიმაღლე:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="174" />
         <source>Radius:</source>
-        <translation type="unfinished">რადიუსი:</translation>
+        <translation>რადიუსი:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="146" />
@@ -14460,7 +14466,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="56" />
         <source>Length X:</source>
-        <translation type="unfinished" />
+        <translation>სიგრძე X:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="75" />
@@ -14480,47 +14486,47 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="86" />
         <source>Top-left</source>
-        <translation type="unfinished" />
+        <translation>ზედა-მარცხენა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="91" />
         <source>Top</source>
-        <translation type="unfinished">თავში</translation>
+        <translation>ზედა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="96" />
         <source>Top-right</source>
-        <translation type="unfinished" />
+        <translation>ზედა-მარჯვენა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="101" />
         <source>Left</source>
-        <translation type="unfinished">მარცხენა</translation>
+        <translation>მარცხენა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="106" />
         <source>Middle</source>
-        <translation type="unfinished">შუა</translation>
+        <translation>შუა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="111" />
         <source>Right</source>
-        <translation type="unfinished">მარჯვენა</translation>
+        <translation>მარჯვენა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="116" />
         <source>Bottom-left</source>
-        <translation type="unfinished" />
+        <translation>ქვედა-მარცხენა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="121" />
         <source>Bottom</source>
-        <translation type="unfinished">ბოლოში</translation>
+        <translation>ქვედა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="126" />
         <source>Bottom-right</source>
-        <translation type="unfinished" />
+        <translation>ქვედა-მარჯვენა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="160" />
@@ -14550,12 +14556,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="374" />
         <source>Width:</source>
-        <translation type="unfinished">სიგანე:</translation>
+        <translation>სიგანე:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="405" />
         <source>Corners:</source>
-        <translation type="unfinished" />
+        <translation>კუთხეები:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="445" />
@@ -14583,7 +14589,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished">ფორმა</translation>
+        <translation>ფორმა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="251" />
@@ -14593,17 +14599,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="255" />
         <source>Both</source>
-        <translation type="unfinished" />
+        <translation>ორივე</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="260" />
         <source>Vertical</source>
-        <translation type="unfinished">ვერტიკალური</translation>
+        <translation>ვერტიკალური</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="265" />
         <source>Horizontal</source>
-        <translation type="unfinished">ჰორიზონტალური</translation>
+        <translation>ჰორიზონტალური</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="32" />
@@ -14614,25 +14620,25 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="36" />
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="201" />
         <source>Corner</source>
-        <translation type="unfinished" />
+        <translation>კუთხე</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="41" />
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="206" />
         <source>Mid-Vertical</source>
-        <translation type="unfinished" />
+        <translation>შუა-ვერტიკალური</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="46" />
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="211" />
         <source>Mid-Horizontal</source>
-        <translation type="unfinished" />
+        <translation>შუა-ჰორიზონტალური</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="51" />
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="216" />
         <source>Middle</source>
-        <translation type="unfinished">შუა</translation>
+        <translation>შუა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="105" />
@@ -14647,7 +14653,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="171" />
         <source>Corners:</source>
-        <translation type="unfinished" />
+        <translation>კუთხეები:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="197" />
@@ -14662,7 +14668,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="354" />
         <source>Edges:</source>
-        <translation type="unfinished" />
+        <translation>კიდეები:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="361" />
@@ -14672,7 +14678,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="91" />
         <source>Start Snap:</source>
-        <translation type="unfinished" />
+        <translation>დაწყების სნაპი:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="190" />
@@ -14687,17 +14693,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="321" />
         <source>Snap shift</source>
-        <translation type="unfinished" />
+        <translation>სნაპის გადაწევა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="304" />
         <source>Length X:</source>
-        <translation type="unfinished" />
+        <translation>სიგრძე X:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="311" />
         <source>Radius:</source>
-        <translation type="unfinished">რადიუსი:</translation>
+        <translation>რადიუსი:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="294" />
@@ -14707,7 +14713,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="297" />
         <source>Base Angle:</source>
-        <translation type="unfinished" />
+        <translation>ძირითადი კუთხე:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="164" />
@@ -14717,7 +14723,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="347" />
         <source>End Snap:</source>
-        <translation type="unfinished" />
+        <translation>დასასრულის სნაპი:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="69" />
@@ -14727,17 +14733,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="73" />
         <source>Straight</source>
-        <translation type="unfinished" />
+        <translation>სწორი</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="78" />
         <source>Round</source>
-        <translation type="unfinished" />
+        <translation>მრგვალი</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="83" />
         <source>Bevel</source>
-        <translation type="unfinished" />
+        <translation>ჩასმული</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="131" />
@@ -14747,7 +14753,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="231" />
         <source>Length Y:</source>
-        <translation type="unfinished" />
+        <translation>სიგრძე Y:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="59" />
@@ -14757,7 +14763,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="62" />
         <source>Polyline</source>
-        <translation type="unfinished">პოლიხაზი</translation>
+        <translation>პოლილაინი</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="340" />
@@ -14770,7 +14776,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished">ფორმა</translation>
+        <translation>ფორმა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="121" />
@@ -14785,7 +14791,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="89" />
         <source>Fixed Inner Angle:</source>
-        <translation type="unfinished" />
+        <translation>ფიქსირებული შიდა კუთხე:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="187" />
@@ -14795,7 +14801,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="322" />
         <source>Length X:</source>
-        <translation type="unfinished" />
+        <translation>სიგრძე X:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="290" />
@@ -14810,22 +14816,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="372" />
         <source>Straight</source>
-        <translation type="unfinished" />
+        <translation>სწორი</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="377" />
         <source>Round</source>
-        <translation type="unfinished" />
+        <translation>მრგვალი</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="382" />
         <source>Bevel</source>
-        <translation type="unfinished" />
+        <translation>ჩასმული</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="390" />
         <source>Corners:</source>
-        <translation type="unfinished" />
+        <translation>კუთხეები:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="248" />
@@ -14835,12 +14841,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="251" />
         <source>Snap shift</source>
-        <translation type="unfinished" />
+        <translation>სნაპის გადაწევა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="258" />
         <source>Length Y:</source>
-        <translation type="unfinished" />
+        <translation>სიგრძე Y:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="315" />
@@ -14855,7 +14861,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="265" />
         <source>Radius:</source>
-        <translation type="unfinished">რადიუსი:</translation>
+        <translation>რადიუსი:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="32" />
@@ -14865,7 +14871,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="35" />
         <source>Polyline</source>
-        <translation type="unfinished">პოლიხაზი</translation>
+        <translation>პოლილაინი</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="128" />
@@ -14875,7 +14881,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="152" />
         <source>Edges:</source>
-        <translation type="unfinished" />
+        <translation>კიდეები:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="354" />
@@ -14900,17 +14906,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="432" />
         <source>Both</source>
-        <translation type="unfinished" />
+        <translation>ორივე</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="437" />
         <source>Vertical</source>
-        <translation type="unfinished">ვერტიკალური</translation>
+        <translation>ვერტიკალური</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="442" />
         <source>Horizontal</source>
-        <translation type="unfinished">ჰორიზონტალური</translation>
+        <translation>ჰორიზონტალური</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="450" />
@@ -14925,7 +14931,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="162" />
         <source>Fixed Base Angle:</source>
-        <translation type="unfinished" />
+        <translation>ფიქსირებული ძირითადი კუთხე:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="194" />
@@ -14935,7 +14941,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="197" />
         <source>Quadrangle</source>
-        <translation type="unfinished" />
+        <translation>ოთხკუთხედი</translation>
     </message>
 </context>
 <context>
@@ -15268,12 +15274,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished">ფორმა</translation>
+        <translation>ფორმა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="382" />
         <source>Start Circle Angle:</source>
-        <translation type="unfinished" />
+        <translation>დაწყების წრის კუთხე:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="375" />
@@ -15283,7 +15289,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="189" />
         <source>Offset:</source>
-        <translation type="unfinished">წანაცვლება:</translation>
+        <translation>ოფსეტი:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="284" />
@@ -15293,7 +15299,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="196" />
         <source>Angle:</source>
-        <translation type="unfinished">კუთხე:</translation>
+        <translation>კუთხე:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="66" />
@@ -15303,7 +15309,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="86" />
         <source>Distance:</source>
-        <translation type="unfinished">მანძილი:</translation>
+        <translation>მანძილი:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="111" />
@@ -15318,7 +15324,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="182" />
         <source>Divide</source>
-        <translation type="unfinished">გაყოფა</translation>
+        <translation>გაყოფა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="203" />
@@ -15338,7 +15344,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="291" />
         <source>Tick snap:</source>
-        <translation type="unfinished" />
+        <translation>ნიშნის სნაპი:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="322" />
@@ -15363,12 +15369,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="315" />
         <source>Rel</source>
-        <translation type="unfinished" />
+        <translation>შედარებითი</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="298" />
         <source>Tick Length:</source>
-        <translation type="unfinished" />
+        <translation>ნიშნის სიგრძე:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="250" />
@@ -15379,18 +15385,18 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="156" />
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="254" />
         <source>Start</source>
-        <translation type="unfinished">დასაწყისი</translation>
+        <translation>დაწყება</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="259" />
         <source>Middle</source>
-        <translation type="unfinished">შუა</translation>
+        <translation>შუა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="161" />
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="264" />
         <source>End</source>
-        <translation type="unfinished">დასასრული</translation>
+        <translation>დასასრული</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="413" />
@@ -15400,7 +15406,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="416" />
         <source>Fixed </source>
-        <translation type="unfinished" />
+        <translation>ფიქსირებული</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="454" />
@@ -15410,7 +15416,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="464" />
         <source>Count:</source>
-        <translation type="unfinished" />
+        <translation>რაოდენობა:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="142" />
@@ -15420,17 +15426,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="146" />
         <source>None</source>
-        <translation type="unfinished" />
+        <translation>არაფერი</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="151" />
         <source>Both</source>
-        <translation type="unfinished" />
+        <translation>ორივე</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="169" />
         <source>Edge Tick:</source>
-        <translation type="unfinished" />
+        <translation>კიდის ნიშანი:</translation>
     </message>
 </context>
 <context>
@@ -15777,7 +15783,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished">ფორმა</translation>
+        <translation>ფორმა</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="42" />
@@ -15787,7 +15793,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="45" />
         <source>Symmetric</source>
-        <translation type="unfinished" />
+        <translation>სიმეტრიული</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="114" />
@@ -15797,7 +15803,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="131" />
         <source>Number:</source>
-        <translation type="unfinished">რიცხვი:</translation>
+        <translation>რიცხვი:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="157" />
@@ -15822,7 +15828,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="35" />
         <source>Radius Outer</source>
-        <translation type="unfinished" />
+        <translation>გარე რადიუსი</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="121" />
@@ -15832,7 +15838,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="124" />
         <source>Radius Inner</source>
-        <translation type="unfinished" />
+        <translation>შიდა რადიუსი</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="82" />
@@ -15842,7 +15848,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="85" />
         <source>Polyline</source>
-        <translation type="unfinished">პოლიხაზი</translation>
+        <translation>პოლილაინი</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="150" />
@@ -16729,7 +16735,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dialogs/settings/options_widget/lc_widgetoptionsdialog.ui" line="135" />
         <source>Input the path of a Qt style sheet.</source>
-        <translation type="unfinished" />
+        <translation>შეიყვანეთ Qt სტილის ფაილის ბილიკი.</translation>
     </message>
     <message>
         <location filename="../src/ui/dialogs/settings/options_widget/lc_widgetoptionsdialog.ui" line="173" />
@@ -16909,7 +16915,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/action_options/polyline/qg_polylineequidistantoptions.ui" line="32" />
         <source>Line Relative Angle Options</source>
-        <translation type="unfinished" />
+        <translation>ხაზის შედარებითი კუთხის პარამეტრები</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polyline/qg_polylineequidistantoptions.ui" line="94" />
@@ -16919,7 +16925,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/action_options/polyline/qg_polylineequidistantoptions.ui" line="81" />
         <source>Distance from original polyline</source>
-        <translation type="unfinished" />
+        <translation>მანძილი ორიგინალ პოლილაინიდან</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polyline/qg_polylineequidistantoptions.ui" line="56" />
@@ -16992,7 +16998,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="990" />
         <source>Opening aborted</source>
-        <translation type="unfinished" />
+        <translation>გახსნა შეწყვეტილია</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="1280" />
@@ -17002,27 +17008,27 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="1378" />
         <source>Exiting application...</source>
-        <translation type="unfinished" />
+        <translation>პროგრამიდან გამოსვლა...</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="196" />
         <source>Print preview for %1</source>
-        <translation type="unfinished" />
+        <translation>ბეჭდვის წინასწარი ნახვა %1-ისთვის</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="817" />
         <source>New Drawing created.</source>
-        <translation type="unfinished" />
+        <translation>ახალი ნახატი შექმნილია.</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="226" />
         <source>Saving drawing...</source>
-        <translation type="unfinished" />
+        <translation>ნახატის შენახვა...</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="237" />
         <source>Saved drawing: %1</source>
-        <translation type="unfinished" />
+        <translation>შენახული ნახატი: %1</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="1284" />
@@ -17039,17 +17045,19 @@ Warning: this action can NOT be undone!</source>
         <source>Cannot open the file
 %1
 Please check the permissions.</source>
-        <translation type="unfinished" />
+        <translation>ფაილის გახსნა ვერ მოხერხდა
+%1
+გთხოვთ შეამოწმოთ ნებართვები.</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="1122" />
         <source>Auto-saving drawing...</source>
-        <translation type="unfinished" />
+        <translation>ნახატის ავტო-შენახვა...</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="1128" />
         <source>Auto-saved drawing</source>
-        <translation type="unfinished" />
+        <translation>ავტო-შენახული ნახატი</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="1133" />
@@ -17057,12 +17065,15 @@ Please check the permissions.</source>
 %1
 Please check the permissions.
 Auto-save disabled.</source>
-        <translation type="unfinished" />
+        <translation>ფაილის ავტო-შენახვა ვერ მოხერხდა
+%1
+გთხოვთ შეამოწმოთ ნებართვები.
+ავტო-შენახვა გამორთულია.</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="997" />
         <source>Warning: File already opened : </source>
-        <translation type="unfinished" />
+        <translation>გაფრთხილება: ფაილი უკვე გახსნილია :</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="249" />
@@ -17072,44 +17083,46 @@ Auto-save disabled.</source>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="249" />
         <source> , please check the filename and permissions.</source>
-        <translation type="unfinished" />
+        <translation>, გთხოვთ შეამოწმოთ ფაილის სახელი და ნებართვები.</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="813" />
         <source>New document from template: </source>
-        <translation type="unfinished" />
+        <translation>ახალი დოკუმენტი შაბლონიდან:</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="845" />
         <source>Select Template aborted</source>
-        <translation type="unfinished" />
+        <translation>შაბლონის არჩევა შეწყვეტილია</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="1135" />
         <source>Auto-saving failed</source>
-        <translation type="unfinished" />
+        <translation>ავტო-შენახვა ვერ მოხერხდა</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="207" />
         <source>Draft Mode</source>
-        <translation type="unfinished" />
+        <translation>ნახაზის რეჟიმი</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="1010" />
         <source>Cannot open the file
 %1
 Please check its existence and permissions.</source>
-        <translation type="unfinished" />
+        <translation>ფაილის გახსნა ვერ მოხერხდა
+%1
+გთხოვთ შეამოწმოთ არსებობა და ნებართვები.</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="989" />
         <source>File '%1' does not exist. Opening aborted</source>
-        <translation type="unfinished" />
+        <translation>ფაილი „%1“ არ არსებობს. გახსნა შეწყვეტილია</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="943" />
         <source>Opening recent file...</source>
-        <translation type="unfinished" />
+        <translation>ბოლო ფაილის გახსნა...</translation>
     </message>
     <message>
         <location filename="../src/ui/main/qc_applicationwindow.cpp" line="226" />
