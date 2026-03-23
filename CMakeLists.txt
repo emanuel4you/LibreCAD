@@ -1821,7 +1821,7 @@ set(TS_FILES
     librecad/ts/librecad_he.ts
     librecad/ts/librecad_hi.ts
     librecad/ts/librecad_hu.ts
-    librecad/ts/librecad_id_ID.ts
+    librecad/ts/librecad_id_id.ts
     librecad/ts/librecad_it.ts
     librecad/ts/librecad_ja.ts
     librecad/ts/librecad_ka.ts

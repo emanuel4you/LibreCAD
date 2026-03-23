@@ -5,7 +5,7 @@
     <message>
         <location filename="../src/ui/dock_widgets/pen_wizard/colorwizard.ui" line="14" />
         <source>Frame</source>
-        <translation type="unfinished" />
+        <translation>Bingkai</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_wizard/colorwizard.ui" line="59" />
@@ -24,17 +24,17 @@
     <message>
         <location filename="../src/ui/components/comboboxes/comboboxoption.ui" line="14" />
         <source>Frame</source>
-        <translation type="unfinished" />
+        <translation>Bingkai</translation>
     </message>
     <message>
         <location filename="../src/ui/components/comboboxes/comboboxoption.ui" line="26" />
         <source>GroupBox</source>
-        <translation type="unfinished" />
+        <translation>GroupBox</translation>
     </message>
     <message>
         <location filename="../src/ui/components/comboboxes/comboboxoption.ui" line="41" />
         <source>Set</source>
-        <translation type="unfinished" />
+        <translation>Atur</translation>
     </message>
 </context>
 <context>
@@ -42,7 +42,7 @@
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_abstractactiondrawline.cpp" line="41" />
         <source>Start point may set in distance or point state only</source>
-        <translation type="unfinished" />
+        <translation>Titik awal hanya dapat diatur dalam jarak atau status titik saja</translation>
     </message>
 </context>
 <context>
@@ -50,79 +50,81 @@
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="166" />
         <source>To be created:</source>
-        <translation type="unfinished" />
+        <translation>Akan dibuat:</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="166" />
         <source>Rectangle</source>
-        <translation type="unfinished">Persegi panjang</translation>
+        <translation>Persegi panjang</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="167" />
         <source>Width:</source>
-        <translation type="unfinished">Panjang:</translation>
+        <translation>Lebar:</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="168" />
         <source>Height:</source>
-        <translation type="unfinished" />
+        <translation>Tinggi:</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="169" />
         <source>Center:</source>
-        <translation type="unfinished" />
+        <translation>Pusat:</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="198" />
         <source>Invalid Angle</source>
-        <translation type="unfinished" />
+        <translation>Sudut tidak valid</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="209" />
         <source>Invalid radius</source>
-        <translation type="unfinished" />
+        <translation>Jari-jari tidak valid</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="354" />
         <source>Invalid value</source>
-        <translation type="unfinished" />
+        <translation>Nilai tidak valid</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="410" />
         <source>Specify insertion point</source>
-        <translation type="unfinished" />
+        <translation>Tentukan titik penyisipan</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="413" />
         <source>Specify angle</source>
-        <translation type="unfinished" />
+        <translation>Tentukan sudut</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="416" />
         <source>Specify size (width, height)</source>
-        <translation type="unfinished" />
+        <translation>Tentukan ukuran (lebar, tinggi)</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="419" />
         <source>Specify corners type
 [str|round|bevels]</source>
-        <translation type="unfinished" />
+        <translation>Tentukan jenis sudut
+[str|bulat|bevel]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="422" />
         <source>Specify corner bevel length (x,y)</source>
-        <translation type="unfinished" />
+        <translation>Tentukan panjang bevel sudut (x,y)</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="425" />
         <source>Specify corner radius</source>
-        <translation type="unfinished" />
+        <translation>Tentukan jari-jari sudut</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="428" />
         <source>Specify edges mode
 [both|hor|vert]</source>
-        <translation type="unfinished" />
+        <translation>Tentukan mode tepi
+[keduanya|horisontal|vertikal]</translation>
     </message>
 </context>
 <context>
@@ -130,12 +132,12 @@
     <message>
         <location filename="../src/actions/drawing/lc_abstractactionwithpreview.cpp" line="731" />
         <source> is not divided as it is locked.</source>
-        <translation type="unfinished" />
+        <translation>tidak dapat dibagi karena terkunci.</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/lc_abstractactionwithpreview.cpp" line="739" />
         <source> is not divided as it is part of polyline. Expand polyline first.</source>
-        <translation type="unfinished" />
+        <translation>tidak dapat dibagi karena bagian dari poligaris. Perluas poligaris terlebih dahulu.</translation>
     </message>
 </context>
 <context>
@@ -143,32 +145,32 @@
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actioncircledimbase.cpp" line="116" />
         <source>Not a circle or arc entity</source>
-        <translation type="unfinished" />
+        <translation>Bukan entitas lingkaran atau busur</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actioncircledimbase.cpp" line="193" />
         <source>Not a valid expression</source>
-        <translation type="unfinished">Bukan ekspresi yang valid</translation>
+        <translation>Bukan ekspresi yang valid</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actioncircledimbase.cpp" line="216" />
         <source>Select arc or circle entity</source>
-        <translation type="unfinished" />
+        <translation>Pilih entitas busur atau lingkaran</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actioncircledimbase.cpp" line="216" />
         <source>Free angle</source>
-        <translation type="unfinished" />
+        <translation>Sudut bebas</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actioncircledimbase.cpp" line="219" />
         <source>Specify dimension line position or enter angle:</source>
-        <translation type="unfinished" />
+        <translation>Tentukan posisi garis dimensi atau masukkan sudut:</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actioncircledimbase.cpp" line="222" />
         <source>Enter dimension text:</source>
-        <translation type="unfinished" />
+        <translation>Masukkan teks dimensi:</translation>
     </message>
 </context>
 <context>
@@ -176,12 +178,12 @@
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimarc.cpp" line="189" />
         <source>Select arc entity</source>
-        <translation type="unfinished" />
+        <translation>Pilih entitas busur</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimarc.cpp" line="192" />
         <source>Specify dimension arc location</source>
-        <translation type="unfinished" />
+        <translation>Tentukan lokasi dimensi busur</translation>
     </message>
 </context>
 <context>
@@ -189,32 +191,32 @@
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimlinearbase.cpp" line="312" />
         <source>Specify first extension line origin</source>
-        <translation type="unfinished" />
+        <translation>Tentukan asal garis ekstensi pertama</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimlinearbase.cpp" line="302" />
         <source>Specify second extension line origin</source>
-        <translation type="unfinished" />
+        <translation>Tentukan asal garis ekstensi kedua</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimlinearbase.cpp" line="306" />
         <source>Specify dimension line location</source>
-        <translation type="unfinished" />
+        <translation>Tentukan lokasi garis dimensi</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimlinearbase.cpp" line="306" />
         <source>Snap to Adjacent Dim</source>
-        <translation type="unfinished" />
+        <translation>Snap ke Dimensi Berdekatan</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimlinearbase.cpp" line="321" />
         <source>Enter dimension text:</source>
-        <translation type="unfinished" />
+        <translation>Masukkan teks dimensi:</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimlinearbase.cpp" line="324" />
         <source>Enter dimension line angle:</source>
-        <translation type="unfinished" />
+        <translation>Masukkan sudut garis dimensi:</translation>
     </message>
 </context>
 <context>
@@ -222,17 +224,17 @@
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimordinate.cpp" line="212" />
         <source>Specify first point</source>
-        <translation type="unfinished" />
+        <translation>Tentukan titik pertama</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimordinate.cpp" line="216" />
         <source>Specify leader end point</source>
-        <translation type="unfinished" />
+        <translation>Tentukan titik akhir pemimpin</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimordinate.cpp" line="216" />
         <source>Change Ordinate</source>
-        <translation type="unfinished" />
+        <translation>Ubah Ordinat</translation>
     </message>
 </context>
 <context>
@@ -240,7 +242,7 @@
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimordinaterebase.cpp" line="41" />
         <source>Select and rebase</source>
-        <translation type="unfinished" />
+        <translation>Pilih dan ubah basis</translation>
     </message>
 </context>
 <context>
@@ -248,17 +250,17 @@
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimstyleapply.cpp" line="159" />
         <source>Specify dimension to pick the style</source>
-        <translation type="unfinished" />
+        <translation>Tentukan dimensi untuk memilih gaya</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimstyleapply.cpp" line="162" />
         <source>Specify dimension to apply style</source>
-        <translation type="unfinished" />
+        <translation>Tentukan dimensi untuk menerapkan gaya</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimstyleapply.cpp" line="162" />
         <source>Do not apply style override</source>
-        <translation type="unfinished" />
+        <translation>Jangan terapkan penggantian gaya</translation>
     </message>
 </context>
 <context>
@@ -266,37 +268,37 @@
     <message>
         <location filename="../src/ui/action_options/curve/lc_actiondrawarc2poptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation>Formulir</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/curve/lc_actiondrawarc2poptions.ui" line="61" />
         <source>Height of the arc (the distanсe between chord and top arc point)</source>
-        <translation type="unfinished" />
+        <translation>Tinggi busur (jarak antara chord dan titik atas busur)</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/curve/lc_actiondrawarc2poptions.ui" line="64" />
         <source>Height:</source>
-        <translation type="unfinished" />
+        <translation>Tinggi:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/curve/lc_actiondrawarc2poptions.ui" line="127" />
         <source>Counterclockwise</source>
-        <translation type="unfinished" />
+        <translation>Berlawanan arah jarum jam</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/curve/lc_actiondrawarc2poptions.ui" line="144" />
         <source>Pick angle from the drawing</source>
-        <translation type="unfinished" />
+        <translation>Pilih sudut dari gambar</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/curve/lc_actiondrawarc2poptions.ui" line="92" />
         <source>Radius of arc</source>
-        <translation type="unfinished" />
+        <translation>Jari-jari busur</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/curve/lc_actiondrawarc2poptions.ui" line="95" />
         <source>Radius:</source>
-        <translation type="unfinished">Jari-jari:</translation>
+        <translation>Jari-jari:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/curve/lc_actiondrawarc2poptions.ui" line="44" />
@@ -888,48 +890,48 @@ atau [% 2]</translation>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="117" />
         <source>Point</source>
-        <translation type="unfinished">Titik</translation>
+        <translation>Titik</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="121" />
         <source>Angle</source>
-        <translation type="unfinished">Sudut</translation>
+        <translation>Sudut</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="128" />
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="495" />
         <source>Y</source>
-        <translation type="unfinished" />
+        <translation>Y</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="153" />
         <source>Direction:</source>
-        <translation type="unfinished" />
+        <translation>Arah:</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="501" />
         <source>Specify distance (%1 deg) or [%2]</source>
-        <translation type="unfinished" />
+        <translation>Tentukan jarak (%1 derajat) atau [%2]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="516" />
         <source>Specify angle or [%1]</source>
-        <translation type="unfinished" />
+        <translation>Tentukan sudut atau [%1]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="528" />
         <source>Specify point or [%1]</source>
-        <translation type="unfinished" />
+        <translation>Tentukan titik atau [%1]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="577" />
         <source>Cannot undo: Begin of history reached</source>
-        <translation type="unfinished" />
+        <translation>Tidak dapat membatalkan: Awal riwayat telah tercapai</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="614" />
         <source>Cannot redo: End of history reached</source>
-        <translation type="unfinished" />
+        <translation>Tidak dapat mengulang: Akhir riwayat telah tercapai</translation>
     </message>
 </context>
 <context>
@@ -937,27 +939,27 @@ atau [% 2]</translation>
     <message>
         <location filename="../src/actions/drawing/draw/line/misc/lc_actiondrawmidline.cpp" line="262" />
         <source>Not a valid expression</source>
-        <translation type="unfinished">Bukan ekspresi yang valid</translation>
+        <translation>Bukan ekspresi yang valid</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/misc/lc_actiondrawmidline.cpp" line="282" />
         <source>Select first entity</source>
-        <translation type="unfinished" />
+        <translation>Pilih entitas pertama</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/misc/lc_actiondrawmidline.cpp" line="286" />
         <source>Select second entity</source>
-        <translation type="unfinished" />
+        <translation>Pilih entitas kedua</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/misc/lc_actiondrawmidline.cpp" line="286" />
         <source>Alternate endpoints</source>
-        <translation type="unfinished" />
+        <translation>Titik akhir alternatif</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/misc/lc_actiondrawmidline.cpp" line="290" />
         <source>Enter offset value</source>
-        <translation type="unfinished" />
+        <translation>Masukkan nilai offset</translation>
     </message>
 </context>
 <context>
@@ -965,27 +967,27 @@ atau [% 2]</translation>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="181" />
         <source>Specify the first point on parabola</source>
-        <translation type="unfinished" />
+        <translation>Tentukan titik pertama pada parabola</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="184" />
         <source>Specify the second point on parabola</source>
-        <translation type="unfinished" />
+        <translation>Tentukan titik kedua pada parabola</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="187" />
         <source>Specify the third point on parabola</source>
-        <translation type="unfinished" />
+        <translation>Tentukan titik ketiga pada parabola</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="190" />
         <source>Specify the fourth point on parabola</source>
-        <translation type="unfinished" />
+        <translation>Tentukan titik keempat pada parabola</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="193" />
         <source>Specify the Axis on parabola</source>
-        <translation type="unfinished" />
+        <translation>Tentukan Sumbu pada parabola</translation>
     </message>
 </context>
 <context>
@@ -993,22 +995,22 @@ atau [% 2]</translation>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabolaFD.cpp" line="275" />
         <source>Specify the focus of parabola</source>
-        <translation type="unfinished" />
+        <translation>Tentukan fokus parabola</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabolaFD.cpp" line="278" />
         <source>Select line that is parallel to directrix of parabola or set vertex point</source>
-        <translation type="unfinished" />
+        <translation>Pilih garis yang sejajar dengan direktriks parabola atau atur titik verteks</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabolaFD.cpp" line="282" />
         <source>Specify the start point on parabola</source>
-        <translation type="unfinished" />
+        <translation>Tentukan titik awal pada parabola</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabolaFD.cpp" line="286" />
         <source>Specify the end point on parabola</source>
-        <translation type="unfinished" />
+        <translation>Tentukan titik akhir pada parabola</translation>
     </message>
 </context>
 <context>
@@ -1016,58 +1018,58 @@ atau [% 2]</translation>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawpointslattice.cpp" line="172" />
         <source>Second point is too close to the first one</source>
-        <translation type="unfinished" />
+        <translation>Titik kedua terlalu dekat dengan yang pertama</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawpointslattice.cpp" line="183" />
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawpointslattice.cpp" line="194" />
         <source>Third point is too close to the second one</source>
-        <translation type="unfinished" />
+        <translation>Titik ketiga terlalu dekat dengan yang kedua</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawpointslattice.cpp" line="240" />
         <source>Invalid value provided</source>
-        <translation type="unfinished" />
+        <translation>Nilai tidak valid</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawpointslattice.cpp" line="258" />
         <source>Specify first point</source>
-        <translation type="unfinished" />
+        <translation>Tentukan titik pertama</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawpointslattice.cpp" line="262" />
         <source>Specify second point</source>
-        <translation type="unfinished" />
+        <translation>Tentukan titik kedua</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawpointslattice.cpp" line="266" />
         <source>Specify third point</source>
-        <translation type="unfinished" />
+        <translation>Tentukan titik ketiga</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawpointslattice.cpp" line="270" />
         <source>Specify fourth point</source>
-        <translation type="unfinished" />
+        <translation>Tentukan titik keempat</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawpointslattice.cpp" line="270" />
         <source>Last point position is un-adjusted</source>
-        <translation type="unfinished" />
+        <translation>Posisi titik terakhir tidak disesuaikan</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawpointslattice.cpp" line="271" />
         <source>Last point position is adjusted to first</source>
-        <translation type="unfinished" />
+        <translation>Posisi titik terakhir disesuaikan dengan yang pertama</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawpointslattice.cpp" line="275" />
         <source>Enter number of points by X</source>
-        <translation type="unfinished" />
+        <translation>Masukkan jumlah titik menurut X</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawpointslattice.cpp" line="279" />
         <source>Enter number of points by Y</source>
-        <translation type="unfinished" />
+        <translation>Masukkan jumlah titik menurut Y</translation>
     </message>
 </context>
 <context>
@@ -1075,32 +1077,32 @@ atau [% 2]</translation>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_actiondrawrectangle1point.cpp" line="368" />
         <source>Specify height</source>
-        <translation type="unfinished" />
+        <translation>Tentukan tinggi</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_actiondrawrectangle1point.cpp" line="371" />
         <source>Specify width</source>
-        <translation type="unfinished" />
+        <translation>Tentukan lebar</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_actiondrawrectangle1point.cpp" line="374" />
         <source>Specify size (width, height))</source>
-        <translation type="unfinished" />
+        <translation>Tentukan ukuran (lebar, tinggi)</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_actiondrawrectangle1point.cpp" line="377" />
         <source>Specify reference point [topl|top|topr|left|middle|right|bottoml|bottom|bottomr]</source>
-        <translation type="unfinished" />
+        <translation>Tentukan titik referensi [atas-kiri|atas|atas-kanan|kiri|tengah|kanan|bawah-kiri|bawah|bawah-kanan]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_actiondrawrectangle1point.cpp" line="380" />
         <source>Specify point that defines base angle for rectangle</source>
-        <translation type="unfinished" />
+        <translation>Tentukan titik yang mendefinisikan sudut dasar untuk persegi panjang</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_actiondrawrectangle1point.cpp" line="380" />
         <source>Don't keep insertion point</source>
-        <translation type="unfinished" />
+        <translation>Jangan pertahankan titik penyisipan</translation>
     </message>
 </context>
 <context>
@@ -1108,27 +1110,27 @@ atau [% 2]</translation>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_actiondrawrectangle2points.cpp" line="280" />
         <source>Specify second point</source>
-        <translation type="unfinished" />
+        <translation>Tentukan titik kedua</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_actiondrawrectangle2points.cpp" line="280" />
         <source>Draw Square</source>
-        <translation type="unfinished" />
+        <translation>Gambar Persegi</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_actiondrawrectangle2points.cpp" line="283" />
         <source>Specify point 1 snap [corner|mid-vert|mid-hor|middle]</source>
-        <translation type="unfinished" />
+        <translation>Tentukan snap titik 1 [sudut|tengah-vertikal|tengah-horisontal|tengah]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_actiondrawrectangle2points.cpp" line="286" />
         <source>Specify point 2 snap [corner|mid-vert|mid-hor|middle]</source>
-        <translation type="unfinished" />
+        <translation>Tentukan snap titik 2 [sudut|tengah-vertikal|tengah-horisontal|tengah]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_actiondrawrectangle2points.cpp" line="289" />
         <source>Specify size (width, height)</source>
-        <translation type="unfinished" />
+        <translation>Tentukan ukuran (lebar, tinggi)</translation>
     </message>
 </context>
 <context>
@@ -1137,27 +1139,27 @@ atau [% 2]</translation>
         <location filename="../src/actions/drawing/draw/rect/lc_actiondrawrectangle3points.cpp" line="551" />
         <location filename="../src/actions/drawing/draw/rect/lc_actiondrawrectangle3points.cpp" line="569" />
         <source>Specify first point first</source>
-        <translation type="unfinished" />
+        <translation>Tentukan titik pertama terlebih dahulu</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_actiondrawrectangle3points.cpp" line="560" />
         <source>Specify width or second point first</source>
-        <translation type="unfinished" />
+        <translation>Tentukan lebar atau titik kedua terlebih dahulu</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_actiondrawrectangle3points.cpp" line="589" />
         <source>Specify width</source>
-        <translation type="unfinished" />
+        <translation>Tentukan lebar</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_actiondrawrectangle3points.cpp" line="592" />
         <source>Specify height</source>
-        <translation type="unfinished" />
+        <translation>Tentukan tinggi</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_actiondrawrectangle3points.cpp" line="595" />
         <source>Specify start point)</source>
-        <translation type="unfinished" />
+        <translation>Tentukan titik awal)</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_actiondrawrectangle3points.cpp" line="598" />
@@ -24060,8 +24062,8 @@ Aksi ini TIDAK dapat dibatalkan.</translation>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776" />
         <source>Remove %n layer(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform />
+            <numerusform />
         </translation>
     </message>
     <message>
@@ -24106,8 +24108,8 @@ Aksi ini TIDAK dapat dibatalkan.</translation>
         <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514" />
         <source>Remove %n block(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform />
+            <numerusform />
         </translation>
     </message>
     <message>
