@@ -666,7 +666,7 @@ distance mellem punkter =% 2 er større end diameter =% 3</translation>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlineanglerel.cpp" line="454" />
         <source>Specify length</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Angiv længde</translation>
     </message>
 </context>
 <context>
@@ -730,30 +730,32 @@ or[x|y|p|number|edges]</source>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="537" />
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="542" />
         <source>Back</source>
-        <translation type="unfinished">Tilbage</translation>
+        <translation>Tilbage</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="534" />
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="537" />
         <source>Specify distance (%1)
 or [%2]</source>
-        <translation type="unfinished" />
+        <translation>Angiv afstand (%1)
+eller [%2]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="534" />
         <source>X</source>
-        <translation type="unfinished" />
+        <translation>X</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="537" />
         <source>Y</source>
-        <translation type="unfinished" />
+        <translation>Y</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="542" />
         <source>Specify  distance (angle %1 deg)
 or [%2]</source>
-        <translation type="unfinished" />
+        <translation>Angiv afstand (vinkel %1 grader)
+eller [%2]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="547" />
@@ -819,12 +821,12 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/polygon/lc_actiondrawlinepolygonbase.cpp" line="280" />
         <source>To be created:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Skal oprettes:</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/polygon/lc_actiondrawlinepolygonbase.cpp" line="281" />
         <source>Center:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Center:</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/polygon/lc_actiondrawlinepolygonbase.cpp" line="282" />
@@ -844,7 +846,7 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/polygon/lc_actiondrawlinepolygonbase.cpp" line="280" />
         <source>Polygon</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Polygon</translation>
     </message>
 </context>
 <context>
@@ -852,7 +854,7 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/polygon/lc_actiondrawlinepolygon3.cpp" line="51" />
         <source>Specify a tangent</source>
-        <translation type="unfinished" />
+        <translation>Angiv en tangent</translation>
     </message>
 </context>
 <context>
@@ -865,19 +867,19 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="477" />
         <source>Specify direction (x or y) or [%1]</source>
-        <translation type="unfinished" />
+        <translation>Angiv retning (x eller y) eller [%1]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="491" />
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="495" />
         <source>Specify distance (%1) or [%2]</source>
-        <translation type="unfinished" />
+        <translation>Angiv afstand (%1) eller [%2]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="134" />
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="491" />
         <source>X</source>
-        <translation type="unfinished" />
+        <translation>X</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="117" />
@@ -7467,6 +7469,11 @@ Er du sikker på, at du vil kassere ændringer?</translation>
         <translation>Redigering</translation>
     </message>
     <message>
+        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="26" />
+        <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="39" />
         <source>Silently update existing view with same name by created one</source>
         <translation>Silent opdatere eksisterende visning med samme navn ved oprettet en</translation>
@@ -7477,9 +7484,8 @@ Er du sikker på, at du vil kassere ændringer?</translation>
         <translation>Vis</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="58" />
         <source>Toolip with view details for table items</source>
-        <translation>Toolip med oplysninger om bordposter</translation>
+        <translation type="vanished">Toolip med oplysninger om bordposter</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="68" />
@@ -7487,9 +7493,8 @@ Er du sikker på, at du vil kassere ændringer?</translation>
         <translation>Kolonne UCS-detaljer</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="75" />
         <source>If checked, type of grid for saved view will be shown</source>
-        <translation>Hvis markeret, vises typen af gitter til gemt visning</translation>
+        <translation type="vanished">Hvis markeret, vises typen af gitter til gemt visning</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="78" />
@@ -7502,9 +7507,23 @@ Er du sikker på, at du vil kassere ændringer?</translation>
         <translation>Type ikonkolonne</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="65" />
         <source>If checked, the column with details of view's coordinate system will be show</source>
-        <translation>Hvis markeret vises kolonnen med detaljer om visningens koordinatsystem</translation>
+        <translation type="vanished">Hvis markeret vises kolonnen med detaljer om visningens koordinatsystem</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="58" />
+        <source>Tooltip with view details for table items</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="65" />
+        <source>If checked, the column with details of view's coordinate system will be show.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="75" />
+        <source>If checked, type of grid for saved view will be shown.</source>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="85" />
@@ -7543,8 +7562,12 @@ Er du sikker på, at du vil kassere ændringer?</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="144" />
+        <source>Defines which action should be performed on double click on view item of the table.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <source>Defines which action should be performed on double click on view item of the table. </source>
-        <translation>Definerer hvilken handling der skal udføres ved dobbeltklik på vist element i tabellen.</translation>
+        <translation type="vanished">Definerer hvilken handling der skal udføres ved dobbeltklik på vist element i tabellen.</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="148" />
@@ -7587,9 +7610,8 @@ Er du sikker på, at du vil kassere ændringer?</translation>
         <translation>Hvis markeret og under oprettelse af visningen med indtastet navn allerede eksisterer, vil den blive opdateret af ny position. Ellers kræves et unikt navn på ny visning.</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="26" />
         <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently. </source>
-        <translation>Hvis markeret vises bekræftelsesdialogen ved fjernelse af visningen. Ellers vil visningen blive fjernet lydløst.</translation>
+        <translation type="vanished">Hvis markeret vises bekræftelsesdialogen ved fjernelse af visningen. Ellers vil visningen blive fjernet lydløst.</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="29" />
@@ -7969,9 +7991,8 @@ Er du sikker på, at du vil kassere ændringer?</translation>
         <translation>Hvis der er en fejl, vises værktøjstippet med yderligere information om UCS for tabelelementet.</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="29" />
         <source>Toolip with UCS details for table items</source>
-        <translation>Toolip med UCS-detaljer til bordposter</translation>
+        <translation type="vanished">Toolip med UCS-detaljer til bordposter</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="39" />
@@ -7979,9 +8000,8 @@ Er du sikker på, at du vil kassere ændringer?</translation>
         <translation>Type ikonkolonne</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="46" />
         <source>If checked, column with details of UCS origin and angle will be shown in the table</source>
-        <translation>Hvis markeret, vises kolonnen med detaljer om UCS 'oprindelse og vinkel i tabellen</translation>
+        <translation type="vanished">Hvis markeret, vises kolonnen med detaljer om UCS 'oprindelse og vinkel i tabellen</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="49" />
@@ -7999,9 +8019,33 @@ Er du sikker på, at du vil kassere ændringer?</translation>
         <translation>Redigering</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="85" />
         <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently. </source>
-        <translation>Hvis markeret vises bekræftelsesdialogen ved fjernelse af visningen. Ellers vil visningen blive fjernet lydløst.</translation>
+        <translation type="vanished">Hvis markeret vises bekræftelsesdialogen ved fjernelse af visningen. Ellers vil visningen blive fjernet lydløst.</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="29" />
+        <source>Tooltip with UCS details for table items</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="36" />
+        <source>If checked, the column with icon for type of UCS will be shown in the table.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="46" />
+        <source>If checked, column with details of UCS origin and angle will be shown in the table.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="56" />
+        <source>If checked, the column with type of grid for UCS will be shown.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="85" />
+        <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently.</source>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="88" />
@@ -8024,6 +8068,11 @@ Er du sikker på, at du vil kassere ændringer?</translation>
         <translation>Operationer</translation>
     </message>
     <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="114" />
+        <source>Defines how drawing's view window should be adjusted after UCS is applied.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="118" />
         <source>Zoom Auto</source>
         <translation>Zoom auto</translation>
@@ -8044,9 +8093,18 @@ Er du sikker på, at du vil kassere ændringer?</translation>
         <translation>Hvis aktiveret, skal du klikke på tabellen element vil anvende koordinater system. Ellers bør koordinatsystemet anvendes eksplicit.</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="153" />
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="196" />
+        <source>Defines delay between UCS marker blinks.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="232" />
+        <source>Defines amount of blinks of UCS marker for UCS highlighting.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <source>Defines which action should be performed on double click on the item of the table. </source>
-        <translation>Definerer hvilken handling der skal udføres ved dobbeltklik på elementet i tabellen.</translation>
+        <translation type="vanished">Definerer hvilken handling der skal udføres ved dobbeltklik på elementet i tabellen.</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="139" />
@@ -8054,24 +8112,26 @@ Er du sikker på, at du vil kassere ændringer?</translation>
         <translation>Gendan UCS ved et enkelt klik på tabellen element</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="36" />
         <source>If checked, the column with icon for type of UCS will be shown in the table. </source>
-        <translation>Hvis markeret, vises kolonnen med ikon for type UCS i tabellen.</translation>
+        <translation type="vanished">Hvis markeret, vises kolonnen med ikon for type UCS i tabellen.</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="56" />
         <source>If checked, the column with type of grid for UCS will be shown</source>
-        <translation>Hvis markeret, vises kolonnen med type gitter for UCS</translation>
+        <translation type="vanished">Hvis markeret, vises kolonnen med type gitter for UCS</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="114" />
         <source>Defines how drawing's view window should be adjusted after UCS is applied</source>
-        <translation>Definerer hvordan tegnevindue skal justeres efter UCS 'er anvendes</translation>
+        <translation type="vanished">Definerer hvordan tegnevindue skal justeres efter UCS 'er anvendes</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="146" />
         <source>On double-click on table item</source>
         <translation>På dobbeltklik på tabellen element</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="153" />
+        <source>Defines which action should be performed on double click on the item of the table.</source>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="157" />
@@ -8104,9 +8164,8 @@ Er du sikker på, at du vil kassere ændringer?</translation>
         <translation>UCS-højdepunkt</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="196" />
         <source>Defines delay between UCS marker blinks</source>
-        <translation>Definerer forsinkelse mellem UCS markørblinker</translation>
+        <translation type="vanished">Definerer forsinkelse mellem UCS markørblinker</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="199" />
@@ -8124,9 +8183,8 @@ Er du sikker på, at du vil kassere ændringer?</translation>
         <translation>Blink-forsinkelse:</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="232" />
         <source>Defines amount of blinks of UCS marker for UCS highlighting</source>
-        <translation>Definerer mængden af blinker af UCS markør for UCS fremhævning</translation>
+        <translation type="vanished">Definerer mængden af blinker af UCS markør for UCS fremhævning</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="235" />
@@ -24066,8 +24124,8 @@ Denne handling kan IKKE gøres om.</translation>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776" />
         <source>Remove %n layer(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform />
+            <numerusform />
         </translation>
     </message>
     <message>
@@ -24097,8 +24155,8 @@ Denne handling kan IKKE gøres om.</translation>
         <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514" />
         <source>Remove %n block(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform />
+            <numerusform />
         </translation>
     </message>
     <message>

@@ -5,18 +5,18 @@
     <message>
         <location filename="../src/ui/dock_widgets/pen_wizard/colorwizard.ui" line="14" />
         <source>Frame</source>
-        <translation type="unfinished" />
+        <translation>Rámec</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_wizard/colorwizard.ui" line="59" />
         <source>Add to favorites</source>
-        <translation type="unfinished" />
+        <translation>Přidat do oblíbených</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_wizard/colorwizard.ui" line="62" />
         <location filename="../src/ui/dock_widgets/pen_wizard/colorwizard.ui" line="86" />
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
 </context>
 <context>
@@ -24,12 +24,12 @@
     <message>
         <location filename="../src/ui/components/comboboxes/comboboxoption.ui" line="14" />
         <source>Frame</source>
-        <translation type="unfinished" />
+        <translation>Rámec</translation>
     </message>
     <message>
         <location filename="../src/ui/components/comboboxes/comboboxoption.ui" line="26" />
         <source>GroupBox</source>
-        <translation type="unfinished" />
+        <translation>Skupinový rámec</translation>
     </message>
     <message>
         <location filename="../src/ui/components/comboboxes/comboboxoption.ui" line="41" />
@@ -50,7 +50,7 @@
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="166" />
         <source>To be created:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vytvoření:</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="166" />
@@ -70,7 +70,7 @@
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="169" />
         <source>Center:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Střed:</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="198" />
@@ -85,7 +85,7 @@
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="354" />
         <source>Invalid value</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Neplatná hodnota</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="410" />
@@ -95,12 +95,12 @@
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="413" />
         <source>Specify angle</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Upřesněte úhel</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="416" />
         <source>Specify size (width, height)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Uveďte velikost (šířka, výška)</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/rect/lc_abstractactiondrawrectangle.cpp" line="419" />
@@ -176,12 +176,12 @@
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimarc.cpp" line="189" />
         <source>Select arc entity</source>
-        <translation type="unfinished" />
+        <translation>Vyberte entitu oblouku</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimarc.cpp" line="192" />
         <source>Specify dimension arc location</source>
-        <translation type="unfinished" />
+        <translation>Určete umístění rozměrového oblouku</translation>
     </message>
 </context>
 <context>
@@ -204,7 +204,7 @@
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimlinearbase.cpp" line="306" />
         <source>Snap to Adjacent Dim</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Snap to Additional Dim</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/dimensions/lc_actiondimlinearbase.cpp" line="321" />
@@ -266,7 +266,7 @@
     <message>
         <location filename="../src/ui/action_options/curve/lc_actiondrawarc2poptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Formulář</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/curve/lc_actiondrawarc2poptions.ui" line="61" />
@@ -286,12 +286,12 @@
     <message>
         <location filename="../src/ui/action_options/curve/lc_actiondrawarc2poptions.ui" line="144" />
         <source>Pick angle from the drawing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Vybrat úhel z výkresu</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/curve/lc_actiondrawarc2poptions.ui" line="92" />
         <source>Radius of arc</source>
-        <translation type="unfinished" />
+        <translation type="unfinished">Poloměr oblouku</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/curve/lc_actiondrawarc2poptions.ui" line="95" />
@@ -7473,6 +7473,11 @@ Jste si jistý, že se chystáte zahodit změny?</translation>
         <translation>Úprava</translation>
     </message>
     <message>
+        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="26" />
+        <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="39" />
         <source>Silently update existing view with same name by created one</source>
         <translation>Tiše aktualizovat stávající pohled se stejným názvem vytvořeným jedním</translation>
@@ -7483,9 +7488,8 @@ Jste si jistý, že se chystáte zahodit změny?</translation>
         <translation>Zobrazit</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="58" />
         <source>Toolip with view details for table items</source>
-        <translation>Toolip s detaily zobrazení pro položky tabulky</translation>
+        <translation type="vanished">Toolip s detaily zobrazení pro položky tabulky</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="68" />
@@ -7493,9 +7497,8 @@ Jste si jistý, že se chystáte zahodit změny?</translation>
         <translation>Sloupec UCS Podrobnosti</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="75" />
         <source>If checked, type of grid for saved view will be shown</source>
-        <translation>Pokud je zaškrtnuto, zobrazí se typ mřížky pro uložený pohled</translation>
+        <translation type="vanished">Pokud je zaškrtnuto, zobrazí se typ mřížky pro uložený pohled</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="78" />
@@ -7508,9 +7511,23 @@ Jste si jistý, že se chystáte zahodit změny?</translation>
         <translation>Sloupec ikony typu</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="65" />
         <source>If checked, the column with details of view's coordinate system will be show</source>
-        <translation>Pokud je zaškrtnuto, zobrazí se sloupec s podrobnostmi souřadnicového systému pohledu</translation>
+        <translation type="vanished">Pokud je zaškrtnuto, zobrazí se sloupec s podrobnostmi souřadnicového systému pohledu</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="58" />
+        <source>Tooltip with view details for table items</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="65" />
+        <source>If checked, the column with details of view's coordinate system will be show.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="75" />
+        <source>If checked, type of grid for saved view will be shown.</source>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="85" />
@@ -7549,8 +7566,12 @@ Jste si jistý, že se chystáte zahodit změny?</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="144" />
+        <source>Defines which action should be performed on double click on view item of the table.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <source>Defines which action should be performed on double click on view item of the table. </source>
-        <translation>Definuje, která akce by měla být provedena při dvojitém kliknutí na položku zobrazení tabulky.</translation>
+        <translation type="vanished">Definuje, která akce by měla být provedena při dvojitém kliknutí na položku zobrazení tabulky.</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="148" />
@@ -7593,9 +7614,8 @@ Jste si jistý, že se chystáte zahodit změny?</translation>
         <translation>Pokud je zaškrtnuto a během tvorby již existuje pohled se zadaným názvem, bude aktualizován novou pozicí. Jinak bude vyžadován jedinečný název nového pohledu.</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="26" />
         <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently. </source>
-        <translation>Pokud je zvoleno, zobrazí se při odstranění zobrazení potvrzovací dialog. Jinak bude pohled potichu odstraněn.</translation>
+        <translation type="vanished">Pokud je zvoleno, zobrazí se při odstranění zobrazení potvrzovací dialog. Jinak bude pohled potichu odstraněn.</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="29" />
@@ -7975,9 +7995,8 @@ Jste si jistý, že se chystáte zahodit změny?</translation>
         <translation>Pokud @ hecked, bude pro položku tabulky zobrazen tip s doplňujícími informacemi o UCS.</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="29" />
         <source>Toolip with UCS details for table items</source>
-        <translation>Toolip s UCS detaily pro tabulky položek</translation>
+        <translation type="vanished">Toolip s UCS detaily pro tabulky položek</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="39" />
@@ -7985,9 +8004,8 @@ Jste si jistý, že se chystáte zahodit změny?</translation>
         <translation>Sloupec ikony typu</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="46" />
         <source>If checked, column with details of UCS origin and angle will be shown in the table</source>
-        <translation>Pokud je zaškrtnuto, sloupec s podrobnostmi o původu a úhlu UCS bude uveden v tabulce</translation>
+        <translation type="vanished">Pokud je zaškrtnuto, sloupec s podrobnostmi o původu a úhlu UCS bude uveden v tabulce</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="49" />
@@ -8005,9 +8023,33 @@ Jste si jistý, že se chystáte zahodit změny?</translation>
         <translation>Úprava</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="85" />
         <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently. </source>
-        <translation>Pokud je zvoleno, zobrazí se při odstranění zobrazení potvrzovací dialog. Jinak bude pohled potichu odstraněn.</translation>
+        <translation type="vanished">Pokud je zvoleno, zobrazí se při odstranění zobrazení potvrzovací dialog. Jinak bude pohled potichu odstraněn.</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="29" />
+        <source>Tooltip with UCS details for table items</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="36" />
+        <source>If checked, the column with icon for type of UCS will be shown in the table.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="46" />
+        <source>If checked, column with details of UCS origin and angle will be shown in the table.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="56" />
+        <source>If checked, the column with type of grid for UCS will be shown.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="85" />
+        <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently.</source>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="88" />
@@ -8030,6 +8072,11 @@ Jste si jistý, že se chystáte zahodit změny?</translation>
         <translation>Operace</translation>
     </message>
     <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="114" />
+        <source>Defines how drawing's view window should be adjusted after UCS is applied.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="118" />
         <source>Zoom Auto</source>
         <translation>Zvětšit auto</translation>
@@ -8050,9 +8097,18 @@ Jste si jistý, že se chystáte zahodit změny?</translation>
         <translation>Pokud je povoleno, klepněte na položku tabulky se použije souřadnicový systém. V opačném případě by měl být systém souřadnic použit explicitně.</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="153" />
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="196" />
+        <source>Defines delay between UCS marker blinks.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="232" />
+        <source>Defines amount of blinks of UCS marker for UCS highlighting.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <source>Defines which action should be performed on double click on the item of the table. </source>
-        <translation>Definuje, která akce by měla být provedena při dvojitém kliknutí na položku tabulky.</translation>
+        <translation type="vanished">Definuje, která akce by měla být provedena při dvojitém kliknutí na položku tabulky.</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="139" />
@@ -8060,24 +8116,26 @@ Jste si jistý, že se chystáte zahodit změny?</translation>
         <translation>Obnovit UCS na jedno kliknutí podle položky tabulky</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="36" />
         <source>If checked, the column with icon for type of UCS will be shown in the table. </source>
-        <translation>Pokud je zaškrtnuto, bude v tabulce uveden sloupec s ikonou pro typ UCS.</translation>
+        <translation type="vanished">Pokud je zaškrtnuto, bude v tabulce uveden sloupec s ikonou pro typ UCS.</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="56" />
         <source>If checked, the column with type of grid for UCS will be shown</source>
-        <translation>Pokud je zaškrtnuto, zobrazí se sloupec s typem mřížky pro UCS</translation>
+        <translation type="vanished">Pokud je zaškrtnuto, zobrazí se sloupec s typem mřížky pro UCS</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="114" />
         <source>Defines how drawing's view window should be adjusted after UCS is applied</source>
-        <translation>Definuje, jak má být okno pohledu výkresu po použití UCS nastaveno</translation>
+        <translation type="vanished">Definuje, jak má být okno pohledu výkresu po použití UCS nastaveno</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="146" />
         <source>On double-click on table item</source>
         <translation>Na dvojnásobek klikněte na položku tabulky</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="153" />
+        <source>Defines which action should be performed on double click on the item of the table.</source>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="157" />
@@ -8110,9 +8168,8 @@ Jste si jistý, že se chystáte zahodit změny?</translation>
         <translation>UCS zvýraznění</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="196" />
         <source>Defines delay between UCS marker blinks</source>
-        <translation>Definuje zpoždění mezi UCS markingy</translation>
+        <translation type="vanished">Definuje zpoždění mezi UCS markingy</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="199" />
@@ -8130,9 +8187,8 @@ Jste si jistý, že se chystáte zahodit změny?</translation>
         <translation>Blink Delay:</translation>
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="232" />
         <source>Defines amount of blinks of UCS marker for UCS highlighting</source>
-        <translation>Definuje množství bliků značky UCS pro zvýraznění UCS</translation>
+        <translation type="vanished">Definuje množství bliků značky UCS pro zvýraznění UCS</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="235" />
@@ -24075,8 +24131,9 @@ Tato akce nemůže být zrušena.</translation>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776" />
         <source>Remove %n layer(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform />
+            <numerusform />
+            <numerusform />
         </translation>
     </message>
     <message>
@@ -24106,8 +24163,9 @@ Tato akce nemůže být zrušena.</translation>
         <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514" />
         <source>Remove %n block(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform />
+            <numerusform />
+            <numerusform />
         </translation>
     </message>
     <message>

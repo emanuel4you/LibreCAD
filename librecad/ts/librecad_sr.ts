@@ -726,32 +726,34 @@ or[x|y|p|number|edges]</source>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="534" />
         <source>X</source>
-        <translation type="unfinished">X</translation>
+        <translation>X</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="534" />
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="537" />
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="542" />
         <source>Back</source>
-        <translation type="unfinished">Назад</translation>
+        <translation>Назад</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="534" />
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="537" />
         <source>Specify distance (%1)
 or [%2]</source>
-        <translation type="unfinished" />
+        <translation>Наведи растојање (%1)
+или [%2]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="537" />
         <source>Y</source>
-        <translation type="unfinished">Y</translation>
+        <translation>Y</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="542" />
         <source>Specify  distance (angle %1 deg)
 or [%2]</source>
-        <translation type="unfinished" />
+        <translation>Наведи растојање (угао %1 степена)
+или [%2]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/point/lc_actiondrawlinepoints.cpp" line="547" />
@@ -863,19 +865,19 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="477" />
         <source>Specify direction (x or y) or [%1]</source>
-        <translation type="unfinished" />
+        <translation>Наведи смер (x или y) или [%1]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="491" />
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="495" />
         <source>Specify distance (%1) or [%2]</source>
-        <translation type="unfinished" />
+        <translation>Наведи растојање (%1) или [%2]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="134" />
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="491" />
         <source>X</source>
-        <translation type="unfinished">X</translation>
+        <translation>X</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="117" />
@@ -891,7 +893,7 @@ or [%2]</source>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="128" />
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="495" />
         <source>Y</source>
-        <translation type="unfinished">Y</translation>
+        <translation>Y</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="153" />
@@ -901,7 +903,7 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="501" />
         <source>Specify distance (%1 deg) or [%2]</source>
-        <translation type="unfinished" />
+        <translation>Наведи растојање (%1 степени) или [%2]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="516" />
@@ -911,7 +913,7 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="528" />
         <source>Specify point or [%1]</source>
-        <translation type="unfinished" />
+        <translation>Наведи тачку или [%1]</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawlinesnake.cpp" line="577" />
@@ -957,27 +959,27 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="181" />
         <source>Specify the first point on parabola</source>
-        <translation type="unfinished" />
+        <translation>Наведи прву тачку на параболи</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="184" />
         <source>Specify the second point on parabola</source>
-        <translation type="unfinished" />
+        <translation>Наведи другу тачку на параболи</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="187" />
         <source>Specify the third point on parabola</source>
-        <translation type="unfinished" />
+        <translation>Наведи трећу тачку на параболи</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="190" />
         <source>Specify the fourth point on parabola</source>
-        <translation type="unfinished" />
+        <translation>Наведи четврту тачку на параболи</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabola4points.cpp" line="193" />
         <source>Specify the Axis on parabola</source>
-        <translation type="unfinished" />
+        <translation>Наведи осу на параболи</translation>
     </message>
 </context>
 <context>
@@ -985,7 +987,7 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabolaFD.cpp" line="275" />
         <source>Specify the focus of parabola</source>
-        <translation type="unfinished" />
+        <translation>Наведи фокус параболе</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabolaFD.cpp" line="278" />
@@ -995,12 +997,12 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabolaFD.cpp" line="282" />
         <source>Specify the start point on parabola</source>
-        <translation type="unfinished" />
+        <translation>Наведи почетну тачку на параболи</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/curve/lc_actiondrawparabolaFD.cpp" line="286" />
         <source>Specify the end point on parabola</source>
-        <translation type="unfinished" />
+        <translation>Наведи завршну тачку на параболи</translation>
     </message>
 </context>
 <context>
@@ -1177,17 +1179,17 @@ or [%2]</source>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawslicedivide.cpp" line="212" />
         <source>Line</source>
-        <translation type="unfinished">Линија</translation>
+        <translation>Линија</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawslicedivide.cpp" line="222" />
         <source>Arc</source>
-        <translation type="unfinished">Лук</translation>
+        <translation>Лук</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawslicedivide.cpp" line="232" />
         <source>Circle</source>
-        <translation type="unfinished">Круг</translation>
+        <translation>Круг</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/draw/line/lc_actiondrawslicedivide.cpp" line="596" />
@@ -1426,67 +1428,67 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="213" />
         <source>Snake</source>
-        <translation type="unfinished" />
+        <translation>Змија</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="214" />
         <source>Snake (X)</source>
-        <translation type="unfinished" />
+        <translation>Змија (X)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="215" />
         <source>Snake (Y)</source>
-        <translation type="unfinished" />
+        <translation>Змија (Y)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="192" />
         <source>Rectangle (1 Point)</source>
-        <translation type="unfinished" />
+        <translation>Правоугаоник (1 тачка)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="193" />
         <source>Rectangle (2 Points)</source>
-        <translation type="unfinished" />
+        <translation>Правоугаоник (2 тачке)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="194" />
         <source>Rectangle (3 Points)</source>
-        <translation type="unfinished" />
+        <translation>Правоугаоник (3 тачке)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="191" />
         <source>Star</source>
-        <translation type="unfinished" />
+        <translation>Звезда</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="216" />
         <source>Angle From Line</source>
-        <translation type="unfinished" />
+        <translation>Угао из линије</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="217" />
         <source>Orthogonal From Line</source>
-        <translation type="unfinished" />
+        <translation>Ортогонално из линије</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="218" />
         <source>From Point To Line</source>
-        <translation type="unfinished" />
+        <translation>Од тачке до линије</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="221" />
         <source>Slice/Divide Line</source>
-        <translation type="unfinished" />
+        <translation>Исеци/Подели линију</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="222" />
         <source>Slice/Divide Circle</source>
-        <translation type="unfinished" />
+        <translation>Исеци/Подели круг</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="229" />
         <source>Line of Points</source>
-        <translation type="unfinished" />
+        <translation>Линија тачака</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="251" />
@@ -1496,7 +1498,7 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="252" />
         <source>By Arc</source>
-        <translation type="unfinished" />
+        <translation>Преко лука</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="253" />
@@ -1862,12 +1864,12 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="284" />
         <source>Para&amp;bola 4 points</source>
-        <translation type="unfinished" />
+        <translation>Пара&amp;бола 4 тачке</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="285" />
         <source>Parabola &amp;Focus Directrix</source>
-        <translation type="unfinished" />
+        <translation>Парабола &amp;фокус директриса</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="290" />
@@ -1927,22 +1929,22 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="388" />
         <source>Break/Divide</source>
-        <translation type="unfinished" />
+        <translation>Преломи/Подели</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="389" />
         <source>Line Gap</source>
-        <translation type="unfinished" />
+        <translation>Празнина линије</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="390" />
         <source>Line Join</source>
-        <translation type="unfinished" />
+        <translation>Спајање линија</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="391" />
         <source>Duplicate</source>
-        <translation type="unfinished" />
+        <translation>Дуплирај</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="392" />
@@ -1962,27 +1964,27 @@ or [%2]</source>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="400" />
         <source>Update Current Pen by Active Layer' Pen</source>
-        <translation type="unfinished" />
+        <translation>Ажурирај тренутну оловку оловком активног слоја</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="406" />
         <source>&amp;Pick Pen From Entity</source>
-        <translation type="unfinished" />
+        <translation>&amp;Изабери оловку из ентитета</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="407" />
         <source>&amp;Pick Pen From Entity (Resolved)</source>
-        <translation type="unfinished" />
+        <translation>&amp;Изабери оловку из ентитета (разрешено)</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="408" />
         <source>Apply Pen to Entity</source>
-        <translation type="unfinished" />
+        <translation>Примени оловку на ентитет</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="409" />
         <source>Copy Pen</source>
-        <translation type="unfinished" />
+        <translation>Копирај оловку</translation>
     </message>
     <message>
         <location filename="../src/ui/main/init/lc_actionfactory.cpp" line="415" />
@@ -3975,12 +3977,12 @@ End Edge Point: (%9 , %10)</source>
     <message>
         <location filename="../src/actions/drawing/pen/lc_actionpenapply.cpp" line="168" />
         <source>Specify entity to pick the pen</source>
-        <translation type="unfinished" />
+        <translation>Наведи ентитет за одабир оловке</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/pen/lc_actionpenapply.cpp" line="171" />
         <source>Specify entity to apply pen</source>
-        <translation type="unfinished" />
+        <translation>Наведи ентитет за примену оловке</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/pen/lc_actionpenapply.cpp" line="171" />
@@ -3993,7 +3995,7 @@ End Edge Point: (%9 , %10)</source>
     <message>
         <location filename="../src/actions/drawing/pen/lc_actionpenpick.cpp" line="88" />
         <source>Specify entity to pick the pen</source>
-        <translation type="unfinished" />
+        <translation>Наведи ентитет за одабир оловке</translation>
     </message>
 </context>
 <context>
@@ -4101,17 +4103,17 @@ End Edge Point: (%9 , %10)</source>
     <message>
         <location filename="../src/actions/drawing/snap/lc_actionsnapmiddlemanual.cpp" line="227" />
         <source>Specify percentage / start-point</source>
-        <translation type="unfinished" />
+        <translation>Наведи проценат / почетну тачку</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/snap/lc_actionsnapmiddlemanual.cpp" line="230" />
         <source>Specify start point</source>
-        <translation type="unfinished" />
+        <translation>Наведи почетну тачку</translation>
     </message>
     <message>
         <location filename="../src/actions/drawing/snap/lc_actionsnapmiddlemanual.cpp" line="233" />
         <source>Specify end point</source>
-        <translation type="unfinished">Одредите крајњу тачку</translation>
+        <translation>Наведи завршну тачку</translation>
     </message>
 </context>
 <context>
@@ -4670,7 +4672,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished">Образац</translation>
+        <translation>Образац</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="131" />
@@ -4680,7 +4682,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="134" />
         <source>Replace arc</source>
-        <translation type="unfinished" />
+        <translation>Замени лук</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="62" />
@@ -4725,7 +4727,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="32" />
         <source>Pen:</source>
-        <translation type="unfinished" />
+        <translation>Оловка:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="102" />
@@ -4735,7 +4737,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="124" />
         <source>Layer:</source>
-        <translation type="unfinished">Слој:</translation>
+        <translation>Слој:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="39" />
@@ -4745,7 +4747,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/circle/lc_circlebyarcoptions.ui" line="42" />
         <source>Radius Shift:</source>
-        <translation type="unfinished" />
+        <translation>Померај полупречника:</translation>
     </message>
 </context>
 <context>
@@ -4830,22 +4832,22 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="20" />
         <source>Form</source>
-        <translation type="unfinished">Образац</translation>
+        <translation>Образац</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="140" />
         <source>X:</source>
-        <translation type="unfinished" />
+        <translation>X:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="83" />
         <source>Angle:</source>
-        <translation type="unfinished">Угао:</translation>
+        <translation>Угао:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="38" />
         <source>Type</source>
-        <translation type="unfinished" />
+        <translation>Тип</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="133" />
@@ -4865,17 +4867,17 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="209" />
         <source>Extension</source>
-        <translation type="unfinished" />
+        <translation>Проширење</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="214" />
         <source>Total Length</source>
-        <translation type="unfinished">Укупна дужина</translation>
+        <translation>Укупна дужина</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="219" />
         <source>Percent</source>
-        <translation type="unfinished" />
+        <translation>Проценат</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="227" />
@@ -4900,7 +4902,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/misc/lc_crossoptions.ui" line="168" />
         <source>Y:</source>
-        <translation type="unfinished" />
+        <translation>Y:</translation>
     </message>
 </context>
 <context>
@@ -7451,6 +7453,11 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
+        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="26" />
+        <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="39" />
         <source>Silently update existing view with same name by created one</source>
         <translation type="unfinished" />
@@ -7461,18 +7468,8 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="58" />
-        <source>Toolip with view details for table items</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="68" />
         <source>UCS Details column</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="75" />
-        <source>If checked, type of grid for saved view will be shown</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -7486,8 +7483,18 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
+        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="58" />
+        <source>Tooltip with view details for table items</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="65" />
-        <source>If checked, the column with details of view's coordinate system will be show</source>
+        <source>If checked, the column with details of view's coordinate system will be show.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="75" />
+        <source>If checked, type of grid for saved view will be shown.</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -7527,7 +7534,7 @@ Are you sure you are going to discard changes?</source>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="144" />
-        <source>Defines which action should be performed on double click on view item of the table. </source>
+        <source>Defines which action should be performed on double click on view item of the table.</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -7568,11 +7575,6 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="36" />
         <source>If checked and during creation the view with entered name already exists, it will be updated by new position. Otherwise, unique name of new view will be required.</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../src/ui/dock_widgets/views_list/lc_dlgnamedviewslistoptions.ui" line="26" />
-        <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently. </source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -7953,18 +7955,8 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="29" />
-        <source>Toolip with UCS details for table items</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="39" />
         <source>Type icon column</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="46" />
-        <source>If checked, column with details of UCS origin and angle will be shown in the table</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -7983,8 +7975,28 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="29" />
+        <source>Tooltip with UCS details for table items</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="36" />
+        <source>If checked, the column with icon for type of UCS will be shown in the table.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="46" />
+        <source>If checked, column with details of UCS origin and angle will be shown in the table.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="56" />
+        <source>If checked, the column with type of grid for UCS will be shown.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="85" />
-        <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently. </source>
+        <source>If selected, confirmation dialog will be shown on removal of the view. Otherwise, view will be removed silently.</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -8008,6 +8020,11 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="114" />
+        <source>Defines how drawing's view window should be adjusted after UCS is applied.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="118" />
         <source>Zoom Auto</source>
         <translation type="unfinished" />
@@ -8028,8 +8045,13 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="153" />
-        <source>Defines which action should be performed on double click on the item of the table. </source>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="196" />
+        <source>Defines delay between UCS marker blinks.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="232" />
+        <source>Defines amount of blinks of UCS marker for UCS highlighting.</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -8038,23 +8060,13 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="36" />
-        <source>If checked, the column with icon for type of UCS will be shown in the table. </source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="56" />
-        <source>If checked, the column with type of grid for UCS will be shown</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="114" />
-        <source>Defines how drawing's view window should be adjusted after UCS is applied</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="146" />
         <source>On double-click on table item</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="153" />
+        <source>Defines which action should be performed on double click on the item of the table.</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -8088,11 +8100,6 @@ Are you sure you are going to discard changes?</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="196" />
-        <source>Defines delay between UCS marker blinks</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="199" />
         <source> ms</source>
         <translation type="unfinished" />
@@ -8105,11 +8112,6 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="225" />
         <source>Blink Delay:</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../src/ui/dock_widgets/ucs_list/lc_dlgucslistoptions.ui" line="232" />
-        <source>Defines amount of blinks of UCS marker for UCS highlighting</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -8514,7 +8516,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished">Образац</translation>
+        <translation>Образац</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="122" />
@@ -8534,7 +8536,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="157" />
         <source>Pen:</source>
-        <translation type="unfinished" />
+        <translation>Оловка:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="171" />
@@ -8544,7 +8546,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="174" />
         <source>In Place</source>
-        <translation type="unfinished" />
+        <translation>На месту</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="181" />
@@ -8554,7 +8556,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="164" />
         <source>Layer:</source>
-        <translation type="unfinished">Слој:</translation>
+        <translation>Слој:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="69" />
@@ -8599,12 +8601,12 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="150" />
         <source>Offset Y:</source>
-        <translation type="unfinished" />
+        <translation>Померај Y:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_duplicateoptions.ui" line="62" />
         <source>Offset X:</source>
-        <translation type="unfinished" />
+        <translation>Померај X:</translation>
     </message>
 </context>
 <context>
@@ -9299,7 +9301,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="20" />
         <source>Layer Settings</source>
-        <translation type="unfinished">Подешавања слоја</translation>
+        <translation>Подешавања слоја</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="48" />
@@ -9309,12 +9311,12 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="64" />
         <source>Parent Layers Path:</source>
-        <translation type="unfinished" />
+        <translation>Путања родитељских слојева:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="81" />
         <source>Layer Type</source>
-        <translation type="unfinished" />
+        <translation>Тип слоја</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="93" />
@@ -9324,7 +9326,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="96" />
         <source>Informational</source>
-        <translation type="unfinished" />
+        <translation>Информативни</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="106" />
@@ -9334,7 +9336,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="109" />
         <source>Normal</source>
-        <translation type="unfinished" />
+        <translation>Нормални</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="119" />
@@ -9344,7 +9346,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="122" />
         <source>Dimensions</source>
-        <translation type="unfinished">Котирање</translation>
+        <translation>Димензије</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="132" />
@@ -9354,18 +9356,19 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="135" />
         <source>Alternative Position</source>
-        <translation type="unfinished" />
+        <translation>Алтернативна позиција</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="148" />
         <source>A Construction Layer has entities of infinite straight lines intended to be used for geometric construction.
        The contents of a Construction Layer should not appear in printout.</source>
-        <translation type="unfinished" />
+        <translation>Конструкциони слој има ентитете бесконачних правих линија намењених за геометријску конструкцију.
+       Садржај конструкционог слоја не треба да се појави у испису.</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="152" />
         <source>Construction Layer</source>
-        <translation type="unfinished">Конструктивни слој</translation>
+        <translation>Конструкциони слој</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="181" />
@@ -9375,39 +9378,39 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.ui" line="197" />
         <source>Layer Name:</source>
-        <translation type="unfinished">Назив слоја:</translation>
+        <translation>Назив слоја:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="61" />
         <source>Rename Virtual Layer</source>
-        <translation type="unfinished" />
+        <translation>Преименуј виртуелни слој</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="65" />
         <source>Add Secondary Layer</source>
-        <translation type="unfinished" />
+        <translation>Додај секундарни слој</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="71" />
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="78" />
         <source>Add Layer</source>
-        <translation type="unfinished" />
+        <translation>Додај слој</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="84" />
         <source>Edit Layer</source>
-        <translation type="unfinished" />
+        <translation>Уреди слој</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="176" />
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="214" />
         <source>Default Pen</source>
-        <translation type="unfinished">Подразумевано перо</translation>
+        <translation>Подразумевана оловка</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layerdialog_ex.cpp" line="193" />
         <source>Rename Layer</source>
-        <translation type="unfinished" />
+        <translation>Преименуј слој</translation>
     </message>
 </context>
 <context>
@@ -9468,7 +9471,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="20" />
         <source>Layers Tree Options</source>
-        <translation type="unfinished" />
+        <translation>Опције стабла слојева</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="36" />
@@ -9478,7 +9481,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="39" />
         <source>Naming Convention</source>
-        <translation type="unfinished" />
+        <translation>Конвенција именовања</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="64" />
@@ -9488,17 +9491,17 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="77" />
         <source>Layer Level Name Separator</source>
-        <translation type="unfinished" />
+        <translation>Раздвајач имена нивоа слоја</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="97" />
         <source>Secondary Layer Suffixes</source>
-        <translation type="unfinished" />
+        <translation>Суфикси секундарних слојева</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="103" />
         <source>Dimensional</source>
-        <translation type="unfinished" />
+        <translation>Димензионални</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="116" />
@@ -9508,7 +9511,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="126" />
         <source>Informational</source>
-        <translation type="unfinished" />
+        <translation>Информативни</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="139" />
@@ -9518,7 +9521,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="149" />
         <source>Alternative Position </source>
-        <translation type="unfinished" />
+        <translation>Алтернативна позиција</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="162" />
@@ -9528,12 +9531,12 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="175" />
         <source>Duplicating Name</source>
-        <translation type="unfinished" />
+        <translation>Дуплирање имена</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="181" />
         <source>Prefix</source>
-        <translation type="unfinished" />
+        <translation>Префикс</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="194" />
@@ -9543,7 +9546,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="204" />
         <source>Suffix</source>
-        <translation type="unfinished" />
+        <translation>Суфикс</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="217" />
@@ -9558,7 +9561,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="234" />
         <source>Display and Operations</source>
-        <translation type="unfinished" />
+        <translation>Приказ и операције</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="240" />
@@ -9568,7 +9571,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="243" />
         <source>Show full name as ToolTip</source>
-        <translation type="unfinished" />
+        <translation>Прикажи пуно име као тултип</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="250" />
@@ -9578,7 +9581,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="253" />
         <source>Show layer type icons</source>
-        <translation type="unfinished" />
+        <translation>Прикажи иконе типа слоја</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="266" />
@@ -9588,7 +9591,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="269" />
         <source>Show indented layer names. Ident size:</source>
-        <translation type="unfinished" />
+        <translation>Прикажи увучена имена слојева. Величина увлачења:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="276" />
@@ -9603,7 +9606,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="308" />
         <source>Allow restructuring via Drag&amp;Drop</source>
-        <translation type="unfinished" />
+        <translation>Дозволи реструктурирање преко превлачења&amp;испуштања</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="315" />
@@ -9613,7 +9616,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="318" />
         <source>Rename secondary layers on primary rename</source>
-        <translation type="unfinished" />
+        <translation>Преименуј секундарне слојеве при преименовању примарног</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="326" />
@@ -9623,7 +9626,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="329" />
         <source>Colors</source>
-        <translation type="unfinished" />
+        <translation>Боје</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="335" />
@@ -9652,7 +9655,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="444" />
         <source>Matched item in highlight filter mode</source>
-        <translation type="unfinished" />
+        <translation>Подударајући елемент у режиму истицања филтера</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="464" />
@@ -9662,22 +9665,22 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="479" />
         <source>#1E90FF</source>
-        <translation type="unfinished">#1E90FF</translation>
+        <translation>#1E90FF</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="507" />
         <source>Virtual layer background color</source>
-        <translation type="unfinished" />
+        <translation>Боја позадине виртуелног слоја</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="534" />
         <source>Threeview items separator grid</source>
-        <translation type="unfinished" />
+        <translation>Мрежа раздвајача елемената три погледа</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="544" />
         <source>Selected items background color</source>
-        <translation type="unfinished" />
+        <translation>Боја позадине изабраних елемената</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="579" />
@@ -9687,7 +9690,7 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="582" />
         <source>Active layer background color</source>
-        <translation type="unfinished" />
+        <translation>Боја позадине активног слоја</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="603" />
@@ -9697,27 +9700,27 @@ Are you sure you are going to discard changes?</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.ui" line="606" />
         <source>Default Pens</source>
-        <translation type="unfinished" />
+        <translation>Подразумеване оловке</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.cpp" line="70" />
         <source>Normal Layer</source>
-        <translation type="unfinished" />
+        <translation>Нормални слој</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.cpp" line="71" />
         <source>Dimensional Layer</source>
-        <translation type="unfinished" />
+        <translation>Димензионални слој</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.cpp" line="72" />
         <source>Informational Layer</source>
-        <translation type="unfinished" />
+        <translation>Информативни слој</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.cpp" line="73" />
         <source>Alternative Position Layer</source>
-        <translation type="unfinished" />
+        <translation>Слој алтернативне позиције</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.cpp" line="103" />
@@ -9758,7 +9761,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.cpp" line="231" />
         <source>Select Color</source>
-        <translation type="unfinished" />
+        <translation>Изабери боју</translation>
     </message>
 </context>
 <context>
@@ -9766,240 +9769,240 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="146" />
         <source>Filter</source>
-        <translation type="unfinished">Филтер</translation>
+        <translation>Филтер</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="148" />
         <source>Looking for matching layer names</source>
-        <translation type="unfinished">Тражим слојеве са одговарајућим називима</translation>
+        <translation>Тражење имена слојева која се подударају</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="153" />
         <source>Highlight Mode</source>
-        <translation type="unfinished" />
+        <translation>Режим истицања</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="163" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation>Подешавања</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="182" />
         <source>Show all layers</source>
-        <translation type="unfinished">Прикажи све слојеве</translation>
+        <translation>Прикажи све слојеве</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="189" />
         <source>Hide all layers</source>
-        <translation type="unfinished">Сакриј све слојеве</translation>
+        <translation>Сакриј све слојеве</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="196" />
         <source>Show Secondary Layers</source>
-        <translation type="unfinished" />
+        <translation>Прикажи секундарне слојеве</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="206" />
         <source>Show Active Layer Only</source>
-        <translation type="unfinished" />
+        <translation>Прикажи само активни слој</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="214" />
         <source>Expand All</source>
-        <translation type="unfinished" />
+        <translation>Прошири све</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="222" />
         <source>Collapse All</source>
-        <translation type="unfinished" />
+        <translation>Скупи све</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="230" />
         <source>Collapse Secondary</source>
-        <translation type="unfinished" />
+        <translation>Скупи секундарне</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="238" />
         <source>Unlock all layers</source>
-        <translation type="unfinished">Откључај све слојеве</translation>
+        <translation>Откључај све слојеве</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="245" />
         <source>Lock all layers</source>
-        <translation type="unfinished">Закључај све слојеве</translation>
+        <translation>Закључај све слојеве</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="252" />
         <source>Add a layer</source>
-        <translation type="unfinished">Додај слој</translation>
+        <translation>Додај слој</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="259" />
         <source>Add dimensions Layer</source>
-        <translation type="unfinished" />
+        <translation>Додај слој димензија</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="268" />
         <source>Remove layer</source>
-        <translation type="unfinished">Уклони слој</translation>
+        <translation>Уклони слој</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="275" />
         <source>Modify layer attributes / rename</source>
-        <translation type="unfinished">Измени особине слоја / преименуј</translation>
+        <translation>Измени атрибуте слоја / преименуј</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="282" />
         <source>Flat List Mode)</source>
-        <translation type="unfinished" />
+        <translation>Режим равне листе)</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="651" />
         <source>&amp;Add Child Layer</source>
-        <translation type="unfinished" />
+        <translation>&amp;Додај дете слој</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="652" />
         <source>&amp;Rename</source>
-        <translation type="unfinished" />
+        <translation>&amp;Преименуј</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="653" />
         <source>&amp;Remove Layers (Sub-Tree)</source>
-        <translation type="unfinished" />
+        <translation>&amp;Уклони слојеве (под-стабло)</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="655" />
         <source>&amp;Copy Structure (Sub-Tree)</source>
-        <translation type="unfinished" />
+        <translation>&amp;Копирај структуру (под-стабло)</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="656" />
         <source>&amp;Duplicate Content (Sub-Tree)</source>
-        <translation type="unfinished" />
+        <translation>&amp;Дуплирај садржај (под-стабло)</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="658" />
         <source>&amp;Select Entities (Sub-Tree)</source>
-        <translation type="unfinished" />
+        <translation>&amp;Изабери ентитете (под-стабло)</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="663" />
         <source>&amp;Edit Layer &amp;Attributes</source>
-        <translation type="unfinished" />
+        <translation>&amp;Уреди &amp;атрибуте слоја</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="665" />
         <source>&amp;Remove Layer</source>
-        <translation type="unfinished">&amp;Уклони слој</translation>
+        <translation>&amp;Уклони слој</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="674" />
         <source>&amp;Add Dimensions Sub-Layer</source>
-        <translation type="unfinished" />
+        <translation>&amp;Додај под-слој димензија</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="678" />
         <source>&amp;Add Info Sub-Layer</source>
-        <translation type="unfinished" />
+        <translation>&amp;Додај под-слој информација</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="682" />
         <source>&amp;Add Alternative View Sub-Layer</source>
-        <translation type="unfinished" />
+        <translation>&amp;Додај под-слој алтернативног погледа</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="688" />
         <source>&amp;Remove Sub-layers</source>
-        <translation type="unfinished" />
+        <translation>&amp;Уклони под-слојеве</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="696" />
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="706" />
         <source>Convert to Dimensional Layer</source>
-        <translation type="unfinished" />
+        <translation>Претвори у димензионални слој</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="697" />
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="709" />
         <source>Convert to Info Layer</source>
-        <translation type="unfinished" />
+        <translation>Претвори у информативни слој</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="698" />
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="712" />
         <source>Convert to Alternative Position Layer</source>
-        <translation type="unfinished" />
+        <translation>Претвори у слој алтернативне позиције</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="704" />
         <source>Convert to Normal Layer</source>
-        <translation type="unfinished" />
+        <translation>Претвори у нормални слој</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="718" />
         <source>&amp;Select Layer's Entities</source>
-        <translation type="unfinished" />
+        <translation>&amp;Изабери ентитете слоја</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="721" />
         <source>&amp;Create Layer Copy</source>
-        <translation type="unfinished" />
+        <translation>&amp;Креирај копију слоја</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="722" />
         <source>&amp;Duplicate Layer With Content</source>
-        <translation type="unfinished" />
+        <translation>&amp;Дуплирај слој са садржајем</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="726" />
         <source>Move Selection to Layer</source>
-        <translation type="unfinished" />
+        <translation>Премести избор у слој</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="727" />
         <source>Duplicate Selection to Layer</source>
-        <translation type="unfinished" />
+        <translation>Дуплирај избор у слој</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="734" />
         <source>&amp;Add Layer</source>
-        <translation type="unfinished">&amp;Додај слој</translation>
+        <translation>&amp;Додај слој</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="736" />
         <source>&amp;Freeze Others Layers</source>
-        <translation type="unfinished" />
+        <translation>&amp;Замрзни остале слојеве</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="737" />
         <source>&amp;Defreeze All Layers</source>
-        <translation type="unfinished" />
+        <translation>&amp;Одмрзни све слојеве</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="738" />
         <source>&amp;Freeze All Layers</source>
-        <translation type="unfinished" />
+        <translation>&amp;Замрзни све слојеве</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="739" />
         <source>&amp;Unlock All Layers</source>
-        <translation type="unfinished" />
+        <translation>&amp;Откључај све слојеве</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="740" />
         <source>&amp;Lock All Layers</source>
-        <translation type="unfinished" />
+        <translation>&amp;Закључај све слојеве</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="741" />
         <source>Enable &amp;Printing All Layers</source>
-        <translation type="unfinished" />
+        <translation>Омогући &amp;штампање свих слојева</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="742" />
         <source>&amp;Disable Printing All Layers</source>
-        <translation type="unfinished" />
+        <translation>&amp;Онемогући штампање свих слојева</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="745" />
@@ -10019,7 +10022,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="755" />
         <source>&amp;Find And Remove Empty Layers</source>
-        <translation type="unfinished" />
+        <translation>&amp;Пронађи и уклони празне слојеве</translation>
     </message>
 </context>
 <context>
@@ -10027,7 +10030,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished">Образац</translation>
+        <translation>Образац</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="163" />
@@ -10037,7 +10040,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="166" />
         <source>Free</source>
-        <translation type="unfinished" />
+        <translation>Слободно</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="212" />
@@ -10072,12 +10075,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="125" />
         <source>Divide</source>
-        <translation type="unfinished">Подела</translation>
+        <translation>Подели</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="132" />
         <source>Offset:</source>
-        <translation type="unfinished">Размак:</translation>
+        <translation>Померај:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="50" />
@@ -10093,29 +10096,29 @@ Please specify a different value.</source>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="66" />
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="276" />
         <source>Start</source>
-        <translation type="unfinished">Почетак</translation>
+        <translation>Почетак</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="71" />
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="281" />
         <source>Middle</source>
-        <translation type="unfinished">Средина</translation>
+        <translation>Средина</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="76" />
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="286" />
         <source>End</source>
-        <translation type="unfinished">Крај</translation>
+        <translation>Крај</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="226" />
         <source>Tick Snap:</source>
-        <translation type="unfinished" />
+        <translation>Снап ознаке:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="156" />
         <source>Line Snap:</source>
-        <translation type="unfinished" />
+        <translation>Снап линије:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="205" />
@@ -10130,12 +10133,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="149" />
         <source>Rel</source>
-        <translation type="unfinished" />
+        <translation>Релативно</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="139" />
         <source>Length:</source>
-        <translation type="unfinished">Дужина:</translation>
+        <translation>Дужина:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="57" />
@@ -10151,12 +10154,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="294" />
         <source>Angle:</source>
-        <translation type="unfinished">Угао:</translation>
+        <translation>Угао:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="180" />
         <source>Snap Distance:</source>
-        <translation type="unfinished" />
+        <translation>Растојање снапа:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_lineanglereloptions.ui" line="102" />
@@ -10169,22 +10172,22 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished">Образац</translation>
+        <translation>Образац</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="335" />
         <source>Angle:</source>
-        <translation type="unfinished">Угао:</translation>
+        <translation>Угао:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="342" />
         <source>Size:</source>
-        <translation type="unfinished" />
+        <translation>Величина:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="266" />
         <source>End offset:</source>
-        <translation type="unfinished" />
+        <translation>Померај краја:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="259" />
@@ -10204,22 +10207,22 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="124" />
         <source>Start</source>
-        <translation type="unfinished">Почетак</translation>
+        <translation>Почетак</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="129" />
         <source>Middle</source>
-        <translation type="unfinished">Средина</translation>
+        <translation>Средина</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="134" />
         <source>End</source>
-        <translation type="unfinished">Крај</translation>
+        <translation>Крај</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="171" />
         <source>Length:</source>
-        <translation type="unfinished">Дужина:</translation>
+        <translation>Дужина:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="196" />
@@ -10229,7 +10232,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="142" />
         <source>Snap:</source>
-        <translation type="unfinished" />
+        <translation>Снап:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="203" />
@@ -10249,12 +10252,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="322" />
         <source>To Intersection</source>
-        <translation type="unfinished" />
+        <translation>До пресека</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="327" />
         <source>Fixed Length</source>
-        <translation type="unfinished" />
+        <translation>Фиксна дужина</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="65" />
@@ -10264,7 +10267,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="68" />
         <source>Orthogonal</source>
-        <translation type="unfinished">Ортогонално</translation>
+        <translation>Ортогонално</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_linefrompointtolineoptions.ui" line="44" />
@@ -10277,7 +10280,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="20" />
         <source>Form</source>
-        <translation type="unfinished">Образац</translation>
+        <translation>Образац</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="38" />
@@ -10287,7 +10290,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="41" />
         <source>Create Polyline</source>
-        <translation type="unfinished" />
+        <translation>Креирај полилинију</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="66" />
@@ -10298,29 +10301,29 @@ Please specify a different value.</source>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="70" />
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="124" />
         <source>Extend/Trim</source>
-        <translation type="unfinished" />
+        <translation>Прошири/Скрати</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="75" />
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="129" />
         <source>Add segment</source>
-        <translation type="unfinished" />
+        <translation>Додај сегмент</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="80" />
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="134" />
         <source>No change</source>
-        <translation type="unfinished" />
+        <translation>Без промене</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="88" />
         <source>Line 1:</source>
-        <translation type="unfinished" />
+        <translation>Линија 1:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="95" />
         <source>Line 2:</source>
-        <translation type="unfinished" />
+        <translation>Линија 2:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="120" />
@@ -10335,27 +10338,27 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="164" />
         <source>Active Pen</source>
-        <translation type="unfinished" />
+        <translation>Активна оловка</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="169" />
         <source>Line 1</source>
-        <translation type="unfinished" />
+        <translation>Линија 1</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="174" />
         <source>Line 2</source>
-        <translation type="unfinished" />
+        <translation>Линија 2</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="179" />
         <source>Both lines</source>
-        <translation type="unfinished" />
+        <translation>Обе линије</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="187" />
         <source>Attributes:</source>
-        <translation type="unfinished" />
+        <translation>Атрибути:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="207" />
@@ -10365,7 +10368,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_linejoinoptions.ui" line="210" />
         <source>Remove originals</source>
-        <translation type="unfinished" />
+        <translation>Уклони оригинале</translation>
     </message>
 </context>
 <context>
@@ -10373,7 +10376,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="20" />
         <source>Form</source>
-        <translation type="unfinished">Образац</translation>
+        <translation>Образац</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="67" />
@@ -10383,22 +10386,22 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="71" />
         <source>None</source>
-        <translation type="unfinished">Ништа</translation>
+        <translation>Ниједан</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="76" />
         <source>Both</source>
-        <translation type="unfinished" />
+        <translation>Оба</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="81" />
         <source>Start</source>
-        <translation type="unfinished">Почетак</translation>
+        <translation>Почетак</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="86" />
         <source>End</source>
-        <translation type="unfinished">Крај</translation>
+        <translation>Крај</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="153" />
@@ -10413,7 +10416,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="257" />
         <source>Edge Points:</source>
-        <translation type="unfinished" />
+        <translation>Тачке ивице:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="264" />
@@ -10428,7 +10431,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="118" />
         <source>Fit Line</source>
-        <translation type="unfinished" />
+        <translation>Уклопи линију</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="143" />
@@ -10443,12 +10446,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="41" />
         <source>Angle:</source>
-        <translation type="unfinished">Угао:</translation>
+        <translation>Угао:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="212" />
         <source>Number of points:</source>
-        <translation type="unfinished" />
+        <translation>Број тачака:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="176" />
@@ -10458,7 +10461,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="179" />
         <source>Fixed Distance</source>
-        <translation type="unfinished" />
+        <translation>Фиксно растојање</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/point/lc_linepointsoptions.ui" line="250" />
@@ -11271,7 +11274,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifybreakdivideoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished">Образац</translation>
+        <translation>Образац</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifybreakdivideoptions.ui" line="45" />
@@ -11281,7 +11284,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifybreakdivideoptions.ui" line="48" />
         <source>Remove Segments</source>
-        <translation type="unfinished" />
+        <translation>Уклони сегменте</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifybreakdivideoptions.ui" line="55" />
@@ -11291,7 +11294,7 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifybreakdivideoptions.ui" line="58" />
         <source>Remove Selected</source>
-        <translation type="unfinished" />
+        <translation>Уклони изабрано</translation>
     </message>
 </context>
 <context>
@@ -11299,12 +11302,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished">Образац</translation>
+        <translation>Образац</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="184" />
         <source>Snap Distance:</source>
-        <translation type="unfinished" />
+        <translation>Растојање снапа:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="32" />
@@ -11314,12 +11317,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="95" />
         <source>Line Snap:</source>
-        <translation type="unfinished" />
+        <translation>Снап линије:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="54" />
         <source>Gap Size:</source>
-        <translation type="unfinished" />
+        <translation>Величина празнине:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="68" />
@@ -11329,12 +11332,12 @@ Please specify a different value.</source>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="158" />
         <source>Free</source>
-        <translation type="unfinished" />
+        <translation>Слободно</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="61" />
         <source>Gap Snap:</source>
-        <translation type="unfinished" />
+        <translation>Снап празнине:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/modify/lc_modifygapoptions.ui" line="36" />
@@ -12603,47 +12606,47 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="20" />
         <source>Pen Palette Settings</source>
-        <translation type="unfinished" />
+        <translation>Подешавања палете оловки</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="208" />
         <source>Columns to display</source>
-        <translation type="unfinished" />
+        <translation>Колоне за приказ</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="214" />
         <source>Line Type Name</source>
-        <translation type="unfinished" />
+        <translation>Назив типа линије</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="221" />
         <source>Color Name</source>
-        <translation type="unfinished" />
+        <translation>Назив боје</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="228" />
         <source>Line Type Icon</source>
-        <translation type="unfinished" />
+        <translation>Икона типа линије</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="235" />
         <source>Color Icon</source>
-        <translation type="unfinished" />
+        <translation>Икона боје</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="242" />
         <source>Line Width Icon</source>
-        <translation type="unfinished" />
+        <translation>Икона ширине линије</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="249" />
         <source>Line Width Name</source>
-        <translation type="unfinished" />
+        <translation>Назив ширине линије</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="26" />
         <source>Colors</source>
-        <translation type="unfinished" />
+        <translation>Боје</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="32" />
@@ -12665,7 +12668,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="79" />
         <source>Active Pen Background:</source>
-        <translation type="unfinished" />
+        <translation>Позадина активне оловке:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="100" />
@@ -12675,17 +12678,17 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="103" />
         <source>Entire table row is bold for active pen</source>
-        <translation type="unfinished" />
+        <translation>Цео ред табеле је подебљан за активну оловку</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="110" />
         <source>Grid Color:</source>
-        <translation type="unfinished" />
+        <translation>Боја мреже:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="117" />
         <source>Matched Item Color:</source>
-        <translation type="unfinished" />
+        <translation>Боја подударајућег елемента:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="124" />
@@ -12700,22 +12703,22 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="321" />
         <source>Case-insensitive pens filtering</source>
-        <translation type="unfinished" />
+        <translation>Филтрирање оловки без обзира на мала/велика слова</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="151" />
         <source>Controls whether tooltip will be shown for table item or not</source>
-        <translation type="unfinished" />
+        <translation>Контролише да ли ће се приказати тултип за елемент табеле</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="154" />
         <source>Show tooltip for table items</source>
-        <translation type="unfinished" />
+        <translation>Прикажи тултип за елементе табеле</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="259" />
         <source>Show colorn name as</source>
-        <translation type="unfinished" />
+        <translation>Прикажи назив боје као</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="265" />
@@ -12725,7 +12728,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="268" />
         <source>HEX</source>
-        <translation type="unfinished" />
+        <translation>HEX</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="275" />
@@ -12735,7 +12738,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="278" />
         <source>RGB</source>
-        <translation type="unfinished" />
+        <translation>RGB</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="285" />
@@ -12745,7 +12748,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="288" />
         <source>Natural name where possible</source>
-        <translation type="unfinished" />
+        <translation>Природни назив где је могуће</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="298" />
@@ -12755,12 +12758,12 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="301" />
         <source>Show info message if no entities may be selected by pen</source>
-        <translation type="unfinished" />
+        <translation>Прикажи информативну поруку ако се ниједан ентитет не може изабрати оловком</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="176" />
         <source>On double click on table item</source>
-        <translation type="unfinished" />
+        <translation>При двоструком клику на елемент табеле</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.ui" line="183" />
@@ -12770,17 +12773,17 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.cpp" line="51" />
         <source>Do nothing</source>
-        <translation type="unfinished" />
+        <translation>Не ради ништа</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.cpp" line="52" />
         <source>Select entities by attributes pen</source>
-        <translation type="unfinished" />
+        <translation>Изабери ентитете по атрибутима оловке</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpaletteoptionsdialog.cpp" line="53" />
         <source>Select entities by drawing pen</source>
-        <translation type="unfinished" />
+        <translation>Изабери ентитете по оловци цртања</translation>
     </message>
 </context>
 <context>
@@ -12788,93 +12791,93 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="20" />
         <source>Pen Palette</source>
-        <translation type="unfinished" />
+        <translation>Палета оловки</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="46" />
         <source>Fill Pen Editor by Entity Drawing Pen</source>
-        <translation type="unfinished" />
+        <translation>Попуни едитор оловке оловком цртања ентитета</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="63" />
         <source>Fill Pen Editor by Entity Attributes</source>
-        <translation type="unfinished" />
+        <translation>Попуни едитор оловке атрибутима ентитета</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="80" />
         <source>Select Entities By Drawing Pen</source>
-        <translation type="unfinished" />
+        <translation>Изабери ентитете по оловци цртања</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="97" />
         <source>Select Entities By Pen Attributes</source>
-        <translation type="unfinished" />
+        <translation>Изабери ентитете по атрибутима оловке</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="117" />
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="120" />
         <source>Save</source>
-        <translation type="unfinished">Сачувај</translation>
+        <translation>Сачувај</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="134" />
         <source>Apply Pen To Selection</source>
-        <translation type="unfinished" />
+        <translation>Примени оловку на избор</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="151" />
         <source>Fill Editor Pen by Current Pen</source>
-        <translation type="unfinished" />
+        <translation>Попуни едитор оловке тренутном оловком</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="168" />
         <source>Apply Editor Pen As Current Pen</source>
-        <translation type="unfinished" />
+        <translation>Примени оловку едитора као тренутну оловку</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="171" />
         <source>to current</source>
-        <translation type="unfinished" />
+        <translation>на тренутну</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="185" />
         <source>Update Current Pen by Active Layer' Pen</source>
-        <translation type="unfinished" />
+        <translation>Ажурирај тренутну оловку оловком активног слоја</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="202" />
         <source>Fill Pen Editor from Active Layer's Pen</source>
-        <translation type="unfinished" />
+        <translation>Попуни едитор оловке из оловке активног слоја</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="205" />
         <source>Pick from Active Layer</source>
-        <translation type="unfinished" />
+        <translation>Изабери из активног слоја</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="219" />
         <source>Apply Editor Pen to Active Layer Pen</source>
-        <translation type="unfinished" />
+        <translation>Примени оловку едитора на оловку активног слоја</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="222" />
         <source>Apply To Layer</source>
-        <translation type="unfinished" />
+        <translation>Примени на слој</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="236" />
         <source>Remove Selected Pen</source>
-        <translation type="unfinished" />
+        <translation>Уклони изабрану оловку</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="239" />
         <source>Delete Pen</source>
-        <translation type="unfinished" />
+        <translation>Избриши оловку</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="336" />
         <source>Type:</source>
-        <translation type="unfinished" />
+        <translation>Тип:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="343" />
@@ -12884,7 +12887,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="362" />
         <source>Width:</source>
-        <translation type="unfinished">Ширина:</translation>
+        <translation>Ширина:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="369" />
@@ -12894,7 +12897,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="399" />
         <source>Pen Name:</source>
-        <translation type="unfinished" />
+        <translation>Назив оловке:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="433" />
@@ -12904,12 +12907,12 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="452" />
         <source>Color:</source>
-        <translation type="unfinished">Боја:</translation>
+        <translation>Боја:</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="484" />
         <source>Settings</source>
-        <translation type="unfinished" />
+        <translation>Подешавања</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="515" />
@@ -12919,7 +12922,7 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="518" />
         <source>Filter...</source>
-        <translation type="unfinished" />
+        <translation>Филтер...</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="547" />
@@ -12929,59 +12932,61 @@ Warning: this action can NOT be undone!</source>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.ui" line="550" />
         <source>Highlight Mode</source>
-        <translation type="unfinished" />
+        <translation>Режим истицања</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="278" />
         <source>&amp;Apply Pen To Selection</source>
-        <translation type="unfinished" />
+        <translation>&amp;Примени оловку на избор</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="279" />
         <source>&amp;Set As Current Pen</source>
-        <translation type="unfinished" />
+        <translation>&amp;Постави као тренутну оловку</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="280" />
         <source>&amp;Apply Pen To Active Layer</source>
-        <translation type="unfinished" />
+        <translation>&amp;Примени оловку на активни слој</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="281" />
         <source>&amp;Select Entities With Attributes Pen</source>
-        <translation type="unfinished" />
+        <translation>&amp;Изабери ентитете са атрибутима оловке</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="282" />
         <source>&amp;Select Entities With Drawing Pen</source>
-        <translation type="unfinished" />
+        <translation>&amp;Изабери ентитете са оловком цртања</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="285" />
         <source>&amp;Edit Pen</source>
-        <translation type="unfinished" />
+        <translation>&amp;Уреди оловку</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="286" />
         <source>&amp;Remove Pen</source>
-        <translation type="unfinished" />
+        <translation>&amp;Уклони оловку</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="289" />
         <source>&amp;Remove Pens</source>
-        <translation type="unfinished" />
+        <translation>&amp;Уклони оловке</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="404" />
         <source>Pen palette</source>
-        <translation type="unfinished" />
+        <translation>Палета оловки</translation>
     </message>
     <message>
         <location filename="../src/ui/dock_widgets/pen_palette/lc_penpalettewidget.cpp" line="405" />
         <source>Location of pens file is changed, please restart the application so new pens file will be used.
 
 Please note that if you'll save pen via editor without restart, current pens from palette will be saved in the new file and therefore existing content of it will be overridden.</source>
-        <translation type="unfinished" />
+        <translation>Локација датотеке оловки је промењена, молимо поново покрените апликацију да би се користила нова датотека оловки.
+
+Напомена: ако сачувате оловку преко едитора без поновног покретања, тренутне оловке из палете ће бити сачуване у новој датотеци и постојећи садржај ће бити преписан.</translation>
     </message>
 </context>
 <context>
@@ -14337,12 +14342,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished">Образац</translation>
+        <translation>Образац</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="381" />
         <source>Edges:</source>
-        <translation type="unfinished" />
+        <translation>Ивице:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="388" />
@@ -14352,7 +14357,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="391" />
         <source>Snap shift</source>
-        <translation type="unfinished" />
+        <translation>Померај снапа</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="229" />
@@ -14367,17 +14372,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="199" />
         <source>Both</source>
-        <translation type="unfinished" />
+        <translation>Оба</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="204" />
         <source>Vertical</source>
-        <translation type="unfinished">Вертикала</translation>
+        <translation>Вертикално</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="209" />
         <source>Horizontal</source>
-        <translation type="unfinished">Хоризонтални</translation>
+        <translation>Хоризонтално</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="339" />
@@ -14392,17 +14397,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="240" />
         <source>Straight</source>
-        <translation type="unfinished" />
+        <translation>Право</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="245" />
         <source>Round</source>
-        <translation type="unfinished" />
+        <translation>Заобљено</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="250" />
         <source>Bevel</source>
-        <translation type="unfinished" />
+        <translation>Скос</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="307" />
@@ -14412,7 +14417,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="310" />
         <source>Base Angle:</source>
-        <translation type="unfinished" />
+        <translation>Основни угао:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="258" />
@@ -14422,12 +14427,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="261" />
         <source>Size inner</source>
-        <translation type="unfinished" />
+        <translation>Унутрашња величина</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="32" />
         <source>Length Y:</source>
-        <translation type="unfinished" />
+        <translation>Дужина Y:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="46" />
@@ -14437,22 +14442,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="49" />
         <source>Polyline</source>
-        <translation type="unfinished">Полилинија</translation>
+        <translation>Полилинија</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="419" />
         <source>Snap:</source>
-        <translation type="unfinished" />
+        <translation>Снап:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="412" />
         <source>Height:</source>
-        <translation type="unfinished">Висина:</translation>
+        <translation>Висина:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="174" />
         <source>Radius:</source>
-        <translation type="unfinished" />
+        <translation>Полупречник:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="146" />
@@ -14462,7 +14467,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="56" />
         <source>Length X:</source>
-        <translation type="unfinished" />
+        <translation>Дужина X:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="75" />
@@ -14482,47 +14487,47 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="86" />
         <source>Top-left</source>
-        <translation type="unfinished" />
+        <translation>Горе-лево</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="91" />
         <source>Top</source>
-        <translation type="unfinished" />
+        <translation>Горе</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="96" />
         <source>Top-right</source>
-        <translation type="unfinished" />
+        <translation>Горе-десно</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="101" />
         <source>Left</source>
-        <translation type="unfinished">Лево</translation>
+        <translation>Лево</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="106" />
         <source>Middle</source>
-        <translation type="unfinished">Средина</translation>
+        <translation>Средина</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="111" />
         <source>Right</source>
-        <translation type="unfinished" />
+        <translation>Десно</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="116" />
         <source>Bottom-left</source>
-        <translation type="unfinished" />
+        <translation>Доле-лево</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="121" />
         <source>Bottom</source>
-        <translation type="unfinished" />
+        <translation>Доле</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="126" />
         <source>Bottom-right</source>
-        <translation type="unfinished" />
+        <translation>Доле-десно</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="160" />
@@ -14552,12 +14557,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="374" />
         <source>Width:</source>
-        <translation type="unfinished">Ширина:</translation>
+        <translation>Ширина:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="405" />
         <source>Corners:</source>
-        <translation type="unfinished" />
+        <translation>Углови:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle1pointoptions.ui" line="445" />
@@ -14585,7 +14590,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished">Образац</translation>
+        <translation>Образац</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="251" />
@@ -14595,17 +14600,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="255" />
         <source>Both</source>
-        <translation type="unfinished" />
+        <translation>Оба</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="260" />
         <source>Vertical</source>
-        <translation type="unfinished">Вертикала</translation>
+        <translation>Вертикално</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="265" />
         <source>Horizontal</source>
-        <translation type="unfinished">Хоризонтални</translation>
+        <translation>Хоризонтално</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="32" />
@@ -14616,25 +14621,25 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="36" />
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="201" />
         <source>Corner</source>
-        <translation type="unfinished" />
+        <translation>Угао</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="41" />
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="206" />
         <source>Mid-Vertical</source>
-        <translation type="unfinished" />
+        <translation>Средина-вертикално</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="46" />
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="211" />
         <source>Mid-Horizontal</source>
-        <translation type="unfinished" />
+        <translation>Средина-хоризонтално</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="51" />
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="216" />
         <source>Middle</source>
-        <translation type="unfinished">Средина</translation>
+        <translation>Средина</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="105" />
@@ -14649,7 +14654,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="171" />
         <source>Corners:</source>
-        <translation type="unfinished" />
+        <translation>Углови:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="197" />
@@ -14664,7 +14669,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="354" />
         <source>Edges:</source>
-        <translation type="unfinished" />
+        <translation>Ивице:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="361" />
@@ -14674,7 +14679,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="91" />
         <source>Start Snap:</source>
-        <translation type="unfinished" />
+        <translation>Снап почетка:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="190" />
@@ -14689,17 +14694,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="321" />
         <source>Snap shift</source>
-        <translation type="unfinished" />
+        <translation>Померај снапа</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="304" />
         <source>Length X:</source>
-        <translation type="unfinished" />
+        <translation>Дужина X:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="311" />
         <source>Radius:</source>
-        <translation type="unfinished" />
+        <translation>Полупречник:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="294" />
@@ -14709,7 +14714,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="297" />
         <source>Base Angle:</source>
-        <translation type="unfinished" />
+        <translation>Основни угао:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="164" />
@@ -14719,7 +14724,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="347" />
         <source>End Snap:</source>
-        <translation type="unfinished" />
+        <translation>Снап краја:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="69" />
@@ -14729,17 +14734,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="73" />
         <source>Straight</source>
-        <translation type="unfinished" />
+        <translation>Право</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="78" />
         <source>Round</source>
-        <translation type="unfinished" />
+        <translation>Заобљено</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="83" />
         <source>Bevel</source>
-        <translation type="unfinished" />
+        <translation>Скос</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="131" />
@@ -14749,7 +14754,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="231" />
         <source>Length Y:</source>
-        <translation type="unfinished" />
+        <translation>Дужина Y:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="59" />
@@ -14759,7 +14764,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="62" />
         <source>Polyline</source>
-        <translation type="unfinished">Полилинија</translation>
+        <translation>Полилинија</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle2pointsoptions.ui" line="340" />
@@ -14772,7 +14777,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished">Образац</translation>
+        <translation>Образац</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="121" />
@@ -14787,7 +14792,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="89" />
         <source>Fixed Inner Angle:</source>
-        <translation type="unfinished" />
+        <translation>Фиксни унутрашњи угао:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="187" />
@@ -14797,7 +14802,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="322" />
         <source>Length X:</source>
-        <translation type="unfinished" />
+        <translation>Дужина X:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="290" />
@@ -14812,22 +14817,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="372" />
         <source>Straight</source>
-        <translation type="unfinished" />
+        <translation>Право</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="377" />
         <source>Round</source>
-        <translation type="unfinished" />
+        <translation>Заобљено</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="382" />
         <source>Bevel</source>
-        <translation type="unfinished" />
+        <translation>Скос</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="390" />
         <source>Corners:</source>
-        <translation type="unfinished" />
+        <translation>Углови:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="248" />
@@ -14837,12 +14842,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="251" />
         <source>Snap shift</source>
-        <translation type="unfinished" />
+        <translation>Померај снапа</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="258" />
         <source>Length Y:</source>
-        <translation type="unfinished" />
+        <translation>Дужина Y:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="315" />
@@ -14857,7 +14862,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="265" />
         <source>Radius:</source>
-        <translation type="unfinished" />
+        <translation>Полупречник:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="32" />
@@ -14867,7 +14872,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="35" />
         <source>Polyline</source>
-        <translation type="unfinished">Полилинија</translation>
+        <translation>Полилинија</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="128" />
@@ -14877,7 +14882,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="152" />
         <source>Edges:</source>
-        <translation type="unfinished" />
+        <translation>Ивице:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="354" />
@@ -14902,17 +14907,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="432" />
         <source>Both</source>
-        <translation type="unfinished" />
+        <translation>Оба</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="437" />
         <source>Vertical</source>
-        <translation type="unfinished">Вертикала</translation>
+        <translation>Вертикално</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="442" />
         <source>Horizontal</source>
-        <translation type="unfinished">Хоризонтални</translation>
+        <translation>Хоризонтално</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="450" />
@@ -14927,7 +14932,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="162" />
         <source>Fixed Base Angle:</source>
-        <translation type="unfinished" />
+        <translation>Фиксни основни угао:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="194" />
@@ -14937,7 +14942,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/rect/lc_rectangle3pointsoptions.ui" line="197" />
         <source>Quadrangle</source>
-        <translation type="unfinished" />
+        <translation>Четвороугаоник</translation>
     </message>
 </context>
 <context>
@@ -15270,12 +15275,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished">Образац</translation>
+        <translation>Образац</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="382" />
         <source>Start Circle Angle:</source>
-        <translation type="unfinished" />
+        <translation>Угао почетка круга:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="375" />
@@ -15285,7 +15290,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="189" />
         <source>Offset:</source>
-        <translation type="unfinished">Размак:</translation>
+        <translation>Померај:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="284" />
@@ -15295,7 +15300,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="196" />
         <source>Angle:</source>
-        <translation type="unfinished">Угао:</translation>
+        <translation>Угао:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="66" />
@@ -15305,7 +15310,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="86" />
         <source>Distance:</source>
-        <translation type="unfinished">Размак:</translation>
+        <translation>Растојање:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="111" />
@@ -15320,7 +15325,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="182" />
         <source>Divide</source>
-        <translation type="unfinished">Подела</translation>
+        <translation>Подели</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="203" />
@@ -15340,7 +15345,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="291" />
         <source>Tick snap:</source>
-        <translation type="unfinished" />
+        <translation>Снап ознаке:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="322" />
@@ -15365,12 +15370,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="315" />
         <source>Rel</source>
-        <translation type="unfinished" />
+        <translation>Релативно</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="298" />
         <source>Tick Length:</source>
-        <translation type="unfinished" />
+        <translation>Дужина ознаке:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="250" />
@@ -15381,18 +15386,18 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="156" />
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="254" />
         <source>Start</source>
-        <translation type="unfinished">Почетак</translation>
+        <translation>Почетак</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="259" />
         <source>Middle</source>
-        <translation type="unfinished">Средина</translation>
+        <translation>Средина</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="161" />
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="264" />
         <source>End</source>
-        <translation type="unfinished">Крај</translation>
+        <translation>Крај</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="413" />
@@ -15402,7 +15407,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="416" />
         <source>Fixed </source>
-        <translation type="unfinished" />
+        <translation>Фиксно</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="454" />
@@ -15412,7 +15417,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="464" />
         <source>Count:</source>
-        <translation type="unfinished" />
+        <translation>Број:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="142" />
@@ -15422,17 +15427,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="146" />
         <source>None</source>
-        <translation type="unfinished">Ништа</translation>
+        <translation>Ниједан</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="151" />
         <source>Both</source>
-        <translation type="unfinished" />
+        <translation>Оба</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/line/lc_slicedivideoptions.ui" line="169" />
         <source>Edge Tick:</source>
-        <translation type="unfinished" />
+        <translation>Ознака ивице:</translation>
     </message>
 </context>
 <context>
@@ -15779,7 +15784,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="14" />
         <source>Form</source>
-        <translation type="unfinished">Образац</translation>
+        <translation>Образац</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="42" />
@@ -15789,7 +15794,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="45" />
         <source>Symmetric</source>
-        <translation type="unfinished" />
+        <translation>Симетрично</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="114" />
@@ -15799,7 +15804,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="131" />
         <source>Number:</source>
-        <translation type="unfinished">Број:</translation>
+        <translation>Број:</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="157" />
@@ -15824,7 +15829,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="35" />
         <source>Radius Outer</source>
-        <translation type="unfinished" />
+        <translation>Спољашњи полупречник</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="121" />
@@ -15834,7 +15839,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="124" />
         <source>Radius Inner</source>
-        <translation type="unfinished" />
+        <translation>Унутрашњи полупречник</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="82" />
@@ -15844,7 +15849,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="85" />
         <source>Polyline</source>
-        <translation type="unfinished">Полилинија</translation>
+        <translation>Полилинија</translation>
     </message>
     <message>
         <location filename="../src/ui/action_options/polygon/lc_staroptions.ui" line="150" />
