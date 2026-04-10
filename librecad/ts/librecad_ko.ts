@@ -24123,8 +24123,7 @@ This action can NOT be undone.</source>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        %n개의 레이어 삭제
-                <numerusform/>
+                <numerusform>%n개의 레이어를 제거합니다</numerusform>
             </translation>
         </message>
         <message>
@@ -24154,8 +24153,7 @@ This action can NOT be undone.</source>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        %n개의 블록 삭제
-                <numerusform/>
+                <numerusform>%n개의 블록을 제거합니다.</numerusform>
             </translation>
         </message>
         <message>

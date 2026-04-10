@@ -1946,7 +1946,7 @@ Por favor, compruebe su existencia y permisos.</translation>
         </message>
         <message>
             <source>H&amp;orizontal / Vertical</source>
-            <translation>H&amp;orizontal / Vertical</translation>
+            <translation>Horisontale / Vertikale</translation>
         </message>
         <message>
             <source>Draw horizontal/vertical lines</source>
@@ -4999,7 +4999,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[0F00-0FFF] Tibetan</source>
-            <translation>[0F00-0FFF] Tibetan</translation>
+            <translation>[0F00-0FFF] Tibet</translation>
         </message>
         <message>
             <source>[1000-109F] Myanmar</source>
@@ -5091,7 +5091,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[2190-21FF] Arrows</source>
-            <translation>[2190-21FF] Arrows</translation>
+            <translation>[2190-21FF] Mga simbolo ng palaso</translation>
         </message>
         <message>
             <source>[2200-22FF] Mathematical Operators</source>
@@ -5115,7 +5115,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[2500-257F] Box Drawing</source>
-            <translation>[2500-257F] Box Drawing</translation>
+            <translation>[2500-257F] Pagdrowing ng kahon</translation>
         </message>
         <message>
             <source>[2580-259F] Block Elements</source>
@@ -5131,7 +5131,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[2700-27BF] Dingbats</source>
-            <translation>[2700-27BF] Dingbats</translation>
+            <translation>[2700-27BF] Mga dingbat</translation>
         </message>
         <message>
             <source>[27C0-27EF] Miscellaneous Mathematical Symbols-A</source>
@@ -5143,7 +5143,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[2800-28FF] Braille Patterns</source>
-            <translation>[2800-28FF] Braille Patterns</translation>
+            <translation>[2800-28FF] Mga pattern ng Braille</translation>
         </message>
         <message>
             <source>[2900-297F] Supplemental Arrows-B</source>
@@ -5163,7 +5163,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[2F00-2FDF] Kangxi Radicals</source>
-            <translation>[2F00-2FDF] Kangxi Radicals</translation>
+            <translation>[2F00-2FDF] Mga radikal ng Kangxi</translation>
         </message>
         <message>
             <source>[2FF0-2FFF] Ideographic Description Characters</source>
@@ -6930,11 +6930,11 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[02B0-02FF] Spacing Modifier Letters</source>
-            <translation>[02B0-02FF] Spacing Modifier Letters</translation>
+            <translation>[02B0-02FF] QG_DlgText [02B0-02FF] ގައިވާ இடைவெளி மாற்றும் எழுத்துக்கள்</translation>
         </message>
         <message>
             <source>[0300-036F] Combining Diacritical Marks</source>
-            <translation>[0300-036F] Combining Diacritical Marks</translation>
+            <translation>[0300-036F] QG_DlgText [0300-036F] ގައިވާ இணைக்கும் உச்சரிப்பு குறிகள்</translation>
         </message>
         <message>
             <source>[0370-03FF] Greek and Coptic</source>
@@ -6966,75 +6966,75 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[0780-07BF] Thaana</source>
-            <translation>[0780-07BF] Thaana</translation>
+            <translation>[0780-07BF] QG_DlgText [0780-07BF] ގައިވާ தாணா</translation>
         </message>
         <message>
             <source>[0900-097F] Devanagari</source>
-            <translation>[0900-097F] Devanagari</translation>
+            <translation>[0900-097F] QG_DlgText [0900-097F] ގައިވާ தேவநாகரி</translation>
         </message>
         <message>
             <source>[0980-09FF] Bengali</source>
-            <translation>[0980-09FF] Bengali</translation>
+            <translation>[0980-09FF] QG_DlgText [0980-09FF] ގައިވާ பெங்காலி</translation>
         </message>
         <message>
             <source>[0A00-0A7F] Gurmukhi</source>
-            <translation>[0A00-0A7F] Gurmukhi</translation>
+            <translation>[0A00-0A7F] QG_DlgText [0A00-0A7F] ގައިވާ குருமுகி</translation>
         </message>
         <message>
             <source>[0A80-0AFF] Gujarati</source>
-            <translation>[0A80-0AFF] Gujarati</translation>
+            <translation>[0A80-0AFF] QG_DlgText [0A80-0AFF] ގައިވާ குஜராத்தி</translation>
         </message>
         <message>
             <source>[0B00-0B7F] Oriya</source>
-            <translation>[0B00-0B7F] Oriya</translation>
+            <translation>[0B00-0B7F] QG_DlgText [0B00-0B7F] ގައިވާ ஒரியா</translation>
         </message>
         <message>
             <source>[0B80-0BFF] Tamil</source>
-            <translation>[0B80-0BFF] Tamil</translation>
+            <translation>[0B80-0BFF] QG_DlgText [0B80-0BFF] ގައިވާ தமிழ்</translation>
         </message>
         <message>
             <source>[0C00-0C7F] Telugu</source>
-            <translation>[0C00-0C7F] Telugu</translation>
+            <translation>[0C00-0C7F] QG_DlgText [0C00-0C7F] ގައިވާ தெலுங்கு</translation>
         </message>
         <message>
             <source>[0C80-0CFF] Kannada</source>
-            <translation>[0C80-0CFF] Kannada</translation>
+            <translation>[0C80-0CFF] ಕನ್ನಡ</translation>
         </message>
         <message>
             <source>[0D00-0D7F] Malayalam</source>
-            <translation>[0D00-0D7F] Malayalam</translation>
+            <translation>[0D00-0D7F] மலையாளம்</translation>
         </message>
         <message>
             <source>[0D80-0DFF] Sinhala</source>
-            <translation>[0D80-0DFF] Sinhala</translation>
+            <translation>[0D80-0DFF] සිංහල</translation>
         </message>
         <message>
             <source>[0E00-0E7F] Thai</source>
-            <translation>[0E00-0E7F] Thai</translation>
+            <translation>[0E00-0E7F] ไทย</translation>
         </message>
         <message>
             <source>[0E80-0EFF] Lao</source>
-            <translation>[0E80-0EFF] Lao</translation>
+            <translation>[0E80-0EFF] ລາວ</translation>
         </message>
         <message>
             <source>[0F00-0FFF] Tibetan</source>
-            <translation>[0F00-0FFF] Tibetan</translation>
+            <translation>[0F00-0FFF] བོད་སྐད།</translation>
         </message>
         <message>
             <source>[1000-109F] Myanmar</source>
-            <translation>[1000-109F] Myanmar</translation>
+            <translation>[1000-109F] မြန်မာ</translation>
         </message>
         <message>
             <source>[10A0-10FF] Georgian</source>
-            <translation>[10A0-10FF] Georgian</translation>
+            <translation>[10A0-10FF] ქართული</translation>
         </message>
         <message>
             <source>[1100-11FF] Hangul Jamo</source>
-            <translation>[1100-11FF] Hangul Jamo</translation>
+            <translation>[1100-11FF] 한글 자모</translation>
         </message>
         <message>
             <source>[1200-137F] Ethiopic</source>
-            <translation>[1200-137F] Ethiopic</translation>
+            <translation>[1200-137F] ኢትዮጵያ</translation>
         </message>
         <message>
             <source>[13A0-13FF] Cherokee</source>
@@ -9035,7 +9035,7 @@ Do you want to replace it?</source>
         </message>
         <message>
             <source>Windows Icon</source>
-            <translation>Windows Icon</translation>
+            <translation>Ícone do Windows</translation>
         </message>
         <message>
             <source>JPEG 2000</source>

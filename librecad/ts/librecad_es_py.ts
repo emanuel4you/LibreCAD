@@ -5091,7 +5091,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[2190-21FF] Arrows</source>
-            <translation>[2190-21FF] Arrows</translation>
+            <translation>[2190-21FF] Setas</translation>
         </message>
         <message>
             <source>[2200-22FF] Mathematical Operators</source>
@@ -5115,7 +5115,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[2500-257F] Box Drawing</source>
-            <translation>[2500-257F] Box Drawing</translation>
+            <translation>[2500-257F] Desenho de Caixa</translation>
         </message>
         <message>
             <source>[2580-259F] Block Elements</source>
@@ -5143,7 +5143,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[2800-28FF] Braille Patterns</source>
-            <translation>[2800-28FF] Braille Patterns</translation>
+            <translation>[2800-28FF] Padrões Braille</translation>
         </message>
         <message>
             <source>[2900-297F] Supplemental Arrows-B</source>
@@ -5163,7 +5163,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[2F00-2FDF] Kangxi Radicals</source>
-            <translation>[2F00-2FDF] Kangxi Radicals</translation>
+            <translation>[2F00-2FDF] Radicais Kangxi</translation>
         </message>
         <message>
             <source>[2FF0-2FFF] Ideographic Description Characters</source>
@@ -6886,7 +6886,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message utf8="true">
             <source>Yen (¥)</source>
-            <translation>Yen (¥)</translation>
+            <translation>Iene (¥)</translation>
         </message>
         <message utf8="true">
             <source>Times (×)</source>
@@ -6910,19 +6910,19 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[0000-007F] Basic Latin</source>
-            <translation>[0000-007F] Basic Latin</translation>
+            <translation>[0000-007F] Latim Básico</translation>
         </message>
         <message>
             <source>[0080-00FF] Latin-1 Supplementary</source>
-            <translation>[0080-00FF] Latin-1 Supplementary</translation>
+            <translation>[0080-00FF] Latim-1 Suplementar</translation>
         </message>
         <message>
             <source>[0100-017F] Latin Extended-A</source>
-            <translation>[0100-017F] Latin Extended-A</translation>
+            <translation>[0100-017F] Latim Estendido-A</translation>
         </message>
         <message>
             <source>[0180-024F] Latin Extended-B</source>
-            <translation>[0180-024F] Latin Extended-B</translation>
+            <translation>[0180-024F] Latim Estendido-B</translation>
         </message>
         <message>
             <source>[0250-02AF] IPA Extensions</source>
@@ -7074,7 +7074,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[1800-18AF] Mongolian</source>
-            <translation>[1800-18AF] Mongolian</translation>
+            <translation>[1800-18AF] Mongol</translation>
         </message>
         <message>
             <source>[1E00-1EFF] Latin Extended Additional</source>
@@ -7186,11 +7186,11 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[2FF0-2FFF] Ideographic Description Characters</source>
-            <translation>[2FF0-2FFF] Ideographic Description Characters</translation>
+            <translation>[2FF0-2FFF] Caracteres de descrição ideográfica</translation>
         </message>
         <message>
             <source>[3000-303F] CJK Symbols and Punctuation</source>
-            <translation>[3000-303F] CJK Symbols and Punctuation</translation>
+            <translation>[3000-303F] Símbolos e pontuação CJK</translation>
         </message>
         <message>
             <source>[3040-309F] Hiragana</source>

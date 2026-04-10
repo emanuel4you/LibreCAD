@@ -4238,7 +4238,7 @@ Katapusan ng Punto sa Gilid: (%9 , %10)</translation>
         <message>
             <location filename="../src/ui/dialogs/settings/shortcuts/lc_actionsshortcutsdialog.ui" line="30"/>
             <source>Key Sequence:</source>
-            <translation>Key Sequence:</translation>
+            <translation>Pagkakasunud-sunod ng Key:</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/settings/shortcuts/lc_actionsshortcutsdialog.ui" line="37"/>
@@ -8649,7 +8649,7 @@ Sigurado ka bang gusto mong itapon ang mga pagbabago?</translation>
         <message>
             <location filename="../src/ui/action_options/ellipse/lc_ellipse1pointoptions.ui" line="100"/>
             <source>Base Angle:</source>
-            <translation>Base Angle:</translation>
+            <translation>Pangunahing anggulo:</translation>
         </message>
         <message>
             <location filename="../src/ui/action_options/ellipse/lc_ellipse1pointoptions.ui" line="136"/>
@@ -9750,7 +9750,7 @@ Sigurado ka bang gusto mong itapon ang mga pagbabago?</translation>
         <message>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.cpp" line="118"/>
             <source>virtual layer background</source>
-            <translation>virtual layer background</translation>
+            <translation>virtual na background ng layer</translation>
         </message>
         <message>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreeoptionsdialog.cpp" line="126"/>
@@ -10829,7 +10829,7 @@ Mangyaring tukuyin ang ibang halaga.</translation>
         <message>
             <location filename="../src/ui/main/init/lc_menufactory.cpp" line="775"/>
             <source>CAD Toolbars</source>
-            <translation>CAD Toolbars</translation>
+            <translation>Mga toolbar ng CAD</translation>
         </message>
         <message>
             <location filename="../src/ui/main/init/lc_menufactory.cpp" line="794"/>
@@ -11655,7 +11655,7 @@ Mangyaring tukuyin ang ibang halaga.</translation>
         <message>
             <location filename="../src/ui/action_options/modify/lc_modifyscaleoptions.ui" line="140"/>
             <source>Scale Factor:</source>
-            <translation>Scale Factor:</translation>
+            <translation>Factor ng scale:</translation>
         </message>
         <message>
             <location filename="../src/ui/action_options/modify/lc_modifyscaleoptions.ui" line="83"/>
@@ -12124,7 +12124,7 @@ Warning: this action can NOT be undone!</source>
         <message>
             <location filename="../src/ui/action_options/point/lc_pastetopointsoptions.ui" line="64"/>
             <source>Scale Factor</source>
-            <translation>Scale Factor</translation>
+            <translation>Salik na Kadaghan</translation>
         </message>
         <message>
             <location filename="../src/ui/action_options/point/lc_pastetopointsoptions.ui" line="113"/>
@@ -12167,7 +12167,7 @@ Warning: this action can NOT be undone!</source>
         <message>
             <location filename="../src/ui/action_options/edit/lc_pastetransformoptions.ui" line="200"/>
             <source>Scale Factor</source>
-            <translation>Scale Factor</translation>
+            <translation>Salik na Kadaghan</translation>
         </message>
         <message>
             <location filename="../src/ui/action_options/edit/lc_pastetransformoptions.ui" line="294"/>
@@ -14205,11 +14205,7 @@ Layer: </source>
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-            <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+            <translation type="unfinished"/>
         </message>
         <message>
             <location filename="../src/ui/dock_widgets/entity_info/lc_quickinfowidget.cpp" line="346"/>
@@ -17942,7 +17938,7 @@ Binabago nito ang lahat ng entity ng Block mismo.</translation>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgmtext.ui" line="891"/>
             <source>At (@)</source>
-            <translation>At (@)</translation>
+            <translation>Sa (@)</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgmtext.ui" line="896"/>
@@ -18402,22 +18398,22 @@ Binabago nito ang lahat ng entity ng Block mismo.</translation>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgmtext.ui" line="1379"/>
             <source>[3200-32FF] Enclosed CJK Letters and Months</source>
-            <translation>[3200-32FF] Enclosed CJK Letters and Months</translation>
+            <translation>[3200-32FF] Nakalagay na mga titik at buwan ng CJK</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgmtext.ui" line="1384"/>
             <source>[3300-33FF] CJK Compatibility</source>
-            <translation>[3300-33FF] CJK Compatibility</translation>
+            <translation>[3300-33FF] Pagkatugma ng CJK</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgmtext.ui" line="1389"/>
             <source>[3400-4DBF] CJK Unified Ideographs Extension A</source>
-            <translation>[3400-4DBF] CJK Unified Ideographs Extension A</translation>
+            <translation>[3400-4DBF] Ekstensyon A ng Pinagsamang mga Ideograpong CJK</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgmtext.ui" line="1394"/>
             <source>[4E00-9FAF] CJK Unified Ideographs</source>
-            <translation>[4E00-9FAF] CJK Unified Ideographs</translation>
+            <translation>[4E00-9FAF] Pinagsamang mga Ideograpong CJK</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgmtext.ui" line="1399"/>
@@ -19140,7 +19136,7 @@ Binabago nito ang lahat ng entity ng Block mismo.</translation>
         <message>
             <location filename="../src/ui/dialogs/settings/options_drawing/qg_dlgoptionsdrawing.ui" line="794"/>
             <source>Orthogonal Grid</source>
-            <translation>Orthogonal Grid</translation>
+            <translation>Orthogonal na Grid</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/settings/options_drawing/qg_dlgoptionsdrawing.ui" line="1220"/>
@@ -20090,7 +20086,7 @@ Binabago nito ang lahat ng entity ng Block mismo.</translation>
         <message>
             <location filename="../src/ui/dialogs/settings/options_general/qg_dlgoptionsgeneral.ui" line="4509"/>
             <source>Orthogonal Grid</source>
-            <translation>Orthogonal Grid</translation>
+            <translation>Orthogonal na Grid</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/settings/options_general/qg_dlgoptionsgeneral.ui" line="4591"/>
@@ -20113,7 +20109,7 @@ Binabago nito ang lahat ng entity ng Block mismo.</translation>
         <message>
             <location filename="../src/ui/dialogs/settings/options_general/qg_dlgoptionsgeneral.ui" line="2493"/>
             <source>Marker Radius:</source>
-            <translation>Marker Radius:</translation>
+            <translation>Radius ng Marker:</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/settings/options_general/qg_dlgoptionsgeneral.ui" line="2572"/>
@@ -20644,7 +20640,7 @@ Binabago nito ang lahat ng entity ng Block mismo.</translation>
         <message>
             <location filename="../src/ui/dialogs/settings/options_general/qg_dlgoptionsgeneral.ui" line="717"/>
             <source>Entity Handle</source>
-            <translation>Entity Handle</translation>
+            <translation>Handle ng Entity</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/settings/options_general/qg_dlgoptionsgeneral.ui" line="860"/>
@@ -20684,12 +20680,12 @@ Binabago nito ang lahat ng entity ng Block mismo.</translation>
         <message>
             <location filename="../src/ui/dialogs/settings/options_general/qg_dlgoptionsgeneral.ui" line="192"/>
             <source>Overlay Selection Box</source>
-            <translation>Overlay Selection Box</translation>
+            <translation>Kahon ng Pagpili ng Overlay</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/settings/options_general/qg_dlgoptionsgeneral.ui" line="218"/>
             <source>Inverted Line Color:</source>
-            <translation>Inverted Line Color:</translation>
+            <translation>Kulay ng Inverted Line:</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/settings/options_general/qg_dlgoptionsgeneral.ui" line="225"/>
@@ -21601,7 +21597,7 @@ Binabago nito ang lahat ng entity ng Block mismo.</translation>
         <message>
             <location filename="../src/ui/dialogs/settings/options_general/qg_dlgoptionsgeneral.ui" line="1549"/>
             <source>Angle Snap</source>
-            <translation>Angle Snap</translation>
+            <translation>Pag-snap ng Anggulo</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/settings/options_general/qg_dlgoptionsgeneral.ui" line="1581"/>
@@ -21621,7 +21617,7 @@ Binabago nito ang lahat ng entity ng Block mismo.</translation>
         <message>
             <location filename="../src/ui/dialogs/settings/options_general/qg_dlgoptionsgeneral.ui" line="1626"/>
             <source>Mark Radius:</source>
-            <translation>Mark Radius:</translation>
+            <translation>Radius ng Marka:</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/settings/options_general/qg_dlgoptionsgeneral.ui" line="52"/>
@@ -21631,7 +21627,7 @@ Binabago nito ang lahat ng entity ng Block mismo.</translation>
         <message>
             <location filename="../src/ui/dialogs/settings/options_general/qg_dlgoptionsgeneral.ui" line="410"/>
             <source>Draft Mode Marker</source>
-            <translation>Draft Mode Marker</translation>
+            <translation>Marka ng Draft Mode</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/settings/options_general/qg_dlgoptionsgeneral.ui" line="2415"/>
@@ -21697,12 +21693,12 @@ Binabago nito ang lahat ng entity ng Block mismo.</translation>
         <message>
             <location filename="../src/ui/dialogs/settings/options_general/qg_dlgoptionsgeneral.ui" line="2042"/>
             <source>Angles Basis Marker</source>
-            <translation>Angles Basis Marker</translation>
+            <translation>Marka ng Basis ng Anggulo</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/settings/options_general/qg_dlgoptionsgeneral.ui" line="2033"/>
             <source>Coordinate System</source>
-            <translation>Coordinate System</translation>
+            <translation>Sistema ng Koordinasyon</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/settings/options_general/qg_dlgoptionsgeneral.ui" line="2057"/>
@@ -21732,7 +21728,7 @@ Binabago nito ang lahat ng entity ng Block mismo.</translation>
         <message>
             <location filename="../src/ui/dialogs/settings/options_general/qg_dlgoptionsgeneral.ui" line="2487"/>
             <source>Relative Zero Marker</source>
-            <translation>Relative Zero Marker</translation>
+            <translation>Marka ng Relatibong Zero</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/settings/options_general/qg_dlgoptionsgeneral.ui" line="1662"/>
@@ -21762,7 +21758,7 @@ Binabago nito ang lahat ng entity ng Block mismo.</translation>
         <message>
             <location filename="../src/ui/dialogs/settings/options_general/qg_dlgoptionsgeneral.ui" line="1701"/>
             <source>Snap Marker</source>
-            <translation>Snap Marker</translation>
+            <translation>Marka ng Snap</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/settings/options_general/qg_dlgoptionsgeneral.ui" line="1938"/>
@@ -22525,7 +22521,7 @@ so default step value required for baking</source>
         <message>
             <location filename="../src/ui/dialogs/actions/modify/qg_dlgscale.ui" line="44"/>
             <source>Isotropic Scaling</source>
-            <translation>Isotropic Scaling</translation>
+            <translation>Isotropikong Pag-iiskala</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/actions/modify/qg_dlgscale.ui" line="72"/>
@@ -22793,17 +22789,17 @@ so default step value required for baking</source>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1070"/>
             <source>[0250-02AF] IPA Extensions</source>
-            <translation>[0250-02AF] IPA Extensions</translation>
+            <translation>[0250-02AF] Mga Ekstensyon ng IPA</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1075"/>
             <source>[02B0-02FF] Spacing Modifier Letters</source>
-            <translation>[02B0-02FF] Spacing Modifier Letters</translation>
+            <translation>[02B0-02FF] Mga Titik na Nagbabago ng Pagitan</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1080"/>
             <source>[0300-036F] Combining Diacritical Marks</source>
-            <translation>[0300-036F] Combining Diacritical Marks</translation>
+            <translation>[0300-036F] Mga Pinagsamang Diacritical Marks</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1085"/>
@@ -22818,7 +22814,7 @@ so default step value required for baking</source>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1095"/>
             <source>[0500-052F] Cyrillic Supplementary</source>
-            <translation>[0500-052F] Cyrillic Supplementary</translation>
+            <translation>[0500-052F] Karagdagang Cyrillic</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1100"/>
@@ -22838,7 +22834,7 @@ so default step value required for baking</source>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1115"/>
             <source>[0700-074F] Syriac</source>
-            <translation>[0700-074F] Syriac</translation>
+            <translation>[0700-074F] Siriako</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1120"/>
@@ -22908,7 +22904,7 @@ so default step value required for baking</source>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1185"/>
             <source>[0F00-0FFF] Tibetan</source>
-            <translation>[0F00-0FFF] Tibetan</translation>
+            <translation>[0F00-0FFF] Tibetano</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1190"/>
@@ -22988,7 +22984,7 @@ so default step value required for baking</source>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1265"/>
             <source>[1F00-1FFF] Greek Extended</source>
-            <translation>[1F00-1FFF] Greek Extended</translation>
+            <translation>[1F00-1FFF] Griyego na Pinapalawak</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1270"/>
@@ -23043,7 +23039,7 @@ so default step value required for baking</source>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1320"/>
             <source>[2440-245F] Optical Character Recognition</source>
-            <translation>[2440-245F] Optical Character Recognition</translation>
+            <translation>[2440-245F] Pagkilala sa mga Karakter sa Pamamagitan ng Optikal</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1325"/>
@@ -23168,12 +23164,12 @@ so default step value required for baking</source>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1445"/>
             <source>[3400-4DBF] CJK Unified Ideographs Extension A</source>
-            <translation>[3400-4DBF] CJK Unified Ideographs Extension A</translation>
+            <translation>[3400-4DBF] Pinagsamang mga Ideograpong CJK, Ekstensyon A</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1450"/>
             <source>[4E00-9FAF] CJK Unified Ideographs</source>
-            <translation>[4E00-9FAF] CJK Unified Ideographs</translation>
+            <translation>[4E00-9FAF] Pinagsamang mga Ideograpong CJK</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1455"/>
@@ -24055,9 +24051,8 @@ Hindi na ito maibabalik.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Alisin ang %n layer
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Alisin ang %n layer</numerusform>
+                <numerusform>Alisin ang %n layer</numerusform>
             </translation>
         </message>
         <message>
@@ -24087,9 +24082,8 @@ Hindi na ito maibabalik.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Tanggalin ang %n bloke
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Alisin ang %n block</numerusform>
+                <numerusform>Alisin ang %n block</numerusform>
             </translation>
         </message>
         <message>
@@ -32911,7 +32905,7 @@ Point: (%8 , %9)</translation>
         <message>
             <location filename="../src/ui/action_options/polyline/qg_polylineoptions.ui" line="144"/>
             <source>Tangential arc</source>
-            <translation>Tangential arc</translation>
+            <translation>Arko na tangent</translation>
         </message>
         <message>
             <location filename="../src/ui/action_options/polyline/qg_polylineoptions.ui" line="164"/>
@@ -32961,7 +32955,7 @@ Point: (%8 , %9)</translation>
         <message>
             <location filename="../src/ui/action_options/polyline/qg_polylineoptions.ui" line="351"/>
             <source>Counter Clockwise</source>
-            <translation>Counter Clockwise</translation>
+            <translation>Pabaliktad na orasan</translation>
         </message>
         <message>
             <location filename="../src/ui/action_options/polyline/qg_polylineoptions.ui" line="337"/>

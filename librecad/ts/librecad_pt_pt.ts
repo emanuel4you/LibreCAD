@@ -24124,9 +24124,8 @@ Essa ação NÃO pode ser desfeita.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Remover %n camada(s)
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Remover %n camada(s)</numerusform>
+                <numerusform>Remover %n camadas</numerusform>
             </translation>
         </message>
         <message>
@@ -24156,9 +24155,8 @@ Essa ação NÃO pode ser desfeita.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Remover %n bloco(s)
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Remover %n bloco(s)</numerusform>
+                <numerusform>Remover %n blocos</numerusform>
             </translation>
         </message>
         <message>
@@ -24643,7 +24641,7 @@ Por favor, indique um valor diferente.</translation>
             <location filename="../src/lib/engine/rs_units.cpp" line="1019"/>
             <source>ansi e</source>
             <comment>Paper format</comment>
-            <translation>ansi e</translation>
+            <translation>ANSI</translation>
         </message>
         <message>
             <location filename="../src/lib/engine/rs_units.cpp" line="1022"/>

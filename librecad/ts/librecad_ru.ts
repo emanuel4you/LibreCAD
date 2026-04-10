@@ -24220,10 +24220,9 @@ This action can NOT be undone.</source>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Удалить %n слой(я)
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Удалить %n слой</numerusform>
+                <numerusform>Удалить %n слоя</numerusform>
+                <numerusform>Удалить %n слоёв</numerusform>
             </translation>
         </message>
         <message>
@@ -24253,10 +24252,9 @@ This action can NOT be undone.</source>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Удалить %n блок(ов)
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Удалить %n блок</numerusform>
+                <numerusform>Удалить %n блока</numerusform>
+                <numerusform>Удалить %n блоков</numerusform>
             </translation>
         </message>
         <message>

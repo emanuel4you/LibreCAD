@@ -17637,7 +17637,7 @@ Proszę sprawdzić jego istnienie i uprawnienia.</translation>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dimensionlabeleditor.ui" line="219"/>
             <source>± (Plus / Minus)</source>
-            <translation>± (Plus / Minus)</translation>
+            <translation>± (plus / minus)</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dimensionlabeleditor.ui" line="229"/>
@@ -24124,10 +24124,9 @@ Tego działania NIE można cofnąć.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Usuń %n warstwę(y)
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Usuń %n warstwę</numerusform>
+                <numerusform>Usuń %n warstwy</numerusform>
+                <numerusform>Usuń %n warstw</numerusform>
             </translation>
         </message>
         <message>
@@ -24157,10 +24156,8 @@ Tego działania NIE można cofnąć.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Usuń %n blok(ów)
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Usuń %n blok(i)</numerusform>
+                <numerusform>%n bloków do usunięcia</numerusform>
             </translation>
         </message>
         <message>

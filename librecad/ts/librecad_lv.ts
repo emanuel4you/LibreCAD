@@ -23202,12 +23202,12 @@ cepšanai nepieciešamā standartpakāpe</translation>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1410"/>
             <source>[30A0-30FF] Katakana</source>
-            <translation>[30A0-30FF] Katakana</translation>
+            <translation>[30A0-30FF] Katakanas ([30A0-30FF])</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1415"/>
             <source>[3100-312F] Bopomofo</source>
-            <translation>[3100-312F] Bopomofo</translation>
+            <translation>[3100-312F] Bopomofo ([3100-312F])</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1420"/>
@@ -23217,7 +23217,7 @@ cepšanai nepieciešamā standartpakāpe</translation>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1425"/>
             <source>[3190-319F] Kanbun</source>
-            <translation>[3190-319F] Kanbun</translation>
+            <translation>[3190-319F] Kanbun ([3190-319F])</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1430"/>
@@ -23337,7 +23337,7 @@ cepšanai nepieciešamā standartpakāpe</translation>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1545"/>
             <source>[10400-1044F] Deseret</source>
-            <translation>[10400-1044F] Deseret</translation>
+            <translation>[10400-1044F] Deseret ([10400-1044F])</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1550"/>
@@ -24127,10 +24127,8 @@ This action can NOT be undone.</source>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Noņemt %n slāni(us)
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Noņemt %n slāni</numerusform>
+                <numerusform>Noņemt %n slāņus</numerusform>
             </translation>
         </message>
         <message>
@@ -24160,10 +24158,8 @@ This action can NOT be undone.</source>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Noņemt %n bloku(us)
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Noņemt %n bloku</numerusform>
+                <numerusform>Noņemt %n blokus</numerusform>
             </translation>
         </message>
         <message>

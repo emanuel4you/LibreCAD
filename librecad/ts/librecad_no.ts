@@ -22788,17 +22788,17 @@ so default step value required for baking</source>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1070"/>
             <source>[0250-02AF] IPA Extensions</source>
-            <translation>[0250-02AF] IPA Extensions</translation>
+            <translation>[0250-02AF] IPA-utvidelser</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1075"/>
             <source>[02B0-02FF] Spacing Modifier Letters</source>
-            <translation>[02B0-02FF] Spacing Modifier Letters</translation>
+            <translation>[02B0-02FF] Modifiserende mellomromstegn</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1080"/>
             <source>[0300-036F] Combining Diacritical Marks</source>
-            <translation>[0300-036F] Combining Diacritical Marks</translation>
+            <translation>[0300-036F] Kombinerende diakritiske tegn</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1085"/>
@@ -24054,9 +24054,8 @@ Denne handlingen kan ikke angres.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Fjern %n lag
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Fjern %n lag</numerusform>
+                <numerusform>Fjern %n lag</numerusform>
             </translation>
         </message>
         <message>
@@ -24086,9 +24085,8 @@ Denne handlingen kan ikke angres.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Fjern %n blokk(er)
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Fjern %n blokk</numerusform>
+                <numerusform>Fjern %n blokker</numerusform>
             </translation>
         </message>
         <message>
@@ -27878,13 +27876,13 @@ Vil du erstatte den?</translation>
             <location filename="../src/lib/engine/rs_units.cpp" line="968"/>
             <source>Arch C</source>
             <comment>Paper format</comment>
-            <translation>Arch C</translation>
+            <translation>Arkitektur C</translation>
         </message>
         <message>
             <location filename="../src/lib/engine/rs_units.cpp" line="969"/>
             <source>Arch D</source>
             <comment>Paper format</comment>
-            <translation>Arch D</translation>
+            <translation>Arkitektur D</translation>
         </message>
         <message>
             <location filename="../src/lib/engine/rs_units.cpp" line="970"/>

@@ -22952,7 +22952,7 @@ par défaut pour la cuisson</translation>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1180"/>
             <source>[0E80-0EFF] Lao</source>
-            <translation>[0E80-0EFF] Lao</translation>
+            <translation>[0E80-0EFF] Laotien</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1185"/>
@@ -24127,9 +24127,8 @@ Cette action NE peut PAS être annulée.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Supprimer %n calque(s)
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Supprimer %n calque</numerusform>
+                <numerusform>Supprimer %n calques</numerusform>
             </translation>
         </message>
         <message>
@@ -24159,9 +24158,8 @@ Cette action NE peut PAS être annulée.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Supprimer %n bloc(s)
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Supprimer %n bloc</numerusform>
+                <numerusform>Supprimer %n blocs</numerusform>
             </translation>
         </message>
         <message>
@@ -24423,7 +24421,7 @@ Voulez-vous le remplacer ?</translation>
         <message>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="930"/>
             <source>Portable Pixel Map</source>
-            <translation>Portable Pixel Map</translation>
+            <translation>Image portable</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="932"/>
@@ -24433,7 +24431,7 @@ Voulez-vous le remplacer ?</translation>
         <message>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="934"/>
             <source>X Pixel Map</source>
-            <translation>X Pixel Map</translation>
+            <translation>Image X</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="574"/>
@@ -24443,7 +24441,7 @@ Voulez-vous le remplacer ?</translation>
         <message>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="920"/>
             <source>Graphics Interchange Format</source>
-            <translation>Graphics Interchange Format</translation>
+            <translation>Format d'échange graphique</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/file/qg_filedialog.cpp" line="444"/>
@@ -24661,7 +24659,7 @@ Voulez-vous le remplacer ?</translation>
         <message>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="940"/>
             <source>Encapsulated PostScript</source>
-            <translation>Encapsulated PostScript</translation>
+            <translation>PostScript encapsulé</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="942"/>
@@ -24671,7 +24669,7 @@ Voulez-vous le remplacer ?</translation>
         <message>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="944"/>
             <source>Encapsulated PostScript Interchange</source>
-            <translation>Encapsulated PostScript Interchange</translation>
+            <translation>Format d'échange PostScript encapsulé</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="946"/>
@@ -27924,19 +27922,19 @@ Voulez-vous le remplacer ?</translation>
             <location filename="../src/lib/engine/rs_units.cpp" line="962"/>
             <source>ANSI C</source>
             <comment>Paper format</comment>
-            <translation>ANSI C</translation>
+            <translation>C ANSI</translation>
         </message>
         <message>
             <location filename="../src/lib/engine/rs_units.cpp" line="963"/>
             <source>ANSI D</source>
             <comment>Paper format</comment>
-            <translation>ANSI D</translation>
+            <translation>D ANSI</translation>
         </message>
         <message>
             <location filename="../src/lib/engine/rs_units.cpp" line="964"/>
             <source>ANSI E</source>
             <comment>Paper format</comment>
-            <translation>ANSI E</translation>
+            <translation>E ANSI</translation>
         </message>
         <message>
             <location filename="../src/lib/engine/rs_units.cpp" line="966"/>

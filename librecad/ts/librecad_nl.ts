@@ -22915,7 +22915,7 @@ dus standaard stapwaarde vereist voor bakken</translation>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1130"/>
             <source>[0980-09FF] Bengali</source>
-            <translation>[0980-09FF] Bengali</translation>
+            <translation>[0980-09FF] Bengaals</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1135"/>
@@ -24121,9 +24121,8 @@ Deze actie kan NIET ongedaan worden gemaakt.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        %n laag(en) verwijderen
-                <numerusform/>
-                <numerusform/>
+                <numerusform>%n laag verwijderen</numerusform>
+                <numerusform>%n lagen verwijderen</numerusform>
             </translation>
         </message>
         <message>
@@ -24153,9 +24152,8 @@ Deze actie kan NIET ongedaan worden gemaakt.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        %n blok(ken) verwijderen
-                <numerusform/>
-                <numerusform/>
+                <numerusform>%n blok verwijderen</numerusform>
+                <numerusform>%n blokken verwijderen</numerusform>
             </translation>
         </message>
         <message>

@@ -6910,31 +6910,31 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[0000-007F] Basic Latin</source>
-            <translation>[0000-007F] Basic Latin</translation>
+            <translation>[0000-007F] Latin Dasar</translation>
         </message>
         <message>
             <source>[0080-00FF] Latin-1 Supplementary</source>
-            <translation>[0080-00FF] Latin-1 Supplementary</translation>
+            <translation>[0080-00FF] Latin-1 Tambahan</translation>
         </message>
         <message>
             <source>[0100-017F] Latin Extended-A</source>
-            <translation>[0100-017F] Latin Extended-A</translation>
+            <translation>[0100-017F] Latin Diperluas-A</translation>
         </message>
         <message>
             <source>[0180-024F] Latin Extended-B</source>
-            <translation>[0180-024F] Latin Extended-B</translation>
+            <translation>[0180-024F] Latin Diperluas-B</translation>
         </message>
         <message>
             <source>[0250-02AF] IPA Extensions</source>
-            <translation>[0250-02AF] IPA Extensions</translation>
+            <translation>[0250-02AF] Ekstensi IPA</translation>
         </message>
         <message>
             <source>[02B0-02FF] Spacing Modifier Letters</source>
-            <translation>[02B0-02FF] Spacing Modifier Letters</translation>
+            <translation>[02B0-02FF] Huruf Pengubah Spasi</translation>
         </message>
         <message>
             <source>[0300-036F] Combining Diacritical Marks</source>
-            <translation>[0300-036F] Combining Diacritical Marks</translation>
+            <translation>[0300-036F] Tanda Diakritik Gabungan</translation>
         </message>
         <message>
             <source>[0370-03FF] Greek and Coptic</source>
@@ -6990,31 +6990,31 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[0B80-0BFF] Tamil</source>
-            <translation>[0B80-0BFF] Tamil</translation>
+            <translation>[0B80-0BFF] தமிழ்</translation>
         </message>
         <message>
             <source>[0C00-0C7F] Telugu</source>
-            <translation>[0C00-0C7F] Telugu</translation>
+            <translation>[0C00-0C7F] தெலுங்கு</translation>
         </message>
         <message>
             <source>[0C80-0CFF] Kannada</source>
-            <translation>[0C80-0CFF] Kannada</translation>
+            <translation>[0C80-0CFF] கன்னடம்</translation>
         </message>
         <message>
             <source>[0D00-0D7F] Malayalam</source>
-            <translation>[0D00-0D7F] Malayalam</translation>
+            <translation>[0D00-0D7F] மலையாளம்</translation>
         </message>
         <message>
             <source>[0D80-0DFF] Sinhala</source>
-            <translation>[0D80-0DFF] Sinhala</translation>
+            <translation>[0D80-0DFF] சிங்களம்</translation>
         </message>
         <message>
             <source>[0E00-0E7F] Thai</source>
-            <translation>[0E00-0E7F] Thai</translation>
+            <translation>[0E00-0E7F] தை</translation>
         </message>
         <message>
             <source>[0E80-0EFF] Lao</source>
-            <translation>[0E80-0EFF] Lao</translation>
+            <translation>[0E80-0EFF] லாவோ</translation>
         </message>
         <message>
             <source>[0F00-0FFF] Tibetan</source>
@@ -7022,19 +7022,19 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[1000-109F] Myanmar</source>
-            <translation>[1000-109F] Myanmar</translation>
+            <translation>[1000-109F] மியான்மர்</translation>
         </message>
         <message>
             <source>[10A0-10FF] Georgian</source>
-            <translation>[10A0-10FF] Georgian</translation>
+            <translation>[10A0-10FF] ஜார்ஜியன்</translation>
         </message>
         <message>
             <source>[1100-11FF] Hangul Jamo</source>
-            <translation>[1100-11FF] Hangul Jamo</translation>
+            <translation>[1100-11FF] ஹங்குல் ஜாமோ</translation>
         </message>
         <message>
             <source>[1200-137F] Ethiopic</source>
-            <translation>[1200-137F] Ethiopic</translation>
+            <translation>[1200-137F] Amharic</translation>
         </message>
         <message>
             <source>[13A0-13FF] Cherokee</source>
@@ -7258,51 +7258,51 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[F900-FAFF] CJK Compatibility Ideographs</source>
-            <translation>[F900-FAFF] CJK Compatibility Ideographs</translation>
+            <translation>[F900-FAFF] Ideogram CJK</translation>
         </message>
         <message>
             <source>[FB00-FB4F] Alphabetic Presentation Forms</source>
-            <translation>[FB00-FB4F] Alphabetic Presentation Forms</translation>
+            <translation>[FB00-FB4F] Forma Alfabetik</translation>
         </message>
         <message>
             <source>[FB50-FDFF] Arabic Presentation Forms-A</source>
-            <translation>[FB50-FDFF] Arabic Presentation Forms-A</translation>
+            <translation>[FB50-FDFF] Forma Presentasi Arab A</translation>
         </message>
         <message>
             <source>[FE00-FE0F] Variation Selectors</source>
-            <translation>[FE00-FE0F] Variation Selectors</translation>
+            <translation>[FE00-FE0F] Pemilih Variasi</translation>
         </message>
         <message>
             <source>[FE20-FE2F] Combining Half Marks</source>
-            <translation>[FE20-FE2F] Combining Half Marks</translation>
+            <translation>[FE20-FE2F] Tanda Gabungan Setengah</translation>
         </message>
         <message>
             <source>[FE30-FE4F] CJK Compatibility Forms</source>
-            <translation>[FE30-FE4F] CJK Compatibility Forms</translation>
+            <translation>[FE30-FE4F] Forma Kompatibilitas CJK</translation>
         </message>
         <message>
             <source>[FE50-FE6F] Small Form Variants</source>
-            <translation>[FE50-FE6F] Small Form Variants</translation>
+            <translation>[FE50-FE6F] Varian Bentuk Kecil</translation>
         </message>
         <message>
             <source>[FE70-FEFF] Arabic Presentation Forms-B</source>
-            <translation>[FE70-FEFF] Arabic Presentation Forms-B</translation>
+            <translation>[FE70-FEFF] Forma Presentasi Arab-B</translation>
         </message>
         <message>
             <source>[FF00-FFEF] Halfwidth and Fullwidth Forms</source>
-            <translation>[FF00-FFEF] Halfwidth and Fullwidth Forms</translation>
+            <translation>[FF00-FFEF] Forma Setengah Lebar dan Lebar Penuh</translation>
         </message>
         <message>
             <source>[FFF0-FFFF] Specials</source>
-            <translation>[FFF0-FFFF] Specials</translation>
+            <translation>[FFF0-FFFF] Karakter Khusus</translation>
         </message>
         <message>
             <source>[10300-1032F] Old Italic</source>
-            <translation>[10300-1032F] Old Italic</translation>
+            <translation>[10300-1032F] Italik Kuno</translation>
         </message>
         <message>
             <source>[10330-1034F] Gothic</source>
-            <translation>[10330-1034F] Gothic</translation>
+            <translation>[10330-1034F] Gotik</translation>
         </message>
         <message>
             <source>[10400-1044F] Deseret</source>
@@ -7334,7 +7334,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[F0000-FFFFD] Supplementary Private Use Area-A</source>
-            <translation>[F0000-FFFFD] Supplementary Private Use Area-A</translation>
+            <translation>[F0000-FFFFD] Area Penggunaan Privat Tambahan-A</translation>
         </message>
         <message>
             <source>[100000-10FFFD] Supplementary Private Use Area-B</source>
@@ -8661,7 +8661,7 @@ p, li { white-space: pre-wrap; }
         </message>
         <message>
             <source>0.13mm (ISO)</source>
-            <translation>0.13mm (ISO)</translation>
+            <translation>0,13 mm (ISO)</translation>
         </message>
         <message>
             <source>0.15mm</source>
@@ -8669,7 +8669,7 @@ p, li { white-space: pre-wrap; }
         </message>
         <message>
             <source>0.18mm (ISO)</source>
-            <translation>0.18mm (ISO)</translation>
+            <translation>0,18 mm (ISO)</translation>
         </message>
         <message>
             <source>0.20mm</source>
@@ -8677,7 +8677,7 @@ p, li { white-space: pre-wrap; }
         </message>
         <message>
             <source>0.25mm (ISO)</source>
-            <translation>0.25mm (ISO)</translation>
+            <translation>0,25 mm (ISO)</translation>
         </message>
         <message>
             <source>0.30mm</source>
@@ -8685,7 +8685,7 @@ p, li { white-space: pre-wrap; }
         </message>
         <message>
             <source>0.35mm (ISO)</source>
-            <translation>0.35mm (ISO)</translation>
+            <translation>0,35 mm (ISO)</translation>
         </message>
         <message>
             <source>0.40mm</source>
@@ -8693,7 +8693,7 @@ p, li { white-space: pre-wrap; }
         </message>
         <message>
             <source>0.50mm (ISO)</source>
-            <translation>0.50mm (ISO)</translation>
+            <translation>0,50 mm (ISO)</translation>
         </message>
         <message>
             <source>0.53mm</source>
@@ -8705,7 +8705,7 @@ p, li { white-space: pre-wrap; }
         </message>
         <message>
             <source>0.70mm (ISO)</source>
-            <translation>0.70mm (ISO)</translation>
+            <translation>0,70 mm (ISO)</translation>
         </message>
         <message>
             <source>0.80mm</source>
@@ -8717,7 +8717,7 @@ p, li { white-space: pre-wrap; }
         </message>
         <message>
             <source>1.00mm (ISO)</source>
-            <translation>1.00mm (ISO)</translation>
+            <translation>1,00 mm (ISO)</translation>
         </message>
         <message>
             <source>1.06mm</source>
@@ -8729,7 +8729,7 @@ p, li { white-space: pre-wrap; }
         </message>
         <message>
             <source>1.40mm (ISO)</source>
-            <translation>1.40mm (ISO)</translation>
+            <translation>1,40 mm (ISO)</translation>
         </message>
         <message>
             <source>1.58mm</source>
@@ -8737,7 +8737,7 @@ p, li { white-space: pre-wrap; }
         </message>
         <message>
             <source>2.00mm (ISO)</source>
-            <translation>2.00mm (ISO)</translation>
+            <translation>2,00 mm (ISO)</translation>
         </message>
         <message>
             <source>2.11mm</source>

@@ -24417,12 +24417,12 @@ så standardstegvärde krävs för bakning</translation>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1455"/>
             <source>[A000-A48F] Yi Syllables</source>
-            <translation>[A000-A48F] Yi Syllables</translation>
+            <translation>[A000-A48F] Yi-stavelser</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1460"/>
             <source>[A490-A4CF] Yi Radicals</source>
-            <translation>[A490-A4CF] Yi Radicals</translation>
+            <translation>[A490-A4CF] Yi-radikaler</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1465"/>
@@ -25652,9 +25652,8 @@ Denna åtgärd kan INTE ångras.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Ta bort %n lager
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Ta bort %n lager</numerusform>
+                <numerusform>Ta bort %n lager</numerusform>
             </translation>
         </message>
         <message>
@@ -25684,9 +25683,8 @@ Denna åtgärd kan INTE ångras.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Ta bort %n block
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Ta bort %n block</numerusform>
+                <numerusform>Ta bort %n block</numerusform>
             </translation>
         </message>
         <message>

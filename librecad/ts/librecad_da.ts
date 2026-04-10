@@ -24118,9 +24118,8 @@ Denne handling kan IKKE gøres om.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Fjern %n lag
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Fjern %n lag</numerusform>
+                <numerusform>Fjern %n lag</numerusform>
             </translation>
         </message>
         <message>
@@ -24150,9 +24149,8 @@ Denne handling kan IKKE gøres om.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Fjern %n blokke
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Fjern %n blok</numerusform>
+                <numerusform>Fjern %n blok</numerusform>
             </translation>
         </message>
         <message>

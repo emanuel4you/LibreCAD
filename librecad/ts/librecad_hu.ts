@@ -24128,8 +24128,8 @@ Ez a művelet nem visszavonható.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        %n réteg(et) eltávolít
-                <numerusform/>
+                <numerusform>%n réteget töröl</numerusform>
+                <numerusform>%n réteget töröl</numerusform>
             </translation>
         </message>
         <message>
@@ -24159,8 +24159,8 @@ Ez a művelet nem visszavonható.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Eltávolítja a(z) %n blokk(ot).
-                <numerusform/>
+                <numerusform>%n blokkot töröl</numerusform>
+                <numerusform>%n blokkot töröl</numerusform>
             </translation>
         </message>
         <message>

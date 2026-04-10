@@ -23945,7 +23945,7 @@ p, li { 白- 空間: pre- wrap;}
         <message>
             <location filename="../src/ui/main/support/qg_recentfiles.cpp" line="177"/>
             <source>&amp;%1 %2</source>
-            <translation>&amp;%1 %2</translation>
+            <translation>已找到 %1 個檔案</translation>
         </message>
     </context>
     <context>
@@ -24827,7 +24827,7 @@ Please specify a different value.</source>
         <message>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="948"/>
             <source>JPEG 2000</source>
-            <translation>JPEG 2000</translation>
+            <translation>['找到 %n 個檔案']</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="950"/>

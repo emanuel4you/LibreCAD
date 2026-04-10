@@ -24124,10 +24124,9 @@ Tato akce nemůže být zrušena.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Odebrat %n vrstvu/vrstvy
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Odebrat %n vrstvu</numerusform>
+                <numerusform>Odebrat %n vrstvy</numerusform>
+                <numerusform>Odebrat %n vrstev</numerusform>
             </translation>
         </message>
         <message>
@@ -24157,10 +24156,9 @@ Tato akce nemůže být zrušena.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Odebrat %n blok/bloky
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Odebrat %n blok</numerusform>
+                <numerusform>Odebrat %n bloky</numerusform>
+                <numerusform>Odebrat %n bloků</numerusform>
             </translation>
         </message>
         <message>
@@ -24407,7 +24405,7 @@ Přejete si ho přepsat?</translation>
         <message>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="924"/>
             <source>Portable Bit Map</source>
-            <translation>Portable Bit Map</translation>
+            <translation>Přenosný bitmapový formát</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="926"/>
@@ -24417,7 +24415,7 @@ Přejete si ho přepsat?</translation>
         <message>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="928"/>
             <source>Portable Network Graphic</source>
-            <translation>Portable Network Graphic</translation>
+            <translation>Přenosná síťová grafika</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="930"/>

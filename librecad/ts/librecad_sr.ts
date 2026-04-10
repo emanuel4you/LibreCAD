@@ -24069,10 +24069,8 @@ This action can NOT be undone.</source>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Uklonite %n sloj(a)
-                <numerusform>Уклони %n слој</numerusform>
-                <numerusform>Уклони %n слоја</numerusform>
-                <numerusform>Уклони %n слојева</numerusform>
+                <numerusform>Uklonite %n sloj</numerusform>
+                <numerusform>Uklonite %n slojeva</numerusform>
             </translation>
         </message>
         <message>
@@ -24102,10 +24100,8 @@ This action can NOT be undone.</source>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Uklonite %n blok(a)
-                <numerusform>Уклони %n блок</numerusform>
-                <numerusform>Уклони %n блока</numerusform>
-                <numerusform>Уклони %n блокова</numerusform>
+                <numerusform>Uklonite %n blok</numerusform>
+                <numerusform>Uklonite %n blokova</numerusform>
             </translation>
         </message>
         <message>
@@ -27749,31 +27745,31 @@ Do you want to replace it?</source>
             <location filename="../src/lib/engine/rs_units.cpp" line="966"/>
             <source>Arch A</source>
             <comment>Paper format</comment>
-            <translation>Arch A</translation>
+            <translation>Arhitektura A</translation>
         </message>
         <message>
             <location filename="../src/lib/engine/rs_units.cpp" line="967"/>
             <source>Arch B</source>
             <comment>Paper format</comment>
-            <translation>Arch B</translation>
+            <translation>Arhitektura B</translation>
         </message>
         <message>
             <location filename="../src/lib/engine/rs_units.cpp" line="968"/>
             <source>Arch C</source>
             <comment>Paper format</comment>
-            <translation>Arch C</translation>
+            <translation>Arhitektura C</translation>
         </message>
         <message>
             <location filename="../src/lib/engine/rs_units.cpp" line="969"/>
             <source>Arch D</source>
             <comment>Paper format</comment>
-            <translation>Arch D</translation>
+            <translation>Arhitektura D</translation>
         </message>
         <message>
             <location filename="../src/lib/engine/rs_units.cpp" line="970"/>
             <source>Arch E</source>
             <comment>Paper format</comment>
-            <translation>Arch E</translation>
+            <translation>Arhitektura E</translation>
         </message>
         <message>
             <location filename="../src/lib/engine/rs_units.cpp" line="988"/>
@@ -27833,19 +27829,19 @@ Do you want to replace it?</source>
             <location filename="../src/lib/engine/rs_units.cpp" line="1015"/>
             <source>ansi c</source>
             <comment>Paper format</comment>
-            <translation>ansi c</translation>
+            <translation>ANSI C</translation>
         </message>
         <message>
             <location filename="../src/lib/engine/rs_units.cpp" line="1017"/>
             <source>ansi d</source>
             <comment>Paper format</comment>
-            <translation>ansi d</translation>
+            <translation>ANSI D</translation>
         </message>
         <message>
             <location filename="../src/lib/engine/rs_units.cpp" line="1019"/>
             <source>ansi e</source>
             <comment>Paper format</comment>
-            <translation>ansi e</translation>
+            <translation>ANSI E</translation>
         </message>
         <message>
             <location filename="../src/lib/engine/rs_units.cpp" line="1022"/>

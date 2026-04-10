@@ -24123,13 +24123,8 @@ This action can NOT be undone.</source>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        إزالة %n طبقة
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
+                <numerusform>إزالة %n طبقة</numerusform>
+                <numerusform>إزالة %n طبقات</numerusform>
             </translation>
         </message>
         <message>
@@ -24159,13 +24154,8 @@ This action can NOT be undone.</source>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        إزالة %n كتلة
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
+                <numerusform>إزالة %n كتلة</numerusform>
+                <numerusform>إزالة %n كتل</numerusform>
             </translation>
         </message>
         <message>
@@ -26102,7 +26092,7 @@ Do you want to replace it?</source>
             <location filename="../src/lib/engine/rs_units.cpp" line="968"/>
             <source>Arch C</source>
             <comment>Paper format</comment>
-            <translation>Arch C</translation>
+            <translation>بنية C</translation>
         </message>
         <message>
             <location filename="../src/lib/engine/rs_units.cpp" line="969"/>

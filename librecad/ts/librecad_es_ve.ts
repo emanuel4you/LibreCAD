@@ -4835,11 +4835,11 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>At (@)</source>
-            <translation>At (@)</translation>
+            <translation>@</translation>
         </message>
         <message>
             <source>Hash (#)</source>
-            <translation>Hash (#)</translation>
+            <translation>#</translation>
         </message>
         <message>
             <source>Dollar ($)</source>
@@ -4847,7 +4847,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message utf8="true">
             <source>Copyright (©)</source>
-            <translation>Copyright (©)</translation>
+            <translation>©</translation>
         </message>
         <message utf8="true">
             <source>Registered (®)</source>
@@ -4859,7 +4859,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message utf8="true">
             <source>Pi (π)</source>
-            <translation>Pi (π)</translation>
+            <translation>π</translation>
         </message>
         <message utf8="true">
             <source>Pound (£)</source>
@@ -4871,7 +4871,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message utf8="true">
             <source>Times (×)</source>
-            <translation>Times (×)</translation>
+            <translation>×</translation>
         </message>
         <message utf8="true">
             <source>Division (÷)</source>
@@ -6910,19 +6910,19 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[0000-007F] Basic Latin</source>
-            <translation>[0000-007F] Basic Latin</translation>
+            <translation>[0000-007F] Basic Latin [0000-007F]</translation>
         </message>
         <message>
             <source>[0080-00FF] Latin-1 Supplementary</source>
-            <translation>[0080-00FF] Latin-1 Supplementary</translation>
+            <translation>[0080-00FF] Latin-1 Supplementary [0080-00FF]</translation>
         </message>
         <message>
             <source>[0100-017F] Latin Extended-A</source>
-            <translation>[0100-017F] Latin Extended-A</translation>
+            <translation>[0100-017F] Latin Extended-A [0100-017F]</translation>
         </message>
         <message>
             <source>[0180-024F] Latin Extended-B</source>
-            <translation>[0180-024F] Latin Extended-B</translation>
+            <translation>[0180-024F] Latin Extended-B [0180-024F]</translation>
         </message>
         <message>
             <source>[0250-02AF] IPA Extensions</source>
@@ -6978,31 +6978,31 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[0A00-0A7F] Gurmukhi</source>
-            <translation>[0A00-0A7F] Gurmukhi</translation>
+            <translation>[0A00-0A7F] Gurmukhi [0A00-0A7F]</translation>
         </message>
         <message>
             <source>[0A80-0AFF] Gujarati</source>
-            <translation>[0A80-0AFF] Gujarati</translation>
+            <translation>[0A80-0AFF] Gujarati [0A80-0AFF]</translation>
         </message>
         <message>
             <source>[0B00-0B7F] Oriya</source>
-            <translation>[0B00-0B7F] Oriya</translation>
+            <translation>[0B00-0B7F] Oriya [0B00-0B7F]</translation>
         </message>
         <message>
             <source>[0B80-0BFF] Tamil</source>
-            <translation>[0B80-0BFF] Tamil</translation>
+            <translation>[0B80-0BFF] Tamil [0B80-0BFF]</translation>
         </message>
         <message>
             <source>[0C00-0C7F] Telugu</source>
-            <translation>[0C00-0C7F] Telugu</translation>
+            <translation>[0C00-0C7F] తెలుగు</translation>
         </message>
         <message>
             <source>[0C80-0CFF] Kannada</source>
-            <translation>[0C80-0CFF] Kannada</translation>
+            <translation>[0C80-0CFF] ಕನ್ನಡ</translation>
         </message>
         <message>
             <source>[0D00-0D7F] Malayalam</source>
-            <translation>[0D00-0D7F] Malayalam</translation>
+            <translation>[0D00-0D7F] മലയാളം</translation>
         </message>
         <message>
             <source>[0D80-0DFF] Sinhala</source>
@@ -7046,7 +7046,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[1680-169F] Ogham</source>
-            <translation>[1680-169F] Ogham</translation>
+            <translation>[1680-169F] ఓఘమ్</translation>
         </message>
         <message>
             <source>[16A0-16FF] Runic</source>
@@ -7054,23 +7054,23 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[1700-171F] Tagalog</source>
-            <translation>[1700-171F] Tagalog</translation>
+            <translation>[1700-171F] టాగలోగ్</translation>
         </message>
         <message>
             <source>[1720-173F] Hanunoo</source>
-            <translation>[1720-173F] Hanunoo</translation>
+            <translation>[1720-173F] హనునూ</translation>
         </message>
         <message>
             <source>[1740-175F] Buhid</source>
-            <translation>[1740-175F] Buhid</translation>
+            <translation>[1740-175F] బుహిద్</translation>
         </message>
         <message>
             <source>[1760-177F] Tagbanwa</source>
-            <translation>[1760-177F] Tagbanwa</translation>
+            <translation>[1760-177F] టాగబన్వా</translation>
         </message>
         <message>
             <source>[1780-17FF] Khmer</source>
-            <translation>[1780-17FF] Khmer</translation>
+            <translation>[1780-17FF] ఖ್మెర్</translation>
         </message>
         <message>
             <source>[1800-18AF] Mongolian</source>
@@ -7078,7 +7078,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[1E00-1EFF] Latin Extended Additional</source>
-            <translation>[1E00-1EFF] Latin Extended Additional</translation>
+            <translation>[1E00-1EFF] లాటిನ್ ఎక్స్టెండెడ్ అడిషనల్</translation>
         </message>
         <message>
             <source>[1F00-1FFF] Greek Extended</source>

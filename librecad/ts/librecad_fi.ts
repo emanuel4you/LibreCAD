@@ -18039,7 +18039,7 @@ Tämä rekursiivisesti muuttaa kaikkia yksiköitä Block itse.</translation>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgmtext.ui" line="896"/>
             <source>Hash (#)</source>
-            <translation>Hash (#)</translation>
+            <translation>Merkki (#)</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgmtext.ui" line="901"/>
@@ -22796,7 +22796,7 @@ niin oletus askelarvo tarvitaan leivonta</translation>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="972"/>
             <source>Hash (#)</source>
-            <translation>Hash (#)</translation>
+            <translation>Hash-merkki (#)</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="977"/>
@@ -24109,9 +24109,8 @@ Tätä toimenpidettä ei voida perua.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Poista %n taso
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Poista %n taso</numerusform>
+                <numerusform>Poista %n tasoa</numerusform>
             </translation>
         </message>
         <message>
@@ -24156,9 +24155,8 @@ Tätä toimenpidettä ei voida perua.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Poista %n lohko
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Poista %n lohko</numerusform>
+                <numerusform>Poista %n lohkoa</numerusform>
             </translation>
         </message>
         <message>

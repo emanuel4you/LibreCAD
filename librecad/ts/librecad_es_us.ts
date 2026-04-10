@@ -4955,7 +4955,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[0980-09FF] Bengali</source>
-            <translation>[0980-09FF] Bengali</translation>
+            <translation>[0980-09FF] Bengalí</translation>
         </message>
         <message>
             <source>[0A00-0A7F] Gurmukhi</source>
@@ -5011,7 +5011,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[1100-11FF] Hangul Jamo</source>
-            <translation>[1100-11FF] Hangul Jamo</translation>
+            <translation>[1100-11FF] 한글 자모</translation>
         </message>
         <message>
             <source>[1200-137F] Ethiopic</source>
@@ -5019,7 +5019,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[13A0-13FF] Cherokee</source>
-            <translation>[13A0-13FF] Cherokee</translation>
+            <translation>[13A0-13FF] 체로키 문자</translation>
         </message>
         <message>
             <source>[1400-167F] Unified Canadian Aboriginal Syllabic</source>
@@ -5027,7 +5027,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[1680-169F] Ogham</source>
-            <translation>[1680-169F] Ogham</translation>
+            <translation>[1680-169F] 오감 문자</translation>
         </message>
         <message>
             <source>[16A0-16FF] Runic</source>
@@ -5039,19 +5039,19 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[1720-173F] Hanunoo</source>
-            <translation>[1720-173F] Hanunoo</translation>
+            <translation>[1720-173F] 하누누 문자</translation>
         </message>
         <message>
             <source>[1740-175F] Buhid</source>
-            <translation>[1740-175F] Buhid</translation>
+            <translation>[1740-175F] 부히드 문자</translation>
         </message>
         <message>
             <source>[1760-177F] Tagbanwa</source>
-            <translation>[1760-177F] Tagbanwa</translation>
+            <translation>[1760-177F] 타그반와 문자</translation>
         </message>
         <message>
             <source>[1780-17FF] Khmer</source>
-            <translation>[1780-17FF] Khmer</translation>
+            <translation>[1780-17FF] 크메르 문자</translation>
         </message>
         <message>
             <source>[1800-18AF] Mongolian</source>
@@ -5091,7 +5091,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[2190-21FF] Arrows</source>
-            <translation>[2190-21FF] Arrows</translation>
+            <translation>[2190-21FF] 화살표</translation>
         </message>
         <message>
             <source>[2200-22FF] Mathematical Operators</source>
@@ -5115,7 +5115,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[2500-257F] Box Drawing</source>
-            <translation>[2500-257F] Box Drawing</translation>
+            <translation>[2500-257F] 박스 그리기</translation>
         </message>
         <message>
             <source>[2580-259F] Block Elements</source>
@@ -5131,7 +5131,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[2700-27BF] Dingbats</source>
-            <translation>[2700-27BF] Dingbats</translation>
+            <translation>[2700-27BF] 딩뱃</translation>
         </message>
         <message>
             <source>[27C0-27EF] Miscellaneous Mathematical Symbols-A</source>
@@ -5143,7 +5143,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[2800-28FF] Braille Patterns</source>
-            <translation>[2800-28FF] Braille Patterns</translation>
+            <translation>[2800-28FF] Padrões Braille</translation>
         </message>
         <message>
             <source>[2900-297F] Supplemental Arrows-B</source>
@@ -5163,7 +5163,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[2F00-2FDF] Kangxi Radicals</source>
-            <translation>[2F00-2FDF] Kangxi Radicals</translation>
+            <translation>[2F00-2FDF] Radicais Kangxi</translation>
         </message>
         <message>
             <source>[2FF0-2FFF] Ideographic Description Characters</source>
@@ -5207,23 +5207,23 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[3400-4DBF] CJK Unified Ideographs Extension A</source>
-            <translation>[3400-4DBF] CJK Unified Ideographs Extension A</translation>
+            <translation>[3400-4DBF] Ideogramas Unificados CJK - Extensão A</translation>
         </message>
         <message>
             <source>[4E00-9FAF] CJK Unified Ideographs</source>
-            <translation>[4E00-9FAF] CJK Unified Ideographs</translation>
+            <translation>[4E00-9FAF] Ideogramas Unificados CJK</translation>
         </message>
         <message>
             <source>[A000-A48F] Yi Syllables</source>
-            <translation>[A000-A48F] Yi Syllables</translation>
+            <translation>[A000-A48F] Sílabas Yi</translation>
         </message>
         <message>
             <source>[A490-A4CF] Yi Radicals</source>
-            <translation>[A490-A4CF] Yi Radicals</translation>
+            <translation>[A490-A4CF] Radicais Yi</translation>
         </message>
         <message>
             <source>[AC00-D7AF] Hangul Syllables</source>
-            <translation>[AC00-D7AF] Hangul Syllables</translation>
+            <translation>[AC00-D7AF] Sílabas Hangul</translation>
         </message>
         <message>
             <source>[D800-DBFF] High Surrogates</source>
@@ -5776,7 +5776,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>Isometric Grid</source>
-            <translation>Isometric Grid</translation>
+            <translation>Grade Isométrica</translation>
         </message>
         <message>
             <source>Tick size:</source>
@@ -5860,7 +5860,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>',' (Comma)</source>
-            <translation>',' (Comma)</translation>
+            <translation>, (Vírgula)</translation>
         </message>
         <message>
             <source>Decimal separator:</source>
@@ -6652,7 +6652,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>&amp;Factor (f):</source>
-            <translation>&amp;Factor (f):</translation>
+            <translation>Fator (f):</translation>
         </message>
         <message>
             <source>Use current &amp;attributes</source>
@@ -6886,7 +6886,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message utf8="true">
             <source>Yen (¥)</source>
-            <translation>Yen (¥)</translation>
+            <translation>Iene (¥)</translation>
         </message>
         <message utf8="true">
             <source>Times (×)</source>
@@ -6910,7 +6910,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[0000-007F] Basic Latin</source>
-            <translation>[0000-007F] Basic Latin</translation>
+            <translation>[0000-007F] Latin Básico</translation>
         </message>
         <message>
             <source>[0080-00FF] Latin-1 Supplementary</source>
@@ -6974,7 +6974,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[0980-09FF] Bengali</source>
-            <translation>[0980-09FF] Bengali</translation>
+            <translation>[0980-09FF] ['%n file found', '%n files found']</translation>
         </message>
         <message>
             <source>[0A00-0A7F] Gurmukhi</source>
@@ -7238,47 +7238,47 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[A490-A4CF] Yi Radicals</source>
-            <translation>[A490-A4CF] Yi Radicals</translation>
+            <translation>[A490-A4CF] Radicais Yi</translation>
         </message>
         <message>
             <source>[AC00-D7AF] Hangul Syllables</source>
-            <translation>[AC00-D7AF] Hangul Syllables</translation>
+            <translation>[AC00-D7AF] Sílabas Hangul</translation>
         </message>
         <message>
             <source>[D800-DBFF] High Surrogates</source>
-            <translation>[D800-DBFF] High Surrogates</translation>
+            <translation>[D800-DBFF] Suplementos de alto intervalo</translation>
         </message>
         <message>
             <source>[DC00-DFFF] Low Surrogate Area</source>
-            <translation>[DC00-DFFF] Low Surrogate Area</translation>
+            <translation>[DC00-DFFF] Área de suplementos de baixo intervalo</translation>
         </message>
         <message>
             <source>[E000-F8FF] Private Use Area</source>
-            <translation>[E000-F8FF] Private Use Area</translation>
+            <translation>[E000-F8FF] Área de uso privado</translation>
         </message>
         <message>
             <source>[F900-FAFF] CJK Compatibility Ideographs</source>
-            <translation>[F900-FAFF] CJK Compatibility Ideographs</translation>
+            <translation>[F900-FAFF] Ideogramas de compatibilidade CJK</translation>
         </message>
         <message>
             <source>[FB00-FB4F] Alphabetic Presentation Forms</source>
-            <translation>[FB00-FB4F] Alphabetic Presentation Forms</translation>
+            <translation>[FB00-FB4F] Formas de apresentação alfabética</translation>
         </message>
         <message>
             <source>[FB50-FDFF] Arabic Presentation Forms-A</source>
-            <translation>[FB50-FDFF] Arabic Presentation Forms-A</translation>
+            <translation>[FB50-FDFF] Formas de apresentação árabe-A</translation>
         </message>
         <message>
             <source>[FE00-FE0F] Variation Selectors</source>
-            <translation>[FE00-FE0F] Variation Selectors</translation>
+            <translation>[FE00-FE0F] Seletores de variação</translation>
         </message>
         <message>
             <source>[FE20-FE2F] Combining Half Marks</source>
-            <translation>[FE20-FE2F] Combining Half Marks</translation>
+            <translation>[FE20-FE2F] Marcas de combinação de meio</translation>
         </message>
         <message>
             <source>[FE30-FE4F] CJK Compatibility Forms</source>
-            <translation>[FE30-FE4F] CJK Compatibility Forms</translation>
+            <translation>[FE30-FE4F] Formas de compatibilidade CJK</translation>
         </message>
         <message>
             <source>[FE50-FE6F] Small Form Variants</source>
@@ -7322,11 +7322,11 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[20000-2A6DF] CJK Unified Ideographs Extension B</source>
-            <translation>[20000-2A6DF] CJK Unified Ideographs Extension B</translation>
+            <translation>[20000-2A6DF] Ideogramas unificados CJK, extensão B</translation>
         </message>
         <message>
             <source>[2F800-2FA1F] CJK Compatibility Ideographs Supplement</source>
-            <translation>[2F800-2FA1F] CJK Compatibility Ideographs Supplement</translation>
+            <translation>[2F800-2FA1F] Suplemento de ideogramas de compatibilidade CJK</translation>
         </message>
         <message>
             <source>[E0000-E007F] Tags</source>
@@ -7334,7 +7334,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[F0000-FFFFD] Supplementary Private Use Area-A</source>
-            <translation>[F0000-FFFFD] Supplementary Private Use Area-A</translation>
+            <translation>[F0000-FFFFD] Área de uso privado suplementar-A</translation>
         </message>
         <message>
             <source>[100000-10FFFD] Supplementary Private Use Area-B</source>

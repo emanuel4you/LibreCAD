@@ -7030,7 +7030,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[1100-11FF] Hangul Jamo</source>
-            <translation>[1100-11FF] Hangul Jamo</translation>
+            <translation>[1100-11FF] ['%n fil hittades', '%n filer hittades']</translation>
         </message>
         <message>
             <source>[1200-137F] Ethiopic</source>

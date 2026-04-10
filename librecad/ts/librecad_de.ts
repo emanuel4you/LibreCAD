@@ -24128,9 +24128,8 @@ Diese Aktion kann NICHT rückgängig gemacht werden.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        %n Ebene(n) entfernen
-                <numerusform/>
-                <numerusform/>
+                <numerusform>%n Ebene(n) entfernen</numerusform>
+                <numerusform>%n Ebenen entfernen</numerusform>
             </translation>
         </message>
         <message>
@@ -24160,9 +24159,8 @@ Diese Aktion kann NICHT rückgängig gemacht werden.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        %n Block(s) entfernen
-                <numerusform/>
-                <numerusform/>
+                <numerusform>%n Block(s) entfernen</numerusform>
+                <numerusform>%n Blöcke entfernen</numerusform>
             </translation>
         </message>
         <message>

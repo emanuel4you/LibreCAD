@@ -24125,9 +24125,8 @@ Esta acción no puede ser deshecha.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Eliminar %n capa(s)
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Eliminar %n capa</numerusform>
+                <numerusform>Eliminar %n capas</numerusform>
             </translation>
         </message>
         <message>
@@ -24157,9 +24156,8 @@ Esta acción no puede ser deshecha.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Eliminar %n bloque(s)
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Eliminar %n bloque</numerusform>
+                <numerusform>Eliminar %n bloques</numerusform>
             </translation>
         </message>
         <message>

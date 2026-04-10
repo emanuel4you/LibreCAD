@@ -24109,8 +24109,8 @@ Aksi ini TIDAK dapat dibatalkan.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Hapus %n lapisan
-                <numerusform/>
+                <numerusform>Hapus %n lapisan</numerusform>
+                <numerusform>Hapus %n lapisan</numerusform>
             </translation>
         </message>
         <message>
@@ -24155,8 +24155,8 @@ Aksi ini TIDAK dapat dibatalkan.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Hapus %n blok
-                <numerusform/>
+                <numerusform>Hapus %n blok</numerusform>
+                <numerusform>Hapus %n blok</numerusform>
             </translation>
         </message>
         <message>
@@ -24807,7 +24807,7 @@ Silakan nyatakan nilai yang berbeda.</translation>
         <message>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="940"/>
             <source>Encapsulated PostScript</source>
-            <translation>Encapsulated PostScript</translation>
+            <translation>PostScript Terenkapsulasi</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="942"/>
@@ -24827,7 +24827,7 @@ Silakan nyatakan nilai yang berbeda.</translation>
         <message>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="948"/>
             <source>JPEG 2000</source>
-            <translation>JPEG 2000</translation>
+            <translation>['%n file ditemukan', '%n file ditemukan']</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="950"/>

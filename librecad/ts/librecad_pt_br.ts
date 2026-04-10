@@ -23949,7 +23949,7 @@ p, li { espaço em branco: pre- wrap; }
         <message>
             <location filename="../src/ui/main/support/qg_recentfiles.cpp" line="177"/>
             <source>&amp;%1 %2</source>
-            <translation>&amp;%1 %2</translation>
+            <translation>['%n arquivo encontrado', '%n arquivos encontrados']</translation>
         </message>
     </context>
     <context>
@@ -24128,9 +24128,8 @@ Essa ação NÃO pode ser desfeita.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Remover %n camada(s)
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Remover %n camada</numerusform>
+                <numerusform>Remover %n camadas</numerusform>
             </translation>
         </message>
         <message>
@@ -24160,9 +24159,8 @@ Essa ação NÃO pode ser desfeita.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Remover %n bloco(s)
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Remover %n bloco</numerusform>
+                <numerusform>Remover %n blocos</numerusform>
             </translation>
         </message>
         <message>

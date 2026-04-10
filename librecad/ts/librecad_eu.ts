@@ -18457,12 +18457,12 @@ Honek errekurtsiboki aldatzen ditu blokearen entitate guztiak.</translation>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgmtext.ui" line="1374"/>
             <source>[31A0-31BF] Bopomofo Extended</source>
-            <translation>[31A0-31BF] Bopomofo Extended</translation>
+            <translation>[31A0-31BF] Bopomofo zabaldua</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgmtext.ui" line="1379"/>
             <source>[3200-32FF] Enclosed CJK Letters and Months</source>
-            <translation>[3200-32FF] Enclosed CJK Letters and Months</translation>
+            <translation>[3200-32FF] CJK letrak eta hilabete itxuraz</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgmtext.ui" line="1384"/>
@@ -24127,9 +24127,8 @@ Ekintza hau ezin da desegin.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Kendu %n geruza
-                <numerusform/>
-                <numerusform/>
+                <numerusform>%n geruza ezabatu</numerusform>
+                <numerusform>%n geruza ezabatu</numerusform>
             </translation>
         </message>
         <message>
@@ -24159,9 +24158,8 @@ Ekintza hau ezin da desegin.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Kendu %n bloke
-                <numerusform/>
-                <numerusform/>
+                <numerusform>%n bloke ezabatu</numerusform>
+                <numerusform>%n bloke ezabatu</numerusform>
             </translation>
         </message>
         <message>

@@ -24124,10 +24124,8 @@ Această acțiune NU poate fi anulată.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Șterge %n strat(uri)
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Eliminați %n strat</numerusform>
+                <numerusform>Eliminați %n straturi</numerusform>
             </translation>
         </message>
         <message>
@@ -24157,10 +24155,8 @@ Această acțiune NU poate fi anulată.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Șterge %n bloc(uri)
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Elimină %n bloc(uri)</numerusform>
+                <numerusform>Elimină %n blocuri</numerusform>
             </translation>
         </message>
         <message>

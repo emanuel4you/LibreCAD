@@ -5303,7 +5303,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[20000-2A6DF] CJK Unified Ideographs Extension B</source>
-            <translation>[20000-2A6DF] CJK Unified Ideographs Extension B</translation>
+            <translation>[20000-2A6DF] Izvinyu yeChina neJapan</translation>
         </message>
         <message>
             <source>[2F800-2FA1F] CJK Compatibility Ideographs Supplement</source>
@@ -5776,7 +5776,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>Isometric Grid</source>
-            <translation>Isometric Grid</translation>
+            <translation>Igwayi yeIsometric</translation>
         </message>
         <message>
             <source>Tick size:</source>
@@ -6866,7 +6866,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message utf8="true">
             <source>Copyright (©)</source>
-            <translation>Copyright (©)</translation>
+            <translation>Kodzero (©)</translation>
         </message>
         <message utf8="true">
             <source>Registered (®)</source>
@@ -7030,7 +7030,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[1100-11FF] Hangul Jamo</source>
-            <translation>[1100-11FF] Hangul Jamo</translation>
+            <translation>[1100-11FF] ['%n fairi yakawana', '%n mafairi yakawana']</translation>
         </message>
         <message>
             <source>[1200-137F] Ethiopic</source>

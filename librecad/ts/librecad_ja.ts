@@ -23964,7 +23964,7 @@ p, li { white-space: pre-wrap; }
         <message>
             <location filename="../src/ui/main/support/qg_recentfiles.cpp" line="177"/>
             <source>&amp;%1 %2</source>
-            <translation>&amp;%1 %2</translation>
+            <translation>['%1個のファイルが見つかりました', '%1個のファイルが見つかりました']</translation>
         </message>
     </context>
     <context>

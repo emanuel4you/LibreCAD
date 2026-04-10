@@ -22998,7 +22998,7 @@ Privzeta vrednost koraka, potrebna za peko</translation>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1210"/>
             <source>[13A0-13FF] Cherokee</source>
-            <translation>[13A0-13FF] Cherokee</translation>
+            <translation>[13A0-13FF] Čeroki</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1215"/>
@@ -24124,11 +24124,8 @@ Tega dejanja ni mogoče razveljaviti.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Odstrani %n sloj(ev)
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Odstrani %n plast</numerusform>
+                <numerusform>Odstrani %n plasti</numerusform>
             </translation>
         </message>
         <message>
@@ -24158,11 +24155,8 @@ Tega dejanja ni mogoče razveljaviti.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Odstrani %n blok(ov)
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Odstrani %n blok</numerusform>
+                <numerusform>Odstrani %n blokov</numerusform>
             </translation>
         </message>
         <message>

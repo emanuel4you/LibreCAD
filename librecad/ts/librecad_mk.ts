@@ -24052,10 +24052,8 @@ This action can NOT be undone.</source>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Отстранете %n слој(и)
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Отстранете %n слој</numerusform>
+                <numerusform>Отстранете %n слоја</numerusform>
             </translation>
         </message>
         <message>
@@ -24085,10 +24083,8 @@ This action can NOT be undone.</source>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Отстранете %n блок(ови)
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Отстранете %n блок</numerusform>
+                <numerusform>Отстранете %n блокови</numerusform>
             </translation>
         </message>
         <message>
@@ -24344,12 +24340,12 @@ Do you want to replace it?</source>
         <message>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="928"/>
             <source>Portable Network Graphic</source>
-            <translation>Portable Network Graphic</translation>
+            <translation>Пренослив графички формат</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="930"/>
             <source>Portable Pixel Map</source>
-            <translation>Portable Pixel Map</translation>
+            <translation>Пренослива пикселна мапа</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="932"/>
@@ -24507,7 +24503,7 @@ Do you want to replace it?</source>
         <message>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="958"/>
             <source>Tagged Image File Format</source>
-            <translation>Tagged Image File Format</translation>
+            <translation>Формат на означени слики</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/file/qg_filedialog.cpp" line="443"/>

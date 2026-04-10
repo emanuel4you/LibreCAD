@@ -6918,43 +6918,43 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[0100-017F] Latin Extended-A</source>
-            <translation>[0100-017F] Latin Extended-A</translation>
+            <translation>[0100-017F] Latim Estendido-A</translation>
         </message>
         <message>
             <source>[0180-024F] Latin Extended-B</source>
-            <translation>[0180-024F] Latin Extended-B</translation>
+            <translation>[0180-024F] Latim Estendido-B</translation>
         </message>
         <message>
             <source>[0250-02AF] IPA Extensions</source>
-            <translation>[0250-02AF] IPA Extensions</translation>
+            <translation>[0250-02AF] Extensões IPA</translation>
         </message>
         <message>
             <source>[02B0-02FF] Spacing Modifier Letters</source>
-            <translation>[02B0-02FF] Spacing Modifier Letters</translation>
+            <translation>[02B0-02FF] Letras Modificadoras de Espaçamento</translation>
         </message>
         <message>
             <source>[0300-036F] Combining Diacritical Marks</source>
-            <translation>[0300-036F] Combining Diacritical Marks</translation>
+            <translation>[0300-036F] Marcas Diacríticas Combinadas</translation>
         </message>
         <message>
             <source>[0370-03FF] Greek and Coptic</source>
-            <translation>[0370-03FF] Greek and Coptic</translation>
+            <translation>[0370-03FF] Grego e Cópata</translation>
         </message>
         <message>
             <source>[0400-04FF] Cyrillic</source>
-            <translation>[0400-04FF] Cyrillic</translation>
+            <translation>[0400-04FF] Cirílico</translation>
         </message>
         <message>
             <source>[0500-052F] Cyrillic Supplementary</source>
-            <translation>[0500-052F] Cyrillic Supplementary</translation>
+            <translation>[0500-052F] Cirílico Suplementar</translation>
         </message>
         <message>
             <source>[0530-058F] Armenian</source>
-            <translation>[0530-058F] Armenian</translation>
+            <translation>[0530-058F] Armênio</translation>
         </message>
         <message>
             <source>[0590-05FF] Hebrew</source>
-            <translation>[0590-05FF] Hebrew</translation>
+            <translation>[0590-05FF] Hebraico</translation>
         </message>
         <message>
             <source>[0600-06FF] Arabic</source>
@@ -7322,11 +7322,11 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[20000-2A6DF] CJK Unified Ideographs Extension B</source>
-            <translation>[20000-2A6DF] CJK Unified Ideographs Extension B</translation>
+            <translation>[20000-2A6DF] CJK 统一表意符号扩展 B</translation>
         </message>
         <message>
             <source>[2F800-2FA1F] CJK Compatibility Ideographs Supplement</source>
-            <translation>[2F800-2FA1F] CJK Compatibility Ideographs Supplement</translation>
+            <translation>[2F800-2FA1F] CJK 兼容表意符号补充</translation>
         </message>
         <message>
             <source>[E0000-E007F] Tags</source>
@@ -7334,7 +7334,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[F0000-FFFFD] Supplementary Private Use Area-A</source>
-            <translation>[F0000-FFFFD] Supplementary Private Use Area-A</translation>
+            <translation>[F0000-FFFFD] 补充专用使用区-A</translation>
         </message>
         <message>
             <source>[100000-10FFFD] Supplementary Private Use Area-B</source>

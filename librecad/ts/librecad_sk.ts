@@ -22953,12 +22953,12 @@ Takže predvolená hodnota kroku potrebná na pečenie</translation>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1165"/>
             <source>[0D00-0D7F] Malayalam</source>
-            <translation>[0D00-0D7F] Malayalam</translation>
+            <translation>[0D00-0D7F] Malajálam</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1170"/>
             <source>[0D80-0DFF] Sinhala</source>
-            <translation>[0D80-0DFF] Sinhala</translation>
+            <translation>[0D80-0DFF] Sinhálčina</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgtext.ui" line="1175"/>
@@ -24124,10 +24124,9 @@ Táto akcia nemôže byť odstránená.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Odstrániť %n vrstiev
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Odstrániť %n vrstvu</numerusform>
+                <numerusform>Odstrániť %n vrstvy</numerusform>
+                <numerusform>Odstrániť %n vrstiev</numerusform>
             </translation>
         </message>
         <message>
@@ -24157,10 +24156,9 @@ Táto akcia nemôže byť odstránená.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Odstrániť %n blokov
-                <numerusform/>
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Odstrániť %n blok</numerusform>
+                <numerusform>Odstrániť %n bloky</numerusform>
+                <numerusform>Odstrániť %n blokov</numerusform>
             </translation>
         </message>
         <message>
@@ -27866,19 +27864,19 @@ Chcete ho nahradiť?</translation>
             <location filename="../src/lib/engine/rs_units.cpp" line="1015"/>
             <source>ansi c</source>
             <comment>Paper format</comment>
-            <translation>ansi c</translation>
+            <translation>ANSI C</translation>
         </message>
         <message>
             <location filename="../src/lib/engine/rs_units.cpp" line="1017"/>
             <source>ansi d</source>
             <comment>Paper format</comment>
-            <translation>ansi d</translation>
+            <translation>ANSI D</translation>
         </message>
         <message>
             <location filename="../src/lib/engine/rs_units.cpp" line="1019"/>
             <source>ansi e</source>
             <comment>Paper format</comment>
-            <translation>ansi e</translation>
+            <translation>ANSI E</translation>
         </message>
         <message>
             <location filename="../src/lib/engine/rs_units.cpp" line="1022"/>
@@ -27908,7 +27906,7 @@ Chcete ho nahradiť?</translation>
             <location filename="../src/lib/engine/rs_units.cpp" line="1030"/>
             <source>arch e</source>
             <comment>Paper format</comment>
-            <translation>arch e</translation>
+            <translation>Arch E</translation>
         </message>
         <message>
             <location filename="../src/lib/filters/rs_filterinterface.h" line="92"/>

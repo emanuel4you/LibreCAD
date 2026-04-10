@@ -24130,9 +24130,8 @@ Questo NON può essere annullato.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Rimuovi %n livello/i
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Rimuovi %n livello</numerusform>
+                <numerusform>Rimuovi %n livelli</numerusform>
             </translation>
         </message>
         <message>
@@ -24162,9 +24161,8 @@ Questo NON può essere annullato.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Rimuovi %n blocco/i
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Rimuovi %n blocco</numerusform>
+                <numerusform>Rimuovi %n blocchi</numerusform>
             </translation>
         </message>
         <message>

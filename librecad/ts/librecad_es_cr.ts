@@ -1946,7 +1946,7 @@ Por favor, compruebe su existencia y permisos.</translation>
         </message>
         <message>
             <source>H&amp;orizontal / Vertical</source>
-            <translation>H&amp;orizontal / Vertical</translation>
+            <translation>Orizontal / Vertical</translation>
         </message>
         <message>
             <source>Draw horizontal/vertical lines</source>
@@ -4835,11 +4835,11 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>At (@)</source>
-            <translation>At (@)</translation>
+            <translation>@</translation>
         </message>
         <message>
             <source>Hash (#)</source>
-            <translation>Hash (#)</translation>
+            <translation>#</translation>
         </message>
         <message>
             <source>Dollar ($)</source>
@@ -4847,7 +4847,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message utf8="true">
             <source>Copyright (©)</source>
-            <translation>Copyright (©)</translation>
+            <translation>©</translation>
         </message>
         <message utf8="true">
             <source>Registered (®)</source>
@@ -4859,7 +4859,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message utf8="true">
             <source>Pi (π)</source>
-            <translation>Pi (π)</translation>
+            <translation>π</translation>
         </message>
         <message utf8="true">
             <source>Pound (£)</source>
@@ -4871,7 +4871,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message utf8="true">
             <source>Times (×)</source>
-            <translation>Times (×)</translation>
+            <translation>×</translation>
         </message>
         <message utf8="true">
             <source>Division (÷)</source>
@@ -4903,7 +4903,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[0180-024F] Latin Extended-B</source>
-            <translation>[0180-024F] Latin Extended-B</translation>
+            <translation>[0180-024F] Alfabet Latin Extens B</translation>
         </message>
         <message>
             <source>[0250-02AF] IPA Extensions</source>
@@ -4923,7 +4923,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[0400-04FF] Cyrillic</source>
-            <translation>[0400-04FF] Cyrillic</translation>
+            <translation>[0400-04FF] Cyrillique</translation>
         </message>
         <message>
             <source>[0500-052F] Cyrillic Supplementary</source>
@@ -4939,7 +4939,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[0600-06FF] Arabic</source>
-            <translation>[0600-06FF] Arabic</translation>
+            <translation>[0600-06FF] Arabe</translation>
         </message>
         <message>
             <source>[0700-074F] Syriac</source>
@@ -4979,15 +4979,15 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[0C80-0CFF] Kannada</source>
-            <translation>[0C80-0CFF] Kannada</translation>
+            <translation>[0C80-0CFF] ಕನ್ನಡ</translation>
         </message>
         <message>
             <source>[0D00-0D7F] Malayalam</source>
-            <translation>[0D00-0D7F] Malayalam</translation>
+            <translation>[0D00-0D7F] மலയാളം</translation>
         </message>
         <message>
             <source>[0D80-0DFF] Sinhala</source>
-            <translation>[0D80-0DFF] Sinhala</translation>
+            <translation>[0D80-0DFF] සිංහල</translation>
         </message>
         <message>
             <source>[0E00-0E7F] Thai</source>
@@ -4995,15 +4995,15 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[0E80-0EFF] Lao</source>
-            <translation>[0E80-0EFF] Lao</translation>
+            <translation>[0E80-0EFF] ລາວ</translation>
         </message>
         <message>
             <source>[0F00-0FFF] Tibetan</source>
-            <translation>[0F00-0FFF] Tibetan</translation>
+            <translation>[0F00-0FFF] བོད་སྐད</translation>
         </message>
         <message>
             <source>[1000-109F] Myanmar</source>
-            <translation>[1000-109F] Myanmar</translation>
+            <translation>[1000-109F] မြန်မာ</translation>
         </message>
         <message>
             <source>[10A0-10FF] Georgian</source>
@@ -6982,43 +6982,43 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[0A80-0AFF] Gujarati</source>
-            <translation>[0A80-0AFF] Gujarati</translation>
+            <translation>[0A80-0AFF] ગુજરાતી</translation>
         </message>
         <message>
             <source>[0B00-0B7F] Oriya</source>
-            <translation>[0B00-0B7F] Oriya</translation>
+            <translation>[0B00-0B7F] ઓડિયા</translation>
         </message>
         <message>
             <source>[0B80-0BFF] Tamil</source>
-            <translation>[0B80-0BFF] Tamil</translation>
+            <translation>[0B80-0BFF] તામિલ</translation>
         </message>
         <message>
             <source>[0C00-0C7F] Telugu</source>
-            <translation>[0C00-0C7F] Telugu</translation>
+            <translation>[0C00-0C7F] તેલુગુ</translation>
         </message>
         <message>
             <source>[0C80-0CFF] Kannada</source>
-            <translation>[0C80-0CFF] Kannada</translation>
+            <translation>[0C80-0CFF] કન્નડ</translation>
         </message>
         <message>
             <source>[0D00-0D7F] Malayalam</source>
-            <translation>[0D00-0D7F] Malayalam</translation>
+            <translation>[0D00-0D7F] മലയാളം</translation>
         </message>
         <message>
             <source>[0D80-0DFF] Sinhala</source>
-            <translation>[0D80-0DFF] Sinhala</translation>
+            <translation>[0D80-0DFF] සිංහල</translation>
         </message>
         <message>
             <source>[0E00-0E7F] Thai</source>
-            <translation>[0E00-0E7F] Thai</translation>
+            <translation>[0E00-0E7F] ໄທ</translation>
         </message>
         <message>
             <source>[0E80-0EFF] Lao</source>
-            <translation>[0E80-0EFF] Lao</translation>
+            <translation>[0E80-0EFF] ລາວ</translation>
         </message>
         <message>
             <source>[0F00-0FFF] Tibetan</source>
-            <translation>[0F00-0FFF] Tibetan</translation>
+            <translation>[0F00-0FFF] བོད་སྐད།</translation>
         </message>
         <message>
             <source>[1000-109F] Myanmar</source>
@@ -7026,43 +7026,43 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[10A0-10FF] Georgian</source>
-            <translation>[10A0-10FF] Georgian</translation>
+            <translation>[10A0-10FF] ქართული</translation>
         </message>
         <message>
             <source>[1100-11FF] Hangul Jamo</source>
-            <translation>[1100-11FF] Hangul Jamo</translation>
+            <translation>[1100-11FF] ჰანგული</translation>
         </message>
         <message>
             <source>[1200-137F] Ethiopic</source>
-            <translation>[1200-137F] Ethiopic</translation>
+            <translation>[1200-137F] ეთიოპური</translation>
         </message>
         <message>
             <source>[13A0-13FF] Cherokee</source>
-            <translation>[13A0-13FF] Cherokee</translation>
+            <translation>[13A0-13FF] ჩეროკი</translation>
         </message>
         <message>
             <source>[1400-167F] Unified Canadian Aboriginal Syllabic</source>
-            <translation>[1400-167F] Unified Canadian Aboriginal Syllabic</translation>
+            <translation>[1400-167F] კანადური აბორიგენული დამწერლობა</translation>
         </message>
         <message>
             <source>[1680-169F] Ogham</source>
-            <translation>[1680-169F] Ogham</translation>
+            <translation>[1680-169F] ოღამური</translation>
         </message>
         <message>
             <source>[16A0-16FF] Runic</source>
-            <translation>[16A0-16FF] Runic</translation>
+            <translation>[16A0-16FF] რუნული</translation>
         </message>
         <message>
             <source>[1700-171F] Tagalog</source>
-            <translation>[1700-171F] Tagalog</translation>
+            <translation>[1700-171F] ტაგალოგი</translation>
         </message>
         <message>
             <source>[1720-173F] Hanunoo</source>
-            <translation>[1720-173F] Hanunoo</translation>
+            <translation>[1720-173F] ჰანუნუ</translation>
         </message>
         <message>
             <source>[1740-175F] Buhid</source>
-            <translation>[1740-175F] Buhid</translation>
+            <translation>[1740-175F] ბუჰიდი</translation>
         </message>
         <message>
             <source>[1760-177F] Tagbanwa</source>
@@ -7214,7 +7214,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[31A0-31BF] Bopomofo Extended</source>
-            <translation>[31A0-31BF] Bopomofo Extended</translation>
+            <translation>[31A0-31BF] Bopomofo Étendu</translation>
         </message>
         <message>
             <source>[3200-32FF] Enclosed CJK Letters and Months</source>
@@ -7258,43 +7258,43 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[F900-FAFF] CJK Compatibility Ideographs</source>
-            <translation>[F900-FAFF] CJK Compatibility Ideographs</translation>
+            <translation>[F900-FAFF] Idéogrammes de compatibilité CJK</translation>
         </message>
         <message>
             <source>[FB00-FB4F] Alphabetic Presentation Forms</source>
-            <translation>[FB00-FB4F] Alphabetic Presentation Forms</translation>
+            <translation>[FB00-FB4F] Formes de présentation alphabétiques</translation>
         </message>
         <message>
             <source>[FB50-FDFF] Arabic Presentation Forms-A</source>
-            <translation>[FB50-FDFF] Arabic Presentation Forms-A</translation>
+            <translation>[FB50-FDFF] Formes de présentation arabe-A</translation>
         </message>
         <message>
             <source>[FE00-FE0F] Variation Selectors</source>
-            <translation>[FE00-FE0F] Variation Selectors</translation>
+            <translation>[FE00-FE0F] Sélecteurs de variation</translation>
         </message>
         <message>
             <source>[FE20-FE2F] Combining Half Marks</source>
-            <translation>[FE20-FE2F] Combining Half Marks</translation>
+            <translation>[FE20-FE2F] Marques de combinaison à moitié</translation>
         </message>
         <message>
             <source>[FE30-FE4F] CJK Compatibility Forms</source>
-            <translation>[FE30-FE4F] CJK Compatibility Forms</translation>
+            <translation>[FE30-FE4F] Formes de compatibilité CJK</translation>
         </message>
         <message>
             <source>[FE50-FE6F] Small Form Variants</source>
-            <translation>[FE50-FE6F] Small Form Variants</translation>
+            <translation>[FE50-FE6F] Variantes de petite forme</translation>
         </message>
         <message>
             <source>[FE70-FEFF] Arabic Presentation Forms-B</source>
-            <translation>[FE70-FEFF] Arabic Presentation Forms-B</translation>
+            <translation>[FE70-FEFF] Formes de présentation arabe-B</translation>
         </message>
         <message>
             <source>[FF00-FFEF] Halfwidth and Fullwidth Forms</source>
-            <translation>[FF00-FFEF] Halfwidth and Fullwidth Forms</translation>
+            <translation>[FF00-FFEF] Formes à demi et pleine largeur</translation>
         </message>
         <message>
             <source>[FFF0-FFFF] Specials</source>
-            <translation>[FFF0-FFFF] Specials</translation>
+            <translation>[FFF0-FFFF] Spéciaux</translation>
         </message>
         <message>
             <source>[10300-1032F] Old Italic</source>

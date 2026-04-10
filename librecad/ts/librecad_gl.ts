@@ -24128,9 +24128,8 @@ Esta acción NON pode ser desfeita despois.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Eliminar %n capa(s)
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Eliminar %n capa</numerusform>
+                <numerusform>Eliminar %n capas</numerusform>
             </translation>
         </message>
         <message>
@@ -24160,9 +24159,8 @@ Esta acción NON pode ser desfeita despois.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Eliminar %n bloque(s)
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Eliminar %n bloque</numerusform>
+                <numerusform>Eliminar %n bloques</numerusform>
             </translation>
         </message>
         <message>
@@ -24633,19 +24631,19 @@ Quere reemprazalo?</translation>
             <location filename="../src/lib/engine/rs_units.cpp" line="962"/>
             <source>ANSI C</source>
             <comment>Paper format</comment>
-            <translation>ANSI C</translation>
+            <translation>C ANSI</translation>
         </message>
         <message>
             <location filename="../src/lib/engine/rs_units.cpp" line="963"/>
             <source>ANSI D</source>
             <comment>Paper format</comment>
-            <translation>ANSI D</translation>
+            <translation>D ANSI</translation>
         </message>
         <message>
             <location filename="../src/lib/engine/rs_units.cpp" line="964"/>
             <source>ANSI E</source>
             <comment>Paper format</comment>
-            <translation>ANSI E</translation>
+            <translation>E ANSI</translation>
         </message>
         <message>
             <location filename="../src/lib/engine/rs_units.cpp" line="966"/>

@@ -24053,9 +24053,8 @@ This action can NOT be undone.</source>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        %n அடுக்கு(களை) நீக்கு
-                <numerusform/>
-                <numerusform/>
+                <numerusform>%n அடுக்கை நீக்கு</numerusform>
+                <numerusform>%n அடுக்குகளை நீக்கு</numerusform>
             </translation>
         </message>
         <message>
@@ -24085,9 +24084,8 @@ This action can NOT be undone.</source>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        %n தொகுதி(களை) நீக்கு
-                <numerusform/>
-                <numerusform/>
+                <numerusform>%n தொகுதியை நீக்கு</numerusform>
+                <numerusform>%n தொகுதிகளை நீக்கு</numerusform>
             </translation>
         </message>
         <message>

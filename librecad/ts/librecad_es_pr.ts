@@ -6866,7 +6866,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message utf8="true">
             <source>Copyright (©)</source>
-            <translation>Copyright (©)</translation>
+            <translation>Direitos autorais (©)</translation>
         </message>
         <message utf8="true">
             <source>Registered (®)</source>
@@ -6998,11 +6998,11 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[0C80-0CFF] Kannada</source>
-            <translation>[0C80-0CFF] Kannada</translation>
+            <translation>[0C80-0CFF] Cânada</translation>
         </message>
         <message>
             <source>[0D00-0D7F] Malayalam</source>
-            <translation>[0D00-0D7F] Malayalam</translation>
+            <translation>[0D00-0D7F] Malaiala</translation>
         </message>
         <message>
             <source>[0D80-0DFF] Sinhala</source>

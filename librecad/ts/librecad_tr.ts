@@ -24128,8 +24128,8 @@ Bu işlem geri alınamaz.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        %n katmanı kaldır
-                <numerusform/>
+                <numerusform>%n katman kaldır</numerusform>
+                <numerusform>%n katman kaldır</numerusform>
             </translation>
         </message>
         <message>
@@ -24159,8 +24159,8 @@ Bu işlem geri alınamaz.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        %n bloğu kaldır
-                <numerusform/>
+                <numerusform>%n bloğu kaldır</numerusform>
+                <numerusform>%n blok kaldır</numerusform>
             </translation>
         </message>
         <message>

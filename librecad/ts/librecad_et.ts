@@ -18004,7 +18004,7 @@ See rekursiivselt muudab kõiki ploki üksusi.</translation>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgmtext.ui" line="896"/>
             <source>Hash (#)</source>
-            <translation>Hash (#)</translation>
+            <translation>Märk (#)</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgmtext.ui" line="901"/>
@@ -24124,9 +24124,8 @@ Seda toimingut ei saa tagasi võtta.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Eemalda %n kiht
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Eemalda %n kiht</numerusform>
+                <numerusform>Eemalda %n kihti</numerusform>
             </translation>
         </message>
         <message>
@@ -24156,9 +24155,8 @@ Seda toimingut ei saa tagasi võtta.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Eemalda %n plokk
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Eemalda %n plokk</numerusform>
+                <numerusform>Eemalda %n plokki</numerusform>
             </translation>
         </message>
         <message>

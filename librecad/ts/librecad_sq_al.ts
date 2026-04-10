@@ -23945,7 +23945,7 @@ p, li { e bardhë-hapësirë: para-mbyllur; hah
         <message>
             <location filename="../src/ui/main/support/qg_recentfiles.cpp" line="177"/>
             <source>&amp;%1 %2</source>
-            <translation>&amp;%1 %2</translation>
+            <translation>['%n file u gjet', '%n file u gjet']</translation>
         </message>
     </context>
     <context>
@@ -24109,9 +24109,8 @@ Ky veprim nuk mund të zhbëhet.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Hiq %n shtresa
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Hiq %n shtresë</numerusform>
+                <numerusform>Hiq %n shtresa</numerusform>
             </translation>
         </message>
         <message>
@@ -24156,9 +24155,8 @@ Ky veprim nuk mund të zhbëhet.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Hiq %n blloqe
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Hiq %n blok</numerusform>
+                <numerusform>Hiq %n blloqe</numerusform>
             </translation>
         </message>
         <message>
@@ -27957,7 +27955,7 @@ Dëshiron ta zëvendësosh?</translation>
             <location filename="../src/lib/engine/rs_units.cpp" line="969"/>
             <source>Arch D</source>
             <comment>Paper format</comment>
-            <translation>Arch D</translation>
+            <translation>Arkitektura D</translation>
         </message>
         <message>
             <location filename="../src/lib/engine/rs_units.cpp" line="970"/>

@@ -5104,7 +5104,7 @@ Esteu segur que voleu descartar els canvis?</translation>
         <message>
             <location filename="../src/ui/dialogs/settings/dimstyles/dimstyle_manager/support/lc_dimstylepreviewpanel.ui" line="90"/>
             <source>Zoom Pan</source>
-            <translation>Zoom Pan</translation>
+            <translation>Apropament i desplaçament</translation>
         </message>
     </context>
     <context>
@@ -24131,9 +24131,8 @@ Aquesta acció no es pot desfer.</translation>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-        Elimina %n capa(s)
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Elimina %n capa(s)</numerusform>
+                <numerusform>Elimina %n capes</numerusform>
             </translation>
         </message>
         <message>
@@ -24163,9 +24162,8 @@ Aquesta acció no es pot desfer.</translation>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-        Elimina %n bloc(s)
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Elimina %n bloc(s)</numerusform>
+                <numerusform>Elimina %n blocs</numerusform>
             </translation>
         </message>
         <message>
@@ -27812,7 +27810,7 @@ Voleu substituir-ho?</translation>
             <location filename="../src/lib/engine/rs_units.cpp" line="966"/>
             <source>Arch A</source>
             <comment>Paper format</comment>
-            <translation>Arch A</translation>
+            <translation>Arc A</translation>
         </message>
         <message>
             <location filename="../src/lib/engine/rs_units.cpp" line="967"/>

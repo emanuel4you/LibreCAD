@@ -13521,13 +13521,13 @@ Layer: </source>
         <message>
             <location filename="../src/ui/dock_widgets/entity_info/lc_quickinfoentitydata.cpp" line="800"/>
             <source>Vertex - 0:</source>
-            <translation>Vertex - 0:</translation>
+            <translation>Hörn - 0:</translation>
         </message>
         <message>
             <location filename="../src/ui/dock_widgets/entity_info/lc_quickinfoentitydata.cpp" line="822"/>
             <location filename="../src/ui/dock_widgets/entity_info/lc_quickinfoentitydata.cpp" line="835"/>
             <source>Vertex - </source>
-            <translation>Vertex -</translation>
+            <translation>Hörn -</translation>
         </message>
         <message>
             <location filename="../src/ui/dock_widgets/entity_info/lc_quickinfoentitydata.cpp" line="842"/>
@@ -13714,7 +13714,7 @@ Layer: </source>
         <message>
             <location filename="../src/ui/dock_widgets/entity_info/lc_quickinfoentitydata.cpp" line="1019"/>
             <source>Normal text</source>
-            <translation>Normal text</translation>
+            <translation>Normaltext</translation>
         </message>
         <message>
             <location filename="../src/ui/dock_widgets/entity_info/lc_quickinfoentitydata.cpp" line="1021"/>
@@ -14204,7 +14204,11 @@ Layer: </source>
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-            <translation type="unfinished"/>
+            <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
         </message>
         <message>
             <location filename="../src/ui/dock_widgets/entity_info/lc_quickinfowidget.cpp" line="346"/>
@@ -17961,7 +17965,7 @@ Vänligen välj den enhet du vill använda för nya ritningar och ditt föredrag
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgmtext.ui" line="886"/>
             <source>Plus / Minus (±)</source>
-            <translation>Plus / Minus (±)</translation>
+            <translation>Plus / minus (±)</translation>
         </message>
         <message>
             <location filename="../src/ui/dialogs/entity/qg_dlgmtext.ui" line="891"/>
@@ -24028,9 +24032,8 @@ This action can NOT be undone.</source>
             <location filename="../src/ui/dock_widgets/layers_tree/lc_layertreewidget.cpp" line="1776"/>
             <source>Remove %n layer(s)</source>
             <translation>
-                Ta bort %n lager
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Ta bort %n lager</numerusform>
+                <numerusform>Ta bort %n lager</numerusform>
             </translation>
         </message>
         <message>
@@ -24075,9 +24078,8 @@ This action can NOT be undone.</source>
             <location filename="../src/ui/dialogs/qg_dialogfactory.cpp" line="514"/>
             <source>Remove %n block(s)</source>
             <translation>
-                Ta bort %n block
-                <numerusform/>
-                <numerusform/>
+                <numerusform>Ta bort %n block</numerusform>
+                <numerusform>Ta bort %n block</numerusform>
             </translation>
         </message>
         <message>
@@ -30071,7 +30073,7 @@ Skärningspunkt: @(%7, %8)</translation>
             <location filename="../src/actions/drawing/info/rs_actioninfoarea.cpp" line="101"/>
             <location filename="../src/actions/drawing/info/rs_actioninfoarea.cpp" line="108"/>
             <source>Area: %1 %2^2</source>
-            <translation>Area: %1 %2^2</translation>
+            <translation>Område: %1 %2^2</translation>
         </message>
         <message>
             <location filename="../src/actions/drawing/info/rs_actioninfoarea.cpp" line="153"/>

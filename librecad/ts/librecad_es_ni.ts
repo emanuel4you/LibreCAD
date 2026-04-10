@@ -6982,39 +6982,39 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[0A80-0AFF] Gujarati</source>
-            <translation>[0A80-0AFF] Gujarati</translation>
+            <translation>[0A80-0AFF] ગુજરાતી</translation>
         </message>
         <message>
             <source>[0B00-0B7F] Oriya</source>
-            <translation>[0B00-0B7F] Oriya</translation>
+            <translation>[0B00-0B7F] ઓડિયા</translation>
         </message>
         <message>
             <source>[0B80-0BFF] Tamil</source>
-            <translation>[0B80-0BFF] Tamil</translation>
+            <translation>[0B80-0BFF] તામિલ</translation>
         </message>
         <message>
             <source>[0C00-0C7F] Telugu</source>
-            <translation>[0C00-0C7F] Telugu</translation>
+            <translation>[0C00-0C7F] તેલુગુ</translation>
         </message>
         <message>
             <source>[0C80-0CFF] Kannada</source>
-            <translation>[0C80-0CFF] Kannada</translation>
+            <translation>[0C80-0CFF] કન્નડ</translation>
         </message>
         <message>
             <source>[0D00-0D7F] Malayalam</source>
-            <translation>[0D00-0D7F] Malayalam</translation>
+            <translation>[0D00-0D7F] മലയാളം</translation>
         </message>
         <message>
             <source>[0D80-0DFF] Sinhala</source>
-            <translation>[0D80-0DFF] Sinhala</translation>
+            <translation>[0D80-0DFF] සිංහල</translation>
         </message>
         <message>
             <source>[0E00-0E7F] Thai</source>
-            <translation>[0E00-0E7F] Thai</translation>
+            <translation>[0E00-0E7F] ໄທ</translation>
         </message>
         <message>
             <source>[0E80-0EFF] Lao</source>
-            <translation>[0E80-0EFF] Lao</translation>
+            <translation>[0E80-0EFF] ລາວ</translation>
         </message>
         <message>
             <source>[0F00-0FFF] Tibetan</source>
@@ -7030,7 +7030,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[1100-11FF] Hangul Jamo</source>
-            <translation>[1100-11FF] Hangul Jamo</translation>
+            <translation>[1100-11FF] હંગુલ જામો</translation>
         </message>
         <message>
             <source>[1200-137F] Ethiopic</source>
@@ -7038,7 +7038,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[13A0-13FF] Cherokee</source>
-            <translation>[13A0-13FF] Cherokee</translation>
+            <translation>[13A0-13FF] Čeroki</translation>
         </message>
         <message>
             <source>[1400-167F] Unified Canadian Aboriginal Syllabic</source>

@@ -4955,7 +4955,7 @@ Por favor seleccione la unidad que desea utilizar para nuevos dibujos y su idiom
         </message>
         <message>
             <source>[0980-09FF] Bengali</source>
-            <translation>[0980-09FF] Bengali</translation>
+            <translation>[0980-09FF] Bengalí</translation>
         </message>
         <message>
             <source>[0A00-0A7F] Gurmukhi</source>
@@ -5776,7 +5776,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>Isometric Grid</source>
-            <translation>Isometric Grid</translation>
+            <translation>Cuadrícula isométrica</translation>
         </message>
         <message>
             <source>Tick size:</source>
@@ -5860,7 +5860,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>',' (Comma)</source>
-            <translation>',' (Comma)</translation>
+            <translation>',' (Coma)</translation>
         </message>
         <message>
             <source>Decimal separator:</source>
@@ -6652,7 +6652,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>&amp;Factor (f):</source>
-            <translation>&amp;Factor (f):</translation>
+            <translation>Factor (f):</translation>
         </message>
         <message>
             <source>Use current &amp;attributes</source>
@@ -6990,31 +6990,31 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[0B80-0BFF] Tamil</source>
-            <translation>[0B80-0BFF] Tamil</translation>
+            <translation>[0B80-0BFF] தமிழ்</translation>
         </message>
         <message>
             <source>[0C00-0C7F] Telugu</source>
-            <translation>[0C00-0C7F] Telugu</translation>
+            <translation>[0C00-0C7F] தெலுங்கு</translation>
         </message>
         <message>
             <source>[0C80-0CFF] Kannada</source>
-            <translation>[0C80-0CFF] Kannada</translation>
+            <translation>[0C80-0CFF] கன்னடம்</translation>
         </message>
         <message>
             <source>[0D00-0D7F] Malayalam</source>
-            <translation>[0D00-0D7F] Malayalam</translation>
+            <translation>[0D00-0D7F] மலையாளம்</translation>
         </message>
         <message>
             <source>[0D80-0DFF] Sinhala</source>
-            <translation>[0D80-0DFF] Sinhala</translation>
+            <translation>[0D80-0DFF] சிங்களம்</translation>
         </message>
         <message>
             <source>[0E00-0E7F] Thai</source>
-            <translation>[0E00-0E7F] Thai</translation>
+            <translation>[0E00-0E7F] தை</translation>
         </message>
         <message>
             <source>[0E80-0EFF] Lao</source>
-            <translation>[0E80-0EFF] Lao</translation>
+            <translation>[0E80-0EFF] லாவோ</translation>
         </message>
         <message>
             <source>[0F00-0FFF] Tibetan</source>
@@ -7030,7 +7030,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[1100-11FF] Hangul Jamo</source>
-            <translation>[1100-11FF] Hangul Jamo</translation>
+            <translation>[1100-11FF] ஹங்குல் ஜாமோ</translation>
         </message>
         <message>
             <source>[1200-137F] Ethiopic</source>
@@ -7038,7 +7038,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[13A0-13FF] Cherokee</source>
-            <translation>[13A0-13FF] Cherokee</translation>
+            <translation>[13A0-13FF] செரோக்கி</translation>
         </message>
         <message>
             <source>[1400-167F] Unified Canadian Aboriginal Syllabic</source>
@@ -7046,7 +7046,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[1680-169F] Ogham</source>
-            <translation>[1680-169F] Ogham</translation>
+            <translation>[1680-169F] ஓகாம்</translation>
         </message>
         <message>
             <source>[16A0-16FF] Runic</source>
@@ -7178,11 +7178,11 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[2E80-2EFF] CJK Radicals Supplement</source>
-            <translation>[2E80-2EFF] CJK Radicals Supplement</translation>
+            <translation>[2E80-2EFF] Suplemento de radicales CJK</translation>
         </message>
         <message>
             <source>[2F00-2FDF] Kangxi Radicals</source>
-            <translation>[2F00-2FDF] Kangxi Radicals</translation>
+            <translation>[2F00-2FDF] Radicales Kangxi</translation>
         </message>
         <message>
             <source>[2FF0-2FFF] Ideographic Description Characters</source>
@@ -7206,7 +7206,7 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[3130-318F] Hangul Compatibility Jamo</source>
-            <translation>[3130-318F] Hangul Compatibility Jamo</translation>
+            <translation>[3130-318F] Conjunto de compatibilidad Hangul Jamo</translation>
         </message>
         <message>
             <source>[3190-319F] Kanbun</source>
@@ -7226,35 +7226,35 @@ Pre&amp;cisión:</translation>
         </message>
         <message>
             <source>[3400-4DBF] CJK Unified Ideographs Extension A</source>
-            <translation>[3400-4DBF] CJK Unified Ideographs Extension A</translation>
+            <translation>[3400-4DBF] Extensión A de ideogramas unificados CJK</translation>
         </message>
         <message>
             <source>[4E00-9FAF] CJK Unified Ideographs</source>
-            <translation>[4E00-9FAF] CJK Unified Ideographs</translation>
+            <translation>[4E00-9FAF] Ideogramas unificados CJK</translation>
         </message>
         <message>
             <source>[A000-A48F] Yi Syllables</source>
-            <translation>[A000-A48F] Yi Syllables</translation>
+            <translation>[A000-A48F] Sílabas Yi</translation>
         </message>
         <message>
             <source>[A490-A4CF] Yi Radicals</source>
-            <translation>[A490-A4CF] Yi Radicals</translation>
+            <translation>[A490-A4CF] Radicales Yi</translation>
         </message>
         <message>
             <source>[AC00-D7AF] Hangul Syllables</source>
-            <translation>[AC00-D7AF] Hangul Syllables</translation>
+            <translation>[AC00-D7AF] Sílabas Hangul</translation>
         </message>
         <message>
             <source>[D800-DBFF] High Surrogates</source>
-            <translation>[D800-DBFF] High Surrogates</translation>
+            <translation>[D800-DBFF] Sustitutos altos</translation>
         </message>
         <message>
             <source>[DC00-DFFF] Low Surrogate Area</source>
-            <translation>[DC00-DFFF] Low Surrogate Area</translation>
+            <translation>[DC00-DFFF] Área de sustitutos bajos</translation>
         </message>
         <message>
             <source>[E000-F8FF] Private Use Area</source>
-            <translation>[E000-F8FF] Private Use Area</translation>
+            <translation>[E000-F8FF] Área de uso privado</translation>
         </message>
         <message>
             <source>[F900-FAFF] CJK Compatibility Ideographs</source>

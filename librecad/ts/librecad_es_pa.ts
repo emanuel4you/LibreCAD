@@ -9035,7 +9035,7 @@ Do you want to replace it?</source>
         </message>
         <message>
             <source>Windows Icon</source>
-            <translation>Windows Icon</translation>
+            <translation>Icon ng Windows</translation>
         </message>
         <message>
             <source>JPEG 2000</source>
