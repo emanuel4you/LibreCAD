@@ -100,7 +100,11 @@ Align will copy rather than move the selected objects.
 If 'Specify base points first' is checked,
 Align will prompt for the alignment points in the order
 first base, second base, first target, second target.</source>
-            <translation>&quot;Jatorrizko objektuak mantendu&quot; aukera markatuta badago, Lerrokatzeak objektu hautatuak kopiatuko ditu, ez mugituko.</translation>
+            <translation>«Mantendu jatorrizko objektuak» laukia markatuta badago,
+Lerrokatzeak objektu hautatuak kopiatuko ditu, ez mugituko.
+«Lehenik oinarri-puntuak zehaztu» laukia markatuta badago,
+Lerrokatzeak lerrokatze-puntuak eskatuko ditu honako ordena honetan:
+lehen oinarria, bigarren oinarria, lehen helburua, bigarren helburua.</translation>
         </message>
         <message>
             <location filename="../align/align.cpp" line="89"/>
