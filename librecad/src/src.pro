@@ -59,6 +59,10 @@ unix {
     LC_VERSION=$$system([ "$(which git)x" != "x" -a -d ../../.git ] && echo "$(git describe --always)" || echo "$${LC_VERSION}")
 
     macx {
+        equals(QT_ARCH, arm64):greaterThan(QT_MAJOR_VERSION, 5) {
+            # Qt6 on Apple Silicon: qyieldcpu.h uses __yield() which requires arm_acle.h
+            QMAKE_CXXFLAGS += -include arm_acle.h
+        }
         TARGET = LibreCAD
         VERSION=$$system(echo "$${LC_VERSION}" | sed -e 's/\-.*//g')
         QMAKE_INFO_PLIST = Info.plist.app
@@ -461,6 +465,7 @@ HEADERS += \
     lib/engine/document/entities/rs_solid.h \
     lib/engine/document/entities/rs_spline.h \
     lib/engine/document/entities/lc_splinepoints.h \
+    lib/engine/document/entities/lc_secondmoment.h \
     lib/engine/rs_system.h \
     lib/engine/document/entities/rs_text.h \
     lib/engine/undo/lc_undoablerelzero.h \
@@ -508,6 +513,7 @@ HEADERS += \
     ui/dialogs/entity/lc_dlgdimension.h \
     ui/dialogs/entity/lc_dlgentityproperties.h \
     ui/dialogs/entity/lc_ellipsepropertieseditingwidget.h \
+    ui/dialogs/entity/lc_hatchpropertieseditingwidget.h \
     ui/dialogs/entity/lc_entitypropertieseditor.h \
     ui/dialogs/entity/lc_entitypropertieseditorsupport.h \
     ui/dialogs/entity/lc_entitypropertieseditorwidget.h \
@@ -649,6 +655,7 @@ HEADERS += \
     lib/scripting/rs_scriptingapi.h \
     lib/scripting/rs_scripting_inputhandle.h \
     main/lc_application.h \
+    main/lc_crash_handler.h \
     ui/action_options/curve/lc_ellipsearcoptions.h \
     ui/action_options/ellipse/lc_ellipse1pointoptions.h \
     ui/components/status_bar/lc_relzerocoordinateswidget.h \
@@ -759,6 +766,7 @@ SOURCES += \
     ui/dialogs/entity/lc_dlgentityproperties.cpp \
     ui/dialogs/entity/lc_dlgtolerance.cpp \
     ui/dialogs/entity/lc_ellipsepropertieseditingwidget.cpp \
+    ui/dialogs/entity/lc_hatchpropertieseditingwidget.cpp \
     ui/dialogs/entity/lc_entitypropertieseditor.cpp \
     ui/dialogs/entity/lc_entitypropertieseditorsupport.cpp \
     ui/dialogs/entity/lc_entitypropertieseditorwidget.cpp \
@@ -985,6 +993,7 @@ SOURCES += \
     lib/scripting/rs_scriptingapi.cpp \
     lib/scripting/rs_scripting_inputhandle.cpp \
     main/lc_application.cpp \
+    main/lc_crash_handler.cpp \
     ui/action_options/curve/lc_ellipsearcoptions.cpp \
     ui/action_options/ellipse/lc_ellipse1pointoptions.cpp \
     ui/components/status_bar/lc_relzerocoordinateswidget.cpp \
@@ -1852,6 +1861,7 @@ FORMS = ui/action_options/circle/lc_circlebyarcoptions.ui \
        ui/dialogs/entity/lc_dlgtolerance.ui \
        #ui/dialogs/entity/lc_dlgsplinepoints.ui \
        ui/dialogs/entity/lc_ellipsepropertieseditingwidget.ui \
+       ui/dialogs/entity/lc_hatchpropertieseditingwidget.ui \
        ui/dialogs/entity/lc_hyperbolapropertieseditingwidget.ui \
        ui/dialogs/entity/lc_imagepropertieseditingwidget.ui \
        ui/dialogs/entity/lc_insertpropertieseditingwidget.ui \
