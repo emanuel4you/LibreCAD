@@ -27,13 +27,17 @@
 #include<iostream>
 
 #include <QCloseEvent>
+#include <QDir>
 #include <QPainter>
 #include <QPrintDialog>
 #include <QPrinter>
 #include <QMdiArea>
+#include <QVBoxLayout>
+#include <QWidget>
 
 #include "lc_documentsstorage.h"
 #include "lc_graphicviewport.h"
+#include "lc_layouttabbar.h"
 #include "lc_printpreviewview.h"
 #include "qc_applicationwindow.h"
 #include "qc_mdiwindow.h"
@@ -41,6 +45,7 @@
 #include "lc_fontfileviewer.h"
 #include "qg_exitdialog.h"
 #include "rs_debug.h"
+#include "rs_settings.h"
 
 /**
  * Constructor.
@@ -56,9 +61,19 @@ QC_MDIWindow::QC_MDIWindow(RS_Document *doc, QWidget *parent, bool printPreview,
     m_cadMdiArea=qobject_cast<QMdiArea*>(parent);
 
     if (doc==nullptr) {
+        RS_DEBUG->print("QC_MDIWindow constructor: creating new document");
         m_document = new RS_Graphic();
         m_document->newDoc();
+
+        QString autosaveFilePrefix = LC_GET_ONE_STR("Path", "AutosaveFilePrefix", "#");
+        QString autosaveFileName = QDir::tempPath() + "/" + autosaveFilePrefix + tr("Unnamed") + ".dxf";
+        m_document->getGraphic()->setAutosaveFileName(autosaveFileName);
+        m_document->getGraphic()->setFormatType(RS2::FormatDXFRW);
+
+        RS_DEBUG->print("QC_MDIWindow constructor: new document created, autosaveFilename='%s', formatType=DXF",
+                        m_document->getGraphic()->getAutoSaveFileName().toLatin1().data());
     } else {
+        RS_DEBUG->print("QC_MDIWindow constructor: using existing document");
         m_document = doc;
     }
 
@@ -108,7 +123,33 @@ void QC_MDIWindow::setupGraphicView(QWidget *parent, bool printPreview, LC_Actio
         connect(m_graphicView, &RS_GraphicView::previous_zoom_state, receiver, &QC_ApplicationWindow::setPreviousZoomEnable);
     }
 
-    setWidget(m_graphicView);
+    if (printPreview) {
+        // Print-preview windows don't show the layout tab bar — the
+        // layout is fixed for the preview lifetime.  Wire the graphic
+        // view as the MDI window's sole widget, matching legacy behavior.
+        setWidget(m_graphicView);
+    } else {
+        // PR 10a — wrap the graphic view and the LC_LayoutTabBar in a
+        // vertical container.  The tab bar surfaces RS_Graphic::layouts()
+        // and tracks the active handle; no rendering swap (deferred to
+        // PR 12 follow-up).  Tab bar binds to the document's graphic
+        // when one is present.
+        auto* container = new QWidget(this);
+        container->setObjectName("mdiContentContainer");
+        auto* containerLayout = new QVBoxLayout(container);
+        containerLayout->setContentsMargins(0, 0, 0, 0);
+        containerLayout->setSpacing(0);
+        containerLayout->addWidget(m_graphicView, /*stretch=*/1);
+
+        m_layoutTabBar = new LC_LayoutTabBar(container);
+        m_layoutTabBar->setObjectName("layoutTabBarHost");
+        containerLayout->addWidget(m_layoutTabBar, /*stretch=*/0);
+
+        if (m_document != nullptr) {
+            m_layoutTabBar->setGraphic(m_document->getGraphic());
+        }
+        setWidget(container);
+    }
 }
 
 void QC_MDIWindow::addWidgetsListeners(){
