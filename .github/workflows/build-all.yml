@@ -2,7 +2,7 @@ name: Continuous build
 on:
   push:
     branches:
-      - master
+      - developer
       - 2.2.1
 
 jobs:
